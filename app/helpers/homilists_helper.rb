@@ -1,0 +1,2 @@
+module HomilistsHelper
+end

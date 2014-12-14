@@ -1,0 +1,31 @@
+
+<%= form_for [:admin, @homilist] do |f| %>
+  <% if @homilist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@homilist.errors.count, "error") %> prohibited this preacher from being saved:</h2>
+
+      <ul>
+      <% @homilist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

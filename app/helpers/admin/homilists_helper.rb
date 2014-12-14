@@ -1,0 +1,2 @@
+module Admin::HomilistsHelper
+end

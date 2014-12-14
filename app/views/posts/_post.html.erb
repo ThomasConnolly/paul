@@ -1,0 +1,22 @@
+  <% @posts.each do |post| %>
+  <%= #image_tag (post.user.avatar) %>
+  <p>
+    <%= post.user.full_name unless post.user.blank? %>:: 
+
+    <%= post.content %></p>
+    
+   <p><small> Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </small> </p>
+ <% end %>
+  <div>
+    <%= #image_tag (post.picture_url) %> 
+    </div>    
+  
+    <% if current_user == post.user %>
+      <p class="owner-edit-links">
+        <%= link_to 'Edit', edit_post_path(post) %> | 
+        <%= link_to 'Destroy', post_path(post),
+        method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %> 
+   
+    <% end %>
+    

@@ -1,0 +1,34 @@
+<%= form_for @profile do |f| %>  
+  <p>
+    <%= f.hidden_field :user_id, value: current_user %>
+    <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.<br>
+    <div class="form-group">
+    <%= f.text_field :cities, class: "form-control"%>
+  </p>
+  <p><strong>Growing up: </strong>Write a little about your growing-up years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:
+    <div class="form-group">
+    <%= f.text_area :background, class: "form-control"%>
+  </p>
+  <p><strong>Building a career: </strong>This is where you tell us about your work life. Multiple careers? Lots of travel?
+    <div class="form-group">
+    <%= f.text_area :career, class: "form-control"%>
+  </p>
+  <p><strong>Family matters: </strong>Tell us about your immediate family first, then any famous or infamous ancestry or offspring. Where are the kids?
+    <div class="form-group">
+    <%= f.text_area :family, class: "form-control"%>
+  </p>
+  <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits.  Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?
+    <div class="form-group">
+    <%= f.text_area :lifestyle, class: "form-control"%>
+  </p>
+  <p><strong>Life in the world: </strong>Do you or did you belong to any service organizations? Tells us about your civic involvement as a volunteer or elected or appointed leader in the secular world. 
+    <div class="form-group">
+    <%= f.text_area :civic, class: "form-control"%>
+  </p>
+  <p><strong>The Family of God: </strong>Finally, we come to church. What ministries have you been involved in at St. Paul's or at another church? Are you interested in Christian formation? A Bible study? Do you want to say why you come to St. Paul's? 
+    <%= f.text_field :church, class: "form-control"%>
+  </p>
+  <%= f.submit "Save profile", class: "btn btn-primary" %>
+  <% end %> 
+  <br>
+  <%= link_to "<<Back", :back %>

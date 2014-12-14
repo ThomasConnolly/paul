@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ministry: MyString
+  who: MyString
+  what: MyString
+  when: MyString
+  where: MyString
+  user_id: 1
+
+two:
+  ministry: MyString
+  who: MyString
+  what: MyString
+  when: MyString
+  where: MyString
+  user_id: 1

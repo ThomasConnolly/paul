@@ -1,0 +1,38 @@
+<div class="page">
+<%= render 'layouts/header' %>
+<div class="main_body">
+  <h1>Sharing life's journeys</h1>
+    <p> A "Facebook"-like feature for members of the St. Paul's family. </p>
+      <p><strong><%= link_to "Create an article or post a photo", new_post_path %></strong><br></p>
+        
+          <% @posts.each do |post| %>
+            <div class="post"> <%= image_tag post.user.avatar.url(:thumb), {class: "floatleft"} %>
+              <p><strong><%= post.user.full_name.titleize  %></strong>:: 
+                 <%= post.content %> <small><%=link_to "Show ", post_path(post) %>
+                 <%#= image_tag(@post.picture.thumb) %>   
+            <% if current_user == post.user %>
+              <%= link_to ' | Edit', edit_post_path(post) %> | 
+              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %> 
+           <% end %>
+              <br> Posted <%= time_ago_in_words(post.created_at) %> ago. Comments: <%= post.comments.count %></small></p></div><div class= "clearall"></div>
+         <% end %>
+  
+  <h4> To add or change your profile picture and tell us more about yourself, click "Edit profile" at upper right of this page. </h4>
+</div><!--main_body-->
+
+<div class="side_body">
+  
+  <h2>Life's Events</h2>
+    <h3>Birthdays this week</h3>
+      <p>Generate from database and listed day by day starting with Sunday. Maybe a little clipart if it's not too cheesy.</p>
+
+  <h3>Anniversaries</h3>
+    <p>also generated from database and listed the same way as birthdays</p>
+
+  <h3>We're praying for...</h3>
+    <p>Link to parish prayer list and accept readers' input. This page will be seen only by those who are logged in as church members. We will have three levels of authorization: administrators, who can create, edit and delete everything, is the top level. The second is member and this will have two "permissions categories": restricted and full. The third level is "guest," who can view the library page and search for books, for example.</p>
+</div><!--side_body-->
+
+<div class="clearall"></div><hr>
+<%= render "layouts/footer" %>
+</div>

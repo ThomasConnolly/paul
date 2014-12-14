@@ -1,0 +1,22 @@
+<div class="page">
+<%= render 'layouts/header' %>
+<div class="main-body">
+<div id="pictures">
+    <%= image_tag @post.picture_url(:large) %> </div>
+<%#= image_tag @post.user.avatar.url(:medium), {class: "floatleft"} %>
+<p><em><b><%= @post.user.full_name.titleize %>:: </b></em>
+    <%= @post.content %></p>
+
+  
+<h4>Comments</h4>
+<%= render 'posts/comment' %><br>
+
+<strong>Add comment</strong><br>
+<%= render 'comments/form' %><br>
+<%= link_to "<< Back to the Sharing page", posts_path %>
+
+</div></div>
+<div class="sidebar">
+<div>
+Thumbnail photos here, which will, on focus, cause the large version of the piture to appear in the main-body.</div></div>
+<%= render 'layouts/footer' %>

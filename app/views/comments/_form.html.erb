@@ -1,0 +1,6 @@
+<%= form_for [ @post, @comment ] do |f| %>  
+  <p>
+    <%= f.text_area :body, size: "45x3" %>
+  </p>
+  <%= f.submit "Save comment", class: "btn btn-primary" %>
+  <% end %> 

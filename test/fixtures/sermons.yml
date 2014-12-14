@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: sermons
+#
+#  id           :integer          not null, primary key
+#  delivered_on :date
+#  homilist     :integer
+#  title        :string(255)
+#  cites        :string(255)
+#  sermon_body  :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivered_on: 2014-11-23
+  homilist: 
+  title: MyString
+  cites: MyString
+  sermon_body: MyText
+
+two:
+  delivered_on: 2014-11-23
+  homilist: 
+  title: MyString
+  cites: MyString
+  sermon_body: MyText

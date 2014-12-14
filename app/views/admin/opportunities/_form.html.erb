@@ -1,0 +1,9 @@
+<%= simple_form_for(@opportunity) do |f| %>
+    <%= f.input :ministry %>
+    <%= f.input :who %>
+    <%= f.input :what %>
+    <%= f.input :when %>
+    <%= f.input :where %>
+    <%= f.collection_select :user_id,  User.all.order(:last_name), :id, :full_name, prompt: "Select a contact for this team" %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,10 @@
+
+<%= simple_form_for(@sermon) do |f| %>
+    <%= f.input :delivered_on, :as :string, input_html: {class: 'datepicker'} %>
+    <%= f.input :title %>
+    <%= f.input :cites %>
+    <%= f.input :sermon_body %>
+    
+    <%= f.collection_select :homilist_id,  Homilist.all, :id, :name %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

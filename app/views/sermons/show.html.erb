@@ -1,7 +1,7 @@
 <div class="sermon-page">
     <header><img id="home-logo" src="https://s3.amazonaws.com/saintpaulsnaples/logos/New_StPaul_Logo.jpg" width="325px">
     <h3 id="menu-four"><%=link_to "<< Return to Home Page", root_path %> <br>
-    <%= link_to "<< Back to list of sermons", "/sermons" %>
+    <%= link_to "<< Back to list of sermons", sermons_path %>
     </h3>
     </header><div class="clearall">
 </div>
@@ -27,7 +27,5 @@
   
     <%= raw @sermon.sermon_body %>
 
-    <% #if current_user == superuser %>
-    <%= link_to 'Edit', edit_sermon_path(@sermon) %> |
-    <%# end %>
+   
 <%= render "layouts/footer" %>

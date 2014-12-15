@@ -1,19 +1,19 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_user!
+  class UsersController < ApplicationController
   def index
-end
+    @users = User.all.order(:last_name)
+  end
 
   def show
-end
+    @user = User.find(params[:id])
+  end
 
-  def new
-end
 
-  def update
-end
+private
 
-  def create
-end
 
-  def destroy
- end
+  def user_params
+      params.require(:user).permit(:first_name, :last_name, :full_name, :avatar, :avatar_cache, :remove_avatar)
+    end
 end

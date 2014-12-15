@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery-ui
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/alert
 //= require bootstrap-wysihtml5
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require_self
 //= require_tree .

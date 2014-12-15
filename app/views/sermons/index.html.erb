@@ -1,24 +1,23 @@
 <div class="page">
-<%= render 'layouts/header' %>
-<div class="main_body">
+<%= render 'layouts/publicHeader' %>
+<div class="sermon-page">
 
 <h1>Sermons from St. Paul's pulpit </h1>
 
-<table>
+<table class="table table-condensed">
   <tbody>
     <% @sermons.each do |sermon| %>
       <tr>
-        <td><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
-        <td><%= sermon.homilist.name %></td> 
-        <td><%= link_to sermon.title, sermon %></td>
+        <td class="col-md-3"><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
+        <td class="col-md-5"><%= sermon.homilist.name %></td> 
+        <td class="col-md-4"><%= link_to sermon.title, sermon %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%# if current_user == superuser %>
-<%= link_to 'New Sermon', new_sermon_path %>
+
 </div>
-<%# end %>
+
 <%= render "layouts/footer" %>

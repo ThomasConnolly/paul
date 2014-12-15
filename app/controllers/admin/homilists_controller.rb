@@ -24,7 +24,7 @@ class Admin::HomilistsController < ApplicationController
     
     respond_to do |format|
       if @homilist.save
-        format.html { redirect_to homilists_path,  notice: 'homilist was successfully created.' }
+        format.html { redirect_to admin_homilists_path,  notice: 'homilist was successfully created.' }
       else
         format.html { render :new }
       end
@@ -45,7 +45,7 @@ class Admin::HomilistsController < ApplicationController
 
   def destroy
     @homilist.destroy
-      redirect_to homilists_url
+      redirect_to admin_homilists_url
   end
 
   private

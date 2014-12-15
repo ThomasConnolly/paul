@@ -1,5 +1,9 @@
 class Admin::OpportunitiesController < ApplicationController
-  
+  before_action :authenticate_user!
+  def index
+    @opportunities = Opportunity.all
+  end
+
   def new
     @user_options = User.all.order(:last_name)
     @opportunity = Opportunity.new

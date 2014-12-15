@@ -1,5 +1,5 @@
 <div class="page">
-  <%= render 'layouts/publicHeader' %>
+  <%= render 'layouts/header' %>
 <div class="main_body">
 
 <h1>Listing books</h1>
@@ -24,7 +24,9 @@
         <td><%= book.subject %></td>
         <td><%= book.isbn %></td>
         <td><%= book.dewey %></td>
-        
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,5 @@
 
 </div>
 
+<%= link_to 'New Book', new_book_path %>
 <%= render "layouts/footer" %>

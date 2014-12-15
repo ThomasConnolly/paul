@@ -9,6 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-wysihtml5-rails', :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
+gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'therubyracer',  platforms: :ruby
 gem 'inherited_resources'

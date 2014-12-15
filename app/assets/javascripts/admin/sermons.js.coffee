@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#delivered_on').datepicker({dateFormat: 'yy-mm-dd'})
-
-  $('#sermon_body').wysihtml5()
+  
+$.fn.extend {   
+  integrateDatepicker: (selector)->     
+    selector = selector || '.datepicker'
+    $(@).find(selector).datepicker() 
+}
+$(document).ready () ->   
+  $('body').integrateDatepicker()

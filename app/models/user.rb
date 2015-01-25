@@ -8,7 +8,7 @@
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
+#  sign_in_count          :integer          default("0"), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
@@ -22,9 +22,12 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  role                   :string(255)
 #
 
 class User < ActiveRecord::Base
+
+  ROLES = %i[admin editor member]
   before_save :set_full_name
   
   has_many :posts
@@ -52,3 +55,5 @@ class User < ActiveRecord::Base
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
 end
+  ROLES = %i[admin editor member]
+  

@@ -1,0 +1,5 @@
+<h3>Showing an album</h3>
+
+
+<% if photo.id.present? %><li class="no-margin-padding pull-left"><a href="<%= photo.image_url() %>"><%= image_tag(photo.image_url(:icon)) if photo.image? %></a></li><% end %>
+

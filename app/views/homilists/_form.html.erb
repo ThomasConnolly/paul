@@ -1,0 +1,16 @@
+<%= simple_form_for(@homilist) do |f| %>
+  
+
+  <div class="form-group">
+    <%= f.input :name, class: 'form-control' %>
+    
+  
+    <%= f.input :title, class: 'form-control' %>
+    
+  
+    <%= f.input :photo, class: 'form-control' %>
+    
+  
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

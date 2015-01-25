@@ -11,10 +11,9 @@
 #
 
 class Post < ActiveRecord::Base
-  mount_uploader :picture, PostPhotoUploader
+  attachment :picture
   validates_presence_of :content
   has_many :comments, dependent: :destroy
-  has_many :pictures
   default_scope -> { order('created_at DESC') }
   belongs_to :user
   

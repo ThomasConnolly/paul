@@ -11,13 +11,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require 'bootstrap_and_overrides'
+ *= require jquery.fileupload-ui
  *= require_self
- *= require bootstrap-wysihtml5
- *= require bootstrap-datepicker
- *= require_tree .
  */
 
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -298,12 +297,16 @@ list-style-type: none;
   text-align:left;
   font-size : 18px;
   line-height:27px;
-
 }
+.sermon-page p {
+  font-size: 18px;
+  line-height: 27px;
+}
+
 .sermon-box {
   float:right;
   margin:10px;
-  height:200px;
+  height:190px;
   width:375px;
   padding:6px;
   border-style: solid;

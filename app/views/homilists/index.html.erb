@@ -1,0 +1,26 @@
+<div class="page">
+<%= render 'layouts/loginHeader' %>
+<div class="main_body">
+
+<h1>Listing homilists</h1>
+
+<table>
+  <tbody>
+    <% @homilists.each do |homilist| %>
+      <tr>
+        <td><%= homilist.name %></td>
+        <td><%= homilist.title %></td>
+        <td><%= homilist.photo %></td>
+        <td><%= link_to 'Edit', edit_homilist_path(homilist) %> </td> 
+        <td><%= link_to 'Destroy', homilist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add a new preacher', new_homilist_path %>
+
+</div>
+<%= render 'layouts/footer' %>

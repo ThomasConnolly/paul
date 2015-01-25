@@ -1,0 +1,23 @@
+<div class="page">
+<%= render 'layouts/loginHeader' %>
+<div class="main_body">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @homilist.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @homilist.title %>
+</p>
+
+<p>
+  <strong>Sermon:</strong>
+  <%= @homilist.sermon_id %>
+</p>
+
+<%= link_to 'Edit', edit_homilist_path(@homilist) %> |
+<%= link_to 'Back', homilists_path %>

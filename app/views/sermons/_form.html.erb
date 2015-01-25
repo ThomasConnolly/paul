@@ -1,0 +1,19 @@
+
+<%= simple_form_for @sermon, html: { multipart: true } do |f| %>
+  
+  <div class="form-group">
+    <%= f.label :homilist %><br>
+    <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
+    <%= f.input :title, class: 'form-control' %>
+    <%= f.input :cites, label: 'Citations', class: 'form-control' %>
+    <%= f.date_select :delivered_on, class: 'datepicker' %>
+    <%= f.input :sermon_body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+
+    <%= f.button :submit %>   
+  <% end %>
+</div>
+<script type="text/javascript">
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
+})
+</script>

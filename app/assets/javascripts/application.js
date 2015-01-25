@@ -12,13 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery-ui
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require photos
+//= require twitter/bootstrap
+//= require bootstrap-sprockets
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/alert
-//= require bootstrap-wysihtml5
-//= require bootstrap-datepicker
-//= require turbolinks
+//= require ckeditor/init
 //= require_self
 //= require_tree .
+

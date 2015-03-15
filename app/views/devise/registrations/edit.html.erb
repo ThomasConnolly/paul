@@ -1,6 +1,3 @@
-<div class="page">
-<%= render 'layouts/header' %>
-
 
 <h2>Edit Your Information</h2>
 
@@ -35,25 +32,21 @@
   </div>
 <br>
   <div>
-  <h3>Add or replace your profile picture</h3>        
+  <h3>Add or replace your profile picture</h3>
+<br />
+  <div class="form-group">
+  <%= f.attachinary_file_field :avatar %>
+<br />
 
-  
-        <%= f.file_field :avatar, class: "btn btn-success" %>
-        <%#= f.hidden_field :avatar_cache %>
-      
-   </div>    
-
-  <div class="actions"><br>
-    <%= f.submit "Save photo", class: 'btn btn-success' %>
+  <br />
+  <div class="form-group">
+    <%= f.submit "submit", class: "btn btn-primary" %>
   </div>
 <% end %>
 <br>
 <%= link_to '<<Back', posts_path %>
 <br><br>
 
-<h3> Tell your story</h3>
-<p>Don't let your fellow parishioners learn at your funeral that they had something in common with you! <em>(Is there a more delicate way to put this?)</em></p>
-<p>Click here for  a questionnaire, of sorts, that you can use to introduce your deeper self. You can edit your profile from time to time as you wish. <%= link_to 'Take me there', new_profile_path, class: 'btn btn-success' %></p>
 
 <br><br>
 <hr>
@@ -61,3 +54,4 @@
 
 <p>Leaving the St. Paul's community? <%= link_to "Cancel my account", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Are you sure? This will destroy all of your information, including posts, photos and comments." }, method: :delete %></p>
 
+</div></div>

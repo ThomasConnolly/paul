@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
+
+before_filter :authenticate_user!
+
 def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
-    @comment.author = current_user.full_name
-      if@comment.save!
-      redirect_to post_path(@post)
-    else
-      render _form
-  end
+  @comment = comment_from_params
+  @comment.post_id = params[:post_id]
+  @comment.body = params[:comment][:body]
+  @comment.user = current_user
+  @comment.save
+    redirect_to post_path(@comment.post)
 end
 
   def destroy
@@ -16,15 +17,15 @@ end
       redirect_to posts_path
     end
 
-    def edit
-      @comment = Comment.find(params[:id])
-      redirect_to posts_path
-    end
+  def edit
+    @comment = Comment.find(params[:id])
+    redirect_to posts_path
+  end
   
   
 
   private
     def comment_params
-      params.require(:comment).permit(:author, :body, :post_id)
+      params.require(:comment).permit(:body)
     end
 end

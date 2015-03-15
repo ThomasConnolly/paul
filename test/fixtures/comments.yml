@@ -4,10 +4,10 @@
 #
 #  id         :integer          not null, primary key
 #  body       :text
-#  author     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #  post_id    :integer
+#  user_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -1,6 +1,4 @@
-<%= form_for [ @post, @comment ] do |f| %>  
-  <p>
-    <%= f.text_area :body, size: "45x3" %>
-  </p>
-  <%= f.submit "Save comment", class: "btn btn-primary" %>
-  <% end %> 
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+  <%= f.input :body %><br/> 
+  <%= f.submit %>
+<% end %> 

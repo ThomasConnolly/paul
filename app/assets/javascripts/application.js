@@ -13,15 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery-fileupload/basic
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery-fileupload
 //= require jquery-fileupload/vendor/tmpl
 //= require photos
+//= require cloudinary/jquery.cloudinary
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/alert
 //= require ckeditor/init
+//= require attachinary
 //= require_self
 //= require_tree .
 

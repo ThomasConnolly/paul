@@ -1,22 +1,27 @@
-<div class="page">
-<%= render 'layouts/loginHeader' %>
+
 <div class="main-body">
-<div id="pictures">
-    <%#= image_tag @post.picture_url(:large) %> </div>
-<%#= image_tag @post.user.avatar.url(:medium), {class: "floatleft"} %>
-<p><em><b><%= @post.user.full_name.titleize %>:: </b></em>
+  <% if @post.user.avatar? %>
+    <%= cl_image_tag(@post.user.avatar.path, { size: '100x120', crop: :fit, class: "floatleft" }) %> 
+  <% end %>  
+    <p><em><b><%= @post.user.full_name.titleize %>:: </b></em>
     <%= @post.content %></p>
+    <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small></p>
+  <% @post.photos.each do |photo| %>
+    <%= cl_image_tag(photo.path, { size: '550x550', crop: :fit }) %>
+  <% end %>
 
-  
-<h4>Comments</h4>
-<%= render 'posts/comment' %><br>
-
+  <% unless @post.comments.empty? %>
+    <%= cl_image_tag(@comment.user.avatar.path, { size: '50x70', crop: :fit, class: "floatleft" }) %> 
+    <%= render @post.comments %><br>
+  <% end %>
+ 
 <strong>Add comment</strong><br>
 <%= render 'comments/form' %><br>
-<%= link_to "<< Back to the Sharing page", posts_path %>
-
-</div></div>
+</div>
+<div><%= link_to "<< Back to the Sharing page", posts_path %></div>
 <div class="sidebar">
-<div>
-Thumbnail photos here, which will, on focus, cause the large version of the piture to appear in the main-body.</div></div>
+
+Thumbnail photos here, which will, on focus, cause the large version of the piture to appear in the main-body.
+</div>
+</div>
 <%= render 'layouts/footer' %>

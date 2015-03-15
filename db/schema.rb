@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229181554) do
+ActiveRecord::Schema.define(version: 20150313170610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "albums", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "attachinary_files", force: :cascade do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "author",     limit: 255
@@ -52,11 +60,22 @@ ActiveRecord::Schema.define(version: 20141229181554) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.string   "author",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "post_id"
+    t.integer  "user_id"
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "follower_type"
+    t.integer  "follower_id"
+    t.string   "followable_type"
+    t.integer  "followable_id"
+    t.datetime "created_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
 
   create_table "homilists", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -65,6 +84,17 @@ ActiveRecord::Schema.define(version: 20141229181554) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "likes", force: :cascade do |t|
+    t.string   "liker_type"
+    t.integer  "liker_id"
+    t.string   "likeable_type"
+    t.integer  "likeable_id"
+    t.datetime "created_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables", using: :btree
+  add_index "likes", ["liker_id", "liker_type"], name: "fk_likes", using: :btree
 
   create_table "opportunities", force: :cascade do |t|
     t.string   "ministry",   limit: 255
@@ -77,16 +107,8 @@ ActiveRecord::Schema.define(version: 20141229181554) do
     t.datetime "updated_at"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.integer  "album_id"
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.text     "content"
-    t.string   "picture",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -131,10 +153,6 @@ ActiveRecord::Schema.define(version: 20141229181554) do
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
     t.string   "full_name",              limit: 255
-    t.string   "avatar_file_name",       limit: 255
-    t.string   "avatar_content_type",    limit: 255
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "role",                   limit: 255
   end
 

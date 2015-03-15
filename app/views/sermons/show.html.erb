@@ -1,10 +1,10 @@
 <div class="sermon-page">
-    <header><img id="home-logo" src="https://s3.amazonaws.com/saintpaulsnaples/logos/New_StPaul_Logo.jpg" width="325px"></header>
-    <h3 id="menu-four">
-    <%= link_to "<< Back to list of sermons", "/sermons" %>
+    
+    <h3 id="sermon-menu-four">
+    <%= link_to "<< Back to list of sermons", sermons_path %>
     </h3>
-    </header><div class="clearall">
-</div>
+    <div class="clearall">
+    </div>
  <p id="notice"><%= notice %></p>
   <h1>
   <%= @sermon.title %>

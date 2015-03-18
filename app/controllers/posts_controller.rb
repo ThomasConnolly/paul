@@ -58,7 +58,7 @@ private
 
 
     def post_params
-      params.require(:post).permit(:content, :user, :photos)
+      params.require(:post).permit(:content, :user, :photo)
     end
   end
 

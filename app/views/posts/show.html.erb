@@ -6,8 +6,8 @@
     <p><em><b><%= @post.user.full_name.titleize %>:: </b></em>
     <%= @post.content %></p>
     <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small></p>
-  <% @post.photos.each do |photo| %>
-    <%= cl_image_tag(photo.path, { size: '550x550', crop: :fit }) %>
+  <% unless @post.photos.empty? %>
+    <%= cl_image_tag(@post.photo.path, { size: '550x550', crop: :fit }) %>
   <% end %>
 
   <% unless @post.comments.empty? %>

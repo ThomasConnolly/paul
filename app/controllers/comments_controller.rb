@@ -1,14 +1,17 @@
 class CommentsController < ApplicationController
-
-before_filter :authenticate_user!
+before_action :set_comment, only: [:show, :edit, :update, :new, :destroy]
+before_action :authenticate_user!
 
 def create
-  @comment = comment_from_params
-  @comment.post_id = params[:post_id]
-  @comment.body = params[:comment][:body]
+  
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.create(comment_params)
   @comment.user = current_user
-  @comment.save
+  if @comment.save
     redirect_to post_path(@comment.post)
+  else
+    flash.now[:danger] = "error"
+  end
 end
 
   def destroy
@@ -22,10 +25,16 @@ end
     redirect_to posts_path
   end
   
-  
+  def new
+  end
 
   private
+
+  def set_comment
+      @comment = Comment.find(params[:id])
+    end
+
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :post_id, :user_id)
     end
 end

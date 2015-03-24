@@ -108,7 +108,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  mount Ckeditor::Engine => '/ckeditor'
+  #mount Ckeditor::Engine => '/ckeditor'
   mount Attachinary::Engine => '/attachinary'
   root to: 'sermons#index'
 end

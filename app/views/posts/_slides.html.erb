@@ -1,0 +1,7 @@
+<div class="row">
+  <% @post.photos.each do |photo| %>
+    <div class="col-md-3">
+      <%= link_to cl_image_tag(photo.path, { width: '200', crop: :fit }), cloudinary_url(photo.path) %>
+    </div>
+  <% end %>
+</div>

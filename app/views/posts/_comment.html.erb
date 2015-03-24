@@ -1,9 +1,0 @@
-<% if @post.comments.any? %>
-  <% @post.comments.each do |comment| %>
-    <p><%= comment.author.titlecase %>:: <%= comment.body %></p>
-<% end %>
-<% if @comment.author == current_user %>
-  <p class="owner-edit-links">
-    <%= link_to 'Delete this comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %> </p> 
-<% end %>
-<% end %>

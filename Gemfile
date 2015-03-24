@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 
-gem 'rails', '4.2'
+gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
-gem 'ckeditor'
+gem 'turbolinks'
+#gem 'ckeditor'
 gem 'bootstrap-sass'
 gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
@@ -18,11 +19,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-fileupload-rails'
 gem 'simple_form'
 gem 'devise'
-gem 'cancancan', '~> 1.9' 
+#gem 'cancancan', '~> 1.9' 
 gem 'bcrypt'
 gem 'cloudinary'
 gem 'sidekiq'
-gem 'socialization'
+#gem 'socialization'
 gem 'annotate'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -47,5 +48,4 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'foreman'
-
 gem 'attachinary'

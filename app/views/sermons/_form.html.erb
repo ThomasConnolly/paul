@@ -7,7 +7,7 @@
     <%= f.input :title, class: 'form-control' %>
     <%= f.input :cites, label: 'Citations', class: 'form-control' %>
     <%= f.date_select :delivered_on, class: 'datepicker' %>
-    <%= f.input :sermon_body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%#= f.input :sermon_body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
 
     <%= f.button :submit %>   
   <% end %>

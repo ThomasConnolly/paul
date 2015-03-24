@@ -1,27 +1,34 @@
-
-<div class="main-body">
-  <% if @post.user.avatar? %>
-    <%= cl_image_tag(@post.user.avatar.path, { size: '100x120', crop: :fit, class: "floatleft" }) %> 
-  <% end %>  
-    <p><em><b><%= @post.user.full_name.titleize %>:: </b></em>
-    <%= @post.content %></p>
-    <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small></p>
-  <% unless @post.photos.empty? %>
-    <%= cl_image_tag(@post.photo.path, { size: '550x550', crop: :fit }) %>
-  <% end %>
-
-  <% unless @post.comments.empty? %>
-    <%= cl_image_tag(@comment.user.avatar.path, { size: '50x70', crop: :fit, class: "floatleft" }) %> 
-    <%= render @post.comments %><br>
-  <% end %>
- 
-<strong>Add comment</strong><br>
-<%= render 'comments/form' %><br>
+<h3 id="special-menu-four">
+    <%= link_to "<< Back to the Sharing page", posts_path %></h3>
+<br>
+<% if @post.post_picture? %>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <%= link_to cl_image_tag(@post.post_picture.path, :height => 350, :crop => :fit), cloudinary_url(@post.post_picture.path) %>
+    </div>
+  </div>
+<% end %>
+  <% if @post.photos? %>
+    <%= render 'slides' %>
+<% end %>    
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <% if @post.user.avatar? %>
+      <%= cl_image_tag(@post.user.avatar.path, { size: '100x120', crop: :fit, class: "floatleft" }) %> 
+    <% end %>  
+    <p><em><b>
+      <%= @post.user.full_name.titleize %>:: 
+    </b></em>
+      <%= @post.content %>
+    </p>
+      <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small>
+      </p> 
+    <div class="clearall"></div> 
+  <%= render @post.comments %><br>
+  <%= render 'comments/form' %><br>
+  <h3><%= link_to "<< Back to the Sharing page", posts_path %></h3>
+  </div>
 </div>
-<div><%= link_to "<< Back to the Sharing page", posts_path %></div>
-<div class="sidebar">
 
-Thumbnail photos here, which will, on focus, cause the large version of the piture to appear in the main-body.
-</div>
-</div>
-<%= render 'layouts/footer' %>
+<br>
+  <%= render 'layouts/footer' %>

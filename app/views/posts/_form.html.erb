@@ -1,10 +1,10 @@
+<% cloudinary_js_config %>
 <%= simple_form_for @post do |f| %>
-  
-    
-    <%= f.input :content %><br>
-    <%= f.input :photo, as: :attachinary %><br>
-    <%= f.submit "submit", class: "btn btn-primary" %>
+  <%= f.input :content %><br>
+  <%= f.input :post_picture, as: :attachinary, label: "Upload a single photo" %><br>
+ 
+  <%= f.input :photos, as: :attachinary, label: "Upload up to four photos" %><br>
+  <%= f.submit "submit", class: "btn btn-primary" %>
  <br>
 <% end %>
-  <script>$('.attachinary-input').attachinary()
-</script>
+

@@ -1,20 +1,22 @@
 ---
 development:
   cloud_name: "saintpaulsnaples-org"
-  api_key: '521449493132342'
-  api_secret: 7XGlmOUSCW7Hm-O60V0WSmUnGxc
+  api_key: '337852973333815'
+  api_secret: -o2tP4igntoFMnC1emt2-cTXKZY   
+
   enhance_image_tag: true
   static_image_support: true
 production:
   cloud_name: "saintpaulsnaples-org"
-  api_key: '521449493132342'
-  api_secret: 7XGlmOUSCW7Hm-O60V0WSmUnGxc
+  api_key: '337852973333815'
+  api_secret: -o2tP4igntoFMnC1emt2-cTXKZY   
+
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: "saintpaulsnaples-org"
-  api_key: '521449493132342'
-  api_secret: 7XGlmOUSCW7Hm-O60V0WSmUnGxc
+  api_key: '337852973333815'
+  api_secret: -o2tP4igntoFMnC1emt2-cTXKZY   
   enhance_image_tag: true
   static_image_support: false
 

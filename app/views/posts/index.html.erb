@@ -1,5 +1,5 @@
 
-<div class="main_body">
+<div class="main-body">
 
   <h1>Sharing life's journeys</h1>
     <p> A "Facebook"-like feature for members of the St. Paul's family. </p>
@@ -10,15 +10,10 @@
       <% end %><br>
     <p><strong><%= link_to "Create an article or post a photo", new_post_path %></strong></p>
     <p><%= link_to "Create or change your profile picture", edit_user_registration_path %></p>
-    </div><br>
- <div class=post-wrapper>   
-
-<%= render 'post' %>
-
-</div>
-  
-
-</div><!--main_body-->
+  </div><br>
+    <h2>Latest posts</h2>   
+      <%= render 'post' %>
+</div> 
 
 <div class="side_body">
   <h3> Tell your story</h3>
@@ -33,6 +28,10 @@
 
   <h3>We're praying for...</h3>
     <p>Link to parish prayer list and accept readers' input. This page will be seen only by those who are logged in as church members. We will have three levels of authorization: administrators, who can create, edit and delete everything, is the top level. The second is member and this will have two "permissions categories": restricted and full. The third level is "guest," who can view the library page and search for books, for example.</p>
+    <br>
+    <h3>ToDo for this page</h3>
+    <p>Add share to Facebook api</p>
+    <p>Add pagination</p>
 </div><!--side_body-->
 
 <div class="clearall"></div>

@@ -31,7 +31,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-      if @post.update(params[:post].permit(:content))
+      if @post.update(post_params)
         redirect_to @post
       else
         render 'edit'
@@ -40,7 +40,8 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path, notice: 'Post was removed'
+
   end
 
 
@@ -58,7 +59,7 @@ private
 
 
     def post_params
-      params.require(:post).permit(:content, :user, :photo)
+      params.require(:post).permit(:content, :user_id, :post_picture, photos: [])
     end
   end
 

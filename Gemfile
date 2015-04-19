@@ -49,3 +49,4 @@ end
 gem 'unicorn'
 gem 'foreman'
 gem 'attachinary'
+gem 'rails_12factor'

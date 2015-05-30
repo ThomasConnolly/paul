@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
         format.html { render :new }
       end
     end
+  end
   
   def update
     respond_to do |format|

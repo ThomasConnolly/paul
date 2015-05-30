@@ -1,6 +1,6 @@
 <header>
   <div class="header">
     <%= cl_image_tag("logos/New_StPaul_LogoWeb.jpg", { id: 'home-logo', width: '325' }) %>
-      <h3 id="menu-four"><%= link_to "<< Return to home page", root_path %></h3>    
+      <h3 id="menu-four"><%= link_to "<< Return to home page", root_path  unless params[:action]  == 'home' %></h3>    
   </div>
 </header>

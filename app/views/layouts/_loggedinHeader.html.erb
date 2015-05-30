@@ -2,13 +2,10 @@
   <div class="header">
   <%= cl_image_tag("logos/New_StPaul_LogoWeb.jpg", { id: 'home-logo', width: '325' }) %>
     
-    <h3 id="menu-four"><%= link_to "<< Return to home page", root_path %></h3>
+    <h3 id="menu-four"><%= link_to "<< Return to home page", root_path unless params[:action]  == 'home' %></h3>
     <p id="menu-five"><small>
-      <% if user_signed_in? %>
-        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit profile", edit_user_registration_path %>  
-      <% else %>
-        <%= link_to "Register", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %></small></p>
-      <% end %>
+          Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit profile", edit_user_registration_path %>  
+       
   </div>
 </header>
    

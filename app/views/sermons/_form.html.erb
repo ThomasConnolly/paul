@@ -1,4 +1,4 @@
-
+<%= tinymce %>
 <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
   
   <div class="form-group">
@@ -6,14 +6,15 @@
     <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
     <%= f.input :title, class: 'form-control' %>
     <%= f.input :cites, label: 'Citations', class: 'form-control' %>
-    <%= f.date_select :delivered_on, class: 'datepicker' %>
-    <%#= f.input :sermon_body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
+    <%= f.text_area :sermon_body, :class => 'tinymce' %><br>
 
     <%= f.button :submit %>   
   <% end %>
 </div>
-<script type="text/javascript">
-$(document).on('page:load', function(){
+
+<script>
+$(document).on('page:load', function() {
   window['rangy'].initialized = false
-})
+  });
 </script>

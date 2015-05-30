@@ -1,32 +1,28 @@
 
-<div class="main-body">
-<h1>Listing books</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Title</th>
-      <th>Dewey</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @books.each do |book| %>
+  <h1>Listing books</h1>
+    <table class="table table-striped">
+      <th>
+        <tr>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Dewey</th>
+        </tr>
+      </th>
       <tr>
-        <td><%= book.author %></td>
-        <td><%= book.title %></td>
-        <td><%= book.dewey %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </tbody>
-</table>
+        <% @books.each do |book| %>
+          <td><%= book.author %></td>
+          <td><%= book.title %></td>
+          <td><%= book.dewey %></td>
+          <td><%= link_to 'Show', book %></td>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </table>
     <% end %>
 
-<br>
+<hr>
 
 <%= link_to 'New Book', new_book_path %>
 
-</div>
-<%= render '/layouts/footer' %>
+
+

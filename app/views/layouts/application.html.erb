@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
     <!--[if lt IE 9]>
@@ -18,34 +19,31 @@
 </head>
 <body>
 <div class="page">
-  <% if user_signed_in? %>
-    <%=render '/layouts/loggedinHeader' %>
+   <% if current_user.present? %>
+    <%= render '/layouts/loggedinHeader' %>
   <% else %>
     <%= render '/layouts/publicHeader' %>
   <% end %>
+  
 
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
-    <div class="alert alert-<%= name == :notice ? "success" : "danger" %> alert-dismissable">
+    <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
-    <% end %>
+      <% end %>
   <% end %>
-
 
 
 <%= yield %>
 
+<%= render 'layouts/footer' %> 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
 </div>
 </body>
 </html>
-
-
-
-  

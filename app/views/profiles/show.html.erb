@@ -3,10 +3,10 @@
   <div class="post"> 
 <%#= image_tag post.user.avatar.url(:thumb), {class: "floatleft"} %>
 <h3><%= @profile.user.full_name.titleize  %></h3>
-
+<% if @profile.cities %>
 <h4>Important locations</h4>
 <p><%= @profile.cities  %></p>
-
+<% end %>
 
 <h4>Growing up</h4>
 <p><%= @profile.background %></p>

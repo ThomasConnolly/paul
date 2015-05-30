@@ -22,7 +22,18 @@
       <%= @post.content %>
     </p>
       <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small>
-      </p> 
+      </p> <%#= link_to('Share on Facebook', 'https://www.facebook.com/dialog/feed?
+                                  link=https://developers.facebook.com/docs/reference/dialogs/&
+                                  picture=http://fbrell.com/f8.jpg&
+                                  name=Facebook%20Dialogs&
+                                  caption=Reference%20Documentation&
+                                  description=Using%20Dialogs%20to%20interact%20with%20users.&
+                                  redirect_uri=https://mighty-lowlands-6381.herokuapp.com/',
+                                  :target => :blank %>
+
+
+  
+
     <div class="clearall"></div> 
   <%= render @post.comments %><br>
   <%= render 'comments/form' %><br>

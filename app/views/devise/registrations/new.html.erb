@@ -10,7 +10,7 @@
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name, autofocus: true, class: "form-control"%>
   </div>
-  <h3>(On subsequent visits, you will log in using your full name, matching these entries, to access certain non-public pages)</h3>
+  <h3>(On subsequent visits, you will log in using your full name, matching these entries, plus your password, to access certain non-public pages)</h3>
 <br />
   <div class="form-group">
     <%= f.label :email %><br />
@@ -34,6 +34,7 @@
     <%= f.submit "submit", class: "btn btn-primary" %>
   </div>
 <% end %>
-
+<div>
+<h3><%= link_to "Fill out your profile", new_profile path %></h3>
 <%= render "devise/shared/links" %>
 </div>

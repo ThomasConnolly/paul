@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/dropdown
 //= require_tree .
 //= require cloudinary
 //= require attachinary
+//= require tinymce-jquery
 
+$(document).on("page:load ready", function(){
+    $("input.datepicker").datepicker();
+});

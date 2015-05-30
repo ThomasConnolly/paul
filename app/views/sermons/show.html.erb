@@ -5,7 +5,6 @@
     </h3>
     <div class="clearall">
     </div>
- <p id="notice"><%= notice %></p>
   <h1>
   <%= @sermon.title %>
 </h1>
@@ -21,11 +20,10 @@
   <h3> <%= @sermon.homilist.name %></h3> 
    <h4><em><%= @sermon.homilist.title %></em><br>
     <%= @sermon.delivered_on.strftime("%B %d, %Y") %> </h4></div>
-  
+  <p class="sermon-text">
     <%= raw @sermon.sermon_body %>
-
-    <% #if current_user == admin %>
+  </p>
+    <%# if current_user.admin? %>
     <%= link_to 'Edit', edit_sermon_path(@sermon) %> |
     <%# end %>
-<%= render "layouts/footer" %>
 </div>

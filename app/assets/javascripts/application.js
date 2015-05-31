@@ -19,6 +19,3 @@
 //= require attachinary
 //= require tinymce-jquery
 
-$(document).on("page:load ready", function(){
-    $("input.datepicker").datepicker();
-});

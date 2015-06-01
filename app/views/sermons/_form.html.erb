@@ -1,4 +1,4 @@
-<%= tinymce_assets %>
+ <%= tinymce_assets %>
 <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
   
   <div class="form-group">
@@ -8,10 +8,10 @@
     <%= f.input :cites, label: 'Citations', class: 'form-control' %>
     <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
     <%= f.text_area :sermon_body, :class => 'tinymce', :rows => 40, :cols => 100 %><br>
-
+    <%= tinymce %>
     <%= f.button :submit %>   
   <% end %>
-  <%= tinymce %>
+
 </div>
 
 <script>

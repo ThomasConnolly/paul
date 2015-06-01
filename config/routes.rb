@@ -1,8 +1,6 @@
 
 Rails.application.routes.draw do
   
-  
-  
   #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
   get 'pages/dashboard'

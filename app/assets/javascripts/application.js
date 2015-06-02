@@ -15,8 +15,9 @@
 //= require bootstrap
 //= require tinymce-jquery
 //= require turbolinks
+//= require bxslider
 //= require_tree .
 //= require cloudinary
 //= require attachinary
-
+//= require initialize
 

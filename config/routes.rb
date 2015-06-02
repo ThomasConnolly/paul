@@ -1,16 +1,27 @@
 
 Rails.application.routes.draw do
   
+  get 'activities/index'
+  get 'markets/index'
+  get 'leadership/index'
+  get 'sunday_school/index'
+  get 'formation/index'
+  get 'prayer/index'
+  
+
   #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
   get 'pages/dashboard'
+  get 'pages/directions'
   get 'visitors/index'
   #get 'products/:id', to: 'products#show', :as => :products
   #resources :pledges
+  resources :worship, only: :index
   resources :tasks
   resources :opportunities
   resources :homilists
   resources :books
+  resources :pledges
   resources :sermons
   resources :profiles
   devise_for :users

@@ -27,7 +27,7 @@ gem 'bcrypt'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'sidekiq'
-
+gem 'bxslider-rails'
 #gem 'whenever', require: false
 #gem 'socialization'
 

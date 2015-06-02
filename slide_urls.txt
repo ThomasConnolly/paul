@@ -1,0 +1,21 @@
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite14.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite10.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite11.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite15.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite16.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite19.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite21.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite8.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/NewComp1.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/NewComp2.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newComp3.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newComp4.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newComp5.png' alt="" /></li>
+      <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newComp6.png' alt="" /></li>
+    </li>
+  </ul>
+</div>
+  $(document).ready(function(){
+  $('.main-slider').bxSlider();
+});

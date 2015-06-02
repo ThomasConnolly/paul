@@ -14,6 +14,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bxslider";
+
 
 
 *, *:after, *:before {
@@ -30,7 +32,7 @@
   margin: 0px auto;
 }
 .page {
- width: 920px;
+ width: 960px;
  color : #333;
  background-color: #fff;
  border : 1px solid #C0C0C0;
@@ -47,14 +49,14 @@
   height: 140px;
 }
 .main-body {
-  width: 64%;
+  width: 624px;
   float: left;
   padding-right: 15px;
 }
 .sidebar {
-  width: 34%;
+  width: 265px;
   background-color: #eee;
-  margin-left: 15px;
+  margin-left: 5px;
   margin-top: 20px;
   padding-left: 7px;
   padding-right:7px;
@@ -92,6 +94,7 @@ p {
     font-size : 14px;
     line-height:23px;
 }
+      
 p.poem {
     text-indent:0;
     padding-left: 60px;
@@ -132,8 +135,7 @@ a {text-decoration: none;}
   list-style-type: none;
 }
 #menu-one{
-    width: 135
-    px;
+    width: 135px;
 }
 #menu-two {
   width: 170px;
@@ -182,6 +184,11 @@ list-style-type: none;
     margin-left: 505px;
     margin-top: -15px;
 }
+.scroller {
+  background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
+  width: 842px;
+  height: 267px;
+}
 #slideshow > div { 
     position: absolute; 
     top: 0px; 
@@ -222,6 +229,17 @@ list-style-type: none;
   margin-left:auto;
   margin-right:auto;
 }
+
+#dropdown1 {
+  float:left;
+  margin-right: 20px;
+  margin-top: 40px;
+}
+#dropdown2 {
+  float:left;
+  margin-top: 40px;
+}
+
 .button {
   cursor: pointer;
   padding: 10px 10px 10px 10px;

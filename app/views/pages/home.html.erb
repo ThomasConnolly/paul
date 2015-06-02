@@ -1,2 +1,23 @@
-<h1>Common Lectionary</h1>
-<script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script >
+  <ul class="bxslider" id='main-slider'>
+    <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png' alt="" class="image-center"/></li>
+  </ul>
+  
+  <div class="main-body">
+    <h1>All are welcome to worship with us</h1>
+    <%= cl_image_tag("logos/Cross.jpg", width:"200", class: "floatleft") %>
+    <p><strong>Sundays</strong> 8 and 10 a.m.</p>
+    <p>To learn about our worship service and about the</p>
+    <p> <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path %>.</p><br>
+    <p>Nursery is available for the 10 a.m. service.</p><br>
+
+    <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.</p><br>
+
+    <p>We are at 3901 Davis Boulevard, a couple of blocks </p><p>east of Airport Road.</p>
+    <p><strong>Need directions?</strong> 
+    <%= link_to "Here is a map to St. Paul's", pages_directions_path %> </p>
+  </div>
+
+  <div class="sidebar">
+    <%= cl_image_tag("logos/update.png", size: "90%", class: "image-center") %>
+  </div>
+   

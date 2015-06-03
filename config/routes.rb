@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   get 'sunday_school/index'
   get 'formation/index'
   get 'prayer/index'
-  
-
-  #mount Payola::Engine => '/payola', as: :payola
+   #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
   get 'pages/dashboard'
   get 'pages/directions'

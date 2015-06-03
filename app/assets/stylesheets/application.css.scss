@@ -127,7 +127,7 @@ a {text-decoration: none;}
     margin-top: 20px; 
 }
 #menu-one, #menu-two, #menu-three {
-  margin-top: 40px;
+  margin-top: 70px;
   float: left;
   margin-left: 12px;
   position: relative;
@@ -136,6 +136,7 @@ a {text-decoration: none;}
 }
 #menu-one{
     width: 135px;
+    margin-left: 200px;
 }
 #menu-two {
   width: 170px;
@@ -240,14 +241,17 @@ list-style-type: none;
   margin-top: 40px;
 }
 
-.button {
+
+button {
   cursor: pointer;
-  padding: 10px 10px 10px 10px;
-  color:rgb(255, 255, 255);
-  font-size:20px;
-  font-family:arial, serif;
-  text-shadow: 2px 2px rgb(0, 0, 0);
+  text-decoration:none;
   border: 1px solid rgb(102, 0, 0);
+  padding: 4px 10px 4px 10px;
+  color:rgb(255, 255, 255);
+  font-size:18px;
+  font-family:arial, serif;
+  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
+  font-size: 18px;
   border-radius:5px 5px 5px 5px;
   -moz-border-radius:5px 5px 5px 5px;
   -webkit-border-radius:5px 5px 5px 5px;
@@ -259,14 +263,16 @@ list-style-type: none;
   background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(209, 16, 61)), to(rgb(102, 0, 0)));
   background-image:-moz-linear-gradient(-90deg, rgb(209, 16, 61), rgb(102, 0, 0));
 }
-.button:hover{
+button:hover{
   cursor: pointer;
-  padding: 10px 10px 10px 10px;
-  color:rgb(255, 255, 255);
-  font-size:20px;
-  font-family:arial, serif;
-  text-shadow: 2px 2px rgb(0, 0, 0);
+  text-decoration:none;
   border: 1px solid rgb(102, 0, 0);
+  padding: 4px 10px 4px 10px;
+  color:rgb(255, 255, 255);
+  font-size:18px;
+  font-family:arial, serif;
+  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
+  font-size: 22px;
   border-radius:5px 5px 5px 5px;
   -moz-border-radius:5px 5px 5px 5px;
   -webkit-border-radius:5px 5px 5px 5px;
@@ -278,14 +284,16 @@ list-style-type: none;
   background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
   background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
 }
-.button:active{
+button:active{
   cursor: pointer;
-  padding: 10px 10px 10px 10px;
-  color:rgb(255, 255, 255);
-  font-size:20px;
-  font-family:arial, serif;
-  text-shadow: 2px 2px rgb(0, 0, 0);
+  text-decoration:none;
   border: 1px solid rgb(102, 0, 0);
+  padding: 4px 10px 4px 10px;
+  color:rgb(255, 255, 255);
+  font-size:18px;
+  font-family:arial, serif;
+  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
+  font-size: 18px;
   border-radius:5px 5px 5px 5px;
   -moz-border-radius:5px 5px 5px 5px;
   -webkit-border-radius:5px 5px 5px 5px;

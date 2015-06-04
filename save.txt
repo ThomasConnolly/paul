@@ -1,0 +1,39 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+
+    <div id="menu-one" class="btn-group">
+      <button class="button dropdown-toggle" data-toggle="dropdown">Faith <span class="caret"> </button>
+      <ul>
+        <li> <%=link_to "Worship", worship_index_path %> </li>
+        <li> <%=link_to "Sermons", sermons_path %> </li>
+        <li> <%=link_to "Prayer Group", prayer_index_path %> </li>
+        <li> <%=link_to "Adult Education", formation_index_path %> </li>
+        <li> <%=link_to "Sunday School", sunday_school_index_path %> </li><li class="divider"></li>
+        <li> <%=link_to "Leadership", leadership_index_path %> </li>
+      </ul> 
+    </div>
+
+    <div id="menu-two"> 
+      <button class="button">Action <span class="caret"> </button>
+      <ul>
+        <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
+        <li> <%=link_to "Opportunities for you", opportunities_path %> </li>
+        <li> <%=link_to "Activities", activities_index_path %> </li>
+        <li> <%=link_to "Money Matters", pledges_path %> </li>
+        <li> <%=link_to "Let's keep in touch", posts_path %> </li>
+      </ul> 
+    </div>
+  </div>

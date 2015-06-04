@@ -129,22 +129,12 @@ a {text-decoration: none;}
 #menu-one, #menu-two, #menu-three {
   margin-top: 70px;
   float: left;
-  margin-left: 12px;
+  margin-left: 35px;
   position: relative;
   z-index:1000;
   list-style-type: none;
 }
-#menu-one{
-    width: 135px;
-    margin-left: 200px;
-}
-#menu-two {
-  width: 170px;
-}
-#menu-three {
-  width: 19
-  0px;
-}
+
 #special-menu-four {
     margin-left: 485px;
     margin-top: -40px;
@@ -185,6 +175,20 @@ list-style-type: none;
     margin-left: 505px;
     margin-top: -15px;
 }
+
+.dropdown-menu ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0 px;
+  margin: 0px;
+  }
+.dropdown-menu li {
+  display: block;
+  position: relative;
+  float: left; border: 1px solid #000;
+}
+
+
 .scroller {
   background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
   width: 842px;
@@ -207,7 +211,10 @@ list-style-type: none;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-
+#newsfeed {
+  margin-left: 0;
+  margin-right: 0;  
+}
 .floatleft {
     float: left;
     padding: 8px;
@@ -230,17 +237,19 @@ list-style-type: none;
   margin-left:auto;
   margin-right:auto;
 }
+.underConstruction {
+  margin-left: 350px;
+  margin-top: 70 px;
+  width: 350px;
+  border-width: 1px solid black;
+  padding: 8px;
+}
 
-#dropdown1 {
+#dropdown1 #dropdown2 {
   float:left;
   margin-right: 20px;
   margin-top: 40px;
 }
-#dropdown2 {
-  float:left;
-  margin-top: 40px;
-}
-
 
 button {
   cursor: pointer;

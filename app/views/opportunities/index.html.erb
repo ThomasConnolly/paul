@@ -8,9 +8,10 @@
       <p><strong>What </strong>&#09;<%= opportunity.what %><p>
       <p><strong>When </strong>&#09;<%= opportunity.when %></p>
       <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
-      <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>, <span class="email"><%= opportunity.user.email %></span></p>
-      <br> 
-    <% end %>
+      <% if opportunity.user.present? %>
+        <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>, <span class="email"><%= opportunity.user.email %></span></p> 
+      <% end %>
+  <% end %>
 
 
 </div>

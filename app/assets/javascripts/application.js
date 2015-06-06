@@ -19,5 +19,6 @@
 //= require_tree .
 //= require cloudinary
 //= require attachinary
+//= require js-dropdown
 //= require initialize
 

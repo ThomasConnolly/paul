@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
-  <% if post.user.avatar? %>
-    <%= cl_image_tag(post.user.avatar.path, { size: '100x120', crop: :fill, class: "floatleft" }) %> 
-  <% end %>
+  <%# if post.user.avatar.present? %>
+    <%#= cl_image_tag(post.user.avatar.path, { size: '100x120', crop: :fill, class: "floatleft" }) %> 
+  <%# end %>
     <p><strong><%= post.user.full_name.titleize  %></strong>:: 
       <%= post.content %>  
         <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </p></small>

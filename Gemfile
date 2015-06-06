@@ -50,7 +50,6 @@ group :development, :test do
   gem 'quiet_assets' 
   gem 'annotate'
   gem 'awesome_print', :require => "ap"
-  gem 'pry-rails'
 end
 
 group :test do

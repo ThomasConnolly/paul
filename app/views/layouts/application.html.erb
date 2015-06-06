@@ -10,7 +10,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="//assets/javascripts/jquery.bxslider.js" </script>
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
@@ -20,6 +20,7 @@
     <![endif]-->
     
    <meta name="google-site-verification" content="nO12ZA7a_Bqz96pWZbgVHRwkTMOTjI9Vn256E646FnI" /> 
+  <script type="text/javascript" src="js-jquery.dropdown.js"></script>
 </head>
 <body>
 <div class="page">
@@ -48,7 +49,27 @@
     
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 
-
+ 
+    <div id="faithdd" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-panel">
+          <li> <%=link_to "Worship", worship_index_path %> </li>
+          <li> <%=link_to "Sermons", sermons_path %> </li>
+          <li> <%=link_to "Prayer Group", prayer_index_path %> </li>
+          <li> <%=link_to "Adult Education", formation_index_path %> </li>
+          <li> <%=link_to "Sunday School", sunday_school_index_path %> </li>
+          <li class="divider"></li>
+          <li> <%=link_to "Leadership", leadership_index_path %> </li>
+        </ul> 
+    </div>
+    <div id="actiondd" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-panel">
+        <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
+        <li> <%=link_to "Opportunities for you", opportunities_path %> </li>
+        <li> <%=link_to "Activities", activities_index_path %> </li>
+        <li> <%=link_to "Money Matters", pledges_path %> </li>
+        <li> <%=link_to "Let's keep in touch", posts_path %> </li>
+      </ul> 
+    </div>
 </div>
 </body>
 </html>

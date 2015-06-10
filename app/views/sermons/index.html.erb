@@ -1,5 +1,3 @@
-<div class="sermon-body">
-
 <h1>Sermons from St. Paul's pulpit </h1>
 
 <table class="table table-striped">
@@ -15,4 +13,6 @@
 </table>
 
 
-</div>
+<% if current_user.present? %>
+  <%= link_to "Add a sermon", new_sermon_path %>
+<% end %>

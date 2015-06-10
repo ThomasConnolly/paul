@@ -1,4 +1,3 @@
-
 /*
  * jQuery Dropdown: A simple dropdown plugin
  *

@@ -10,7 +10,7 @@
 <% end %>
   <% if @post.photos? %>
     <%= render 'slides' %>
-<% end %>    
+  <% end %>    
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3">
     <% if @post.user.avatar? %>
@@ -41,5 +41,3 @@
   </div>
 </div>
 
-<br>
-  <%= render 'layouts/footer' %>

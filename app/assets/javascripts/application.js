@@ -12,13 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require jquery-dropdown
 //= require tinymce-jquery
+//= require jquery.turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require turbolinks
-//= require bxslider
-//= require_tree .
 //= require cloudinary
 //= require attachinary
-//= require js-dropdown
-//= require initialize
+
+
 

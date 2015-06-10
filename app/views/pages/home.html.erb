@@ -1,20 +1,18 @@
-  <ul class="bxslider" id='main-slider'>
-    <li><img src='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png' alt="" class="image-center"/></li>
-  </ul>
-  
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+  <%=image_tag 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png', width: "100%" %>
+    </div>
+  </div>
   <div class="main-body">
     <h1>All are welcome to worship with us</h1>
     <%= cl_image_tag("logos/Cross.jpg", width:"200", class: "floatleft") %>
     <p><strong>Sundays</strong> 8 and 10 a.m. Nursery available during the 10 a.m. service. Our current between the services video discussion is on the history of theology. In the library (office building) at 9:10 a.m.</p>
     <p>To learn about our worship service and about the
-   <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path %>.</p><br>
+   <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path%>.</p><br>
 
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.</p>
     <br>
-
-    <p><em>We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em></p>
-    <p><strong>Need directions?</strong> 
-    <%= link_to "Here is a map to St. Paul's", pages_directions_path %> </p><br>
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> <%= link_to "Here is a map to St. Paul's", pages_directions_path %>. </p><br>
     <p><strong>Sunday's Scripture Readings:</strong><script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script ></p>
     <%= cl_image_tag("logos/EFM_Logo.jpg", :width=>174, :crop=>:scale, class: "floatleft") %>
     <h2>An invitation to learn about your ministry</h2>
@@ -22,7 +20,7 @@
  <h2> Home of the friendly farmers' market </h2>
 
   <%= cl_image_tag("mktLogo_ggxhct.png", size:"47%", class: "floatleft") %>
-  <p>This is the church where the great tradition of a farmers' market flourishes. Each Saturday morning during "the season," November through April, a couple thousand neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big block party, and thanks too to our patrons. We will see you again in November.</p>
+  <p>This is the church where the great tradition of a farmers' market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big block party; and thanks too to our patrons. We will see you again in November.</p>
    </div>
   <div class="sidebar">
     <%= cl_image_tag("logos/update.png", size: "90%", class: "image-center") %>
@@ -30,11 +28,11 @@
 
  
 
- <p><strong>Confirmations </strong>  We are anticipating several confirmations/receptions when Bishop Garrison visits St. Paul's on Sunday June 14. Please plan to attend and stay for the special reception following the service.</p>
+ <p><strong>Confirmations </strong>  We are anticipating several confirmations/receptions when Bishop Garrison visits us next Sunday, June 14. Please plan to attend and stay for the special reception following the service.</p>
 <br>
  
 
-<p><strong>Vestry Meeting </strong> will be held in the parish library on Thursday, June 26 at 6:30 p.m.   All members of the parish are welcome to attend.</p>
+<p><strong>Vestry Meeting </strong> will be held in the parish library on Thursday, June 25 at 6:30 p.m.   All members of the parish are welcome to attend.</p>
 
 <div id="newsfeed">
   <script type="text/javascript" src="http://output72.rssinclude.com/output?type=js&amp;id=588062&amp;hash=bb2f36d2e14cdc8c15bc0bc2f3cc49dc"></script>

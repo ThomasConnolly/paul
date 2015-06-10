@@ -1,29 +1,17 @@
-<div class="sermon-page">
-    
-    <h3 id="special-menu-four">
+  <h3 id="special-menu-four">
     <%= link_to "<< Back to list of sermons", sermons_path %>
-    </h3>
-    <div class="clearall">
-    </div>
-  <h1>
-  <%= @sermon.title %>
-</h1>
-
-<p>
-  <%= @sermon.cites %>
-</p>
-  <div class="sermon-box">
-  <div class="sermon-picture">
-    <%= image_tag(@sermon.homilist.photo, width: '100', height: '150') %>
-  </div>
-  <h2>Sunday Sermon</h2>
-  <h3> <%= @sermon.homilist.name %></h3> 
-   <h4><em><%= @sermon.homilist.title %></em><br>
-    <%= @sermon.delivered_on.strftime("%B %d, %Y") %> </h4></div>
+  </h3>
+<div class="sermon-page">
+  <h1><%= @sermon.title %></h1>
+    <p><%= @sermon.cites %></p>
+  <%= render 'serbox' %>
+  
   <p class="sermon-text">
     <%= raw @sermon.sermon_body %>
-  </p>
-    <%# if current_user.admin? %>
-    <%#= link_to 'Edit', edit_sermon_path(@sermon) %> |
-    <%# end %>
+  </p><br>
+    
+    <% if current_user.present? %>
+    <%= link_to 'Edit', edit_sermon_path(@sermon) %> | 
+    <% end %>
 </div>
+ 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'prayer/index'
    #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
+  get 'pages/carousel'
   get 'pages/dashboard'
   get 'pages/directions'
   get 'visitors/index'

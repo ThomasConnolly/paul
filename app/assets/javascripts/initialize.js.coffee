@@ -1,2 +1,0 @@
-$('#main-slider').bxSlider()
-   

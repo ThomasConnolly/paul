@@ -2,11 +2,14 @@ class PagesController < ApplicationController
   def home
 end
 
-def dashboard
-  end
+  def dashboard
+end
 
-def directions
-  end
+  def directions
+end
+
+  def carousel
+end
 
 end
 

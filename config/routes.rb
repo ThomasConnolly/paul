@@ -10,6 +10,7 @@ Rails.application.routes.draw do
    #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
   get 'pages/carousel'
+  get 'pages/albergue'
   get 'pages/dashboard'
   get 'pages/directions'
   get 'visitors/index'

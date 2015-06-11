@@ -10,6 +10,8 @@ end
 
   def carousel
 end
+  def albergue
+end
 
 end
 

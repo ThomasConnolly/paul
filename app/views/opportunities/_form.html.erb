@@ -1,0 +1,10 @@
+<%= simple_form_for @opportunity do |f| %>
+<%= f.input :ministry %>
+<%= f.input :who %>
+<%= f.input :what %>
+<%= f.input :when %>
+<%= f.input :where %>
+<%= f.input :user_id %>
+<%= f.button :submit %>
+<% end %>
+<%= link_to "<< Back", opportunities_path %>

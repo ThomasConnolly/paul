@@ -1,57 +1,29 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<h2>Edit Your Information</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :first_name %> 
-    <%= f.text_field :first_name, autofocus: true %>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-<br>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave this line and the confirmation blank unless you want to change your password)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="form-inputs">
+    <%= f.input :first_name, required: true, autofocus: true %>
+    <%= f.input :last_name, required: true, autofocus: true %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+<h3>Want to change your password?</h3>
+    <%= f.input :password, autocomplete: false, hint: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :password_confirmation, required: false %><br><br>
+    <h3>Add your profile picture</h3>
+    <%= f.input :avatar, as: :attachinary %>
+    <%= f.input :current_password, hint: "we need your current password to confirm any changes you make", required: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-<br>
-<br>
-  <div class="field">
-    <%= f.label :current_password %> <i>(you have to be authenticated (signed in) to make any changes to this page)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-<br>
-  <div>
-  <h3>Add or replace your profile picture</h3>
-<br />
-  <div class="form-group">
-  <%= f.attachinary_file_field :avatar %>
-<br />
-
-  <br />
-  <div class="form-group">
-    <%= f.submit "submit", class: "btn btn-primary" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-<br>
-<%= link_to '<<Back', posts_path %>
 <br><br>
+<h3>Cancel my account</h3>
 
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<br><br>
-<hr>
-<h3>Cancel this account</h3>
-
-<p>Leaving the St. Paul's community? <%= link_to "Cancel my account", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Are you sure? This will destroy all of your information, including posts, photos and comments." }, method: :delete %></p>
-
-</div></div>
+<%= link_to "Back", :back %>

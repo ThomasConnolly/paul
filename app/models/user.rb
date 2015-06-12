@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   before_save :set_full_name
-  has_attachment :avatar, accept: [:jpg, :jpeg, :png, :gif], dependent: :destroy
+  has_attachment :avatar, accept: [:jpg, :jpeg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, :through => :posts
   has_many :books

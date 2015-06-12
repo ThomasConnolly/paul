@@ -13,12 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-dropdown
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
 //= require tinymce-jquery
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks
-//= require cloudinary
+//= require cloudinary/jquery.cloudinary
 //= require attachinary
 
 

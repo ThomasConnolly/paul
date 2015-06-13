@@ -11,7 +11,16 @@
       <% if opportunity.user.present? %>
         <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>, <span class="email"><%= opportunity.user.email %></span></p> 
       <% end %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %> 
+      <% end %>
   <% end %>
 
 
+</div>
+<div class="sidebar">
+<h3>This list is incomplete!</h3>
+<p>There are many ways to be involved at Saint Paul's. Your participation in your church makes for a healthier and happier congregation.</p>
+<p>So don't be shy. Just about anyone you encounter here will steer you to a ministry fit for you.</p>
+<p><strong>Is you ministry missing from this list? </strong> Give your webmaster a shout. Better yet, an email: tom.connolly@comcast.net.</p>
 </div>

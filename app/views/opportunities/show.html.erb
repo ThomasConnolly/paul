@@ -1,1 +1,35 @@
 <h1>show this opportunity</h1>
+
+<div class="main-body">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ministry:</strong>
+  <%= raw sanitize @opportunity.ministry %>
+</p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @opportunity.who %>
+</p>
+<p>
+  <strong>What:</strong>
+  <%= @opportunity.what %>
+</p>
+<p>
+  <strong>Where:</strong>
+  <%= @opportunity.where %>
+</p>
+<p>
+  <strong>When:</strong>
+  <%= @opportunity.when %>
+</p>
+<p>
+  <strong>Contact_id:</strong>
+  <%= @opportunity.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
+<%= link_to 'Back', opportunities_path %>
+</div>

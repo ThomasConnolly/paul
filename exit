@@ -1,0 +1,209 @@
+[33mcommit a141380b56b18d228cbb24477009658ed5abf48d[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Jun 13 19:06:43 2015 -0400
+
+    delete mailers
+
+[33mcommit 659c7378d5bd8dc1a6324edf892210610333319f[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Jun 13 19:00:39 2015 -0400
+
+    improve opportunities setup
+
+[33mcommit cd45e26673fae6b2ec1971535daaf4772439f486[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Fri Jun 12 17:34:28 2015 -0400
+
+    added opportunities show page
+
+[33mcommit d7d3cc2d7729330b99b54aad59ca3f0d4e516f7f[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Fri Jun 12 12:23:58 2015 -0400
+
+    fix user avatar
+
+[33mcommit e9bd68d3fb653dbb4512f4bb4ec97eda6e23d5d0[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Thu Jun 11 19:27:00 2015 -0400
+
+    delete stripe stuff
+
+[33mcommit fdcb1ce4f810095240d204a8132fd516e3b06055[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Thu Jun 11 12:10:39 2015 -0400
+
+    fix user sign_up
+
+[33mcommit bd99d6916f7f2d3aa9a11dee18c5c32d1d612a2c[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 10 22:11:32 2015 -0400
+
+    added static pages
+
+[33mcommit 4de9bad252d676b252b2f103a426028529fca042[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 10 12:17:10 2015 -0400
+
+    fix formation page
+
+[33mcommit 6b28312b217f2a5fbf3f83aac43ee931a8c4164f[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 10 10:41:28 2015 -0400
+
+    add text to update
+
+[33mcommit 45a951faa2ca7c290573908fa4bb107f066e664b[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 10 10:09:25 2015 -0400
+
+    fix tinymce
+
+[33mcommit 7166c7b9b6231d4cfd623f072b757c793968d890[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Fri Jun 5 21:29:56 2015 -0400
+
+    fixing dropdown on home page
+
+[33mcommit ad6e4d89d3d38ed9dd0a5a3e667b3b903b1f0c12[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Thu Jun 4 12:40:39 2015 -0400
+
+    more fixes
+
+[33mcommit 7a348999b06e7f2e43bce1e44d0f56a9aa74cf1d[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 3 10:34:43 2015 -0400
+
+    Sunday, not Sunay
+
+[33mcommit 8be6d922ba28377f37c71e4484408814a07e3f9f[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Jun 3 08:34:51 2015 -0400
+
+    change home header
+
+[33mcommit f8ab23825e8e638c8efc05a1d8ef5ff5e94274ec[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Tue Jun 2 16:00:43 2015 -0400
+
+    adding pages
+
+[33mcommit 5ba239665a92e9a19ab71adb6d7995495a215d2e[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Mon Jun 1 00:35:09 2015 -0400
+
+    a few changes
+
+[33mcommit fea27b9f103954a800442b6e14c7885480c47433[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sun May 31 08:32:11 2015 -0400
+
+    precompiled assets
+
+[33mcommit f84445570d2dfe85de18c2d5044cc251a4098f38[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sun May 31 08:29:32 2015 -0400
+
+    deleted unneeded photos
+
+[33mcommit d5d9dd78941ec9d0fb224d8b69fa0dc966ec2730[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat May 30 21:45:09 2015 -0400
+
+    trying to fix tinymce on heroku
+
+[33mcommit 392b5c81027b33db5aae81278b064cc36fbedfe7[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat May 30 20:53:28 2015 -0400
+
+    tinymce on heroku
+
+[33mcommit d10e750fbeaf72f7da4da590934035fb56176b1f[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat May 30 15:14:05 2015 -0400
+
+    fixed type in controller
+
+[33mcommit cc18725ac946ee5f87eac9ea8501069090af08e1[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat May 30 15:08:22 2015 -0400
+
+    many changes
+
+[33mcommit 6a2c1ac78cee7f2a2ba1fa59a71cbc2bd13a1a68[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 23:33:33 2015 -0400
+
+    added 12 factor
+
+[33mcommit f89203f9cd8763bb8dcdb4785e79f362fc0e1ae3[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 23:31:27 2015 -0400
+
+    remove tackons
+
+[33mcommit 114fe255aff00fad9221ba556bd18cf46ad3f8ce[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 23:26:46 2015 -0400
+
+    remove ability
+
+[33mcommit 982db58bc90167c5f5d9315ec0873fb719897c48[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 22:59:44 2015 -0400
+
+    another migration fix
+
+[33mcommit 3abbeb6fd49cbc32253f827ed27ccd5fff92f3ef[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 22:53:20 2015 -0400
+
+    fixed migration
+
+[33mcommit c59a07f43ba11facae0afbc5eb22d0efc93ac023[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 22:32:28 2015 -0400
+
+    precompile assets'
+
+[33mcommit 18e5b53f6429b82afcf8edabf1622421a5f7c1a5[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sat Apr 18 22:28:15 2015 -0400
+
+    new gems
+
+[33mcommit 367986c48bf7bb5efbf4883d471681a92e0e7430[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Tue Mar 24 11:02:13 2015 -0400
+
+    deleted unneeded js files
+
+[33mcommit b56085576fa5337163a2a60c82407abd3f71f878[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Wed Mar 18 08:28:54 2015 -0400
+
+    fix security
+
+[33mcommit 836904ff1c6395c4b993affd1dd61a82738294ed[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sun Mar 15 09:07:07 2015 -0400
+
+    many refactorings
+
+[33mcommit 9ea5ab0a911e3c8c43e583cf234f8433e3cbb957[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sun Jan 25 17:52:17 2015 -0500
+
+    testing photo album upload
+
+[33mcommit 197cf26649c31abd9854e71c969c1da77d111a64[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Mon Dec 15 16:40:06 2014 -0500
+
+    categories
+
+[33mcommit 26299d85c0b4964141bfd1dfeeaf0ca108e5e6f8[m
+Author: ThomasConnolly <tom.connolly@comcast.net>
+Date:   Sun Dec 14 08:39:19 2014 -0500
+
+    initial commit

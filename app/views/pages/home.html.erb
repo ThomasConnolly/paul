@@ -1,6 +1,7 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-  <%=image_tag 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png', width: "100%" %>
+    <%= render 'carousel' %>
+  <%#=image_tag 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png', width: "100%" %>
     </div>
   </div>
   <div class="main-body">
@@ -16,6 +17,7 @@
     <p><strong>Sunday's Scripture Readings:</strong><script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script ></p>
     
     <h2>An invitation to learn about your ministry</h2>
+    <%= cl_image_tag("logos/EFM_Logo.jpg", class: "floatright", size: "45%") %> 
     <p>The program called "Education for Ministry" is for lay people who want to learn about the bible, the faith and how to fulfill our baptismal promises in the modern world. An invitation to a fuller explanation and an opportunity to enroll is <%= link_to "here",formation_index_path %>. 
  <h2> Home of the friendly farmers' market </h2>
 
@@ -25,9 +27,9 @@
   <div class="sidebar">
     <%= cl_image_tag("logos/update.png", size: "90%", class: "image-center") %>
 
- <p><strong>Bishop's visit</strong>  Several persons will be confirmed or recieved into the Episcopal Church this Sunday, June 14, during the 10 a.m. worship service. The Rt. Rev J. Michael Garrison will preside.  Please plan to attend and stay for the special reception following the service.</p>
- <p>Several of the confirmands are members of St. Paul's  Community of the Holy Name of Jesus, the Creole-speaking parishioners who worship at 5:30 Sunday afternoons.</p>
- <p>This will be Bishop Garrison's first visit to our parish. He is one of two assisting bishops in our diocese, and was formerly the Tenth Bishop of Western New York.
+ <p><strong>We may lose our bishop!</strong> Bishop Dabney Smith is one of four candidates to replace the Most Rev. Dr. Katharine Jefferts Schori as presiding bishop of the Episcopal Church. The first woman elected as a primate in the Anglican Communion will complete her six-year term of office this month. </p>
+ <p>A new presiding bishop will be elected June 27 during the General Convention of the church in Salt Lake City.</p>
+ <p>Bishop Smith, the Rt. Revs. Thomas E. Breidenthal, bishop of the Diocese of Southern Ohio; Michael B. Curry, bishop of the Diocese of North Carolina; and Ian T. Douglas, bishop of the Diocese of Connecticut  all said they would accept a call to be presiding bishop. It's nothing like a political election, as each extolled the virtues of the others.</p>
 <br>
 <p><strong>Vestry Meeting </strong> will be held in the parish library on Thursday, June 25 at 6:30 p.m.   All members of the parish are welcome to attend. An agenda will be posted about a week before the meeting.</p>
 

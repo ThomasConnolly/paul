@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-dropdown
+//= require jquery-nevo-slider
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload

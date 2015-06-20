@@ -23,4 +23,10 @@ class UsersController < ApplicationController
       redirect_to :back, :alert => "Restricted page"
   end
  end
+
+
+
+   def user_params
+    params.require(:user).permit(:first_name, :last_name, :full_name, :email, :password, :password_confirmation, :avatar)
+end
 end

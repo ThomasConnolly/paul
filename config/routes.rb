@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
   
+  resources :contacts
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'

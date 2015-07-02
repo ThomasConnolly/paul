@@ -3,12 +3,21 @@ class TasksController < ApplicationController
   before_action :set_tasks, only: [:edit, :update, :destroy]
   respond_to :html, :js
 
+ def index
+  @tasks = Task.all
+ end
+
  def new
   @task = Task.new
 end
 
   def create
     @task = Task.create(task_params)
+      if @task.save
+      redirect_to @tasks
+    else
+      render :new
+    end
   end
 
   def update

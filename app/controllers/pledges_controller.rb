@@ -29,8 +29,11 @@ class PledgesController < ApplicationController
   def create
     @pledge = Pledge.new(pledge_params)
       @pledge.user_id = current_user.id if current_user
-       @pledge.save
-      
+       if @pledge.save
+        redirect_to @pledge
+      else
+        render :new
+      end   
   end
 
 

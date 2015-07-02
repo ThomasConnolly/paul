@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   before_save :set_full_name
+  
+
   has_attachment :avatar, accept: [:jpg, :jpeg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, :through => :posts
@@ -15,13 +17,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:full_name]
 
-  end
 
-
-
-  private
-
+  
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
+  end  
+
 end
+
+
 

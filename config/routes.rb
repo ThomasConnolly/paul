@@ -1,7 +1,6 @@
 
 Rails.application.routes.draw do
   
-  resources :contacts
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'
@@ -10,9 +9,7 @@ Rails.application.routes.draw do
   get 'prayer/index'
    #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
-  get 'pages/carousel'
   get 'pages/albergue'
-  get 'pages/dashboard'
   get 'pages/directions'
   get 'visitors/index'
   #get 'products/:id', to: 'products#show', :as => :products
@@ -24,12 +21,12 @@ Rails.application.routes.draw do
   resources :books
   resources :pledges
   resources :sermons
-  resources :profiles
   devise_for :users
+  resources :users
+  resources :profiles
   resources :posts do
     resources :comments
   end
-  
   
   mount Attachinary::Engine => '/attachinary'
   root to: 'pages#home'

@@ -13,7 +13,7 @@
     <%= f.input :password, autocomplete: false, hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %><br><br>
     <h3>Add your profile picture</h3>
-    <%= f.input :avatar, as: :attachinary %>
+    <%= f.input :avatar, as: :attachinary %><br>
     <%= f.input :current_password, hint: "we need your current password to confirm any changes you make", required: true %>
   </div>
 
@@ -21,9 +21,12 @@
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-<br><br>
+<br>
+<%= link_to "<<Back", root_path %>
+<br>
+<hr>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+

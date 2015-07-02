@@ -15,13 +15,11 @@ def create
 end
 
   def destroy
-    @comment = Comment.find(params[:id])
       @comment.destroy
       redirect_to posts_path
     end
 
   def edit
-    @comment = Comment.find(params[:id])
     redirect_to posts_path
   end
   

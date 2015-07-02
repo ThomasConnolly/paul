@@ -18,9 +18,8 @@ before_action :set_sermon, only: [:show, :edit, :update, :destroy]
 
   def create
     @sermon = Sermon.new(sermon_params)
-
       if @sermon.save
-        redirect_to @sermon, notice: 'Sermon was successfully created.' 
+        redirect_to @sermon 
       else
         render :new 
     end
@@ -28,7 +27,7 @@ before_action :set_sermon, only: [:show, :edit, :update, :destroy]
 
   def update
       if @sermon.update(sermon_params)
-      redirect_to @sermon, notice: 'Sermon was successfully updated.'
+      redirect_to @sermon
     end
   end
 
@@ -37,8 +36,9 @@ before_action :set_sermon, only: [:show, :edit, :update, :destroy]
       redirect_to sermons_url
   end
 
+
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_sermon
       @sermon = Sermon.find(params[:id])
     end 

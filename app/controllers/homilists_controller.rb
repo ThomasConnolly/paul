@@ -18,36 +18,25 @@ class HomilistsController < ApplicationController
 
   def create
     @homilist = Homilist.new(homilist_params)
-
-    respond_to do |format|
       if @homilist.save
-        format.html { redirect_to @homilist, notice: 'Homilist was successfully created.' }
-        format.json { render :show, status: :created, location: @homilist }
+        redirect_to @homilist
       else
-        format.html { render :new }
-        format.json { render json: @homilist.errors, status: :unprocessable_entity }
-      end
+        render :new
     end
   end
 
   def update
     respond_to do |format|
       if @homilist.update(homilist_params)
-        format.html { redirect_to @homilist, notice: 'Homilist was successfully updated.' }
-        format.json { render :show, status: :ok, location: @homilist }
+        redirect_to @homilist
+        
       else
-        format.html { render :edit }
-        format.json { render json: @homilist.errors, status: :unprocessable_entity }
-      end
+        render :edit 
     end
   end
 
   def destroy
     @homilist.destroy
-    respond_to do |format|
-      format.html { redirect_to homilists_url, notice: 'Homilist entry was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
 

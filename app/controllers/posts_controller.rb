@@ -23,15 +23,16 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   def create
     @post = Post.new(post_params)
       @post.user = current_user
+      
       if @post.save
-        redirect_to @post
+        redirect_to posts_path
       else
         render 'new'
+      end
     end
-  end
 
   def update
-      if @post.update(post_params)
+      if @post.update_attributes(post_params)
         redirect_to @post
       else
         render 'edit'
@@ -41,7 +42,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   def destroy
     @post.destroy
       redirect_to posts_path, notice: 'Post was removed'
-
+    end
   end
 
 
@@ -51,15 +52,11 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 private
 
+ def post_params
+      params.require(:post).permit(:content, :user_id, :post_picture, photos: [])
+    end
+
    def set_post
       @post = Post.find(params[:id])
     end
-
-
-
-
-    def post_params
-      params.require(:post).permit(:content, :user_id, :post_picture, photos: [])
-    end
-  end
-
+  

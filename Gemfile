@@ -31,7 +31,7 @@ gem 'attachinary'
 gem 'sidekiq'
 #gem 'whenever', require: false
 #gem 'socialization'
-
+gem 'namecase'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #gem 'stripe-rails'

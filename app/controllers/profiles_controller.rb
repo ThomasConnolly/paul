@@ -20,31 +20,24 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
-
-    respond_to do |format|
+   
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Your profile was successfully created.' }
+        redirect_to @profile
       else
-        format.html { render :new }
-      end
+        render :new
     end
   end
   
   def update
-    respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        redirect_to @profile
       else
         render :new 
-      end
     end
   end
 
   def destroy
     @profile.destroy
-    respond_to do |format|
-      format.html { redirect_to profile_url, notice: 'Book was successfully destroyed.' }
-    end
   end
 
   private

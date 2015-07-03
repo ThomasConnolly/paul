@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   before_save :set_full_name
-  
+  enum role: [ :admin, :editor, :member ]
 
   has_attachment :avatar, accept: [:jpg, :jpeg, :png, :gif]
   has_many :posts, dependent: :destroy

@@ -13,6 +13,7 @@ class OpportunitiesController < ApplicationController
   end
 
   def new
+    @users = User.all
     @opportunity = Opportunity.new
   end
 

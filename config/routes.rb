@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :pledges
   resources :sermons
   devise_for :users
-  resources :users
+  resources :users 
   resources :profiles
   resources :posts do
     resources :comments

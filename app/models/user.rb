@@ -1,16 +1,18 @@
 class User < ActiveRecord::Base
 
   before_save :set_full_name
-  enum role: [ :admin, :editor, :member ]
+  enum role: [ :admin, :editor, :member, :guest ]
+  
 
   has_attachment :avatar, accept: [:jpg, :jpeg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, :through => :posts
   has_many :books
   has_many :sermons
-  has_one  :profile, dependent: :destroy
+  has_one  :profile
   has_many :opportunities
   has_many :pledges
+  after_create :create_profile
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,11 +20,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:full_name]
 
 
+  def email_required?
+    false
+  end
+
   
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
   end  
-
 end
 
 

@@ -14,14 +14,14 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
       @post.user = current_user
       
       if @post.save

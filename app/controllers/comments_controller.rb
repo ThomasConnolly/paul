@@ -3,14 +3,13 @@ before_action :set_comment, only: [:show, :edit, :update, :new, :destroy]
 before_action :authenticate_user!
 
 def create
-  
   @post = Post.find(params[:post_id])
   @comment = @post.comments.create(comment_params)
   @comment.user = current_user
   if @comment.save
     redirect_to post_path(@comment.post)
   else
-    flash.now[:danger] = "error"
+    render 'new'
   end
 end
 

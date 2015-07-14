@@ -6,7 +6,7 @@
   </div>
   <div class="main-body">
     <h1>All are welcome to worship with us</h1>
-    <%= cl_image_tag("logos/Cross.jpg", width:"200", class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
     <p><strong>Sundays</strong> 8 and 10 a.m. Nursery available during the 10 a.m. service. Our current between the services video discussion is on the history of theology. In the library (office building) at 9:10 a.m.</p>
     <p>To learn about our worship service and about the
    <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path%>.</p><br>
@@ -17,16 +17,17 @@
     <p><strong>Sunday's Scripture Readings:</strong><script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script ></p>
     
     <h2>An invitation to learn about your ministry</h2>
-    <%= cl_image_tag("logos/EFM_Logo.jpg", class: "floatright", size: "45%") %> 
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/efm_logo.png", class: "floatright", size: "45%") %> 
     <p>The program called "Education for Ministry" is for lay people who want to learn about the bible, the faith and how to fulfill our baptismal promises in the modern world. An invitation to a fuller explanation and an opportunity to enroll is <%= link_to "here",formation_index_path %>. 
- <h2> Home of the friendly farmers' market </h2>
+ <h2> Home of the friendly farmers&rsquo; market </h2>
 
-  <%= cl_image_tag("mktLogo_ggxhct.png", size:"47%", class: "floatleft") %>
-  <p>This is the church where the great tradition of a farmers' market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big friendly block party; and thanks too to our patrons. We will see you again in November.</p>
+  <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"47%", class: "floatleft") %>
+  <p>This is the church where the great tradition of a farmers&rsquo; market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big friendly block party; and thanks too to our patrons. We will see you again in November.</p>
    </div>
   <div class="sidebar">
-    <%= cl_image_tag("logos/update.png", size: "90%", class: "image-center") %>
-<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/curry.png", size: "95%", class: "image-center") %>
+    
+<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
+<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/curry.png", width: "95%", class: "image-center") %>
  <p><strong>The Rt. Rev. Michael Curry, </strong> above, will be invested Nov. 1, All Saints Day, as the new presiding bishop of the Episcopal Church. He is the first African-American to be elected to that post, and replaces the Rt. Rev. Katharine Jeffords Schori, the first woman to hold the office.
 <p>
 See what he had to say after his election Saturday at the 78th General Convention <%= link_to "here.", "http://episcopaldigitalnetwork.com/ens/2015/06/27/thankful-honored-and-blessed-presiding-bishop-elect-curry-addresses-the-media/" %></p>

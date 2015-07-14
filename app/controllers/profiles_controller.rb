@@ -2,7 +2,8 @@ class ProfilesController < ApplicationController
 
   before_action :set_profile, only: [:edit, :update, :destroy]
 
-
+  def new
+  end
 
   def edit
     @profile = current_user.profile

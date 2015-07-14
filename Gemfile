@@ -13,6 +13,7 @@ gem 'jquery-turbolinks'
 #gem 'dragonfly'
 gem 'tinymce-rails'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 4.0.3'
 gem 'therubyracer',  platforms: :ruby
@@ -26,17 +27,19 @@ gem 'simple_form'
 #gem 'simple-navigation-bootstrap'
 #gem 'cancancan', '~> 1.9' 
 gem 'bcrypt'
-gem 'cloudinary'
-gem 'attachinary'
+#gem 'cloudinary'
+#gem 'attachinary'
 gem 'sidekiq'
 #gem 'whenever', require: false
 #gem 'socialization'
-gem 'namecase'
+#gem 'namecase'
+gem 'rails_admin'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #gem 'stripe-rails'
 #gem 'payola-payments'
-
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 gem 'devise'
 #gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -68,6 +71,6 @@ end
 #gem 'formtastic', github: 'justinfrench/formtastic'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'puma'
 gem 'foreman'
 gem 'rails_12factor'

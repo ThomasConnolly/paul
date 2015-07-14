@@ -8,7 +8,7 @@
     <%= raw @sermon.sermon_body %>
   </p><br>
     
-    <% if current_user.present? %>
+    <% if current_user.admin? %>
     <%= link_to 'Edit', edit_sermon_path(@sermon) %> | 
     <% end %>
 </div>

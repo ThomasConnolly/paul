@@ -22,8 +22,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks
-//= require cloudinary/jquery.cloudinary
-//= require attachinary
+
 
 
 

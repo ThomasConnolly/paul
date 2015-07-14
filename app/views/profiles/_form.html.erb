@@ -1,6 +1,7 @@
 <%= form_for @profile do |f| %>  
   <p>
     <%= f.hidden_field :user_id, value: current_user %>
+    
     <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.<br>
     <div class="form-group">
     <%= f.text_field :cities, class: "form-control"%>

@@ -11,7 +11,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -43,13 +42,7 @@
 <%= render 'layouts/footer' %> 
 
 
-<script>  
-    $( document ).ready(function() {
-      $('.attachinary-input').attachinary()
-  });
-</script>
- 
-    
+
 
 
 </div>

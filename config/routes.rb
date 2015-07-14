@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
   
+  
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get 'prayer/index'
    #mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
+  root 'pages#home'
   get 'pages/albergue'
   get 'pages/directions'
   get 'visitors/index'
@@ -27,7 +29,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  mount Attachinary::Engine => '/attachinary'
-  root to: 'pages#home'
 end

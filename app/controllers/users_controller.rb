@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :admin_only
 
   def index
     @users = User.all.order(:last_name)
@@ -7,9 +8,8 @@ class UsersController < ApplicationController
   
   
   def show
-    unless @user = User.find(params[:id])
-      redirect_to :back, :alert => "Access denied."
-    end
+    @user = User.find(params[:id])
+    @profile = @user.profile
   end
 
 end

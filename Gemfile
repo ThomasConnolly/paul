@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
@@ -9,11 +8,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-#gem 'activeadmin'
-#gem 'dragonfly'
+# gem 'activeadmin'
+# gem 'dragonfly'
 gem 'tinymce-rails'
-gem 'paperclip'
-gem 'aws-sdk'
+# gem 'paperclip'
+# gem 'aws-sdk', '~> 1.6'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 4.0.3'
 gem 'therubyracer',  platforms: :ruby
@@ -23,26 +22,24 @@ gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-fileupload-rails'
 gem 'simple_form'
-#gem 'nivo-rails'
-#gem 'simple-navigation-bootstrap'
-#gem 'cancancan', '~> 1.9' 
+gem 'nivo-rails'
+# gem 'simple-navigation-bootstrap'
+# gem 'cancancan', '~> 1.9'
 gem 'bcrypt'
-#gem 'cloudinary'
-#gem 'attachinary'
+gem 'cloudinary'
+gem 'attachinary'
 gem 'sidekiq'
-#gem 'whenever', require: false
-#gem 'socialization'
-#gem 'namecase'
-gem 'rails_admin'
-
-#gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-#gem 'stripe-rails'
-#gem 'payola-payments'
+# gem 'whenever', require: false
+# gem 'socialization'
+# gem 'namecase'
+# gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+# gem 'stripe-rails'
+# gem 'payola-payments'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-
 gem 'devise'
-#gem 'sdoc', '~> 0.4.0',          group: :doc
+# gem 'sdoc', '~> 0.4.0',          group: :doc
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -51,9 +48,9 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'quiet_assets' 
+  gem 'quiet_assets'
   gem 'annotate'
-  gem 'awesome_print', :require => "ap"
+  gem 'awesome_print', require: "ap"
 end
 
 group :test do
@@ -63,12 +60,12 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
-#gem 'mail_form'
-#gem 'gibbon'
-#gem 'activeadmin', github: 'gregbell/active_admin'
-#gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
-#gem 'ransack', github: 'activerecord-hackery/ransack'
-#gem 'formtastic', github: 'justinfrench/formtastic'
+# gem 'mail_form'
+# gem 'gibbon'
+# gem 'activeadmin', github: 'gregbell/active_admin'
+# gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+# gem 'ransack', github: 'activerecord-hackery/ransack'
+# gem 'formtastic', github: 'justinfrench/formtastic'
 
 # Use unicorn as the app server
 gem 'puma'

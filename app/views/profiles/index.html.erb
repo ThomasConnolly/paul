@@ -1,13 +1,13 @@
 
 <div class="main-body">
   <h1>Profiles of the Saint Paul's Family</h1>
-    <p> This "Facebook"-like feature will be seen only by members of the St. Paul's family. Please urge your friends to post here. </p>
+    <p> Get to know your fellow parishioners. Please urge your friends to post their profiles. </p>
       <p><strong><%= link_to "Create your profile", new_profile_path %></strong><br></p>
 
 <% @profiles.each do |profile| %>
   <div class="post"> <%= cl_image_tag(profile.user.avatar.path, { size: '100x120', class: "floatleft"}) %>
   <h3><%= profile.user.full_name.titleize  %></h3>
-  <small><%=link_to "Show this profile", profile_path(profile) %></small></div>
+  <small><%#=link_to "Show this profile", profile_path(profile) %></small></div>
   <div class="clearall"></div> 
 <% end %>
 </div>

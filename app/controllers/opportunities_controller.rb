@@ -13,13 +13,12 @@ class OpportunitiesController < ApplicationController
   end
 
   def new
-    @users = User.all
+    @users = User.all.order(:last_name)
     @opportunity = Opportunity.new
   end
 
   def create
     @opportunity = Opportunity.new(opportunity_params)
-
     if @opportunity.save
       redirect_to @opportunity
     else
@@ -27,30 +26,30 @@ class OpportunitiesController < ApplicationController
     end
   end
 
-    
   def update
-      if @opportunity.update(opportunity_params)
-        redirect_to @opportunity
-      else
-        render :new
+    if @opportunity.update(opportunity_params)
+      redirect_to @opportunity
+    else
+      render :new
     end
   end
 
   def destroy
     @opportunity.destroy
-      redirect_to opportunity_url, notice: 'Entry was successfully destroyed.'
+      redirect_to opportunity_url, notice: 'Entry successfully destroyed.'
   end
 
 
 
 
-  private 
+  private
 
   def set_opportunity
     @opportunity = Opportunity.find(params[:id])
-  end 
+  end
 
   def opportunity_params
-    params.require(:opportunity).permit(:user_id, :ministry, :who, :what, :when, :where)
+    params.require(:opportunity).permit(:user_id, :ministry, :who, 
+      :what, :when, :where)
   end
 end

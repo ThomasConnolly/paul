@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
     <div id="menu-five">
       <p><small>
-        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%#= link_to "Edit your profile", edit_profile_path %>
+        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%#= link_to "Edit profile", edit_profile_path %>
       </small></p></div>
       <% end %>   
   </div>
@@ -35,6 +35,6 @@
         <li> <%=link_to "Opportunities for you", opportunities_path %> </li>
         <li> <%#=link_to "Activities", activities_index_path %> </li>
         <li> <%#=link_to "Money Matters", pledges_path %> </li>
-        <li> <%=link_to "Let's keep in touch", posts_path %> </li>
+        <li> <%=link_to "Connections", posts_path %> </li>
       </ul> 
     </div>

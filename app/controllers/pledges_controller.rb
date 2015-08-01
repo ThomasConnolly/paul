@@ -2,9 +2,6 @@ class PledgesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
 
-
-
-
   def index
     @pledges = Pledge.all
   end
@@ -28,8 +25,8 @@ class PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.new(pledge_params)
-      @pledge.user_id = current_user.id if current_user
-       if @pledge.save
+    @pledge.user_id = current_user.id if current_user
+      if @pledge.save
         redirect_to @pledge
       else
         render :new
@@ -37,15 +34,14 @@ class PledgesController < ApplicationController
   end
 
 
+private
 
-  private
-
-    def set_pledge
-      @pledge = Pledge.find(params[:id])
-    end
-
-    def pledge_params
-      params.require(:pledge).permit [:amount, :divisor, :pay_this, :user_id]
-    end
+  def set_pledge
+    @pledge = Pledge.find(params[:id])
   end
-    
+
+  def pledge_params
+    params.require(:pledge).permit [:amount, :divisor, :pay_this, 
+      :user_id]
+  end
+end

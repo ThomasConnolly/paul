@@ -1,5 +1,5 @@
-<%= image_tag profile.user.avatar.url(:thumb), {class: "floatleft"} %>
-<h3><%= @profile.user.full_name.titleize  %></h3>
+<%= cl_image_tag(profile.user.avatar.path, { size: '300x300', crop: :fill, class: "floatleft" }) if current_user.avatar? %>
+<h3><%= profile.user.full_name.titleize  %></h3><div class="clearall"></div>
 
 <h4>Important locations</h4>
 <p><%= @profile.cities  %></p>

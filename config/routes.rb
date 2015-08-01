@@ -1,6 +1,4 @@
-
 Rails.application.routes.draw do
-  
   
   get 'activities/index'
   get 'markets/index'
@@ -8,14 +6,17 @@ Rails.application.routes.draw do
   get 'sunday_school/index'
   get 'formation/index'
   get 'prayer/index'
-   #mount Payola::Engine => '/payola', as: :payola
+  # mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
   root 'pages#home'
   get 'pages/albergue'
   get 'pages/directions'
   get 'visitors/index'
-  #get 'products/:id', to: 'products#show', :as => :products
-  #resources :pledges
+  # get ':id' => 'users#show', as: :user_profile
+  # get ':id/setting' => 'users#edit', as: :user_setting
+  # match ':id/setting' => 'profiles#update', via: [:put, :patch]
+  # resources :pledges
+  
   resources :worship, only: :index
   resources :tasks
   resources :opportunities
@@ -24,12 +25,17 @@ Rails.application.routes.draw do
   resources :pledges
   resources :sermons
   devise_for :users
-  resources :users 
+    devise_scope :user do
+      get 'register', to: 'devise/registrations#new', as: :register
+      get 'login', to: 'devise/sessions#new', as: :login
+      get 'signout', to: 'devise/sessions#destroy', as: :logout
+    end
+  resources :users
   resources :profiles
   resources :posts do
     resources :comments
   end
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Attachinary::Engine => '/attachinary'
   
 end

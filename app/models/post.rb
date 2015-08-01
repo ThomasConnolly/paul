@@ -10,12 +10,12 @@
 #
 
 class Post < ActiveRecord::Base
-  has_attachment :post_picture, accept: [:jpg, :png, :gif]
-  has_attachments :photos, accept: [:jpg, :jpeg, :png, :gif]
+  
   validates_presence_of :content
+  has_attachment :post_picture, accept: [:jpg, :png, :gif]
+  has_attachments :photos, accept: [:jpg, :png, :gif] 
   has_many :comments, dependent: :destroy
   default_scope -> { order('created_at DESC') }
   belongs_to :user
-  
-end
 
+end

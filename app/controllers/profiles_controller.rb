@@ -1,33 +1,46 @@
 class ProfilesController < ApplicationController
-
-  before_action :set_profile, only: [:edit, :update, :destroy]
-
+ before_action :authenticate_user! 
+ before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  
   def new
   end
 
+  def create
+    @profile = current_user.build_profile(profile_params)
+    if @profile.save
+      flash[:success] = "Profile saved"
+      redirect_to edit_profile_path
+    else
+      render 'new'
+    end
+  end
+
   def edit
-    @profile = current_user.profile
-    
+  end
+
+  def show
   end
   
   def update
-      if @profile.update(profile_params)
-        redirect_to posts_path
-      else
-        render :new
+    if @profile.update_attributes(profile_params)
+      redirect_to root_path
+    else
+      render 'edit'
     end
   end
 
-  def profile
+  def index
+    @profiles = Profile.all
   end
 
-  private
 
+
+private
     def set_profile
-      @profile = Profile.find(params[:id])
-    end
+    @profile = Profile.find(params[:id])
+  end
 
-    def profile_params
-      params.require(:profile).permit(:user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church)
-    end
+  def profile_params
+    params.require(:profile).permit(:id, :user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church, :avatar)
+  end
 end

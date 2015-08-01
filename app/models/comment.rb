@@ -8,11 +8,10 @@
 #  updated_at :datetime
 #  post_id    :integer
 #  user_id    :integer
-#
 
 class Comment < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
   validates_presence_of :body
-  
+
 end

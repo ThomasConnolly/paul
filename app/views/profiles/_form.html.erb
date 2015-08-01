@@ -1,35 +1,46 @@
-<%= form_for @profile do |f| %>  
-  <p>
-    <%= f.hidden_field :user_id, value: current_user %>
-    
-    <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.<br>
-    <div class="form-group">
-    <%= f.text_field :cities, class: "form-control"%>
-  </p>
-  <p><strong>Growing up: </strong>Write a little about your growing-up years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:
-    <div class="form-group">
-    <%= f.text_area :background, class: "form-control"%>
-  </p>
-  <p><strong>Building a career: </strong>This is where you tell us about your work life. Multiple careers? Lots of travel? 
-    <div class="form-group">
-    <%= f.text_area :career, class: "form-control"%>
-  </p>
-  <p><strong>Family matters: </strong>Tell us about your immediate family first, then any famous or infamous ancestry or offspring. Where are the kids?
-    <div class="form-group">
-    <%= f.text_area :family, class: "form-control"%>
-  </p>
-  <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits.  Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?
-    <div class="form-group">
-    <%= f.text_area :lifestyle, class: "form-control"%>
-  </p>
-  <p><strong>Life in the world: </strong>Do you or did you belong to any service organizations or clubs? Tells us about your civic involvement as a volunteer or elected or appointed leader in the secular world. 
-    <div class="form-group">
-    <%= f.text_area :civic, class: "form-control"%>
-  </p>
-  <p><strong>The Family of God: </strong>Finally, we come to church. What ministries have you been involved in at St. Paul's or at another church? Are you interested in Christian formation? A Bible study? Do you want to say why you come to St. Paul's? 
-    <%= f.text_field :church, class: "form-control"%>
-  </p>
-  <%= f.submit "Save profile", class: "btn btn-primary" %>
-  <% end %> 
+<h1> Fill out your profile </h1>
+
+  <%= cl_image_tag(current_user.profile.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }) if current_user.profile.avatar? %> 
   <br>
-  <%= link_to "<<Back", :back %>
+<div class="profile_tips">
+<h3>Everybody has a story...</h3>
+<p>...And we get to know one another by sharing our story. To get started, look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p><br>
+<h3>Scroll to the bottom to submit your changes</h3>
+
+<%#= render 'devise/registrations/avatar' %>
+</div>
+  <div class='clearall'></div>
+
+  <div class="form-group">
+    <%= simple_form_for @profile do |f| %>  
+      
+    <p><strong>Insert or change your avatar, or profile picture.</strong></p>
+    <%= f.input :avatar, as: :attachinary %>
+    <div class='clearall'></div>
+    <h3> Fill in your profile information</h3>
+    <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.</p>
+      <%= f.input :cities, class: "form-control"%><br>
+
+    <p><strong>Growing up: </strong>Write a little about your growing-up years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:</p>
+      <%= f.input :background, class: "form-control"%><br>
+  
+    <p><strong>Building a career: </strong>This is where you tell us about your work life. Multiple careers? Lots of travel? </p>
+      <%= f.input :career, class: "form-control"%><br>
+   
+    <p><strong>Family matters: </strong>Tell us about your immediate family first, then any famous or infamous ancestry or offspring. Where are the kids? </p>
+      <%= f.input :family, class: "form-control"%><br>
+    
+    <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits.  Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?</p>
+      <%= f.input :lifestyle, class: "form-control"%><br>
+  
+    <p><strong>Life in the world: </strong>Do you or did you belong to any service organizations or clubs? Tells us about your civic involvement as a volunteer or elected or appointed leader in the secular world. </p>
+     <%= f.input :civic, class: "form-control"%><br>
+    
+    <p><strong>The Family of God: </strong>Finally, we come to church. What ministries have you been involved in at St. Paul's or at another church? Are you interested in Christian formation? A Bible study? Do you want to say why you come to St. Paul's?</p> 
+      <%= f.input :church, class: "form-control"%><br>
+
+      <%= f.submit "save changes", class: "btn btn-primary" %>
+    <% end %> 
+
+    <br>
+    <%= link_to "<<Back", :back %>

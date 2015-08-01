@@ -1,22 +1,20 @@
 <% @posts.each do |post| %>
- 
-    <%= cl_image_tag(post.user.avatar.path, { size: '100x120', crop: :fill, class: "floatleft" }) if post.user.avatar? %> 
-    <p><strong><%= post.user.full_name.titleize  %></strong>:: 
-      <%= post.content %>  
-        <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </p></small>
+    <%= cl_image_tag(post.user.profile.avatar.path, { size: '100x120', crop: :fill, class: "floatleft" }) if post.user.profile.avatar? %> 
+    <p><strong><%= post.user.full_name.titleize  %></strong>::  
+    <%= post.content %>  
+      <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </p></small>
         <p><small>
-          <% if current_user == post.user %>
-            <%= link_to ' | Edit', edit_post_path(post) %> | 
-            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %>
+        <% if current_user == post.user %>
+          <%= link_to ' | Edit', edit_post_path(post) %> | 
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %>
+        <% end %>
+          <%= link_to "| Show |", post_path(post) %>
+            <% if post.comments.count >= 1 %>
+            <%= pluralize(post.comments.count, "Comment") %> 
           <% end %>
-            <%= link_to "| Show |", post_path(post) %>
-              <% if post.comments.count >= 1 %>
-              <%= pluralize(post.comments.count, "Comment") %> 
-              <% end %>
-                <% if post.photos?  %> <%= link_to " | Pictures!", post_path(post), class: "grassy" %> 
-                <% end %>
-                <% if post.post_picture?  %> <%= link_to " | Picture!", post_path(post), class: "grassy" %>
-                <% end %></small></p>
-                    <div class="clearall"></div>
-
+            <% if post.photos?  %> <%= link_to " | Pictures!", post_path(post), class: 'grassy' %>
+            <% end %>
+            <% if post.post_picture? %> <%= link_to " | Picture!", post_path(post), class: 'grassy' %>
+            <% end %> </small></p>
+                  <div class="clearall"></div>
 <% end %>

@@ -1,0 +1,5 @@
+<h3>Add or change your profile picture</h3>
+<%=simple_form_for(current_user, html: { :multipart => true }) do |f| %>
+  <%= f.input :avatar, as: :attachinary, label: "Change your profile picture" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>  

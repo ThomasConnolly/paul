@@ -22,17 +22,16 @@ class HomilistsController < ApplicationController
         redirect_to @homilist
       else
         render :new
-    end
+      end
   end
 
   def update
     respond_to do |format|
       if @homilist.update(homilist_params)
         redirect_to @homilist
-        
       else
         render :edit 
-    end
+      end
   end
 
   def destroy

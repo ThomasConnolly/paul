@@ -1,9 +1,9 @@
 class SermonsController < ApplicationController
-before_action :authenticate_user!, except: [:index, :show]
-before_action :set_sermon, only: [:show, :edit, :update, :destroy] 
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_sermon, only: [:show, :edit, :update, :destroy] 
 
   def index
-    @sermons = Sermon.all.order("delivered_on DESC")
+    @sermons = Sermon.all.order('delivered_on DESC')
   end
 
   def show
@@ -26,7 +26,7 @@ before_action :set_sermon, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-      if @sermon.update(sermon_params)
+    if @sermon.update(sermon_params)
       redirect_to @sermon
     end
   end
@@ -39,12 +39,14 @@ before_action :set_sermon, only: [:show, :edit, :update, :destroy]
 
 
   private
-    def set_sermon
-      @sermon = Sermon.find(params[:id])
-    end 
-   
-    def sermon_params
-      params.require(:sermon).permit(:title, :cites, :delivered_on, :sermon_body, :id, :homilist_id)
-    end
+
+  def set_sermon
+    @sermon = Sermon.find(params[:id])
+  end 
+ 
+  def sermon_params
+    params.require(:sermon).permit(:title, :cites, :delivered_on, 
+      :sermon_body, :id, :homilist_id)
+  end
 end
 

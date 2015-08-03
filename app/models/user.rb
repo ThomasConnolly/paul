@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   enum role: [:admin, :editor, :member, :guest]
   after_initialize :set_default_role, :if => :new_record?
   
-  #  has_attachment :avatar, accept:[:jpg, :png, :gif]
+  has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, :through => :posts
   has_many :sermons

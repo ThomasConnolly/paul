@@ -1,4 +1,11 @@
-toolbar:
-  - styleselect | bold italic | undo redo | alignleft aligncenter alignright
-plugins:
-  -link
+toolbar: 
+  - insertfile undo redo | styleselect | bold italic
+  - alignleft aligncenter alignright alignjustify
+  - bullist numlist outdent indent | link image
+
+plugins: 
+  - link 
+  - image
+  - searchreplace 
+  - code
+  - paste

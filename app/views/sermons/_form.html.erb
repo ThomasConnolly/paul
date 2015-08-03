@@ -8,7 +8,7 @@
     <%= f.input :title, class: 'form-control' %>
     <%= f.input :cites, label: 'Citations', class: 'form-control' %>
     <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
-    <%= f.text_area :sermon_body, :placeholder => "Sermon text", :class => "tinymce",  :rows => 40, :cols => 90, :id => "sermon-text" %><br>
+    <%= f.text_area :sermon_body, :class => 'tinymce', :rows => 40, :cols => 90 %><br>
     <%= tinymce %>
     
     <%= f.button :submit %>   

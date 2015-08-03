@@ -272,6 +272,12 @@ list-style-type: none;
   font-family: Times, serif;
 }
 
+.sermon-text {
+  font-size: 18px;
+  line-height: 27px;
+  font-family: Times, serif;
+
+}
 .sermon-box {
   float:right;
   margin:10px;
@@ -363,7 +369,7 @@ list-style-type: none;
 
 
 .create-post {
-  width: 80%;
+  width: 100%;
   height: 140px;
   border: 1px;
   border: 1px solid gray;

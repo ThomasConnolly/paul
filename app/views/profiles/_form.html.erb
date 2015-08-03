@@ -1,23 +1,18 @@
 <h1> Fill out your profile </h1>
 
-  <%= cl_image_tag(current_user.profile.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }) if current_user.profile.avatar? %> 
-  <br>
-<div class="profile_tips">
+  <%= cl_image_tag(current_user.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }) if current_user.avatar? %> 
+<div>
+<%= render 'devise/registrations/avatar' %>
+<br>
 <h3>Everybody has a story...</h3>
 <p>...And we get to know one another by sharing our story. To get started, look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p><br>
-<h3>Scroll to the bottom to submit your changes</h3>
 
-<%#= render 'devise/registrations/avatar' %>
+
 </div>
   <div class='clearall'></div>
 
   <div class="form-group">
     <%= simple_form_for @profile do |f| %>  
-      
-    <p><strong>Insert or change your avatar, or profile picture.</strong></p>
-    <%= f.input :avatar, as: :attachinary %>
-    <div class='clearall'></div>
-    <h3> Fill in your profile information</h3>
     <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.</p>
       <%= f.input :cities, class: "form-control"%><br>
 

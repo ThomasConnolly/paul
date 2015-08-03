@@ -32,4 +32,7 @@ module RailsBootstrap
     end
   end
 end
+
 end
+
+

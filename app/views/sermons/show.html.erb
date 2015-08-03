@@ -4,9 +4,9 @@
     <p><%= @sermon.cites %></p>
   <%= render 'serbox' %>
   
-  <p class="sermon-text">
+  <div class="sermon-text">
     <%= raw @sermon.sermon_body %>
-  </p><br>
+  </div>
     
     <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_sermon_path(@sermon) %> | 

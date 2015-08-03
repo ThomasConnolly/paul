@@ -284,7 +284,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    tinymce-rails (4.2.2)
+    tinymce-rails (4.2.3)
       railties (>= 3.1.1)
     turbolinks (2.5.3)
       coffee-rails

@@ -5,8 +5,8 @@
     <h2> A Facebook-like feature for members of our church family</h2>
   
   <div class="create-post">
-    <% if current_user.profile.avatar.present? %>
-      <%= cl_image_tag(current_user.profile.avatar.path, { size: '110x120', crop: :fill, gravity: :face, class: "floatleft" }) %>
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag(current_user.avatar.path, { size: '110x120', crop: :fill, gravity: :face, class: "floatleft" }) %>
     <% end %><br>
     <p><strong><%= link_to "Create an article or post a photo", new_post_path %></strong></p>
     <br>

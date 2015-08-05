@@ -1,0 +1,1 @@
+$(document).on("ready page:change",function(){$(".datepicker").datetimepicker({direction:"bottom",pickTime:!1})}),$(document).on("ready page:change",function(){$(".datetimepicker").datetimepicker({direction:"bottom",pickSeconds:!1})}),$(document).on("ready page:change",function(){$(".timepicker").datetimepicker({direction:"bottom",pickDate:!1,pickSeconds:!1})});

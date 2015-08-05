@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
   
   def update
     if @profile.update_attributes(profile_params)
-      redirect_to edit_profile_path
+      
     else
       render 'edit'
     end

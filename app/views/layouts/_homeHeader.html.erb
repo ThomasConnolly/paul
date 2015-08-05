@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
     <div id="menu-five">
       <p><small>
-        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%#= link_to "Edit profile", edit_profile_path %>
+        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Edit profile", edit_profile_path(current_user.profile(params[:id])) %>
       </small></p></div>
       <% end %>   
   </div>

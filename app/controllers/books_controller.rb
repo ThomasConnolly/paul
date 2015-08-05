@@ -60,4 +60,4 @@ private
   def book_params
     params.require(:book).permit(:author, :title, :subject, :isbn, :dewey)
   end
-  
+end

@@ -37,7 +37,7 @@ class HomilistsController < ApplicationController
   def destroy
     @homilist.destroy
   end
-
+end
 
 
 

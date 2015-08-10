@@ -19,11 +19,20 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    redirect_to posts_path
   end
 
   def new
   end
+  
+  def update
+    if @comment.update(comments_params)
+      redirect_to posts_path(@post)
+    else
+      render :edit 
+    end
+  end
+
+
 
   private
 

@@ -1,0 +1,6 @@
+<p>
+  Hello <%=@post.user.first_name.titleize%>, <%=@comment.user.full_name.titleize%> has commented on your post.
+</p>
+<p> 
+<%= link_to "See that comment here", post_url(@post)  %>
+</p>

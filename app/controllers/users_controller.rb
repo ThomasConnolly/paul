@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  # before_filter do 
-    
-    # redirect_to '/' unless current_user && current_user.admin?
-  # end
+ before_filter do    
+ redirect_to '/' unless current_user && current_user.admin?
+end
   before_action :set_user, only: [:show, :edit, :update]
 
   def index

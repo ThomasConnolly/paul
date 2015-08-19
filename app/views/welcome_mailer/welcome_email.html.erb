@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+</head>
+  <body>
+    <h1>Hi <%= @user.first_name.titleize %>, </h1>
+    <p>
+      This is an invitation to help me set up the new Saint Paul's website!</p>
+    <p>
+      First, thanks to you who have suggested ways to improve the website. I've implemented some of those changes, and have the others on my to-do list. In the current iteration are several more features which I'd like you to look at, play with and jot down your reactions and suggestions.</p>
+    <p>
+      Another feature will be the page where a parishioner can sign up for automatic pledge payment using a debit or credit card.</p>
+    <p>
+      I invite you to play with these features and let me know whether they're user friendly or not, and whether you think you and others would use them.</p>
+    <p>
+      Your log-in name is <%= @user.full_name %> and your password is demo1234. Please change your password right away. How? Log in and click on "edit account" next to your name at top right, just under the Faith and Action navigation buttons. Here's the link <%= @url %></p> 
+    <p>
+      Thanks for your help!</p>
+      <p class='align-right'>--Tom Connolly</p>
+      <p>P.S. If you're having any problems send me an email at <strong>tom.connolly@comcast.net</strong> or call me at 285-9224. 
+  </body>
+</html>

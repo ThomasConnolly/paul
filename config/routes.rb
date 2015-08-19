@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :pictures
+  resources :albums
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'

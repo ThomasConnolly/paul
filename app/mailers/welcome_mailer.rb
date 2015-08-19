@@ -1,6 +1,6 @@
 class WelcomeMailer < ApplicationMailer
 
-  def welcome_email(user)
+  def send_welcome_email(user)
     @user = user
     @url = 'http://saintpaulsnaples.org'
     mail(to: @user.email,

@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, 
          :authentication_keys => [:full_name]
 
+  def create!
+    welcome_email
+    super
+  end
 
   def email_required?
     false
@@ -37,5 +41,9 @@ class User < ActiveRecord::Base
 
   def build_profile
     Profile.create("user_id" => id)
+  end
+
+  def welcome_email
+    WelcomeMailer.welcome_email(self).deliver
   end
 end

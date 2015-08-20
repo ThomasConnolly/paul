@@ -5,24 +5,30 @@
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
 </head>
   <body>
-    <h1>Hi <%= @user.first_name.titleize %>, </h1>
+    <h3>Hi <%= @user.first_name.titleize %>, </h3>
     <p>
-      Thanks for signing up to the new Saint Paul's website! </p>
+      This is an introduction to the new Saint Paul's website! </p>
     <p>
-      Until now, our website has been useful for those looking for a church, but not so useful for our own parishioners. I'm hoping to change the second part by inviting you to participate in this "social media."</p>
+      Until now, our website has been useful for those looking for a church, but not so useful for our own parishioners. I'm hoping to change the second part of that by inviting you to participate in this "social media."</p>
     <p>
-      When you sign in your can navigate to "Connections." That will bring you to a page that is much like Facebook, but just for our community (although in time you'll be able to share what you write here on the real Facebook if you want the wider world to see it.)</p>
+      After you are signed in (instructions below) you can navigate to "Connections." The link will appear when you press the "Action" button. That will bring you to a page that is much like Facebook, but just for our community (although in time you'll be able to share what you write here on the real Facebook if you want the wider world to see it.)</p>
     <p>
       This is a place for you to keep in touch during the summertime diaspora, and share news and information while back home in Naples. If you need a ride to church, or want to wish someone a happy birthday or add someone to the parish prayer list, Connections will be the place to do it.</p>
     <p>
-      Think of it as the newly revised "Missioner" newsletter that we used to publish eight times a year, only instead of reading what was written by only a few persons, all can participate.</p>
+      Think of it as the newly revived <em>"Missioner"</em> newsletter that we used to publish eight times a year, only instead of reading what was written by only a few persons, all can participate, and at any time.</p>
     <p>
-      I invite you to play with these features and let me know whether they're user friendly or not, and whether you think you and others would use them. Upload your "avatar" and fill our your profile. Upload photos on the sharing page.</p>
+      I invite you to play with these features and let me know whether they're user friendly or not, and whether you think you and others would use them. Upload your "avatar" and fill out your profile page. Upload photos on the sharing page.</p>
     <p>
-      Start by going to http:saintpaulsnaples.org and click on the "Action" button, then "Connections." That will take you to the sign-up page, or if you've already signed up, to the log-in page. Once logged in you can start making "connections" with fellow parishioners. </p> 
+      <strong>How to get in</strong> </p>
+    <p>
+      Start by <%= link_to "going to", "http:saintpaulsnaples.org/posts" %>, which will take you to the log-in page. Your log-in name is <%= @user.full_name.titleize %> and your temporary password is demo1234. Please change this right away by clicking on "Edit account" at top right.</p>
+    <p>
+      Once logged in you can start making "connections" with fellow parishioners. </p> 
     <p>
       Thanks for your help!</p>
-      <p class='align-right'>--Tom Connolly</p>
-      <p>P.S. If you're having any problems send me an email at <strong>tom.connolly@comcast.net</strong> or call me at 285-9224. 
+    <p class='align-right'>--Tom Connolly, webmaster</p><br>
+    <p>
+    P.S. If you're having any problems send me an email at <strong>tom.connolly@comcast.net</strong> or call me at 285-9224.</p>
+     
   </body>
 </html>

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    WelcomeMailer.welcome_email(@user).deliver
+    # WelcomeMailer.welcome_email(@user).deliver
     session[:previous_url] || root_path
   end
 end

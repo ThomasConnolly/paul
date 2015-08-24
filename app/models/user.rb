@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_one :pledge
   after_create :build_profile
   belongs_to :role
+  after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -39,4 +40,9 @@ class User < ActiveRecord::Base
   def build_profile
     Profile.create("user_id" => id)
   end
+
+  def send_welcome_email
+    WelcomeMailer.welcome_email(self).deliver
+  end
+
 end

@@ -13,7 +13,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = config.mailer_sender = 'welcome@saintpaulsnaples.org'
+  config.mailer_sender = 'welcome@saintpaulsnaples.org'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -21,6 +21,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
+  require 'devise/orm/active_record'
   
 
   # ==> Configuration for any authentication mechanism
@@ -44,12 +45,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :full_name ]
+  config.case_insensitive_keys = [:full_name]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user & when used to authenticate or find user. Default is :email.
-  config.strip_whitespace_keys = [ :full_name ]
+  config.strip_whitespace_keys = [:full_name]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -188,7 +189,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering password for an account
-  config.reset_password_keys = [:username]
+  config.reset_password_keys = [:full_name]
 
   # Time interval to reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to

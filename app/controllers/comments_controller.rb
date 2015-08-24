@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_path(@comment.post)
+      CommentMailer.comment_created(current_user,@post.user).deliver
+      redirect_to post_path(@post)
     else
       render 'new'
     end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :albun do
+  factory :album do
     user nil
 title "MyString"
   end

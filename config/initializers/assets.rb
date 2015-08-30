@@ -8,3 +8,4 @@ Rails.application.config.assets.version = '1.0'
 # app/assets folder are already added.
 Rails.application.config.assets.precompile += %w( progressbar.gif )
 Rails.application.config.assets.precompile += %w( loading.gif )
+Rails.application.config.assets.precompile += %w( scriptures.js )

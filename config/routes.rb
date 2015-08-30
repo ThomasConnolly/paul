@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/albergue'
   get 'pages/directions'
+  get 'pages/map'
   get 'visitors/index'
   # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting

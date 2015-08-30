@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-dropdown
 //= require jquery-nevo-slider
@@ -20,11 +21,6 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require tinymce-jquery
-//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks
-
-
-
-

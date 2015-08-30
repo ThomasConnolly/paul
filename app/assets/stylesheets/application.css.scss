@@ -94,8 +94,8 @@ margin-top : 8px;
 }
 p {
     text-indent: 20px;
-    font-size : 14px;
-    line-height:23px;
+    font-size : 16px;
+    line-height:24px;
 }
       
 p.poem {
@@ -460,4 +460,13 @@ list-style-type: none;
   background-image:linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
   background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
   background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
+}
+#map-container {
+  width: 900px;
+  height: 1000px;
+  margin-top: 60px;
+}
+#map {
+  height: 890 px;
+  width: 100%;
 }

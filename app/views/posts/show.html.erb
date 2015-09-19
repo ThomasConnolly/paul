@@ -1,42 +1,26 @@
 
 <% if @post.post_picture? %>
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      <%= link_to cl_image_tag(@post.post_picture.path, :height => 350, :crop => :fit), cloudinary_url(@post.post_picture.path) %>
-    </div>
-  </div>
+  <%= link_to cl_image_tag(@post.post_picture.path, :height => 350, :crop => :fit), cloudinary_url(@post.post_picture.path) %>
 <% end %>
-  <% if @post.photos? %>
-    <%= render 'slides' %>
-  <% end %>    
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3">
-    <% if @post.user.avatar? %>
-    <%= cl_image_tag(@post.user.avatar.path, { size: '110x120', crop: :fill, gravity: :face, class: "floatleft" }) %>
-    <p><em><b>
-      <%= @post.user.full_name.titleize %>:: 
-      
-    </b></em>
-    <% end %>
-      <%= @post.content %>
-    </p>
-      <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small>
-      </p> <%#= link_to('Share on Facebook', 'https://www.facebook.com/dialog/feed?
-                                  link=https://developers.facebook.com/docs/reference/dialogs/&
-                                  picture=http://fbrell.com/f8.jpg&
-                                  name=Facebook%20Dialogs&
-                                  caption=Reference%20Documentation&
-                                  description=Using%20Dialogs%20to%20interact%20with%20users.&
-                                  redirect_uri=https://mighty-lowlands-6381.herokuapp.com/',
-                                  :target => :blank %>
-
-
   
+<% if @post.photos? %>
+  <%= render 'slides' %>
+<% end %>    
 
-    <div class="clearall"></div> 
-  <%= render @post.comments %><br>
-  <%= render 'comments/form' %><br>
-  <h3><%= link_to "<< Back to the Sharing page", posts_path %></h3>
+<% if @post.user.avatar.present? %>
+  <%= cl_image_tag(@post.user.avatar.path, { size: '110x120', crop: :fill, gravity: :face, class: "floatleft" }) %>
+<% end %>
+    
+  <p><em><b>
+    <%= @post.user.full_name.titleize %>:: </b></em>
+
+  <%= @post.content %> </p>
+    <p><small>Posted <%= time_ago_in_words(@post.created_at) %> ago.</small></p>
+    <p><small><% if current_user == @post.user %>
+      <%= link_to ' | Edit', edit_post_path(@post) %> | 
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %></small></p>
+    <% end %>
+  <div id="comments">
+    <%= link_to 'Comments', post_comments_path(@post) %>
+    <%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Back', posts_path %>
   </div>
-</div>
-

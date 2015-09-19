@@ -34,10 +34,7 @@ gem 'devise'
 
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'spring'
-  gem 'spring-commands-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
@@ -48,7 +45,6 @@ end
 group :test do
   gem 'capybara'
   gem 'faker'
-  gem 'guard-rspec'
   gem 'database_cleaner'
   gem 'launchy'
 end

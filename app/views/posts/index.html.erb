@@ -3,19 +3,25 @@
 
   <h1>Connections</h1>
     <h2> A Facebook-like feature for members of our church family</h2>
+      <p><strong>How is it like Facebook?</strong> It's a social medium.</p>
+      <p><strong>How is it not like Facebook?</strong>  We are a small community, and as Christians we strive to love one another and to share the goodness of God's creation. Political and controversial posts tend to polarize; totally opposite of why this feature is on our website. Please respect this sentiment.</p> 
   
   <div class="create-post">
     <% if current_user.avatar.present? %>
       <%= cl_image_tag(current_user.avatar.path, { size: '110x120', crop: :fill, gravity: :face, class: "floatleft" }) %>
+      <% else %>
+      <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5></div>
     <% end %><br>
+    
     <p><strong><%= link_to "Create an article or post a photo", new_post_path %></strong></p>
     <br>
     
     <p><%= link_to "Edit your profile or add/change your profile picture", edit_profile_path(current_user.profile(params[:id])) %>
+  </div>
+
+  <h2>Here are the latest posts</h2> 
+  <%= render 'posts' %>
   
-  </div><br>
-    <h2>Latest posts</h2>   
-      <%= render 'post' %>
 </div> 
 
 <div class="sidebar">
@@ -30,9 +36,9 @@
     <p>also generated from database and listed the same way as birthdays</p>
 
   <h3>We're praying for...</h3>
-    <p>Link to parish prayer list and accept readers' input. This page will be seen only by those who are logged in as church members. We will have three levels of authorization: administrators, who can create, edit and delete everything, is the top level. The second is member and this will have two "permissions categories": restricted and full. The third level is "guest," who can view the library page and search for books, for example.</p>
+    <p>Link to parish prayer list and accept readers' input. This page will be seen only by those who are logged in as church members. We will have three levels of authorization: administrators, who can create, edit and delete everything, is the top level. The second is member and this will have two "permissions categories": restricted and full. The third level is "guest," who can view the library page and search for books, for example. Guests will not be able to see this sharing page.</p>
     <br>
     <h3>ToDo for this page</h3>
     <p>Add share to Facebook api</p>
-    <p>Add pagination</p>
+    <p>Link avatar to owner's profile page</p>
 </div>

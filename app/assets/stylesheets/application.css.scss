@@ -114,9 +114,17 @@ p.owner-edit-links {
   padding-right: 300px;
   float: left;
 }
-.comment {
-  margin-left: 50px;
+.comments {
+  margin-left: 130px;
 }
+
+.new-comment-box {
+  margin-left: 150px;
+  width: 350px;
+  height: 70px;
+  border: 1px solid gray;
+}
+
 p.owner-comment-links {
   font-size: 8px;
   line-height: 10px;
@@ -125,6 +133,7 @@ p.owner-comment-links {
 }
 
 p.center-bold-text {
+  text-indent: 0;
   text-align: center;
   text-style: bold;
 }
@@ -379,18 +388,7 @@ list-style-type: none;
   padding: 10px;
   text-align: center;
 }
-.add-comment {
-  color: #bbb;
-  text-align: right;
-}
-.comment-author {
-  color: #bbb;
-  text-align: right !important;
-}
 
-.grassy {
-  color: #00ff00;
-}
 .pledge-number {
   font-size: 8em;
   color: #B8B8B8;
@@ -461,12 +459,42 @@ list-style-type: none;
   background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
   background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
 }
-#map-container {
-  width: 900px;
-  height: 1000px;
-  margin-top: 60px;
+.default-avatar{
+  padding-top: 12px;
+  text-align: center;
+  color: red;
+  width: 90px;
+  height: 110px;
+  border: 1px solid black;
+  float: left;
+  margin-right: 6px;
 }
-#map {
-  height: 890 px;
-  width: 100%;
+.default-comment-avatar{
+  margin: 5px;
+  padding-top: 6px;
+  text-align: center;
+  text-indent: 0;
+  color: red;
+  font-size: 8px;
+  width: 45px;
+  height: 55px;
+  border: 1px solid gray;
+  float: left;
+  margin-right: 6px;
+}
+.big-avatar-missing{
+  width: 300px;
+  height: 300px;
+  padding-top: 130px;
+  text-align: center;
+  color: red;
+  border: 2px solid black;
+  float: left;
+  margin-right: 12px;
+}
+.v3 {
+  margin-top: 30px;
+}
+.v5{
+  margin-top: 50px;
 }

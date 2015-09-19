@@ -1,10 +1,23 @@
-<p>
-  <%= comment.body %>
-</p>
-  <p  class="comment-author"> --
-    <%= comment.user.full_name.titleize %>
-  </p>
-  
 
-   
-
+<div class="comments" >
+  <% post.comments.each do |comment| %>
+    <div id="comment_<%= comment.id %>">
+        <% if comment.user.avatar.present? %>
+          <%= cl_image_tag(comment.user.avatar.path, { size: '55x60', crop: :fill, gravity: :face, class: "floatleft" }) %>
+        <% else %>
+          <div class="default-comment-avatar">Your<br>Photo<br>Here</div>
+        <% end %>
+      
+      <p><%= comment.user.full_name.titleize %> : 
+      <%= comment.body %>
+      <small><%= time_ago_in_words(comment.created_at) %> ago.</small></p>
+        <% if comment.user == current_user %><p><small>
+          <%= link_to 'Delete', [comment.post, comment], 
+            method: :delete, remote: true, data: { confirm: 
+          'This will delete your comment.' } %> </small></p>
+        <% end %>
+    </div>
+    <div class="clearall"> </div>
+  <% end %>
+    
+</div>

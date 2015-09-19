@@ -1,20 +1,8 @@
 class ProfilesController < ApplicationController
  before_action :authenticate_user! 
- before_action :set_profile, only: [:show, :edit, :update, :destroy]
+ before_action :set_profile, only: [:show, :edit, :update]
   
-  def new
-  end
-
-  def create
-    @profile = current_user.build_profile(profile_params)
-    if @profile.save
-      flash[:success] = "Profile saved"
-      redirect_to edit_profile_path
-    else
-      render 'new'
-    end
-  end
-
+ 
   def edit
   end
 
@@ -23,6 +11,7 @@ class ProfilesController < ApplicationController
   
   def update
     if @profile.update_attributes(profile_params)
+      redirect_to profile_path(@profile)
       
     else
       render 'edit'
@@ -32,6 +21,18 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
   end
+  
+  def new
+  end
+
+  def create
+    @profile = current_user.build_profile(profile_params)
+    if @profile.save
+    redirect_to current_user_path
+  else
+    render 'new'
+  end
+end
 
 
 
@@ -41,6 +42,6 @@ private
   end
 
   def profile_params
-    params.require(:profile).permit(:id, :user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church, :avatar)
+    params.require(:profile).permit(:id, :user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church)
   end
 end

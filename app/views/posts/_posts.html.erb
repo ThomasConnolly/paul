@@ -1,0 +1,33 @@
+<% @posts.each do |post| %>
+  <% if post.post_picture? %>
+    <%= link_to cl_image_tag(post.post_picture.path, :height => 350, :crop => :fit), 
+    cloudinary_url(post.post_picture.path) %>
+  <% end %>
+  
+  <% if post.photos? %>
+    <%= render 'slides', post: post %>
+  <% end %>  
+  
+  <% if post.user.avatar.present? %><div id="avatar-owner">
+    <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill, 
+      gravity: :face, class: "floatleft" }) %></div>
+  <% else %>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5></div>
+  <% end %>
+    
+    <p><strong>
+    <%= post.user.full_name.titleize  %></strong>::  
+    <%= post.content %>  
+      <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </small></p>
+      
+      <% if current_user == post.user %><p><small>
+        <%= link_to ' | Edit', edit_post_path(post) %> | 
+        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %></small></p>
+      <% end %>
+    <div class="clearall"></div>
+    <%= render 'comments/comment', post: post %>    
+    <%= render 'comments_box', post: post  %>      
+   <div class="clearall"></div>
+    <hr>
+<% end %> 
+

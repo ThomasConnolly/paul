@@ -1,0 +1,9 @@
+<div class="new-comment-box" id="new_comment_link">
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag(current_user.avatar.path, {size: '55x60', 
+        crop: :fill, gravity: :face, class: 'floatleft' }) %>
+    <% else %>
+      <div class="default-comment-avatar">Your<br>Photo<br>Here</p> </div>
+    <% end %>
+      <%= link_to "Post a comment", new_post_comment_path(post) %>
+</div>

@@ -1,7 +1,5 @@
 <h1><%= @profile.user.full_name.titleize  %></h1>
 <%= cl_image_tag(current_user.avatar.path, { size: '300x300', crop: :fill, class: "floatleft" }) if current_user.avatar? %>
-<div class="v5">
-</div>
 
 <% if current_user == @profile.user %>
     <%= link_to ' | Edit your profile', edit_profile_path(@profile) %> | 

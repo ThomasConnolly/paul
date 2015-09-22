@@ -1,4 +1,4 @@
-<div class="new-comment-box" id="new_comment_link">
+<div class="new-comment-box" id="new-comment-link">
     <% if current_user.avatar.present? %>
       <%= cl_image_tag(current_user.avatar.path, {size: '55x60', 
         crop: :fill, gravity: :face, class: 'floatleft' }) %>

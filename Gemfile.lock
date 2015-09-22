@@ -44,7 +44,7 @@ GEM
     attachinary (1.3.0)
       cloudinary (~> 1.0.69)
       rails (>= 3.2)
-    autoprefixer-rails (6.0.2)
+    autoprefixer-rails (6.0.3)
       execjs
       json
     awesome_print (1.6.1)
@@ -172,7 +172,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mime-types (2.6.1)
+    mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
@@ -183,7 +183,7 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.3)
-    puma (2.13.4)
+    puma (2.14.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -242,7 +242,7 @@ GEM
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
       redis-namespace (~> 1.5, >= 1.5.2)
-    simple_form (3.1.1)
+    simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     spring (1.4.0)
@@ -330,4 +330,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

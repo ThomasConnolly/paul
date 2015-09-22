@@ -1,25 +1,15 @@
 <h1> Fill out your profile </h1>
-
   <%= cl_image_tag(current_user.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }) if current_user.avatar? %>
-
-<div class="3v">
-</div>
-  <h3><%= link_to "Click here to add or change your avatar", 
-      edit_user_path(current_user.id) %></h3>
-
-<div class="5v">
-</div>
-  <h3>Everybody has a story...</h3>
+  
+  <h3 class="mt30">Everybody has a story...</h3>
     <p>...And we get to know one another by sharing our story. To get started, look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p>
 
-<div class='clearall'>  
-</div>
+    <div class="scroll-to-bottom"><h4>Scroll to the bottom and click "submit" to save your new profile information</h4></div>
 
-<div class="3v">
-</div>
-
-  <h4>Scroll to the bottom and click "submit" to save 
-  your new profile information</h4>
+    <div class='clearall'> </div>
+      <h3><%= link_to "Change your 
+      avatar", edit_user_path(current_user.id) %></h3><br>
+  
 <div class="form-group">
   <%= simple_form_for @profile do |f| %>  
     <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.</p>
@@ -47,4 +37,4 @@
   <% end %> 
 
     <br>
-    <%= link_to "<<Back", :back %>
+    <%= link_to "<< Home page", root_path %> or <%= link_to "<< The sharing page", posts_path %>

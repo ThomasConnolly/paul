@@ -21,8 +21,8 @@
       <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </small></p>
       
       <% if current_user == post.user %><p><small>
-        <%= link_to ' | Edit', edit_post_path(post) %> | 
-        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %></small></p>
+        <%= link_to ' | Edit', edit_post_path(post), remote: true %> | 
+        <%= link_to post,  remote: true,  method: :delete, data: { confirm: 'This will delete your post and all its comments.' } do %>Delete!<% end %></small></p>
       <% end %>
     <div class="clearall"></div>
     <%= render 'comments/comment', post: post %>    

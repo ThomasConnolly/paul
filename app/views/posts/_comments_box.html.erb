@@ -5,5 +5,5 @@
     <% else %>
       <div class="default-comment-avatar">Your<br>Photo<br>Here</p> </div>
     <% end %>
-      <%= link_to "Post a comment", new_post_comment_path(post) %>
+      <%= link_to "Post a comment", new_post_comment_path(post), remote: true %>
 </div>

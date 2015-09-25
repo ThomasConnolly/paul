@@ -1,0 +1,9 @@
+<%= simple_form_for @pledge, remote: true do |f| %>
+<h3>Total annual pledge:</h3>
+  <%= f.input :amount, label: false %><br>
+  
+<h3>Payments will be:</h3>
+  <%= f.input :divisor, collection: [["Weekly", 52], ["Monthly", 12], 
+    ["Quarterly", 4]], as: :radio_buttons, label: false %>
+  <%= f.button :submit, "Calculate payment" %>
+  <% end %>

@@ -5,7 +5,7 @@
     <% @sermons.each do |sermon| %>
       <tr>
         <td ><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
-        <td><%#= sermon.homilist.name %></td> 
+        <td><%= sermon.homilist.name %></td> 
         <td><%= link_to sermon.title, sermon %></td>
       </tr>
     <% end %>

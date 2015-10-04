@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require jquery-dropdown
 //= require jquery-nevo-slider
 //= require jquery.ui.widget

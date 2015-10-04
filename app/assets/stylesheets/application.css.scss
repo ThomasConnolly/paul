@@ -114,22 +114,8 @@ p.owner-edit-links {
   padding-right: 300px;
   float: left;
 }
-.comments {
+.comment {
   margin-left: 130px;
-}
-
-.new-comment-box {
-  margin-left: 150px;
-  width: 350px;
-  height: 70px;
-  border: 1px solid gray;
-}
-
-p.owner-comment-links {
-  font-size: 8px;
-  line-height: 10px;
-  margin-top: -10px;
-  float: right;
 }
 
 p.center-bold-text {
@@ -137,11 +123,6 @@ p.center-bold-text {
   text-align: center;
   text-style: bold;
 }
-
-
-
-
-
 
 a, a:hover, a:focus{
   text-decoration: none;
@@ -284,18 +265,19 @@ list-style-type: none;
   
 }
 .sermon-page p {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 22px;
+  line-height: 33px;
   font-family: Times, serif;
 }
 
 .sermon-text {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 22px;
+  line-height: 33px;
   font-family: Times, serif;
 
 }
 .sermon-box {
+  font-size: 17px;
   float:right;
   margin:10px;
   height:190px;
@@ -512,4 +494,16 @@ list-style-type: none;
   width: 250px;
   border: 2px solid black;
   padding: 12px;
+}
+.time-ago {
+  font-size: 8px;
+  color: gray;
+  line-height: 10px;
+  margin-top: -10px;
+}
+.edit-delete-line {
+  font-size: 8px;
+  color: gray;
+  line-height: 10px;
+  margin-top: -10px;
 }

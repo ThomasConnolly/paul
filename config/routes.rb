@@ -40,5 +40,4 @@ Rails.application.routes.draw do
   end
 
   mount Attachinary::Engine => '/attachinary'
-  
 end

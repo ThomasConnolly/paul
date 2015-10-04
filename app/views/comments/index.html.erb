@@ -1,8 +1,10 @@
 <h3> Showing comments </h3>
 
-<% @comments.each do |comment| %>
-<strong><%= comment.user.full_name.titleize %><br></strong>
-<%= comment.body %><br>
-<%= link_to 'Show', [comment.post, comment] %> | <%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %> | <%= link_to "Delete", [comment.post, comment], :confirm => "Are you sure?", method: :delete %> | <%= link_to 'New comment', new_post_comment_path %><br>
-<% end %>
+<%# post.comments.each do |comment| %>
+<strong><%#= comment.user.full_name.titleize %><br></strong>
+<%#= comment.body %><br>
+<%#= link_to 'Show', [comment.post, comment] %> | <%#= link_to 'Edit', edit_post_comment_path(comment.post, comment) %> | <%#= link_to "Delete", [comment.post, comment], :confirm => "Are you sure?", method: :delete %> | <%#= link_to 'New comment', new_post_comment_path %><br>
+<%# end %>
+
+
 

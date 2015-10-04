@@ -1,6 +1,5 @@
-<div id="comment-form">
-  <%= simple_form_for [@comment.post, @comment] do |f| %>
-    <%= f.input :body, label: "Add a comment", autofocus: true %> 
-    <%= f.submit "submit", class: "btn btn-primary" %>
-  <% end %>
+<div id="comment-form"><%= simple_form_for [@comment.post, @comment] do |f| %>
+  <%= f.input :body, autofocus: true %> 
+    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %>&nbsp;  <%= link_to "Cancel", :back, class: "btn btn-xs" %>  
+<% end %>
 </div>

@@ -1,12 +1,11 @@
 
-<%= simple_form_for @post, remote: true do |f| %>
-  
-  <%= f.input :content %><br>
-  <%= f.input :post_picture, as: :attachinary, label: 'Upload a single picture' %><br>
-  <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures' %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :content, autofocus: true %>
+  <br>
+  <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html: {  class: "btn btn-primary btn-xs" } -%> &nbsp; 
+  <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures', label_html: {  class: "btn btn-primary btn-xs" } %>
  
-  <%= f.submit "submit", class: "btn btn-primary" %>
- <br>
+  <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 
+  <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
 <% end %>
-<br>
-<%=link_to "Cancel", posts_path %> 
+

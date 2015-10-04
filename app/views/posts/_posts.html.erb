@@ -1,3 +1,4 @@
+<div class="posts-container">
 <% @posts.each do |post| %>
   <% if post.post_picture? %>
     <%= link_to cl_image_tag(post.post_picture.path, :height => 350, :crop => :fit), 
@@ -9,7 +10,7 @@
   <% end %>  
   
   <% if post.user.avatar.present? %><div id="avatar-owner">
-    <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill, 
+    <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
       gravity: :face, class: "floatleft" }) %></div>
   <% else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5></div>
@@ -18,16 +19,27 @@
     <p><strong>
     <%= post.user.full_name.titleize  %></strong>::  
     <%= post.content %>  
-      <small> Posted <%= time_ago_in_words(post.created_at) %> ago. </small></p>
+      <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
+      </span></p>
       
-      <% if current_user == post.user %><p><small>
+      <% if current_user == post.user %>
+        <p> <span class="edit-delete-line">
         <%= link_to ' | Edit', edit_post_path(post), remote: true %> | 
-        <%= link_to post,  remote: true,  method: :delete, data: { confirm: 'This will delete your post and all its comments.' } do %>Delete!<% end %></small></p>
+        <%= link_to post,  remote: true,  method: :delete, data: 
+        { confirm: 'This will delete your post and all its comments.' 
+          } do %> Delete! </span></p>
       <% end %>
-    <div class="clearall"></div>
-    <%= render 'comments/comment', post: post %>    
-    <%= render 'comments_box', post: post  %>      
-   <div class="clearall"></div>
+        <% end %>
+        <%= link_to 'Click here to comment', new_post_comment_path(post), 
+          remote: true  %>
+           <div id="comment-form" style="display:none;">  
+      </div>
+
+          <div class="clearall"></div>
+          <%= render 'comments/comment', post: post %>
+        <div class="clearall">
+        </div>
     <hr>
-<% end %> 
+<% end %>
+</div>
 

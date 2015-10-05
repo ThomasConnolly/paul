@@ -14,5 +14,5 @@
 
 class Sermon < ActiveRecord::Base
   belongs_to :homilist
-  validates_presence_of :title, :sermon_body, :delivered_on
+  validates_presence_of :title, :sermon_body, :delivered_on, :homilist_id
 end

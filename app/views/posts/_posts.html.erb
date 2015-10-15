@@ -24,22 +24,37 @@
       
       <% if current_user == post.user %>
         <p> <span class="edit-delete-line">
-        <%= link_to ' | Edit', edit_post_path(post), remote: true %> | 
-        <%= link_to post,  remote: true,  method: :delete, data: 
+        <%= link_to ' | Edit', edit_post_path(post) %> | 
+        <%= link_to post, method: :delete, data: 
         { confirm: 'This will delete your post and all its comments.' 
           } do %> Delete! </span></p>
-      <% end %>
         <% end %>
-        <%= link_to 'Click here to comment', new_post_comment_path(post), 
-          remote: true  %>
-           <div id="comment-form" style="display:none;">  
-      </div>
-
-          <div class="clearall"></div>
-          <%= render 'comments/comment', post: post %>
-        <div class="clearall">
+        <% end %>
+        <div class="clearall"> </div>
+    <% if post.comments.any? %>
+      <% post.comments.each do |comment| %>
+        <% if comment.user.avatar.present? %>
+    <%= cl_image_tag(comment.user.avatar.path, { size: '55x60', 
+          crop: :fill, gravity: :face, class: "floatleft" }) %>
+      <% else %>
+        <div class="default-comment-avatar">Your<br>Photo<br>Here</div>
+    <% end %>
+      
+    <p><%= comment.user.full_name.titleize %> : 
+      <%= comment.body %>
+      <span class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago.</span></p>
+      <% if comment.user == current_user %><p><span class="edit-delete-line">
+        <%= link_to "Delete", post_comment_path(comment.post, comment),  
+            method: :delete,  data: { confirm: 
+          'This will delete your comment.' }  %></span></p>
+      <% end %>
+  <% end %>  <% end %>
+  <div>
+      <%= simple_form_for [post, post.comments.build] do |f| %>
+          <%= f.input :body, placeholder: 'Type your comment here', input_html: { rows: 2 }, label: false %>
         </div>
-    <hr>
+      <% end %>
+      <div class="clearall"> </div>
+  <hr>
 <% end %>
 </div>
-

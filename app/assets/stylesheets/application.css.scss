@@ -114,8 +114,10 @@ p.owner-edit-links {
   padding-right: 300px;
   float: left;
 }
-.comment {
-  margin-left: 130px;
+.comment-form {
+  width: 400px;
+  height: auto;
+  padding-left: 130px;
 }
 
 p.center-bold-text {
@@ -506,4 +508,18 @@ list-style-type: none;
   color: gray;
   line-height: 10px;
   margin-top: -10px;
+}
+
+.upload_picture {
+  width: 300px;
+  float: left;
+}
+
+
+.upload_photos {
+  width: 300px;
+  float: left;
+}
+.submit-post {
+  margin-left: 200px;
 }

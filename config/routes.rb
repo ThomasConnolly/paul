@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :profiles
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 
   mount Attachinary::Engine => '/attachinary'

@@ -41,7 +41,6 @@ private
   end
 
   def pledge_params
-    params.require(:pledge).permit [:amount, :divisor, :pay_this, 
-      :user_id]
+    params.require(:pledge).permit [:amount, :divisor, :pay_this]
   end
 end

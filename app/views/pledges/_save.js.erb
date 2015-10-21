@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @pledge.errors.any? %>
+  <% @pledge.errors.full_message.each do |message| %>
+    $("ul.errors").append($("<li />").html("<= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".pledgeShow").html("<%= j (render 'show') %>")
+  $(".pledgeForm").("hide")
+<% end %>

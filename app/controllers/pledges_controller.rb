@@ -2,6 +2,7 @@ class PledgesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
 
+  
   def index
     @pledges = Pledge.all
   end
@@ -20,6 +21,11 @@ class PledgesController < ApplicationController
 
   def new
     @pledge = Pledge.new
+    respond_to do |format|
+      format.html
+        
+      format.js
+    end
   end
 
 

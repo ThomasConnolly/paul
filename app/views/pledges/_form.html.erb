@@ -1,4 +1,4 @@
-<%= simple_form_for @pledge do |f| %>
+<%= simple_form_for @pledge, remote: true do |f| %>
 <h3>Total annual pledge:</h3>
   <%= f.input :amount, label: false %><br>
   

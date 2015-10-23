@@ -13,6 +13,7 @@
  
  
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
 
@@ -523,3 +524,9 @@ list-style-type: none;
 .submit-post {
   margin-left: 200px;
 }
+
+
+
+#myModal {
+  margin-top: 160px;
+  }

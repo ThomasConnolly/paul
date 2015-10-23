@@ -25,3 +25,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks
+//= require social-share-button
+//= require video

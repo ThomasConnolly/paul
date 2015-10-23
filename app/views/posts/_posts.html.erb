@@ -21,7 +21,8 @@
     <%= post.content %>  
       <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
       </span></p>
-      
+      <%#= link_to "Share this post with your friends", post_path(post) %>
+     
       <% if current_user == post.user %>
         <p> <span class="edit-delete-line">
         <%= link_to ' | Edit', edit_post_path(post) %> | 

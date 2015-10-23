@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   get 'pages/directions'
   get 'pages/map'
   get 'visitors/index'
-  # get ':id' => 'users#show', as: :user_profile
+  resources :homestest, only: [:show]
+  get 'homestest/show'
+    # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
   # resources :pledges

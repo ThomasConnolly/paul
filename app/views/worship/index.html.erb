@@ -1,18 +1,17 @@
 <h1>Worship at Saint Paul's</h1>
 <div class="main-body">
-  <p>Three distinctive Eucharistic liturgies are offered at St. Paul's every Sunday in season (generally October to May) During summer we celebrate the usual 8 a.m. service and a 10 a.m. Rite II service with congregational singing but no choir. At present we are "off-season," and we worship at 8 and 10 a.m.</p> 
+  <p>Three distinctive Eucharistic liturgies are offered at St. Paul's every Sunday in season (beginning Nov. 8 this year). During summer we celebrate the usual 8 a.m. service and a 10 a.m. Rite II service with congregational singing but no choir. At present we are "off-season," and we worship at 8 and 10 a.m.</p> 
   <p>Here's how the three in-season worship services differ:</p>
 
-  <p>The <b>8 a.m. </b>service is Rite I. If you are attracted to traditional English language in use for the past 500 years, 
-  Rite I might be your choice. It is a quiet, sober and contemplative worship of The Transcendent God. 
+  <p>The <b>8 a.m. </b>service is Rite I. If you are attracted to traditional English language in use for the past 500 years, Rite I might be your choice. It is a quiet, sober and contemplative worship of The Transcendent God. 
   Rite II is used at the 10:45 service, and a newer Eucharistic prayer is used at 9:15.</p>
   <p>At <b>9:15, </b>a casual, intimate atmosphere is created through use of music and wording to bring to mind the 
   immanence of God, the idea that God is near to us. The liturgy is from <em>Enriching Our Worship,</em> the most contemporary language in the Episcopal Church.</p>
-  <p>Our <b>10:45 </b>service uses the language of Rite II, an English polished over our long history of worship in the venacular. 
-  Organ music and a full choir enhance the liturgy.</p>
+  <p>Our <b>10:45 </b>service uses the language of Rite II, an English polished over our long history of worship in the venacular. Organ music and a full choir enhance the liturgy.</p>
 
   <p>If you are from the Roman Catholic or Lutheran tradition, you will feel right at home here. Even if you've never been inside a church and are now discovering your spirituality, you will be welcome at St. Paul's.
    A printed guide, or worship bulletin, is provided to help you follow the service.</p>
+   <p><strong>All baptized Christians are welcome to recieve God's gift at the Communion rail.</strong></p>
    <h4><%= link_to 'Click here for map', pages_directions_path  %></h4></a>
   <H1>What's an Episcopalian?</H1><p>How can we say we're both catholic and protestant? It's not that complicated. We walk "the middle way."</p>
   <p>Episcopalians are a part of a world-wide association of churches called collectively, "The Anglican Communion." We share certain characteristics and modes
@@ -25,16 +24,47 @@
   <p>There are other things which mark us as different. We invite you to check us out at St. Paul's. There's room here for you, your questions and even your doubts!</p>
 </div>
 
-<div class="sidebar">
-<iframe width="265"  src="http://www.youtube.com/embed/qRuI7h3WAdg" frameborder="0" allowfullscreen></iframe>
-<h2>How We Pray</h2><p>
-There's a prayer for almost any occasion in the Episcopal <em><b>Book of Common Prayer.</b></em> 
-The video above shows our rector, the Rev. Tara McGraw, using the Book of Common Prayer to open a recent meeting of the 
-Collier County Board of Commissioners.
+<div class="sidebar"> 
 
+
+<h2>How We Pray</h2>
+  <div id="toVideo">
+    <%= cl_image_tag("books-of-common-prayer_oasoqz.jpg", 
+    :width=>252, :crop=>:scale, class: "image-center") %>
+  </div>
+  <p>
+    There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer.</b></em> 
+    Click on the books above to see a humorous but informative four-minute video introduction to the wealth and depth of the book.
+</p><%= link_to "Click here to read the Book of Common Prayer on line.", "http://www.bcponline.org", target: "blank" %>
 <br> 
 <h2>Opportunities for Spirituality</h2>
 <p><em><b>Centering prayer</b></em> A small group gathers every Monday at 10 a.m. for meditative prayer in the library. All are invited.  No experience necessary.  Come!  Any Monday or all!  Deepen your connection with God.  Allow your soul to re-center.  A spiritual silence, deeply individual yet wonderfully shared.  Engage a Christian spiritual tradition that is centuries old, yet re-discovered and celebrated today as the popularity of "mindfulness meditation" spreads and its benefits to body, mind, mental state and productivity have been documented by the medical community.  If peace is missing in your life, it can await you here.  Our friend Father Al, Benedictine Abbot and priest of the United Catholic Church, facilitates.</p>
 <p>Discussion afterward for all who wish to engage, about a wonderful book for spiritual direction that could be shared by a group who wants to meet after centering prayer in the future.</p>
 
 </div>
+
+<div id="youtube"> 
+  <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <iframe width="560" height="315" src=""></iframe>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#toVideo').click(function() {
+   var src="https://www.youtube.com/embed/KCn5edLZ72o?rel=0;autoplay=1";
+   $('#videoModal').modal('show');
+   $('#videoModal iframe').attr('src', src);
+  });
+
+  $('#videoModal button').click(function() {
+    $('#videoModal iframe').removeAttr('src');
+  });
+</script>

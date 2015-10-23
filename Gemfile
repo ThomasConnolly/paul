@@ -24,6 +24,8 @@ gem 'cloudinary'
 gem 'attachinary'
 gem 'remotipart'
 gem 'sidekiq'
+# gem 'koala'
+gem 'social-share-button'
 # gem 'auto_html'
 
 # gem 'sendgrid-ruby', '~> 1.0.0.alpha.1'

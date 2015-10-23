@@ -16,12 +16,11 @@ class Pledge < ActiveRecord::Base
   validates_presence_of :amount, numericality: true
   validates_presence_of :divisor
   validates_presence_of :user_id
-
   before_save :set_pay_this
 
-
+ 
   def set_pay_this
-    self.pay_this = self.amount.to_f*100 / self.divisor
+    self.pay_this = self.amount.to_f / self.divisor
   end
 
 end

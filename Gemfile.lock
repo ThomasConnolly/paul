@@ -41,8 +41,8 @@ GEM
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
     arel (6.0.3)
-    attachinary (1.3.0)
-      cloudinary (~> 1.0.69)
+    attachinary (1.3.1)
+      cloudinary (~> 1.1.0)
       rails (>= 3.2)
     autoprefixer-rails (6.0.3)
       execjs
@@ -85,7 +85,7 @@ GEM
       timers (>= 4.1.1)
     celluloid-supervision (0.20.5)
       timers (>= 4.1.1)
-    cloudinary (1.0.85)
+    cloudinary (1.1.0)
       aws_cf_signer
       rest-client
     coderay (1.1.0)
@@ -97,7 +97,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     connection_pool (2.2.0)
-    database_cleaner (1.5.0)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -106,7 +106,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    domain_name (0.5.24)
+    domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -142,7 +142,7 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.11)
+    libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -210,8 +210,8 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    sidekiq (3.5.0)
-      celluloid (~> 0.17.0)
+    sidekiq (3.5.1)
+      celluloid (~> 0.17.2)
       connection_pool (~> 2.2, >= 2.2.0)
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
@@ -219,6 +219,9 @@ GEM
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     spring (1.4.0)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -237,7 +240,7 @@ GEM
     tilt (1.4.1)
     timers (4.1.1)
       hitimes
-    tinymce-rails (4.2.5)
+    tinymce-rails (4.2.6)
       railties (>= 3.1.1)
     turbolinks (2.5.3)
       coffee-rails
@@ -296,6 +299,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sidekiq
   simple_form
+  social-share-button
   spring
   therubyracer
   tinymce-rails

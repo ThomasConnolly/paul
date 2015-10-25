@@ -1,20 +1,22 @@
 
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, remote: true do |f| %>
   <%= f.input :content, autofocus:true %>
   
   <div class="upload_picture">
     <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html:
-     {  class: "btn btn-primary btn-xs" } %>
+     {  class: "ui button gallery" } %>
   </div>
 
   <div class="upload_photos"> 
     <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures', label_html:
-     {  class: "btn btn-primary btn-xs" } %>
+     {  class: "ui button gallery" } %>
   </div>
 
   <div class="submit-post">
    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 
    <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
   </div>
-
 <% end %>
+<script>
+  $('.attachinary-input').attachinary();
+</script>

@@ -1,12 +1,10 @@
 <div id="comment-form">
-  <%= form_for([@post, @post.comments.create]) do |f| %>
+  <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
     <%= f.label :body %><br>
     <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%= f.submit %>
+  
+    <%= f.submit "Make comment" %>
   </p>
   <% end %>
 </div>

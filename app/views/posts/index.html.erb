@@ -5,23 +5,7 @@
     <h2> A Facebook-like feature for members of our church family</h2>
       <p><strong>How is it like Facebook?</strong> It's a social medium.</p>
       <p><strong>How is it not like Facebook?</strong>  We are a small community, and as Christians we strive to love one another and to share the goodness of God's creation. Political and controversial posts tend to polarize; totally opposite of why this feature is on our website. Please respect this sentiment.</p> 
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '812183458849016',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+  
 
 </section> 
   <section> 
@@ -32,7 +16,7 @@
       <% else %>
         <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
         </div>
-      <% end %><br>
+      <% end %><br><br>
       <p><strong><%= link_to "Click to create an article or post photos", new_post_path, 
         remote: true %></strong></p>
       

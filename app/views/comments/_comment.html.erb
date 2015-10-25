@@ -1,6 +1,6 @@
-<div class="comment">
-  <% @comments.each do |comment| %>
-    <% if comment.user.avatar.present? %>
+
+  <%# @comments.each do |comment| %>
+    <%# if comment.user.avatar.present? %>
     <%= cl_image_tag(comment.user.avatar.path, { size: '55x60', 
           crop: :fill, gravity: :face, class: "floatleft" }) %>
       <% else %>

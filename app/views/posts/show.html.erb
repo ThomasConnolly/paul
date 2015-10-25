@@ -21,7 +21,4 @@
       <%= link_to ' | Edit', edit_post_path(@post) %> | 
       <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'This will delete your post and all its comments.' } %></small></p>
     <% end %>
-  <div id="comments">
-    <%= render @post.comments %>
-    <%#= render 'comments/form' %>
-  </div>
+  

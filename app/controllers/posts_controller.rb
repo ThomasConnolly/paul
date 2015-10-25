@@ -11,13 +11,20 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.save
-      redirect_to posts_path(@post)
+    if @post.save
+      respond_to do |format|
+      format.html { redirect_to posts_path(@post) }
+      format.js
+      end
+    end
   end
 
   def update
     @post.update_attributes(post_params)
-      redirect_to posts_path(@post)
+      respond_to do |format|
+      format.html { redirect_to posts_path }
+      format.js 
+    end
   end
 
   def index

@@ -1,6 +1,6 @@
-
-  <%# @comments.each do |comment| %>
-    <%# if comment.user.avatar.present? %>
+<%# @comments.each do |comment| %>
+<div>    
+    <% if comment.user.avatar.present? %>
     <%= cl_image_tag(comment.user.avatar.path, { size: '55x60', 
           crop: :fill, gravity: :face, class: "floatleft" }) %>
       <% else %>
@@ -11,9 +11,9 @@
       <%= comment.body %>
       <span class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago.</span></p>
       <% if comment.user == current_user %><p><span class="edit-delete-line">
-        <%= link_to "Delete", post_comment_path(comment.post, comment),  
-            method: :delete,  data: { confirm: 
-          'This will delete your comment.' }  %></span></p>
-      <% end %>
-  <% end %>  
+        <%= link_to "Delete", post_comment_path(comment.post, comment), 
+            method: :delete, data: { confirm: 
+          'This will delete your comment.' } %></span></p>
+      <% end %> 
+      
 </div>

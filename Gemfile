@@ -24,10 +24,11 @@ gem 'cloudinary'
 gem 'attachinary'
 gem 'remotipart'
 gem 'sidekiq'
+gem 'closure_tree'
 # gem 'koala'
 gem 'social-share-button'
 # gem 'auto_html'
-
+gem 'httparty'
 # gem 'sendgrid-ruby', '~> 1.0.0.alpha.1'
 # gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # gem 'stripe-rails'
@@ -38,6 +39,8 @@ gem 'devise'
 
 
 group :development, :test do
+  gem 'rspec'
+  gem 'capybara'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -47,7 +50,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
   gem 'launchy'

@@ -1,67 +1,52 @@
-<div class="posts-container">
-<% @posts.each do |post| %>
-  <% if post.post_picture? %>
-    <%= link_to cl_image_tag(post.post_picture.path, :height => 350, :crop => :fit), 
-    cloudinary_url(post.post_picture.path) %>
-  <% end %>
-  
-  <% if post.photos? %>
-    <%= render 'slides', post: post %>
-  <% end %>  
-  <br>
-  <% if post.user.avatar.present? %><div id="avatar-owner">
-    <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
-      gravity: :face, class: "floatleft" }) %></div>
-  <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5></div>
-  <% end %>
-    <br>
-    <p><strong><div id="posts">
-    <%= post.user.full_name.titleize  %></strong>::  
-    <%= post.content %>  
-      <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
-      </span></p>
-      <%#= link_to "Share this post with your friends", post_path(post) %>
-     
+
+  <h2>Here are the latest posts</h2>    
+
+  <% @posts.each do |post| %>
+    <% if post.post_picture? %>
+      <%= link_to cl_image_tag(post.post_picture.path, :height => 350, 
+          :crop => :fit), 
+      cloudinary_url(post.post_picture.path) %>
+    <% end %>
+    <% if post.photos? %>
+      <%= render 'slides', post: post %>
+    <% end %>  
+      <br>
+    <% if post.user.avatar.present? %><div id="avatar-owner">
+      <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
+        gravity: :face, class: "floatleft" }) %></div>
+    <% else %>
+      <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+      </div>
+    <% end %>
+      <br>
+        <p><strong>
+          <%= post.user.full_name.titleize  %></strong>::  
+          <%= post.content %>  
+            <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
+            </span></p>
+        <%#= link_to "Share this post with your friends", post_path(post) %>
+
       <% if current_user == post.user %>
         <p> <span class="edit-delete-line">
-        <%= link_to ' | Edit', edit_post_path(post), remote: true %> | 
-        <%= link_to post, method: :delete, data: 
+        <%= link_to  edit_post_path(post), remote: true do %> Edit | 
+        <%= link_to post,  method: :delete, data: 
         { confirm: 'This will delete your post and all its comments.' 
-          } do %> Delete! </span></p>
+          }, remote: true do %> Delete! </span></p>
+          <% end %>
         <% end %>
-        <% end %>
-        <div class="clearall"> </div>
-        </div>
-        <div class="comment">
-    <% if post.comments.any? %>
-      <% post.comments.each do |comment| %>
-        <% if comment.user.avatar.present? %>
-    <%= cl_image_tag(comment.user.avatar.path, { size: '55x60', 
-          crop: :fill, gravity: :face, class: "floatleft" }) %>
-      <% else %>
-        <div class="default-comment-avatar">Your<br>Photo<br>Here</div>
-    <% end %>
+      <% end %>
+          <div class="clearall"> 
+          </div>
+        
+    <section id="comments-section">
+      <%#= render 'comments/index' %>
+      <div class="add-comment">
+      <%#= link_to "Add a comment", new_post_comment_path(post), remote: true %>
       
-    <p><%= comment.user.full_name.titleize %> : 
-      <%= comment.body %>
-      <span class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago.</span></p>
-      <% if comment.user == current_user %><p><span class="edit-delete-line">
-        <%= link_to "Delete", post_comment_path(comment.post, comment),  
-            method: :delete,  data: { confirm: 
-          'This will delete your comment.' }  %></span></p>
+      <%#= render "comments/form" %>
       
-  <% end %>  <% end %> 
-  </div>
-  <div>
-  <%#= render 'comments/form', post = @post %>
-      <%#= simple_form_for [post, post.comments.create], remote: true do |f| %>
-          <%#= f.input :body, placeholder: 'Type your comment here', input_html: { rows: 2 }, label: false %>
-          <%#= f.submit %>
-      <%# end %>
-  </div>      
+    </div>
+    </section>
+      <hr>
+  <% end %>
 
-      <div class="clearall"> </div>
-  <hr>
-<% end %><% end %>
-</div>

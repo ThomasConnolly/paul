@@ -5,28 +5,28 @@
     <h2> A Facebook-like feature for members of our church family</h2>
       <p><strong>How is it like Facebook?</strong> It's a social medium.</p>
       <p><strong>How is it not like Facebook?</strong>  We are a small community, and as Christians we strive to love one another and to share the goodness of God's creation. Political and controversial posts tend to polarize; totally opposite of why this feature is on our website. Please respect this sentiment.</p> 
-  
-
-</section> 
+  </section> 
   <section> 
     <div class="create-post">
-      <% if current_user.avatar.present? %>
-        <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
-          crop: :fill, gravity: :face, class: "floatleft" }) %>
-      <% else %>
-        <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
-        </div>
-      <% end %><br><br>
-      <p><strong><%= link_to "Click to create an article or post photos", new_post_path, 
-        remote: true %></strong></p>
-      
+          <% if current_user.avatar.present? %>
+            <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
+              crop: :fill, gravity: :face, class: "floatleft" }) %>
+          <% else %>
+            <div class="default-avatar"><h5>Your<br>Picture<br>
+            Here</h5>
+            </div>
+          <% end %><br><br>
+          <%= link_to new_post_path, remote: true do %>
+          <p><strong>Create a post or upload pictures</strong></p>
+          <% end %>
     </div>
-    <div id="post-form" style="display:none;"></div>
+        <div id="post-form" style="display:none;">
+        </div>
   </section> 
   <section>
-    <h2>Here are the latest posts</h2> 
-    <%= render 'posts' %>
-      
+    <div id="posts">
+      <%= render "posts" %> 
+    </div> 
   </section> 
 </div>
 

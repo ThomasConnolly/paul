@@ -16,5 +16,5 @@ class Comment < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :user_id
   validates_presence_of :post_id
-  default_scope -> { order('created_at asc') }
+  acts_as_tree order: 'created_at DESC'
 end

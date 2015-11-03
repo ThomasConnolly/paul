@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_posts, only: [:edit, :update, :destroy]
   before_action :all_posts, only: [:index, :create, :update, :destroy]
-  
   respond_to :html, :js
 
   def new
@@ -13,24 +12,20 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       respond_to do |format|
-      format.html { redirect_to posts_path(@post) }
-      format.js
+        format.html { redirect_to posts_path(@post)}
+        format.js
       end
     end
   end
+   
 
   def update
     @post.update_attributes(post_params)
+      @post.save
       respond_to do |format|
       format.html { redirect_to posts_path }
-      format.js 
-    end
-  end
-
-  def index
-    @posts = Post.all
-    @comments = Comment.all
-    @post = Post.new
+      format.js
+      end 
   end
 
   def edit
@@ -39,7 +34,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-      redirect_to posts_path
   end
 
 
@@ -50,9 +44,10 @@ private
 
   def all_posts
     @posts = Post.all
+  
   end
 
-  def set_post
+  def set_posts
     @post = Post.find(params[:id])
   end
 

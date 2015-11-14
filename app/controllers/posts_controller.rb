@@ -6,13 +6,29 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
+  def index
+    @posts = Post.all
+  end
+
+
+ def show
+  @post = Post.find(params[:id])
+  @commentable = @post.comments
+  @comment = Comment.new
+end
+  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       respond_to do |format|
-        format.html { redirect_to posts_path(@post)}
+        format.html { redirect_to posts_path(@post) }
         format.js
       end
     end
@@ -44,7 +60,6 @@ private
 
   def all_posts
     @posts = Post.all
-  
   end
 
   def set_posts

@@ -2,8 +2,8 @@
   <div class="col-md-1" id="pledge-step3"><h1 class="pledge-number">3</h1>
   </div>
     <div class="col-md-7">
-      <h4 class="pledge-text">You have elected to pay your pledge of <%=number_to_currency(@pledge.amount) %> in <%=@pledge.divisor %> payments of <%=number_to_currency(@pledge.pay_this) %>.<br>
+      <h4 class="pledge-text">You have elected to pay your pledge of <%=(@pledge.amount)*100.number_to_currency %> in <%=@pledge.divisor %> payments of <%=number_to_currency(@pledge.pay_this) %>.<br>
 If these numbers are correct, you will now be taken to a secure website that handles credit and debit card payments for Saint Paul's.<br>If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</h4>
     </div>
 </div>  
-<%= render 'form' %>
+<%= link_to "Yes, the numbers are correct" new_pledge_path %>

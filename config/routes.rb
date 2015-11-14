@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'visitors/index'
   resources :homestest, only: [:show]
   get 'homestest/show'
+  get 'comments/new'
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
@@ -38,7 +39,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :profiles
   resources :posts do
-    resources :comments, only: [:index, :new, :create, :destroy]
+    resources :comments, module: :posts
+  end
+  resources :vposts do
+    resources :comments, module: :vposts
   end
 
   mount Attachinary::Engine => '/attachinary'

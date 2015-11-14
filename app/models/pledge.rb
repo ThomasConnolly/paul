@@ -13,8 +13,8 @@
 
 class Pledge < ActiveRecord::Base
   belongs_to :user
-  validates_presence_of :amount, numericality: true
-  validates_presence_of :divisor
+  validates :amount, :presence => true, :numericality => {:greater_than => 0}
+  validates :divisor, :presence => true, :numericality => {:greater_than => 0}
   validates_presence_of :user_id
   before_save :set_pay_this
 

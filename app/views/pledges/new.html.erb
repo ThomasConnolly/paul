@@ -8,7 +8,7 @@
   </div>
     <div class="col-md-3">
       <h4 class="pledge-text">How much is your yearly pledge? The chart at right may be of help. </h4> <br>
-        <%= f.input :amount, input_html: {id: "pledgeAmount"} %>
+        <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Whole dollars" %>
     </div>
       <div class="col-md-8"><%= image_tag("http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1433039681/givingChart_bulg0k.png", { class: 'img-responsive', width: '650' }) %>
       </div>
@@ -29,7 +29,7 @@
   <div class="col-md-1" id="pledge-step3"><h1 class="pledge-number">3</h1>
   </div>
     <div class="col-md-7">
-      <h4 class="pledge-text">You have elected to pay your annual pledge of $<%= @pledge.amount %> in <%= @pledge.divisor %> payments of $<%= @pledge.pay_this %>.<br>
+      <h4 class="pledge-text">You have elected to pay your annual pledge of <%=(@pledge.amount)*100.number_to_currency %> in <%= @pledge.divisor %> payments of $<%= @pledge.pay_this.number_to_currency %>.<br>
 If these numbers are correct, you will now be taken to a secure website that handles credit and debit card payments for Saint Paul's.<br>If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</h4>
 <%= link_to "Enter credit or debit card information", '/' %>
     </div>

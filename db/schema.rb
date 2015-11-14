@@ -45,12 +45,11 @@ ActiveRecord::Schema.define(version: 20150905172801) do
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "post_id"
   end
-
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.string   "leader"

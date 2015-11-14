@@ -24,7 +24,7 @@ gem 'cloudinary'
 gem 'attachinary'
 gem 'remotipart'
 gem 'sidekiq'
-gem 'closure_tree'
+# gem 'closure_tree'
 # gem 'koala'
 gem 'social-share-button'
 # gem 'auto_html'
@@ -39,7 +39,7 @@ gem 'devise'
 
 
 group :development, :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'spring'
   gem 'better_errors'
@@ -47,6 +47,16 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'annotate'
   gem 'awesome_print', require: "ap"
+  gem 'byebug'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-byebug'
+  gem 'pry-stack'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  
 end
 
 group :test do

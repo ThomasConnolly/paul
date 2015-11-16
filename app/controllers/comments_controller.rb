@@ -1,17 +1,21 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post
   
   def index
-    @comments = @commentable.comments
+    @comments = @post.comments
+  end
+  
+  def show
+    @comment = @post.comments.find(params[:id])
   end
   
   def create
-    @comment = @commentable.comments.new(comment_params)
+    @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
-
       respond_to do |format|
-        format.html { redirect_to @commentable, notice: "Your comment was saved" }
+        format.html { redirect_to posts_path(@comment) }
         format.js
     end
   end
@@ -21,6 +25,9 @@ class CommentsController < ApplicationController
 
   private
 
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
   def comment_params
     params.require(:comment).permit(:body)

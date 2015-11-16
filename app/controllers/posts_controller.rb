@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_posts, only: [:edit, :update, :destroy]
+  before_action :set_posts, only: [:show, :edit, :update, :destroy]
   before_action :all_posts, only: [:index, :create, :update, :destroy]
   respond_to :html, :js
 
@@ -14,14 +14,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:comments)
   end
 
 
  def show
-  @post = Post.find(params[:id])
-  @commentable = @post.comments
-  @comment = Comment.new
+  @comment = @post.comments.build
 end
   
   def create

@@ -8,9 +8,11 @@
       <%= render 'slides', post: post %>
     <% end %>  
     <br>
-  <% if post.user.avatar.present? %><div id="avatar-owner">
-    <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
-        gravity: :face, class: "floatleft" }) %></div>
+  <% if post.user.avatar.present? %>
+    <div id="avatar-owner">
+      <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
+        gravity: :face, class: "floatleft" }) %>
+    </div>
   <% else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
     </div>
@@ -23,24 +25,40 @@
       </span></p>
 
         <%#= link_to "Share this post with your friends", post_path(post) %>
-
-    <%#= link_to "Show", post_path(post) %>
-    <% if current_user == post.user %>
-      <p> <span class="edit-delete-line">
+    <p> <span class="edit-delete-line">
+      <%= link_to "Show", post_path(post) %> &nbsp; 
+      <% if current_user == post.user %>
+      <%= link_to "Edit", edit_post_path(post) %> &nbsp;
       <%=link_to post,  method: :delete, data: 
       { confirm: 'This will delete your post and all its comments.' 
         }, remote: true do %> Delete! </span></p>
       <% end %>
     <% end %>
-
-<!--
+    <div class="clearall"></div>
 <section id="comments-section">
-  <div class="comments"> 
-    <%#= render partial: 'comments/comments', locals: {commentable: @post} %> 
-  </div>
-  <div class="add-comment">
-    <%#= render partial: 'comments/form', locals: {commentable: @post} %>
-  </div>
-</section> -->
-<hr>
+  <% post.comments.each do |comment| %>
+    <div id= "comments"> 
+      <div id="comments-body">
+      <%= comment.body %> <br>
+      </div>
+        <div id="comments-user">
+         --<%= comment.user.full_name.titleize %>
+        </div>
+          <!--<%# if current_user == comment.user %>
+          <p> <span class="edit-delete-line">
+      <%#=link_to comment,  method: :delete, data: 
+      { confirm: 'This will delete your comment.' 
+        }, remote: true do %> Delete! </span></p>
+      <%# end %>-->
+    <%# end %>
+          <br><hr></div>
+   <% end %>
+     
+   <%= simple_form_for [post, post.comments.new] do |f| %>
+    <%= f.input :body, placeholder: 'Type your comment here', 
+    input_html: { rows: 2 }, label: false %>
+    <%= f.submit class: "btn btn-primary btn-sm" %>
+  <% end %>
+</section> 
+
 <% end %>

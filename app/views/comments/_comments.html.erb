@@ -1,11 +1,11 @@
 <h4>Comments</h4>
-<% commentable.comments.each do |comment| %>
-<div class="well">
+
+<div class="well" id="comments">
 <%= comment.body %>
 <%= comment.user.full_name.titleize %>
 </div>
-<% end %>
 
+<%#= render 'comments/form' %>
 <!--
 <%# if comment.user_avatar.present? %>
   <%#= cl_image_tag(comment.user.avatar.path, { size: '55x60', 

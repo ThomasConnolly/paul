@@ -26,7 +26,7 @@
 
         <%#= link_to "Share this post with your friends", post_path(post) %>
     <p> <span class="edit-delete-line">
-      <%= link_to "Show", post_path(post) %> &nbsp; 
+      <%#= link_to "Show", post_path(post) %> &nbsp; 
       <% if current_user == post.user %>
       <%= link_to "Edit", edit_post_path(post) %> &nbsp;
       <%=link_to post,  method: :delete, data: 
@@ -57,7 +57,7 @@
    <%= simple_form_for [post, post.comments.new] do |f| %>
     <%= f.input :body, placeholder: 'Type your comment here', 
     input_html: { rows: 2 }, label: false %>
-    <%= f.submit class: "btn btn-primary btn-sm" %>
+    <%= f.submit class: "btn  btn-sm" %>
   <% end %>
 </section> 
 

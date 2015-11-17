@@ -2,11 +2,6 @@
   <%= @post.content %>
   <%= @post.user.full_name.titleize %>
 <br>
-<%= render 'posts/comment', collection: @post.comments %>
-<!--<ul id="comments">
-  <%# if @post.comments.any ? %>
-  <%#= @comment.body %>
-  <%#= @comment.user.full_name.titleize %>
-  <%# end %>
-</ul> -->
+<%= render 'comments/comments', comments: @comments %>
+
 <%= link_to "<< Back to Posts", posts_path %>

@@ -39,7 +39,14 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :profiles
   resources :posts do
+<<<<<<< HEAD
     resources :comments
+=======
+    resources :comments, module: :posts
+  end
+  resources :vreports, only: [:index] do
+    resources :comments, module: :vreports
+>>>>>>> stripe
   end
  
 

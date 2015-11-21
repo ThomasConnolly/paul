@@ -1,13 +1,12 @@
 class PledgesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_pledge, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:new]
+  before_action :redirect_to_signup, only: [:new]
   
   def index
-    @pledges = Pledge.all
   end
 
   def show
+    @pledge = Pledge.find(params[:id])
   end
   
   def edit
@@ -42,8 +41,17 @@ class PledgesController < ApplicationController
 
 private
 
+
+
   def set_pledge
     @pledge = Pledge.find(params[:id])
+  end
+
+  def redirect_to_signup
+    if !user_signed_in?
+      session["user_return_to"] = new_pledge_path
+      redirect_to new_user_registration_path
+    end
   end
 
   def pledge_params

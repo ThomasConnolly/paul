@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     
   def show
     unless @user == current_user
-      redirect_to :back, :alert => "Not authorized"
+      redirect_to :back, :alert => "You must be registered and signed in to use the feature you requested."
     end
   end
   

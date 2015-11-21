@@ -17,7 +17,7 @@
   <% end %>
   <br>
   <p><strong>
-    <%= post.user.full_name.titleize  %></strong>::  
+    <%= post.user.full_name  %></strong>::  
     <%= post.content %>  
       <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
       </span></p>

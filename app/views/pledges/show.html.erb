@@ -1,1 +1,44 @@
-show.html.erb
+<div class="row">
+  <h1>Pay your pledge on line, it's easy as 1, 2, 3</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-1" id="pledge-step1"><h1 class="pledge-number">1</h1>
+  </div>
+    <div class="col-md-3">
+      <h4 class="pledge-text">How much is your yearly pledge? The chart at right may be of help. </h4> <br>
+        <%= simple_form_for @pledge do |pledge| %>
+        <%= pledge.input :amount, input_html: {id: "pledgeAmount"} %>
+    </div>
+      <div class="col-md-8"><%= image_tag("http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1433039681/givingChart_bulg0k.png", { class: 'img-responsive', width: '650' }) %>
+      </div>
+  <hr> 
+</div>
+
+<div class="row">
+  <div class="col-md-1" id="pledge-step2"><h1 class="pledge-number">2</h1>
+  </div>
+    <div class="col-md-7">
+      <h4 class="pledge-text">Select your payment intervals: weekly, monthly or quarterly.</h4>
+        <%= pledge.input :divisor, collection: [["Weekly", 52], ["Monthly", 12], ["Quarterly", 4]],
+         as: :radio_buttons, 
+        label: false, input_html: {id: "pledgeDivisor"} %></p><br>
+        <%= f.button :submit, "Calculate payment" %>
+        <% end %>
+        <%#= link_to new_pledge_path, remote: true do%>
+        <button class="btn btn-default">Set up pledge</button>
+        <% end %>
+        <div id="pledge-setup">
+        </div>
+    </div>
+   <hr>
+</div>
+<div class="row">
+  <div class="col-md-1" id="pledge-step3"><h1 class="pledge-number">3</h1>
+  </div>
+    <div class="col-md-7">
+    
+      <h4 class="pledge-text">You have elected to pay your pledge of $#{@pledge.amount}  
+      annually in #{@pledge.divisor} payments of #{@pledge.pay_this}.<br>
+If these numbers are correct, you will now be taken to a secure website that handles credit and debit card payments for Saint Paul's.<br>If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</h4>
+</div>  

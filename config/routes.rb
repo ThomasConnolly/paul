@@ -41,8 +41,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, module: :posts
   end
-  resources :vposts do
-    resources :comments, module: :vposts
+  resources :vreports, only: [:index] do
+    resources :comments, module: :vreports
   end
 
   mount Attachinary::Engine => '/attachinary'

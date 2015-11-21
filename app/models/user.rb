@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   has_many :books
   has_one :pledge
   after_create :add_profile
-  belongs_to :role
+  has_one :role
   # after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   end
 
   def set_full_name
-    self.full_name = "#{self.first_name} #{self.last_name}".strip
+    self.full_name = "#{self.first_name} #{self.last_name}".strip.titleize
   end  
 
   def set_default_role
@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   end
 
   def add_profile
-    self.create_profile
+    self.create_profile if profile_nil?
   end
 
   # def send_welcome_email

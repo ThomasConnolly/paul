@@ -1,0 +1,10 @@
+
+<%= simple_form_for @vreport, remote: true do |f| %>
+  <%= f.input :title, autofocus:true %><br>
+  <%= f.input :body %>
+  
+  <div class="submit-post">
+   <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 
+   <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
+  </div>
+<% end %>

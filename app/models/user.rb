@@ -25,12 +25,12 @@
 class User < ActiveRecord::Base
   before_save :set_full_name
 
-  enum role: [:admin, :editor, :member, :guest]
+  enum role: [:admin, :vestry, :editor, :member, :guest]
   after_initialize :set_default_role, :if => :new_record?
   
   has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
-  has_many :comments
+  has_many :comments, through: :commentable
   has_many :sermons
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   has_one :pledge
   after_create :add_profile
   has_one :role
+  has_many :vreports
   # after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
@@ -62,7 +63,7 @@ class User < ActiveRecord::Base
   end
 
   def add_profile
-    self.create_profile if profile_nil?
+    self.create_profile if profile.nil?
   end
 
   # def send_welcome_email

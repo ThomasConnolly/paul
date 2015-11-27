@@ -23,7 +23,7 @@
 //= require attachinary
 //= require tinymce-jquery
 //= require bootstrap-sprockets
-//= require bootstrap.min
+//= require bootstrap
 //= require turbolinks
 //= require social-share-button
 //= require video

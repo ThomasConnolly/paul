@@ -24,7 +24,6 @@ gem 'cloudinary'
 gem 'attachinary'
 gem 'remotipart'
 gem 'sidekiq'
-# gem 'closure_tree'
 # gem 'koala'
 gem 'social-share-button'
 # gem 'auto_html'
@@ -41,6 +40,7 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -56,11 +56,13 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
-  
+  gem 'letter_opener'
+  gem 'simple_bdd'
+  gem 'shoulda-matchers'
 end
 
 group :test do
-  gem 'faker'
+  gem 'ffaker'
   gem 'database_cleaner'
   gem 'launchy'
 end

@@ -1,0 +1,11 @@
+<h1>Here's the report</h1>
+  <%= @vreport.title %>
+  <%= @vreport.body %>
+  <%= @vreport.user.full_name.titleize %>
+<br>
+<% @vreport.comments.each do |comment| %>
+<%= comment.body %>
+<p>Comment made a while ago by <%= comment.user.full_name.titleize %></p>
+<% end %>
+
+<%= link_to "<< Back to Vestry Reports", vreports_path %>

@@ -1,27 +1,16 @@
+<h3>Comments</h3>
+<% commentable.comments.each do |comment| %>
+  <div class="well" id="comments">
+    <p><%= comment.body %><br>
+    <%= comment.user.full_name.titleize %>
 
+    <span class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago.</span></p>
+  </div>
 
-<div class="well" id="comments">
-<%= comment.body %>
-<%= comment.user.full_name %>
-</div>
-
-<%#= render 'comments/form' %>
-<!--
-<%# if comment.user_avatar.present? %>
-  <%#= cl_image_tag(comment.user.avatar.path, { size: '55x60', 
-      crop: :fill, gravity: :face, class: "floatleft" }) %>
-<%# else %>
-  <div class="default-comment-avatar">Your<br>Photo<br>Here</div>-->
-<%# end %>
-  <p>
-    <%#= comment.user_full_name.titleize %>  
-   <!-- <div id="comment_body_#{@post.id}">
-   
-    <%#= comment.body %>
-    <span class="time-ago"><%#= time_ago_in_words(comment.created_at) %> ago.</span></p>
-    <%# if comment.user == current_user %>
-    <span class="edit-delete-line"><%#= link_to post_comment_path(post,comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %> "Delete"</span>
+ <!--   <%# if comment.user == current_user %>
+    <span class="edit-delete-line"><%#= link_to post_comment_path(,comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %> "Delete"</span>
 </p>
-<%# end %>         
-<%# end %>
--->  
+
+    <%# end %>         
+  <%# end %> -->
+<% end %>

@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: posts
@@ -8,4 +9,3 @@
 #  updated_at :datetime
 #  user_id    :integer
 #
-

@@ -2,6 +2,10 @@
   <%= @post.content %>
   <%= @post.user.full_name.titleize %>
 <br>
-<%= render 'comments/comments', comments: @comments %>
+<% @post.comments.each do |comment| %>
+<%= comment.body %><br>
+<p>Comment made a while ago by <%= comment.user.full_name.titleize %></p>
+<% end %>
+<%#= render partial: 'comments/comments', locals: {commentable: @post} %>
 
 <%= link_to "<< Back to Posts", posts_path %>

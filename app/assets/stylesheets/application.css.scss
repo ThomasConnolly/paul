@@ -371,7 +371,7 @@ list-style-type: none;
 }
 
 
-.create-post {
+.create-post, .create-vreport {
   width: 100%;
   height: 140px;
   border: 1px;
@@ -507,7 +507,7 @@ list-style-type: none;
   width: 300px;
   float: left;
 }
-.submit-post {
+.submit-post, .submit-vreport {
   margin-left: 200px;
 }
 

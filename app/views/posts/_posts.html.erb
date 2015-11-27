@@ -19,14 +19,14 @@
   <% end %>
   <br>
   <p><strong>
-    <%= post.user.full_name  %></strong>::  
+    <%= post.user.full_name.titleize  %></strong>::  
     <%= post.content %>  
       <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
       </span></p>
 
         <%#= link_to "Share this post with your friends", post_path(post) %>
     <p> <span class="edit-delete-line">
-      <%#= link_to "Show", post_path(post) %> &nbsp; 
+      <%= link_to "Show", post_path(post) %> &nbsp; 
       <% if current_user == post.user %>
       <%= link_to "Edit", edit_post_path(post) %> &nbsp;
       <%=link_to post,  method: :delete, data: 
@@ -36,29 +36,12 @@
     <% end %>
     <div class="clearall"></div>
 <section id="comments-section">
-  <% post.comments.each do |comment| %>
-    <div id= "comments"> 
-      <div id="comments-body">
-      <%= comment.body %> <br>
-      </div>
-        <div id="comments-user">
-         --<%= comment.user.full_name.titleize %>
-        </div>
-          <!--<%# if current_user == comment.user %>
-          <p> <span class="edit-delete-line">
-      <%#=link_to comment,  method: :delete, data: 
-      { confirm: 'This will delete your comment.' 
-        }, remote: true do %> Delete! </span></p>
-      <%# end %>-->
-    <%# end %>
-          <br><hr></div>
-   <% end %>
+  <%= render partial: 'comments/comments', locals: {commentable: post} %>
+          
+          
      
-   <%= simple_form_for [post, post.comments.new] do |f| %>
-    <%= f.input :body, placeholder: 'Type your comment here', 
-    input_html: { rows: 2 }, label: false %>
-    <%= f.submit class: "btn  btn-sm" %>
-  <% end %>
+   <%= render partial: 'comments/form', locals: {commentable: post} %>
 </section> 
-
 <% end %>
+
+

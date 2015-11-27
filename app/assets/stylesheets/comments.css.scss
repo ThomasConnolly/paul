@@ -1,18 +1,18 @@
-#comments-body {
+#comments-body,  #vreports-body{
   margin-left : 130px;
 }
 
-#comments-user {
+#comments-user, #vreports-user{
   color : #808080;
   float : right;
   
 }
-.comment-form {
+.comment-form, .vreport-form{
   width: 400px;
   height: auto;
   padding-left: 130px;
 }
-.default-comment-avatar{
+.default-comment-avatar, .default-vreport-avatar{
   margin: 5px;
   padding-top: 6px;
   text-align: center;

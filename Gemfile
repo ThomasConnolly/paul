@@ -46,7 +46,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'annotate'
-  gem 'awesome_print', require: "ap"
+  gem 'awesome_print'
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'

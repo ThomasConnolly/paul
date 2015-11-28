@@ -3,8 +3,12 @@
 #be available to Rake.
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new do |task|
+desc "Run all examples"
+RSpec::Core::RakeTask.new(:spec) do |task|
   task.rspec_opts = ['--color', '--format', 'doc']
+  task.pattern = 'spec/*_spec.rb'
+end
+rescue LoadError
 end
 
 

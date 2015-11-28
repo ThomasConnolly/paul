@@ -59,9 +59,6 @@ group :development, :test do
   gem 'letter_opener'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
-end
-
-group :test do
   gem 'ffaker'
   gem 'database_cleaner'
   gem 'launchy'

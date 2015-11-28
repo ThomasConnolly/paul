@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :widgets
   resources :pictures
   resources :albums
   get 'activities/index'

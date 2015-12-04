@@ -1,6 +1,9 @@
-<h3>Users</h3>
-
-  <% @users.each do |user| %> 
-    <p><strong>  <%= user.full_name %></strong> &nbsp; <%= user.email %></p>
-  <% end %>
-  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3"<h3>Users</h3>
+      <% @users.each do |user| %> 
+        <p><strong>  <%= user.full_name %></strong> &nbsp; <%= user.email %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

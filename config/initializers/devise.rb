@@ -189,7 +189,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering password for an account
-  config.reset_password_keys = [:full_name]
+  config.reset_password_keys = [:email]
 
   # Time interval to reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to

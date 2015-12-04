@@ -43,12 +43,12 @@ config.serve_static_files = false
   # Compress JavaScripts and CSS.
 config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
-config.assets.precompile = ['*.js', '*.css', '*.css.scss', '*.css.erb']
+#     config.assets.precompile = ['*.js', '*.css', '*.css.scss', '*.css.erb']
   # Do not fallback to assets pipeline if a precompiled asset is missed.
 config.assets.compile = false
 
-config.assets.precompile << 'tinymce-jquery.js'
-config.assets.precompile += %w( bx_loader.gif controls.png)
+#     config.assets.precompile << 'tinymce-jquery.js'
+#     config.assets.precompile += %w( bx_loader.gif controls.png)
   # Generate digests for assets URLs.
 config.assets.digest = true
 

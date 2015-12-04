@@ -15,7 +15,7 @@ class VreportsController < ApplicationController
 
 
   def index
-    @vreports = Vreport.all
+    @vreports = Vreport.includes(:comments).all
     @vreport = Vreport.new
   end
 

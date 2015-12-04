@@ -27,17 +27,16 @@ class User < ActiveRecord::Base
 
   enum role: [:admin, :vestry, :editor, :member, :guest]
   after_initialize :set_default_role, :if => :new_record?
+  after_create :add_profile
   
   has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
-  has_many :comments, through: :commentable
-  has_many :sermons
+  has_many :comments
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
   has_one :pledge
-  after_create :add_profile
   has_one :role
   has_many :vreports
   # after_create :send_welcome_email
@@ -48,11 +47,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, 
          :authentication_keys => [:full_name]
 
+ def email_required?
+  false
+end
  
-
-  def email_required?
-    false
-  end
 
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
@@ -65,6 +63,7 @@ class User < ActiveRecord::Base
   def add_profile
     self.create_profile if profile.nil?
   end
+
 
   # def send_welcome_email
   #  WelcomeMailer.welcome_email(self).deliver

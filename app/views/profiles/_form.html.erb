@@ -1,14 +1,22 @@
 <h1> Fill out your profile </h1>
-  <%= cl_image_tag(current_user.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }) if current_user.avatar? %>
   
+    <% if current_user.avatar? %>
+      <%= link_to cl_image_tag(current_user.avatar.path, { size: '300x360', crop: :fill, class: "floatleft" }), edit_user_path(current_user.id) %> 
+      
+    <% end %>
+    <% if current_user.avatar.nil? %>
+      <%= link_to edit_user_path(current_user.id) do %>
+      <div class="big-avatar-missing"><h3>Click to add<br>Your Picture</h3><h4>aka Avatar</h4>
+      </div>
+      <% end %> 
+    <% end %>  
   <h3 class="mt30">Everybody has a story...</h3>
     <p>...And we get to know one another by sharing our story. To get started, look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p>
 
     <div class="scroll-to-bottom"><h4>Scroll to the bottom and click "submit" to save your new profile information</h4></div>
 
     <div class='clearall'> </div>
-      <h3><%= link_to "Change your 
-      avatar", edit_user_path(current_user.id) %></h3><br>
+      <h3>Click photo to update it</h3><br>
   
 <div class="form-group">
   <%= simple_form_for @profile do |f| %>  

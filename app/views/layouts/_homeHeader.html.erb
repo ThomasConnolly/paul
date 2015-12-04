@@ -3,19 +3,20 @@
     <div id="home-logo">
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", { id: 'home-logo', width: '325' }) %>
     </div>
-    <div id="menu-one"> 
-    <button class="btn-custom" data-jq-dropdown="#faithdd">Faith >></button>
-    </div> 
-    <div id="menu-two"> 
-     <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
-    </div><div class="clearall"></div>
-
-    <% if user_signed_in? %>
-    <div id="menu-five">
-      <p><small>
-        <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
-      </small></p></div>
-      <% end %>   
+      <div id="menu-one"> 
+        <button class="btn-custom" data-jq-dropdown="#faithdd">Faith >></button>
+      </div> 
+      <div id="menu-two"> 
+       <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
+      </div><div class="clearall"></div>
+        <div id="menu-five">
+          <% if user_signed_in? %>
+          <p><small>
+          <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
+          <% else %>
+            <%= link_to "Member sign in", new_user_session_path %></small></p>
+          <% end %>   
+       </div>
   </div>
 </header>
 <div id="faithdd" class="jq-dropdown jq-dropdown-tip">
@@ -33,8 +34,8 @@
         <li> <%=link_to "Children's shelter in the Dominican Republic", pages_albergue_path %> </li>
         <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
         <li> <%=link_to "Opportunities for you", opportunities_path %> </li>
-        <li> <%#=link_to "Activities", activities_index_path %> </li>
-        <li> <%#=link_to "Money Matters", pledges_path %> </li>
+        <li> <%=link_to "Activities", activities_index_path %> </li>
+        <li> <%=link_to "Money Matters", pledges_path %> </li>
         <li> <%=link_to "Family Ties", posts_path %> </li>
       </ul> 
     </div>

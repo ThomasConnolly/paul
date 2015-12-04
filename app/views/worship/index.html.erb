@@ -1,5 +1,7 @@
 <h1>Worship at Saint Paul's</h1>
-<div class="main-body">
+<div class="container">
+<div class="row">
+<div class="col-md-8">
   <p>Three distinctive Eucharistic liturgies are offered at St. Paul's every Sunday in season (beginning Nov. 8 this year). During summer we celebrate the usual 8 a.m. service and a 10 a.m. Rite II service with congregational singing but no choir. At present we are "off-season," and we worship at 8 and 10 a.m.</p> 
   <p>Here's how the three in-season worship services differ:</p>
 
@@ -22,15 +24,25 @@
   over another and no bishop gets to be a bishop unless elected by both clergy and laity. No priest may "rule" over his/her parish; authority is shared between the clergy
   and the parish council (we call it a vestry) and the same applies all the way up. In this way, all members of the Church are and may be held accountable to the others.</p>
   <p>There are other things which mark us as different. We invite you to check us out at St. Paul's. There's room here for you, your questions and even your doubts!</p>
+
+    <div id="toBishopVideo">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/curry.png", 
+        width:"47%", class: "floatright") %><br><br>
+      <h2>'This is the Jesus Movement'</h2>
+        <p> Bishop Michael Curry, right, was installed Nov. 1 as the primate of the Episcopal Church. Click his photo for a short video in which he sets the tone for our Church.</p>
+        <p>The first African-American Presiding Bishop, Curry replaced Bishop Katharine Jefforts Schori, the first woman primate.<br>
+      
+    </div> 
+    
 </div>
 
-<div class="sidebar"> 
+<div class="col-md-4 sidebar"> 
 
 
 <h2>How We Pray</h2>
   <div id="toVideo">
     <%= cl_image_tag("books-of-common-prayer_oasoqz.jpg", 
-    :width=>252, :crop=>:scale, class: "image-center") %>
+    width: "95%", class: "image-center") %>
   </div>
   <p>
     There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer.</b></em> 
@@ -57,6 +69,8 @@
     </div>
   </div>
 </div>
+</div>
+</div>
 <script>
   $('#toVideo').click(function() {
    var src="https://www.youtube.com/embed/KCn5edLZ72o?rel=0;autoplay=1";
@@ -68,3 +82,32 @@
     $('#videoModal iframe').removeAttr('src');
   });
 </script>
+<div id="presiding-bishop"> 
+  <div id="videoModalPB" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <iframe width="820" height="510" src=""></iframe>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#toBishopVideo').click(function() {
+   var src="http://fast.wistia.net/embed/iframe/qo6rqw8aum?canonicalUrl=https%3A%2F%2Fepiscopalchurch.wistia.com%2Fmedias%2Fqo6rqw8aum&canonicalTitle=Presiding%20Bishop%20Michael%20Curry%20-%20EpiscopalChurch" ;
+   $('#videoModalPB').modal('show');
+   $('#videoModalPB iframe').attr('src', src);
+  });
+
+  $('#videoModalPB button').click(function() {
+    $('#videoModalPB iframe').removeAttr('src');
+  });
+</script>
+
+
+<!--<iframe class="wistia_embed" name="wistia_embed" src="http://fast.wistia.net/embed/iframe/qo6rqw8aum?canonicalUrl=https%3A%2F%2Fepiscopalchurch.wistia.com%2Fmedias%2Fqo6rqw8aum&canonicalTitle=Presiding%20Bishop%20Michael%20Curry%20-%20EpiscopalChurch" allowtransparency="true" frameborder="0" scrolling="no" width="620" height="349"></iframe>-->

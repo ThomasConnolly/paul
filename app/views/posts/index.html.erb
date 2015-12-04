@@ -1,4 +1,7 @@
-<div class="main-body">
+<div class="container">
+  <div class="row">
+    <div class=col-md-8>
+
   <section>
   <h1>Family Ties</h1>
   
@@ -11,14 +14,17 @@
   </section> 
   <section>
     <div class="create-post">
-      <% if current_user.avatar.present? %>
+      <% if current_user.avatar? %>
         <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
           crop: :fill, gravity: :face, class: "floatleft" }) %>
-      <% else %>
-        <div class="default-avatar"><h5>Your<br>Picture<br>
-        Here</h5>
-        </div>
-      <% end %><br><br>
+      <% end %>
+      <% if current_user.avatar.nil? %>
+      <%= link_to edit_user_path(current_user.id) do %>
+      <div class="default-avatar"><h4>Click to add<br>Your Picture</h4>
+      </div>
+      <% end %> 
+      <% end %> 
+        <br><br>
       <%= link_to new_post_path, remote: true do %>
       <p><strong>Create a post or upload pictures</strong></p>
       <% end %>
@@ -30,12 +36,11 @@
   <div id="posts">
     <%= render partial: 'posts' %>
   </div>       
-</section>
-    
-</div><!--main-body-->
+</section>  
+</div>
 
 
-<div class="sidebar">
+<div class="col-md-4 sidebar">
 <h2>About Family Ties</h2>
 <p>Our unity as family begins with our baptism and is strengthened at the Lord's table, where we partake of the body and blood of Jesus. It continues in our homes and the marketplace as we commune with one another. Family ties are strengthened when we interact with each other.</p>
 <h2> Tell your story</h2>
@@ -55,3 +60,4 @@
     <h3>ToDo for this page</h3>
     <p>Add share to Facebook api</p>
 </div> <!--sidebar-->
+</div></div>

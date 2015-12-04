@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  #  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :all_posts, only: [:index, :create, :update, :destroy]
   respond_to :html, :js
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:comments).all
     @post = Post.new
   end
 

@@ -37,6 +37,6 @@ private
  end
 
   def user_params
-    params.require(:user).permit(:role, :avatar, :stripe_customer_id)
+    params.require(:user).permit(:role, :avatar, :stripe_customer_id, :first_name, :last_name, :full_name)
   end
 end

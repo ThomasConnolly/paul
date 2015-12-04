@@ -1,6 +1,6 @@
 
 <%= simple_form_for @post, remote:true do |f| %>
-  <%= f.input :content, placeholder: 'Type your post here', label: false, :input_html => {  :autofocus => true} %>
+  <%= f.input :content, placeholder: 'Type your post here', label: false, :autofocus => "autofocus" %>
   
   <div class="upload_picture">
     <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html:

@@ -39,8 +39,6 @@ gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'capybara-webkit'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -53,16 +51,22 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-byebug'
   gem 'pry-stack'
-  gem 'guard'
-  gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'letter_opener'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
-  gem 'ffaker'
   gem 'database_cleaner'
+  
+end
+group :test do
+  gem 'ffaker'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'capybara-webkit'
   gem 'launchy'
 end
+
 # gem 'mail_form'
 # gem 'gibbon'
 # gem 'activeadmin', github: 'gregbell/active_admin'

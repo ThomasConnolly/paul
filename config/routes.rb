@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :contacts
   resources :widgets
   resources :pictures
   resources :albums
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
   resources :books
   resources :pledges
   resources :sermons
-  devise_for :users  #, :controllers => { registrations: 'registrations' }
+  devise_for :users  
     devise_scope :user do
       get 'register', to: 'devise/registrations#new', as: :register
       get 'login', to: 'devise/sessions#new', as: :login

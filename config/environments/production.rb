@@ -2,13 +2,13 @@ Rails.application.configure do
   # Settings specified here will take precedence.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.cache_classes = false
 
   config.action_mailer.raise_delivery_errors = true
   
   config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.default_url_options = { host: "localhost:5000"}
+  config.action_mailer.default_url_options = { host: "heroku.com"}
  
 
   # Eager load code on boot. This eager loads most of Rails and

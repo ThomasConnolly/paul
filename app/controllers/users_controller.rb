@@ -1,7 +1,8 @@
-class UsersController < ApplicationController
 
+class UsersController < ApplicationController
+ before_action :authenticate_user!, except: [:index, :show]
  before_action :set_user, only: [:show, :edit, :update]
- before_action :authenticate_user!
+ 
   
   def index
     @users = User.all.order(:last_name)
@@ -31,12 +32,11 @@ class UsersController < ApplicationController
 
 
 private
-
  def set_user
   @user = User.find(params[:id])
  end
 
   def user_params
-    params.require(:user).permit(:role, :avatar, :stripe_customer_id, :first_name, :last_name, :full_name)
+    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, :stripe_customer_id)
   end
 end

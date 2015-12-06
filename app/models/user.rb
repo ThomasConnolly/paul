@@ -39,17 +39,39 @@ class User < ActiveRecord::Base
   has_one :pledge
   has_one :role
   has_many :vreports
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :full_name,
+    :presence => true,
+    :uniqueness => true,
+    :case_sensitive => false
+ 
+
+  attr_accessor :login
+
   # after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, 
-         :recoverable, :rememberable, :trackable, :validatable, 
-         :authentication_keys => [:full_name]
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, 
+         :validatable, :authentication_keys => [:login]
+        
 
- def email_required?
-  false
-end
+
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_hash).where(["lower(full_name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      if conditions[:full_name].nil?
+        where(conditions.to_hash).first
+      else
+        where(full_name: conditions[:full_name]).first
+      end
+    end
+  end
  
 
   def set_full_name

@@ -1,5 +1,3 @@
-require 'devise/orm/active_record'
-
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -33,7 +31,7 @@ Devise.setup do |config|
   # that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [:full_name]
+  config.authentication_keys = [:login]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -45,12 +43,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:full_name]
+  config.case_insensitive_keys = [:full_name, :email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user & when used to authenticate or find user. Default is :email.
-  config.strip_whitespace_keys = [:full_name]
+  config.strip_whitespace_keys = [:full_name, :email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -125,7 +123,6 @@ Devise.setup do |config|
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on confirmation.
   config.reconfirmable = true
-
   # Defines which key will be used when confirming an account
   config.confirmation_keys = [:full_name]
 
@@ -189,7 +186,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering password for an account
-  config.reset_password_keys = [:email]
+  config.reset_password_keys = [:full_name]
 
   # Time interval to reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to

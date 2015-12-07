@@ -8,7 +8,8 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :full_name, placeholder: "Your full name", label: false %>
+          <%= f.input :first_name, placeholder: "Your first name", label: false %>
+          <%= f.input :last_name, placeholder: "Your last name", label: false %>
           <%= f.input :email, required: false, placeholder: "Your email", label:false %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

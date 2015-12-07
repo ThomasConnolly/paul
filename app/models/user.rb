@@ -46,33 +46,16 @@ class User < ActiveRecord::Base
     :uniqueness => true,
     :case_sensitive => false
  
+  
 
-  attr_accessor :login
-
-  # after_create :send_welcome_email
+  after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
-         :validatable, :authentication_keys => [:login]
-        
+         :validatable, :authentication_keys => [:full_name]
 
-
-
-  def self.find_for_database_authentication(warden_conditions)
-    conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions.to_hash).where(["lower(full_name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-    else
-      if conditions[:full_name].nil?
-        where(conditions.to_hash).first
-      else
-        where(full_name: conditions[:full_name]).first
-      end
-    end
-  end
- 
 
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
@@ -87,8 +70,8 @@ class User < ActiveRecord::Base
   end
 
 
-  # def send_welcome_email
-  #  WelcomeMailer.welcome_email(self).deliver
-  # end
+  def send_welcome_email
+    WelcomeMailer.welcome_email(self).deliver
+  end
 
 end

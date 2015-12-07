@@ -4,4 +4,5 @@ class UserMailer < ApplicationMailer
     @url = 'http://SaintPaulsNaples.org/login'
     mail(to: @user.email subject: "Welcome to Saint Pauls")
   end
+  end
 end

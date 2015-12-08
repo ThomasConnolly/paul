@@ -39,22 +39,18 @@ class User < ActiveRecord::Base
   has_one :pledge
   has_one :role
   has_many :vreports
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :full_name,
-    :presence => true,
-    :uniqueness => true,
-    :case_sensitive => false
+  validates :email, presence: true
  
-  
 
   after_create :send_welcome_email
+
+  attr_accessor :login
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, 
-         :validatable, :authentication_keys => [:full_name]
+         :recoverable, :rememberable, :trackable,
+         :authentication_keys => [:login]
 
 
   def set_full_name
@@ -74,4 +70,18 @@ class User < ActiveRecord::Base
     WelcomeMailer.welcome_email(self).deliver
   end
 
+ 
+
+    def self.find_first_by_auth_conditions(warden_conditions)
+  conditions = warden_conditions.dup
+  if login = conditions.delete(:login)
+    where(conditions).where(["lower(full_name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+  else
+    if conditions[:full_name].nil?
+      where(conditions).first
+    else
+      where(full_name: conditions[:full_name]).first
+    end
+  end
+end
 end

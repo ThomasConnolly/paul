@@ -4,14 +4,15 @@
       <h2>Log in</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
         <div class="form-inputs">
-          <%= f.input :full_name, placeholder: "Your full name", label: false %>
+          <%= f.input :login, placeholder: "Your full name", label: false %>
           <%= f.input :password, placeholder: "Your password", label: false %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", class: "btn btn-lg btn-primary" %>
         </div>
       <% end %>
 

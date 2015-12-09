@@ -8,15 +8,15 @@
         <%= devise_error_messages! %>
 
         <div class="form-inputs">
-          <%= f.input :first_name, autofocus: true, placeholder: "Your first name", label: false %>
-          <%= f.input :last_name, placeholder: "Your last name", label: false %>
-          <%= f.input :email, placeholder: "your email", label: false %>
+          <%= f.input :first_name, autofocus: true, required: true, placeholder: "Your first name" %>
+          <%= f.input :last_name, required: true, placeholder: "Your last name" %>
+          <%= f.input :email, required: true, placeholder: "your email" %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-lg btn-primary" %>
         </div>
       <% end %>
 

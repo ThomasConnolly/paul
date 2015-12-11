@@ -27,7 +27,7 @@
 </p>
 <p>
   <strong>Contact:</strong>
-  <%= @opportunity.user_id %>
+  <%= @opportunity.user.full_name.titleize %>
 </p>
 
 <%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |

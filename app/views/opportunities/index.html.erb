@@ -4,25 +4,39 @@
     <div class="col-md-8">
     <h1>Opportunities for ministry</h1>
     <% @opportunities.each do |opportunity| %>
-      <h2><%= opportunity.ministry %></h2>
-      <p><strong>Who </strong>&#09;<%= opportunity.who %></p>
-      <p><strong>What </strong>&#09;<%= opportunity.what %></p>
-      <p><strong>When </strong>&#09;<%= opportunity.when %></p>
-      <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
-      <% if opportunity.user.present? %>
-        <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name %>, <span class="email"><%= opportunity.user.email %></span></p> 
-      <% end %>
-      <% if user_signed_in? %>
-        <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %> 
-      <% end %>
+      <a href="#" id="show_it">
+        <h2><%= opportunity.ministry %></h2></a>
+      <div class="opportunityDetail">
+        <p><strong>Who </strong>&#09;<%= opportunity.who %></p>
+        <p><strong>What </strong>&#09;<%= opportunity.what %></p>
+        <p><strong>When </strong>&#09;<%= opportunity.when %></p>
+        <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
+          <% if opportunity.user.present? %>
+            <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>, <span class="email"><%= opportunity.user.email %></span></p> 
+          <% end %>
+            <% if user_signed_in? %>
+            <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %> 
+          
+          </div>
+          <% end %>
     <% end %>
+      
     </div>
         <div class="col-md-4 sidebar">
           <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
-        <h3>This list is incomplete!</h3>
-        <p>There are many ways to be involved at Saint Paul's. Your participation in your church makes for a healthier and happier congregation.</p>
-        <p>So don't be shy. Just about anyone you encounter here will steer you to a ministry fit for you.</p>
-        <p><strong>Is you ministry missing from this list? </strong> Give your webmaster a shout. Better yet, an email: tom.connolly@comcast.net.</p>
+          <h3>This list is incomplete!</h3>
+            <p>There are many ways to be involved at Saint Paul's. Your participation in your church makes for a healthier and happier congregation.</p>
+            <p>So don't be shy. Just about anyone you encounter here will steer you to a ministry fit for you.</p>
+            <p><strong>Is you ministry missing from this list? </strong> Give your webmaster a shout. Better yet, an email: tom.connolly@comcast.net.</p>
         </div>
   </div>
 </div>
+<script>
+$(function() {
+  $('.opportunityDetail').hide()
+  $('a#show_it').click(function(event){
+    event.preventDefault();
+    $('.opportunityDetail').toggle();
+  });
+});   
+</script>

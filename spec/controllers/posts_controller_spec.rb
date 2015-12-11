@@ -1,6 +1,7 @@
 require "rails_helper"
 
-Rspec.describe PostsController, :type => :controller do
+RSpec.describe PostsController, :type => :controller do
+  
   describe "GET #index" do
     it "responds successfully with an HTTP 200 status code" do
       get :index
@@ -13,11 +14,5 @@ Rspec.describe PostsController, :type => :controller do
       expect(response).to render_template("index")
     end
 
-    it "loads all of the posts into @posts" do
-      post1, post2 = Post.create! Post.create!
-      get :index
-
-      expect(assigns(:posts)).to match_array([post1, post2])
-    end
   end
 end

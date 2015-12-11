@@ -67,9 +67,13 @@
 }
 .sidebar { 
   background-color: #eee;
-  margin-top: 20px;
-  
+  margin-top: 20px;  
 }
+
+div.hidden {
+  display: none;
+}
+
 h1 {
 color : #5c004c;
 font-size : 30px;

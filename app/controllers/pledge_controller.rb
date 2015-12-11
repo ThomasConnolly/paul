@@ -1,12 +1,9 @@
-class PledgesController < ApplicationController
-  before_action :authenticate_user!, except: [:new]
-  before_action :redirect_to_signup, only: [:new]
+class PledgeController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_pledge
   
-  def index
-  end
 
   def show
-    @pledge = Pledge.find(params[:id])
   end
   
   def edit

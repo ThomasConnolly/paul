@@ -50,6 +50,6 @@ class OpportunitiesController < ApplicationController
 
   def opportunity_params
     params.require(:opportunity).permit(:user_id, :ministry, :who, 
-      :what, :when, :where)
+      :what, :when, :where, :id)
   end
 end

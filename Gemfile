@@ -10,7 +10,9 @@ gem 'tinymce-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
-gem 'sass-rails', '~> 4.0.3'
+gem 'autoprefixer-rails'
+#  gem 'bootstrap-components-helpers'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-hotkeys-rails'
@@ -25,14 +27,15 @@ gem 'attachinary'
 gem 'remotipart'
 gem 'sidekiq'
 gem 'mail'
+
 # gem 'koala'
 gem 'social-share-button'
 # gem 'auto_html'
 gem 'httparty'
 # gem 'sendgrid-ruby', '~> 1.0.0.alpha.1'
-# gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # gem 'stripe-rails'
-gem 'will_paginate'
+#  gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'devise'
 # gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -77,4 +80,6 @@ end
 
 gem 'puma'
 gem 'foreman'
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end

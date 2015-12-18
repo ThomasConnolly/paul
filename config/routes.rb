@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+
+
   resources :contacts
   resources :widgets
   resources :pictures
@@ -47,7 +49,6 @@ Rails.application.routes.draw do
     resources :comments, module: :vreports
   end
 
- 
-
+  
   mount Attachinary::Engine => '/attachinary'
 end

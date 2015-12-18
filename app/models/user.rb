@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
-  has_one :pledge
+  has_one :pledge 
   has_one :role
   has_many :vreports
   validates :email, presence: true

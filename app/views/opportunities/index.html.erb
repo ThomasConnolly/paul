@@ -2,26 +2,32 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-    <h1>Opportunities for ministry</h1>
-    <% @opportunities.each do |opportunity| %>
-      <a href="#" id="show_it">
-        <h2><%= opportunity.ministry %></h2></a>
-      <div class="opportunityDetail">
-        <p><strong>Who </strong>&#09;<%= opportunity.who %></p>
-        <p><strong>What </strong>&#09;<%= opportunity.what %></p>
-        <p><strong>When </strong>&#09;<%= opportunity.when %></p>
-        <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
-          <% if opportunity.user.present? %>
-            <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>, <span class="email"><%= opportunity.user.email %></span></p> 
-          <% end %>
-            <% if user_signed_in? %>
-            <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %> 
-          
-          </div>
-          <% end %>
-    <% end %>
-      
+      <h1>Opportunities</h1>
+      <!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+      <% @opportunities.each_with_index do |opportunity, index| %>
+        <!--<div class="panel panel-default">
+          <div class="panel-heading" role="tab">
+             <a role="button" data-toggle="collapse" data-parent="#accordion" href="collapse-<%= index %>" aria-expanded="false" 
+                  aria-controls="collapse-<%= index %>">-->
+            <h2><%= opportunity.ministry %>
+                 <!-- </a> -->
+            </h2>
+         <!-- </div>
+          <div class="panel-collapse collapse" id="collapse-<%= index %>" role="tabpanel"> 
+            <div class="panel-body">-->
+              <p><strong>Who </strong>&#09;<%= opportunity.who %></p>
+              <p><strong>What </strong>&#09;<%= opportunity.what %></p>
+              <p><strong>When </strong>&#09;<%= opportunity.when %></p>
+              <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
+                <% if opportunity.user.present? %>
+              <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>,  <span class="email"><%= opportunity.user.email %></span></p> 
+                <% end %>
+                <% if user_signed_in? %>
+                  <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %>
+                <% end %>
+      <% end %>
     </div>
+  
         <div class="col-md-4 sidebar">
           <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
           <h3>This list is incomplete!</h3>
@@ -31,12 +37,3 @@
         </div>
   </div>
 </div>
-<script>
-$(function() {
-  $('.opportunityDetail').hide()
-  $('a#show_it').click(function(event){
-    event.preventDefault();
-    $('.opportunityDetail').toggle();
-  });
-});   
-</script>

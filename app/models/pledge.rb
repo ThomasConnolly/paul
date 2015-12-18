@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: pledges
+# Table name: pledge
 #
 #  id         :integer          not null, primary key
 #  amount     :integer
@@ -17,6 +17,7 @@ class Pledge < ActiveRecord::Base
   validates :divisor, :presence => true, :numericality => {:greater_than => 0}
   validates_presence_of :user_id
   before_save :set_pay_this
+
 
  
   def set_pay_this

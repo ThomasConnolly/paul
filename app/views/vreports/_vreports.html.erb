@@ -17,7 +17,7 @@
       by <strong><%= vreport.user.full_name.titleize  %>.</strong></p>
 
         
-    <p> <span class="edit-delete-line">
+    <p> <span class="edit-delete-line"><%= link_to "Show", vreport_path(vreport) %>
       <% if current_user == vreport.user %>
       <%= link_to "Edit", edit_vreport_path(vreport) %> &nbsp;
       <%=link_to vreport,  method: :delete, data: 

@@ -1,11 +1,16 @@
-<h1>Here's the vestry report</h1>
-  <%= @vreport.title %>
-  <%= @vreport.body %>
-  <%= @vreport.user.full_name.titleize %>
-<br>
-<% @vreport.comments.each do |comment| %>
-<%= comment.body %>
-<p>Comment made a while ago by <%= comment.user.full_name.titleize %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+     <h1>Here's the vestry report</h1>
+       <h2><%= @vreport.title %><br>
+         By <%= @vreport.user.full_name.titleize %></h2>
+            <p>
+            <%= @vreport.body %>
+            </p>
+          <div class="mt100"></div>
+
 
 <%= link_to "<< Back to Vestry Reports", vreports_path %>
+    </div>
+  </div>
+</div>

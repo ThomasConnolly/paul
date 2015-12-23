@@ -1,0 +1,4 @@
+$('#comments-form').hide;
+$('#comments').append('<%= j render 'comments/comments', locals: { commentable @commentable, 
+  comments: @commentable.comments } %>');
+$('#comment_body').val('');

@@ -1,19 +1,19 @@
-<h3>Comments</h3>
+<% commentable ||= @commentable %>
 <% commentable.comments.each do |comment| %>
-  <div class="well" id="comments">
-    <p><%= comment.body %><br>
+  <div id="comments" class="comments-body">
+    <p><%= comment.body %>
+  </div>  
       <div class="comments-user">
-    <%= comment.user.full_name.titleize %>
-      <span class="time-ago">
-      <%= time_ago_in_words(comment.created_at) %> ago.
-      </span></p>
+        <%= comment.user.full_name.titleize %>
+        <span class="time-ago">
+        <%= time_ago_in_words(comment.created_at) %> ago.
+          <% if current_user == comment.user %>
+            &nbsp;<%= link_to "Delete comment", post_comment_path(comment.commentable, comment), 
+            method: :delete, data: { confirm: "Are you sure?" } %> 
+           </span>
+       <% end %>
+
       </div>
-  </div>
-
- <!-- <%# if comment.user == current_user %>
-    <span class="edit-delete-line"><p><small><%#= link_to "Delete", post_comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %> </span>
-    </small></p> -->
-
-    <%# end %>         
-  <% end %> 
+       <div class="mt30"></div>
+       <% end %>
 

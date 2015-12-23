@@ -1,12 +1,15 @@
-#comments-body,  #vreports-body{
+.comments-user, .vreports-user{
+  color: #808080;
+  float: right;
+  font-size: 14px;
+  margin-top: -12px;
+} 
+.comments-body,  .vreports-body{
   margin-left : 130px;
+  font-size: 16px;
+  color: black;
 }
 
-.comments-user, .vreports-user{
-  color : #808080;
-  float : right;
-  
-}
 .comment-form, .vreport-form{
   width: 400px;
   height: auto;

@@ -1,6 +1,6 @@
-  <%= simple_form_for [commentable, Comment.new], remote: true do |f| %>
+  <%= simple_form_for [commentable, Comment.new] do |f| %>
     <%= f.input :body, placeholder: 'Type your comment here', 
     input_html: { rows: 2 }, label: false, autofocus: true %>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary btn-sm" %>
   <% end %>
   

@@ -23,22 +23,26 @@
     <%= post.content %>  
       <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
       </span></p>
-
         <%#= link_to "Share this post with your friends", post_path(post) %>
     <p> <span class="edit-delete-line">
-      <%= link_to "Show", post_path(post) %> &nbsp; 
       <% if current_user == post.user %>
       <%= link_to "Edit", edit_post_path(post) %> &nbsp;
       <%=link_to post,  method: :delete, data: 
-      { confirm: 'This will delete your post and all its comments.' 
-        }, remote: true do %> Delete! </span></p>
+        { confirm: 'This will delete your post and all its comments.' 
+          }, remote: true do %> Delete! </span></p>
+        <% end %>
       <% end %>
-    <% end %>
     <div class="clearall"></div>
 <section id="comments-section">
   <%= render partial: 'comments/comments', locals: {commentable: post} %>
-  <%= render partial: 'comments/form', locals: {commentable: post} %>
-</section> 
+    <%= render partial: 'comments/form', locals: {commentable: post} %>
 <% end %>
 
 
+<!--<div class="comment">
+      <%#= link_to "Wish to comment?", new_post_comment_path(@post.id), remote: true do %>
+      <%# end %>
+        <div id="comments-form" style="display:none;">
+        </div>
+        <%# end %>  -->
+  </section>     

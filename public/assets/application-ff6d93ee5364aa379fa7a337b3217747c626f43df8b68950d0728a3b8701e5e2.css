@@ -1,22 +1,26 @@
 /* line 1, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
-#comments-body, #vreports-body {
-  margin-left: 130px;
-}
-
-/* line 5, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
 .comments-user, .vreports-user {
   color: #808080;
   float: right;
+  font-size: 14px;
+  margin-top: -12px;
 }
 
-/* line 10, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+/* line 7, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+.comments-body, .vreports-body {
+  margin-left: 130px;
+  font-size: 16px;
+  color: black;
+}
+
+/* line 13, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
 .comment-form, .vreport-form {
   width: 400px;
   height: auto;
   padding-left: 130px;
 }
 
-/* line 15, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+/* line 18, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
 .default-comment-avatar, .default-vreport-avatar {
   margin: 5px;
   padding-top: 6px;
@@ -1227,9 +1231,120 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
-/* line 1, /home/tom/paul/app/assets/stylesheets/vreports.css.scss */
-.second-line {
-  margin-top: -10px;
+/* Slider */
+
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }
 /*
 
@@ -10188,11 +10303,9 @@ a, a:hover, a:focus {
 .time-ago {
   font-size: 8px;
   color: gray;
-  line-height: 10px;
-  margin-top: -10px;
 }
 
-/* line 503, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 501, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-line {
   font-size: 8px;
   color: gray;
@@ -10200,24 +10313,24 @@ a, a:hover, a:focus {
   margin-top: -10px;
 }
 
-/* line 510, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 508, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 516, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 514, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 520, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 518, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 526, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 524, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }

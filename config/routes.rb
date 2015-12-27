@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'pages/albergue'
   get 'pages/directions'
   get 'pages/map'
+  get 'pages/test'
   get 'visitors/index'
   resources :homestest, only: [:show]
   get 'homestest/show'

@@ -8,4 +8,10 @@ class PagesController < ApplicationController
   def albergue
   end
 
+  def test
+  end
+
+  def concert
+  end
+
 end

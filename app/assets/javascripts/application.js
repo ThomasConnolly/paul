@@ -24,7 +24,7 @@
 //= require tinymce-jquery
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require slick
+//= require ckeditor/init
 //= require turbolinks
 //= require social-share-button
 //= require video

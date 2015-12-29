@@ -80,9 +80,16 @@ GEM
     capybara-webkit (1.7.1)
       capybara (>= 2.3.0, < 2.6.0)
       json
+    ckeditor (4.1.5)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
     cloudinary (1.1.2)
       aws_cf_signer
       rest-client
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -245,7 +252,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
-    rb-fsevent (0.9.6)
+    rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redis (3.2.2)
@@ -354,6 +361,7 @@ DEPENDENCIES
   byebug
   capybara
   capybara-webkit
+  ckeditor
   cloudinary
   coffee-rails (~> 4.0.0)
   database_cleaner

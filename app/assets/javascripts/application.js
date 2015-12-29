@@ -21,7 +21,6 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require tinymce-jquery
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require ckeditor/init

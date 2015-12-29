@@ -16,6 +16,7 @@ gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
+gem 'jquery-slick-rails'
 gem 'jquery-hotkeys-rails'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'

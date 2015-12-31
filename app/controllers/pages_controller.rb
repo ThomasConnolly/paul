@@ -14,4 +14,7 @@ class PagesController < ApplicationController
   def concert
   end
 
+  def haitian
+  end
+
 end

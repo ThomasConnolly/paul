@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'prayer/index'
   # mount Payola::Engine => '/payola', as: :payola
   get 'pages/home'
+  get 'pages/haitian'
   get 'pages/concert'
   root 'pages#home'
   get 'pages/albergue'

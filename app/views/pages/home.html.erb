@@ -10,7 +10,7 @@
   <h1>All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
     <p><strong>Sundays</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Join us in the library at 9:30 a.m. for a video discussion on the history of theology. </p>
-   <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.</p>
+   <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5:30 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_url %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", pages_directions_path %>.</h3> </p><br>
     <p><strong>Sunday's Scripture Readings:</strong></p>
@@ -25,7 +25,8 @@
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"47%", class: "floatleft") %>
     <p>This is the church where the great tradition of a farmers&rsquo; market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big friendly block party; and thanks too to our patrons. We will see you again every Saturday until next April.</p>
     <p>In addition to the vendors of produce and other tasty treats, the market hosts several artisans displaying their art and craft pieces. Also, our gift shop is open, and the Unique Boutique does a brisk business in gently used fine clothing for the ladies.</p> <br>
-    <h2>Paul Todd concert set for Jan. 21</h2><%= link_to (cl_image_tag("ToddPoster2016Web_cbqkta.png", width: "50%", class: "floatleft")), pages_concert_path %><p class="mt100">Click on the image for concert details.</p>
+    <h2>Paul Todd concert set for Jan. 21</h2><%= link_to (cl_image_tag("ToddPoster2016Web_cbqkta.png", width: "65%", class: "floatleft")), pages_concert_path %><p class="mt100">Click on the image for concert details.</p>
+    <div class="clearall"></div>
     <br>
 
   
@@ -41,27 +42,20 @@
 <!--<p><strong>Movie Night</strong> is alive and well at Saint Paul's, with a great turnout Tuesday. Fr. Bill is soliciting recommendations for future films. Show time is 7 p.m., the second Tuesday of every month,  in Trinity Hall. As we are now entering "season," there are other revived activities you can see <%#= link_to "here.", activities_index_path %>
 <br>-->
 <p>
-The <strong>Outreach Committee</strong> announced 2015 grants:</p>
-<ul><li>
-<strong>Habitat for Humanity</strong>, $1,000 which will pay for two porches and windows for a house.</li><li>
-<strong>
-St Matthew’s House</strong>, $1,000 which will provide 20 back packs and several battery packs for those who must ride bikes in the dark.</li>
-<li>
-<strong>ERD (Episcopal Relief and Development)</strong>, $750, providing 100 trees, three goats, clean water for three people and three care packages for mothers and newborns.</li>
-<li><strong>
-Grace Place</strong>, $1,500 to be used as they wish.</li>
-<li><strong>
-DaySpring</strong>, $800 for two children to go to summer camp.</li>
+<strong>Celtic Christianity</strong> is the topic on Tuesday, Jan. 12, at 1:30 p.m. Led by the Rev. Kay Richardson, this five-week series will explore topics as Celtic Christian history, prayers, music, missionaries, and saints including St. Patrick. The series will be held in the Library in Serson Hall.</p><br>
+ <p><strong>
+Movie Night,</strong> Tuesday, Jan. 12, at 7 p.m. in Trinity Hall. The Magic of Belle Isle, starring Morgan Freeman. Join Father Bill to watch this inspiring story of redemptive compassion.</p>
+ <p>
+Our next<strong> vestry</strong>  meeting is Jan. 13, at 6:30 p.m. in the library. All parishioners are invited to attend.
+ </p>
+<p>The second presentation in the <strong>Social Justice</strong> series with The Rev. Dr. Mary Abrams will be in the Library Thursday, Jan. 14 at 3 p.m. </p>
+ <p>
+Support our <strong>Mission in the Dominican Republic:</strong> On Sunday, Jan. 17, a special guest, Padre Hipolito Fernandez Reina, associate rector of St. Monica's, will be speaking at the three Sunday morning Services. He recently came to Florida from the Albergue (Shelter) of the Good Samaritan in San Francisco de Macoris. Episcopalians of the Naples Deanery have been the sole financial supporters of the albergue for over a dozen years </p>
+<p> Parishioners will have the opportunity to renew or purchase sponsorships for the albergue children after all the services, in the narthex. <%= link_to "click here for more information about this ministry.", pages_albergue_url %></p><br>
 
-</ul><p>There is still $950 in the outreach account.</p>
-<p class="align-right">
-Judy Martin, committee chair</p>
-<p class="align-right">
-Van Geoghegan </p><br>
-
-<p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry, or look <%= link_to "here", "http://saintpaulsnaples.org/opportunities" %> to get started.</p><br>
+<!--<p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry, or look <%= link_to "here", "http://saintpaulsnaples.org/opportunities" %> to get started.</p><br>
 <p><strong>Good News!</strong> Barb Kling, the vestry person in charge of office staffing, announced all volunteer slots have been filled. That means our office is fully staffed Monday through Friday, assisting with chores asssigned by Deb Avery, our parish administrator.</p>
-<!--<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
+<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
 <p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
     <p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br> -->
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p><br>

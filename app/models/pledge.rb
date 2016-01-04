@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: pledge
+# Table name: pledges
 #
 #  id         :integer          not null, primary key
 #  amount     :integer

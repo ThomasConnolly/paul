@@ -70,7 +70,9 @@ class User < ActiveRecord::Base
     WelcomeMailer.welcome_email(self).deliver
   end
 
- 
+  #def facebook
+  #  self.connections.where(provider: "facebook").first
+  #end
 
     def self.find_first_by_auth_conditions(warden_conditions)
   conditions = warden_conditions.dup

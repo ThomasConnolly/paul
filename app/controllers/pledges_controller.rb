@@ -37,14 +37,14 @@ class PledgesController < ApplicationController
 
 
 private
-
+config/
   def set_pledge
     @pledge = Pledge.find(current_user.pledge(params[:id]))
   end
 
   def change_pledge
     if current_user.pledge.present?
-      redirect_to edit_pledge_path(current_user.pledge(params[:id]))
+      redirect_to edit_pledge_path(current_user.pledge(params[:id]))s
     end
   end
 

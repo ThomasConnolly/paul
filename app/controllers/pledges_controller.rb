@@ -3,15 +3,13 @@ class PledgesController < ApplicationController
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
   before_action :change_pledge, only: :new
   
-  def index
-    redirect_to new_pledge_path
-  end
 
   def show
   end
 
   
   def edit
+    @pledge = Pledge.find(current_user.pledge(params[:id]))
   end
 
   def update
@@ -27,7 +25,6 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new
   end
 
-
   def create
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id if current_user
@@ -41,10 +38,8 @@ class PledgesController < ApplicationController
 
 private
 
-
-
   def set_pledge
-    @pledge = Pledge.find(params[:id])
+    @pledge = Pledge.find(current_user.pledge(params[:id]))
   end
 
   def change_pledge

@@ -1,0 +1,4 @@
+fred:
+  first_name: "fred"
+  last_name: "mcmurray"
+  email: "fred@mcmurray.com"

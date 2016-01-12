@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   resources :opportunities
   resources :homilists
   resources :books
-  resources :pledges
+  resource :pledge
   resources :sermons
   devise_for :users
     devise_scope :user do

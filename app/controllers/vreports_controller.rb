@@ -2,6 +2,7 @@ class VreportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_vreport, only: [:show, :edit, :update, :destroy]
   before_action :all_vreports, only: [:index, :create, :update, :destroy]
+  before_action :vestry_only
   
   respond_to :html, :js
 
@@ -67,5 +68,11 @@ private
 
   def vreport_params
     params.require(:vreport).permit(:body, :title)
+  end
+
+  def vestry_only
+    unless current_user.vestry? or current_user.admin?
+      redirect_to root_path, :alert => "Access denied."
+    end
   end
 end

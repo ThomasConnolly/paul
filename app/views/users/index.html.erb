@@ -1,9 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3"<h3>Users</h3>
+    <div class="col-md-8 col-md-offset-2"<h3>Users</h3>
       <% @users.each do |user| %> 
-        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <% user.role %></p>
+        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.role %></p>
       <% end %>
+      <br>
+      <h3> Vestry Members </h3>
+      <% @users.where('role = 1').each do |v| %>
+       <p><strong> <%= v.full_name %> </strong>&nbsp;
+        <%= v.email %> <br> </p>
+        <% end %>
     </div>
   </div>
 </div>

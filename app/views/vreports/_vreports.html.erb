@@ -13,8 +13,8 @@
     <h3>
       <%= vreport.title %></h3>
       <p><%= vreport.body %><br>
-      Report made <%= time_ago_in_words(vreport.created_at) %> ago
-      by <strong><%= vreport.user.full_name.titleize  %>.</strong></p>
+      <small>Report made <%= time_ago_in_words(vreport.created_at) %> ago
+      by</small> <strong><%= vreport.user.full_name.titleize  %>.</strong></p>
 
         
     <p> <span class="edit-delete-line"><%= link_to "Show", vreport_path(vreport) %>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+</head>
+  <body>
+    <h3>Hello Vestry Person <%= @user.first_name.titleize %>, </h3>
+    <p>
+      This is an introduction to the new Saint Paul's website! </p>
+    <p>
+      Until now, our website has been useful for those looking for a church, but not so useful for our own parishioners. I'm hoping to change the second part of that by inviting you to participate in this "social media."</p>
+    <p>
+      After you are signed in (your user name is <%= @user.full_name %> and your password is Vestry2016. The first thing you should do is to log in and then migrate to "Edit account" and change the password to something you will remember, minimum eight characters. </p>
+    <p>
+      Next, go to the Update profile page and click on the space where your picture will appear. This will allow you to navigate through your pictures on your computer and upload one to the web server. You can also fill out your profile. </p>
+    <p>
+      There is a special page for vestry members only, and it is accessed by putting a "/vreports" after the .org in the address line. What's on that page explains its purpose and tells how to use it. I'll work on making a link to the page from the homepage, visible only to vestry members.
+    <p>
+      This is a place for you to keep in touch during the summertime diaspora, and share news and information while back home in Naples. If you need a ride to church, or want to wish someone a happy birthday or add someone to the parish prayer list, Family Ties will be the place to do it.</p>
+     
+    <p>
+      <strong>How to get in</strong> </p>
+    <p>
+      <%= link_to "Clicking here", "http:saintpaulsnaples.org/posts" %> will take you to the log-in page. </p>
+    <p>
+      Once logged in you can start working on strengthening "family ties" with fellow parishioners. </p> 
+    <p>
+      Thanks for your help!</p>
+    <p class='align-right'>--Tom Connolly, webmaster</p><br>
+    <p>
+    P.S. If you're having any problems send me an email at <strong>tom.connolly@comcast.net</strong> or call me at 285-9224.</p>
+     
+  </body>
+</html>

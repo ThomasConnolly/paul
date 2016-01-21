@@ -42,10 +42,8 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'spring'
+group :development do
+  gem 'meta_request'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
@@ -57,6 +55,11 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-byebug'
   gem 'pry-stack'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'spring'
   gem 'factory_girl_rails'
   gem 'letter_opener'
   gem 'simple_bdd'

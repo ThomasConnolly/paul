@@ -6,11 +6,10 @@
 </div>
 <div class="row">
   <div class="col-md-8">
-
-  <h1>All are welcome to worship with us</h1>
+    <h1>All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
     <p><strong>Sundays</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Join us in the library at 9:30 a.m. for a video discussion on the history of theology. Topic this week: "Deism and Liberal Protestantism." </p>
-   <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
+    <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", pages_directions_path %>.</h3> </p><br>
     <p><strong>Sunday's Scripture Readings:</strong></p>
@@ -19,30 +18,29 @@
     <h1> Home of the friendly Farmers&rsquo; Market </h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"47%", class: "floatleft") %>
     <p>This is the church where the great tradition of a farmers&rsquo; market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big friendly block party; and thanks too to our patrons. We will see you again every Saturday until next April.</p>
-    <p>In addition to the vendors of produce and other tasty treats, the market hosts several artisans displaying their art and craft pieces. Also, our gift shop is open, and the Unique Boutique does a brisk business in gently used fine clothing for the ladies.</p> <br>
-    <h2>Paul Todd concert set for Jan. 21</h2><%= link_to (cl_image_tag("ToddPoster2016Web_cbqkta.png", width: "55%", class: "floatleft")), pages_concert_path %><p class="mt100">Click on the image for concert details.</p>
+    <p>In addition to the vendors of produce and other tasty treats, the market hosts several artisans displaying their art and craft pieces. Also, our gift shop is open, and the Unique Boutique does a brisk business in gently used fine clothing for the ladies.</p> 
+    <h2>Paul Todd concert Tomorrow</h2><%= link_to (cl_image_tag("ToddPoster2016Web_cbqkta.png", width: "55%", class: "floatleft")), pages_concert_path %><p class="mt100">Click on the image for concert details.</p>
     <div class="clearall"></div>
    
 
-  
-          <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"80%", class: "image-center") %>
-      <br>
-</div>
+  </div>
+          
 
-<div class="col-md-4 sidebar">
-<p><%= Date.current.to_formatted_s(:long) %>
-<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
-<%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
+  <div class="col-md-4 sidebar">
+    <p><%= Date.current.to_formatted_s(:long) %></p>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
+     <!-- <%#= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %> -->
    
 <!--<p><strong>Movie Night</strong> is alive and well at Saint Paul's, with a great turnout Tuesday. Fr. Bill is soliciting recommendations for future films. Show time is 7 p.m., the second Tuesday of every month,  in Trinity Hall. As we are now entering "season," there are other revived activities you can see <%#= link_to "here.", activities_index_path %>
 <br>-->
 
+<br>
 
-<p>
-<strong>Celtic Christianity</strong> is the topic on Tuesdays at 1:30 p.m. Led by the Rev. Kay Richardson, series will explore Celtic Christian history, prayers, music, missionaries, and saints including St. Patrick. Join us in the Library in Serson Hall. </p><br><%= cl_image_tag("reed_gy3gu5.jpg", width: "80%", class: "image-center") %>
-<p><strong>The role of the laity at Saint Paul's</strong> is the topic of a special guest speaker on Sunday, Feb. 7. All parishioners are warmly invited to hear The Rev. Dr. David Reed, retired professor of Pastoral Theology at Wycliffe College, an Anglican seminary in Toronto, at a luncheon in Trinity Hall.</p>
+<%= cl_image_tag("reed_gy3gu5.jpg", width: "80%", class: "image-center") %>
+<p><strong>The role of the laity at Saint Paul's</strong> is the topic of a special guest speaker on Sunday, Feb. 7. All parishioners are warmly invited to hear The Rev. Dr. David Reed, retired professor of Pastoral Theology at Wycliffe College, an Anglican seminary in Toronto, at a luncheon in Trinity Hall. Reservations are required and seating is limited.</p>
 <p>Fr. Reed is a long-time friend of Fr. Bill and since retirement eight years ago has become a world traveler, author and lecturer on spirituality and renewal movements.
-</p>
+</p><br>
+<p><strong>Learn about Celtic Christianity</strong> Tuesdays at 1:30 p.m. in the library, with the Rev. Kay Richardson. </p><br>
 
 
 
@@ -52,10 +50,29 @@
 <p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
     <p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>-->
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p><br>
+        <div id="calendar-overlay">
+        <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "70%", 
+          class: "image-center"), pages_calendar_path %>
+          <p><strong>Click for activities calendar</strong></p></div>
+      </div>
+      </div>
+      </div>
+      <div class="row">
+      <hr>
+      
+  
+  <div class="col-md-7"><%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"90%", class: "image-center") %>
+  
+  </div>
+  <div class="col-md-5">
   <div id="newsfeed">
-  <!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://episcopaldigitalnetwork.com/ens/feed/?cat=-6,-8",rssmikle_frame_width: "99%",rssmikle_frame_height: "275",frame_height_by_article: "0",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "6",mcspeed: "20",sort: "Off",rssmikle_title: "on",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#993300",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#0066FF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "150",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script><div style="font-size:10px; text-align:center; width:99%;"><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.--></div><!-- end feedwind code -->
+  <!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://episcopaldigitalnetwork.com/ens/feed/?cat=-6,-8",rssmikle_frame_width: "99%",rssmikle_frame_height: "275",frame_height_by_article: "0",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "6",mcspeed: "20",sort: "Off",rssmikle_title: "on",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#993300",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#0066FF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "150",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script><div style="font-size:10px; text-align:center; width:99%;"><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a></div>
+  </div>
+  </div>
+  
+  <!-- end feedwind code -->
   <!--  <script type="text/javascript" src="http://output72.rssinclude.com/output?type=js&amp;id=588062&amp;hash=bb2f36d2e14cdc8c15bc0bc2f3cc49dc">
-    </script> -->
+    </script> 
   </div>
   <a href="http://www.episcopalrelief.org/" target="blank"><img width="99%" height="96" vspace="4" border="0" align="bottom" class="image-center" alt="" src="http://www.episcopalrelief.org/uploaded/images/Press-and-Resources/Link-To-Us/Logo-Link.gif" /></a>
 </div>
@@ -88,3 +105,5 @@
 
 
 <!--<iframe class="wistia_embed" name="wistia_embed" src="http://fast.wistia.net/embed/iframe/qo6rqw8aum?canonicalUrl=https%3A%2F%2Fepiscopalchurch.wistia.com%2Fmedias%2Fqo6rqw8aum&canonicalTitle=Presiding%20Bishop%20Michael%20Curry%20-%20EpiscopalChurch" allowtransparency="true" frameborder="0" scrolling="no" width="620" height="349"></iframe>-->
+ 
+

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'pages/concert'
   root 'pages#home'
   get 'pages/albergue'
+  get 'pages/calendar'
   get 'pages/directions'
   get 'pages/map'
   get 'pages/test'

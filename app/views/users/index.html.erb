@@ -5,7 +5,7 @@
         <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.role %></p>
       <% end %>
       <br>
-      <h3> Vestry Members </h3>
+      <h3> Vestry Members and Admins </h3>
       <% @users.where('role = 1').each do |v| %>
        <p><strong> <%= v.full_name %> </strong>&nbsp;
         <%= v.email %> <br> </p>

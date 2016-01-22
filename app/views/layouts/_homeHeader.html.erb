@@ -14,9 +14,15 @@
           <p><small>
           <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
           <% else %>
-            <%= link_to "Member sign in", new_user_session_path %></small></p>
-          <% end %>   
-       </div>
+            <%= link_to "Member sign in", new_user_session_path %></small>
+            </p>
+          <% end %> </div>
+          <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+          <p><strong><em>Note to members of Saint Paul's: Please disregard the email sent to you regarding signing in. It was premature. More information to follow.</em></strong></p>
+          </div>
+          </div>
+       
   </div>
 </header>
 <div id="faithdd" class="jq-dropdown jq-dropdown-tip">

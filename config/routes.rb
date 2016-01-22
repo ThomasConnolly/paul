@@ -44,7 +44,11 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users do
+    collection do
+      post :import
+    end
+  end
   resources :profiles
   resources :posts do
     resources :comments, module: :posts

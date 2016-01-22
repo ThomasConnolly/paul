@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   has_one :role
   has_many :vreports
   validates :email, presence: true
+  validates :full_name, uniqueness: true
  
 
   after_create :send_welcome_email
@@ -64,11 +65,34 @@ class User < ActiveRecord::Base
   def add_profile
     self.create_profile if profile.nil?
   end
+  
+  def self.import(file)
+    counter = 0
+    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
+      user = User.assign_from_row(row)
+      if user.save  
+        counter += 1
+      else
+        puts "#{user.email} - #{user.errors.full_messages.join(",")}"
+      end
+    end
+    counter
+  end
+
+  def self.assign_from_row(row)
+    user = User.where(full_name: row[:full_name]).first_or_initialize
+    user.assign_attributes row.to_hash.slice(:email, :first_name, :last_name,
+      :birthday, :anniversary)
+    user
+  end
+
 
 
   def send_welcome_email
     WelcomeMailer.welcome_email(self).deliver
   end
+
+
 
   #def facebook
   #  self.connections.where(provider: "facebook").first

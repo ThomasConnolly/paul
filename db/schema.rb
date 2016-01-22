@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128205155) do
+ActiveRecord::Schema.define(version: 20160121193224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20151128205155) do
     t.datetime "updated_at"
     t.integer  "commentable_id"
     t.string   "commentable_type"
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "homilists", force: :cascade do |t|
@@ -143,6 +135,8 @@ ActiveRecord::Schema.define(version: 20151128205155) do
     t.string   "full_name",              limit: 255
     t.integer  "role"
     t.string   "stripe_customer_id"
+    t.date     "birthday"
+    t.date     "anniversary"
   end
 
   add_index "users", ["full_name"], name: "index_users_on_full_name", using: :btree
@@ -152,14 +146,6 @@ ActiveRecord::Schema.define(version: 20151128205155) do
     t.string   "title"
     t.integer  "user_id"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "widgets", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.boolean  "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

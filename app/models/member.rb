@@ -1,6 +1,4 @@
 class Member < ActiveRecord::Base
-  
-  require 'date'
 
   def self.assign_from_row(row)
     member = Member.where(member_id: row[:member_id]).first_or_initialize
@@ -16,4 +14,4 @@ class Member < ActiveRecord::Base
     member  
     end
   end
-
+  

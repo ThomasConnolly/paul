@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @members = Member.all
     @import = Member::Import.new

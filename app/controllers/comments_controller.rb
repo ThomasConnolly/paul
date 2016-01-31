@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id               :integer          not null, primary key
+#  body             :text
+#  user_id          :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#  commentable_id   :integer
+#  commentable_type :string
+#
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 

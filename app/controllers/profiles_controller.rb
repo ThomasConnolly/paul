@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  cities     :string(255)
+#  background :text
+#  career     :text
+#  family     :text
+#  lifestyle  :text
+#  civic      :text
+#  church     :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class ProfilesController < ApplicationController
  before_action :authenticate_user! 
  before_action :set_profile, only: [:show, :edit, :update]

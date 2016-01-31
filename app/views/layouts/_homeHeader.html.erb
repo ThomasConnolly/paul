@@ -16,13 +16,8 @@
           <% else %>
             <%= link_to "Member sign in", new_user_session_path %></small>
             </p>
-          <% end %> </div>
-          <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-          <p><strong><em>Note to members of Saint Paul's: Please disregard the email sent to you regarding signing in. It was premature. More information to follow.</em></strong></p>
-          </div>
-          </div>
-       
+          <% end %> 
+        </div>
   </div>
 </header>
 <div id="faithdd" class="jq-dropdown jq-dropdown-tip">
@@ -37,11 +32,12 @@
     </div>
     <div id="actiondd" class="jq-dropdown jq-dropdown-tip">
       <ul class="jq-dropdown-panel">
-        <li> <%=link_to "Children's shelter in the Dominican Republic", pages_albergue_path %> </li>
-        <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
         <li> <%=link_to "Opportunities for you", opportunities_path %> </li>
+        <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
+        <li> <%=link_to "Children's shelter in the Dominican Republic", pages_albergue_path %> </li>
         <li> <%=link_to "Activities", activities_index_path %> </li>
         <li> <%#=link_to "Money Matters", new_pledge_path %> </li>
         <li> <%=link_to "Family Ties", posts_path %> </li>
       </ul> 
     </div>
+    

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: homilists
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  title      :string(255)
+#  photo      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class HomilistsController < ApplicationController
   before_action :set_Homilist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]

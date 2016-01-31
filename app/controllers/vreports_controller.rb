@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: vreports
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  user_id    :integer
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class VreportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_vreport, only: [:show, :edit, :update, :destroy]

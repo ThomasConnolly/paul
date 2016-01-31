@@ -20,8 +20,9 @@
 #  full_name              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
+#  birthday               :date
+#  anniversary            :date
 #
-
 
 FactoryGirl.define do
   factory :user do

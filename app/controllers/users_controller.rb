@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :inet
+#  last_sign_in_ip        :inet
+#  created_at             :datetime
+#  updated_at             :datetime
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  full_name              :string(255)
+#  role                   :integer
+#  stripe_customer_id     :string
+#  birthday               :date
+#  anniversary            :date
+#
+
 
 class UsersController < ApplicationController
  before_action :authenticate_user!
@@ -11,12 +37,13 @@ class UsersController < ApplicationController
     @users = User.all.order(:last_name)
     unless current_user.admin?
       redirect_to '/'
+    @import = User::Import.new
     end
   end
     
   def import
-    count = User.import params[:file]
-    redirect_to users_path, notice: "Imported #{count} users"
+    User.import(params[:file])
+    redirect_to users_path
   end
 
   def show
@@ -39,7 +66,13 @@ private
     @user=User.find(params[:id])
   end
 
+  def user_import_params
+    params.require(:user_import).permit(:file)
+  end
+
+
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, :stripe_customer_id)
+    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, 
+      :stripe_customer_id, :birthday, :anniversary)
   end
 end

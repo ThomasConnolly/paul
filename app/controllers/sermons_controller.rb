@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: sermons
+#
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  cites        :string(255)
+#  sermon_body  :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  homilist_id  :integer
+#  delivered_on :date
+#
+
 class SermonsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_sermon, only: [:show, :edit, :update, :destroy] 

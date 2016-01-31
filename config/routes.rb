@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
 
 
+  get 'members/index'
+  get 'members/import'
+  resources :members do
+    collection { post :import }
+  end
   resources :contacts
   resources :widgets
   resources :pictures

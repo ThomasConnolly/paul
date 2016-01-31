@@ -20,6 +20,8 @@
 #  full_name              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
+#  birthday               :date
+#  anniversary            :date
 #
 
 class User < ActiveRecord::Base
@@ -27,6 +29,7 @@ class User < ActiveRecord::Base
 
   enum role: [:admin, :vestry, :editor, :member, :guest]
   after_initialize :set_default_role, :if => :new_record?
+
   after_create :add_profile
   
   has_attachment :avatar, accept:[:jpg, :png, :gif]
@@ -54,6 +57,14 @@ class User < ActiveRecord::Base
          :authentication_keys => [:login]
 
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+    user = find_by_full_name(row["first_name"+ "last_name"]) || new  
+      user.attributes = row.to_hash.slice(:last_name, :first_name, :email, :birthday, :anniversary)
+      user.save
+    end
+  end
+
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
   end  
@@ -65,33 +76,10 @@ class User < ActiveRecord::Base
   def add_profile
     self.create_profile if profile.nil?
   end
-  
-  def self.import(file)
-    counter = 0
-    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
-      user = User.assign_from_row(row)
-      if user.save  
-        counter += 1
-      else
-        puts "#{user.email} - #{user.errors.full_messages.join(",")}"
-      end
-    end
-    counter
-  end
 
-  def self.assign_from_row(row)
-    user = User.where(full_name: row[:full_name]).first_or_initialize
-    user.assign_attributes row.to_hash.slice(:email, :first_name, :last_name,
-      :birthday, :anniversary)
-    user
-  end
-
-
-
-  def send_welcome_email
-    WelcomeMailer.welcome_email(self).deliver
-  end
-
+  #def send_welcome_email
+    #WelcomeMailer.welcome_email(self).deliver
+  #end
 
 
   #def facebook

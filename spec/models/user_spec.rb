@@ -20,6 +20,8 @@
 #  full_name              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
+#  birthday               :date
+#  anniversary            :date
 #
 
 require "rails_helper"

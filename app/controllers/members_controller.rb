@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :set_member, only: [:edit, :update, :destroy]
+ 
   def index
     @members = Member.all
     @import = Member::Import.new
@@ -18,6 +19,21 @@ class MembersController < ApplicationController
     end
   end
 
+  def update
+    @member.update_attributes(member_params)
+      @member.save
+      redirect_to members_path
+  end
+
+  def edit
+  end
+
+
+  def destroy
+    @member.destroy
+  end
+
+  
 
 
    private
@@ -25,5 +41,12 @@ class MembersController < ApplicationController
    def member_import_params
     params.require(:member_import).permit(:file)
   end
-end
 
+   def set_member
+    @member = Member.find(params[:id])
+  end
+
+  def member_params
+    params.require(:member).permit(:member_id, :last_name, :first_name, :email, :birthday, :anniversary)
+  end
+end

@@ -19,10 +19,10 @@
               <p><strong>What </strong>&#09;<%= opportunity.what %></p>
               <p><strong>When </strong>&#09;<%= opportunity.when %></p>
               <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
-                <% if opportunity.user.present? %>
-              <p><strong>Contact </strong>&#09;<%= opportunity.user.full_name.titleize %>,  <span class="email"><%= opportunity.user.email %></span></p> 
-                <% end %>
-                <% if user_signed_in? %>
+              <!--  <%# if opportunity.user.present? %>
+              <p><strong>Contact </strong>&#09;<%#= opportunity.user.full_name.titleize %>,  <span class="email"><%#= opportunity.user.email %></span></p> 
+                <%# end %>
+                <% if user_signed_in? %>-->
                   <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %>
                 <% end %>
       <% end %>

@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   validates :full_name, uniqueness: true
  
 
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   attr_accessor :login
 

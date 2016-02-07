@@ -21,3 +21,6 @@
 /config/facebook.yml
 /config/dropbox.yml
 /config/cloudinary.yml
+users.csv
+newcsv.txt
+members.csv

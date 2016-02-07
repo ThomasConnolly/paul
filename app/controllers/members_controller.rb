@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: [:edit, :update, :destroy]
+  before_action :set_member, only: [:edit, :update, :destroy, :index]
  
   def index
     @members = Member.all
@@ -47,6 +47,6 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:member_id, :last_name, :first_name, :email, :birthday, :anniversary)
+    params.require(:member).permit(:last_name, :first_name, :email, :birthday, :anniversary, :membership_id)
   end
 end

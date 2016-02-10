@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: [:edit, :update, :destroy, :index]
+  before_action :set_member, only: [:edit, :update, :destroy]
  
   def index
     @members = Member.all

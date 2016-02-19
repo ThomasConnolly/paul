@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-8">
     <h1>Vestry Reports</h1>
+    <p>This is where vestry members submit their reports. Only vestry members will be able to ask questions and make comments, which may inspire the author to edit the report. The report then is presented to the vestry at its regular meeting. Once submitted to the vestry, the report becomes available to the whole parish.</p>
       <section>
         <div class="create-vreport">
           <% if current_user.avatar.present? %>
@@ -14,6 +15,7 @@
           <% end %><br><br>
             <%= link_to new_vreport_path, remote: true do %>
               <p><strong>Create a report</strong></p>
+
             <% end %>
         </div>
           <div id="vreport-form" style="display:none;">
@@ -56,6 +58,10 @@
       <div class="second-line"><p>Alan Cragg</p></div>
       <p><strong>Worship</strong></p>
       <div class="second-line"><p>Bev Whiteman</p></div>
+      <br>
+      <h2>Resources for vestry members</h2>
+      <p>Subscribe to Episcopal Church Foundation's "Vital Practices" for articles, tools, and resources by and for congregational leaders.
+      <%= link_to "Click here", "http://www.ecfvp.org/account/register", :target => '_blank' %></p>
     </div>
   </div>
 </div>

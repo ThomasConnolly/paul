@@ -468,8 +468,8 @@ list-style-type: none;
 }
 
 .big-avatar-missing{
-  width: 300px;
-  height: 360px;
+  width: 200px;
+  height: 260px;
   padding-top: 130px;
   text-align: center;
   color: red;
@@ -487,8 +487,9 @@ list-style-type: none;
   margin-top: 100px;
 }
 .scroll-to-bottom {
-  margin-left: 500px;
-  margin-top: 80px;
+  position:fixed;
+  margin-left: 400px;
+  margin-top: 30px;
   width: 250px;
   border: 2px solid black;
   padding: 12px;

@@ -26,13 +26,17 @@
 
 
 class UsersController < ApplicationController
+ 
  before_action :authenticate_user!
+ before_action :admin_only, only: [:index]
  before_action :set_user, only: [:show, :edit, :update]
+ 
   
   def new  
     @user = User.new
   end
 
+ 
   def index
     @users = User.all.order(:last_name)
     unless current_user.admin?
@@ -74,5 +78,11 @@ private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, 
       :stripe_customer_id, :birthday, :anniversary)
+  end
+
+  def admin_only
+    unless current_user.admin? 
+      redirect_to root_path, :alert => "Access denied."
+    end
   end
 end

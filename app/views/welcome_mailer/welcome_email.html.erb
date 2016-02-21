@@ -5,27 +5,25 @@
   <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
 </head>
   <body>
-    <h3>Hi <%= @user.first_name %>, </h3>
+    <h3>Hello <%= @user.first_name.titleize %>, </h3>
     <p>
       This is an introduction to the new Saint Paul's website! </p>
     <p>
-      Until now, our website has been useful for those looking for a church, but not so useful for our own parishioners. I'm hoping to change the second part of that by inviting you to participate in this "social media."</p>
-    <p>
-      After you are signed in (your user name is <%= @user.full_name %> and your password is encrypted so I hope you remembered it) you will be redirected to "Family Ties,"  a page that is much like Facebook, but just for our community (although in time you'll be able to share what you write here on the real Facebook if you want the wider world to see it.)</p>
-    <p>
-      This is a place for you to keep in touch during the summertime diaspora, and share news and information while back home in Naples. If you need a ride to church, or want to wish someone a happy birthday or add someone to the parish prayer list, Family Ties will be the place to do it.</p>
-    <p>
-      Think of it as the newly revived <em>"Missioner"</em> newsletter that we used to publish eight times a year, only instead of reading what was written by only a few persons, all can participate, and at any time. </p> 
-    <p>
-      I invite you to play with these features and let me know whether they're user friendly or not, and whether you think you and others would use them. Upload your "avatar" and fill out your profile page. Upload photos on the sharing page.</p>
+      Until now, our website has been useful for those looking for a church, but not so useful for our own parishioners. we're hoping to change the second part of that by inviting you to participate in this "social media."</p>
+      
+         <%= render 'vestry1' if @user.vestry? %>
+       
+    <p> 
+      A members-only "Family Ties" page is is a place for you to keep in touch during the summertime diaspora, and share news and information while back home in Naples. If you need a ride to church, or want to wish someone a happy birthday or add someone to the parish prayer list, Family Ties will be the place to do it.</p>
+     
     <p>
       <strong>How to get in</strong> </p>
     <p>
-      <%= link_to "Clicking here", "http:saintpaulsnaples.org/posts" %> will take you to the log-in page. </p>
+      <%= link_to "Clicking here", "http://www.saintpaulsnaples.org" %> will take you to the home page. From there, click the "Member sign in" at upper right. </p>
     <p>
-      Once logged in you can start working on strengthening "family ties" with fellow parishioners. </p> 
-    <p>
-      Thanks for your help!</p>
+      Once logged in you can start working on strengthening "family ties" with fellow parishioners or update your picture and profile. </p> 
+
+    <br>
     <p class='align-right'>--Tom Connolly, webmaster</p><br>
     <p>
     P.S. If you're having any problems send me an email at <strong>tom.connolly@comcast.net</strong> or call me at 285-9224.</p>

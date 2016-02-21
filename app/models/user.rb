@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   validates :full_name, uniqueness: true
  
 
-  # after_create :send_welcome_email
+  after_create :send_welcome_email
 
   attr_accessor :login
 
@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
     user = find_by_full_name(row["first_name"+ "last_name"]) || new  
-      user.attributes = row.to_hash.slice(:last_name, :first_name, :email, :birthday, :anniversary)
+      user.attributes = row.to_hash.slice(:last_name, :first_name, :email)
       user.save
     end
   end
@@ -77,9 +77,9 @@ class User < ActiveRecord::Base
     self.create_profile if profile.nil?
   end
 
-  #def send_welcome_email
-    #WelcomeMailer.welcome_email(self).deliver
-  #end
+  def send_welcome_email
+    WelcomeMailer.welcome_email(self).deliver_now
+  end
 
 
   #def facebook

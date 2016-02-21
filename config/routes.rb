@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
 
 
+  devise_for :views
   get 'members/index'
   get 'members/import'
   resources :members do
@@ -60,6 +61,10 @@ Rails.application.routes.draw do
   end
   resources :vreports do
     resources :comments, module: :vreports
+  end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "letter_opener"
   end
 
   

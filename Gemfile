@@ -56,13 +56,13 @@ group :development do
   gem 'pry-nav'
   gem 'pry-byebug'
   gem 'pry-stack'
+  gem 'letter_opener_web'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'factory_girl_rails'
-  gem 'letter_opener'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'database_cleaner'

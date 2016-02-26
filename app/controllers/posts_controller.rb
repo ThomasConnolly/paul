@@ -11,6 +11,7 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :members_only
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :all_posts, only: [:index, :create, :update, :destroy]
   respond_to :html, :js
@@ -77,5 +78,11 @@ private
 
   def post_params
     params.require(:post).permit(:content, :post_picture, photos: [])
+  end
+
+  def members_only
+    unless current_user.vestry? or current_user.admin? or current_user.member?
+      redirect_to root_path, :alert => "Access denied."
+    end
   end
 end

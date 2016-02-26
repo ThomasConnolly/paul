@@ -28,7 +28,8 @@
 class UsersController < ApplicationController
  
  before_action :authenticate_user!
- before_action :admin_only, only: [:index]
+ before_action :admin_only, only: [:index, :new, :create]
+ before_action :member_only, only: [:show]
  before_action :set_user, only: [:show, :edit, :update]
  
   
@@ -51,6 +52,10 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def create
+    @user = User.new(user_params)
   end
 
   def update
@@ -77,12 +82,18 @@ private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, 
-      :stripe_customer_id, :birthday, :anniversary)
+      :stripe_customer_id)
   end
 
   def admin_only
     unless current_user.admin? 
       redirect_to root_path, :alert => "Access denied."
+    end
+  end
+  
+  def member_only
+    unless current_user.admin? or current_user.vestry or current_user.member?
+      redirect_to root_path, :alert => "Access for parish members only."
     end
   end
 end

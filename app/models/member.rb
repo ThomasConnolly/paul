@@ -6,13 +6,12 @@ class Member < ActiveRecord::Base
       :membership_id, 
       :last_name, 
       :first_name, 
-      :email
-      :anniversary
-      :birthday
+      :email)
+      
       #  ).merge ( 
       #  :anniversary => DateTime.strptime(row[:anniversary], "%m/%d/%Y").strftime("%Y/%m/%d"),
       #  :birthday => DateTime.strptime(row[:birthday], "%m/%d/%Y").strftime("%Y/%m/%d")
-      )
+      
     member  
     end
   end

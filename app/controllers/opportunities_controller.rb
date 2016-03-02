@@ -14,7 +14,6 @@
 #
 
 class OpportunitiesController < ApplicationController
-  before_action :authenticate_user!, except: :index
   before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
    
   def index
@@ -51,7 +50,7 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     @opportunity.destroy
-      redirect_to opportunity_url, notice: 'Entry successfully destroyed.'
+      redirect_to opportunities_path, notice: 'Entry successfully destroyed.'
   end
 
 

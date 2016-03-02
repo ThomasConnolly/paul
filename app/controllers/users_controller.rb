@@ -79,10 +79,9 @@ private
     params.require(:user_import).permit(:file)
   end
 
-
   def user_params
     params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, 
-      :stripe_customer_id)
+      :stripe_customer_id, :member_id)
   end
 
   def admin_only
@@ -92,7 +91,7 @@ private
   end
   
   def member_only
-    unless current_user.admin? or current_user.vestry or current_user.member?
+    unless current_user.admin? or current_user.vestry? or current_user.member?
       redirect_to root_path, :alert => "Access for parish members only."
     end
   end

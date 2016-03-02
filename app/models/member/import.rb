@@ -23,4 +23,3 @@ class Member::Import
     errors.none?
   end
 end
-

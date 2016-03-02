@@ -7,9 +7,12 @@ class Member < ActiveRecord::Base
       :last_name, 
       :first_name, 
       :email
-      ).merge( 
-      :anniversary => DateTime.strptime(row[:anniversary], "%m/%d/%Y").strftime("%Y/%m/%d"),
-      :birthday => DateTime.strptime(row[:birthday], "%m/%d/%Y").strftime("%Y/%m/%d")
+      :full_name
+      :anniversary
+      :birthday
+      ).merge ( 
+        :anniversary => DateTime.strptime(row[:anniversary], "%m/%d/%Y").strftime("%Y/%m/%d"),
+        :birthday => DateTime.strptime(row[:birthday], "%m/%d/%Y").strftime("%Y/%m/%d")
       )
     member  
     end

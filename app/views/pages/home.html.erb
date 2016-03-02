@@ -8,10 +8,10 @@
   <div class="col-md-8">
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
-    <p><strong>This Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m.</p>
-    <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
+    <p><strong>This Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>Catholic Mystical Theology</em></p>
+    <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", haitian_path %>   </p>
     <br>
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", pages_directions_path %>.</h3> </p><br> 
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", directions_path %>.</h3> </p><br> 
     <div>
     <p><strong>Sunday's Scripture Readings:</strong></p>
     <script src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script></p>
@@ -38,16 +38,15 @@
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
      <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %><br>
 
-<p><strong>Guest Preacher</strong> the Rev. Hipolito Fernandez Reina will take the pulpit this Sunday, Feb. 28, to talk about our deanery ministry, the children's shelter in the Dominican Republic.</p>
-<p>Now a priest in our diocese, Padre Hipolito was formerly the priest in charge at the Albergue Buen Samaritano. It's our annual drive for sponsorships for this great outreach ministry.</p> <br>
-<!--<p><strong>Movie Night</strong> show time is 7 p.m. Tonight. Come see and discuss <em> War Room</em></p>
-<br>-->
-<p><%= link_to "Click to see our activities calendar", pages_calendar_path %>
+<p><strong>Our albergue,</strong> or shelter, for children in the Dominican Republic was given a boost last week by our guest homilist, the Rev. Hipolito Fernandez Reina.</p>
+<p>The shelter is our major outreach and is the ministry of our deanery. Naples Episcopalians and their friends are the sole financial supporters of the Albergue Buen Samaritano, located in the poorest neighborhood of the agricultural town of San Francisco de Macrois. Some 90 children, who otherwise would be on the streets of their <em>barrio</em>, are cared for at the albergue. </p>
+<p>If you didn't have a chance to sponsor a child last week, there's still time. Please see Judy Martin, the vestry outreach chair, (an 8 o'clock worshipper) or Tom Connolly (10:45). <%= link_to "Click here", albergue_path %> to see more.</p> <br>
+<p><strong>Movie Night</strong> show time is 7 p.m. next Tuesday. Come see and discuss <em> St. Vincent,</em> a humorous film with a powerful message.</p>
+<br>
+<p><%= link_to "Click to see our activities calendar", calendar_path %>
 
-
-
-<p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started.</p><br>
-<!--<p><strong>Good News!</strong> Barb Kling, the vestry person in charge of office staffing, announced all volunteer slots have been filled. That means our office is fully staffed Monday through Friday, assisting with chores asssigned by Deb Avery, our parish administrator.</p>-->
+<p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p><br>
+<!--
 <%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
 <p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
     <!--<p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>-->
@@ -63,7 +62,7 @@
     <div class="col-md-3">
       <div id="calendar-overlay">
         <h3>Calendar of Events</h3>
-        <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "100%"), pages_calendar_path %>
+        <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "100%"), calendar_path %>
         <h3>Click on calendar <br> to see activities</strong></h3>
       </div>
     </div>

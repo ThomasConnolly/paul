@@ -17,4 +17,7 @@ class PagesController < ApplicationController
   def haitian
   end
 
+  def python_tutor
+  end
+
 end

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2"<h3>Users</h3>
+    <div class="col-md-8 col-md-offset-2"<h3>All Users</h3>
       <% @users.each do |user| %> 
         <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.role %></p>
       <% end %>
@@ -15,18 +15,10 @@
         <% @users.where('role = 0').each do |admin| %>
         <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
-        
-   
-  
-
-<h2>Import users</h2>
-<%= form_tag url: import_users_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-  <% end %>
-
-   
-
-  </div>
-</div>
+        <br>
+        <% @users.where('role = 4').each do |guest| %>
+        <p><strong> <%= guest.full_name %></strong>&nbsp; <%=guest.email %></p>
+        <% end %>
+    </div>
  </div>
+</div>

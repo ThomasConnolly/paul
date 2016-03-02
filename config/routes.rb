@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-
+  root 'pages#home'
   devise_for :views
   get 'members/index'
   get 'members/import'
@@ -19,19 +19,14 @@ Rails.application.routes.draw do
   get 'formation/index'
   get 'prayer/index'
   # mount Payola::Engine => '/payola', as: :payola
-  get 'pages/home'
-  get 'pages/haitian'
-  get 'pages/concert'
-  root 'pages#home'
-  get 'pages/albergue'
-  get 'pages/calendar'
-  get 'pages/directions'
-  get 'pages/map'
-  get 'pages/test'
-  get 'visitors/index'
-  resources :homestest, only: [:show]
-  get 'homestest/show'
+  get 'home', to: 'pages#home'
+  get 'haitian', to: 'pages#haitian'
+  get 'concert', to: 'pages#concert'
+  get 'albergue', to: 'pages#albergue'
+  get 'calendar', to: 'pages#calendar'
+  get 'directions', to: 'pages#directions'
   get 'comments/new'
+  get 'ruby_tutor', to: 'pages#python_tutor'
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]

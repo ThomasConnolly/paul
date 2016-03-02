@@ -14,7 +14,7 @@ class MembersController < ApplicationController
         redirect_to members_path, notice: "Imported #{@import.imported_count} members"
       else
         @members = Member.all
-        flash[:alert] = "There were #{@import.errors.count} errors in your csv file."
+        flash[:alert] = "There were #{@import.errors.count} errors with your CSV file"
         render action: :index
     end
   end
@@ -31,6 +31,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
+    redirect_to 'back'
   end
 
   
@@ -47,6 +48,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:last_name, :first_name, :email, :birthday, :anniversary, :membership_id)
+    params.require(:member).permit(:last_name, :first_name, :email, :birthday, 
+      :anniversary, :membership_id, :full_name)
   end
 end

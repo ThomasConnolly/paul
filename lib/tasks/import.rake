@@ -13,7 +13,7 @@ namespace :import do
         :email,
       ).merge(
          :anniversary  => Date.strptime(row[:anniversary], "%m/%d/%Y").strftime("%d/%m/%Y"),
-         :birthday  => Date.strptime(row[:birthday], "%m/%-d").strftime("%d/%m/%Y").unless :birthday = nil
+         :birthday  => Date.strptime(row[:birthday], "%m/%-d").strftime("%d/%m/%Y")
       )
         if member.save
           counter += 1

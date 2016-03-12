@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.5.2'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -30,7 +30,6 @@ gem 'remotipart'
 gem 'sidekiq'
 gem 'mail'
 #gem 'smarter_csv'
-
 # gem 'koala'
 gem 'social-share-button'
 # gem 'auto_html'
@@ -41,6 +40,8 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #  gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'devise'
+gem 'puma'
+gem 'foreman'
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
@@ -56,7 +57,7 @@ group :development do
   gem 'pry-nav'
   gem 'pry-byebug'
   gem 'pry-stack'
-  gem 'letter_opener_web'
+  gem 'rubycritic'
 end
 
 group :development, :test do
@@ -66,8 +67,9 @@ group :development, :test do
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  
+  gem 'letter_opener_web'
 end
+
 group :test do
   gem 'ffaker'
   gem 'guard'
@@ -84,8 +86,7 @@ end
 # gem 'ransack', github: 'activerecord-hackery/ransack'
 # gem 'formtastic', github: 'justinfrench/formtastic'
 
-gem 'puma'
-gem 'foreman'
+
 group :production do
   gem 'rails_12factor'
 end

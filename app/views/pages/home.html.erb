@@ -1,3 +1,7 @@
+<head>
+<link rel="alternate" type="application/rss+xml" title="Main Lectionary Feed" href="http://lectionary.library.vanderbilt.edu//feeds/lectionary.xml">
+</head>
+
 <div class="container">
 <div class="row">
   <div class="col-lg-12">
@@ -8,14 +12,20 @@
   <div class="col-md-8">
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
-    <p><strong>This Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>Catholic Mystical Theology</em></p>
+    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>From Vatican I to Vatican II.</em></p><%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/DST_clock.jpg", width:"140", height: "140", class: "floatright") %>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", directions_path %>.</h3> </p><br> 
     <div>
     <p><strong>Sunday's Scripture Readings:</strong></p>
-    <script src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1" type="text/javascript" > </script></p>
+     <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1&utf=y" charset="UTF-8" type="text/javascript" > </script >
+</p>
     </div><br>
+
+<link rel="alternate" type="application/rss+xml" title="Main Lectionary Feed" href="http://lectionary.library.vanderbilt.edu//feeds/lectionary.xml">
+
+
+
 
     <p>To learn about our worship service and about the <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
     <h2>Lenten study series</h2>
@@ -31,19 +41,16 @@
    
 
   </div>
-          
 
   <div class="col-md-4 sidebar">
     <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
      <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %><br>
-
-<p><strong>Our albergue,</strong> or shelter, for children in the Dominican Republic was given a boost last week by our guest homilist, the Rev. Hipolito Fernandez Reina.</p>
-<p>The shelter is our major outreach and is the ministry of our deanery. Naples Episcopalians and their friends are the sole financial supporters of the Albergue Buen Samaritano, located in the poorest neighborhood of the agricultural town of San Francisco de Macrois. Some 90 children, who otherwise would be on the streets of their <em>barrio</em>, are cared for at the albergue. </p>
-<p>If you didn't have a chance to sponsor a child last week, there's still time. Please see Judy Martin, the vestry outreach chair, (an 8 o'clock worshipper) or Tom Connolly (10:45). <%= link_to "Click here", albergue_path %> to see more.</p> <br>
-<p><strong>Movie Night</strong> show time is 7 p.m. next Tuesday. Come see and discuss <em> St. Vincent,</em> a humorous film with a powerful message.</p>
-<br>
-<p><%= link_to "Click to see our activities calendar", calendar_path %>
+     <p><strong>The Mens' Group </strong> will hear from Dr. Susan Wilson about her mission work in Tanzania, supported by the Tumaini Fund, which she founded. 
+She received the <em>Most Excellent Order of the British Empire</em> award, presented by Prince William in 2013, for helping alleviate the suffering of so many people.</p>
+<p>All are invited to hear Dr. Wilson at 7:30 a.m. Friday in Trinity Hall.</p>
+<p><strong>Fr. Bill</strong> and several parishioners will attend a benefit for Tumaini Saturday at the Naples Sailing and Yacht Club. <strong>Mike Moore,</strong> an 8 o'clocker, is vice president of the charity. More info <%= link_to "here.", "http://www.tumainifundusa.org/" %> </p><br> 
+<p>If you didn't have a chance to sponsor a child at our own shelter in the <strong>Dominican Republic </strong> last week, there's still time. Please see Judy Martin, the vestry outreach chair, (an 8 o'clock worshipper) or Tom Connolly (10:45). <%= link_to "Click here", albergue_path %> to see more.</p> <br>
 
 <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p><br>
 <!--

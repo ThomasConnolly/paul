@@ -20,8 +20,7 @@
 #  full_name              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
-#  birthday               :date
-#  anniversary            :date
+#  member_id              :integer
 #
 
 class User < ActiveRecord::Base
@@ -41,6 +40,7 @@ class User < ActiveRecord::Base
   has_many :books
   has_one :pledge 
   has_one :role
+  has_one :membership
   has_many :vreports
   validates :email, presence: true
   validates :full_name, uniqueness: true
@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
     user = find_by_full_name(row["first_name"+ "last_name"]) || new  
-      user.attributes = row.to_hash.slice(:last_name, :first_name, :email)
+      user.attributes = row.to_hash.slice(:last_name, :first_name, :email, :member_id)
       user.save
     end
   end 

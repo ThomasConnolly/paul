@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  
     
   def store_location
     session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
     root_path
   end
    
-
+  
 
 protected
   

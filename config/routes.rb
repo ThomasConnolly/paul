@@ -3,11 +3,15 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   devise_for :views
+
   get 'members/index'
   get 'members/import'
   resources :members do
-    collection { post :import }
+    collection do
+      post :import
+    end
   end
+
   resources :contacts
   resources :widgets
   resources :pictures

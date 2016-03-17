@@ -26,12 +26,12 @@ class MembersController < ApplicationController
 
   def import
     @import = Member::Import.new member_import_params
-      if @import.save
-        redirect_to members_path, notice: "Imported #{@import.imported_count} members"
-      else
-        @members = Member.all
-        flash[:alert] = "There were #{@import.errors.count} errors with your CSV file"
-        render action: :index
+    if @import.save
+      redirect_to members_path, notice: "Imported #{@import.imported_count} members"
+    else
+      @members = Member.all
+      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+      render action: :index
     end
   end
 

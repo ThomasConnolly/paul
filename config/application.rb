@@ -3,17 +3,21 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require 'csv'
 require 'date'
+require 'time'
 require 'attachinary/orm/active_record'
 #  require 'awesome_print'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+
+
 module Paul
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over these.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    config.beginning_of_week = (:sunday)
 end
 
 

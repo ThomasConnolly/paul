@@ -12,30 +12,33 @@
   <div class="col-md-8">
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
-    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>From Vatican I to Vatican II.</em></p><%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/DST_clock.jpg", width:"140", height: "140", class: "floatright") %>
+    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>Vatican II and Ecumenical Prospects</em></p>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", directions_path %>.</h3> </p><br> 
     <div>
     <p><strong>Sunday's Scripture Readings:</strong></p>
      <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1&utf=y" charset="UTF-8" type="text/javascript" > </script >
-</p>
-    </div><br>
-
-<link rel="alternate" type="application/rss+xml" title="Main Lectionary Feed" href="http://lectionary.library.vanderbilt.edu//feeds/lectionary.xml">
-
-
+        <link rel="alternate" type="application/rss+xml" title="Main Lectionary Feed" href="http://lectionary.library.vanderbilt.edu//feeds/lectionary.xml">
+    </div>
+    <h2>Holy Week begins Palm Sunday</h2>
+    <p>We will process through the church with palms this Sunday.</p>
+    <p><strong>Stations of the Cross</strong> Come to the church on Wednesday at 5:30 p.m. to walk this centuries-old practice of following the steps of Jesus and his passion. Healing prayer with Eucharist follows.</p>
+    <p><strong>Maunday Thursday</strong> 6 p.m. liturgy includes foot-washing and Holy Eucharist.</p>
+    <p><strong>Good Friday</strong> noon Holy Eucharist.
+    <p><strong>Easter Vigil</strong> Holy Saturday, 6 p.m.</p>
+    <p><strong>Easter Sunday</strong> Worship services at 8, 9:15 and 10:45 a.m., and at 5 p.m. in Creole. We will have the flowering of the cross at all the services.</p>
 
 
     <p>To learn about our worship service and about the <em>Episcopal Church,</em> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-    <h2>Lenten study series</h2>
-    <p><strong><em>The Renegade Gospel-The Rebel Jesus</em> </strong> is the title of our Lenten series, Tuesdays during Lent in the libarary at 1:30 p.m. All are welcome to view a short film and engage in discussion.</p>
-    <p><strong>Stations of the Cross</strong> Come to the church on Wednesdays at 5:30 p.m. to walk this centuries-old practice of following the steps of Jesus and his passion. Healing prayer with Eucharist follows.</p>
+    
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"80%", class: "image-center") %>
+   
     <h1> Home of the friendly Farmers&rsquo; Market </h1>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"47%", class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"30%", class: "floatright") %>
     <p>This is the church where the great tradition of a farmers&rsquo; market flourishes. Each Saturday morning during "the season," November through April, hundreds of neighbors gather to stroll and shop for fresh produce, works of art, books and bagels. Thanks to our many volunteers who work hard behind the scenes to prepare for this big friendly block party; and thanks too to our patrons. We will see you again every Saturday until next April.</p>
     <p>In addition to the vendors of produce and other tasty treats, the market hosts several artisans displaying their art and craft pieces. Also, our gift shop is open, and the Unique Boutique does a brisk business in gently used fine clothing for the ladies.</p> <br>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"60%", class: "image-center") %>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"60%", class: "image-center") %>
     
     <div class="clearall"></div>
    
@@ -58,35 +61,15 @@ She received the <em>Most Excellent Order of the British Empire</em> award, pres
 <p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
     <!--<p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>-->
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p><br>
-        
-      </div>
-      </div>
-      
-      <div class="row">
-      <hr>
-      </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div id="calendar-overlay">
-        <h3>Calendar of Events</h3>
-        <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "100%"), calendar_path %>
+        <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "95%"), calendar_path %>
         <h3>Click on calendar <br> to see activities</strong></h3>
-      </div>
-    </div>
-    <div class="col-md-5">
+  </div>
+   
       <div id="newsfeed">
       <!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://episcopaldigitalnetwork.com/ens/feed/?cat=-6,-8",rssmikle_frame_width: "100%",rssmikle_frame_height: "300",frame_height_by_article: "0",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "6",mcspeed: "20",sort: "Off",rssmikle_title: "on",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#993300",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#0066FF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "170",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script></script>
       </div>
     </div>
-  <div class="col-md-1">
-    <h3 style="type-align: left;">Have<br> Some<br> Fun<br> With<br> The<br> Saints</h3>
-    <p><small>
-    Click image</small></p>
-  </div>
-  <div class="col-md-3">
-    <a href="http://www.lentmadness.org/", target="_blank"><img alt="Lent Madness 2012" src="http://www.lentmadness.org/images/LM_Widget_V.jpg", width="160"></a>
-  </div>
-  </div>
+  
   
   <!-- end feedwind code -->
   <!--  <script type="text/javascript" src="http://output72.rssinclude.com/output?type=js&amp;id=588062&amp;hash=bb2f36d2e14cdc8c15bc0bc2f3cc49dc">

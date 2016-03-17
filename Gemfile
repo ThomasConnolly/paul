@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.6'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -58,6 +58,7 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-stack'
   gem 'rubycritic'
+  # gem 'smarter_csv'
 end
 
 group :development, :test do

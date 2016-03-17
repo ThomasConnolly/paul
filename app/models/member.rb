@@ -16,19 +16,19 @@
 
 class Member < ActiveRecord::Base
 
+  belongs_to :user
   before_save :set_full_name
 
-  def self.assign_from_row(row)
-    member = Member.where(membership_id: row["Individual #"]).first_or_initialize
-    member.assign_attributes row.to_hash.slice(
-      :last_name => row["Last Name"], 
-      :first_name => row["First Name"], 
-      :email => row["Both"],
-      :anniversary =>  row["Marriage Date"], 
-      :birthday =>  row["Birth Date"]
+    def self.assign_from_row(row)
+      member = Member.where(membership_id: row[:membership_id]).first_or_initialize
+      member.assign_attributes row.to_hash.slice(
+      :last_name, 
+      :first_name, 
+      :email,
+      :anniversary,# => Date.strptime(row[:anniversary],"%m/%d/%Y"), #  .strftime("%Y/%m/%d"),
+      :birthday# => Date.strptime(row[:birthday],"%m/%d%Y")  #  .strftime("%m/%d")
       )
-      
-    member  
+      member
     end
 
     def set_full_name

@@ -26,7 +26,7 @@
 class User < ActiveRecord::Base
   before_save :set_full_name
 
-  enum role: [:admin, :vestry, :editor, :member, :guest]
+  enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4 }
   after_initialize :set_default_role, :if => :new_record?
 
   after_create :add_profile
@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
   has_many :opportunities
   has_many :books
   has_one :pledge 
-  has_one :role
   has_one :membership
   has_many :vreports
   validates :email, presence: true

@@ -12,9 +12,9 @@
 
 class VreportsController < ApplicationController
   before_action :authenticate_user!
+  before_action :vestry_only
   before_action :set_vreport, only: [:show, :edit, :update, :destroy]
   before_action :all_vreports, only: [:index, :create, :update, :destroy]
-  before_action :vestry_only
   
   respond_to :html, :js
 
@@ -39,7 +39,7 @@ end
   def create
     @vreport = current_user.vreports.build(vreport_params)
       if @vreport.save
-        VreportMailer.vreport_created(@vreport).deliver_later
+        VestryMailer.vreport_created(@vreport).deliver_now
         respond_to do |format|
           format.html { redirect_to vreports_path(@vreport) }
           format.js
@@ -80,7 +80,7 @@ private
   end
 
   def vreport_params
-    params.require(:vreport).permit(:body, :title)
+    params.require(:vreport).permit(:body, :title, :comments)
   end
 
   def vestry_only

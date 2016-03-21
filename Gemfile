@@ -52,12 +52,14 @@ group :development do
   gem 'annotate'
   gem 'awesome_print'
   gem 'byebug'
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'pry-nav'
-  gem 'pry-byebug'
-  gem 'pry-stack'
+  #gem 'pry'
+  #gem 'pry-rails'
+  #gem 'pry-nav'
+  #gem 'pry-byebug'
+  #gem 'pry-stack'
   gem 'rubycritic'
+  gem 'letter_opener'
+  gem 'letter_opener_web'
   # gem 'smarter_csv'
 end
 
@@ -68,7 +70,6 @@ group :development, :test do
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'letter_opener_web'
 end
 
 group :test do

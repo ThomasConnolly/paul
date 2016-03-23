@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+   <div class="col-md-6 col-md-offset-3">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Here are some Story Ideas</h1>
+    <div class="mt30"></div>
+    <% @story_ideas.each do |story_idea| %>
+      <h3><%= story_idea.title %></h3>
+        <p><%= story_idea.body %></p>
+        <p>Submitted by <%= story_idea.user.full_name.titleize %> </p><br>
+        <p><small><%= link_to 'Show', story_idea %> | <%= link_to 'Edit', 
+          edit_story_idea_path(story_idea) %> |
+          <%= link_to 'Destroy', story_idea, method: :delete, data: 
+          { confirm: 'Are you sure?' } %></small></p>
+    
+    
+    <br>
+        <section id="comments-section">
+          <%= render partial: 'comments/comments', locals: {commentable: story_idea} %>
+          <%= render partial: 'comments/form', locals: {commentable: story_idea} %>
+        
+      <% end %>
+
+  </section>   
+<%= link_to 'New Story idea', new_story_idea_path %>
+
+    </div>
+  </div>
+</div>

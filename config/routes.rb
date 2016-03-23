@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  
   root 'pages#home'
   devise_for :views
 
@@ -62,9 +63,11 @@ Rails.application.routes.draw do
     resources :comments, module: :vreports
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "letter_opener"
+  resources :story_ideas do
+    resources :comments, module: :story_ideas
   end
+
+ 
 
   
   mount Attachinary::Engine => '/attachinary'

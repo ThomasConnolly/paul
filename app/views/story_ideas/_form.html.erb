@@ -1,0 +1,17 @@
+
+
+    <p id="notice"><%= notice %></p><%= simple_form_for(@story_idea) do |f| %>
+    <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, placeholder: 'Topic of your story idea', 
+     label: false, autofocus: true %><br>
+    <%= f.input :body, placeholder: 'Provide some details & names', 
+    input_html: { rows: 4 }, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

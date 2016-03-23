@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-md-6 col-md-offset-3"><p id="notice"><%= notice %></p>
+<br>
+<p>
+  <strong>General idea</strong>
+  <%= @story_idea.title %>
+</p>
+<br>
+<p>
+  <strong>Details, principals and contact info</strong>
+  <%= @story_idea.body %>
+</p>
+
+<%= link_to 'Edit', edit_story_idea_path(@story_idea) %> |
+<%= link_to 'Back', story_ideas_path %>
+
+    </div>
+  </div>
+</div>

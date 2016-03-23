@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
+  has_many :story_ideas
   has_one :pledge 
   has_one :membership
   has_many :vreports

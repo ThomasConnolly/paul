@@ -52,19 +52,14 @@ group :development do
   gem 'annotate'
   gem 'awesome_print'
   gem 'byebug'
-  #gem 'pry'
-  #gem 'pry-rails'
-  #gem 'pry-nav'
-  #gem 'pry-byebug'
-  #gem 'pry-stack'
   gem 'rubycritic'
-  gem 'letter_opener'
-  gem 'letter_opener_web'
   # gem 'smarter_csv'
 end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'guard'
+  gem 'pry'
   gem 'spring'
   gem 'factory_girl_rails'
   gem 'simple_bdd'
@@ -74,8 +69,6 @@ end
 
 group :test do
   gem 'ffaker'
-  gem 'guard'
-  gem 'guard-rspec'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'

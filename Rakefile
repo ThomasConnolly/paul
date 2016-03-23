@@ -2,14 +2,13 @@
 # for example lib/tasks/capistrano.rake, and they will automatically 
 #be available to Rake.
 
- # require "rspec/core/rake_task"
+ require "rspec/core/rake_task"
  
  # desc "Run all examples"
  
- # RSpec::Core::RakeTask.new(:spec) do |t|
-  #  t.rspec_opts = %w[--color]
-   # t.pattern = 'spec/**/*_spec.rb'
-  #end
+RSpec::Core::RakeTask.new do |task|
+  task.rspec_opts = ['--color', '--format', 'doc']
+end
 #rescue LoadError
 #end
 

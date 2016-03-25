@@ -12,20 +12,16 @@
   <div class="col-md-8">
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
-    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education film on the history of Christian thought at 9:30 a.m. This week's title: <em>Vatican II and Ecumenical Prospects</em></p>
+    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education resumes at 9:30 a.m., Sunday, April 3. </p>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", directions_path %>.</h3> </p><br> 
     <div>
-    <p><strong>Sunday's Scripture Readings:</strong></p>
+    <p><strong>Scripture Readings:</strong></p>
      <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Flectionary.library.vanderbilt.edu%2Ffeeds%2Flectionary.xml&desc=1&utf=y" charset="UTF-8" type="text/javascript" > </script >
         <link rel="alternate" type="application/rss+xml" title="Main Lectionary Feed" href="http://lectionary.library.vanderbilt.edu//feeds/lectionary.xml">
     </div>
-    <h2>Holy Week at Saint Paul's</h2>
-
-    <p><strong>Stations of the Cross</strong> Come to the church on Wednesday at 5:30 p.m. to walk this centuries-old practice of following the steps of Jesus and his passion. Healing prayer with Eucharist follows.</p>
-    <p><strong>Maunday Thursday</strong> 6 p.m. liturgy includes foot-washing and Holy Eucharist.</p>
-    <p><strong>Good Friday</strong> noon Holy Eucharist.
+    <h2>Easter at Saint Paul's</h2>
     <p><strong>Easter Vigil</strong> Holy Saturday, 6 p.m.</p>
     <p><strong>Easter Sunday</strong> Worship services at 8, 9:15 and 10:45 a.m., and at 5 p.m. in Creole. We will have the flowering of the cross at all the services.</p>
 
@@ -56,9 +52,9 @@
 
 <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p><br>
 
-<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
-<p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
-    <!--<p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>
+<%#= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
+<!--<p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
+    <p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p><br>
         <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "95%"), calendar_path %>
         <h3>Click on calendar <br> to see activities</strong></h3>

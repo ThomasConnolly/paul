@@ -42,6 +42,9 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'puma'
 gem 'foreman'
+gem 'rspec'
+gem 'rspec-rails'
+
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
@@ -57,7 +60,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'guard'
   gem 'pry'
   gem 'spring'

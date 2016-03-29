@@ -67,7 +67,7 @@ Rails.application.routes.draw do
     resources :comments, module: :story_ideas
   end
 
- 
+  resources :comments, only: [:destroy]
 
   
   mount Attachinary::Engine => '/attachinary'

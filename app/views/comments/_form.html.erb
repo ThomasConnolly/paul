@@ -1,6 +1,8 @@
   <%= simple_form_for [commentable, Comment.new] do |f| %>
     <%= f.input :body, placeholder: 'Type your comment here', 
     input_html: { rows: 2 }, label: false, autofocus: true %>
-    <%= f.submit class: "btn btn-primary btn-sm" %>
+    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp;
+    <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
   <% end %>
+  <br>
   

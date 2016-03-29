@@ -15,13 +15,13 @@
           <% end %><br><br>
             <%= link_to new_vreport_path, remote: true do %>
               <p><strong>Create a report</strong></p>
-
             <% end %>
         </div>
-          <div id="vreport-form" style="display:none;">
+          <div id="vreports-form" style="display:none;">
           </div>   
       </section>
       <section>
+        <div class="mt30"> </div>
         <div id="vreports">
         <h2>Here are the latest vestry reports</h2>
           <%= render 'vreports' %>

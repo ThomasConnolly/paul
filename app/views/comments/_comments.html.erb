@@ -7,13 +7,10 @@
         <%= comment.user.full_name.titleize %>
         <span class="time-ago">
         <%= time_ago_in_words(comment.created_at) %> ago.
-          <% if current_user == comment.user %>
-            &nbsp;<%= link_to "Delete comment", post_comment_path(comment.commentable, comment), 
-            method: :delete, data: { confirm: "Are you sure?" } %> 
-           </span>
-       <% end %>
-
+  <% if current_user == comment.user %>
+    &nbsp;<%= link_to "Delete comment", comment, 
+    method: :delete, data: { confirm: "Are you sure?" } %> 
+    </span> 
+  <% end %>
       </div>
-       <div class="mt30"></div>
-       <% end %>
-
+<% end %>

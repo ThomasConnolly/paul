@@ -23,7 +23,7 @@
     <%= post.content %>  
       <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
       </span></p>
-        <%#= link_to "Share this post with your friends", post_path(post) %>
+        
     <p> <span class="edit-delete-line">
       <% if current_user == post.user %>
       <%= link_to "Edit", edit_post_path(post) %> &nbsp;
@@ -34,7 +34,8 @@
       <% end %>
     <div class="clearall"></div>
     <section id="comments-section">
-     <%= render partial: 'comments/comments', locals: {commentable: post} %>
-    <%= render partial: 'comments/form', locals: {commentable: post} %>
+      <%= render partial: 'comments/comments', locals: {commentable: post} %>
+      <div class="mt30"></div>
+      <%= render partial: 'comments/form', locals: {commentable: post} %>
 <% end %>
-  </section>     
+    </section>     

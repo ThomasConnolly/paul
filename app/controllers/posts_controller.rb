@@ -82,7 +82,7 @@ private
 
   def members_only
     unless current_user.vestry? or current_user.admin? or current_user.member?
-      redirect_to root_path, :alert => "Access denied."
+      redirect_to root_path, :alert => "You must be a member of St. Paul's to use this function."
     end
   end
 end

@@ -1,5 +1,8 @@
-<%= link_to "See the new vestry report here", vreport_url(@vreport) %>
 
-<p>Sign in using your name and the password, Vestry2016. Then migrate to "Edit account" and change the password to something you will remember, minimum eight characters. The most secure passwords have numbers and both upper and lower case letters.</p>
-<p>The vreports page is for <strong>vestry members only,</strong> and it is accessed by putting a "/vreports" after the .org in the address line. It is here where you are expected to file your report on your specific ministry and the work your team has done or plans to do.</p>
-<p>Reports are due one week before the next scheduled vestry meeting (April 21). This will give your fellow vestry persons time to have their questions and concerns addressed in the comments section before the meeting.</p>
+
+<p> <%= link_to "Sign in to the website", "http://www.saintpaulsnaples.org" %>
+and then type /vreports after the .org in the address line. </p>
+
+<h3>Or</h3>
+
+<p><%= link_to "Sign in and then click this link", vreport_url(@vreport) %>

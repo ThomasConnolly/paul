@@ -13,15 +13,14 @@
     <h3>
       <%= vreport.title %></h3>
       <p><%= vreport.body %><br>
-      <small>Report made <%= time_ago_in_words(vreport.created_at) %> ago
-      by</small> <strong><%= vreport.user.full_name.titleize  %>.</strong></p>
-
-        
-    <p> <span class="edit-delete-line"><%= link_to "Show", vreport_path(vreport) %>
+      <div class="comments-user"><p><small>Report made 
+      <%= time_ago_in_words(vreport.created_at) %> ago by 
+      <%= vreport.user.full_name.titleize %> | 
+      <%= link_to "Show", vreport_path(vreport) %> | 
       <% if current_user == vreport.user %>
       <%= link_to "Edit", edit_vreport_path(vreport) %> &nbsp;
       <%=link_to vreport,  method: :delete, data: 
-      { confirm: 'This will delete your vreport and all its comments.' 
+      { confirm: 'This will delete your report and all its comments.' 
         }, remote: true do %> Delete! </span></p>
       <% end %>
     <% end %>

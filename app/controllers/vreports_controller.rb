@@ -26,15 +26,13 @@ class VreportsController < ApplicationController
     end
   end
 
-
   def index
     @vreports = Vreport.includes(:comments).all
     @vreport = Vreport.new
   end
 
-
- def show
-end
+  def show
+  end
   
   def create
     @vreport = current_user.vreports.build(vreport_params)
@@ -54,7 +52,7 @@ end
       respond_to do |format|
       format.html { redirect_to vreports_path }
       format.js
-      end 
+    end 
   end
 
   def edit
@@ -85,7 +83,7 @@ private
 
   def vestry_only
     unless current_user.vestry? or current_user.admin?
-      redirect_to root_path, :alert => "Access denied."
+      redirect_to root_path, :alert => "You must be a member of the St. Paul Vestry to use this function."
     end
   end
 end

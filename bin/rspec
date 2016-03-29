@@ -14,3 +14,9 @@ require 'rubygems'
 require 'bundler/setup'
 
 load Gem.bin_path('rspec-core', 'rspec')
+
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end

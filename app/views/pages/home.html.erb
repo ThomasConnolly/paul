@@ -12,7 +12,7 @@
   <div class="col-md-8">
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
-    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education resumes at 9:30 a.m., Sunday, April 3. </p>
+    <p><strong>Sunday</strong> 8, 9:15 and 10:45 a.m. Nursery available during the two later services. Adult education group is engaged in <em>Yale University's Lectures on the New Testament History and Literature,</em> delivered by Dale B. Martin, PhD, the Woolsey Professor of Religious Studies at Yale. It's at 9:30 in the library, in the Serson Hall office building. </p>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", directions_path %>.</h3> </p>
@@ -41,17 +41,16 @@
   <div class="col-md-4 sidebar">
     <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
-     <%#= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
+     
      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/flowering_of_cross.jpg", width: "95%", class: "image-center") %>
      <br>
      
-<p>If you didn't have a chance to sponsor a child at our own shelter in the <strong>Dominican Republic </strong> last week, there's still time. Please see Judy Martin, the vestry outreach chair, (an 8 o'clock worshipper) or Tom Connolly (10:45). <%= link_to "Click here", albergue_path %> to see more.</p> <br>
-
+<%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
 <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p><br>
 
-<%#= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
-<!--<p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
-    <p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>
+<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
+<p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p>
+  <!--<p><strong>Like to sing?</strong> The choir would like to invite <em>you</em> to join them! Choir rehearsal is at 9:30 a.m. Sundays for the 10:45 a.m. service.</p><br>_..
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p><br>
         <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "95%"), calendar_path %>
         <h3>Click on calendar <br> to see activities</strong></h3>
@@ -101,9 +100,31 @@
  
 
 <div class="hidden">
-  Protestantism after Modernity
-  Catholic Theologies of Grace
-  Catholic Mystical Theology
-  From Vatican I to Vatican II
-  Vatican II and Ecumenical Prospects
+  Yale University's Lectures on the New Testament, delivered by Dale B. Martin, PhD, the Woolsey Professor of Religious Studies at Yale University.
+ 
+  1.  From Stories to Canon
+  2.  The Greco-Roman World
+  3.  Judaism in the First Century
+  4.  The New Testament as History
+  5.  The Gospel of Mark
+  6.  The Gospel of Matthew
+  7.  The Gospel of Thomas
+  8.  The Gospel of Luke
+  9.  The Acts of the Apostles
+ 10.  Johannine Christianity: The Gospel
+ 11.  Johannine Christianity: The Letters
+ 12.  The Historical Jesus
+ 13.  Paul as Missionary
+ 14.  Paul as Pastor
+ 15.  Paul as Jewish Theologian
+ 16.  Paul's Disciples
+ 17.  Arguing with Paul?
+ 18.  The "Household" Paul: The Pastorals
+ 19.  The "Anti-household" Paul: Thecla
+ 20.  Interpreting Scripture: Hebrews
+ 21.  Interpreting Scripture: Medieval Interpretations
+ 22.  Apocalyptic and Resistance
+ 23.  Apocalyptic and Accommodation
+ 24.  Ecclesiastical Institutions: Unity, Martyrs and Bishops
+ 25.  The "Afterlife" of the New Testament and Postmodern Interpretation
   </div>

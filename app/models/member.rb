@@ -19,6 +19,8 @@ class Member < ActiveRecord::Base
   belongs_to :user
   before_save :set_full_name
 
+  acts_as_birthday :birthday
+
     def self.assign_from_row(row)
       member = Member.where(membership_id: row[:membership_id]).first_or_initialize
       member.assign_attributes row.to_hash.slice(

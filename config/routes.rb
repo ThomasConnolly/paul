@@ -2,6 +2,14 @@ Rails.application.routes.draw do
   
 
   
+ 
+  resources :anniversaries, only: [:show, :index, :destroy]
+  resources :anniversaries do
+    collection do
+      post :import
+    end
+  end
+  
   root 'pages#home'
   devise_for :views
 

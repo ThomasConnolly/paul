@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>Anniversaries </h1>
+<% @anniversaries.each do |a| %>
+<p><strong><%= a.salutation %>&nbsp;<%= a.last_name %></strong>,&nbsp;<%= a.anniversary %>
+<% end %>
+
+
+<br><br>
+  <h4>Import data</h4>
+    <%= form_for @import, url: import_anniversaries_path, multipart: true do |f|%>
+      <% if @import.errors.any? %>
+        <div class="alert alert-error">
+        <% @import.errors.full_messages.each do |msg| %>
+        <div><%= msg %> </div>
+        <% end %>
+      <% end %>
+      <%= f.file_field :file %>
+      <%= f.submit  "Upload anniversaries" %>
+    <% end %>
+
+
+

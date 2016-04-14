@@ -40,10 +40,9 @@ class User < ActiveRecord::Base
   has_many :books
   has_many :story_ideas
   has_one :pledge 
-  has_one :membership
   has_many :vreports
   validates :email, presence: true
-  validates :full_name, uniqueness: true
+  validates :full_name, uniqueness: { case_sensitive: false }
  
 
   after_create :send_welcome_email
@@ -56,13 +55,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :authentication_keys => [:login]
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-    user = find_by_full_name(row["first_name"+ "last_name"]) || new  
-      user.attributes = row.to_hash.slice(:last_name, :first_name, :email, :member_id)
-      user.save
-    end
+  def self.assign_from_row(row)
+    user = find_by_full_name(row["first_name" + "last_name"]) || new  
+      user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email, 
+        :member_id)
+      user  # =====see member.rb for example ======
   end 
+
 
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip

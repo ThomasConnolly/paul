@@ -23,6 +23,12 @@
 #  member_id              :integer
 #
 
+  
+
+  
+
+
+
 class UsersController < ApplicationController
  
  before_action :authenticate_user!
@@ -33,6 +39,7 @@ class UsersController < ApplicationController
   
   def new  
     @user = User.new
+    @import = User::Import.new
   end
 
  
@@ -40,13 +47,21 @@ class UsersController < ApplicationController
     @users = User.all.order(:last_name)
     unless current_user.admin?
       redirect_to '/'
-    @import = User::Import.new
+    @import = User::Import.new 
     end
   end
-    
+   
   def import
-    User.import(params[:file])
-    redirect_to users_path
+    @import = User::Import.new user_import_params
+    if @import.save
+      redirect_to users_path, notice: 
+      "Imported #{@import.imported_count} users"
+    else
+      @users = User.all
+      flash[:alert] =  
+      "There were #{@import.errors.count} errors in your CSV file"
+      render action: :index
+    end
   end
 
   def show
@@ -84,7 +99,8 @@ private
 
   def admin_only
     unless current_user.admin? 
-      redirect_to root_path, :alert => "Access denied."
+      flash[:alert] = "Access denied."
+      redirect_to root_path 
     end
   end
   

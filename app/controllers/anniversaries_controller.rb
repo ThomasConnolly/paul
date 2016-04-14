@@ -3,7 +3,7 @@ class AnniversariesController < ApplicationController
 
   
   def index
-    @anniversaries = Anniversary.all, order: (:anniversary)
+    @anniversaries = Anniversary.all
     @import = Anniversary::Import.new
     end
 

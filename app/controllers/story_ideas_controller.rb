@@ -49,14 +49,14 @@ class StoryIdeasController < ApplicationController
 
  
   def update
-    
-      @story_idea.update_attributes(story_idea_params)
-        @story_idea.save
-        respond_to do |format|
-        format.html { redirect_to @story_idea, notice: 'Story idea was successfully updated.' }
-        format.js
-      end
+    @story_idea.update_attributes(story_idea_params)
+    @story_idea.save
+      respond_to do |format|
+      format.html { redirect_to @story_idea, notice: 
+        'Story idea was successfully updated.' }
+      format.js
     end
+  end
  
 
   def destroy

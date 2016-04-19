@@ -16,10 +16,7 @@
         <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
         <br>
-        <% @users.where('role = 4').each do |guest| %>
-        <p><strong> <%= guest.full_name %></strong>&nbsp; <%=guest.email %></p>
-        <% end %>
-
+        
         <%= form_for @import, url: import_users_path, multipart: true do |f| %>
           <%= f.file_field :file %>
           <%= f.submit "Upload users" %>

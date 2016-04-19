@@ -6,21 +6,21 @@
       <% end %>
       <br>
       <h3> Vestry Members  </h3>
-      <% @users.where('role = 1').each do |v| %>
+      <% @users.where(role: 1).each do |v| %>
        <p><strong> <%= v.full_name %> </strong>&nbsp;
         <%= v.email %> <br> </p>
         <% end %>
         <br>
         <h3>Administrators</h3>
-        <% @users.where('role = 0').each do |admin| %>
+        <% @users.where(role: 0).each do |admin| %>
         <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
         <br>
         
-        <%= form_for @import, url: import_users_path, multipart: true do |f| %>
-          <%= f.file_field :file %>
-          <%= f.submit "Upload users" %>
-        <% end %>
+        <%#= form_for @import, url: import_users_path, multipart: true do |f| %>
+          <%#= f.file_field :file %>
+          <%#= f.submit "Upload users" %>
+        <%# end %>
 
     </div>
  </div>

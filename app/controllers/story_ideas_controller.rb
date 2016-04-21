@@ -41,7 +41,7 @@ class StoryIdeasController < ApplicationController
       if @story_idea.save
         #  CommunicationsMailer.story_idea_created(@story_id).deliver_now
         respond_to do |format|
-          format.html { redirect_to @story_idea, notice: 'Story idea was successfully created.' }
+          format.html { redirect_to story_ideas_path }
           format.js
       end
     end
@@ -52,8 +52,7 @@ class StoryIdeasController < ApplicationController
     @story_idea.update_attributes(story_idea_params)
     @story_idea.save
       respond_to do |format|
-      format.html { redirect_to @story_idea, notice: 
-        'Story idea was successfully updated.' }
+      format.html { redirect_to story_ideas_path }
       format.js
     end
   end

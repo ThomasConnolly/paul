@@ -10,8 +10,8 @@
     <br>
   <% if post.user.avatar.present? %>
     <div id="avatar-owner">
-      <%= cl_image_tag(post.user.avatar.path, { size: '110x120', crop: :fill,
-        gravity: :face, class: "floatleft" }) %>
+      <%= cl_image_tag(post.user.avatar.path, { size: '110x120',
+       crop: :fill, gravity: :face, class: "floatleft" }) %>
     </div>
   <% else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
@@ -20,22 +20,22 @@
   <br>
   <p><strong>
     <%= post.user.full_name.titleize  %></strong>::  
-    <%= post.content %>  
-      <span class="time-ago"> Posted <%= time_ago_in_words(post.created_at) %> ago. 
-      </span></p>
-        
-    <p> <span class="edit-delete-line">
+    <%= simple_format(post.content) %>  
+      <p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
       <% if current_user == post.user %>
-      <%= link_to "Edit", edit_post_path(post) %> &nbsp;
+      | <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
       <%=link_to post,  method: :delete, data: 
         { confirm: 'This will delete your post and all its comments.' 
           }, remote: true do %> Delete! </span></p>
+          <hr>
         <% end %>
       <% end %>
     <div class="clearall"></div>
+
     <section id="comments-section">
       <%= render partial: 'comments/comments', locals: {commentable: post} %>
       <div class="mt30"></div>
       <%= render partial: 'comments/form', locals: {commentable: post} %>
+    </section> 
+
 <% end %>
-    </section>     

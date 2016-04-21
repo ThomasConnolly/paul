@@ -38,7 +38,6 @@ class HomilistsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
       if @homilist.update(homilist_params)
         redirect_to @homilist
       else
@@ -49,7 +48,7 @@ class HomilistsController < ApplicationController
   def destroy
     @homilist.destroy
   end
-end
+
 
 
 

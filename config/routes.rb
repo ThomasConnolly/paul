@@ -64,13 +64,15 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles
+  resources :posts
   resources :posts do
     resources :comments, module: :posts
   end
+  resources :vreports
   resources :vreports do
     resources :comments, module: :vreports
   end
-
+  resources :story_ideas
   resources :story_ideas do
     resources :comments, module: :story_ideas
   end

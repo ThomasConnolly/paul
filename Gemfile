@@ -54,7 +54,7 @@ end
 
 group :development, :test do
   gem 'guard'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'spring'
   gem 'factory_girl_rails'
   gem 'simple_bdd'

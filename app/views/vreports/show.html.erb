@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-     <h1>Here's the vestry report</h1>
-       <h2><%= @vreport.title %><br>
-         By <%= @vreport.user.full_name.titleize %></h2>
+     
+       <h1><%= @vreport.title %></h1>
+        <h2> By <%= @vreport.user.full_name.titleize %></h2>
             <p>
-            <%= @vreport.body %>
+            <%= simple_format(@vreport.body) %>
             </p>
           <div class="mt100"></div>
 

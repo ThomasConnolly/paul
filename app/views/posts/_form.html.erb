@@ -1,19 +1,19 @@
 
-<%= simple_form_for @post, remote: true do |f| %>
-  <%= f.input :content, placeholder: 'Type your post here', label: false, :autofocus => "autofocus" %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :content, placeholder: 'Type your post here', label: false, 
+  :autofocus => "autofocus", input_html: {rows: "6"} %>
   
   <div class="upload_picture">
-    <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html:
-     {  class: "ui button gallery" } %>
+    <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html: { class: "ui button gallery" } %>
   </div>
 
   <div class="upload_photos"> 
     <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures', label_html:
-     {  class: "ui button gallery" } %>
+     { class: "ui button gallery" } %>
   </div>
 
   <div class="submit-post">
-   <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 
+   <%= f.button :submit, class: "btn btn-primary btn-xs" %> &nbsp; 
    <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
   </div>
 <% end %>

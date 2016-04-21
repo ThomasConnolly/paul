@@ -1,11 +1,11 @@
-<%= simple_form_for @story_idea, remote: true do |f| %>
+<%= simple_form_for @story_idea do |f| %>
   <%= f.input :title, placeholder: 'Topic of your story idea', 
   label: false, autofocus: true %><br>
   <%= f.input :body, placeholder: 'Provide some details & names', 
   input_html: { rows: 4 }, label: false %>
  
   <div class="submit-post">
-    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp;
+    <%= f.button :submit, class: "btn btn-primary btn-xs" %> &nbsp;
     <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
   </div>
 <% end %>

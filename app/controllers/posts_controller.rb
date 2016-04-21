@@ -18,7 +18,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
     respond_to do |format|
       format.html
       format.js
@@ -31,30 +30,25 @@ class PostsController < ApplicationController
   end
 
 
- def show
-end
+  def show
+  end
   
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       respond_to do |format|
-        format.html { redirect_to posts_path(@post) }
+        format.html { redirect_to posts_path }
         format.js
       end
     end
   end
    
-
-  def update
-    @post.update_attributes(post_params)
-      @post.save
-      respond_to do |format|
-      format.html { redirect_to posts_path }
-      format.js
-      end 
+  def edit
   end
 
-  def edit
+  def update
+    @post.update(post_params)
+      redirect_to posts_path
   end
 
 
@@ -82,7 +76,8 @@ private
 
   def members_only
     unless current_user.vestry? or current_user.admin? or current_user.member?
-      redirect_to root_path, :alert => "You must be a member of St. Paul's to use this function."
+      redirect_to root_path, :alert => "You must be a member of St. Paul's to 
+      use this function."
     end
   end
 end

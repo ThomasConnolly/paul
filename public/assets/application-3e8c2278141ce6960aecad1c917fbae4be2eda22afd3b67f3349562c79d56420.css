@@ -1,26 +1,26 @@
 /* line 1, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
-.comments-user, .vreports-user {
-  color: #808080;
-  float: right;
-  font-size: 14px;
-  margin-top: -12px;
-}
-
-/* line 7, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
-.comments-body, .vreports-body {
-  margin-left: 60px;
+.comment-body {
   font-size: 16px;
   color: black;
+  width: 100%;
+  margin-left: 30px;
 }
 
-/* line 13, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+/* line 8, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+.comment-user {
+  color: #303030;
+  float: right;
+  font-size: 14px;
+}
+
+/* line 14, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
 .comment-form, .vreport-form {
   width: 400px;
   height: auto;
-  padding-left: 130px;
+  padding-left: 100px;
 }
 
-/* line 18, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
+/* line 19, /home/tom/paul/app/assets/stylesheets/comments.css.scss */
 .default-comment-avatar, .default-vreport-avatar {
   margin: 5px;
   padding-top: 6px;
@@ -1152,164 +1152,6 @@
 .nivo-controlNav a.active {
   font-weight:bold;
 }
-/* line 1, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 9, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 15, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-/* line 21, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-a {
-  color: #000;
-}
-/* line 23, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-a:visited {
-  color: #666;
-}
-/* line 26, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-a:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-/* line 33, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-/* line 38, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-#notice {
-  color: green;
-}
-
-/* line 42, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-/* line 48, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-/* line 55, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-/* line 65, /home/tom/paul/app/assets/stylesheets/scaffolds.css.scss */
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-/* line 1, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 9, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 15, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-/* line 21, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-a {
-  color: #000;
-}
-/* line 24, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-a:visited {
-  color: #666;
-}
-/* line 28, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-a:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-/* line 35, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-/* line 40, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-#notice {
-  color: green;
-}
-
-/* line 44, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-/* line 50, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-/* line 58, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-/* line 69, /home/tom/paul/app/assets/stylesheets/scaffolds.scss */
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
 /* Slider */
 
 .slick-slider
@@ -1448,6 +1290,8 @@ div.field, div.actions {
         app/assets/images/sprites/social-share-button/tumblr.png (16x16)
         app/assets/images/sprites/social-share-button/twitter.png (16x16)
         app/assets/images/sprites/social-share-button/weibo.png (16x16)
+        app/assets/images/sprites/social-share-button/linkedin.png (16x16)
+
 
         Output files:
           app/assets/images/sprites/social-share-button.png
@@ -1457,293 +1301,310 @@ div.field, div.actions {
           80x64
 
 */
-/* line 32, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 34, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-baidu {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") 0px 0px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") 0px 0px no-repeat;
 }
 
-/* line 33, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 35, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-delicious {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -16px 0px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -16px 0px no-repeat;
 }
 
-/* line 34, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 36, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-douban {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") 0px -16px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") 0px -16px no-repeat;
 }
 
-/* line 35, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 37, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-email {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -16px -16px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -16px -16px no-repeat;
 }
 
-/* line 36, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 38, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-facebook {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -32px 0px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -32px 0px no-repeat;
 }
 
-/* line 37, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 39, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-flickr {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -32px -16px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -32px -16px no-repeat;
 }
 
-/* line 38, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 40, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-google_bookmark {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") 0px -32px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") 0px -32px no-repeat;
 }
 
-/* line 39, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 41, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-google_plus {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -16px -32px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -16px -32px no-repeat;
 }
 
-/* line 40, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 42, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-kaixin001 {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -32px -32px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -32px -32px no-repeat;
 }
 
-/* line 41, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 43, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-pinterest {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -48px 0px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -48px 0px no-repeat;
 }
 
-/* line 42, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 44, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-plurk {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -48px -16px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -48px -16px no-repeat;
 }
 
-/* line 43, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 45, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-qq {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -48px -32px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -48px -32px no-repeat;
 }
 
-/* line 44, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 46, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-renren {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") 0px -48px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") 0px -48px no-repeat;
 }
 
-/* line 45, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 47, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-tqq {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -16px -48px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -16px -48px no-repeat;
 }
 
-/* line 46, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 48, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-tumblr {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -32px -48px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -32px -48px no-repeat;
 }
 
-/* line 47, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 49, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-twitter {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -48px -48px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -48px -48px no-repeat;
 }
 
-/* line 48, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+/* line 50, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
 .social-share-button-weibo {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/assets/sprites/social-share-button-01bd4e9a7782620aab986c55abc6ecb9ee88d50bb51f28c2f00fe36d87a0944c.png") -64px 0px no-repeat;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -64px 0px no-repeat;
+}
+
+/* line 51, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
+.social-share-button-linkedin {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/assets/sprites/social-share-button-c6c452cb10cf12d85f1776a2c2f6cd8c7a0b1cbbf4c94d09714e2ab2f1454bad.png") -64px -16px no-repeat;
 }
 
 @media only screen and (-webkit-device-pixel-ratio: 2) {
-  /* line 51, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 55, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-baidu {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") 0px 0px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") 0px 0px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 52, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 56, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-delicious {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -16px 0px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -16px 0px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 53, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 57, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-douban {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") 0px -16px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") 0px -16px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 54, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 58, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-email {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -16px -16px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -16px -16px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 55, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 59, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-facebook {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -32px 0px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -32px 0px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 56, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 60, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-flickr {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -32px -16px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -32px -16px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 57, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 61, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-google_bookmark {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") 0px -32px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") 0px -32px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 58, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 62, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-google_plus {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -16px -32px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -16px -32px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 59, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 63, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-kaixin001 {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -32px -32px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -32px -32px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 60, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 64, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-pinterest {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -48px 0px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -48px 0px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 61, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 65, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-plurk {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -48px -16px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -48px -16px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 62, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 66, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-qq {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -48px -32px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -48px -32px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 63, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 67, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-renren {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") 0px -48px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") 0px -48px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 64, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 68, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-tqq {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -16px -48px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -16px -48px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 65, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 69, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-tumblr {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -32px -48px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -32px -48px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 66, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 70, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-twitter {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -48px -48px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -48px -48px no-repeat;
     background-size: 80px 64px;
   }
 
-  /* line 67, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.1.10/app/assets/stylesheets/social-share-button.scss */
+  /* line 71, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
   .social-share-button-weibo {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url("/assets/sprites/social-share-button@2x-a597120b30fe6ae4ac5b4f0f45f307c0f5519851529b3010a7c584eb3ed186be.png") -64px 0px no-repeat;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -64px 0px no-repeat;
+    background-size: 80px 64px;
+  }
+
+  /* line 72, /home/tom/.rvm/gems/ruby-2.3.0/gems/social-share-button-0.2.0/app/assets/stylesheets/social-share-button.scss */
+  .social-share-button-linkedin {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/assets/sprites/social-share-button@2x-c7893a3f9826187fef6a8be2f1f701819502fe83a9cd247b5472c6cebbde1105.png") -64px -16px no-repeat;
     background-size: 80px 64px;
   }
 }
@@ -10510,30 +10371,29 @@ a, a:hover, a:focus {
 
 /* line 502, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-line {
-  font-size: 8px;
+  font-size: 12px;
   color: gray;
-  line-height: 10px;
-  margin-top: -10px;
+  line-height: 14px;
 }
 
-/* line 509, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 508, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 515, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 514, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 519, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 518, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 525, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 524, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }

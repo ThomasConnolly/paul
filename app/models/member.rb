@@ -36,5 +36,6 @@ class Member < ActiveRecord::Base
     def set_full_name
       self.full_name = "#{self.first_name} #{self.last_name}".strip
     end  
+
   end
   

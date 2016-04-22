@@ -15,4 +15,8 @@
 #
 
 module MembersHelper
+  def birthdays_this_week
+    Member.where(birthday: Date.today.beginning_of_week-1 .. 
+      Date.today.end_of_week-1).order(:birthday)
+  end
 end

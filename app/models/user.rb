@@ -33,14 +33,14 @@ class User < ActiveRecord::Base
   
   has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
-  has_many :story_ideas
+  has_many :story_ideas, dependent: :destroy
   has_one :pledge 
-  has_many :vreports
+  has_many :vreports, dependent: :destroy
   validates :email, presence: true
   validates :full_name, uniqueness: { case_sensitive: false }
  

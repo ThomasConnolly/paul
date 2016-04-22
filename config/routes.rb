@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
  
-  resources :anniversaries, only: [:show, :index, :destroy]
+  resources :anniversaries
   resources :anniversaries do
     collection do
       post :import

@@ -5,8 +5,7 @@ namespace :import do
     import = Member::Import.new file: File.open("members.csv")
     import.process!
     puts "Imported #{import.imported_count} members"
-    puts import.errors.full_messages
-    
+    puts import.errors.full_messages 
   end
 
 
@@ -17,4 +16,12 @@ namespace :import do
     puts "Imported #{import.imported_count} users"
     puts import.errors.full_messages
   end
+
+  desc "Import anniversaries from csv"
+  task anniversaries: :environment do
+    import = Anniversary::Import.new file: File.open("anniversaryFixed.csv")
+    import.process!
+    puts "Imported #{import.imported_count} anniversaries"
+    puts import.errors.full_messages
+end
 end

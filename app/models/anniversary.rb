@@ -12,3 +12,4 @@ class Anniversary < ActiveRecord::Base
       anniversary
     end
 end
+

@@ -2,8 +2,7 @@
 <% commentable.comments.each do |comment| %>
   <div id="comments" class="comment-body">
   <hr>
-    <p><%= simple_format(comment.body) %></p>
-  </div>  
+    <p><%= (comment.body) %></p>
        <div class="comment-user"> <%= comment.user.full_name.titleize %>
         <small> made this comment 
         <%= time_ago_in_words(comment.created_at) %> ago. &nbsp;

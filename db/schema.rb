@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 20160408202037) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
   end
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 20160408202037) do
     t.date     "birthday"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "full_name"
     t.string   "membership_id"
+    t.string   "full_name"
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -163,7 +163,8 @@ ActiveRecord::Schema.define(version: 20160408202037) do
     t.string   "full_name",              limit: 255
     t.integer  "role"
     t.string   "stripe_customer_id"
-    t.integer  "member_id"
+    t.date     "birthday"
+    t.date     "anniversary"
   end
 
   add_index "users", ["full_name"], name: "index_users_on_full_name", using: :btree

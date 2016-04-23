@@ -17,10 +17,8 @@ module Paul
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over these.
     # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-    config.beginning_of_week = (:sunday)
+    # -- all .rb files in that directory are automatically loaded. 
 end
-
 
 module RailsBootstrap
 

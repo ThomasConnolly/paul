@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @syllabus.year.capitalize %>
+&nbsp; 
+  <strong>Grade:</strong>
+  <%= @syllabus.grade.capitalize %>
+&nbsp;
+  <strong>Quarter</strong>
+  <%= @syllabus.quarter.upcase %>
+</p>
+
+<p>
+  <strong>Titles</strong><br>
+<%= @syllabus.title1 %>
+<br>
+  <%= @syllabus.title2 %>
+<br>
+  <%= @syllabus.title3 %>
+<br> 
+<%= @syllabus.title4 %>
+<br>
+  <%= @syllabus.title5 %>
+<br>
+  <%= @syllabus.title6 %>
+<br>
+<%= @syllabus.title7 %>
+<br>
+  <%= @syllabus.title8 %>
+<br>
+  <%= @syllabus.title9 %>
+<br>
+
+</p>
+
+<%= link_to 'Edit', edit_syllabus_path(@syllabus) %> |
+<%= link_to 'Back', syllabuses_path %>

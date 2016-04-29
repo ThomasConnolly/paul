@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   
  
+  resources :syllabuses
   resources :anniversaries
   resources :anniversaries do
     collection do

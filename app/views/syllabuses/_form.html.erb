@@ -1,0 +1,23 @@
+<%= simple_form_for(@syllabus) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  <h3>Year
+    <%= f.collection_radio_buttons :year, [["a", "A"], ["b", "B"], ["c", "C"]], :first, :last %><br>
+   Grade <%= f.collection_radio_buttons :grade, [["preschool", "Preschool"], ["primary", "primary"], ["intermediate", "Intermediate"]], :first, :last %>&nbsp; Quarter 
+    <%= f.collection_radio_buttons :quarter, [["I", "I"], ["II", "II"], ["III", "III"], ["IV", "IV"]], :first, :last %></h3>
+    <%= f.input :title1 %>
+    <%= f.input :title2 %>
+    <%= f.input :title3 %>
+    <%= f.input :title4 %>
+    <%= f.input :title5 %>
+    <%= f.input :title6 %>
+    <%= f.input :title7 %>
+    <%= f.input :title8 %>
+    <%= f.input :title9 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

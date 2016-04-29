@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>What the children are learning</h1>
+  <% @syllabuses.each do |syllabus| %>
+    <h3>Year:  <%= syllabus.year.capitalize %>&nbsp; Grade: <%= syllabus.grade.upcase %>      
+      Quarter: <%= syllabus.quarter %></h3>
+      <%= syllabus.title1 %><br>
+      <%= syllabus.title2 %><br>
+      <%= syllabus.title3 %><br>
+      <%= syllabus.title4 %><br>
+      <%= syllabus.title5 %><br>
+      <%= syllabus.title6 %><br>
+      <%= syllabus.title7 %><br>
+      <%= syllabus.title8 %><br>
+      <%= syllabus.title9 %><br></p>
+      
+      <%= link_to 'Show', syllabus %>&nbsp; 
+      <%= link_to 'Edit', edit_syllabus_path(syllabus) %>&nbsp;
+      <%= link_to 'Destroy', syllabus, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<br>
+
+<%= link_to 'New Syllabus', new_syllabus_path %>

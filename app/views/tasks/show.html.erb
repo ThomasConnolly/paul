@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-md-6 col-md-offset-3"><p id="notice"><%= notice %></p>
+<br>
+<p>
+  <strong>Task</strong>
+  <%= @task.title %><br>
+  <%= @task.description%>
+</p>
+<br>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
+
+    </div>
+  </div>
+</div>

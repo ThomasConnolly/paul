@@ -21,7 +21,7 @@ class Pledge < ActiveRecord::Base
 
  
   def set_pay_this
-    self.pay_this = self.amount.to_f / self.divisor
+    self.pay_this = self.amount.to_i / self.divisor * 100
   end
 
 end

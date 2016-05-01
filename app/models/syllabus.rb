@@ -4,7 +4,7 @@ class Syllabus < ActiveRecord::Base
   validates_presence_of :quarter
   validates_presence_of :theme
   validates_presence_of :title9
-  enum quarter: { I: 1, II: 2, III: 3, IV: 4 }
+  enum quarter: %w{ I II III IV }
   default_scope -> { order(:year, :quarter) }
 
   def self.assign_from_row(row)

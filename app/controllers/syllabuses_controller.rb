@@ -3,10 +3,25 @@ class SyllabusesController < ApplicationController
  
   # GET /syllabuses
   # GET /syllabuses.json
+
   def index
     @syllabuses = Syllabus.all
   end
 
+  def preschool
+    @syllabuses = Syllabus.where(grade: "preschool")
+    render :index
+  end
+
+  def primary
+    @syllabuses = Syllabus.where(grade: "primary")
+    render :index
+  end
+
+  def intermediate
+    @syllabuses = Syllabus.where(grade: "intermediate")
+    render :index
+  end
   # GET /syllabuses/1
   # GET /syllabuses/1.json
   def show
@@ -69,6 +84,7 @@ class SyllabusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def syllabus_params
-      params.require(:syllabus).permit(:year, :grade, :quarter, :title1, :title2, :title3, :title4, :title5, :title6, :title7, :title8, :title9)
+      params.require(:syllabus).permit(:year, :grade, :quarter, :theme, :title1, :title2, 
+        :title3, :title4, :title5, :title6, :title7, :title8, :title9)
     end
 end

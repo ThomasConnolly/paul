@@ -3,7 +3,14 @@ Rails.application.routes.draw do
 
   
  
-  resources :syllabuses
+  resources :syllabuses do
+    collection do
+      get "preschool"
+      get "primary"
+      get "intermediate"
+    end
+  end
+
   resources :anniversaries
   resources :anniversaries do
     collection do

@@ -2,10 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <h3>Year
-    <%= f.collection_radio_buttons :year, [["a", "A"], ["b", "B"], ["c", "C"]], :first, :last %><br>
-   Grade <%= f.collection_radio_buttons :grade, [["preschool", "Preschool"], ["primary", "primary"], ["intermediate", "Intermediate"]], :first, :last %>&nbsp; Quarter 
-    <%= f.collection_radio_buttons :quarter, [["I", "I"], ["II", "II"], ["III", "III"], ["IV", "IV"]], :first, :last %></h3>
+  <h3>Year:  
+  <%= f.collection_radio_buttons :year, [[" a", " A"], [" b", " B"], ["c", " C"]], :first, :last, class: "collection_radio_buttons" %> &nbsp; &nbsp;
+  Grade: 
+  <%= f.collection_radio_buttons :grade, [["preschool", "Preschool"], ["primary", "Primary"], ["intermediate", "Intermediate"]], :first, :last, class: "collection_radio_buttons" %> &nbsp;&nbsp;  
+  Quarter:  
+  <%= f.collection_radio_buttons :quarter, [["I", "I"], ["II", "II"], ["III", "III"], ["IV", "IV"]], :first, :last %></h3>
+    <%= f.input :theme %>
     <%= f.input :title1 %>
     <%= f.input :title2 %>
     <%= f.input :title3 %>

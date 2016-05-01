@@ -1,18 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @syllabus.year.capitalize %>
+  <h4>Year: 
+  <%= @syllabus.year.upcase %>, 
 &nbsp; 
-  <strong>Grade:</strong>
-  <%= @syllabus.grade.capitalize %>
+  Grade: 
+  <%= @syllabus.grade.capitalize %>, 
 &nbsp;
-  <strong>Quarter</strong>
-  <%= @syllabus.quarter.upcase %>
-</p>
-
-<p>
-  <strong>Titles</strong><br>
+  Quarter: 
+  <%= @syllabus.quarter.upcase %><br>
+  <%= @syllabus.theme %>
+<br><br>
+Titles</h4>
 <%= @syllabus.title1 %>
 <br>
   <%= @syllabus.title2 %>
@@ -32,7 +30,8 @@
   <%= @syllabus.title9 %>
 <br>
 
-</p>
 
-<%= link_to 'Edit', edit_syllabus_path(@syllabus) %> |
-<%= link_to 'Back', syllabuses_path %>
+
+<%= link_to 'Edit', edit_syllabus_path(@syllabus) %> | &nbsp;
+<%= link_to 'Back', syllabuses_path %> | &nbsp;
+<%= link_to 'New', new_syllabus_path %>

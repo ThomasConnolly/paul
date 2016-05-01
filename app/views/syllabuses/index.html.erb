@@ -2,8 +2,9 @@
 
 <h1>What the children are learning</h1>
   <% @syllabuses.each do |syllabus| %>
-    <h3>Year:  <%= syllabus.year.capitalize %>&nbsp; Grade: <%= syllabus.grade.upcase %>      
-      Quarter: <%= syllabus.quarter %></h3>
+    <h3>Year:  <%= syllabus.year.upcase %>,&nbsp;&nbsp; Grade: <%= syllabus.grade.capitalize %>,&nbsp; &nbsp;      
+      Quarter: <%= syllabus.quarter.upcase %></h3>
+      <h3><%= syllabus.theme %></h3>
       <%= syllabus.title1 %><br>
       <%= syllabus.title2 %><br>
       <%= syllabus.title3 %><br>

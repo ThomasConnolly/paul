@@ -6,6 +6,16 @@ class SyllabusesController < ApplicationController
 
   def index
     @syllabuses = Syllabus.all
+  
+    respond_to do |format|
+      format.html
+      format.csv { send_data @syllabuses.to_csv, filename: "syllabuses-#{Date.today}.csv" }
+    end
+  end
+
+  def import
+    Syllabus.import(params[:file])
+    redirect_to root_url, notice: "Syllabuses imported"
   end
 
   def preschool

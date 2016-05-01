@@ -3,11 +3,11 @@
 
   <div class="form-inputs">
   <h3>Year:  
-  <%= f.collection_radio_buttons :year, [[" a", " A"], [" b", " B"], ["c", " C"]], :first, :last, class: "collection_radio_buttons" %> &nbsp; &nbsp;
+  <%= f.collection_radio_buttons :year, [["a", " A"], ["b", "B"], ["c", " C"]], :first, :last, class: "collection_radio_buttons" %> &nbsp; &nbsp;
   Grade: 
-  <%= f.collection_radio_buttons :grade, [["preschool", "Preschool"], ["primary", "Primary"], ["intermediate", "Intermediate"]], :first, :last, class: "collection_radio_buttons" %> &nbsp;&nbsp;  
+  <%= f.collection_radio_buttons :grade, [["preschool", " Preschool"], ["primary", " Primary"], ["intermediate", " Intermediate"]], :first, :last, class: "collection_radio_buttons" %> &nbsp;&nbsp;  
   Quarter:  
-  <%= f.collection_radio_buttons :quarter, [["I", "I"], ["II", "II"], ["III", "III"], ["IV", "IV"]], :first, :last %></h3>
+  <%= f.collection_radio_buttons :quarter, [[0, "I"], [1, "II"], [2, "III"], [3, "IV"]], :first, :last %></h3>
     <%= f.input :theme %>
     <%= f.input :title1 %>
     <%= f.input :title2 %>

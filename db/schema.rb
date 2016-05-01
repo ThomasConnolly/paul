@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430015958) do
+ActiveRecord::Schema.define(version: 20160501174030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,7 +140,6 @@ ActiveRecord::Schema.define(version: 20160430015958) do
   create_table "syllabuses", force: :cascade do |t|
     t.string   "year"
     t.string   "grade"
-    t.string   "quarter"
     t.string   "title1"
     t.string   "title2"
     t.string   "title3"
@@ -153,6 +152,7 @@ ActiveRecord::Schema.define(version: 20160430015958) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "theme"
+    t.integer  "quarter"
   end
 
   create_table "tasks", force: :cascade do |t|

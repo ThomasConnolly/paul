@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :syllabuses do
+    collection { post :import }
+  end
+
   resources :anniversaries
   resources :anniversaries do
     collection do

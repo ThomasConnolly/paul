@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8">
     <p id="notice"><%= notice %></p>
 
   <section>  
@@ -14,7 +14,7 @@
       </div>
     <% end %><br><br>
       <%= link_to new_story_idea_path, remote: true do %>
-      <p><strong>Create a story idea</strong></p>
+      <p><strong>Communicate a new topic</strong></p>
       <% end %>
     </div>
     <br>
@@ -24,10 +24,18 @@
   <section>
     <div class="mt30"></div>
     <div id="story_ideas">
-     <h2>Here are the latest story ideas</h2>
+     <h2>Here's the latest</h2>
      <%= render 'story_ideas' %>
     </div>
   </section>
+    </div>
+    <div class="col-md-4 sidebar">
+      <h3> Resources </h3>
+      <p><%= link_to "Diocesan stylebook", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221889/2-Diocesan_Stylebook_2016.pdf" %></p>
+      <p><%= link_to "Diocesan guidebook for using social media", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221891/3-socialmedia_2016_Guidelines_Final.pdf" %> </p>
+      <p><%= link_to "Episcopal communicators website", "http://episcopalcommunicators.org/" %> </p>
+      <p><%= link_to "Tips for internal communications, from our Methodist friends", "http://www.umcom.org/learn/5-tips-for-internal-church-communications" %> </p>
+
     </div>
   </div>
 </div>

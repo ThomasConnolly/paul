@@ -38,6 +38,9 @@
         <li> <%=link_to "Activities", activities_index_path %> </li>
         <li> <%#=link_to "Money Matters", new_pledge_path %> </li>
         <li> <%=link_to "Family Ties", posts_path %> </li>
+        <% if current_user %>
+        <li> <%= link_to "Communicators' Corner", story_ideas_path %>
+        <% end %>
         <% if current_user && current_user.vestry? or current_user && current_user.admin? %>
         <li> <%=link_to "Vestry Report", vreports_path %> </li>
         <% end %>

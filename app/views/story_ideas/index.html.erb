@@ -24,11 +24,16 @@
   <section>
     <div class="mt30"></div>
     <div id="story_ideas">
-     <h2>Here's the latest</h2>
-     <%= render 'story_ideas' %>
+     <h1>From the Communicators</h1>
+     <% @story_ideas.each do |story_idea| %>
+     <h2><%= link_to story_idea.title, story_idea %></h2>
+     <% if story_idea.comments.any? %>
+     <p><small><em>Comment count: <%= story_idea.comments.count %>  </em></small></p>
+     <% end %>
+     <% end %>
     </div>
   </section>
-    </div>
+  </div>
     <div class="col-md-4 sidebar">
       <h3> Resources </h3>
       <p><%= link_to "Diocesan stylebook", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221889/2-Diocesan_Stylebook_2016.pdf" %></p>

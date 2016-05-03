@@ -11,7 +11,7 @@
     <br>
     <h3>
       <%= story_idea.title %></h3>
-      <p><%= story_idea.body %><br>
+      <p><%= simple_format(story_idea.body).html_safe %><br>
       <div class="comments-user"><p><small>Idea submitted  
       <%= time_ago_in_words(story_idea.created_at) %> ago by 
       <%= story_idea.user.full_name.titleize %> | 

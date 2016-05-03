@@ -1,20 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col col-md-6 col-md-offset-3"><p id="notice"><%= notice %></p>
+    <div class="col col-md-8 col-md-offset-2"><p id="notice"><%= notice %></p>
 <br>
-<p>
-  <strong>General idea</strong>
-  <%= @story_idea.title %>
-</p>
-<br>
-<p>
-  <strong>Details, principals and contact info</strong>
-  <%= @story_idea.body %>
-</p>
-
-<%= link_to 'Edit', edit_story_idea_path(@story_idea) %> |
-<%= link_to 'Back', story_ideas_path %>
-
+<% if @story_idea.user.avatar.present? %>
+    <div id="avatar-owner">
+      <%= cl_image_tag(@story_idea.user.avatar.path, { size: '110x120', crop: :fill,
+        gravity: :face, class: "floatleft" }) %>
     </div>
-  </div>
-</div>
+    <% else %>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+    </div>
+    <% end %>
+    <br>
+    
+    <h3><%= @story_idea.title %></h3>
+      <p><%= simple_format(@story_idea.body).html_safe %><br>
+      <div class="comments-user"><p><small>Submitted  
+      <%= time_ago_in_words(@story_idea.created_at) %> ago by 
+      <%= @story_idea.user.full_name.titleize %> | 
+      <% if current_user == @story_idea.user %>
+      <%= link_to "Edit", edit_story_idea_path(@story_idea) %> &nbsp;
+      <%=link_to @story_idea,  method: :delete, data: 
+      { confirm: 'This will delete your story idea and all its comments.' 
+        }, remote: true do %> Delete! </span></p>
+      <% end %>
+    <% end %>
+    <div class="clearall"></div>
+<section id="comments-section">
+  <%= render partial: 'comments/comments', locals: {commentable: @story_idea} %>
+    <hr>
+  <%= render partial: 'comments/form', locals: {commentable: @story_idea} %>
+   
+</section>
+

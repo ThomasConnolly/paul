@@ -16,7 +16,7 @@
       <%= syllabus.title7 %><br>
       <%= syllabus.title8 %><br>
       <%= syllabus.title9 %><br></p>
-      
+      <div class="mt30"></div>
       <% if current_user && current_user.admin? %>
       <%= link_to 'Show', syllabus %>&nbsp; 
       <%= link_to 'Edit', edit_syllabus_path(syllabus) %>&nbsp;

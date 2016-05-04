@@ -24,8 +24,9 @@
 #
 
 class User < ActiveRecord::Base
+  rolify
   before_save :set_full_name
-
+  
   enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4 }
   after_initialize :set_default_role, :if => :new_record?
 

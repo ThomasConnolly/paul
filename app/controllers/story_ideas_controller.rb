@@ -39,7 +39,7 @@ class StoryIdeasController < ApplicationController
   def create
     @story_idea = current_user.story_ideas.build(story_idea_params)
       if @story_idea.save
-        #  CommunicationsMailer.story_idea_created(@story_id).deliver_now
+        StoryIdeaMailer.story_idea_created(@story_id).deliver_now
         respond_to do |format|
           format.html { redirect_to story_ideas_path }
           format.js

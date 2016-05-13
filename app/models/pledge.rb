@@ -9,6 +9,7 @@
 #  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  pennies    :integer
 #
 
 class Pledge < ActiveRecord::Base

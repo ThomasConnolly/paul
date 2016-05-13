@@ -90,7 +90,5 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
-
-  
   mount Attachinary::Engine => '/attachinary'
 end

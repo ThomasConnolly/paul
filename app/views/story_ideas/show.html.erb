@@ -12,7 +12,10 @@
     </div>
     <% end %>
     <br>
-    
+    <% if @story_idea.story_idea_picture? %>
+    <%= link_to cl_image_tag(@story_idea.story_idea_picture.path, 
+      :height => 800, :crop => :fit), cloudinary_url(@story_idea.story_idea_picture.path) %>
+  <% end %>
     <h3><%= @story_idea.title %></h3>
       <p><%= simple_format(@story_idea.body).html_safe %><br>
       <div class="comments-user"><p><small>Submitted  

@@ -3,7 +3,9 @@
   label: false, autofocus: true %><br>
   <%= f.input :body, placeholder: 'Details (hit "enter" twice to make new paragraph)', 
   input_html: { rows: 10 }, label: false %>
- 
+ <div class="upload_picture">
+    <%= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture", label_html: { class: "ui button gallery" } %>
+  </div>
   <div class="submit-post">
     <%= f.button :submit, "Submit", class: "btn btn-primary btn-xs" %> &nbsp;
     <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>

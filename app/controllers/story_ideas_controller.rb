@@ -74,6 +74,6 @@ class StoryIdeasController < ApplicationController
     end
 
     def story_idea_params
-      params.require(:story_idea).permit(:title, :body, :comments)
+      params.require(:story_idea).permit(:title, :body, :comments, :story_idea_picture)
     end
 end

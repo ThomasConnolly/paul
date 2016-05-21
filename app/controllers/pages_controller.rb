@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-  def home
-  end
+
 
   def directions
   end
@@ -12,6 +11,9 @@ class PagesController < ApplicationController
   end
 
   def concert
+  end
+
+  def calendar
   end
 
   def haitian

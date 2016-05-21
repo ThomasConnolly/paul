@@ -1,30 +1,8 @@
 Rails.application.routes.draw do
   
 
+  root 'home#index'
   
- 
-  resources :syllabuses do
-    collection do
-      get "preschool"
-      get "primary"
-      get "intermediate"
-    end
-  end
-
-  resources :syllabuses do
-    collection { post :import }
-  end
-
-  resources :anniversaries
-  resources :anniversaries do
-    collection do
-      post :import
-    end
-  end
-  
-  root 'pages#home'
-  devise_for :views
-
   get 'members/index'
   get 'members/import'
   resources :members do
@@ -34,24 +12,20 @@ Rails.application.routes.draw do
   end
 
   resources :contacts
-  resources :widgets
   resources :pictures
-  resources :albums
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'
   get 'sunday_school/index'
   get 'formation/index'
   get 'prayer/index'
-  # mount Payola::Engine => '/payola', as: :payola
-  get 'home', to: 'pages#home'
-  get 'haitian', to: 'pages#haitian'
-  get 'concert', to: 'pages#concert'
-  get 'albergue', to: 'pages#albergue'
-  get 'calendar', to: 'pages#calendar'
-  get 'directions', to: 'pages#directions'
+  get 'pages/haitian'
+  get 'pages/concert'
+  get 'pages/albergue'
+  get 'pages/calendar'
+  get 'pages/directions'
   get 'comments/new'
-  get 'ruby_tutor', to: 'pages#python_tutor'
+  get 'pages/python_tutor'
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
@@ -90,5 +64,27 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
+
+    resources :syllabuses do
+    collection do
+      get "preschool"
+      get "primary"
+      get "intermediate"
+    end
+  end
+
+  resources :syllabuses do
+    collection { post :import }
+  end
+
+  resources :anniversaries
+  resources :anniversaries do
+    collection do
+      post :import
+    end
+  end
+  
+
+  devise_for :views
   mount Attachinary::Engine => '/attachinary'
 end

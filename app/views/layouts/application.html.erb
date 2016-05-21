@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saint Paul's Episcopal Church, Haitian Episcopal Church, Farmers' Market, Farmers Market</title>
+  <title>Saint Paul's Episcopal Church, Spirituality, Prayer, Worship, Haitian Episcopal Church, Farmers' Market, Farmers Market</title>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", "data-turbolinks-track" => true %>
@@ -16,15 +16,16 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-   <meta name="google-site-verification" content="nO12ZA7a_Bqz96pWZbgVHRwkTMOTjI9Vn256E646FnI" /> 
+   
   <%= cloudinary_js_config %>
- <!-- <script src="//load.sumome.com/" data-sumo-site-id="5fedaba1b12a45523df9273e628743a21a859fe4d555d6918bea63763a14dc3b" async="async"></script> -->
+
   
 </head>
 
 <body>
+
 <div class="page">
-  <%= render '/layouts/homeHeader' unless (controller.controller_name == "rapidfire") %>
+  <%= render '/layouts/homeHeader' %>
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
     <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">

@@ -38,6 +38,7 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'birthday'
 gem 'rolify'
+gem 'feedjira'
 
 
 

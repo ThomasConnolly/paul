@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+
+<p id="notice"><%= notice %></p>
+
+
+  <%= raw @vestry_minute.minutes %>
+  <div class="mt100"></div>
+    <% if current_user && current_user.admin? %>
+    <%= link_to 'Edit', edit_vestry_minute_path(@vestry_minute) %> |
+    <%= link_to 'Back', vestry_minutes_path %>
+    <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-
-  root 'home#index'
+  resources :vestry_minutes
   
+  root 'home#index'
+
   get 'members/index'
   get 'members/import'
   resources :members do

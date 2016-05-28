@@ -12,5 +12,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require ckeditor/init
+//= require compatibility.coffee
 //= require turbolinks
 //= require video

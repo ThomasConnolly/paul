@@ -7,7 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'ckeditor'
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
@@ -38,7 +38,7 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'birthday'
 gem 'rolify'
-gem 'feedjira'
+# gem 'feedjira'
 
 
 

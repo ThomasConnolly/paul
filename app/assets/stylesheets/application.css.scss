@@ -24,11 +24,11 @@
 @import "slick";
 @media (min-width:992px)
   {
-    .container{width:960px}
+    .container{width:970px}
   }
 @media (min-width:1200px)
   {
-    .containber{width:960px}
+    .container{width:970px}
   }  
 
 *, *:after, *:before {
@@ -51,7 +51,6 @@
  border : 1px solid #C0C0C0;
  margin: 0 auto !important;
  padding-bottom:60px;
- 
  min-height:100%;
  font-family : Verdana, Helvetica, Arial, Sans-Serif;
  text-align:left;
@@ -61,13 +60,13 @@
   height: 140px;
 }
 .main-body {
-  width: 624px;
-  float: left !important;
-  padding-right: 15px;
+  padding-right: 36px;
 }
-.sidebar { 
+.sidebar {
   background-color: #eee;
-  margin-top: 20px;  
+  padding-right: 8px;
+  width: 32%;
+  float: left;
 }
 
 div.hidden {
@@ -76,7 +75,7 @@ div.hidden {
 
 h1 {
 color : #5c004c;
-font-size : 30px;
+font-size : 36px;
 letter-spacing: -1px;
 line-height : 100%;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
@@ -85,13 +84,13 @@ margin-bottom : 3px;
 }
 h2 {
 color : #5c004c;
-font-size : 24px;
+font-size : 30px;
 font-family : Times, Serif;
 font-style : italic;
 }
 h3 {
 color : #5c004c;
-font-size : 20px;
+font-size : 24px;
 margin-top: 10px;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
 }
@@ -187,7 +186,6 @@ list-style-type: none;
 }
 #menu-five {
     float:right;
-    margin-top: -25px;
     margin-right: 45px;
 }
 

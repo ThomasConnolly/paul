@@ -7,7 +7,7 @@
         <td ><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
         <td><%= sermon.homilist.name %></td> 
         <td><%= link_to sermon.title, sermon %> <% if current_user && current_user.admin? %>
-          | words: <%= sermon.sermon_body.split.count %>
+          | words: <%#= sermon.sermon_body.split.count %>
           <% end %>
         </td>
       </tr>

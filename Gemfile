@@ -34,8 +34,6 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'puma'
 gem 'foreman'
-gem 'rspec'
-gem 'rspec-rails'
 gem 'birthday'
 gem 'rolify'
 # gem 'feedjira'
@@ -55,12 +53,19 @@ end
 
 group :development, :test do
   gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-rspec'
   gem 'pry-rails'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'spring'
+  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'letter_opener'
+  gem 'email_spec'
 end
 
 group :test do

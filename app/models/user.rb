@@ -55,8 +55,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,
+         :recoverable, :rememberable, :trackable, :invitable,
          :authentication_keys => [:login]
+
 
   def self.assign_from_row(row)
     user = find_by_full_name(row["first_name" + "last_name"]) || new  

@@ -16,7 +16,13 @@
         <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
         <br>
-        
+        <h3>Invite users</h3>
+        <%= simple_form_for(User.new, url: user_invitation_path,
+                                      html: { class: 'form-inline'}) do |f| %>
+          <%= f.input :email, placeholder: "Email", label: false %>
+          <%= f.button :submit, "Invite Users", class: 'btn btn-primary' %>
+          <% end %>
+
         <%#= form_for @import, url: import_users_path, multipart: true do |f| %>
           <%#= f.file_field :file %>
           <%#= f.submit "Upload users" %>

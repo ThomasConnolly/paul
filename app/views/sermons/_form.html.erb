@@ -1,19 +1,21 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
 
-
-<%= simple_form_for @sermon, html: { multipart: true } do |f| %>
+  <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
   
-  <div class="form-group">
-    <%= f.label :homilist %><br>
-    <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
-    <%= f.input :title, class: 'form-control' %>
-    <%= f.input :cites, label: 'Citations', class: 'form-control' %>
-    <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
-    <%= f.input :sermon_body, as: :ckeditor, :input_html => { :ckeditor => { :height => 400 }} %><br>
-    
+    <div class="form-group">
+      <%= f.label :homilist %><br>
+      <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
+      <%= f.input :title, class: 'form-control' %>
+      <%= f.input :cites, label: 'Citations', class: 'form-control' %>
+      <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
+      <%= f.input :sermon_body, as: :ckeditor, :input_html => { :ckeditor => { :height => 400 }} %><br>
     
     <%= f.button :submit %>   
   <% end %>
 
+    </div>
+  </div>
 </div>
 
 <script>

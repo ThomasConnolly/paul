@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "anniversaries", force: :cascade do |t|
-    t.string   "salutation"
-    t.string   "last_name"
-    t.date     "anniversary"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "attachinary_files", force: :cascade do |t|
     t.integer  "attachinariable_id"
     t.string   "attachinariable_type"
@@ -41,14 +33,30 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "books", force: :cascade do |t|
-    t.string   "author",     limit: 255
-    t.string   "title",      limit: 255
-    t.string   "subject",    limit: 255
-    t.string   "isbn",       limit: 255
-    t.string   "dewey",      limit: 255
+    t.string   "author"
+    t.string   "title"
+    t.string   "subject"
+    t.string   "isbn"
+    t.string   "dewey"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -60,9 +68,9 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   end
 
   create_table "homilists", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "title",      limit: 255
-    t.string   "photo",      limit: 255
+    t.string   "name"
+    t.string   "title"
+    t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,11 +88,11 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   end
 
   create_table "opportunities", force: :cascade do |t|
-    t.string   "ministry",   limit: 255
-    t.string   "who",        limit: 255
-    t.string   "what",       limit: 255
-    t.string   "when",       limit: 255
-    t.string   "where",      limit: 255
+    t.string   "ministry"
+    t.string   "who"
+    t.string   "what"
+    t.string   "when"
+    t.string   "where"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -101,6 +109,7 @@ ActiveRecord::Schema.define(version: 20160528124456) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
+    t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -108,7 +117,7 @@ ActiveRecord::Schema.define(version: 20160528124456) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "cities",     limit: 255
+    t.string   "cities"
     t.text     "background"
     t.text     "career"
     t.text     "family"
@@ -120,8 +129,8 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   end
 
   create_table "sermons", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.string   "cites",        limit: 255
+    t.string   "title"
+    t.string   "cites"
     t.text     "sermon_body"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -164,21 +173,21 @@ ActiveRecord::Schema.define(version: 20160528124456) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name",             limit: 255
-    t.string   "last_name",              limit: 255
-    t.string   "full_name",              limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "full_name"
     t.integer  "role"
     t.string   "stripe_customer_id"
     t.date     "birthday"
@@ -191,7 +200,7 @@ ActiveRecord::Schema.define(version: 20160528124456) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
-    t.integer  "invitations_count",                  default: 0
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "users", ["full_name"], name: "index_users_on_full_name", using: :btree

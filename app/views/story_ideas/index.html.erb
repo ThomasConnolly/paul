@@ -27,8 +27,10 @@
      <h1>From the Communicators</h1>
      <% @story_ideas.each do |story_idea| %>
      <h2><%= link_to story_idea.title, story_idea %></h2>
+     <p>By <strong><%= story_idea.user.full_name %></strong></p>
      <% if story_idea.comments.any? %>
      <p><small><em>Comment count: <%= story_idea.comments.count %>  </em></small></p>
+     <hr>
      <% end %>
      <% end %>
     </div>

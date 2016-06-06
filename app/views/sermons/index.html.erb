@@ -17,5 +17,7 @@
 
 
 <% if current_user.present? %>
-  <%= link_to "Add a sermon", new_sermon_path %>
+  <%= link_to "Add a sermon", new_sermon_path %> &nbsp; <%= link_to sermon,  method: :delete, data: 
+      { confirm: 'This will delete this sermon.' 
+        }, remote: true do %> Delete!
 <% end %>

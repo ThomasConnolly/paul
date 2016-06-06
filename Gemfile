@@ -70,7 +70,6 @@ end
 
 group :test do
   gem 'ffaker'
-  gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
 end

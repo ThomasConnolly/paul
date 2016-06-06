@@ -7,7 +7,8 @@
         <td ><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
         <td><%= sermon.homilist.name %></td> 
         <td><%= link_to sermon.title, sermon %> <% if current_user && current_user.admin? %>
-          | words: <%#= sermon.sermon_body.split.count %>
+          | words: <%= sermon.sermon_body.split.count %>  &nbsp; | <%= link_to @sermon,  method: :delete, data: { confirm: 'This will delete this sermon.' }, remote: true do %> Delete!
+  <% end %>
           <% end %>
         </td>
       </tr>
@@ -16,8 +17,6 @@
 </table>
 
 
-<% if current_user.present? %>
-  <%= link_to "Add a sermon", new_sermon_path %> &nbsp; <%= link_to sermon,  method: :delete, data: 
-      { confirm: 'This will delete this sermon.' 
-        }, remote: true do %> Delete!
+<% if current_user && current_user.admin? %>
+  <%= link_to "Add a sermon", new_sermon_path %>
 <% end %>

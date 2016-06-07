@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   validates :full_name, uniqueness: { case_sensitive: false }
  
 
-  after_create :send_welcome_email
+  #after_create :send_welcome_email
 
   attr_accessor :login
 
@@ -79,9 +79,9 @@ class User < ActiveRecord::Base
     self.create_profile if profile.nil?
   end
 
-  def send_welcome_email
-    WelcomeMailer.welcome_email(self).deliver_now
-  end
+  #def send_welcome_email
+   # WelcomeMailer.welcome_email(self).deliver_now
+  #end
 
 
   #def facebook

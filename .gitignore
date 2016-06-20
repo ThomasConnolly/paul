@@ -24,3 +24,4 @@
 users.csv
 newcsv.txt
 members.csv
+/config/initializers/stripe.rb

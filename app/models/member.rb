@@ -26,9 +26,10 @@ class Member < ActiveRecord::Base
       member.assign_attributes row.to_hash.slice(
       :last_name, 
       :first_name, 
-      :email,
-      :anniversary,# => Date.strptime(row[:anniversary],"%m/%d/%Y"), #  .strftime("%Y/%m/%d"),
-      :birthday# => Date.strptime(row[:birthday],"%m/%d%Y")  #  .strftime("%m/%d")
+      :email
+      ).merge(
+      :anniversary => Date.strptime("06/20/1980","%m/%d/%Y"),
+      :birthday => Date.strptime("06/20","%m/%d")
       )
       member
     end

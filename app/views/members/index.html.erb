@@ -1,6 +1,6 @@
 <h1>Membership </h1>
 <% @members.each do |m| %>
-<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp;<%= m.email %>, &nbsp;Member <%= m.membership_id %>, &nbsp; <%= m.anniversary %> &nbsp; <small><%= link_to 'Edit', edit_member_path(m) %> 
+<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp;<%= m.email %>, &nbsp;Member <%= m.membership_id %>, &nbsp; <%= m.anniversary %> &nbsp;<%= m.birthday %> <small><%= link_to 'Edit', edit_member_path(m) %> 
         <%= link_to ' | Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
 <% end %>
 

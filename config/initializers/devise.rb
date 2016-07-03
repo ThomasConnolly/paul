@@ -121,7 +121,7 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
+  config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :first_name => nil}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -169,7 +169,7 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
+  config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :full_name => nil}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -282,7 +282,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering password for an account
-  config.reset_password_keys = [:full_name]
+  config.reset_password_keys = [:full_name, :email]
 
   # Time interval to reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to

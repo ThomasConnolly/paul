@@ -1,0 +1,13 @@
+<%= simple_form_for @survey do |f| %>
+    <%= f.input :name %>
+
+  <h4> Questions</h4>
+  <div id="questions">
+  <% f.simple_fields_for :questions do |q| %>
+    <%= render "question_fields", f: q %>
+    <% end %>
+  <div class="links">
+  <p><%= link_to_add_association "Add question", f, :questions %></p>
+  </div>
+  <p><%= f.submit %></p>
+<% end %>

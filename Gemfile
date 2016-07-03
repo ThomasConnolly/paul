@@ -36,9 +36,8 @@ gem 'puma'
 gem 'foreman'
 gem 'birthday'
 gem 'rolify'
+gem 'cocoon'
 # gem 'feedjira'
-
-
 
 group :development do
   gem 'meta_request'
@@ -56,6 +55,8 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'guard-rspec'
   gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring'

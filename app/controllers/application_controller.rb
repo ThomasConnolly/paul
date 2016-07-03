@@ -29,7 +29,4 @@ protected
     devise_parameter_sanitizer.for(:accept_invitation) { |u| u.permit(:first_name, :last_name) }
   end
 
-  
-
-
 end

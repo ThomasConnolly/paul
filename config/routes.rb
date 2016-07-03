@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :surveys
+  resources :questions
   resources :vestry_minutes
   
   root 'home#index'
@@ -88,4 +90,5 @@ Rails.application.routes.draw do
 
   devise_for :views
   mount Attachinary::Engine => '/attachinary'
+
 end

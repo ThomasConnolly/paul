@@ -13,5 +13,6 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require compatibility.coffee
+//= require cocoon
 //= require turbolinks
 //= require video

@@ -7,7 +7,7 @@
 
 <br><br>
   <h4>Import data</h4>
-    <%= form_for @import, url: import_members_path, multipart: true do |f|%>
+    <%= simple_form_for @import, url: import_members_path, multipart: true do |f|%>
       <% if @import.errors.any? %>
         <div class="alert alert-error">
         <% @import.errors.full_messages.each do |msg| %>

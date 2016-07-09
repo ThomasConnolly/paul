@@ -21,7 +21,7 @@ namespace :import do
 
   desc "Import anniversaries from csv"
   task anniversaries: :environment do
-    import = Anniversary::Import.new file: File.open("anniversaryFixed.csv")
+    import = Anniversary::Import.new file: File.open("anniversary.csv")
     import.process!
     puts "Imported #{import.imported_count} anniversaries"
     puts import.errors.full_messages

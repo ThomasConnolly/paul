@@ -37,7 +37,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'cocoon'
-# gem 'feedjira'
+
 
 group :development do
   gem 'meta_request'
@@ -73,8 +73,4 @@ group :test do
   gem 'ffaker'
   gem 'capybara-webkit'
   gem 'launchy'
-end
-
-group :production do
-  gem 'rails_12factor'
 end

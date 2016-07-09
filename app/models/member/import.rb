@@ -1,4 +1,4 @@
-class Member::Import
+  class Member::Import
   include ActiveModel::Model
   attr_accessor :file, :imported_count
 

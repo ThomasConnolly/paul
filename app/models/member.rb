@@ -28,7 +28,6 @@ class Member < ActiveRecord::Base
       :first_name, 
       :email
       ).merge(
-      :anniversary => Date.strptime("06/20/1980","%m/%d/%Y"),
       :birthday => Date.strptime("06/20","%m/%d")
       )
       member

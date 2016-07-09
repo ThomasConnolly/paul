@@ -23,7 +23,6 @@ class MembersController < ApplicationController
     @import = Member::Import.new
     end
   
-
   def import
     @import = Member::Import.new member_import_params
     if @import.save
@@ -65,6 +64,6 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:last_name, :first_name, :email, :birthday, 
-      :anniversary, :membership_id, :full_name)
+                                   :membership_id, :full_name)
   end
 end

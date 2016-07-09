@@ -74,3 +74,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'launchy'
 end
+
+group :production do
+  gem 'rails_12factor'
+end

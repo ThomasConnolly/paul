@@ -1,9 +1,17 @@
 <%= simple_form_for @vreport do |f| %>
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, input_html: { rows: "9" }%>
+  <%= f.input :body, as: :ckeditor, :input_html => { :ckeditor => { :height => 600 }}%>
   
   <div class="submit-post">
    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 
    <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
   </div>
 <% end %>
+
+
+
+<script>
+$(document).on('page:load', function() {
+  window['rangy'].initialized = false
+  });
+</script>

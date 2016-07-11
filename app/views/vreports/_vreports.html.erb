@@ -32,3 +32,20 @@
   <%= render partial: 'comments/form', locals: {commentable: vreport} %>
 </section>
 <% end %>
+
+
+<div class="form-group">
+    <%= f.date_select :date, :class => 'datepicker' %><br>
+    <%= f.input :minutes, as: :ckeditor, :input_html => { :ckeditor => { :height => 600 }}%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<script>
+$(document).on('page:load', function() {
+  window['rangy'].initialized = false
+  });
+</script>

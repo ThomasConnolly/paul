@@ -5,7 +5,7 @@ namespace :import do
 
    ActiveRecord::Base.connection.execute('TRUNCATE members') 
    
-    import = Member::Import.new file: File.open("members.csv")
+    import = Member::Import.new file: File.open("member.csv")
     import.process!
     puts "Imported #{import.imported_count} members"
     puts import.errors.full_messages 

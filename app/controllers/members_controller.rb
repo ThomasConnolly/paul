@@ -1,18 +1,4 @@
-# == Schema Information
-#
-# Table name: members
-#
-#  id            :integer          not null, primary key
-#  last_name     :string
-#  first_name    :string
-#  email         :string
-#  anniversary   :date
-#  birthday      :date
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  membership_id :string
-#  full_name     :string
-#
+
 
 class MembersController < ApplicationController
   before_action :authenticate_user!
@@ -46,7 +32,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to 'back'
+    redirect_to members_path
   end
 
   
@@ -64,6 +50,6 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:last_name, :first_name, :email, :birthday, 
-                                   :membership_id, :full_name)
+                                   :individual)
   end
 end

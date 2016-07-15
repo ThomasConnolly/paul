@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629124253) do
+ActiveRecord::Schema.define(version: 20160714135918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,15 +75,13 @@ ActiveRecord::Schema.define(version: 20160629124253) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "last_name"
     t.string   "first_name"
+    t.string   "last_name"
+    t.string   "individual"
     t.string   "email"
-    t.date     "anniversary"
     t.date     "birthday"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "membership_id"
-    t.string   "full_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -131,6 +129,7 @@ ActiveRecord::Schema.define(version: 20160629124253) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "input_type"
   end
 
   create_table "sermons", force: :cascade do |t|
@@ -202,8 +201,6 @@ ActiveRecord::Schema.define(version: 20160629124253) do
     t.string   "full_name",              limit: 255
     t.integer  "role"
     t.string   "stripe_customer_id"
-    t.date     "birthday"
-    t.date     "anniversary"
     t.boolean  "communicator"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"

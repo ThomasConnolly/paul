@@ -2,11 +2,11 @@
 #
 # Table name: answers
 #
-#  id         :integer          not null, primary key
-#  question   :text
-#  survey_id  :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  question_id :integer
+#  content     :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 FactoryGirl.define do

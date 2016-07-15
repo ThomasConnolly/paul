@@ -6,11 +6,10 @@
 #  last_name     :string
 #  first_name    :string
 #  email         :string
-#  anniversary   :date
 #  birthday      :date
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  membership_id :string
+#  individual    :string
 #  full_name     :string
 #
 

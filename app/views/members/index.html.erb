@@ -1,12 +1,6 @@
-<h1>Membership </h1>
-<% @members.each do |m| %>
-<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp;<%= m.email %>, &nbsp;Member <%= m.membership_id %>, &nbsp; <%= m.anniversary %> &nbsp;<%= m.birthday %> <small><%= link_to 'Edit', edit_member_path(m) %> 
-        <%= link_to ' | Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
-<% end %>
+<h1>Members of our church </h1>
 
-
-<br><br>
-  <h4>Import data</h4>
+<h4>Import data</h4>
     <%= simple_form_for @import, url: import_members_path, multipart: true do |f|%>
       <% if @import.errors.any? %>
         <div class="alert alert-error">
@@ -17,3 +11,12 @@
       <%= f.file_field :file %>
       <%= f.submit  "Upload members" %>
     <% end %>
+
+    <br><br>
+
+<% @members.each do |m| %>
+<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp; 
+  <%= m.individual %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday.strftime("%B %-d") %> <small>
+  <%= link_to 'Edit', edit_member_path(m) %> 
+  <%= link_to ' | Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+<% end %>

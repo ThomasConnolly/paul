@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require ckeditor/loader
 //= require jquery.remotipart
 //= require jquery-dropdown
 //= require jquery.ui.widget
@@ -11,8 +12,8 @@
 //= require attachinary
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require ckeditor/init
 //= require compatibility.coffee
 //= require cocoon
 //= require turbolinks
 //= require video
+//= require_tree .

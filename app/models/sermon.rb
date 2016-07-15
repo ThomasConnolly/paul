@@ -3,13 +3,13 @@
 # Table name: sermons
 #
 #  id           :integer          not null, primary key
-#  delivered_on :date
 #  title        :string(255)
 #  cites        :string(255)
 #  sermon_body  :text
 #  created_at   :datetime
 #  updated_at   :datetime
 #  homilist_id  :integer
+#  delivered_on :date
 #
 
 class Sermon < ActiveRecord::Base

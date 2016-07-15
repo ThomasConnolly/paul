@@ -1,5 +1,5 @@
 <h3>Birthdays this week</h3>
 <% birthdays_this_week.each do |member| %>
-  <p><%= member.full_name %>, <%= member.birthday.strftime("%B %-d") %></p> 
+  <p><%= member.first_name %> <%= member.last_name %>, <%= member.birthday.strftime("%B %-d") %></p> 
   <% end %>
   

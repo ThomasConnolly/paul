@@ -12,12 +12,8 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do
-  factory :member do
-    first_name "MyString"
-    last_name "MyString"
-    individual "MyString"
-    email "MyString"
-    birthday "2016-07-13"
-  end
+require 'rails_helper'
+
+RSpec.describe Member, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

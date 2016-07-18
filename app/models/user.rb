@@ -34,6 +34,7 @@
 #
 
 class User < ActiveRecord::Base
+  
   rolify
   before_save :set_full_name
   

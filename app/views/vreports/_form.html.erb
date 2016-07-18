@@ -1,6 +1,6 @@
 <%= simple_form_for @vreport do |f| %>
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :ckeditor, :input_html =>  { :toolbar => "body" }%>
+  <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' }}%>
   
   <div class="submit-post">
    <%= f.submit "Submit", class: "btn btn-primary btn-xs" %> &nbsp; 

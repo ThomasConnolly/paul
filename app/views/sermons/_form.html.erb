@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-
+<div class="example" data-no-turbolink>
   <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
   
     <div class="form-group">
@@ -9,19 +9,14 @@
       <%= f.input :title, class: 'form-control' %>
       <%= f.input :cites, label: 'Citations', class: 'form-control' %>
       <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
-      <%= f.input :sermon_body, as: :ckeditor, :input_html => { :ckeditor => { :height => 400 }} %><br>
+      <%= f.input :sermon_body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' } } %><br>
+
     
     <%= f.button :submit %>   
   <% end %>
-
+      </div>
     </div>
   </div>
 </div>
-
-<script>
-$(document).on('page:load', function() {
-  window['rangy'].initialized = false
-  });
-</script>
 
 

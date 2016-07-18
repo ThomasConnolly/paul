@@ -1,0 +1,19 @@
+<%= simple_form_for(@parish_survey) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+  </div>
+  <div class="form-inputs".
+    <%=simple_fields_for :questions, @parish_survey.questions.build do |q| %>
+      <%=q.input :content, label: "Question" %>
+      <%=simple_fields_for :answers, q.object.answers.build do |a| %>
+      <%=a.input :content, label: "Answer" %>
+      <%=a.input :comment, label: "Comment" %>
+      <% end %>
+    <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :surveys
+  
+  resources :parish_surveys
   resources :questions
+  resources :answers
   resources :vestry_minutes
   
   root 'home#index'
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
+
   resources :users do
     collection do
       post :import

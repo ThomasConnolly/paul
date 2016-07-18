@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <%= f.date_select :date, :class => 'datepicker' %><br>
-    <%= f.input :minutes, as: :ckeditor, :input_html => { :ckeditor => { :toolbar => "MyToolbar" }}%>
+    <%= f.input :minutes, as: :ckeditor, input_html: { ckeditor: { toolbar: 'body' }}%>
   </div>
 
   <div class="form-actions">

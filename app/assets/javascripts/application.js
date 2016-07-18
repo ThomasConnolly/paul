@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require ckeditor/loader
+//= require ckeditor/init
 //= require jquery.remotipart
 //= require jquery-dropdown
 //= require jquery.ui.widget
@@ -17,3 +17,4 @@
 //= require turbolinks
 //= require video
 //= require_tree .
+

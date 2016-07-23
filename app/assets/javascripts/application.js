@@ -13,8 +13,8 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require compatibility.coffee
-//= require cocoon
 //= require turbolinks
+//= require cocoon
 //= require video
 //= require_tree .
 

@@ -13,7 +13,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'no_reply@saintpaulsnaples.org'
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'InviteMailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -121,7 +121,7 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
+  config.invite_key = {:full_name => /\D/}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -289,7 +289,7 @@ Devise.setup do |config|
   # change their passwords.
   config.reset_password_within = 6.hours
 
-  config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's first
   # devise role declared in your routes (usually :user).

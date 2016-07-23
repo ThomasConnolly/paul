@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718010759) do
+ActiveRecord::Schema.define(version: 20160719200314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20160718010759) do
     t.string   "salutation"
     t.string   "last_name"
     t.date     "anniversary"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "answers", force: :cascade do |t|
-    t.string   "content"
-    t.text     "comment"
-    t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -57,22 +49,6 @@ ActiveRecord::Schema.define(version: 20160718010759) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "ckeditor_assets", force: :cascade do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -112,12 +88,6 @@ ActiveRecord::Schema.define(version: 20160718010759) do
     t.datetime "updated_at"
   end
 
-  create_table "parish_surveys", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pledges", force: :cascade do |t|
     t.integer  "amount"
     t.integer  "divisor"
@@ -147,13 +117,6 @@ ActiveRecord::Schema.define(version: 20160718010759) do
     t.datetime "updated_at"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "parish_survey_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "sermons", force: :cascade do |t|
     t.string   "title",        limit: 255
     t.string   "cites",        limit: 255
@@ -171,6 +134,12 @@ ActiveRecord::Schema.define(version: 20160718010759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "url"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "syllabuses", force: :cascade do |t|

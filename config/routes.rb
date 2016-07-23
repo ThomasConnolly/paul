@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
   
-  resources :parish_surveys
-  resources :questions
-  resources :answers
-  resources :vestry_minutes
-  
-  root 'home#index'
 
+  resources :answers
+  resources :questions
+  resources :surveys
+  resources :vestry_minutes
+
+  root 'home#index'
+  get 'home/invitation'
   get 'members/index'
   get 'members/import'
   resources :members do
@@ -49,7 +50,12 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-
+      
+  resources :members do
+    collection do
+      post 'batch_invite'
+    end
+  end
   resources :users do
     collection do
       post :import
@@ -68,6 +74,7 @@ Rails.application.routes.draw do
   resources :story_ideas do
     resources :comments, module: :story_ideas
   end
+  
 
   resources :comments, only: [:destroy]
 
@@ -92,5 +99,6 @@ Rails.application.routes.draw do
   
   devise_for :views
   mount Attachinary::Engine => '/attachinary'
+
 
 end

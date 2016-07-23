@@ -38,7 +38,6 @@ gem 'birthday'
 gem 'rolify'
 gem 'cocoon'
 
-
 group :development do
   gem 'meta_request'
   gem 'better_errors'

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :answer do
     content "MyString"
-    comment "MyText"
+    comment "MyString"
     question_id 1
   end
 end

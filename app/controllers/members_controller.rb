@@ -20,6 +20,15 @@ class MembersController < ApplicationController
     end
   end
 
+  def batch_invite
+    #validate the member_email isn't blank and emails are valid.
+    params[:member_emails].split(",").each do |email|
+      Member.invite!(:email => email)
+    end
+    redirect_to members_path
+  end
+
+
   def update
     @member.update_attributes(member_params)
       @member.save

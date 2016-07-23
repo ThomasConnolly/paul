@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   
-  
 
-  resources :answers
-  resources :questions
-  resources :surveys
   resources :vestry_minutes
 
   root 'home#index'

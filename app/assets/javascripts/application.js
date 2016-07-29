@@ -14,7 +14,6 @@
 //= require bootstrap
 //= require compatibility.coffee
 //= require turbolinks
-//= require cocoon
 //= require video
 //= require_tree .
 

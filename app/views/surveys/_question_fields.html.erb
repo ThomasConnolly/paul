@@ -1,0 +1,10 @@
+<fieldset>
+  <%= f.input :content, label: "Question" %><br>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", "#", class: "remove_fields" %>
+  
+  <%= f.simple_fields_for :answers do |answers_for_form| %>
+    <%= render 'answer_fields', f: answers_for_form %>
+  <% end %>
+  <%= link_to_add_fields "Add answer", f, :answers %>
+</fieldset>

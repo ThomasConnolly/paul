@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
   
 
-  resources :vestry_minutes
-
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
   get 'members/import'
+
   resources :members do
     collection do
       post :import
     end
   end
+
+  resources :vestry_minutes
+
+  resources :surveys
+  resources :questions
+  resources :answers
 
   resources :contacts
   resources :pictures
@@ -95,6 +100,5 @@ Rails.application.routes.draw do
   
   devise_for :views
   mount Attachinary::Engine => '/attachinary'
-
 
 end

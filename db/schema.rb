@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719200314) do
+ActiveRecord::Schema.define(version: 20160727160000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20160719200314) do
     t.date     "anniversary"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.string   "answer_option"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "attachinary_files", force: :cascade do |t|
@@ -52,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160719200314) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
   end
@@ -68,13 +75,15 @@ ActiveRecord::Schema.define(version: 20160719200314) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "first_name"
     t.string   "last_name"
-    t.string   "individual"
+    t.string   "first_name"
     t.string   "email"
+    t.date     "anniversary"
     t.date     "birthday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "membership_id"
+    t.string   "full_name"
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -115,6 +124,22 @@ ActiveRecord::Schema.define(version: 20160719200314) do
     t.text     "church"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.integer  "question_id"
+    t.integer  "answer_option_id"
+    t.string   "respondent"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "sermons", force: :cascade do |t|
@@ -186,6 +211,7 @@ ActiveRecord::Schema.define(version: 20160719200314) do
     t.string   "full_name",              limit: 255
     t.integer  "role"
     t.string   "stripe_customer_id"
+    t.integer  "member_id"
     t.boolean  "communicator"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"

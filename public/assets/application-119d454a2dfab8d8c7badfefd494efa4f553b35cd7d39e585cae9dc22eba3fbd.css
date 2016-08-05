@@ -128,6 +128,54 @@
   padding: 0;
   margin: 5px 0;
 }
+body {
+  background: #efefef;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 325px;
+}
+
+p {
+  line-height: 1.4;
+}
+
+.wrap {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 1em;
+  background: white;
+}
+
+.greeting {
+  text-align: center;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.footer {
+  font-size: 90%;
+  color: #666;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px white;
+}
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 350px;
+}
 /*! jQuery UI - v1.11.2 - 2014-12-03
 * http://jqueryui.com
 * Includes: core.css, datepicker.css, theme.css

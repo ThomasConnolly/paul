@@ -8,6 +8,6 @@ class MemberMailer < ApplicationMailer
     @url = "http://saintpaulsnaples.org/surveys"
     #email_with_name = %("#{@member.full_name}" <#{@member.email}>)
     #mail(to: email_with_name, subject: "Take the parish survey")
-    mail(to: @member.email, subject: "Take the parish survey")
+    mail(subject: "Take the parish survey")
   end
 end

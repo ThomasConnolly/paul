@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_member, only: [:edit, :show, :update, :destroy]
+  
  
   def index
     @members = Member.all.order(:last_name)
@@ -24,15 +25,6 @@ class MembersController < ApplicationController
       redirect_to members_path
   end
   
-  def create
-    @member = Member.new(member_params)
-    if @member.save
-      MemberMailer.member_survey(@member).deliver_later
-    else
-      flash[:alert] = "There were errors."
-      render "new"
-    end
-  end
 
   def edit
   end
@@ -58,6 +50,7 @@ class MembersController < ApplicationController
    def set_member
     @member = Member.find(params[:id])
   end
+
 
   def member_params
     params.require(:member).permit(:last_name, :first_name, :email, :birthday, 

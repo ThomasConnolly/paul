@@ -17,7 +17,7 @@ module Paul
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded. 
 end
-
+ActionMailer::Base.delivery_method = :smtp
 
 module RailsBootstrap
 

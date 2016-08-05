@@ -48,11 +48,8 @@ Rails.application.routes.draw do
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
       
-  resources :members do
-    collection do
-      post 'batch_invite'
-    end
-  end
+  resources :members
+  
   resources :users do
     collection do
       post :import

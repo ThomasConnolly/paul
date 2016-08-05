@@ -17,7 +17,8 @@ class Member < ActiveRecord::Base
   belongs_to :user
   acts_as_birthday :birthday
   before_save :set_full_name
-  #after_save :send_email
+  # after_create :send_email
+  
 
   
 
@@ -31,11 +32,13 @@ def self.assign_from_row(row)
   member
 end
 
-  #def send_email
-   # MemberMailer.member_survey(@member).deliver_later
-  #end
 
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
-  end     
+  end 
+
+
+  #def send_email
+  #  MemberMailer.member_survey(@member).deliver_later
+  #end    
 end

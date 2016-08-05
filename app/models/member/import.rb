@@ -10,6 +10,7 @@
       member = Member.assign_from_row(row)
       if member.save
         @imported_count += 1
+        
       else
         errors.add :base, "Line #{$.} - #{member.errors.
         full_messages.join(",")}"

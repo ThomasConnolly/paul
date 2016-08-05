@@ -12,7 +12,7 @@ class MembersController < ApplicationController
   def import
     @import = Member::Import.new member_import_params
     if @import.save
-      redirect_to members_path, notice: "Imported #{@import.imported_count} members"
+      redirect_to members_path, notice: "Imported #{@import.imported_count} members" 
     else
       @members = Member.all
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
@@ -24,6 +24,16 @@ class MembersController < ApplicationController
     @member.update_attributes(member_params)
       @member.save
       redirect_to members_path
+  end
+  
+  def create
+    @member = Member.new(member_params)
+    if @member.save
+      MemberMailer.member_survey(@member).deliver_later
+    else
+      flash[:alert] = "There were errors."
+      render "new"
+    end
   end
 
   def edit

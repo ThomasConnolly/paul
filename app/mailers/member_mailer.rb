@@ -1,6 +1,6 @@
 class MemberMailer < ApplicationMailer
   default to: Proc.new { Member.pluck([:email, :full_name]) },
-    default from: ("Father Bill <FrBill@saintpaulsnaples.org>")
+   from: ("Father Bill <FrBill@saintpaulsnaples.org>")
   
 
   def member_survey(member)

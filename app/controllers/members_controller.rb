@@ -2,10 +2,10 @@
 
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: [:edit, :update, :destroy]
+  before_action :set_member, only: [:edit, :show, :update, :destroy]
  
   def index
-    @members = Member.all
+    @members = Member.all.order(:last_name)
     @import = Member::Import.new
     end
   
@@ -20,15 +20,6 @@ class MembersController < ApplicationController
     end
   end
 
-  def batch_invite
-    #validate the member_email isn't blank and emails are valid.
-    params[:member_emails].split(",").each do |email|
-      Member.invite!(:email => email)
-    end
-    redirect_to members_path
-  end
-
-
   def update
     @member.update_attributes(member_params)
       @member.save
@@ -36,6 +27,9 @@ class MembersController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
   end
 
 
@@ -59,6 +53,6 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:last_name, :first_name, :email, :birthday, 
-                                   :individual)
+                                   :membership_id)
   end
 end

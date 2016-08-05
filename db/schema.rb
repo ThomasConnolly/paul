@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727160000) do
+ActiveRecord::Schema.define(version: 20160803020217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 20160727160000) do
     t.date     "anniversary"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "answers", force: :cascade do |t|
-    t.integer  "question_id"
-    t.string   "answer_option"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "attachinary_files", force: :cascade do |t|
@@ -78,7 +71,6 @@ ActiveRecord::Schema.define(version: 20160727160000) do
     t.string   "last_name"
     t.string   "first_name"
     t.string   "email"
-    t.date     "anniversary"
     t.date     "birthday"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -126,22 +118,6 @@ ActiveRecord::Schema.define(version: 20160727160000) do
     t.datetime "updated_at"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "responses", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.integer  "question_id"
-    t.integer  "answer_option_id"
-    t.string   "respondent"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "sermons", force: :cascade do |t|
     t.string   "title",        limit: 255
     t.string   "cites",        limit: 255
@@ -159,12 +135,6 @@ ActiveRecord::Schema.define(version: 20160727160000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "url"
-  end
-
-  create_table "surveys", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "syllabuses", force: :cascade do |t|

@@ -13,13 +13,9 @@ Rails.application.routes.draw do
   end
 
   resources :vestry_minutes
-
-  resources :surveys
-  resources :questions
-  resources :answers
-
   resources :contacts
   resources :pictures
+  resources :surveys, only: :index
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'

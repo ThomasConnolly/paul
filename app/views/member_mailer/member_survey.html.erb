@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Take the Survey</title>
+    <%= stylesheet_link_tag :email %>
+  </head>
+  <body>
+    <div class='wrap'>
+      <div class="logo">
+        <%= cl_image_tag("logos/New_StPaul_LogoWeb.jpg", width: '325') %>
+      </div>
+        <h1>This is an invitation to <%= @member.full_name %> </h1>
+          <h3>To take the parish survey</h3>
+            <p>Your responses are strictly anonymous and very much appreciated, as they will help guide the vestry as it plans the future of our parish.</p>
+            <p>Thanks very much!</p>
+              <%= cl_image_tag("FatherBillSig_veptsc.png") %>
+                <button class="button">
+                  <%= link_to "Take the survey!", @url %> 
+                </button>
+    </div>
+  </body>
+</html>
+   
+  

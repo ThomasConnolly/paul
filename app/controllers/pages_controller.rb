@@ -19,6 +19,10 @@ class PagesController < ApplicationController
   def haitian
   end
 
+  def survey
+  end
+  
+
   def python_tutor
   end
 

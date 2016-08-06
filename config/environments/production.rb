@@ -93,5 +93,4 @@ config.log_level = :info
 
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   config.assets.precompile << 'tinymce-jquery.js'
-  config.active_job.queue_adapter = :delayed_job
 end

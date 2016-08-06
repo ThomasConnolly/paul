@@ -7,13 +7,15 @@
   </head>
   <body>
     <div class='wrap'>
-      <div class="logo">
+      <div class="image">
         <%= cl_image_tag("logos/New_StPaul_LogoWeb.jpg", width: '325') %>
       </div>
         <h1>This is an invitation to take the parish survey</h3>
             <p>Your responses are strictly anonymous and very much appreciated, as they will help guide the vestry as it plans the future of our parish.</p>
             <p>Thanks very much!</p>
+            <div class="signature">
               <%= cl_image_tag("FatherBillSig_veptsc.png") %>
+            </div>
                 <button class="button">
                   <%= link_to "Take the survey!", @url %> 
                 </button>

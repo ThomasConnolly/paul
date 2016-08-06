@@ -133,9 +133,13 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.logo {
+.image {
   margin: 0 auto;
   width: 325px;
+}
+
+.signature {
+  margin: 20px;
 }
 
 p {

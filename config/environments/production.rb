@@ -9,6 +9,8 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.default_url_options = { host: "saintpaulsnaples.org"}
+
+  DOMAIN = "saintpaulsnaples.org"
  
 
   # Eager load code on boot. This eager loads most of Rails and

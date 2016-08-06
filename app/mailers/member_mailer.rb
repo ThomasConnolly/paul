@@ -6,8 +6,6 @@ class MemberMailer < ApplicationMailer
   def member_survey(member)
     @member = member
     @url = "http://saintpaulsnaples.org/surveys"
-    #email_with_name = %("#{@member.full_name}" <#{@member.email}>)
-    #mail(to: email_with_name, subject: "Take the parish survey")
     mail(subject: "Take the parish survey")
   end
 end

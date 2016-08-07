@@ -6,7 +6,7 @@
 
   def process!
     @imported_count = 0
-    CSV.foreach(file.path, headers: true, header_converters: [:symbol]) do |row|
+    CSV.foreach(file.path, headers: true, header_converters: [:symbol, :date]) do |row|
       member = Member.assign_from_row(row)
       if member.save
         @imported_count += 1

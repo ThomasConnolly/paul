@@ -38,8 +38,6 @@ gem 'puma'
 gem 'foreman'
 gem 'birthday'
 gem 'rolify'
-#gem 'cocoon'
-#gem 'active_presenter'
 
 group :development do
   gem 'meta_request'

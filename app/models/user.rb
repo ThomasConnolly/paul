@@ -53,16 +53,16 @@ class User < ActiveRecord::Base
   has_many :story_ideas, dependent: :destroy
   has_one :pledge 
   has_many :vreports, dependent: :destroy
-  validates :email, presence: true
   validates :full_name, uniqueness: { case_sensitive: false }
  
 
   #after_create :send_welcome_email
 
-  attr_accessor :login
+   attr_accessor :login
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+   #Include default devise modules 
+   #Others available are:
+   #:lockable, :confirmable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :invitable,
          :authentication_keys => [:login]

@@ -53,26 +53,22 @@ end
 group :development, :test do
   gem 'guard'
   gem 'guard-livereload'
-  gem 'guard-rspec'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
-  gem 'rspec'
-  gem 'rspec-rails'
   gem 'spring'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simple_bdd'
-  gem 'shoulda-matchers'
-  gem 'database_cleaner'
   gem 'letter_opener'
   gem 'email_spec'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'ffaker'
-  gem 'capybara-webkit'
-  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :production do

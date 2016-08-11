@@ -85,9 +85,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
     ckeditor (4.1.6)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -148,7 +145,8 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    ffaker (2.2.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     ffi (1.9.14)
     flay (2.8.0)
       erubis (~> 2.7.0)
@@ -180,10 +178,6 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
-    guard-rspec (4.7.2)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
     htmlentities (4.3.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -338,10 +332,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rolify (5.1.0)
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
     rspec-core (3.5.1)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -456,7 +446,6 @@ DEPENDENCIES
   bootstrap-will_paginate
   byebug
   capybara
-  capybara-webkit
   ckeditor
   cloudinary
   coffee-rails (~> 4.0.0)
@@ -465,11 +454,10 @@ DEPENDENCIES
   devise_invitable
   email_spec
   factory_girl_rails
-  ffaker
+  faker
   foreman
   guard
   guard-livereload
-  guard-rspec
   httparty
   jbuilder (~> 2.0)
   jquery-fileupload-rails
@@ -478,7 +466,6 @@ DEPENDENCIES
   jquery-slick-rails
   jquery-turbolinks
   jquery-ui-rails
-  launchy
   letter_opener
   meta_request
   nokogiri
@@ -493,7 +480,6 @@ DEPENDENCIES
   rails_12factor
   remotipart
   rolify
-  rspec
   rspec-rails
   rubycritic
   sass-rails (~> 5.0, >= 5.0.4)

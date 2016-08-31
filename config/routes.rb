@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :tickets
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
@@ -41,13 +42,14 @@ Rails.application.routes.draw do
   resources :books
   resource :pledge
   resources :sermons
+  
   devise_for :users
     devise_scope :user do
       get 'register', to: 'devise/registrations#new', as: :register
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-      
+  resources :charges    
   resources :members
   
   resources :users do

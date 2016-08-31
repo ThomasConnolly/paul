@@ -27,11 +27,11 @@ class ProfilesController < ApplicationController
   end
   
   def update
-    if @profile.update_attributes(profile_params)
-      redirect_to profile_path(@profile)
-      
+    @profile.update_attributes(profile_params)
+    if  @profile.save 
+        redirect_to profile_path(@profile)
     else
-      render 'edit'
+        render 'edit'
     end
   end
 
@@ -43,8 +43,8 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = current_user.build_profile(profile_params)
-    if @profile.save
+     @profile = current_user.build_profile(profile_params)
+  if @profile.save
     redirect_to current_user_path
   else
     render 'new'

@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   has_many :opportunities
   has_many :books
   has_many :story_ideas, dependent: :destroy
-  has_one :pledge 
+  has_one :pledge, dependent: :destroy
   has_many :vreports, dependent: :destroy
   validates :full_name, uniqueness: { case_sensitive: false }
  

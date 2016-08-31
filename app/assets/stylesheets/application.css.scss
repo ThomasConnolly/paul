@@ -65,8 +65,6 @@
 .sidebar {
   background-color: #eee;
   padding-right: 8px;
-  width: 32%;
-  float: left;
 }
 
 div.hidden {
@@ -130,10 +128,6 @@ p.center-bold-text {
   text-style: bold;
 }
 
-a, a:hover, a:focus{
-  text-decoration: none;
-  color: blue;
-}
 #home-logo {
     float:left;
     margin-left: 10px;
@@ -388,16 +382,6 @@ list-style-type: none;
   text-align: center;
 }
 
-.pledge-number {
-  font-size: 8em;
-  color: #B8B8B8;
-  float: left;
-  margin-top: 40px;
-}
-.pledge-text {
-  margin-top: 60px;
-}
-
 .btn-custom {
   cursor: pointer;
   text-decoration:none;
@@ -511,7 +495,6 @@ list-style-type: none;
   float: left;
 }
 
-
 .upload_photos {
   width: 300px;
   float: left;
@@ -519,8 +502,6 @@ list-style-type: none;
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
-
-
 
 #myModal {
   margin-top: 160px;

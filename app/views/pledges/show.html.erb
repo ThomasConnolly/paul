@@ -1,17 +1,15 @@
 
   <div class="row">
-    <div class="col-md-1" id="pledge-step3"><h1 class="pledge-number">3</h1>
-    </div>
-      <div class="col-md-11"
+    
+      <div class="col-md-8 col-md-offset-2"
         <div class="pledge-text">
           <div class="mt50">
           </div>
 
-          <h3> You have elected to pay your pledge of $<%= @pledge.amount %>  
-            annually in <%= @pledge.divisor %> payments of $<span id="payThis"><%= @pledge.pay_this %></span>.<br><br>
-            If these numbers are correct, you will now be taken to a secure website that handles credit and debit card payments for Saint Paul's.<br><br>If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</h3><div class="mt100"></div>
-              <span class="edit"><%= link_to "Edit Facts",  new_pledge_path, class: "btn btn-primary" %> &nbsp; &nbsp; <span class="checkout">
-              <%= button_to "All Correct", root_path %>
+          <h3> You have elected to pay your pledge of <%= number_to_currency(@pledge.amount) %>  
+            annually in <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency(@pledge.pay_this) %></span>.<br><br>
+            If these numbers are not correct, click "edit facts" to make changes. If the numbers are correct, click "checkout" and you will be taken to a secure website that handles credit and debit card payments for Saint Paul's.<br><br>If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</h3><div class="mt30"></div>
+            <%= button_to "Edit Facts", new_pledge_path, method: 'get', class: "btn btn-primary btn-lg" %> &nbsp; &nbsp;<%= button_to "Checkout", root_path, method: 'get', class: "btn btn-success btn-lg" %>
                          
 
         </div>  

@@ -22,13 +22,16 @@ class PledgesController < ApplicationController
 
   
   def edit
-    @pledge = Pledge.find(current_user.pledge(params[:id]))
+
   end
 
   def update
-     @pledge.update_attributes(pledge_params)
-     @pledge.save
-       redirect_to pledge_path(current_user.pledge(params[:id]))
+    @pledge.update_attributes(pledge_params)
+    if  @pledge.save
+        redirect_to pledge_path(@pledge)
+    else
+        render 'edit'
+    end 
   end
 
   def destroy
@@ -42,9 +45,9 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id if current_user
     if @pledge.save
-         redirect_to pledge_path(current_user.pledge(params[:id]))
-       else
-         render :new
+      redirect_to pledge_path(@pledge)
+    else
+      render :new
     end   
   end
 

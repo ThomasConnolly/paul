@@ -1,19 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col col-md-6 col-md-offset-3">
-      <div id="annualPledge">
-      <%= simple_form_for @pledge do |f| %>
+       <%= simple_form_for(@pledge, url: pledge_path) do |f| %>
         <%= f.error_notification %>
-        <h2>Modify your annual pledge:</h2>
-        <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Amount in whole dollars" %><br>
+        <div>
+        <h2>Your annual pledge:</h2>
+          <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Amount in whole dollars" %><br>
       </div> 
-          <h3>Payments will be made:</h3>
+      <div>   
+        <h3>Payments will be made:</h3>
           <%= f.input :divisor, collection: [["Weekly", 52], ["Monthly", 12], 
-          ["Quarterly", 4]], as: :radio_buttons, label: false, input_html: {id: "divisor"} %>
-            <%= f.button :submit, "Calculate payment" %> &nbsp; <%= link_to "Cancel", root_path, class: "btn btn-danger" %>
-      <% end %>
-      <div class="mt100">
+          ["Quarterly", 4]], as: :radio_buttons, label: false, class: 'inline',  input_html: {id: "divisor"} %><br>
+            <%= f.button :submit, "Calculate payment", class: "btn btn-primary" %> &nbsp; <%= link_to "Cancel", root_path, class: "btn btn-danger" %>
       </div>
-    </div>
-  </div>
-</div>
+      <% end %>
+   

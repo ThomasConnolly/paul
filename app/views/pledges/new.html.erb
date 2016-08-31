@@ -1,31 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col col-md col-8">
-      
-      <h1>Pay your pledge on line, it's easy as 1, 2, 3</h1>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-1" id="pledge-step1"><h1 class="pledge-number">1</h1>
-    </div>
-      <div class="col-md-3">
-          <%= simple_form_for @pledge do |f| %>
-          <%= f.error_notification %>
-          <div class="mt50"></div>
-          <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Amount in whole dollars" %>
-      </div>
-  </div>
-  <div class="row">
-    <hr>
-    <div class="col-md-1" id="pledge-step2"><h1 class="pledge-number">2</h1>
-    </div>
-      <div class="col-md-7">
-        <h4 class="pledge-text">Select your payment intervals: weekly, monthly or quarterly.</h4>
-          <%= f.input :divisor, collection: [["Weekly", 52], ["Monthly", 12], ["Quarterly", 4]],
-           as: :radio_buttons, label: false, input_html: {id: "divisor"} %></p><br>
-          <%= f.button :submit, "Calculate payment" %>
-          <% end %>
-      </div>
+      <div class="mt50"></div>
+      <h1>Pay your pledge on line</h1>
+    </div>  
+     <%= render 'form' %>
   </div>  
 </div>

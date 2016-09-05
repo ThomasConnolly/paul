@@ -1,18 +1,17 @@
 <%= form_tag charges_path do %>
-  <article>
+  <div id="error_explanation">
     <% if flash[:error].present? %>
-      <div class="error_explanation">
         <p><%= flash[:error] %> </p>
-      </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5.00 </span>
-    </label>
+  </div>
+  <article>  
+    <%= label_tag(:amount, 'Pledge Amount:') %>
+    <%= text_field_tag(:amount) %>
   </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-description="A month's subscription"
-      data-amount="500"
-      data-locale="auto"></script>
+  <article>
+    <%= hidden_field_tag(:stripeToken) %>
+  </article>
+  <button id="pledgeButton">Remit</button>
   <% end %>
+
+  

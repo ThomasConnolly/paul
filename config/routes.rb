@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-  resources :tickets
+  resources :events
   root 'home#index'
   get 'home/invitation'
   get 'members/index'

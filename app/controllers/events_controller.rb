@@ -15,6 +15,8 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @price = price
+    @quantity = quantity
   end
 
   # GET /events/1/edit
@@ -69,6 +71,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :price, :date)
+      params.require(:event).permit(:title, :price, :quantity, :amount, :date)
     end
 end

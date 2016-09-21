@@ -26,12 +26,18 @@ class PledgesController < ApplicationController
   end
 
   def update
-    @pledge.update_attributes(pledge_params)
-    if  @pledge.save
-        redirect_to pledge_path(@pledge)
-    else
-        render 'edit'
-    end 
+    token = params[:stripeToken]
+    customer = Stripe::Customer.create(
+      card: token,
+      plan
+      )
+
+  #  @pledge.update_attributes(pledge_params)
+  #  if  @pledge.save
+  #      redirect_to pledge_path(@pledge)
+   # else
+   #     render 'edit'
+    #end 
   end
 
   def destroy

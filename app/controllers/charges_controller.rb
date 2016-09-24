@@ -1,11 +1,8 @@
 class ChargesController < ApplicationController
   
   def create
-<<<<<<< HEAD
   # Amount in cents
-  amount = params[:stripeAmount].to_i * 100
-=======
->>>>>>> stripe
+  amount = params[:stripeAmount].to_i * 1
 
 # create customer in Stripe
   customer = Stripe::Customer.create(
@@ -15,7 +12,6 @@ class ChargesController < ApplicationController
   # create charge using customer data returned by Stripe API
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-<<<<<<< HEAD
     :amount      => amount,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
@@ -27,7 +23,6 @@ class ChargesController < ApplicationController
     flash[:notice] = "Please try again"
   end
 end
-=======
     :amount      => params[:amount],
     :description => "Payment to St. Paul's",
     :currency    => 'usd'
@@ -46,4 +41,3 @@ end
     redirect_to new_charge_path
   end
 end
->>>>>>> stripe

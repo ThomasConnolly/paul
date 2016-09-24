@@ -18,8 +18,13 @@
 <form action="/your-charge-code" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<<<<<<< HEAD
     data-key="pk_test_p9ozCY1wINl7nqjhbCKifu9X"
     data-amount="@amount"
+=======
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="4000"
+>>>>>>> stripe
     data-name="St. Paul's Episcopal Church"
     data-description="Frank Sinatra Live (kinda) tickets"
     data-image="https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png"

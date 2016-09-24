@@ -1,0 +1,2 @@
+module FakeStripesHelper
+end

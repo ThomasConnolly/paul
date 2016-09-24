@@ -5,7 +5,7 @@
     <h1 id="welcome">All are welcome to worship with us</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
     <h2>Sunday 8 and 10 a.m.</h2>
-    <p>Nursery available during the second service. An adult education group will begin a new offering in October. </p><br>
+    <p>Nursery available during the second service. An adult education group will begin a new offering in late October. Watch here for details. </p><br>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
     <br>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", 'pages/directions' %>.</h3> </p>
@@ -34,17 +34,17 @@
   <!--http://ssje.org/word/?feed=rss2 -->
     <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
-      
-      <p>A concert to benefit <strong>St. Matthew's House</strong> will be held Sunday, Sept. 18 at East Naples United Methodist Church on Airport Road just north of Tamiami Trail. The 3 p.m. concert will feature performances by the music directors of seven local churches, including our own Eleanor Phelps, Dan Dickout and Sally Blanchard. Sponsors are the East Naples Ecumenical Clergy Group.</p>
-
+         <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
+      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p>
+    <br>
+<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
  <p>Wearing you <strong> name tag </strong> is an act of hospitality! Need a new magnetic name tag? Let Deb know by September 30 and she'll order one for $8. Please wear the name tags. We want new members and our regular members to feel comfortable at services and coffee hour. </p>
 <p>
 Coffee and snacks are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love. Small donations help us keep the coffee flowing and supplies on hand.</p>
     
     <br>
-    <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
-    <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p>
-    <br>
+ 
+    
 
    <!-- <%#= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
     <p>It's an act of <strong>hospitality</strong> to wear your name tag! If you don't have one, call the office during the week.</p> -->

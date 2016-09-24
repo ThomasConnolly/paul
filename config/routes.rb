@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :fake_stripes
   resources :events
   root 'home#index'
   get 'home/invitation'

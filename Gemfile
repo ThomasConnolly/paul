@@ -38,6 +38,7 @@ gem 'puma'
 gem 'foreman'
 gem 'birthday'
 gem 'rolify'
+gem 'figaro'
 
 group :development do
   gem 'meta_request'

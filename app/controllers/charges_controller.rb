@@ -1,13 +1,6 @@
 class ChargesController < ApplicationController
-
-  Stripe.api_key = ENV['SECRET_KEY']
-
-  def new
-  end
   
   def create
-  # Amount in cents
-  @amount = 500
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -16,12 +9,21 @@ class ChargesController < ApplicationController
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
+    :amount      => params[:amount],
+    :description => "Payment to St. Paul's",
     :currency    => 'usd'
   )
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
+  # pledge = Pledge.create(email: params[:stripeEmail],
+    # card: params[:stripeToken], amount: params[:amount],
+    # decription: charge.description, currency: charge.currency,
+    # customer_id: customer.id, pledge_id: pledge.id)
+
+  # redirect_to pledge
+  
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_charge_path
+  end
 end

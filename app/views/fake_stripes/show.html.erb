@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tickets:</strong>
+  <%= @fake_stripe.tickets %>
+</p>
+
+<%= link_to 'Edit', edit_fake_stripe_path(@fake_stripe) %> |
+<%= link_to 'Back', fake_stripes_path %>

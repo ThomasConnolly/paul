@@ -23,10 +23,7 @@ class ChargesController < ApplicationController
     flash[:notice] = "Please try again"
   end
 end
-    :amount      => params[:amount],
-    :description => "Payment to St. Paul's",
-    :currency    => 'usd'
-  )
+ 
 
   # pledge = Pledge.create(email: params[:stripeEmail],
     # card: params[:stripeToken], amount: params[:amount],

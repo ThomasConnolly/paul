@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
   
   def create
   # Amount in cents
-  amount = params[:stripeAmount].to_i * 1
+  @amount = 2900
 
 # create customer in Stripe
   customer = Stripe::Customer.create(
@@ -17,12 +17,7 @@ class ChargesController < ApplicationController
     :currency    => 'usd'
   )
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
-    flash[:notice] = "Please try again"
-  end
-end
+
  
 
   # pledge = Pledge.create(email: params[:stripeEmail],

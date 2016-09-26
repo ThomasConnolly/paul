@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   resources :books
   resource :pledge
   resources :sermons
+  resources :purchases, only: [:show]
   
   devise_for :users
     devise_scope :user do

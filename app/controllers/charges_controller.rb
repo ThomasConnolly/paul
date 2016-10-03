@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
       :email => params[:stripeEmail],
       :card  => params[:stripeToken]
     )
-    # create charge using customer data returned by Stripe API
+
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => params[:amount],
@@ -15,8 +15,9 @@ class ChargesController < ApplicationController
     )
 
     purchase = Purchase.create(email: params[:stripeEmail],
-      card: params[:stripeEmail], amount: params[:amount],
-      description: params[:description] , currency: charge.currency)
+      card: params[:stripeToken], amount: params[:amount],
+      description: charge.description, currency: charge.currency,
+      product_id: 1, customer_id: customer.id, uuid: SecureRandom.uuid)
 
     redirect_to purchase
 

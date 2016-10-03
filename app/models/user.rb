@@ -35,14 +35,10 @@
 
 class User < ActiveRecord::Base
   
-  rolify
   before_save :set_full_name
-  
   enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4 }
   after_initialize :set_default_role, :if => :new_record?
-
   after_create :add_profile
-  
   has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -54,10 +50,7 @@ class User < ActiveRecord::Base
   has_one :pledge, dependent: :destroy
   has_many :vreports, dependent: :destroy
   validates :full_name, uniqueness: { case_sensitive: false }
- 
-
   #after_create :send_welcome_email
-
    attr_accessor :login
 
    #Include default devise modules 

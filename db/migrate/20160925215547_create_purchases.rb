@@ -6,8 +6,9 @@ class CreatePurchases < ActiveRecord::Migration
       t.string :description
       t.string :currency
       t.string  :card
-      t.integer :event_id
+      t.integer :customer_id
       t.integer :pledge_id
+      t.integer :event_id
 
 
       t.timestamps null: false

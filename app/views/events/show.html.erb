@@ -1,37 +1,46 @@
-<div class="mt30"></div>
+<div class="mt100"></div>
 
-  <h1><%= @event.title %></h1>
-    <p><%= @event.date %>, <%= @event.price %> per ticket. </p>
+  <h1>Purchase tickets for '<%= @event.title %>'</h1>
+    <p><%= @event.date.strftime('%A, %B %d, %Y') %>, <%= number_to_currency @event.price*0.01 %> per ticket. </p>
     <div class="mt30"></div>
-      <h3>Purchase your tickets</h3>
-        <%= simple_form_for(@event) do |f| %>
-          <%= f.error_notification %>
-          <div class="form-inputs">
-            <%= f.input :quantity, label: "Number of tickets" %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit %>
-          </div>
-        <% end %>
-
-
-<form action="/your-charge-code" method="POST">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2 col-sm-6">
+          <%= simple_form_for(@event, remote: true) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :quantity, label: "Number of tickets" %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Calculate payment", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+          <div class="col-md-2 col-md-offset-2 col-sm-6">
+            <h3><%= @event.quantity %> tickets: </h3><p><%= number_to_currency @event.amount*0.01 %></p>
+            <div class="mt30"></div>
+      
+<form>
+<%= form_tag charges_path, id: 'chargeForm' do %> 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-<<<<<<< HEAD
-    data-key="pk_test_p9ozCY1wINl7nqjhbCKifu9X"
-    data-amount="@amount"
-=======
+
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="4000"
->>>>>>> stripe
+    data-amount="<%= @event.amount %>"
     data-name="St. Paul's Episcopal Church"
-    data-description="Frank Sinatra Live (kinda) tickets"
+    data-description="<%= @event.title %>"
     data-image="https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png"
     data-locale="auto"
     data-zip-code="true">
   </script>
+    <%= hidden_field_tag 'stripeToken' %>
+    <%= hidden_field_tag 'stripeEmail' %>
 </form>
+<% end %>
 
+          </div>
+      </div>
+
+
+<div class="mt100"></div>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

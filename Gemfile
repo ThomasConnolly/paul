@@ -39,6 +39,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development do
   gem 'meta_request'

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :fake_stripes
   resources :events
   root 'home#index'

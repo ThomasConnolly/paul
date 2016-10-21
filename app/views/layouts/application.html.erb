@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", "data-turbolinks-track" => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!--<%#= javascript_include_tag 'application', "https://js.stripe.com/v2/", 'data-turbolinks-track' => true %>-->
+ <!-- <%#= javascript_include_tag 'application', "https://js.stripe.com/v2/", 'data-turbolinks-track' => true %> -->
   <%= csrf_meta_tag %>
   
     <!--[if lt IE 9]>
@@ -17,13 +17,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
    
-  <%= cloudinary_js_config %>
-
+<%= cloudinary_js_config %>
   
 </head>
-
 <body class="<%= controller_name %>  <%= action_name %>">
-
   <div class="page">
     <div class="container">
       <%= render '/layouts/homeHeader' %>
@@ -39,9 +36,6 @@
 <%= yield %>
   <%= render 'layouts/footer' %> 
 
-  </div>
 </div>
-
-
 </body>
 </html>

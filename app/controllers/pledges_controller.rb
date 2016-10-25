@@ -25,11 +25,6 @@ class PledgesController < ApplicationController
   end
 
  def update
-   token = params[:stripeToken]
-   customer = Stripe::Customer.create(
-   card: token,
-   plan: 
-  )
 
     @pledge.update_attributes(pledge_params)
     if  @pledge.save

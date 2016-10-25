@@ -2,24 +2,24 @@
 <%= render 'slick' %>
 <div class="row">
   <div class="col-lg-8 col-sm-12 main-body">
-    <h1 id="welcome">All are welcome to worship with us</h1>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.jpg", width:"200", class: "floatleft") %>
+    <h1 id="welcome">Come worship with us!</h1>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"240", class: "floatleft") %>
     <h2>Sunday 8 and 10 a.m.</h2>
-    <p>Nursery available during the second service. An adult education group will begin a new offering in late November. Watch here for details. </p><br>
+    <p>Nursery available during the second service. An adult education group will begin a new offering (see below) on Nov. 6, when we go to three services, 8, 9:15 and 10:45 a.m.</p>
     <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
-    <br>
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em><h3>Need a map? <%= link_to "Click here", 'pages/directions' %>.</h3> </p>
-    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
+    <p class="text-center"><strong><%= link_to "Click here for Sunday's Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/FrSteve.png", width:"175", class: "floatleft") %><p><h3>Spreading the Good News</h3> is the title our new adult formation course written by the Rev. Steve Zimmerman for all who want to know more about the teachings of the Episcopal Church. Fr. Steve will introduce the series at 9:15 a.m. Nov. 6 in the library. All are welcome</p><p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     
-    <h3 class="text-center"><%= link_to "Click for Scripture Readings", "http://www.lectionarypage.net"  %></h3>
+    
     
     <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"80%", class: "image-center") %>
-    <h1> Home of the friendly Farmers&rsquo; Market </h1>
+    <h1>Farmers&rsquo; Market Opens Nov. 12 </h1>
     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"30%", class: "floatright") %>
-    <p>This is the church where the great tradition of a farmers&rsquo; market flourishes each Saturday morning during "the season," November through April.</p>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"70%", class: "floatleft") %>
+    <p>Opening day of the 2016-17 season will include our annual holiday bazzaar. Handcrafted goods and home-made goodies will be on sale in Trinity Hall.</p><p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %>
     
-
     <div class="mt30"></div>
     
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %>
@@ -39,14 +39,14 @@
 Vietnam veteran and author of <em>What a Life,</em> will be speaking at all three worship services on Nov. 13.</p><%= image_tag("https://images-na.ssl-images-amazon.com/images/I/51Z7ES59XVL._SX321_BO1,204,203,200_.jpg", width: "50%", class: "floatright")%>
 <p>“What a Life tells the story of a remarkable Marine and human being. It is testimony to the indomitable courage and determination of the great American that is Randy Kington. It is men like Randy Kington, United States Marine Corps, who made our nation great.”</p>
 <p class="floatright">
---Brigadier General Gary Brown USMC (Ret)</p>
+--BGen. Gary Brown, USMC (Ret)</p>
          <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
       <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p>
      
-<%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
+<%#= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>
  <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want new members and our regular members to feel comfortable at services and coffee hour. </p>
-<p>
-Coffee and snacks are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
+<p><strong>
+Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
     
     <br>
  
@@ -57,7 +57,7 @@ Coffee and snacks are available during fellowship time after each Sunday service
   
   <!-- <p><strong>Get the Weekly Update in your email box </strong> <%#= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> --> 
     <!-- <br> -->
-      <!-- <%#=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "95%"),  -->
+      <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "95%"), 
       pages_calendar_path %>
       <h3>Click on calendar <br> to see activities</strong></h3>
   </div>

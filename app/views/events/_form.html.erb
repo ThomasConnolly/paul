@@ -1,13 +1,19 @@
-<%= simple_form_for(@event) do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+  <div class="col col-sm-6 col-sm-offset-3"> 
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :price %>
-    <%= f.input :date %>
-  </div>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :price %>
+      <%= f.input :date %>
+      <%= f.input :ticket_quantity %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>

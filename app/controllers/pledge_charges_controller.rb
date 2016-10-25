@@ -1,13 +1,9 @@
-class ChargesController < ApplicationController
+class PledgeChargesController < ApplicationController
   
   def new
   end
 
   def create
-
-    @ticket = Ticket.find(params[:ticket_id])
-
-    @amount = @ticket
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
@@ -17,7 +13,8 @@ class ChargesController < ApplicationController
       :customer    => customer.id,
       :amount      => 6300,
       :description => "Payment to St. Paul's",
-      :currency    => 'usd'
+      :currency    => 'usd',
+      :plan        => TODO
     )
 
     # purchase = Purchase.create(email: params[:stripeEmail],

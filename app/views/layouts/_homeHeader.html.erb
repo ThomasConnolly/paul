@@ -11,13 +11,13 @@
       </div>
       <div class="clearall"></div>
         <div id="menu-five">
-          <% if user_signed_in? %>
           <p><small>
-          <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
+          <% if user_signed_in? %>
+            <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
           <% else %>
             <%= link_to "Member sign in", new_user_session_path %>
           <% end %>
-          </small></p> 
+          </small></p>
         </div>
   </div>
   <div class="mt100"></div>

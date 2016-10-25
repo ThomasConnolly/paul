@@ -2,19 +2,19 @@ Rails.application.routes.draw do
   
 
 
-  resources :fake_stripes
-  resources :events
+
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
   get 'members/import'
-
+  resources :fake_stripes
+  resources :events
+  resources :tickets
   resources :members do
     collection do
       post :import
     end
   end
-
   resources :vestry_minutes
   resources :contacts
   resources :pictures
@@ -52,7 +52,8 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-  resources :charges    
+  resources :charges
+  resource :pledge_charges, only: [:create]    
   resources :members
   
   resources :users do

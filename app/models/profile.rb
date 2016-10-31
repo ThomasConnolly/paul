@@ -17,5 +17,4 @@
 
 class Profile < ActiveRecord::Base
   belongs_to :user
-  # has_attachment :avatar, accept:[:jpg, :png, :gif]
 end

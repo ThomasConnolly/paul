@@ -47,6 +47,7 @@ class HomilistsController < ApplicationController
 
   def destroy
     @homilist.destroy
+      redirect_to @homilists
   end
 
 

@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   get 'members/index'
   get 'members/import'
   resources :fake_stripes
-  resources :events
-  resources :tickets
+  resources :events do
+    resources :tickets, only: [:new, :show, :create]
+  end
   resources :members do
     collection do
       post :import

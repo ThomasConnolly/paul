@@ -3,12 +3,12 @@
 # Table name: pledges
 #
 #  id         :integer          not null, primary key
-#  amount     :integer
 #  divisor    :integer
-#  pay_this   :integer
 #  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  amount     :decimal(15, 2)
+#  pay_this   :decimal(15, 2)
 #
 
 class Pledge < ActiveRecord::Base

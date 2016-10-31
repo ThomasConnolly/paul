@@ -1,13 +1,7 @@
 class ChargesController < ApplicationController
-  
-  def new
-  end
 
   def create
 
-    @ticket = Ticket.find(params[:ticket_id])
-
-    @amount = @ticket
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
@@ -15,17 +9,17 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => 6300,
+      :amount      => @amount,
       :description => "Payment to St. Paul's",
       :currency    => 'usd'
     )
 
-    # purchase = Purchase.create(email: params[:stripeEmail],
-      # card: params[:stripeToken], amount: params[:amount],
-      # description: charge.description, currency: charge.currency,
-      # product_id: 1, customer_id: customer.id, uuid: SecureRandom.uuid)
+    ticket = Ticket.create(email: params[:stripeEmail],
+       card: params[:stripeToken], amount: params[:amount],
+       description: charge.description, currency: charge.currency,
+       event_id: 1, customer_id: customer.id, uuid: SecureRandom.uuid)
 
-    # redirect_to purchase
+    redirect_to ticket
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

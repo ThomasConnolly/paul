@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024215800) do
+ActiveRecord::Schema.define(version: 20161031183209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,11 +63,10 @@ ActiveRecord::Schema.define(version: 20161024215800) do
     t.string   "title"
     t.integer  "price"
     t.date     "date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "ticket_quantity"
-    t.integer  "tickets_sold"
-    t.integer  "tickets_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "quantity"
+    t.integer  "amount"
   end
 
   create_table "fake_stripes", force: :cascade do |t|
@@ -122,12 +121,6 @@ ActiveRecord::Schema.define(version: 20161024215800) do
     t.integer  "user_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.integer  "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "cities",     limit: 255
@@ -139,20 +132,6 @@ ActiveRecord::Schema.define(version: 20161024215800) do
     t.text     "church"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.string   "email"
-    t.integer  "amount"
-    t.string   "description"
-    t.string   "currency"
-    t.string   "card"
-    t.integer  "customer_id"
-    t.integer  "pledge_id"
-    t.integer  "event_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "uuid"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -208,12 +187,13 @@ ActiveRecord::Schema.define(version: 20161024215800) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer  "event_id"
-    t.string   "buyer"
-    t.integer  "quantity"
-    t.integer  "amount"
+    t.date     "date"
+    t.decimal  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "event_id"
+    t.integer  "quantity"
+    t.integer  "amount"
   end
 
   create_table "users", force: :cascade do |t|

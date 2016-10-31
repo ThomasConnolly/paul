@@ -20,8 +20,7 @@
 #  full_name              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
-#  birthday               :date
-#  anniversary            :date
+#  member_id              :integer
 #  communicator           :boolean
 #  invitation_token       :string
 #  invitation_created_at  :datetime

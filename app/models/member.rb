@@ -2,14 +2,15 @@
 #
 # Table name: members
 #
-#  id         :integer          not null, primary key
-#  first_name :string
-#  last_name  :string
+#  id            :integer          not null, primary key
+#  last_name     :string
+#  first_name    :string
+#  email         :string
+#  birthday      :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #  membership_id :string
-#  email      :string
-#  birthday   :date
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  full_name     :string
 #
 
 class Member < ActiveRecord::Base

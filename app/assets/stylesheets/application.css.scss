@@ -430,6 +430,12 @@ list-style-type: none;
   background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
   background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
 }
+
+.btn-modal-footer {
+  width: 100px;
+  height: 100px
+}
+
 .default-avatar{
   padding-top: 12px;
   text-align: center;

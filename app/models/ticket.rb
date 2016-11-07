@@ -19,8 +19,9 @@ class Ticket < ActiveRecord::Base
   before_save :set_amount
   after_update :email_buyer
 
-  
+  default_scope -> { order('last_name') }
 
+  
 
   def set_amount
     self.amount = self.quantity * self.price

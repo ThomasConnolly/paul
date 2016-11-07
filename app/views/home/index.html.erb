@@ -2,24 +2,24 @@
 <%= render 'slick' %>
 <div class="row">
   <div class="col-lg-8 col-sm-12 main-body">
-
- <!--<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+ <script type="text/javascript">
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+</script>
+ <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Get Todd Christmas Concert Tickets</h4>
+        <%= link_to cl_image_tag("ToddWebHome_gvg6l5.png", width: "99%"), "events/1/tickets/new" %>
+        <h3 class="text-center">Click picture to purchase concert tickets </h3>
       </div>
-      <div class="modal-body">
-        <p><%#= link_to "Click here", "/events/1/tikets/new" %></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Not now</button>
-        
-      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Close</button>
+        </div>
     </div>
   </div>
-</div> -->
+</div>
     <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
     <h2>Sunday 8, 9:15 and 10:45 a.m.</h2>

@@ -9,11 +9,8 @@
 
   <%= form_tag ticket_charges_path, id: 'chargeForm' do %> 
     <script 
-      src="https://checkout.stripe.com/checkout.js"
-      data-zip-code="true"
-      data-image="https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png"
-      data-allow-remember-me="false">
-      </script>
+      src="https://checkout.stripe.com/checkout.js">
+    </script>
       <%= hidden_field_tag 'stripeToken' %>
       <%= hidden_field_tag 'stripeEmail' %>
       <%= hidden_field_tag 'ticket_id', @ticket.id %>
@@ -21,7 +18,9 @@
       <script>
         var handler = StripeCheckout.configure({
           key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-          
+          zipCode: true,
+          image: 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png',
+          allowRememberMe: false,
           token: function(token, arg) {
             document.getElementById("stripeToken").value = token.id;
             document.getElementById("stripeEmail").value = token.email;

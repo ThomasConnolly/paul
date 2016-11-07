@@ -17,10 +17,21 @@
 class Ticket < ActiveRecord::Base
   belongs_to :event
   before_save :set_amount
+  after_update :email_buyer
+
   
 
 
   def set_amount
     self.amount = self.quantity * self.price
    end 
+
+
+  private
+
+
+  def email_buyer
+    TicketMailer.ticket_receipt(self).deliver
+  end
+
 end

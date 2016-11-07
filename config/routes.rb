@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'home/invitation'
   get 'members/index'
   get 'members/import'
-  resources :fake_stripes
+  get 'thanks', to: 'tickets#thanks', as: 'thanks'
   resources :events do
-    resources :tickets, only: [:new, :show, :create]
+    resources :tickets, only: [:new, :show, :create, :update, :index]
   end
   resources :members do
     collection do
@@ -53,8 +53,9 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-  resources :charges
-  resource :pledge_charges, only: [:create]    
+  resources :ticket_charges, only: [:new, :create]
+  resources :charges, only: [:new, :create]
+  resources :pledge_charges, only: [:new, :create]    
   resources :members
   
   resources :users do

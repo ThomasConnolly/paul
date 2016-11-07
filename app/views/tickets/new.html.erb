@@ -1,7 +1,24 @@
+<div class="mt100"></div> 
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <%= image_tag(@event.url, width: "99%") %>
+      <h1>Purchase tickets for <%= @event.title %></h1> 
+        <p><%= @event.date.strftime('%A, %B %e, %Y') %>, <%= number_to_currency @event.price*0.01 %> per ticket. </p>
 
-    <h1><%= @event.title %></h1>
-    <p><%= @event.date.strftime('%A, %B %d, %Y') %>, <%= number_to_currency @event.price*0.01 %> per ticket.</p>
-    
+           <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <%= simple_form_for([@event, @ticket]) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.hidden_field :price, :value => @event.price %>
+            <%= f.hidden_field :event_id, :value => @event.id %>
+            <%= f.input :first_name %> &nbsp;<%= f.input :last_name %> <br>
+            <%= f.input :quantity, label: "Number of tickets" %>
 
-
-<%= render 'form' %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit,  "Create order", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+</div>
+  

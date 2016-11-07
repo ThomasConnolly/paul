@@ -1,0 +1,3 @@
+<h3>Hello <%= @ticket.first_name %>,</h3>
+<p>This is  your receipt for <%= pluralize(@ticket.quantity, "ticket") %> to <%= @ticket.event.title %> on <%= @ticket.event.date.strftime('%A, %B %e, %Y') %> The tickets will be in the name <strong><%= @ticket.first_name %> <%= @ticket.last_name %> </strong> at the door.</p>
+<p>Showtime is <%= @ticket.event.time.strftime('%l:%M %P') %>. Enjoy the concert, and thanks again!</p>

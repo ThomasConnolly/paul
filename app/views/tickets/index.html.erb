@@ -1,0 +1,5 @@
+<h1>Ticket Call List</h1>
+<% @tickets.each do |t| %>
+<p><strong><%= t.last_name %>, <%= t.first_name %></strong> <%= t.email %>, Tickets: <%= t.quantity %></p>
+<% end %>
+<p>Running count of tickets sold: <%= @tickets.sum(:quantity) %>

@@ -1,10 +1,16 @@
 class TicketsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:index, :create]
+  
   def show
     @ticket = Ticket.find(params[:id])
     @event = Event.find(params[:event_id])
   end
 
+  def index
+    @tickets = Ticket.all
+    @event = Event.find(params[:event_id])
+  end
+  
   def new
     @ticket = Ticket.new
     @event = Event.find(params[:event_id])
@@ -19,11 +25,13 @@ class TicketsController < ApplicationController
       render "new"
     end
   end
-
+  
+  def update
+  end
 
   private
 
     def ticket_params
-    params.require(:ticket).permit(:event_id, :email, :customer_id, :quantity, :amount, :price)
+    params.require(:ticket).permit(:event_id, :email, :customer_id, :quantity, :amount, :price, :first_name, :last_name)
   end
 end

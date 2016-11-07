@@ -6,9 +6,10 @@
 
     <div class="form-inputs">
       <%= f.input :title %>
-      <%= f.input :price %>
+      <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
       <%= f.input :date %>
-      <%= f.input :ticket_quantity %>
+      <%= f.input :time, label: "Time. Use military time, e.g. 19 for 7 p.m." %>
+      <%= f.input :quantity, label: "Quantity of tickets being printed for this event" %>
     </div>
 
     <div class="form-actions">

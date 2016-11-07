@@ -1,5 +1,6 @@
 <h1><%= @event.title %></h1>
 <p>Ticket price: <%= number_to_currency @event.price*0.01 %></p>
-<p>Event date: <%= @event.date %></p>
+<p>Event date: <%= @event.date.strftime('%A, %B %e, %Y') %>, time: <%= @event.time.strftime("%l:%M %P") %></p>
 
 <p><strong><%= link_to "Get tickets!", new_event_ticket_path(@event) %></strong></p>
+<%= link_to 'Edit', edit_event_path %>

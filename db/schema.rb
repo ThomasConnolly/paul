@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031183209) do
+ActiveRecord::Schema.define(version: 20161107014621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,12 +67,8 @@ ActiveRecord::Schema.define(version: 20161031183209) do
     t.datetime "updated_at", null: false
     t.integer  "quantity"
     t.integer  "amount"
-  end
-
-  create_table "fake_stripes", force: :cascade do |t|
-    t.string   "tickets"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "url"
+    t.time     "time"
   end
 
   create_table "homilists", force: :cascade do |t|
@@ -187,13 +183,17 @@ ActiveRecord::Schema.define(version: 20161031183209) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.date     "date"
     t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "event_id"
     t.integer  "quantity"
     t.integer  "amount"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "card"
+    t.string   "customer_id"
   end
 
   create_table "users", force: :cascade do |t|

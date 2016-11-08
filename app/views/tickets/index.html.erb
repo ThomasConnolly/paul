@@ -1,5 +1,7 @@
 <h1>Ticket Call List</h1>
 <% @tickets.each do |t| %>
+<% if t.customer_id.present? %>
 <p><strong><%= t.last_name %>, <%= t.first_name %></strong> <%= t.email %>, Tickets: <%= t.quantity %></p>
 <% end %>
-<p>Running count of tickets sold: <%= @tickets.sum(:quantity) %>
+<% end %>
+<p>Running count of tickets sold: <%= @tickets.where("customer_id != ''").sum(:quantity) %>

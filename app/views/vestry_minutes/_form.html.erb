@@ -1,5 +1,5 @@
 <%= simple_form_for @vestry_minute, html: { multipart: true } do |f| %>
-
+  <h3>Insert date of the meeting</h3>
   <div class="form-group">
     <%= f.date_select :date, :class => 'datepicker' %><br>
     <%= f.input :minutes, as: :ckeditor, input_html: { ckeditor: { toolbar: 'body' }}%>

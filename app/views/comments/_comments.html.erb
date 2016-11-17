@@ -5,7 +5,7 @@
     <p><%= (comment.body) %></p>
     </div>
        <div class="comment-user"> <%= comment.user.full_name.titleize %>
-        <small> made this comment 
+         made this comment 
         <%= time_ago_in_words(comment.created_at) %> ago. &nbsp;
   <% if current_user == comment.user %>
     <%= link_to "Delete comment", comment, 

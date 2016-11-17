@@ -1,23 +1,26 @@
 <header>
-  <div class="header">
-    <div id="home-logo">
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", { id: 'home-logo', width: '355' }) %>
+  <div class="row">
+  <div class="mt30"></div>
+    <div class="col col-md-6 col-sm-12">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: '450') %>
     </div>
-      <div id="menu-one"> 
+      <div class="col col-md-2 mt50"> 
         <button class="btn-custom" data-jq-dropdown="#faithdd">Faith >></button>
       </div> 
-      <div id="menu-two"> 
+      <div class="col col-md-2 mt50"> 
        <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
       </div>
-      <div class="clearall"></div>
-        <div id="menu-five">
-          <p><small>
-          <% if user_signed_in? %>
-            <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
-          <% else %>
-            <%= link_to "Member sign in", new_user_session_path %>
-          <% end %>
-          </small></p>
+  </div>    
+  <div class="row mt30">
+
+    <div class="col col-md-5 col-md-offset-7">
+      <p><small>
+      <% if user_signed_in? %>
+        <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, method: :delete %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
+      <% else %>
+        <%= link_to "Member sign in", new_user_session_path %>
+      <% end %>
+      </small></p>
         </div>
   </div>
   <div class="mt30"></div>
@@ -28,7 +31,7 @@
           <li> <%=link_to "Home", root_path %></li>
           <li> <%=link_to "Worship", worship_index_path %> </li>
           <li> <%=link_to "Sermons", sermons_path %> </li>
-          <li> <%=link_to "Adult Education", formation_index_path %> </li>
+          <!-- <li> <%#=link_to "Adult Education", formation_index_path %> </li> -->
           <li> <%=link_to "Sunday School", sunday_school_index_path %> </li>
           <li> <%=link_to "Leadership", leadership_index_path %> </li>
           <li> <%=link_to "Vestry Meeting Minutes", vestry_minutes_path %> </li>

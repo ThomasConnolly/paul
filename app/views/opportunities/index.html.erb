@@ -1,7 +1,7 @@
 
 
   <div class="row">
-    <div class="col-md-8 main-body">
+    <div class="col-md-8 col-sm-12 main-body">
       <h1>There's a place for you at St. Paul's</h1>
       <% @opportunities.each  do |opportunity| %>
         <h2><%= opportunity.ministry %></h2>
@@ -18,7 +18,7 @@
       <% end %>
     </div>
   
-        <div class="col-md-4 sidebar">
+        <div class="col-md-4 col-sm-6 sidebar">
           <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
           <h3>This list is incomplete!</h3>
             <p>There are many ways to be involved at Saint Paul's. Your participation in your church makes for a healthier and happier congregation.</p>

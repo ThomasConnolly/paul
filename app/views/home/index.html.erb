@@ -1,12 +1,12 @@
 
 <%= render 'slick' %>
 <div class="row">
-  <div class="col-lg-8 col-sm-12 main-body">
- <script type="text/javascript">
+<div class="col-md-8 col-sm-12 main-body">
+  <script type="text/javascript">
     $(window).load(function(){
         $('#myModal').modal('show');
     });
-</script>
+  </script>
  <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
   <div class="modal-dialog" role="dialog">
     <div class="modal-content">
@@ -20,22 +20,21 @@
     </div>
   </div>
 </div>
-    <h1 id="welcome">Come worship with us!</h1>
+  <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
     <h2>Sunday 8, 9:15 and 10:45 a.m.</h2>
-    <p>Nursery/Sunday School available during the two later services. Adult education group meets at 9:15 a.m. For a description of this class see <em>Spreading Good News, </em> below. </p>
-    <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
-    <p class="text-center"><strong><%= link_to "Click here for Sunday's Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+      <p>Nursery/Sunday School available during the two later services. Adult education group meets at 9:15 a.m. For a description of this class see <em>Spreading Good News, </em> below. </p>
+      <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
+      <p class="text-center"><strong><%= link_to "Click here for Sunday's Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
+      <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/FrSteve.png", width:"175", class: "floatleft") %><p><h3>Spreading the Good News</h3> is the title of our new adult formation course written by the Rev. Steve Zimmerman for all who want to know more about the teachings of the Episcopal Church.  We meet in the library at 9:15 a.m. to listen to a 15-20 minute podcast, then share our responses and learn from one another. All are welcome</p><p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
+    <div class="mt30"></div>
     
-    
-    
-    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"80%", class: "image-center") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center") %>
     <h1>Welcome to the Farmers&rsquo; Market</h1>
     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"70%", class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"35%", class: "floatright") %>
     <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %>
     </p>
     <div class="mt30"></div><div class="clearall"></div>
@@ -43,7 +42,7 @@
     <div class="mt30"></div>
 
 
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %>
+    <!-- <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %> -->
     <br>
     <div class="mt30"></div>
     <div id="newsfeed">
@@ -51,17 +50,19 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 sidebar"><!--removed sidebar and added well and sm -->
+  <div class="col-md-4 col-sm-6 sidebar"><!--removed sidebar and added well and sm -->
   <!--http://ssje.org/word/?feed=rss2 -->
     <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/update.png", width: "95%", class: "image-center") %>
+      <p><strong>Thanksgiving service </strong>will be at 1 p.m., followed by a 2 p.m. turkey feast in Trinity Hall. Please sign up so our hosts may be prepared!</p>
+      <p> We're still looking for a few strong voices to help sing Christmas carols at the 5 p.m. <strong> Christmas pageant</strong> on Dec. 18. Just let Charlene Connolly know you'll be there.</p>
     
    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/Tad.jpg", width: "99%") %>
    <p><strong>The Rev. Wendel Meyer, </strong> better known as "Tad", has joined us as assisting priest. In addition to his duties on the altar, he will also exercise his teaching ministry at St. Paul's. 
     <%= link_to "Click here", leadership_index_path %> to read Fr. Tad's bio.</p>
 
          <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
-      <p>The <strong>vestry</strong> meets today at 6:30 p.m. in the library.</p>   
+        
       <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p>
      
 <%= cl_image_tag("logos/nameTag.png", width: "90%", class: "image-center") %>

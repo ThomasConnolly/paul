@@ -1,8 +1,9 @@
 
   <div class="row">
-    <div class="col-md-8 main-body">
+    <div class="col-md-8 col-sm-12 main-body">
     <h1>Vestry Reports</h1>
-    <p>This is where vestry members submit their reports. Only vestry members will be able to ask questions and make comments, which may inspire the author to edit the report. The report then is presented to the vestry at its regular meeting. Once submitted to the vestry, the report becomes available to the whole parish.</p>
+      <p>This is where vestry members submit their reports. Only vestry members will be able to ask questions and make comments, which may inspire the author to edit the report. The report then is presented to the vestry at its regular meeting. Once submitted to the vestry, the report becomes available to the whole parish.</p>
+      
       <section>
         <div class="create-vreport">
           <% if current_user.avatar.present? %>
@@ -20,6 +21,7 @@
           <div id="vreports-form" style="display:none;">
           </div>   
       </section>
+      
       <section>
         <div class="mt30"> </div>
         <div id="vreports">
@@ -29,7 +31,7 @@
       </section>
   </div>
 
-    <div class="col-md-4 sidebar">
+    <div class="col-md-4 col-sm-6 sidebar">
       <h2>About vestry reports</h2>
       <p>Vestry members at Saint Paul's take on certain responsibilities and are asked to make periodic reports.</p>
       <p>Areas of responsibility are:

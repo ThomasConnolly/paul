@@ -22,14 +22,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "slick";
-@media (min-width:992px)
- {
-    .container{width:970px}
-  }
-@media (min-width:1200px)
-  {
-    .container{width:970px}
-  }  
+
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -41,11 +34,12 @@
   background-image:url("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1426356142/logos/Saint_Pauls_Logo.gif");
   width : 100%;
   height: 100%;
+  font-size: 18px;
   text-align:center;
   margin: 0px auto;
 }
 .page {
- width: 970px;
+ width: 1200px;
  color : #333;
  background-color: #fff;
  border : 1px solid #C0C0C0;
@@ -55,12 +49,10 @@
  font-family : Verdana, Helvetica, Arial, Sans-Serif;
  text-align:left;
 }
-.header {
-  width: 100%;
-  height: 140px;
-}
+
 .main-body {
   padding-right: 36px;
+  font-size: 1em;
 }
 .sidebar {
   background-color: #eee;
@@ -73,35 +65,36 @@ div.hidden {
 
 h1 {
 color : #5c004c;
-font-size : 36px;
-letter-spacing: -1px;
+font-size : 2.25em;
 line-height : 100%;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
-margin-top : 14px;
-margin-bottom : 3px;
+margin-top : 1em;
 }
 h2 {
 color : #5c004c;
-font-size : 30px;
+font-size : 1.9em;
 font-family : Times, Serif;
 font-style : italic;
 }
 h3 {
 color : #5c004c;
-font-size : 24px;
+font-size : 1.5em;
 margin-top: 10px;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
 }
 h4 {
 color : #5c004c;
-font-size : 18px;
+font-size : 1.2em;
 font-family : Times, Serif;
-margin-top : 8px;
+margin-top : .5em;
 }
 p {
     text-indent: 20px;
-    font-size : 16px;
-    line-height:24px;
+    font-size : 1em;
+    line-height: 1.5em;
+}
+p.sidebar {
+  font-size: .9em;
 }
       
 p.poem {
@@ -110,12 +103,12 @@ p.poem {
     font-style:italic;
 }
 p.chat-name {
-  font-size: 14pt;
+  font-size: 1em;
   font-style: bold;
 }
 p.owner-edit-links {
-  font-size: 7px;
-  line-height: 10px;
+  font-size: .5em;
+  line-height: .75;
   margin-top: -15px;
   padding-right: 300px;
   float: left;
@@ -127,11 +120,6 @@ p.center-bold-text {
   font-weight: bold;
 }
 
-#home-logo {
-    float:left;
-    margin-left: 10px;
-    margin-top: 20px; 
-}
 #menu-one, #menu-two, #menu-three {
   margin-top: 70px;
   float: left;
@@ -148,7 +136,7 @@ p.center-bold-text {
 }
 .submenu  {
 background: white;
-font-size: 12px;
+font-size: .75em;
 color: black;
 text-shadow: none;
 width:175px;
@@ -197,7 +185,7 @@ list-style-type: none;
 
 .scroller {
   background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
-  width: 842px;
+  width: 100%;
   height: 267px;
 }
 
@@ -254,8 +242,8 @@ list-style-type: none;
   border:solid black;
   text-align:center;
   font-family : Verdana, Helvetica, Arial, Sans-Serif;
-  font-size : 14px;
-  line-height:18px;
+  font-size : 1em;
+  line-height: 1.2em;
 }
 .sermon-page {
   width: 850px;
@@ -266,18 +254,18 @@ list-style-type: none;
   text-align:left;
 }
 .sermon-page p {
-  font-size: 22px;
-  line-height: 33px;
+  font-size: 1.1em;
+  line-height: 1.6em;
   font-family: Times, serif;
 }
 
 .sermon-text {
-  font-size: 22px;
-  line-height: 33px;
+  font-size: 1.1em;
+  line-height: 1.6em;
   font-family: Times, serif;
 }
 .sermon-box {
-  font-size: 17px;
+  font-size: .9em;
   float:right;
   margin:10px;
   height:190px;
@@ -304,7 +292,7 @@ list-style-type: none;
   text-decoration: underline;   
 }
 .chat-name {
-  font-size: 20px;
+  font-size: 1em;
   float: left;
 }
 #notice {
@@ -326,14 +314,14 @@ list-style-type: none;
       text-align: left;
       font-weight: bold;
       padding: 5px 5px 5px 15px;
-      font-size: 12px;
+      font-size: .75em;
       margin: -7px;
       margin-bottom: 0px;
       background-color: #c00;
       color: #fff;
     }
     ul li {
-      font-size: 12px;
+      font-size: .75em;
       list-style: square;
   }
 }
@@ -346,8 +334,8 @@ list-style-type: none;
   -moz-border-radius: 4px;
   border-radius: 4px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: .9em;
+  line-height: 1.25em;
 }
 .flash_notice {
   background-color: #dff0d8;
@@ -376,7 +364,7 @@ list-style-type: none;
   border: 1px solid rgb(102, 0, 0);
   padding: 4px 10px 4px 10px;
   color:rgb(255, 255, 255);
-  font-size:20px;
+  font-size: 1.25em;
   font-family:arial, serif;
   text-shadow: 2px 2px #090974 rgb(0, 0, 0);
   border-radius:5px 5px 5px 5px;
@@ -396,7 +384,7 @@ list-style-type: none;
   border: 1px solid rgb(102, 0, 0);
   padding: 4px 10px 4px 10px;
   color:rgb(255, 255, 255);
-  font-size:20px;
+  font-size: 1.25em;
   font-family:arial, serif;
   text-shadow: 2px 2px #090974 rgb(0, 0, 0);
   border-radius:5px 5px 5px 5px;
@@ -416,7 +404,7 @@ list-style-type: none;
   border: 1px solid rgb(102, 0, 0);
   padding: 4px 10px 4px 10px;
   color:rgb(255, 255, 255);
-  font-size:20px;
+  font-size: 1.25em;
   font-family:arial, serif;
   text-shadow: 2px 2px #090974 rgb(0, 0, 0);
   border-radius:5px 5px 5px 5px;
@@ -477,13 +465,7 @@ list-style-type: none;
   padding: 12px;
 }
 .time-ago {
-  font-size: 8px;
   color: gray;
-}
-.edit-delete-line {
-  font-size: 12px;
-  color: gray;
-  line-height: 14px;
 }
 .upload_picture {
   width: 300px;

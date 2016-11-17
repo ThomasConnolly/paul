@@ -71,7 +71,7 @@ margin-top : 1em;
 }
 h2 {
 color : #5c004c;
-font-size : 1.9em;
+font-size : 1.7em;
 font-family : Times, Serif;
 font-style : italic;
 }
@@ -88,9 +88,11 @@ font-family : Times, Serif;
 margin-top : .5em;
 }
 p {
-    text-indent: 20px;
     font-size : 1em;
     line-height: 1.5em;
+}
+.sidebar {
+  margin-top: 2em;
 }
 p.sidebar {
   font-size: .9em;
@@ -119,20 +121,6 @@ p.center-bold-text {
   font-weight: bold;
 }
 
-#menu-one, #menu-two, #menu-three {
-  margin-top: 70px;
-  float: left;
-  margin-left: 135px;
-  position: relative;
-  z-index:1000;
-  list-style-type: none;
-}
-
-#special-menu-four {
-    margin-left: 485px;
-    margin-top: -40px;
-    margin-bottom: 60px;  
-}
 .submenu  {
 background: white;
 font-size: .75em;
@@ -145,28 +133,13 @@ display: none;
 list-style-type: none;
 }
 
-#menu-one:hover .submenu {
-    display: block;
-    position:absolute;
-    z-index:3000; 
- }
- #menu-two:hover .submenu {
-    display: block;
-    position:absolute;
-    z-index:3000; 
- }
- #menu-three:hover .submenu {
-    display: block;
-    position:absolute;
-    z-index:3000; 
- }  
-#menu-four {
-    margin-left: 525px;
-    padding-top: 50px;
+#faith-button {
+  float:left;
 }
-#menu-five {
-    float:right;
-    margin-right: 45px;
+
+#action-button {
+  float:left;
+  margin-left: 60px;
 }
 
 .dropdown-menu ul {
@@ -180,7 +153,6 @@ list-style-type: none;
   position: relative;
   float: left; border: 1px solid #000;
 }
-
 
 .scroller {
   background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
@@ -448,6 +420,9 @@ list-style-type: none;
 }
 .mt50 {
   margin-top: 50px;
+}
+.mt60 {
+  margin-top: 60px;
 }
 .mt100 {
   margin-top: 100px;

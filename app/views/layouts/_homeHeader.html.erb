@@ -4,14 +4,16 @@
       <div class="mt30"></div>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: '450') %>
     </div>
-      <div class="col col-md-2 mt50"> 
+      <div class="col col-md-5 col-md-offset-1 mt100"> 
+        <div id="faith-button">
         <button class="btn-custom" data-jq-dropdown="#faithdd">Faith >></button>
-      </div> 
-      <div class="col col-md-2 mt50"> 
-       <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
+        </div> 
+        <div id="action-button">
+        <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
+        </div>
       </div>
-  </div>    
-  <div class="row mt30">
+  </div> 
+  <div class="row">  
     <div class="col col-md-5 col-md-offset-7">
       <p><small>
       <% if user_signed_in? %>
@@ -20,10 +22,9 @@
         <%= link_to "Member sign in", new_user_session_path %>
       <% end %>
       </small></p>
-        </div>
-  </div>
+    </div>  
+  </div>    
   <div class="mt30"></div>
-</header>
 
     <div id="faithdd" class="jq-dropdown jq-dropdown-tip">
       <ul class="jq-dropdown-panel">

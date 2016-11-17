@@ -27267,7 +27267,7 @@ CKEDITOR.editorConfig = function( config )
                 adaptiveHeight: false,
                 appendArrows: $(element),
                 appendDots: $(element),
-                arrows: true,
+                arrows: false,
                 asNavFor: null,
                 prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',

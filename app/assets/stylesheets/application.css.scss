@@ -166,11 +166,15 @@ list-style-type: none;
 }
 .floatleft {
     float: left;
-    padding: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
 }
 .floatright {
     float: right;
-    padding: 8px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .footer {
     margin-top: 10px;

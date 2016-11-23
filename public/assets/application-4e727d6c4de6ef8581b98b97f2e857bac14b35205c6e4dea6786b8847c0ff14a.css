@@ -1206,7 +1206,7 @@ a {
 .slick-arrow.slick-hidden {
     display: none;
 }
-/* line 4, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 4, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-icon {
   background-position: center center;
   background-repeat: no-repeat;
@@ -1215,96 +1215,108 @@ a {
   height: 18px;
   width: 18px;
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-twitter {
   background-image: url(/assets/social-share-button/twitter-7b64ce0117a85c5d52ed45c27707af61d9b0e0d590284baa287cfe87867b9ae1.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-facebook {
   background-image: url(/assets/social-share-button/facebook-03210e1663ee772e93ed5d344cdb36657b68342821aaebe982f2f984915990b3.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-google_bookmark {
   background-image: url(/assets/social-share-button/google_bookmark-bb4c960c0421cb7dce602d10e744692bcc1c54f323410f4965d508f96e2255ce.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-google_plus {
   background-image: url(/assets/social-share-button/google_plus-50c049fbb29cd3346f1bf9349017b644bcd00a53b56bd156728850f57bd85c0a.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-weibo {
   background-image: url(/assets/social-share-button/weibo-a345a6ca554e6f388da9eb35746bb0425cb018c16408ba82852c66d375245d6f.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-qq {
   background-image: url(/assets/social-share-button/qq-4dbae8223fc7823f6d73bc7fbe113eb894f4c174ec3ae93103ca382c78a2bf67.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-delicious {
   background-image: url(/assets/social-share-button/delicious-0c55f72f821aae5352691f13eb64bf3435573e2169d0720477ed367b2f1ed28e.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-linkedin {
   background-image: url(/assets/social-share-button/linkedin-b7fd42895b291003c444a9c2acf867ea813671e0b725a5d7c05dbb13f5c0fdd3.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-tumblr {
   background-image: url(/assets/social-share-button/tumblr-330a37f93cce7c27a750188d0bfdbed3a22f566b807e64d21131dcdc94e08ec3.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-pinterest {
   background-image: url(/assets/social-share-button/pinterest-86203d156197cce4087fee058b920d275c535df5fd59d8caa83da0ef41d1ec7f.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-douban {
   background-image: url(/assets/social-share-button/douban-46298c27e3bc6d59951c0bbc464339a5ba1b44e3b25b571874f1baacd7af2495.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-wechat {
   background-image: url(/assets/social-share-button/wechat-d8852cc3396a7a53eba39595d2e9f638c93a34ab1a0f41bae4ff391b63815f56.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-vkontakte {
   background-image: url(/assets/social-share-button/vkontakte-0c2b68277fade991d74efcbdb6f7b359a35e65156cbada9625a3fe8f73151c14.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-xing {
   background-image: url(/assets/social-share-button/xing-0ebccb4042c8c7220e471c4f569df2bf27da227db425525819b6848c86a1603e.svg);
 }
-/* line 15, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .social-share-button .ssb-email {
   background-image: url(/assets/social-share-button/email-7067143cbe69d9d8cf25e67fda1a315d133c2b79074a09088bd712cc5c81135d.svg);
 }
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
+.social-share-button .ssb-reddit {
+  background-image: url(/assets/social-share-button/reddit-f5fc462f44dbeff78983b3b64cb69b6c777a22906767bdb0b283014ac79b37de.svg);
+}
+/* line 16, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
+.social-share-button .ssb-hacker_news {
+  background-image: url(/assets/social-share-button/hacker_news-d89b13fec49355a787389a776f2e03a0a38314abf93777b8865f8c5f146eaf8d.svg);
+}
 
-/* line 21, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 22, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .ss-wechat-dialog {
-  width: 270px;
-  height: 300px;
+  width: 300px;
   position: fixed;
   background: #fff;
-  padding: 10px;
-  border: solid 1px #ddd;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
   z-index: 11001;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.2em;
 }
-/* line 32, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 33, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
+.ss-wechat-dialog .wechat-popup-header {
+  font-weight: bold;
+}
+/* line 37, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .ss-wechat-dialog .wechat-dialog-qr {
   text-align: center;
-  margin: 10px 0px;
+  margin: 25px 0px;
 }
-/* line 37, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 42, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .ss-wechat-dialog .wechat-popup-close {
   width: 16px;
   height: 16px;
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: 10px;
   color: #999;
   text-decoration: none;
   font-size: 16px;
 }
-/* line 48, /home/tom/.rvm/gems/ruby-2.3.1/gems/social-share-button-0.6.0/app/assets/stylesheets/social-share-button.scss */
+/* line 53, /home/tom/.rvm/gems/ruby-2.3.3/gems/social-share-button-0.8.4/app/assets/stylesheets/social-share-button.scss */
 .ss-wechat-dialog .wechat-popup-footer {
   text-align: left;
   line-height: 22px;
@@ -1320,14 +1332,14 @@ a {
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-/* line 14, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
+/* line 14, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
 .fileinput-button {
   position: relative;
   overflow: hidden;
   display: inline-block;
 }
 
-/* line 19, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
+/* line 19, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
 .fileinput-button input {
   position: absolute;
   top: 0;
@@ -1342,7 +1354,7 @@ a {
 
 /* Fixes for IE < 8 */
 @media screen\9 {
-  /* line 33, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
+  /* line 33, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload.scss */
   .fileinput-button input {
     filter: alpha(opacity=0);
     font-size: 100%;
@@ -1359,13 +1371,13 @@ a {
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-/* line 14, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+/* line 14, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
 .fileupload-buttonbar .btn,
 .fileupload-buttonbar .toggle {
   margin-bottom: 5px;
 }
 
-/* line 18, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+/* line 18, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
 .progress-animated .progress-bar,
 .progress-animated .bar {
   background: url(/assets/progressbar-a45ab53b619988cefd45f49cfacc604dd499b93f53a96927cf7b2d965f421f48.gif) !important;
@@ -1373,13 +1385,13 @@ a {
           filter: none;
 }
 
-/* line 23, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+/* line 23, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
 .fileupload-process {
   float: right;
   display: none;
 }
 
-/* line 27, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+/* line 27, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
 .fileupload-processing .fileupload-process,
 .files .processing .preview {
   display: block;
@@ -1389,33 +1401,33 @@ a {
   background-size: contain;
 }
 
-/* line 35, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+/* line 35, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
 .files audio,
 .files video {
   max-width: 300px;
 }
 
 @media (max-width: 767px) {
-  /* line 41, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  /* line 41, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
   .fileupload-buttonbar .toggle,
   .files .toggle,
   .files .btn span {
     display: none;
   }
 
-  /* line 46, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  /* line 46, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
   .files .name {
     width: 80px;
     word-wrap: break-word;
   }
 
-  /* line 50, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  /* line 50, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
   .files audio,
   .files video {
     max-width: 80px;
   }
 
-  /* line 54, /home/tom/.rvm/gems/ruby-2.3.1/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  /* line 54, /home/tom/.rvm/gems/ruby-2.3.3/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
   .files img,
   .files canvas {
     max-width: 100%;
@@ -10428,17 +10440,21 @@ button.close {
   box-sizing: border-box;
 }
 
+/* line 33, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+html {
+  font-size: 100%;
+}
+
 /* line 34, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 body {
   background-image: url("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1426356142/logos/Saint_Pauls_Logo.gif");
   width: 100%;
   height: 100%;
-  font-size: 18px;
   text-align: center;
   margin: 0px auto;
 }
 
-/* line 42, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 41, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .page {
   color: #333;
   background-color: #fff;
@@ -10450,36 +10466,37 @@ body {
   text-align: left;
 }
 
-/* line 53, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 52, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .main-body {
   padding-right: 36px;
-  font-size: 1em;
+  font-size: 1.125rem;
 }
 
-/* line 57, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 56, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sidebar {
   background-color: #eee;
-  padding-right: 8px;
+  padding-right: .9rem;
 }
 
-/* line 62, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 61, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 div.hidden {
   display: none;
 }
 
-/* line 66, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 65, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h1 {
   color: #5c004c;
-  font-size: 2.25em;
+  font-size: 3rem;
   line-height: 100%;
   font-family: Verdana, Helvetica, Arial, Sans-Serif;
-  margin-top: 1em;
+  margin-top: 1.25rem;
 }
 
-/* line 73, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 72, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h2 {
   color: #5c004c;
-  font-size: 1.7em;
+  font-size: 2rem;
+  margin-top: 1rem;
   font-family: Times, Serif;
   font-style: italic;
 }
@@ -10487,33 +10504,33 @@ h2 {
 /* line 79, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h3 {
   color: #5c004c;
-  font-size: 1.5em;
-  margin-top: 10px;
+  font-size: 1.75rem;
+  margin-top: .8rem;
   font-family: Verdana, Helvetica, Arial, Sans-Serif;
 }
 
 /* line 85, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h4 {
   color: #5c004c;
-  font-size: 1.2em;
+  font-size: 1.5rem;
   font-family: Times, Serif;
-  margin-top: .5em;
+  margin-top: .5rem;
 }
 
 /* line 91, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p {
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 /* line 95, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sidebar {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 /* line 98, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p.sidebar {
-  font-size: .9em;
+  font-size: .9rem;
 }
 
 /* line 102, /home/tom/paul/app/assets/stylesheets/application.css.scss */
@@ -10525,15 +10542,15 @@ p.poem {
 
 /* line 107, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p.chat-name {
-  font-size: 1em;
+  font-size: 1rem;
   font-style: bold;
 }
 
 /* line 111, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p.owner-edit-links {
-  font-size: .5em;
-  line-height: .75;
-  margin-top: -15px;
+  font-size: .6rem;
+  line-height: .75rem;
+  margin-top: -1rem;
   padding-right: 300px;
   float: left;
 }
@@ -10548,7 +10565,7 @@ p.center-bold-text {
 /* line 125, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submenu {
   background: white;
-  font-size: .75em;
+  font-size: .8rem;
   color: black;
   text-shadow: none;
   width: 175px;
@@ -10601,41 +10618,45 @@ p.center-bold-text {
 /* line 168, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatleft {
   float: left;
-  padding: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
 }
 
-/* line 172, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 174, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatright {
   float: right;
-  padding: 8px;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-/* line 176, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 180, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .footer {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* line 182, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 186, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .clearall {
   clear: both;
 }
 
-/* line 185, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 189, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .image-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 190, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 194, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .text-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 194, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 198, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .underConstruction {
   margin-left: 350px;
   margin-top: 70px;
@@ -10644,14 +10665,14 @@ p.center-bold-text {
   padding: 8px;
 }
 
-/* line 202, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 206, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #dropdown1 #dropdown2 {
   float: left;
   margin-right: 20px;
   margin-top: 40px;
 }
 
-/* line 208, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 212, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .talk-box {
   float: right;
   margin: 15px;
@@ -10661,90 +10682,73 @@ p.center-bold-text {
   border: solid black;
   text-align: center;
   font-family: Verdana, Helvetica, Arial, Sans-Serif;
-  font-size: 1em;
-  line-height: 1.2em;
+  font-size: 1.125rem;
+  line-height: 1.5em;
 }
 
-/* line 220, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.sermon-page {
-  width: 850px;
-  background-color: #fff;
-  margin: 0 auto !important;
-  padding-left: 40px;
-  padding-right: 40px;
+/* line 226, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.sermon p {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  font-family: Times, serif;
   text-align: left;
 }
 
-/* line 228, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.sermon-page p {
-  font-size: 1.1em;
-  line-height: 1.6em;
-  font-family: Times, serif;
-}
-
-/* line 234, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.sermon-text {
-  font-size: 1.1em;
-  line-height: 1.6em;
-  font-family: Times, serif;
-}
-
-/* line 239, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 232, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-box {
-  font-size: .9em;
   float: right;
   margin: 10px;
-  height: 190px;
-  width: 375px;
+  height: 215px;
+  width: 425px;
   padding: 6px;
   border-style: solid;
   border-width: 1px;
   text-align: center;
 }
 
-/* line 250, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 242, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-picture {
   float: left;
   margin: 10px;
   display: block;
 }
 
-/* line 255, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 247, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 258, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 250, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 263, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 255, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #opportunity-header {
   text-decoration: underline;
 }
 
-/* line 266, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 258, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
-  font-size: 1em;
+  font-size: 1rem;
   float: left;
 }
 
-/* line 270, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 262, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #notice {
   color: green;
 }
 
-/* line 273, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 265, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 278, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 270, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -10753,24 +10757,24 @@ p.center-bold-text {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 285, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 277, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: .75em;
+  font-size: .75rem;
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
   color: #fff;
 }
-/* line 295, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 287, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation ul li {
-  font-size: .75em;
+  font-size: .75rem;
   list-style: square;
 }
 
-/* line 300, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 292, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -10778,31 +10782,31 @@ p.center-bold-text {
   border: 1px solid #fbeed5;
   border-radius: 4px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .9em;
-  line-height: 1.25em;
+  font-size: .9rem;
+  line-height: 1.25rem;
 }
 
-/* line 312, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 304, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 317, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 309, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 322, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 314, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 325, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.create-post, .create-vreport, .create-story_idea {
+/* line 317, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.create-post, .create-vreport, .create-story_idea .create-jubilee {
   width: 100%;
   height: 140px;
   border: 1px;
@@ -10811,14 +10815,14 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 333, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 325, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom {
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #660000;
   padding: 4px 10px 4px 10px;
   color: white;
-  font-size: 1.25em;
+  font-size: 1.5rem;
   font-family: arial, serif;
   text-shadow: 2px 2px #090974 black;
   border-radius: 5px 5px 5px 5px;
@@ -10834,15 +10838,13 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #d1103d, #660000);
 }
 
-/* line 353, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 345, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:hover {
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #660000;
   padding: 4px 10px 4px 10px;
   color: white;
-  font-size: 1.25em;
-  font-family: arial, serif;
   text-shadow: 2px 2px #090974 black;
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
@@ -10857,15 +10859,13 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 373, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 363, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:active {
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #660000;
   padding: 4px 10px 4px 10px;
   color: white;
-  font-size: 1.25em;
-  font-family: arial, serif;
   text-shadow: 2px 2px #090974 black;
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
@@ -10880,13 +10880,13 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 394, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 382, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-modal-footer {
   width: 100px;
   height: 100px;
 }
 
-/* line 399, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 387, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .default-avatar {
   padding-top: 12px;
   text-align: center;
@@ -10898,7 +10898,7 @@ p.center-bold-text {
   margin-right: 6px;
 }
 
-/* line 409, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 397, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .big-avatar-missing {
   width: 200px;
   height: 260px;
@@ -10910,32 +10910,32 @@ p.center-bold-text {
   margin-right: 12px;
 }
 
-/* line 419, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 407, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 422, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 410, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 425, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 413, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 428, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 416, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 431, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 419, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 434, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 422, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -10945,29 +10945,41 @@ p.center-bold-text {
   padding: 12px;
 }
 
-/* line 442, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.time-ago {
+/* line 430, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.comment-user {
   color: gray;
+  font-size: .9rem;
+  float: right;
 }
 
-/* line 445, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 435, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.poster-name {
+  font-size: 1rem;
+}
+
+/* line 438, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 442, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 453, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 456, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
+}
+
+/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.edit-delete-show {
+  font-size: .75rem;
 }

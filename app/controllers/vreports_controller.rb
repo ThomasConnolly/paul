@@ -37,7 +37,7 @@ class VreportsController < ApplicationController
   def create
     @vreport = current_user.vreports.build(vreport_params)
       if @vreport.save
-        VestryMailer.vreport_created(@vreport).deliver_now
+        VestryMailer.vreport_created(@vreport).deliver_later
         respond_to do |format|
           format.html { redirect_to vreports_path(@vreport) }
           format.js

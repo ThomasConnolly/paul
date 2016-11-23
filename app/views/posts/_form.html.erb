@@ -1,20 +1,20 @@
 
 <%= simple_form_for @post do |f| %>
-  <%= f.input :content, placeholder: 'Type your post here', label: false, 
-  :autofocus => "autofocus", input_html: {rows: "6"} %>
+  <%= f.input :content, placeholder: 'Type your post here',
+  autofocus: true, label: false, input_html: {rows: "6"} %>
   
   <div class="upload_picture">
-    <%= f.input :post_picture, as: :attachinary, label: "Upload a picture", label_html: { class: "ui button gallery" } %>
+    <%= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>
   </div>
 
   <div class="upload_photos"> 
-    <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures', label_html:
-     { class: "ui button gallery" } %>
+    <%= f.input :photos, as: :attachinary, label: 'Upload up to four pictures' %>
   </div>
+  <div class="clearall"></div>
 
   <div class="submit-post">
-   <%= f.button :submit, class: "btn btn-primary btn-xs" %> &nbsp; 
-   <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
+   <%= f.button :submit, class: "btn btn-primary btn-lg" %> &nbsp; 
+   <%= link_to "Cancel", :back, class: "btn btn-danger btn-slg" %>
   </div>
 <% end %>
 <script>

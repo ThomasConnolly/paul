@@ -1,0 +1,11 @@
+
+    <%= simple_form_for(@jubilee_plan) do |f| %>
+    
+      <%= f.input :title, autofocus: true %>
+      <%= f.input :body %>
+      <%= f.input :user_name, title: "Your full name" %>
+
+      <div class="form-actions">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>

@@ -27,9 +27,9 @@
      <h1>From the Communicators</h1>
      <% @story_ideas.each do |story_idea| %>
      <h2><%= link_to story_idea.title, story_idea %></h2>
-     <p><small>By <%= story_idea.user.full_name.titleize %></small></p>
+     <p>By <%= story_idea.user.full_name.titleize %></p>
      <% if story_idea.comments.any? %>
-     <p><small><em>Comment count: <%= story_idea.comments.count %>  </em></small></p>
+     <p><small><em><%= pluralize story_idea.comments.count, "comment" %>  </em></small></p>
      <hr><br>
      <% end %>
      <% end %>
@@ -37,9 +37,10 @@
   </section>
   </div>
     <div class="col-md-4 col-sm-6 sidebar">
-      <h3> Resources </h3>
-      <p><%= link_to "Diocesan stylebook", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221889/2-Diocesan_Stylebook_2016.pdf" %></p>
+      <h3> Resources for communicators </h3>
+      <p><%= link_to "Episcopal Church Foundation 'Vital Practices'", "http://www.ecfvp.org/topics/topic/communications/" %>
       <p><%= link_to "Diocesan guidebook for using social media", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221891/3-socialmedia_2016_Guidelines_Final.pdf" %> </p>
+
       <p><%= link_to "Episcopal communicators website", "http://episcopalcommunicators.org/" %> </p>
       <p><%= link_to "Tips for internal communications, from our Methodist friends", "http://www.umcom.org/learn/5-tips-for-internal-church-communications" %> </p>
 

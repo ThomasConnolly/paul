@@ -1,15 +1,29 @@
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-<h1>Here's the post</h1>
-  <%= @post.content %>
-  <%= @post.user.full_name.titleize %>
-<br>
-<% @post.comments.each do |comment| %>
-<%= comment.body %><br>
-<span class="time-ago">Comment made <%= time_ago_in_words(comment.created_at) %> ago. 
-      </span></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Here's the post</h1>
+ 
+      <p class="poster-name">By <%= @post.user.full_name.titleize %></p>
 
-<% end %>
-<br>
-<%= link_to "<< Back to Posts", posts_path %>
+  <% if @post.post_picture? %>
+    <%= link_to cl_image_tag(@post.post_picture.path, 
+      :height => 350, :crop => :fit), cloudinary_url(@post.post_picture.path) %>
+  <% end %>
+    <% if @post.photos? %>
+      <%= render 'slides', post: @post %>
+    <% end %> 
+
+  <p> <%= @post.content %></p>
+    <br>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+      <span class="comment-user"> <%= comment.user.full_name.titleize %>
+         made this comment 
+        <%= time_ago_in_words(comment.created_at) %> ago. 
+      </span></p>
+  
+  <% end %>
+    <br>
+  <%= link_to "<< Back to all posts", posts_path %>
+  </div>
+</div> 

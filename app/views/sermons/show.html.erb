@@ -1,16 +1,16 @@
-  
-<div class="sermon-page">
-  <div class="mt50"></div>
+<div class="mt50"></div> 
+<div class="row">
+  <div class="col col-md-10 col-md-offset-1 col-sm-12">  
   <h1><%= @sermon.title %></h1>
     <p><%= @sermon.cites %></p>
-  <%= render 'serbox' %>
-  
-  <div class="sermon-text">
-    <%= raw @sermon.sermon_body %>
-  </div>
+      <%= render 'serbox' %>
+    <div class="sermon">
+      <%= raw @sermon.sermon_body %>
+    </div>
     
     <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_sermon_path(@sermon) %> 
     <% end %>
+  </div>
 </div>
  

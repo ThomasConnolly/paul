@@ -36,6 +36,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      PostMailer.post_created(@post).deliver_later  
       respond_to do |format|
         format.html { redirect_to posts_path }
         format.js
@@ -54,6 +55,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    redirect_to posts_path
   end
 
 

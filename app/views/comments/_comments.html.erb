@@ -1,7 +1,7 @@
 <% commentable ||= @commentable %>
 <% commentable.comments.each do |comment| %>
   <div id="comments"><div class="comment-body">
-  <hr>
+  
     <p><%= (comment.body) %></p>
     </div>
        <div class="comment-user"> <%= comment.user.full_name.titleize %>

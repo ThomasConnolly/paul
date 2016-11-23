@@ -4,9 +4,7 @@
   label: false, autofocus: true %><br>
   <%= f.input :url, placeholder: 'Do you wish to link to a website? Enter address here.',
    label: false %><br>
-   <div class="upload_picture">
-    <%= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture", label_html: { class: "ui button gallery" } %>
-  </div>
+    <%= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture" %>
 
   <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' }}%>
 
@@ -17,4 +15,3 @@
   </div>
 <% end %>
 
-<

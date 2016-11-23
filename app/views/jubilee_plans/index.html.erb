@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+<h1>Jubilee! Posts</h1>
+<div class="mt30"></div>
+
+<% @jubilee_plans.each do |jubilee_plan| %>
+  <h3><%= jubilee_plan.title %></h3>
+    <p><%= jubilee_plan.body %></p>
+    <p>Submitted by <%= jubilee_plan.user_name %> </p>
+        <p><small><%= link_to 'Show', jubilee_plan %> &nbsp; | <%= link_to 'Edit', edit_jubilee_plan_path(jubilee_plan) %> | &nbsp;
+        <%= link_to 'Destroy', jubilee_plan, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+    <% end %>
+  
+<div class="mt60"></div>
+
+<h3><%= link_to 'Create a new Jubilee! post', new_jubilee_plan_path %></h3>
+  <div class="mt60"></div>
+  </div>
+</div>

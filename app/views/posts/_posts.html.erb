@@ -18,16 +18,16 @@
     </div>
   <% end %>
   <br>
-  <p><strong>
-    <%= post.user.full_name.titleize  %></strong>::  
-    <%= simple_format(post.content) %>  
+  <p class="poster-name">
+    <%= post.user.full_name.titleize %>::  
+    <%= simple_format(post.content) %></p>  
       <p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
       <% if current_user == post.user %>
       | <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
       <%=link_to post,  method: :delete, data: 
         { confirm: 'This will delete your post and all its comments.' 
           }, remote: true do %> Delete! </span></p>
-          <hr>
+        
         <% end %>
       <% end %>
     <div class="clearall"></div>

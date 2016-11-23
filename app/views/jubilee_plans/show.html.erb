@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @jubilee_plan.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @jubilee_plan.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @jubilee_plan.user_name %>
+</p>
+
+<%= link_to 'Edit', edit_jubilee_plan_path(@jubilee_plan) %> |
+<%= link_to 'Back to the Jubilee! page', jubilee_plans_path %>

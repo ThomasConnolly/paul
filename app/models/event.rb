@@ -15,6 +15,7 @@
 
 class Event < ActiveRecord::Base
   has_many :tickets
+  validates_presence_of :title
   
 
 end

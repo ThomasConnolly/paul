@@ -23,13 +23,17 @@
 
   <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
+    <h2>Thanksgiving Worship: 1 p.m.</h2>
     <h2>Sunday 8, 9:15 and 10:45 a.m.</h2>
-      <p>Nursery/Sunday School available during the two later services. Adult education group meets at 9:15 a.m. For a description of this class see <em>Spreading Good News, </em> below. </p>
+      <p>Nursery/Sunday School available during the two later services. Adult Advent Form will meet at 9:15 a.m. for the 8 a.m. and 10:45 worshippers, and at 10:45 for the 9:15 worshippers. For a description of this class see <em>Advent Forum, </em> below. </p>
       <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
       <p class="text-center"><strong><%= link_to "Click here for Sunday's Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
       <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
 
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/FrSteve.png", width:"175", class: "floatleft") %><p><h3>Spreading the Good News</h3> is the title of our new adult formation course written by the Rev. Steve Zimmerman for all who want to know more about the teachings of the Episcopal Church.  We meet in the library at 9:15 a.m. to listen to a 15-20 minute podcast, then share our responses and learn from one another. All are welcome</p><p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
+    <%= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3><p>
+begins this coming Sunday, the first Sunday of Advent. Entitled <em>The Dynamics of Faith</em>, this is a special four-part series to help us engage and enjoy the holy season of Advent. The series will be led by Fr. Tad and will be offered twice on Nov. 27, Dec. 4 and 18 (at 9:15 and 10:45 a.m.) and once on Dec. 11 (at 9 a.m.), which is the Sunday of the bishop's visit when we will have one service, at 10 a.m.</p> <%= link_to "Read more about this series", worship_index_path %></p> 
+ 
+<p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     <div class="mt30"></div>
     
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center") %>

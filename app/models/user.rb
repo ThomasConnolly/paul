@@ -35,7 +35,7 @@
 class User < ActiveRecord::Base
   
   before_save :set_full_name
-  enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4 }
+  enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4, jubilee: 5}
   after_initialize :set_default_role, :if => :new_record?
   after_create :add_profile
   has_attachment :avatar, accept:[:jpg, :png, :gif]

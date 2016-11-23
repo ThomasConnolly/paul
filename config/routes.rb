@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :jubilee_plans
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get 'pages/directions'
   get 'comments/new'
   get 'pages/python_tutor'
+  get 'pages/how_to_use'
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]

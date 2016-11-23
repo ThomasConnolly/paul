@@ -1,0 +1,1 @@
+json.partial! "jubilee_planss/jubilee_plan", jubilee_plan: @jubilee_plan

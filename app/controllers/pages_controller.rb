@@ -26,4 +26,7 @@ class PagesController < ApplicationController
   def python_tutor
   end
 
+  def how_to_use
+  end
+
 end

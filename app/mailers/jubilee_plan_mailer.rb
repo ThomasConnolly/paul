@@ -3,7 +3,7 @@ class JubileePlanMailer < ApplicationMailer
   
   def jubilee_plan_created(jubilee_plan)
     @jubilee_plan = jubilee_plan
-    @url = "http://saintpaulsnaples.org/jubilee_plans"
+    @url = url_for(@jubilee_plan)
     mail(subject: "There's a new posting for the church Jubilee! Team.")
   end  
 end

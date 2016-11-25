@@ -30,6 +30,7 @@
 #  invited_by_id          :integer
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
+#  jubilee                :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -48,6 +49,7 @@ class User < ActiveRecord::Base
   has_many :story_ideas, dependent: :destroy
   has_one :pledge, dependent: :destroy
   has_many :vreports, dependent: :destroy
+  has_many :jubilee_plans, dependent: :destroy
   validates :full_name, uniqueness: { case_sensitive: false }
   #after_create :send_welcome_email
    attr_accessor :login

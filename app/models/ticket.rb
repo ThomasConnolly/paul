@@ -3,15 +3,17 @@
 # Table name: tickets
 #
 #  id          :integer          not null, primary key
-#  event_id    :integer
-#  email       :string
-#  customer_id :string
-#  price       :integer
-#  quantity    :integer
-#  amount      :integer
+#  price       :decimal(, )
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  number      :string           is an Array
+#  event_id    :integer
+#  quantity    :integer
+#  amount      :integer
+#  first_name  :string
+#  last_name   :string
+#  email       :string
+#  card        :string
+#  customer_id :string
 #
 
 class Ticket < ActiveRecord::Base

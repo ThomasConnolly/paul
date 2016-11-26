@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
       @comment = @commentable.comments.new comment_params
       @comment.user = current_user
       @comment.save
-      redirect_to :back
+        redirect_to :back
     end
   
     

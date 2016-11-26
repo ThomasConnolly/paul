@@ -3,8 +3,7 @@ class StoryIdeaCommentMailer < ApplicationMailer
   
   def comment_created(commentable)
     @commentable = commentable
-    @comment = comment
-    @url = "http://saintpaulsnaples.org"
+    @url = url_for(@commentable)
     mail(subject: "There's a new comment for the church Communications Team.")
   end  
 end

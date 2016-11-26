@@ -4,8 +4,9 @@ class VreportCommentMailer < ApplicationMailer
 
   
   def comment_created(commentable)
-    @commentable = commentable
-    @url = "http://saintpaulsnaples.org"
+    # @commentable = commentable
+    # @comment = @commentable.comment
+    @url = url_for(@comment)
     mail(subject: "There's a new report comment for you to read.")
   end  
 end

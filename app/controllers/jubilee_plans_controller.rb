@@ -13,6 +13,7 @@ class JubileePlansController < ApplicationController
   # GET /jubilees/1
   # GET /jubilees/1.json
   def show
+    @jubilee_plan = JubileePlan.find(params[:id])
   end
 
   # GET /jubilees/new

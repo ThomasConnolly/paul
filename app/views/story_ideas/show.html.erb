@@ -33,12 +33,12 @@
       <% end %>
     <% end %>
     <div class="clearall"></div>
-<section id="comments-section">
-  <%= render partial: 'comments/comments', locals: {commentable: @story_idea} %>
-    <hr>
-  <%= render partial: 'comments/form', locals: {commentable: @story_idea} %>
-   
-</section>
+      <section id="comments-section">
+        <%= render partial: 'comments/comments', locals: {commentable: @story_idea} %>
+          <hr>
+        <%= render partial: 'comments/form', locals: {commentable: @story_idea} %>
+         
+      </section>
 
 <%= link_to "<< Back", story_ideas_path %> 
 

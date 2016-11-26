@@ -4,7 +4,7 @@ class PostMailer < ApplicationMailer
   def post_created(post)
     @post = post
     @post_id = post.id
-    @url = post_url(@post)
+    @url = url_for(@post)
     mail(to: @post.user.email,
       subject: "There's a new post on the parish website")
   end

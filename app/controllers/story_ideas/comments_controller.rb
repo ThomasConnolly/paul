@@ -4,7 +4,7 @@ class StoryIdeas::CommentsController < CommentsController
   
   def send_mail
     if @comment.save
-      StoryIdeaCommentMailer.comment_created(@commentable_id).deliver_later
+      StoryIdeaCommentMailer.comment_created(@comment).deliver_later
   end 
 end
 

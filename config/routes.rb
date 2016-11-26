@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   
 
-
-
-  resources :jubilee_plans
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
@@ -78,7 +75,10 @@ Rails.application.routes.draw do
   resources :story_ideas do
     resources :comments, module: :story_ideas
   end
-  
+  resources :jubilee_plans
+  resources :jubilee_plans do
+    resources :comments, module: :jubilee_plans
+  end
 
   resources :comments, only: [:destroy]
 

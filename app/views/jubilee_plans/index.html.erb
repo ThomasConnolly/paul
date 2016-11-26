@@ -3,16 +3,19 @@
 
 <h1>Jubilee! Posts</h1>
   <div class="mt30"></div>
-    <h3><%= link_to 'Create a new Jubilee! post', new_jubilee_plan_path %></h3>
+    <div class="jubileeButton">
+      <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "30%", class: "image-center") %>
+    </div>  
+ 
   <div class="mt60"></div>
 
-<% @jubilee_plans.each do |jubilee_plan| %>
-  <h2><%= link_to jubilee_plan.title, jubilee_plan %></h2>
-  <p>By <%= jubilee_plan.user.full_name.titleize %> </p>
-    <!-- <%#= if jubilee_plan.comments.present %> -->
-      <!-- <p><small><%= pluralize jubilee_plan.comments.count, "comment" %></small></p> -->
+  <% @jubilee_plans.each do |jubilee_plan| %>
+    <h2><%= link_to jubilee_plan.title, jubilee_plan %></h2>
+    <p>By <%= jubilee_plan.user.full_name.titleize %> </p>
+    <% if jubilee_plan.comments.any? %>
+      <p><small><em><%= pluralize jubilee_plan.comments.count, "comment" %> </em></small></p>
       <hr><br>
-    <%# end %>
+    <% end %><hr>
   <% end %>
 
 

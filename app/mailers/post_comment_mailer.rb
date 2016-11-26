@@ -1,10 +1,8 @@
 class PostCommentMailer < ApplicationMailer
   
   def comment_created(comment)
-    @commentable = comment.commentable
-    @commentable_id = comment.commentable_id
-    @post_id = @commentable_id
-    @url = url_for(@commentable)
+    @comment = comment
+    @url = polymorphic_url(@comment.commentable)
     
     mail(to: comment.commentable.user.email,
          subject: "There's a new comment on your post"

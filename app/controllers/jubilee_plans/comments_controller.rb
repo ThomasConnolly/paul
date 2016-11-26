@@ -4,7 +4,7 @@ class JubileePlans::CommentsController < CommentsController
   
   def send_mail
     if @comment.save
-      JubileePlanCommentMailer.comment_created(@commentable, @comment).deliver_later
+      JubileePlanCommentMailer.comment_created(@comment).deliver_later
     
   end 
 end

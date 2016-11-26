@@ -3,10 +3,9 @@ class VreportCommentMailer < ApplicationMailer
           bcc: Proc.new { User.admin.pluck(:email) }
 
   
-  def comment_created(commentable)
-    # @commentable = commentable
-    # @comment = @commentable.comment
-    @url = url_for(@comment)
+  def comment_created(comment)
+    @comment = comment
+    @url = polymorphic_url(@comment.commentable)
     mail(subject: "There's a new report comment for you to read.")
   end  
 end

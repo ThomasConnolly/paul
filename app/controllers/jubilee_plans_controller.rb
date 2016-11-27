@@ -51,7 +51,7 @@ class JubileePlansController < ApplicationController
       format.html { redirect_to jubilee_plans_url, notice: 'Jubilee Plan was successfully destroyed.' }
       format.json { head :no_content }
     end
-  
+  end
 
   private
 

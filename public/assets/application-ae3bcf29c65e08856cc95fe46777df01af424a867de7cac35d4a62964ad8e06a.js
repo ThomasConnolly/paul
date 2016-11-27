@@ -21504,7 +21504,7 @@ var widget = $.widget;
         if (roundDpr) {
           dpr = Math.ceil(dpr);
         }
-        if (dpr <= 0 || dpr === NaN) {
+        if (dpr <= 0 || dpr === (0/0)) {
           dpr = 1;
         }
         dprString = dpr.toString();

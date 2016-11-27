@@ -1,13 +1,28 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <div>
+      <h1 class="floatleft">Jubilee! Posts</h1>
+        <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "30%", class: "floatright") %>
+    </div> <div class="clearall"></div> 
+      <section>
+        <div class="create-jubilee">
+          <% if current_user.avatar.present? %>
+            <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
+            crop: :fill, gravity: :face, class: "floatleft" }) %>
+          <% else %>
+            <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+            </div>
+          <% end %> <br><br>
+            <%= link_to  new_jubilee_plan_path, remote: true do %>
+              <h3>Click to create a new Jubilee! report</h3>
+            <% end %>
+        </div>
 
-<h1>Jubilee! Posts</h1>
-  <div class="mt30"></div>
-    <div class="jubileeButton">
-      <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "30%", class: "image-center") %>
-    </div>  
+          <div id="jubilee-form" style="display:none;">
+          </div> 
+      </section>
+
  
-  <div class="mt60"></div>
 
   <% @jubilee_plans.each do |jubilee_plan| %>
     <h2><%= link_to jubilee_plan.title, jubilee_plan %></h2>

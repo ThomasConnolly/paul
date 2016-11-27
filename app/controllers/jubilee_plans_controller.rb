@@ -2,6 +2,7 @@ class JubileePlansController < ApplicationController
   before_action :authenticate_user!
   before_action :jubilee_team_only
   before_action :set_jubilee_plan, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
 
   # GET /jubilees
@@ -19,6 +20,10 @@ class JubileePlansController < ApplicationController
   # GET /jubilees/new
   def new
     @jubilee_plan = JubileePlan.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /jubilees/1/edit
@@ -29,30 +34,22 @@ class JubileePlansController < ApplicationController
   # POST /jubilees.json
   def create
     @jubilee_plan = current_user.jubilee_plans.build(jubilee_plan_params)
-
-    respond_to do |format|
-      if @jubilee_plan.save
+      @jubilee_plan.save
         JubileePlanMailer.jubilee_plan_created(@jubilee_plan).deliver_later
-        format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.' }
-        format.json { render :show, status: :created, location: @jubilee_plan }
-      else
-        format.html { render :new }
-        format.json { render json: @jubilee_plan.errors, status: :unprocessable_entity }
-      end
+        respond_to do |format|
+          format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.' }
+          format.js 
     end
   end
 
   # PATCH/PUT /jubilees/1
   # PATCH/PUT /jubilees/1.json
   def update
-    respond_to do |format|
-      if @jubilee_plan.update(jubilee_plan_params)
-        format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully updated.' }
-        format.json { render :show, status: :ok, location: @jubilee_plan }
-      else
-        format.html { render :edit }
-        format.json { render json: @jubilee_plan.errors, status: :unprocessable_entity }
-      end
+    @jubilee_plan.update(jubilee_plan_params)
+      @jubilee_plan.save
+        respond_to do |format|
+          format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully updated.' }
+          format.js
     end
   end
 
@@ -82,6 +79,6 @@ class JubileePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jubilee_plan_params
-      params.require(:jubilee_plan).permit(:title, :body, :user_id)
+      params.require(:jubilee_plan).permit(:title, :body, :comments)
     end
 end

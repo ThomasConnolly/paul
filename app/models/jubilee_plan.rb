@@ -14,4 +14,5 @@ class JubileePlan < ActiveRecord::Base
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   validates_presence_of [ :title, :body, :user_id ]
+  default_scope -> { order('created_at DESC') }
 end

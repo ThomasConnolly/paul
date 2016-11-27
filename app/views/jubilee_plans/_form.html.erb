@@ -8,3 +8,10 @@
         <%= f.submit "Submit", class: "btn btn-primary" %>
       </div>
     <% end %>
+
+
+<script>
+$(document).on('page:load', function() {
+  window['rangy'].initialized = false
+  });
+</script>

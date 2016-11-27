@@ -2,8 +2,7 @@ class JubileePlansController < ApplicationController
   before_action :authenticate_user!
   before_action :jubilee_team_only
   before_action :set_jubilee_plan, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :js
-
+  
 
   # GET /jubilees
   # GET /jubilees.json
@@ -19,11 +18,7 @@ class JubileePlansController < ApplicationController
 
   # GET /jubilees/new
   def new
-    @jubilee_plan = JubileePlan.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @jubilee_plan = JubileePlan.new  
   end
 
   # GET /jubilees/1/edit
@@ -34,11 +29,9 @@ class JubileePlansController < ApplicationController
   # POST /jubilees.json
   def create
     @jubilee_plan = current_user.jubilee_plans.build(jubilee_plan_params)
-      @jubilee_plan.save
+      if @jubilee_plan.save
         JubileePlanMailer.jubilee_plan_created(@jubilee_plan).deliver_later
-        respond_to do |format|
-          format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.' }
-          format.js 
+         redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.'
     end
   end
 
@@ -47,10 +40,7 @@ class JubileePlansController < ApplicationController
   def update
     @jubilee_plan.update(jubilee_plan_params)
       @jubilee_plan.save
-        respond_to do |format|
-          format.html { redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully updated.' }
-          format.js
-    end
+        redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully updated.'
   end
 
   # DELETE /jubilees/1

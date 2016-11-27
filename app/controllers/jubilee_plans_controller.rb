@@ -18,7 +18,7 @@ class JubileePlansController < ApplicationController
 
   # GET /jubilees/new
   def new
-    @jubilee_plan = JubileePlan.new  
+    @jubilee_plan = JubileePlan.new 
   end
 
   # GET /jubilees/1/edit
@@ -28,7 +28,8 @@ class JubileePlansController < ApplicationController
   # POST /jubilees
   # POST /jubilees.json
   def create
-    @jubilee_plan = current_user.jubilee_plans.build(jubilee_plan_params)
+    @jubilee_plan = JubileePlans.new(jubilee_plan_params)
+    @jubilee_plan.user_id = current_user.id if current_user
       if @jubilee_plan.save
         JubileePlanMailer.jubilee_plan_created(@jubilee_plan).deliver_later
          redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.'

@@ -69,6 +69,6 @@ class JubileePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jubilee_plan_params
-      params.require(:jubilee_plan).permit(:title, :body, :comments)
+      params.require(:jubilee_plan).permit(:title, :body, :comments, :user_id)
     end
 end

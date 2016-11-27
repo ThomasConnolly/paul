@@ -1,9 +1,14 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-    <div>
-      <h1 class="floatleft">Jubilee! Posts</h1>
-        <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "30%", class: "floatright") %>
-    </div> <div class="clearall"></div> 
+  <div class="col col-md-4 col-md-offset-2 col-sm-6">
+    <h1 class="floatleft">Jubilee! Posts</h1>
+      <p><strong><em>Next Meeting:</em></strong><br>
+      Tuesday, Nov. 29, 12:15 p.m.</p>
+  </div>
+  <div class="col col-md-4 col-sm-6">
+        <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "70%", class: "floatright") %>
+  </div> 
+    <div class="row">
+      <div class="col col-md-8 col-md-offset-2 col-sm-12"> 
       <section>
         <div class="create-jubilee">
           <% if current_user.avatar.present? %>
@@ -13,17 +18,15 @@
             <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
             </div>
           <% end %> <br><br>
-            <%= link_to  new_jubilee_plan_path, remote: true do %>
-              <h3>Click to create a new Jubilee! report</h3>
-            <% end %>
-        </div>
-
-          <div id="jubilee-form" style="display:none;">
-          </div> 
+           
+            <h3><%= link_to "Create a new Jubilee! post", new_jubilee_plan_path %></h3> 
+        </div> 
       </section>
-
+  </div>
+</div>
  
-
+<div class="row">
+  <div class="col col-md-6 col-md-offset-3">
   <% @jubilee_plans.each do |jubilee_plan| %>
     <h2><%= link_to jubilee_plan.title, jubilee_plan %></h2>
     <p>By <%= jubilee_plan.user.full_name.titleize %> </p>
@@ -32,12 +35,7 @@
       <hr><br>
     <% end %><hr>
   <% end %>
-
-
-
-<div class="mt60"></div>
-
-<h3><%= link_to 'Create a new Jubilee! post', new_jubilee_plan_path %></h3>
-
+    <div class="mt60"></div>
+    <h3><%= link_to 'Create a new Jubilee! post', new_jubilee_plan_path %></h3>
   </div>
 </div>

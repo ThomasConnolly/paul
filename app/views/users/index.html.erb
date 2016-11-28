@@ -1,28 +1,28 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2"<h3>All Users</h3>
       <% @users.each do |user| %> 
-        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.role %></p>
+        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.roles %></p>
       <% end %>
       <br>
       <h3> Vestry Members  </h3>
-      <% @users.where(role: 1).each do |v| %>
+      <% @users.with_role(:vestry).each do |v| %>
        <p><strong> <%= v.full_name %> </strong>&nbsp;
         <%= v.email %> <br> </p>
         <% end %>
         <br>
         <h3>Administrators</h3>
-        <% @users.where(role: 0).each do |admin| %>
+        <% @users.with_role(:admin).each do |admin| %>
         <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
         <br>
-        <h3>Invite users</h3>
-        <%= simple_form_for(User.new, url: user_invitation_path,
-                                      html: { class: 'form-inline'}) do |f| %>
-          <%= f.input :email, placeholder: "Email", label: false %>
-          <%= f.button :submit, "Invite Users", class: 'btn btn-primary' %>
-          <% end %>
+        <!-- <h3>Invite users</h3> 
+        <%#= simple_form_for(User.new, url: user_invitation_path, 
+                                      # html: { class: 'form-inline'}) do |f| %>
+          <%#= f.input :email, placeholder: "Email", label: false %>
+          <%#= f.button :submit, "Invite Users", class: 'btn btn-primary' %>
+          <%# end %>
         
-        <h3>Invitations sent</h3>
+        <h3>Invitations sent</h3> 
           <%#= @user.status(user) %>
 
 
@@ -31,6 +31,6 @@
           <%#= f.submit "Upload users" %>
         <%# end %>
 
-    </div>
+    </div>-->
  </div>
 </div>

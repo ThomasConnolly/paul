@@ -1,5 +1,5 @@
 class JubileePlanCommentMailer < ApplicationMailer
-  default to: Proc.new { User.where(:jubilee => true).pluck(:email) }
+  default to: Proc.new { User.with_role(:jubilee_planner).pluck(:email) }
   
   def comment_created(comment)
     @comment = comment

@@ -28,7 +28,7 @@ class JubileePlansController < ApplicationController
   # POST /jubilees
   # POST /jubilees.js
   def create
-    @jubilee_plan = current_user.jubilee_plans.build(params[:jubilee_plan])
+    @jubilee_plan = current_user.jubilee_plans.create(jubilee_plan_params)
       if @jubilee_plan.save
         JubileePlanMailer.jubilee_plan_created(@jubilee_plan).deliver_later
          redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully created.'
@@ -57,7 +57,7 @@ class JubileePlansController < ApplicationController
 
 
     def jubilee_team_only
-      unless current_user.jubilee or current_user.communicator  or current_user.admin?
+      unless current_user.has_role?(:jubilee_planner) or current_user.has_role?(:communicator)  or current_user.has_role?(:admin)
       redirect_to root_path, :alert => "Special authorization needed to view this page"
     end
   end
@@ -69,6 +69,11 @@ class JubileePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jubilee_plan_params
-      params.require(:jubilee_plan).permit(:title, :body, :user_id)
+      params.require(:jubilee_plan).permit(:title, :body)
     end
 end
+
+
+  def comment_params
+    params.require(:comment).permit(:name, :email, :body)
+  end

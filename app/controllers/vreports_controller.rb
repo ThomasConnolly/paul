@@ -85,7 +85,7 @@ private
   end
 
   def vestry_only
-    unless current_user.vestry? or current_user.admin?
+    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin)
       redirect_to root_path, :alert => "You must be a member of the St. Paul Vestry to use this function."
     end
   end

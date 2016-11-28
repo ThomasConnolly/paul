@@ -77,7 +77,7 @@ private
   end
 
   def members_only
-    unless current_user.vestry? or current_user.admin? or current_user.member?
+    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin) or current_user.has_role?(:member)
       redirect_to root_path, :alert => "You must be a member of St. Paul's to 
       use this function."
     end

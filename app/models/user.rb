@@ -18,10 +18,8 @@
 #  first_name             :string(255)
 #  last_name              :string(255)
 #  full_name              :string(255)
-#  role                   :integer
 #  stripe_customer_id     :string
 #  member_id              :integer
-#  communicator           :boolean
 #  invitation_token       :string
 #  invitation_created_at  :datetime
 #  invitation_sent_at     :datetime
@@ -30,14 +28,14 @@
 #  invited_by_id          :integer
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
-#  jubilee                :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
+  rolify
   
   before_save :set_full_name
-  enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4, jubilee: 5}
-  after_initialize :set_default_role, :if => :new_record?
+  #enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4, jubilee_team: 5 }
+  after_create :assign_default_role
   after_create :add_profile
   has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
@@ -74,8 +72,8 @@ class User < ActiveRecord::Base
     self.full_name = "#{self.first_name} #{self.last_name}".strip
   end  
 
-  def set_default_role
-    self.role ||= :member
+  def assign_default_role
+    self.add_role(:member) if self.roles.blank?
   end
 
   def add_profile

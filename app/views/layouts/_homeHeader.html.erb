@@ -48,7 +48,7 @@
         <% if current_user %>
         <li> <%= link_to "Communicators' Corner", story_ideas_path %>
         <% end %>
-        <% if current_user && current_user.vestry? or current_user && current_user.admin? %>
+        <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
         <li> <%=link_to "Vestry Report", vreports_path %> </li>
         <% end %>
 

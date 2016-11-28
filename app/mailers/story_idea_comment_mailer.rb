@@ -1,5 +1,5 @@
 class StoryIdeaCommentMailer < ApplicationMailer
-  default to: Proc.new { User.where(:communicator => true).pluck(:email) }
+  default to: Proc.new { User.with_role(:communicator).pluck(:email) }
   
   def comment_created(comment)
     @comment = comment

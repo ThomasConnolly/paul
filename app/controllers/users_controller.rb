@@ -45,7 +45,7 @@ class UsersController < ApplicationController
  
   def index
     @users = User.all.order(:last_name)
-    unless current_user.admin?
+    unless current_user.has_role?(:admin)
       redirect_to '/'
     @import = User::Import.new 
     end

@@ -98,14 +98,14 @@ private
   end
 
   def admin_only
-    unless current_user.admin? 
+    unless current_user.has_role?(:admin) 
       flash[:alert] = "Access denied."
       redirect_to root_path 
     end
   end
   
   def member_only
-    unless current_user.admin? or current_user.vestry? or current_user.member?
+    unless current_user.has_role?(:admin) or current_user.has_role?(:vestry) or current_user.has_role?(:member)
       redirect_to root_path, :alert => "Access for parish members only."
     end
   end

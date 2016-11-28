@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2"<h3>All Users</h3>
       <% @users.each do |user| %> 
-        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.roles %></p>
+        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %></p>
       <% end %>
       <br>
       <h3> Vestry Members  </h3>

@@ -22,10 +22,11 @@
       <%=link_to vreport,  method: :delete, data: 
       { confirm: 'This will delete your report and all its comments.' 
         }, remote: true do %> Delete! </span></p>
-
+      
       <% end %>
     <% end %>
     <div class="clearall"></div>
+    <hr>
 <section id="comments-section">
   <%= render partial: 'comments/comments', locals: {commentable: vreport} %>
     <div class="mt30"></div>

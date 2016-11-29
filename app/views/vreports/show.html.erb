@@ -6,7 +6,14 @@
         <h2> By <%= @vreport.user.full_name.titleize %></h2>
             <p>
             <%= raw(@vreport.body) %>
-            </p>
+            </p><hr>
+            <div class="clearall"></div>
+<section id="comments-section">
+  <%= render partial: 'comments/comments', locals: {commentable: @vreport} %>
+    <div class="mt30"></div>
+  <%= render partial: 'comments/form', locals: {commentable: @vreport} %>
+</section>
+
           <div class="mt100"></div>
 
 

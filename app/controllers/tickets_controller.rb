@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   
+  
   def show
     @ticket = Ticket.find(params[:id])
     @event = Event.find(params[:event_id])

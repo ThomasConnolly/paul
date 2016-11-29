@@ -19,8 +19,9 @@
         <% @users.with_role(:communicator).each do |comm| %>
           <p><strong><%= comm.full_name %></strong>&nbsp; <%= comm.email %></p>
         <% end %>
+        <br>
         <h3>Jubilee! planners </h3>
-        <% @users.with_role(:jubilee_planners).each do |jub| %>
+        <% @users.with_role(:jubilee_planner).each do |jub| %>
           <p><strong><%= jub.full_name %></strong>&nbsp; <%= jub.email %> </p>
         <% end %>
         <!-- <h3>Invite users</h3> 

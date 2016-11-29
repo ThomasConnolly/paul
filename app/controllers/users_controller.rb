@@ -106,7 +106,7 @@ private
   
   def member_only
     unless current_user.has_role?(:admin) or current_user.has_role?(:vestry) or current_user.has_role?(:member)
-      redirect_to root_path, :alert => "Access for parish members only."
+      redirect_to root_path, :alert => "Access is restricted."
     end
   end
 end

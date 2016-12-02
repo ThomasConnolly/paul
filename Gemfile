@@ -39,7 +39,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
-gem 'thor', '0.19.1'
+gem 'thor'
 
 group :development do
   gem 'meta_request'

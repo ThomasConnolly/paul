@@ -1,15 +1,30 @@
 
   <div class="row">
-    <div class="col col-md-6 col-sm-12">
+    <div class="col col-md-5 col-sm-12">
       <div class="mt30"></div>
+      <div class="hidden">
+        cl_image_tag("tecShield_fpjf8p.png")
+        cl_image_tag("St_Paul_Red_Button_Logo_nmxbtk.png")
+        cl_image_tag("St_Paul_Blue_Button_Logo_fgfnjt.png")
+        cl_image_tag("St_Paul_Blue_Button_Logo_fgfnjt.png")
+        cl_image_tag("UpdateBlue_hipvew.png")
+        cl_image_tag("UpdateRed_fmhsxv.png")
+      </div>
+  
+
+
+      <%#= image_tag 'St_Paul_Blue_Button_Logo.png', width: "550" %>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: '450') %>
     </div>
-      <div class="col col-md-5 col-md-offset-1 mt100"> 
+      <div class="col col-md-6 col-md-offset-1 mt100"> 
         <div id="faith-button">
         <button class="btn-custom" data-jq-dropdown="#faithdd">Faith >></button>
         </div> 
         <div id="action-button">
         <button class="btn-custom" data-jq-dropdown="#actiondd">Action >></button>
+        </div>
+        <div class="shield">
+          <%#= cl_image_tag("tecShield_fpjf8p.png", width: '93')%>
         </div>
       </div>
   </div> 

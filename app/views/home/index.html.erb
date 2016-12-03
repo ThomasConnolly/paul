@@ -2,7 +2,7 @@
 <%= render 'slick' %>
 <div class="row">
   <div class="col col-md-8 col-sm-12 main-body">
-    <script type="text/javascript">
+    <!-- <script type="text/javascript"> 
       $(window).load(function(){
           $('#myModal').modal('show');
       });
@@ -12,7 +12,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="text-center">Concert Tonight!</h1>
-            <%= link_to cl_image_tag("ToddWebHome_gvg6l5.png", width: "99%"), "events/1/tickets/new" %>
+            <%#= link_to cl_image_tag("ToddWebHome_gvg6l5.png", width: "99%"), "events/1/tickets/new" %>
             <h3 class="text-center">Click picture to purchase concert tickets </h3>
           </div>
             <div class="modal-footer">
@@ -20,7 +20,7 @@
             </div>
         </div>
       </div>
-</div>
+</div>-->
 
   <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
@@ -42,11 +42,8 @@
     
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"35%", class: "floatright") %>
     <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %> </p> 
-  
-    <div class="mt30"></div><div class="clearall"></div>
-    <%= cl_image_tag("ToddForWeb_wgenz6.png", width: "55%", class: "floatleft") %> <h1>Todd Concert<br>Tickets Here</h1><p><%= link_to "Click to buy tickets now!", "events/1/tickets/new" %></p><p>We're proud to announce Paul Todd and his son, Paul Jr. will be with us again this season with their very popular Christmas show. You won't want to miss it, in our church at 7 p.m., Friday, Dec. 2.</p>
-    <div class="mt30"></div>
-    <!-- <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %> -->
+
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %> 
     <br>
     <div class="mt30"></div>
     <div id="newsfeed">

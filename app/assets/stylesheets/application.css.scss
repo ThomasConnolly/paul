@@ -195,10 +195,32 @@ list-style-type: none;
   margin-left:auto;
   margin-right:auto;
 }
+.center-image {
+  display: block;
+  margin: 0, auto;
+}
 .text-center{
   margin-left:auto;
   margin-right:auto
 }
+.center-text{
+  margin: 0, auto;
+}
+.update-logo {
+  position:relative;
+}
+.update-logo img{
+  position: absolute;
+  -webkit-transition: opacity is ease-in-ease-out;
+  -moz-tansition: opacity is ease-in-out;
+  -o-transition: opacity is ease-in-out;
+  transition: opacity is ease-in-out;
+}
+.update-logo img.top:hover {
+  opacity:0;
+}
+
+
 .underConstruction {
   margin-left: 350px;
   margin-top: 70px;
@@ -422,6 +444,9 @@ list-style-type: none;
 }
 .mt-100 {
   margin-top: -100px;
+}
+.mt150{
+  margin-top: 150px;
 }
 .scroll-to-bottom {
   position:fixed;

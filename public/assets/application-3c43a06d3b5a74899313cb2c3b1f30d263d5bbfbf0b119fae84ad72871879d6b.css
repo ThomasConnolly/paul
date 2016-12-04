@@ -10602,20 +10602,27 @@ p.center-bold-text {
   border: 1px solid #000;
 }
 
-/* line 158, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 157, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.shield {
+  float: right;
+  margin-top: -65px;
+  margin-right: 40px;
+}
+
+/* line 163, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroller {
   background-image: url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
   width: 100%;
   height: 267px;
 }
 
-/* line 164, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 169, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #newsfeed {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 168, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 173, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatleft {
   float: left;
   padding-top: 20px;
@@ -10623,7 +10630,7 @@ p.center-bold-text {
   padding-right: 30px;
 }
 
-/* line 174, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 179, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatright {
   float: right;
   padding-left: 30px;
@@ -10631,32 +10638,62 @@ p.center-bold-text {
   padding-bottom: 20px;
 }
 
-/* line 180, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 185, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .footer {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* line 186, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 191, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .clearall {
   clear: both;
 }
 
-/* line 189, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 194, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .image-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 194, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 199, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.center-image {
+  display: block;
+  margin: 0, auto;
+}
+
+/* line 203, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .text-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 198, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 207, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.center-text {
+  margin: 0, auto;
+}
+
+/* line 210, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.update-logo {
+  position: relative;
+}
+
+/* line 213, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.update-logo img {
+  position: absolute;
+  -webkit-transition: opacity is ease-in-ease-out;
+  -moz-tansition: opacity is ease-in-out;
+  -webkit-transition: opacity is ease-in-out;
+  transition: opacity is ease-in-out;
+}
+
+/* line 220, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.update-logo img.top:hover {
+  opacity: 0;
+}
+
+/* line 225, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .underConstruction {
   margin-left: 350px;
   margin-top: 70px;
@@ -10665,14 +10702,14 @@ p.center-bold-text {
   padding: 8px;
 }
 
-/* line 206, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 233, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #dropdown1 #dropdown2 {
   float: left;
   margin-right: 20px;
   margin-top: 40px;
 }
 
-/* line 212, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 239, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .talk-box {
   float: right;
   margin: 15px;
@@ -10686,7 +10723,7 @@ p.center-bold-text {
   line-height: 1.5em;
 }
 
-/* line 226, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 253, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon p {
   font-size: 1.25rem;
   line-height: 2.25rem;
@@ -10694,7 +10731,7 @@ p.center-bold-text {
   text-align: left;
 }
 
-/* line 232, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 259, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-box {
   float: right;
   margin: 10px;
@@ -10706,49 +10743,49 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 242, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 269, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-picture {
   float: left;
   margin: 10px;
   display: block;
 }
 
-/* line 247, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 274, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 250, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 277, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 255, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 282, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #opportunity-header {
   text-decoration: underline;
 }
 
-/* line 258, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 285, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
   font-size: 1rem;
   float: left;
 }
 
-/* line 262, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 289, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #notice {
   color: green;
 }
 
-/* line 265, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 292, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 270, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 297, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -10757,7 +10794,7 @@ p.center-bold-text {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 277, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 304, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -10768,13 +10805,13 @@ p.center-bold-text {
   background-color: #c00;
   color: #fff;
 }
-/* line 287, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 314, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation ul li {
   font-size: .75rem;
   list-style: square;
 }
 
-/* line 292, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 319, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -10786,26 +10823,26 @@ p.center-bold-text {
   line-height: 1.25rem;
 }
 
-/* line 304, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 331, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 309, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 336, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 314, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 341, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 317, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 344, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .create-post, .create-vreport, .create-story_idea, .create-jubilee {
   width: 100%;
   height: 140px;
@@ -10815,7 +10852,7 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 325, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 352, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom {
   cursor: pointer;
   text-decoration: none;
@@ -10838,7 +10875,7 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #d1103d, #660000);
 }
 
-/* line 345, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 372, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:hover {
   cursor: pointer;
   text-decoration: none;
@@ -10859,7 +10896,7 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 363, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 390, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:active {
   cursor: pointer;
   text-decoration: none;
@@ -10880,13 +10917,13 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 382, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 409, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-modal-footer {
   width: 100px;
   height: 100px;
 }
 
-/* line 387, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 414, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .default-avatar {
   padding-top: 12px;
   text-align: center;
@@ -10898,7 +10935,7 @@ p.center-bold-text {
   margin-right: 6px;
 }
 
-/* line 397, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 424, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .big-avatar-missing {
   width: 200px;
   height: 260px;
@@ -10910,32 +10947,37 @@ p.center-bold-text {
   margin-right: 12px;
 }
 
-/* line 407, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 434, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 410, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 437, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 413, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 440, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 416, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 443, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 419, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 422, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.mt150 {
+  margin-top: 150px;
+}
+
+/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -10945,41 +10987,41 @@ p.center-bold-text {
   padding: 12px;
 }
 
-/* line 430, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 460, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .comment-user {
   color: gray;
   font-size: .9rem;
   float: right;
 }
 
-/* line 435, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 465, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 438, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 468, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 442, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 472, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 476, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 479, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }
 
-/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 482, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-show {
   font-size: .75rem;
 }

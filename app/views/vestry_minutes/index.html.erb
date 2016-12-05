@@ -8,12 +8,12 @@
           <%= vestry_minute.date.strftime("%B %d, %Y") %> &nbsp; </strong></p>
           <p><small><%= link_to 'Show', vestry_minute %>&nbsp; 
           
-            <% if current_user && current_user.admin? %>
+            <% if current_user && current_user.has_role?(:admin) %>
             | <%= link_to 'Edit', edit_vestry_minute_path(vestry_minute) %> | 
               <%= link_to 'Destroy', vestry_minute, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
         <div class="mt30"></div>
-          <% if current_user && current_user.admin? %> 
+          <% if current_user && current_user.has_role?(:admin) %> 
             <%= link_to 'New entry', new_vestry_minute_path %>
           <% end %>
           </small></p>

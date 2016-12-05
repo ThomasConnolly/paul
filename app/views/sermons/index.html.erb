@@ -1,6 +1,6 @@
 
 <h1>Sermons from St. Paul's pulpit </h1>
-<% if current_user && current_user.admin? %>
+<% if current_user && current_user.has_role?(:admin) %>
   <%= link_to "Add a sermon", new_sermon_path, class: "btn btn-primary" %>
 <% end %>
 
@@ -10,7 +10,7 @@
       <tr>
         <td ><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
         <td><%= sermon.homilist.name %></td> 
-        <td><%= link_to sermon.title, sermon %> <% if current_user && current_user.admin? %>
+        <td><%= link_to sermon.title, sermon %> <% if current_user && current_user.has_role?(:admin) %>
           | words: <%= sermon.sermon_body.split.count %>  &nbsp; | <%= link_to sermon,  method: :delete, data: { confirm: 'This will delete this sermon.' } do %> Delete!
   <% end %>
           <% end %>

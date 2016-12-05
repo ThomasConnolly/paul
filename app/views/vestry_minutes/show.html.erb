@@ -8,7 +8,7 @@
 
   <%= raw @vestry_minute.minutes %>
   <div class="mt100"></div>
-    <% if current_user && current_user.admin? %>
+    <% if current_user && current_user.has_role?(:admin) %>
     <%= link_to 'Edit', edit_vestry_minute_path(@vestry_minute) %> |
     <%= link_to 'Back', vestry_minutes_path %>
     <% end %>

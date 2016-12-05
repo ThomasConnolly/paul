@@ -75,7 +75,7 @@ class VestryMinutesController < ApplicationController
     end
 
     def admin_only
-    unless current_user.admin?
+    unless current_user.has_role?(:admin)
       redirect_to root_path, :alert => "You must be an administrator to perform this function."
     end
   end

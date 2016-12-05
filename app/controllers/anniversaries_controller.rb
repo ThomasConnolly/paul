@@ -1,5 +1,7 @@
 class AnniversariesController < ApplicationController
   before_action :set_anniversary, only: [:show, :destroy]
+  before_action :set_admin_only
+
 
   
   def index
@@ -52,6 +54,12 @@ class AnniversariesController < ApplicationController
     def anniversary_import_params
     params.require(:anniversary_import).permit(:file)
   end
+
+    def set_admin_only
+      unless current_user && current_user.has_role?(:admin)
+        redirect_to "/"
+      end
+    end
 
     def anniversary_params
       params.require(:anniversary).permit(:salutation, :last_name, :anniversary)

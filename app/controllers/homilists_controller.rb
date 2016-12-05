@@ -13,6 +13,7 @@
 class HomilistsController < ApplicationController
   before_action :set_Homilist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :set_admin_only
 
   def index
     @homilists = Homilist.all
@@ -54,6 +55,12 @@ class HomilistsController < ApplicationController
 
 
 private
+
+  def admin_only
+    unless current_user && current_user.has_role?(:admin)
+      redirect_to "/"
+    end
+  end
   def set_Homilist
     @homilist = Homilist.find(params[:id])
   end

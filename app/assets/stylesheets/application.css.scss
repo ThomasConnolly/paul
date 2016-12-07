@@ -134,13 +134,23 @@ display: none;
 list-style-type: none;
 }
 
+
+
 #faith-button {
   float:left;
+  width: 30%;
+  margin-top: 36px;
 }
 
 #action-button {
   float:left;
-  margin-left: 60px;
+  width: 30%;
+  margin-top: 36px;
+}
+#shield {
+  float: left;
+  width:30%;
+  margin: 0, auto;
 }
 
 .dropdown-menu ul {

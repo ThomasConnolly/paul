@@ -134,7 +134,22 @@ display: none;
 list-style-type: none;
 }
 
+.main-logo {
+  float: left;
+  margin-bottom: 40px;
+}
+.sub-logo {
+  overflow: hidden;
+}
 
+@media screen and (max-width: 400px) {
+   .main-logo { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;    
+  }
+}
 
 #faith-button {
   float:left;
@@ -164,11 +179,7 @@ list-style-type: none;
   position: relative;
   float: left; border: 1px solid #000;
 }
-.shield {
-  float: right;
-  margin-top: -65px;
-  margin-right: 40px;
-}
+
 
 .scroller {
   background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");

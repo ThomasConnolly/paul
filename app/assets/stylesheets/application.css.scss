@@ -142,23 +142,16 @@ list-style-type: none;
   overflow: hidden;
 }
 
-@media screen and (max-width: 400px) {
-   .main-logo { 
-    float: none;
-    margin-right:0;
-    width:auto;
-    border:0;    
-  }
-}
+
 
 #faith-button {
-  float:left;
+  float: left;
   width: 30%;
   margin-top: 36px;
 }
 
 #action-button {
-  float:left;
+  float: left;
   width: 30%;
   margin-top: 36px;
 }

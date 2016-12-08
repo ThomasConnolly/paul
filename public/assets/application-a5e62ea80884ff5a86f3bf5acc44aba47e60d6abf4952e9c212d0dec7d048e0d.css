@@ -10587,37 +10587,28 @@ p.center-bold-text {
   overflow: hidden;
 }
 
-@media screen and (max-width: 400px) {
-  /* line 147, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-  .main-logo {
-    float: none;
-    margin-right: 0;
-    width: auto;
-    border: 0;
-  }
-}
-/* line 155, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 148, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #faith-button {
   float: left;
   width: 30%;
   margin-top: 36px;
 }
 
-/* line 161, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 154, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #action-button {
   float: left;
   width: 30%;
   margin-top: 36px;
 }
 
-/* line 166, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 159, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #shield {
   float: left;
   width: 30%;
   margin: 0, auto;
 }
 
-/* line 172, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 165, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .dropdown-menu ul {
   list-style: none;
   text-decoration: none;
@@ -10625,7 +10616,7 @@ p.center-bold-text {
   margin: 0px;
 }
 
-/* line 178, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 171, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .dropdown-menu li {
   display: block;
   position: relative;
@@ -10633,20 +10624,20 @@ p.center-bold-text {
   border: 1px solid #000;
 }
 
-/* line 185, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 178, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroller {
   background-image: url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
   width: 100%;
   height: 267px;
 }
 
-/* line 191, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 184, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #newsfeed {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 195, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 188, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatleft {
   float: left;
   padding-top: 20px;
@@ -10654,7 +10645,7 @@ p.center-bold-text {
   padding-right: 30px;
 }
 
-/* line 201, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 194, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatright {
   float: right;
   padding-left: 30px;
@@ -10662,48 +10653,48 @@ p.center-bold-text {
   padding-bottom: 20px;
 }
 
-/* line 207, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 200, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .footer {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* line 213, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 206, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .clearall {
   clear: both;
 }
 
-/* line 216, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 209, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .image-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 221, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 214, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-image {
   display: block;
   margin: 0, auto;
 }
 
-/* line 225, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 218, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .text-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 229, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 222, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-text {
   margin: 0, auto;
 }
 
-/* line 232, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 225, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .update-logo {
   position: relative;
 }
 
-/* line 235, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 228, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .update-logo img {
   position: absolute;
   -webkit-transition: opacity is ease-in-ease-out;
@@ -10712,12 +10703,12 @@ p.center-bold-text {
   transition: opacity is ease-in-out;
 }
 
-/* line 242, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 235, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .update-logo img.top:hover {
   opacity: 0;
 }
 
-/* line 247, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 240, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .underConstruction {
   margin-left: 350px;
   margin-top: 70px;
@@ -10726,14 +10717,14 @@ p.center-bold-text {
   padding: 8px;
 }
 
-/* line 255, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 248, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #dropdown1 #dropdown2 {
   float: left;
   margin-right: 20px;
   margin-top: 40px;
 }
 
-/* line 261, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 254, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .talk-box {
   float: right;
   margin: 15px;
@@ -10747,7 +10738,7 @@ p.center-bold-text {
   line-height: 1.5em;
 }
 
-/* line 275, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 268, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon p {
   font-size: 1.25rem;
   line-height: 2.25rem;
@@ -10755,7 +10746,7 @@ p.center-bold-text {
   text-align: left;
 }
 
-/* line 281, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 274, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-box {
   float: right;
   margin: 10px;
@@ -10767,49 +10758,49 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 291, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 284, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-picture {
   float: left;
   margin: 10px;
   display: block;
 }
 
-/* line 296, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 289, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 299, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 292, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 304, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 297, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #opportunity-header {
   text-decoration: underline;
 }
 
-/* line 307, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 300, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
   font-size: 1rem;
   float: left;
 }
 
-/* line 311, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 304, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #notice {
   color: green;
 }
 
-/* line 314, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 307, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 319, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 312, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -10818,7 +10809,7 @@ p.center-bold-text {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 326, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 319, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -10829,13 +10820,13 @@ p.center-bold-text {
   background-color: #c00;
   color: #fff;
 }
-/* line 336, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 329, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation ul li {
   font-size: .75rem;
   list-style: square;
 }
 
-/* line 341, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 334, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -10847,26 +10838,26 @@ p.center-bold-text {
   line-height: 1.25rem;
 }
 
-/* line 353, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 346, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 358, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 351, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 363, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 356, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 366, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 359, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .create-post, .create-vreport, .create-story_idea, .create-jubilee {
   width: 100%;
   height: 140px;
@@ -10876,7 +10867,7 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 374, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 367, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom {
   cursor: pointer;
   text-decoration: none;
@@ -10899,7 +10890,7 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #d1103d, #660000);
 }
 
-/* line 394, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 387, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:hover {
   cursor: pointer;
   text-decoration: none;
@@ -10920,7 +10911,7 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 412, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 405, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:active {
   cursor: pointer;
   text-decoration: none;
@@ -10941,13 +10932,13 @@ p.center-bold-text {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 431, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 424, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-modal-footer {
   width: 100px;
   height: 100px;
 }
 
-/* line 436, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 429, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .default-avatar {
   padding-top: 12px;
   text-align: center;
@@ -10959,7 +10950,7 @@ p.center-bold-text {
   margin-right: 6px;
 }
 
-/* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 439, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .big-avatar-missing {
   width: 200px;
   height: 260px;
@@ -10971,37 +10962,37 @@ p.center-bold-text {
   margin-right: 12px;
 }
 
-/* line 456, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 459, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 462, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 455, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 465, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 458, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 468, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 461, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 471, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 464, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt150 {
   margin-top: 150px;
 }
 
-/* line 474, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 467, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -11011,41 +11002,41 @@ p.center-bold-text {
   padding: 12px;
 }
 
-/* line 482, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 475, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .comment-user {
   color: gray;
   font-size: .9rem;
   float: right;
 }
 
-/* line 487, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 480, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 490, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 483, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 494, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 487, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 498, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 491, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 501, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 494, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }
 
-/* line 504, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 497, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-show {
   font-size: .75rem;
 }

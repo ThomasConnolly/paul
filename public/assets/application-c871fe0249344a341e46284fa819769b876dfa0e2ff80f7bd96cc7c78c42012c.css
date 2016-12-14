@@ -10469,7 +10469,7 @@ body {
 /* line 52, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .main-body {
   padding-right: 36px;
-  font-size: 2.25rem;
+  font-size: 1.25rem;
 }
 
 /* line 56, /home/tom/paul/app/assets/stylesheets/application.css.scss */
@@ -10520,7 +10520,7 @@ h4 {
 
 /* line 92, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -10531,7 +10531,7 @@ p {
 
 /* line 99, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p.sidebar {
-  font-size: .9rem;
+  font-size: 1rem;
 }
 
 /* line 103, /home/tom/paul/app/assets/stylesheets/application.css.scss */

@@ -28,12 +28,15 @@
      <% @story_ideas.each do |story_idea| %>
      <h2><%= link_to story_idea.title, story_idea %></h2>
      <p>By <%= story_idea.user.full_name.titleize %></p>
+
      <% if story_idea.comments.any? %>
      <p><small><em><%= pluralize story_idea.comments.count, "comment" %>  </em></small></p>
-     <hr><br>
+     <br>
      <% end %>
+     <div class="mt30"></div>
      <% end %>
     </div>
+
   </section>
   </div>
     <div class="col-md-4 col-sm-6 sidebar">

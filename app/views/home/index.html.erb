@@ -2,7 +2,7 @@
 <%#= render 'slick' %>
 <div class="row">
   <div class="col col-md-12 col-sm-12 col-lg-12">
-    <%= cl_image_tag("bishop50th_skjrxz.png", width: '100%') %>
+    <%= cl_image_tag("bishop50th_skjrxz.png", width: '100%', :fetch_format => :auto) %>
   </div>
 </div>
 <div class="row">
@@ -29,13 +29,13 @@
 <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     <div class="mt30"></div>
     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
     <h1>Welcome to the Farmers&rsquo; Market</h1>
     
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"35%", class: "floatright") %>
     <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %> </p> 
 
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center") %> 
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center", :fetch_format => :auto) %> 
     <br>
     <div class="mt30"></div>
     <div id="newsfeed">
@@ -44,7 +44,7 @@
   </div>
   <div class="col col-md-4 col-sm-6 sidebar">
 
-  <h2><%= link_to "See us on Facebook","https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %></h2>
+  <h2><%= link_to image_tag("http://login.create.net/images/icons/user/facebook-b_130x50.png"),"https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %></h2>
     <p><%= Date.current.to_formatted_s(:long) %></p>
      
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
@@ -54,7 +54,7 @@
     <p>Dec. 18 is<strong> Albergue Sunday,</strong> the opportunity to serve Christ through out ministry in the Dominican Republic. Sponsorships of the 100 kids in the albergue (it means shelter) will be made available. <%= link_to "See more about this ministry", pages_albergue_path %></p><br>
     
       <p> Our <strong> Christmas pageant</strong> is this Sunday, Dec. 18, 5 p.m. A traditional nativity play featuring the children of St. Paul's. Come and join in the singing of your favorite carols.</p><br>
-      <%= cl_image_tag("GirlDog_fzaron.png", width: "100%") %>
+      <%= cl_image_tag("GirlDog_fzaron.png", width: "100%", :fetch_format => :auto) %>
     
    <p>If you missed the great writeup on the blessing of the animals at St. Paul's in the <em>Naples Daily News,</em> <%= link_to "here's a link to it.", "http://www.naplesnews.com/story/news/local/2016/11/26/blessed-dogs-east-naples-church/94270168/" %> Lots of pictures and a video!</p>
 
@@ -68,7 +68,7 @@
 Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
   <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
     <br>
-      <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "55%", class: "image-center"), 
+      <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 
       pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
   </div>

@@ -12,20 +12,17 @@
   <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
     
-    <h3>Sunday 8, 9:15 and 10:45 a.m.</h3>
-     <p><strong><%= link_to "Click here for Sunday's Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
-      <p>Nursery/Sunday School available during the two later services. Adult Advent Forum meets at 9:15 a.m. for the 8 a.m. and 10:45 worshippers, and at 10:45 for those who attend the 9:15 service. For a description of this class see <em>Advent Forum, </em> below. </p>
+    <h3>Christmas Eve, 9 p.m. singing of carols with organ and trumpet, followed by the Holy Eucharist at 9:30 p.m.<br>Sunday, Christmas Day 10 a.m. Lessons and Carols and Holy Eucharist </h3>
+     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
+      <!-- <p>Nursery/Sunday School available during the two later services. </p> -->
       <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
-      <h1>Christmas pageant this Sunday</h1>
-      <p>Children of St. Paul's will present the Liturgy of the Word by acting out the Nativity, Sunday 5 p.m.</p>
-      <p>If you have children visiting for the holidays, we'd love to have them participate in the pageant, too. We will be singing the carols you are familiar with, so come add your voice. All are welcome</p>
+    
      
-     
-
+<!--
     <%= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
     <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%= link_to "Read more about this series", worship_index_path %></p> 
- 
+ -->
 <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     <div class="mt30"></div>
     
@@ -51,16 +48,15 @@
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>
   
    
-    <p>Dec. 18 is<strong> Albergue Sunday,</strong> the opportunity to serve Christ through out ministry in the Dominican Republic. Sponsorships of the 100 kids in the albergue (it means shelter) will be made available. <%= link_to "See more about this ministry", pages_albergue_path %></p><br>
     
-      <p> Our <strong> Christmas pageant</strong> is this Sunday, Dec. 18, 5 p.m. A traditional nativity play featuring the children of St. Paul's. Come and join in the singing of your favorite carols.</p><br>
+      <p> Lots of photos of our <strong> Christmas pageant</strong>  Sunday are posted on our Facebook page! <%= link_to "Click here to see them", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %> and be sure to become our "friend" and invite others. Our children put on a wonderful Nativity; much thanks to them and their parents and all who helped.</p> <br>
       <%= cl_image_tag("GirlDog_fzaron.png", width: "100%", :fetch_format => :auto) %>
     
    <p>If you missed the great writeup on the blessing of the animals at St. Paul's in the <em>Naples Daily News,</em> <%= link_to "here's a link to it.", "http://www.naplesnews.com/story/news/local/2016/11/26/blessed-dogs-east-naples-church/94270168/" %> Lots of pictures and a video!</p>
 
          <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
         
-      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! Chat with Fr. Bill or one of the members of the vestry to get started. Some of our ministries are <%= link_to 'listed here', opportunities_path %></p>
+      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, our Jubilee! year, we wish to add 50 new ministries! Come to the <strong><em> Ministry Fair </em> </strong> on Jan. 8 in the church hall. We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are <%= link_to 'listed here.', opportunities_path %></p>
      <br>
 <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
  <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 

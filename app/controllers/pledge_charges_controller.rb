@@ -1,7 +1,5 @@
 class PledgeChargesController < ApplicationController
   
-  def new
-  end
 
   def create
     customer = Stripe::Customer.create(
@@ -11,7 +9,7 @@ class PledgeChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => 6300,
+      :amount      => @amount,
       :description => "Payment to St. Paul's",
       :currency    => 'usd',
       :plan        => TODO

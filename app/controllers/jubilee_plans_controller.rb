@@ -40,7 +40,8 @@ class JubileePlansController < ApplicationController
   def update
     @jubilee_plan.update(jubilee_plan_params)
       @jubilee_plan.save
-        redirect_to @jubilee_plan, notice: 'Jubilee Plan was successfully updated.'
+        redirect_to @jubilee_plan, notice: 
+        'Jubilee Plan was successfully updated.'
   end
 
   # DELETE /jubilees/1
@@ -57,7 +58,9 @@ class JubileePlansController < ApplicationController
 
 
     def jubilee_team_only
-      unless current_user.has_role?(:jubilee_planner) or current_user.has_role?(:communicator)  or current_user.has_role?(:admin)
+      unless current_user.has_role?(:jubilee_planner) 
+        or current_user.has_role?(:communicator)
+        or current_user.has_role?(:admin)
       redirect_to root_path, :alert => "Special authorization needed to view this page"
     end
   end

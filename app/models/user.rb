@@ -35,7 +35,6 @@ class User < ActiveRecord::Base
   
   
   before_save :set_full_name
-  #enum role: { admin: 0, vestry: 1, editor: 2, member: 3, guest: 4, jubilee_team: 5 }
   after_create :assign_default_role
   after_create :add_profile
   has_attachment :avatar, accept:[:jpg, :png, :gif]
@@ -50,7 +49,7 @@ class User < ActiveRecord::Base
   has_many :vreports, dependent: :destroy
   has_many :jubilee_plans, dependent: :destroy
   validates :full_name, uniqueness: { case_sensitive: false }
-  #after_create :send_welcome_email
+  
    attr_accessor :login
 
    #Include default devise modules 
@@ -69,6 +68,8 @@ class User < ActiveRecord::Base
   end 
 
 
+protected
+
   def set_full_name
     self.full_name = "#{self.first_name} #{self.last_name}".strip
   end  
@@ -81,14 +82,6 @@ class User < ActiveRecord::Base
     self.create_profile if profile.nil?
   end
 
-  #def send_welcome_email
-   # WelcomeMailer.welcome_email(self).deliver_now
-  #end
-
-
-  #def facebook
-  #  self.connections.where(provider: "facebook").first
-  #end
 
     def self.find_first_by_auth_conditions(warden_conditions)
   conditions = warden_conditions.dup

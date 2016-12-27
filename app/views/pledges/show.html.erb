@@ -7,9 +7,9 @@
           If these numbers are not correct, click "edit facts" to make changes. If correct, click "checkout" and to be taken to a secure website that handles credit and debit card payments for St. Paul's.</h3>
         <div class="mt30"></div>
         <p><strong>
-          If your circumstances change or for any other reason you wish to change these settings you may do so at any time.</strong></p>
+          If your circumstances change or for any other reason you wish to alter these settings you may do so at any time.</strong></p>
         <div class="mt30"></div>
-          <%= button_to "Edit Facts", new_pledge_path, method: 'get', class: "btn btn-primary btn-lg image-center" %> 
+          <%= button_to "Edit Facts", new_pledge_path, method: 'get', class: "btn btn-danger btn-sm image-center" %> 
       </div>
 
       <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
@@ -29,7 +29,7 @@
           <article>
             <%= hidden_field_tag(:stripeToken) %>
           </article>
-          <button id='donateButton'>Donate</button>
+          <button id='donateButton'>Donate, class:"btn btn-primary btn-sm"</button>
            <% end %>            
     </div>
   </div>

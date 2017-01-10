@@ -12,7 +12,7 @@
 //= require attachinary
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require compatibility.coffee
 //= require turbolinks
+//= require compatibility.coffee
 //= require video
 //= require_tree .

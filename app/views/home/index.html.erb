@@ -12,15 +12,13 @@
   <h1 id="welcome">Come worship with us!</h1>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
     
-    <h3>New Year's Day </h3><p>8 a.m. Rite I; 9:15 a.m. contemporary; 10:45 a.m., Rite II with choir and organ.</p>
-    <p>2 p.m. Celebrate Haitian independence with our Creole-speaking community. (No 5 p.m. service today.)</p>
-    <h3>January 8</h3><p>7:45 a.m. Rite I; 9 a.m. Ministry Fair in the church hall; 10 a.m. Rite II.</p>
-    <h3>January 15 ~></h3>
-    <p>7:45 a.m. Rite I; 9 a.m. Christian Formation; 10 a.m. Rite II</p>
-    <p>Nursery/Sunday School available during the 10 a.m. services. </p>
+    <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
+    <p><strong>9 a.m.</strong> Adult Christian Formation <%= link_to 'See details', worship_index_path %> </p>
+    <p><strong>10 a.m.</strong> Holy Eucharist (Rite II)</p>
+    <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
+   
      <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
       
-      <p><strong><em>Haitian Episcopalian Service</em></strong> Sundays 5 p.m.<%= link_to "(for information in Creole, click here)", pages_haitian_path %>   </p>
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
     
      
@@ -54,14 +52,14 @@
   
    
     
-      <p> Lots of photos of our <strong> Christmas pageant</strong>  Sunday are posted on our Facebook page! <%= link_to "Click here to see them", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %> and be sure to become our "friend" and invite others. Our children put on a wonderful Nativity; much thanks to them and their parents and all who helped.</p> <br>
+      <p> Lots of photos of our <strong> Christmas pageant</strong>  and the Jan. 1 celebration of Haitian independence are posted on our Facebook page! <%= link_to "Click here to see them", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %> and be sure to become our "friend" and invite others.</p> <br>
       <%= cl_image_tag("GirlDog_m2lsjj.png", width: "100%", :fetch_format => :auto) %>
     
    <p>If you missed the great writeup on the blessing of the animals at St. Paul's in the <em>Naples Daily News,</em> <%= link_to "here's a link to it.", "http://www.naplesnews.com/story/news/local/2016/11/26/blessed-dogs-east-naples-church/94270168/" %> Lots of pictures and a video!</p>
 
          <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
         
-      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, our Jubilee! year, we wish to add 50 new ministries! Come to the <strong><em> Ministry Fair </em> </strong> on Jan. 8 in the church hall. We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are <%= link_to 'listed here.', opportunities_path %></p>
+      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are <%= link_to 'listed here.', opportunities_path %></p>
      <br>
 <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
  <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 
@@ -69,7 +67,7 @@
 Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
   <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
     <br>
-      <%=link_to cl_image_tag("2016calendar_r6clxj.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 
+      <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 
       pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
   </div>

@@ -58,9 +58,8 @@ class JubileePlansController < ApplicationController
 
 
     def jubilee_team_only
-      unless current_user.has_role?(:jubilee_planner) 
-        or current_user.has_role?(:communicator)
-        or current_user.has_role?(:admin)
+      unless current_user.has_any_role?(:jubilee_planner, :communicator, :admin) 
+      
       redirect_to root_path, :alert => "Special authorization needed to view this page"
     end
   end

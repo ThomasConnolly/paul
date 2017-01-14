@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
-gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem 'sass-rails'
 gem 'autoprefixer-rails'
 gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'

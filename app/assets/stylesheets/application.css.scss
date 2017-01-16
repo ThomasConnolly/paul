@@ -55,7 +55,8 @@ html {font-size: 100%}
 .sidebar {
   background-color: #eee;
   padding-right: .9rem;
-  point-size: 1rem;
+  margin-top : 1.25rem;
+  font-size: 1rem;
 }
 
 div.hidden {
@@ -92,9 +93,7 @@ p {
     font-size : 1.25rem;
     line-height: 1.75rem;
 }
-.sidebar {
-  margin-top: 2rem;
-}
+
 p.sidebar {
   font-size: 1rem;
 }

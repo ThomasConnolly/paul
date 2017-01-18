@@ -2,35 +2,47 @@
   <div class="row">    
     <div class="col-md-8 col-md-offset-2">
       <div class="pledge-text">
-        <h3> You have elected to pay your pledge of <%= number_to_currency(@pledge.amount) %> annually in <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency(@pledge.pay_this.to_f) %></span>.
+        <p><strong> You have elected to pay your pledge of <%= number_to_currency(@pledge.amount) %> annually in <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency(@pledge.pay_this.to_f) %></span>.</strong></p>
         <div class="mt30"></div>
-          If these numbers are not correct, click "edit facts" to make changes. If correct, click "checkout" and to be taken to a secure website that handles credit and debit card payments for St. Paul's.</h3>
+          <p>If these numbers are not correct, click "edit facts" to make changes. If correct, click "checkout." You will be taken to a secure website that handles credit and debit card payments for our church.</p>
         <div class="mt30"></div>
         <p><strong>
           If your circumstances change or for any other reason you wish to alter these settings you may do so at any time.</strong></p>
         <div class="mt30"></div>
-          <%= button_to "Edit Facts", new_pledge_path, method: 'get', class: "btn btn-danger btn-sm image-center" %> 
+          <%= button_to "Edit Facts", new_pledge_path, method: 'get', class: "btn btn-danger btn-lg" %> 
       </div>
+      <div class="mt100"></div>
+      
 
-      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-      <script type="text/javascript">
-        Stripe.setPublishableKey('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
-      </script>
-
-          <%= form_tag charges_path do %>
+          <%= form_tag pledge_charges_path do %>
             <div id="error_explanation">
               <% if flash[:error].present? %>
               <p><%= flash[:error] %></p>
           <% end %>
             </div>
           <article>
-            <%= hidden_field_tag(:amount, @pledge.pay_this) %>
+            <%= text_field_tag(:amount, @pledge.pay_this) %>
           </article>
           <article>
             <%= hidden_field_tag(:stripeToken) %>
           </article>
-          <button id='donateButton'>Donate, class:"btn btn-primary btn-sm"</button>
-           <% end %>            
+          <button id='donateButton'>Donate</button>
+          <% end %> 
+        <script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
+          <script>
+          var handler = StripeCheckout.configure({
+            key:'<%= Rails.configuration.stripe[:publishable_key] %>',
+            locale: 'auto',
+            name: "St. Paul's",
+            description: "Pledge",
+            token: function(token) {
+              $('input#stripeToken').val(token.id);
+              $('form').submit();
+            }
+          }) 
+          </script>
+
     </div>
+
   </div>
 </div>

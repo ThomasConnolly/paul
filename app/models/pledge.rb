@@ -18,9 +18,10 @@ class Pledge < ActiveRecord::Base
   validates_presence_of :user_id
   before_save :set_pay_this
   
+  
 
- 
+ #Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
   def set_pay_this
-    self.pay_this = self.amount / self.divisor
+    self.pay_this = self.amount*100 / self.divisor
   end
 end

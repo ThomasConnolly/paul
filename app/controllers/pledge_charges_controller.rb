@@ -7,13 +7,13 @@ class PledgeChargesController < ApplicationController
       :source  => params[:stripeToken]
     )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => "Payment to St. Paul's",
-      :currency    => 'usd',
-      :plan        => TODO
-    )
+    # charge = Stripe::Charge.create(
+      # :customer    => customer.id,
+      # :amount      => @pledge.pay_this
+      # :description => "Pledge Payment",
+      # :currency    => 'usd',
+      # :plan        => TODO
+    # )
 
     # purchase = Purchase.create(email: params[:stripeEmail],
       # card: params[:stripeToken], amount: params[:amount],

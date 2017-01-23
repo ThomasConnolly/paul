@@ -1,0 +1,17 @@
+<div class="example" data-no-turbolink>
+<%= simple_form_for @formation_talk, html: { multipart: true } do |f| %>  
+  <div class="form-group">
+    <%= f.input :title, class: 'form-control' %> 
+    <%= f.date_select :delivered_on, id: 'datetimepicker1' %><br>
+    <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' } } %><br>
+
+    <%= f.button :submit %>   
+  <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    

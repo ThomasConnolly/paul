@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get 'markets/index'
   get 'leadership/index'
   get 'sunday_school/index'
-  get 'formation/index'
   get 'prayer/index'
   get 'pages/haitian'
   get 'pages/concert'
@@ -45,6 +44,7 @@ Rails.application.routes.draw do
   resource :pledge
   resources :sermons
   resources :purchases, only: [:show]
+  resources :formation_talks
   
   devise_for :users
     devise_scope :user do

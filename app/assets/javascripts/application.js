@@ -10,6 +10,8 @@
 //= require jquery.slick
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require moment
+//= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks

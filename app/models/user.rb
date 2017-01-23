@@ -31,6 +31,7 @@
 #
 
 class User < ActiveRecord::Base
+  extend Rolify
   rolify
   
   

@@ -7,8 +7,8 @@
 #  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  amount     :decimal(15, 2)
-#  pay_this   :decimal(15, 2)
+#  amount     :integer
+#  pay_this   :integer
 #
 
 class Pledge < ActiveRecord::Base

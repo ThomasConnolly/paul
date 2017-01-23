@@ -8,7 +8,7 @@
   <tbody>
     <% @sermons.each do |sermon| %>
       <tr>
-        <td ><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
+        <td><%= sermon.delivered_on.strftime("%b %d, %Y") %></td> 
         <td><%= sermon.homilist.name %></td> 
         <td><%= link_to sermon.title, sermon %> <% if current_user && current_user.has_role?(:admin) %>
           | words: <%= sermon.sermon_body.split.count %>  &nbsp; | <%= link_to sermon,  method: :delete, data: { confirm: 'This will delete this sermon.' } do %> Delete!

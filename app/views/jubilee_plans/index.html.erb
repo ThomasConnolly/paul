@@ -1,40 +1,87 @@
 <div class="row">
-  <div class="col col-md-4 col-md-offset-2 col-sm-6">
-    <h1 class="floatleft">Jubilee! Posts</h1>
-      
-  </div>
-  <div class="col col-md-4 col-sm-6">
-        <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "70%", class: "floatright") %>
-  </div> 
-    <div class="row">
-      <div class="col col-md-8 col-md-offset-2 col-sm-12"> 
-      <section>
-        <div class="create-jubilee">
-          <% if current_user.avatar.present? %>
-            <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
-            crop: :fill, gravity: :face, class: "floatleft" }) %>
-          <% else %>
-            <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
-            </div>
-          <% end %> <br><br>
-           
-            <h3><%= link_to "Create a new Jubilee! post", new_jubilee_plan_path %></h3> 
-        </div> 
-      </section>
-  </div>
-</div>
+  <div class="col col-md-10 col-md-offset-1 col-sm-12">
+    <h1>Jubilee!</h1>
+      <h2>And ye shall hallow the fiftieth year, and proclaim liberty throughout the land unto all the inhabitants thereof; it shall be a jubilee unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.</h2>
+        <p class="floatright"><small>— Leviticus 25:10 (Jewish Publication Society translation)</small></p>
+          <div class="mt100"></div>
+        <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: "floatright") %>
+        <h1>How we will celebrate Jubilee!</h1>
+        <div class="clearall"></div>
+        <h2>December 2016</h2>
+        <%= cl_image_tag("jubilee_englbw.jpg", width: '80%', class: "image-center") %>
+        <p><strong>Our Jubilee! got under way when we wore our brand new Jubilee! tee shirts to greet Bishop Smith, Dec. 11</strong></p>
+        <%= cl_image_tag("Jubilee_Choir_cu44gj.jpg", width: "100%") %>
+        <%=cl_image_tag("Jubilee_Procession_jbfzll.jpg", width: "60%", class: "floatright") %>
+        <div class="mt100"></div>
+         <p><strong>One of our goals this Jubilee! year is to gain 50 new members of St. Paul's!</strong></p>
  
-<div class="row">
-  <div class="col col-md-6 col-md-offset-3">
-  <% @jubilee_plans.each do |jubilee_plan| %>
-    <h2><%= link_to jubilee_plan.title, jubilee_plan %></h2>
-    <p>By <%= jubilee_plan.user.full_name.titleize %> </p>
-    <% if jubilee_plan.comments.any? %>
-      <p><small><em><%= pluralize jubilee_plan.comments.count, "comment" %> </em></small></p>
-      <hr><br>
-    <% end %><hr>
-  <% end %>
-    <div class="mt60"></div>
-    <h3><%= link_to 'Create a new Jubilee! post', new_jubilee_plan_path %></h3>
-  </div>
-</div>
+
+
+       <div class="clearall"></div><hr>
+        <h2> January 2017</h2>
+        <%= cl_image_tag("MinistryFair_oditxf.jpg", width: "40%") %>
+        <%= cl_image_tag("Jubilee_Dinner_wgg2ae.jpg", width: "56%") %>
+        <p><strong>Wanting to sign up 50 for new ministries in the church, we exceeded that goal at the Jan. 6 Ministry Fair! Then we celebrated Jubilee! with a parish dinner Jan. 26, where the focus was on our outreach to the children in the Dominican Republic.</strong></p>
+        <hr>
+       
+        <%= cl_image_tag("DwayneMug_hae91z.jpg", width: "200px", class: "floatright") %>
+         <h2>February</h2>
+        <p><strong> Jubilee! Spaghetti dinner at 5:30 p.m. Feb. 9, Trinity Hall.<br>
+        We'll be collecting 50 cakes, pies or batches of cookies for our 50th. The goodies will be presented at mass on Feb. 12 and distributed to local charities along with our Jubilee! love.
+        <br>
+        Greet our former associate rector, the Rev. Dwayne Varas, who will speak at our Jubilee! Winter Festival Feb. 26.
+        </strong></p>
+        <hr>
+        <h2>March</h2>
+        <p><strong> 50! pints of blood! Sign up for the bloodmobile, which will be at the Farmers' Market on April 1. <br>
+        Read during Lent the 50 meditations written by parishioners.
+        </strong></p>
+        <hr>
+        <h2>April</h2>
+        <p><strong>50 hour vigil during Holy Week
+        </strong></p>
+        <hr>
+        <h2>May</h2>
+        <p><strong> 500 volunteer hours on outreach projects.
+        </strong></p>
+        <h2>June</h2>
+        <hr>
+        <p><strong> 50 new Books of Common Prayer
+        </strong></p>
+        <hr>
+        <h2>July</h2>
+        <p><strong> 50 receipes for a Jubilee! cookbook.
+        </strong></p>
+        <hr>
+        <h2>August</h2>
+        <p><strong> 500 lbs. weight loss (5 lb. increments)
+        </strong></p>
+        <hr>
+        <h2>September</h2>
+        <p><strong> 50 new plants
+        </strong></p>
+        <hr>
+        <h2>October</h2>
+        <p><strong> Add $50 to your 2018 pledge!
+        </strong></p>
+        <hr>
+        <h2>November</h2>
+        <p><strong> 50 Dominican Republic children sponsorships!
+        </strong></p>
+        <hr>
+        <h2>December</h2>
+        <p><strong> Welcome our 50th new member of the Jubilee! year.
+        </strong></p>
+        <hr>
+        <h2>January 2018</h2>
+        <p><strong> Jubilee! Grand dinner celebration with the bishop.
+        </strong></p>
+
+
+
+
+
+
+
+  </div>      
+</div>           

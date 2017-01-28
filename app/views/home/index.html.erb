@@ -28,6 +28,10 @@
  -->
 <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     <div class="mt30"></div>
+    <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
+    <div class="mt100"></div>
+    <h2>What's Jubilee! all about?</h2>
+    <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
     
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
     <h1>Welcome to the Farmers&rsquo; Market</h1>

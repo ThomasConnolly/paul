@@ -12,6 +12,6 @@
 
 class FormationTalk < ActiveRecord::Base
   
-  default_scope -> { order('created_at DESC') }
+  default_scope -> { order('delivered_on ASC') }
   validates_presence_of :title
 end

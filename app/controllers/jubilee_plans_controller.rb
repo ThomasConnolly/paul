@@ -1,7 +1,5 @@
 class JubileePlansController < ApplicationController
-  before_action :authenticate_user!
-  before_action :jubilee_team_only
-  before_action :set_jubilee_plan, only: [:show, :edit, :update, :destroy]
+  
   
 
   # GET /jubilees
@@ -57,12 +55,6 @@ class JubileePlansController < ApplicationController
   private
 
 
-    def jubilee_team_only
-      unless current_user.has_any_role?(:jubilee_planner, :communicator, :admin) 
-      
-      redirect_to root_path, :alert => "Special authorization needed to view this page"
-    end
-  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_jubilee_plan

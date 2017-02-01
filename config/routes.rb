@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'members/index'
   get 'members/import'
   get 'thanks', to: 'tickets#thanks', as: 'thanks'
+  get 'pledges/confirmation'
   resources :events do
     resources :tickets, only: [:new, :show, :create, :update, :index]
   end

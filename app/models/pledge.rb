@@ -17,11 +17,26 @@ class Pledge < ActiveRecord::Base
   validates :divisor, :presence => true, :numericality => {:greater_than => 0}
   validates_presence_of :user_id
   before_save :set_pay_this
-  
+  before_save :set_plan
+
+
   
 
  #Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
+
+
+
   def set_pay_this
     self.pay_this = self.amount*100 / self.divisor
+  end
+
+  def set_plan
+    if self.divisor == 4
+      puts self.plan = "quarterly"
+    elsif self.divisor == 12
+      puts self.plan = "monthly"
+    else
+      puts self.plan = "weekly"
+    end
   end
 end

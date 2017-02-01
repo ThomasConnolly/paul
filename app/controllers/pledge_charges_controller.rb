@@ -22,6 +22,8 @@ class PledgeChargesController < ApplicationController
 
     # redirect_to purchase
 
+    #redirect_to pledges/confirmation
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

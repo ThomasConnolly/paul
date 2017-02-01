@@ -34,6 +34,9 @@ class PledgesController < ApplicationController
     end 
   end
 
+  def confirmation
+  end
+
   def destroy
   end
 
@@ -72,6 +75,6 @@ private
   end
 
   def pledge_params
-    params.require(:pledge).permit [:amount, :divisor, :pay_this]
+    params.require(:pledge).permit [:amount, :divisor, :pay_this, :plan]
   end
 end

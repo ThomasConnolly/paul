@@ -29016,10 +29016,6 @@ CKEDITOR.editorConfig = function( config )
 
 
 }).call(this);
-jQuery ->
-  Stripe.setPublishableKey($("meta[name='stripe-key']").attr("content"))
-
-
 $(function() {
   var $form = $('#payment-form');
   $form.submit(function(event) {

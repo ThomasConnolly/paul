@@ -11,7 +11,6 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require moment
-//= require bootstrap
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require compatibility.coffee

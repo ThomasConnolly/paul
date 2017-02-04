@@ -44,4 +44,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  end
+end
+  STRIPE_SECRET = "sk_test_6WXPogsWOT7VAkDl67EPu8PE"
+  STRIPE_PUBLIC = "pk_test_p9ozCY1wINl7nqjhbCKifu9X"
+  
+  

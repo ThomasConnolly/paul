@@ -1,19 +1,18 @@
 class PledgeChargesController < ApplicationController
-  
+  def new
+  end
 
   def create
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
-    )
+    @amount = Pledge.new(params[:pay_this])
 
-    # charge = Stripe::Charge.create(
-      # :customer    => customer.id,
-      # :amount      => @pledge.pay_this
-      # :description => "Pledge Payment",
-      # :currency    => 'usd',
-      # :plan        => TODO
-    # )
+
+    Stripe::Charge.create(
+       :amount      => @amount,
+       :description => "Pledge Payment",
+       :currency    => 'usd',
+       :plan        => @pledge.plan
+       :source      => params[]
+     )
 
     # purchase = Purchase.create(email: params[:stripeEmail],
       # card: params[:stripeToken], amount: params[:amount],

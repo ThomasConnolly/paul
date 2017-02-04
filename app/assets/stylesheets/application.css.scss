@@ -10,18 +10,11 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- 
- 
- *= require social-share-button
- *= require jquery.fileupload
- *= require jquery.fileupload-ui
- *= require_tree .
- *= require_self
  */
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-datetimepicker";
 @import "slick";
 
 
@@ -51,13 +44,14 @@ html {font-size: 100%}
 
 .main-body {
   padding-right: 36px;
-  font-size: 1.25rem;
+
 }
 .sidebar {
   background-color: #eee;
   padding-right: .9rem;
   margin-top : 1.25rem;
   font-size: 1rem;
+  line-height: 1.75;
 }
 
 div.hidden {
@@ -67,7 +61,7 @@ div.hidden {
 h1 {
 color : #5c004c;
 font-size : 3rem;
-line-height : 100%;
+line-height : 1.25;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
 margin-top : 1.25rem;
 }
@@ -92,11 +86,12 @@ margin-top : .5rem;
 }
 p {
     font-size : 1.25rem;
-    line-height: 1.75rem;
+    line-height: 1.75;
 }
 
-p.sidebar {
+.sidebar p{
   font-size: 1rem;
+  line-height: 1.5;
 }
       
 p.poem {
@@ -110,7 +105,7 @@ p.chat-name {
 }
 p.owner-edit-links {
   font-size: .6rem;
-  line-height: .75rem;
+  line-height: 1;
   margin-top: -1rem;
   padding-right: 300px;
   float: left;
@@ -122,25 +117,13 @@ p.center-bold-text {
   font-weight: bold;
 }
 
-.submenu  {
-background: white;
-font-size: .8rem;
-color: black;
-text-shadow: none;
-width:175px;
-margin-left: -20px;
-padding: 10px;
-display: none;
-list-style-type: none;
-}
+
 
 .main-logo {
   float: left;
   margin-bottom: 40px;
 }
-.sub-logo {
-  overflow: hidden;
-}
+
 
 
 
@@ -160,19 +143,6 @@ list-style-type: none;
   width:30%;
   margin: 0, auto;
 }
-
-.dropdown-menu ul {
-  list-style: none;
-  text-decoration: none;
-  padding: 0px;
-  margin: 0px;
-  }
-.dropdown-menu li {
-  display: block;
-  position: relative;
-  float: left; border: 1px solid #000;
-}
-
 
 .scroller {
   background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
@@ -244,11 +214,6 @@ list-style-type: none;
   padding: 8px;
 }
 
-#dropdown1 #dropdown2 {
-  float:left;
-  margin-right: 20px;
-  margin-top: 40px;
-}
 
 .talk-box {
   float:right;
@@ -260,13 +225,13 @@ list-style-type: none;
   text-align:center;
   font-family : Verdana, Helvetica, Arial, Sans-Serif;
   font-size : 1.125rem;
-  line-height: 1.5em;
+  line-height: 1.5;
 }
 
 
 .sermon p {
-  font-size: 1.25rem;
-  line-height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 2;
   font-family: Times, serif;
   text-align: left;
 }
@@ -350,7 +315,7 @@ list-style-type: none;
   border-radius: 4px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .9rem;
-  line-height: 1.25rem;
+  line-height: 1.25;
 }
 .flash_notice {
   background-color: #dff0d8;
@@ -433,6 +398,10 @@ list-style-type: none;
 .btn-modal-footer {
   width: 100px;
   height: 100px
+}
+
+.btn {
+  margin: 2em;
 }
 
 .default-avatar{

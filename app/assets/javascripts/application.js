@@ -1,19 +1,17 @@
+
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require ckeditor/init
 //= require jquery.remotipart
-//= require jquery-dropdown
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require jquery.slick
+//= require ckeditor/init
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require moment
-//= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
-//= require bootstrap
 //= require turbolinks
 //= require compatibility.coffee
 //= require video

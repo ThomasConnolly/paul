@@ -38,6 +38,8 @@ class PledgesController < ApplicationController
   end
 
   def destroy
+    @pledge.destroy
+      redirect_to '/', notice: 'Your pledge was deleted.'
   end
 
   def new
@@ -54,11 +56,10 @@ class PledgesController < ApplicationController
     end   
   end
 
-
 private
 
   def set_pledge
-    @pledge = Pledge.find(current_user.pledge(params[:id]))
+    @pledge = Pledge.find(current_user.pledge.id)
   end
 
   def change_pledge

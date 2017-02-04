@@ -10,7 +10,7 @@
     <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="sub-logo">
         <div class="dropdown" id="faith-button">
-          <button class="btn-custom dropdown-toggle" type="button" role = "menu" data-toggle="dropdown">Faith <span class="caret"></span></button>
+          <button class="btn-custom dropdown-toggle" type="button" role = "menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Faith <span class="caret"></span></button>
             <ul class="dropdown-menu" aria-labelledby="faith-button">
               <li> <%=link_to "Home", root_path %></li>
               <li> <%=link_to "Worship", worship_index_path %> </li>
@@ -22,7 +22,7 @@
             </ul> 
         </div> <!-- dropdown faith -->
         <div class="dropdown" id="action-button">
-          <button class="btn-custom dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+          <button class="btn-custom dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Action <span class="caret"></span></button>
             <ul class="dropdown-menu" aria-labelledby="action-button">
               <li> <%=link_to "There's a place for you", opportunities_path %> </li>
               <!-- <li> <%#=link_to "Your pledge", new_pledge_path %> </li> -->

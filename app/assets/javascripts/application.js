@@ -1,6 +1,5 @@
 
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require jquery.ui.widget

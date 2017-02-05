@@ -13,8 +13,7 @@
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
     
     <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
-    <!-- <p><strong>9 a.m.</strong> Adult Christian Formation <%= link_to 'See details', formation_talks_path %> </p> -->
-    <p><strong>Annual Meeting</strong> at 8:45 a.m. (between services) on Feb. 5, in Trinity Hall. The adult Christian formation class will resume at 9 a.m. Feb. 12.</p>
+    <p><strong>9 a.m.</strong> Adult Christian Formation <%= link_to 'See details', formation_talks_path %> </p>
     <p><strong>10 a.m.</strong> Holy Eucharist </p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
    
@@ -24,8 +23,8 @@
     
      
 <!--
-    <%= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
-    <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%= link_to "Read more about this series", worship_index_path %></p> 
+    <%#= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
+    <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%#= link_to "Read more about this series", worship_index_path %></p> 
  -->
 <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
     <div class="mt30"></div>
@@ -53,6 +52,7 @@
     <p><%= Date.current.to_formatted_s(:long) %></p>
      
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
+      <p><strong>Bring cakes and pies!</strong> One of our Jubilee! events is to gift our neighbors with sweetness, in the form of cakes, cookies or pies that we will bless at both masses next Sunday, Feb. 12, then distribute to charities. If you didn't sign up, don't worry&mdash;bake away! In honor of our 50 years we're looking to gather 50 such items of sweetness.</p>
       <p><strong><em>The Shack</em></strong> is the subject of group discussion with our deacon, the Rev. Dr. Mary Abrams, and Fr. Al Pike, Thursdays in February. The 10-year-old book is being made into a movie. All are invited; 1:30 p.m. in the library.</p> 
       <%= cl_image_tag("Dinner_pb8yt1.jpg", width: "95%", class: "image-center") %>
       <p><strong>Jubilee!</strong> Go to our <%= link_to 'Facebook page', "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133" %> to see photos of Thursday's Jubilee Dinner</p>

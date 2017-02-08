@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :meditations
   root 'home#index'
   get 'home/invitation'
   get 'members/index'

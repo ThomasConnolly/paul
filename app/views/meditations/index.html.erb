@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Meditations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Scripture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meditations.each do |meditation| %>
+      <tr>
+        <td><%= meditation.title %></td>
+        <td><%= meditation.body %></td>
+        <td><%= meditation.scripture %></td>
+        <td><%= link_to 'Show', meditation %></td>
+        <td><%= link_to 'Edit', edit_meditation_path(meditation) %></td>
+        <td><%= link_to 'Destroy', meditation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meditation', new_meditation_path %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>
+  <%= @meditation.title %></strong>
+<p>
+  <%= @meditation.scripture %>
+</p>
+<p>
+  <%= @meditation.body %>
+</p>
+<p>
+<strong>
+Number of words: <%= @meditation.body.split.count %></strong>
+</p>
+<p>
+<%= @meditation.name %>
+
+</p>
+
+<%= link_to 'Edit', edit_meditation_path(@meditation), class: "btn btn-primary btn-lg" %> |
+

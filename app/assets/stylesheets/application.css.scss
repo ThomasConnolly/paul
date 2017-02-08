@@ -117,13 +117,10 @@ p.center-bold-text {
   font-weight: bold;
 }
 
-
-
 .main-logo {
   float: left;
   margin-bottom: 40px;
 }
-
 
 #faith-button {
   float: left;
@@ -203,7 +200,6 @@ p.center-bold-text {
   opacity:0;
 }
 
-
 .underConstruction {
   margin-left: 350px;
   margin-top: 70px;
@@ -229,15 +225,15 @@ p.center-bold-text {
 
 .sermon p {
   font-size: 1.5rem;
-  line-height: 2;
+  line-height: 1.75;
   font-family: Times, serif;
   text-align: left;
 }
 .sermon-box {
   float:right;
-  margin:10px;
-  height:215px;
-  width:425px;
+  margin-left:10px;
+  height:235px;
+  width:475px;
   padding:6px;
   border-style: solid;
   border-width: 1px;

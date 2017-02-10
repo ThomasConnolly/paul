@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col col-md-6 col-md-offset-3 col-sm-12">
-<p>
-  <strong>
+<p><strong>
   <%= @meditation.title %></strong></p>
 <p>
  By <%= @meditation.name %></p>
@@ -11,7 +10,7 @@
  Inspired by <%= @meditation.scripture %></em></p>
 
 <p>
-  <%= @meditation.body %></p>
+<%= @meditation.body %></p>
 
 <p><strong>
   (Number of words: <%= @meditation.body.split.count %>)</strong></p>
@@ -19,7 +18,8 @@
 <p><em>
   <%= @meditation.prayer %></em></p>
 
-  <p><strong>Click the "Edit" button and amend your meditation until your word count is 150, give or take 10. When you're finished, click "Update Meditation." Repeat until you're satisfied, and you're finished.</p>
+<p><strong>
+  Click the "Edit" button and amend your meditation until your word count is 150, give or take 10. When you're finished, click "Update Meditation." Repeat until you're satisfied, and you're finished.</p>
 
 <%= link_to 'Edit', edit_meditation_path(@meditation), class: "btn btn-primary btn-lg" %>
 

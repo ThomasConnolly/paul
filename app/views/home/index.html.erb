@@ -18,9 +18,11 @@
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
    
      <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
-      
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+       <div class="mt30"></div>
    <%= link_to cl_image_tag("meditationsAdWeb_qixmyp.jpg", width: '100%'), new_meditation_path %>
+   <%= render partial: "/meditations/count", locals: { meditations: @meditations } %>
+   <div class="mt30"></div>
 
 
 <!--

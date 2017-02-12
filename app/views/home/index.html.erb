@@ -19,31 +19,36 @@
    
      <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+       <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
        <div class="mt30"></div>
    <%= link_to cl_image_tag("meditationsAdWeb_qixmyp.jpg", width: '100%'), new_meditation_path %>
   <%= render partial: "/meditations/count" %> 
    <div class="mt30"></div>
-
+<%= cl_image_tag("HolySweetness_esuqas.jpg", width: "100%") %>
+    <h2>Holy Sweetness</h2>
+    <p><em>Fifty-six Jubilee! cakes and pies exceed the goal of 50 are blessed here by Fr. Bill as Bill Strenkert reads a prayer of thanks. "We thank all the bakers and providers of these magnificent variety of baked goods which are offered to your glory. We pray that those who are less fortunate enjoy the sweetness of the brotherly love represented here."</em></p>
+    <div class="mt30"></div>
 
 <!--
     <%#= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
     <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%#= link_to "Read more about this series", worship_index_path %></p> 
  -->
-<p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p> 
+ 
     <div class="mt30"></div>
+
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
     <div class="mt100"></div>
     <h2>What's Jubilee! all about?</h2>
     <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
-    <h1>Welcome to the Farmers&rsquo; Market</h1>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
+    <h2>Welcome to the Farmers&rsquo; Market</h2>
     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"55%", class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"45%", class: "floatleft") %>
     <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %> </p> 
 
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center", :fetch_format => :auto) %> 
-    <br>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center", :fetch_format => :auto) %> 
+  
     <div class="mt30"></div>
     <div id="newsfeed">
     <!-- start feedwind code --><iframe  height="400"  width="100%" src="http://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.--></div><!--  end  feedwind code -->
@@ -55,9 +60,8 @@
     <p><%= Date.current.to_formatted_s(:long) %></p>
      
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
-      <%= cl_image_tag("CakesPieschopped_m6rman.jpg", width: "100%") %>
-      
-      <p><strong>Bring cakes and pies!</strong> One of our Jubilee! events is to gift our neighbors with sweetness, in the form of cakes, cookies or pies that we will bless at both masses next Sunday, Feb. 12, then distribute to charities. If you didn't sign up, don't worry&mdash;bake away! In honor of our 50 years we're looking to gather 50 such items of sweetness.</p>
+      <%#= %>
+      <p><strong><em>Afternoon Tea and Fashion Show</em></strong> put on by the ladies of the church is next Sunday. They'll be modeling some high fashion designer clothing. Always a fun event. Get your tickets ($10) from Marion Kennedy, or Marcie Cragg. Tickets will also be available in the church office or at the Boutique Shop during the Farmers' Market.</p>
       <p><strong><em>The Shack</em></strong> is the subject of group discussion with our deacon, the Rev. Dr. Mary Abrams, and Fr. Al Pike, Thursdays in February. The 10-year-old book is being made into a movie. All are invited; 1:30 p.m. in the library.</p> 
       <%= cl_image_tag("VanSplaning_oc6kaz.jpg", width: "95%", class: "image-center") %>
       <p><strong>Van has some 'splaning to do</strong> regarding her winning streak at Thursday's <em> Jubilee!</em> Italian dinner. Go to our <%= link_to 'Facebook page', "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133" %> to see more photos. </p>

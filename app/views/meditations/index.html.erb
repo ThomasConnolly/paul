@@ -6,7 +6,7 @@
         <p><%= meditation.publish_on.strftime("%B %-d, %Y") %> </p>
         <p><strong><%= meditation.title %></strong></p>
         <p><%= meditation.name %> </p>
-        <p><%= meditation.body %></p>
+        <p><%= raw meditation.body %></p>
         <p><em><%= meditation.scripture %></p>
         <p><strong><%= meditation.prayer %> </strong></p>
         <p><%= link_to 'Show', meditation %> | 

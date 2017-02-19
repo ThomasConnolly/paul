@@ -5,7 +5,7 @@ class MeditationsController < ApplicationController
   # GET /meditations
   # GET /meditations.json
   def index
-    @meditations = Meditation.all
+    @meditations = Meditation.all.order('publish_on')
   end
 
   # GET /meditations/1
@@ -15,7 +15,7 @@ class MeditationsController < ApplicationController
 
   # GET /meditations/new
   def new
-    @meditation = Meditation.new
+    @meditation = Meditation.new(publish_on: Date.current)
   end
 
   # GET /meditations/1/edit

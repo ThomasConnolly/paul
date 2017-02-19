@@ -6,5 +6,16 @@
      
      <%= render 'form' %>
      </div>
+   </div>     
+   <div class="row">    
+     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+       <div class="pledge-text">
+        <p><strong> You have elected the <span id="plan"><em><%= @pledge.plan %></em></span> pay plan for your annual pledge of <%= number_to_currency(@pledge.amount) %>. That would be <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency((@pledge.pay_this.to_f)/100) %></span>.</strong></p>
+        <div class="mt30"></div>
+          <p>If these numbers are not correct, click "edit pledge" to make changes. If OK, click "Pay with Card." You will be taken to a secure website that handles credit and debit card payments for our church.</p>
+        <div class="mt30"></div>
+        <p><strong>
+          If your circumstances change or for any other reason you wish to edit or remove these settings you may do so at any time.</strong></p>
+     </div>
   </div>  
 </div>

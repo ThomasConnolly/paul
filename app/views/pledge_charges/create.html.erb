@@ -1,12 +1,10 @@
-
 <div class="container">
   <div class="row">
-    <div class="col col-md col-8">
+    <div class="col col-md-6 col-md-offset-3 col-sm-12">
       <div class="mt50"></div>
-      <h2>Thank you <%= @pledge.first_name %> for your pledge payment and all you do for St. Paul's</h2>
+      <h2>Thank you <%= @pledge.user.first_name %> for your pledge payment and all you do for St. Paul's</h2>
       <div class="mt50"></div> 
      <%= cl_image_tag("FatherBillSig_veptsc.png", class: "image-center") %>
      <div class="mt100"></div>
   </div>  
 </div>
-

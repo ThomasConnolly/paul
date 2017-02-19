@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208161726) do
+ActiveRecord::Schema.define(version: 20170218172733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170208161726) do
     t.datetime "updated_at", null: false
     t.string   "name"
     t.string   "prayer"
+    t.date     "publish_on"
   end
 
   create_table "members", force: :cascade do |t|
@@ -135,7 +136,6 @@ ActiveRecord::Schema.define(version: 20170208161726) do
     t.integer  "amount"
     t.integer  "pay_this"
     t.string   "plan"
-    t.string   "customer_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -260,6 +260,8 @@ ActiveRecord::Schema.define(version: 20170208161726) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",                  default: 0
+    t.string   "customer_id"
+    t.string   "card"
   end
 
   add_index "users", ["full_name"], name: "index_users_on_full_name", using: :btree

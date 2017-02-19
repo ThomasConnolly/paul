@@ -1,30 +1,31 @@
 class PledgeChargesController < ApplicationController
+
   def new
   end
 
-  # def create
-    # @amount = Pledge.new(params[:pay_this])
+  def create
+    @pledge = Pledge.find(current_user.pledge.id)
+    @amount = @pledge.pay_this
 
+   customer = Stripe::Customer.create(
+    :card  => params[:stripeToken]
+  )
 
-    # Stripe::Charge.create(
-       # :amount      => @amount,
-       # :description => "Pledge Payment",
-       # :currency    => 'usd',
-       # :plan        => @pledge.plan
-       # :source      => params[]
-     # )
+    
+   charge = Stripe::Subscription.create(
+       :customer    => customer.id,
+       :amount      => @amount,
+       :description => "Pledge Payment",
+       :currency    => 'usd',
+       :plan        => @pledge.plan
+      )
 
-    # purchase = Purchase.create(email: params[:stripeEmail],
-      # card: params[:stripeToken], amount: params[:amount],
-      # description: charge.description, currency: charge.currency,
-      # product_id: 1, customer_id: customer.id, uuid: SecureRandom.uuid)
+  
+  @pledge.update(card: params[:stripeToken], customer_id: customer.id
+  )
 
-    # redirect_to purchase
-
-    #redirect_to pledges/confirmation
-
-  # rescue Stripe::CardError => e
-    # flash[:error] = e.message
-    # redirect_to new_charge_path
-  # end
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to pledge_charges_path
+  end
 end

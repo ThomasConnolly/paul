@@ -1,18 +1,16 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col col-md-6 col-md-offset-3 col-sm-12">
+<p> <%= @meditation.publish_on.strftime("%B %-d, %Y") %> </p>
 <p><strong>
   <%= @meditation.title %></strong></p>
 <p>
  By <%= @meditation.name %></p>
-
-<p> <%= @meditation.publish_on.strftime("%B %-d, %Y") %> </p> 
-
 <p><em>
  Inspired by <%= @meditation.scripture %></em></p>
 
 <p>
-<%= @meditation.body %></p>
+<%= raw @meditation.body %></p>
 
 <p><strong>
   (Number of words: <%= @meditation.body.split.count %>)</strong></p>

@@ -3,6 +3,7 @@
 <h1>Listing Meditations</h1>
 
     <% @meditations.each do |meditation| %>
+        <p><%= meditation.publish_on.strftime("%B %-d, %Y") %> </p>
         <p><strong><%= meditation.title %></strong></p>
         <p><%= meditation.name %> </p>
         <p><%= meditation.body %></p>

@@ -16,6 +16,7 @@
     <p><strong>9 a.m.</strong> Adult Christian Formation <%= link_to 'See details', formation_talks_path %> </p>
     <p><strong>10 a.m.</strong> Holy Eucharist </p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
+    <p><strong>Ash Wednesday</strong> services at noon and 5:30 p.m. March 1</p>
    
      <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
@@ -24,11 +25,10 @@
    <%= link_to cl_image_tag("meditationsAdWeb_qixmyp.jpg", width: '100%'), new_meditation_path %>
   <%= render partial: "/meditations/count" %> 
    <div class="mt30"></div>
-<%= cl_image_tag("HolySweetness_esuqas.jpg", width: "100%") %>
-    <h2>Holy Sweetness</h2>
-    <p><em>Fifty-six Jubilee! cakes and pies exceed the goal of 50 are blessed here by Fr. Bill as Bill Strenkert reads a prayer of thanks. "We thank all the bakers and providers of these magnificent variety of baked goods which are offered to your glory. We pray that those who are less fortunate enjoy the sweetness of the brotherly love represented here."</em></p>
-    <div class="mt30"></div>
 
+ <%= cl_image_tag("Model1_jnop6y.jpg", width: "50%", class: "floatleft") %>
+      <%= cl_image_tag("Model2_ecolyo.jpg", width: "50%", class: "floatleft") %>
+      <p><strong><em>Fun time at the fashion show</em> </strong>Janet Shanley, left and Meggie Guerrier were two of the models. See lots of pictures on our <%= link_to "Facebook page", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %></p>
 <!--
     <%#= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
     <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%#= link_to "Read more about this series", worship_index_path %></p> 
@@ -60,11 +60,12 @@
     <p><%= Date.current.to_formatted_s(:long) %></p>
      
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
-      <%#= %>
-      <p><strong><em>Afternoon Tea and Fashion Show</em></strong> put on by the ladies of the church is next Sunday. They'll be modeling some high fashion designer clothing. Always a fun event. Get your tickets ($10) from Marion Kennedy, or Marcie Cragg. Tickets will also be available in the church office or at the Boutique Shop during the Farmers' Market.</p>
+      <div class="mt30"></div><%= cl_image_tag("DwayneMug_hae91z.jpg", width: "85%", class: "image-center") %>
+        <p><strong>Greet our former associate rector,</strong> the Rev. Dwayne Varas, who will speak at our Jubilee! Winter Festival on Sunday Feb. 26.
+        </p>
+     
       <p><strong><em>The Shack</em></strong> is the subject of group discussion with our deacon, the Rev. Dr. Mary Abrams, and Fr. Al Pike, Thursdays in February. The 10-year-old book is being made into a movie. All are invited; 1:30 p.m. in the library.</p> 
-      <%= cl_image_tag("VanSplaning_oc6kaz.jpg", width: "95%", class: "image-center") %>
-      <p><strong>Van has some 'splaning to do</strong> regarding her winning streak at Thursday's <em> Jubilee!</em> Italian dinner. Go to our <%= link_to 'Facebook page', "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133" %> to see more photos. </p>
+      
       <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
 
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>

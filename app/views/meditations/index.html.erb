@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Meditations</h1>
+<h2>Listing <%= @meditations.count %> Meditations</h2>
 
     <% @meditations.each do |meditation| %>
-        <p><%= meditation.publish_on.strftime("%B %-d, %Y") %> </p>
-        <p><strong><%= meditation.title %></strong></p>
+        <p><strong><%= meditation.title %></strong> Publish on: <%= meditation.publish_on.strftime("%B %-d, %Y") %> </p>
         <p><%= meditation.name %> </p>
+        <p><em><%= meditation.scripture %></em></p>
         <p><%= raw meditation.body %></p>
-        <p><em><%= meditation.scripture %></p>
-        <p><strong><%= meditation.prayer %> </strong></p>
+        <p><strong><em><%= meditation.prayer %> </em></strong></p>
         <p><%= link_to 'Show', meditation %> | 
         <%= link_to 'Edit', edit_meditation_path(meditation) %> | 
         <%= link_to 'Destroy', meditation, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -16,6 +15,6 @@
     <% end %>
 
 <br>
-<%= render "count" %>
 
-<%= link_to 'New Meditation', new_meditation_path %>
+
+<p><%= link_to 'New Meditation', new_meditation_path %></p>

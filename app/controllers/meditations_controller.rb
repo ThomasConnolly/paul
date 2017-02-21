@@ -43,7 +43,7 @@ class MeditationsController < ApplicationController
   def update
     respond_to do |format|
       if @meditation.update(meditation_params)
-        format.html { redirect_to @meditation, notice: 'Meditation was successfully updated.' }
+        format.html { redirect_to meditations_url, notice: 'Meditation was successfully updated.' }
         format.json { render :show, status: :ok, location: @meditation }
       else
         format.html { render :edit }

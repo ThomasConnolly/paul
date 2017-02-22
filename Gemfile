@@ -40,7 +40,6 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
-gem 'thor'
 
 group :development do
   gem 'meta_request'

@@ -487,7 +487,6 @@ DEPENDENCIES
   spring
   stripe!
   therubyracer
-  thor
   turbolinks (~> 5.0.0.beta)
   uglifier (>= 1.3.0)
 

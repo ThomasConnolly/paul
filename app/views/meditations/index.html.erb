@@ -6,9 +6,9 @@
         <p>  <%= meditation.publish_on.strftime("%A, %B %-d, %Y") %><br>
         <strong><%= meditation.title %></strong> </p>
         
-        <p><em><%= meditation.scripture %></em></p>
-        <p><%= raw meditation.body %></p>
-        <p><strong><em><%= meditation.prayer %> </em></strong></p>
+        <p><em><%#= meditation.scripture %></em></p>
+        <p><%#= raw meditation.body %></p>
+        <p><strong><em><%#= meditation.prayer %> </em></strong></p>
         <p><%= meditation.name %> </p>
         <p><%= link_to 'Show', meditation %> | 
         <%= link_to 'Edit', edit_meditation_path(meditation) %> | 

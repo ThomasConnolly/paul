@@ -1,27 +1,24 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
+  before_action :set_event
+  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   
   
   def show
-    @ticket = Ticket.find(params[:id])
-    @event = Event.find(params[:event_id])
   end
 
   def index
     @tickets = Ticket.all
-    @event = Event.find(params[:event_id])
   end
   
   def new
-    @ticket = Ticket.new
-    @event = Event.find(params[:event_id])
+    @ticket = @event.tickets.build
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
-    @ticket.event_id = params[:event_id]
+    @ticket = @event.tickets.build(ticket_params)
     if @ticket.save
-      redirect_to [@ticket.event, @ticket], notice: "ticket created"
+      redirect_to [@event, @ticket], notice: "ticket created"
     else
       render "new"
     end
@@ -31,6 +28,14 @@ class TicketsController < ApplicationController
   end
 
   private
+
+    def set_event
+      @event = Event.find(params[:event_id])
+    end
+
+    def set_ticket
+      @ticket = @event.tickets.find(params[:id])  
+    end
 
     def ticket_params
     params.require(:ticket).permit(:event_id, :email, :customer_id, :quantity, :amount, :price, :first_name, :last_name)

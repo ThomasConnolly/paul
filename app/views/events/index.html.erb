@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
   <% @events.each do |event| %>
-    <h1><%= event.title %></h1>
-    <p><%= event.date.strftime('%A, %B %e, %Y') %>, <%= event.time.strftime('%l:%M %P') %>, <%= number_to_currency event.price*0.01 %> per ticket.</p>
-    
+    <h2><%= event.title %></h2>
+    <p><%= event.date.strftime('%A, %B %e, %Y') %>, <%= event.time.strftime('%l:%M %P') %>, <%= number_to_currency event.price*0.01 %> per ticket.</p> 
+      <h4><%= link_to 'Purchase your tickets', new_event_ticket_path(event) %></h4>
     <br>
-      <h3><%= link_to 'Purchase your tickets', new_event_ticket_path(event) %></h3>
-    <br>
-    <% if current_user && current_user.role == "admin" %>
-      <p><small><%= link_to 'Edit', edit_event_path(event) %>&nbsp;
+    <% if current_user && current_user.has_role?(:admin) %>
+      <p><small><%= link_to 'Edit', edit_event_path(event) %>&nbsp; | 
       <%= link_to 'Destroy', event, method: :delete, 
       data: { confirm: 'Are you sure?' } %></small></p>
     <% end %>
   <% end %>
 
 <br>
-<% if current_user && current_user.admin? %>
+<% if current_user && current_user.has_role?(:admin) %>
 <%= link_to 'Create New Event', new_event_path %>
 <% end %>

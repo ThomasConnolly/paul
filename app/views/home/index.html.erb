@@ -1,5 +1,5 @@
 
-<%#= render 'slick' %>
+<%= render 'layouts/tickets_popup' %>
 <div class="row">
   <div class="col col-md-12 col-sm-12 col-lg-12">
     <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
@@ -25,15 +25,12 @@
    <%#= link_to cl_image_tag("meditationsAdWeb_qixmyp.jpg", width: '100%'), new_meditation_path %>
  
    <div class="mt30"></div>
+<div>
 
- <%= cl_image_tag("Model1_jnop6y.jpg", width: "50%", class: "floatleft") %>
-      <%= cl_image_tag("Model2_ecolyo.jpg", width: "50%", class: "floatleft") %>
-      <p><strong><em>Fun time at the fashion show</em> </strong>Janet Shanley, left and Meggie Guerrier were two of the models. See lots of pictures on our <%= link_to "Facebook page", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %></p>
-<!--
-    <%#= cl_image_tag("tad_ysirg4.png", width: "175", class: "floatleft") %><h3>Advent Adult Forum</h3>
-    <p> <em>The Dynamics of Faith</em> is a series to help us engage and enjoy the holy season of Advent. It is  is led by Fr. Tad and will be offered twice on Dec. 18 (at 9:15 and 10:45 a.m.) <%#= link_to "Read more about this series", worship_index_path %></p> 
- -->
- 
+ <%= link_to cl_image_tag("poster2017Web_awry5m.jpg", width: '75%', class: "floatright"), 'events/9/tickets/new' %>
+      <div class="mt30"></div><p><strong>Click on image<br>for tickets<br>to concert</strong></p>
+ <div class="clearall"></div>
+ </div>
     <div class="mt30"></div>
 
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>

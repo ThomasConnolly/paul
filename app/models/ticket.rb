@@ -20,6 +20,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :event
   before_save :set_amount
   after_update :email_buyer
+  before_validation :set_honey_must_be_empty
 
   default_scope -> { order('last_name') }
 
@@ -31,7 +32,9 @@ class Ticket < ActiveRecord::Base
 
 
   private
-
+  def set_honey_must_be_empty
+    self.honey == ""
+  end
 
   def email_buyer
     TicketMailer.ticket_receipt(self).deliver

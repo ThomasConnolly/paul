@@ -23,13 +23,23 @@
        <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
        <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
        <div class="mt30"></div>
-   <%#= link_to cl_image_tag("meditationsAdWeb_qixmyp.jpg", width: '100%'), new_meditation_path %>
+<%= cl_image_tag("meditationsHeader_ytcbkp.jpg", width: "100%") %>
+
+  <% if Date.today.sunday? %>
+    <h2> Today is Sunday, Resurrection Day </h2>
+      <p>Although there are six Sundays in the period of Lent, Sundays are not counted in the 40 days Lent. <%= link_to "Click here", "http://www.lectionarypage.net" %> and meditate on today's bible readings from today's Liturgy of the Word.  Come back tomorrow to resume your Lenten meditations.</p>
+   <% elsif Date.today.tuesday? %>
+   <h2>Look here starting tomorrow</h2>
+   <p>Parishioners have written meditations for Lent, and we will share one on each of the 40 days, beginning tomorrow.</p>
+   <% else %>
+   <%= render "meditations/show" %>
+    <% end %>
  
    <div class="mt30"></div>
 <div>
 
  <%= link_to cl_image_tag("poster2017Web_awry5m.jpg", width: '75%', class: "floatright"), 'events/2/tickets/new' %>
-      <div class="mt30"></div><p><strong>Click on image<br>for tickets<br>to concert</strong></p>
+      <div class="mt30"></div><br><p><strong>Click on image<br>for tickets<br>to concert</strong></p>
  <div class="clearall"></div>
  </div>
     <div class="mt30"></div>
@@ -59,6 +69,8 @@
      
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
       <div class="mt30"></div>
+      <%= cl_image_tag("Dwayne2017_g3ovqe.jpg", width: "50%", class: "floatleft" )%><p>We had a nice visit Sunday by our former associate priest, Fr. Dwayne Varas, and his family. Look for more pictures on our <%= link_to "Facebook page.", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %> </p>
+
         <p><strong>Donna Fiala,</strong> longtime Collier County commissioner from District One, will speak at Wednesday's meeting of the ECW (all ladies of our church are automatically members of Epicopal Church Women). Men, too, are invited to hear her speak. Gather for coffee at 9:30 a.m.; program starts at 10. 
         </p>
         <p><strong>Deacon Mary Abrams</strong> begins a discussion series based on the book <em>Hazardous Saints</em> on March 2. </p><p>We will explore the lives of six Christians who risked all for the sake of the gospel. Like Jesus, each of these Christians was a change agent: <em>The Subversive Bridge-Builder,</em> Barnabas; <em>The Lovable Rebel, </em>Francis of Assisi; <em> The Tightrope Walker, </em> Thomas Cranmer; <em>The Persevering Prophet, </em> Sojourner Truth; <em>The Idealistic Realist, </em> Dorothy Day; and <em>The People's Voice, </em> Oscar Romero.</p>

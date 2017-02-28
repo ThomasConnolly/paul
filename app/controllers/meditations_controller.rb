@@ -1,5 +1,5 @@
 class MeditationsController < ApplicationController
-  before_action :set_meditation, only: [:show, :edit, :update, :destroy]
+  before_action :set_meditation, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index]
 
   # GET /meditations
@@ -11,6 +11,7 @@ class MeditationsController < ApplicationController
   # GET /meditations/1
   # GET /meditations/1.json
   def show
+    @meditation = Meditation.publish_on_today.first
   end
 
   # GET /meditations/new

@@ -7,6 +7,8 @@ require 'time'
 require 'rails/all'
 require 'attachinary/orm/active_record'
 
+
+
 #  require 'awesome_print'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -17,6 +19,7 @@ module Paul
     # Settings in config/environments/* take precedence over these.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded. 
+config.active_record.default_timezone = :local
 end
 ActionMailer::Base.delivery_method = :smtp
 

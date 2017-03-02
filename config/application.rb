@@ -21,7 +21,7 @@ module Paul
     # -- all .rb files in that directory are automatically loaded. 
 
 config.time_zone = 'Eastern Time (US & Canada)'    
-config.active_record.default_timezone = :loca
+config.active_record.default_timezone = :local
 end
 
 ActionMailer::Base.delivery_method = :smtp

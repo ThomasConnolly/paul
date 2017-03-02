@@ -3,7 +3,7 @@
   <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' }}%>
   
   <div class="submit-post">
-   <%= f.submit "Submit", class: "btn btn-primary" %> &nbsp; 
+   <%= f.submit, class: "btn btn-primary" %> &nbsp; 
    <%= link_to "Cancel", :back, class: "btn btn-danger" %>
   </div>
 <% end %>

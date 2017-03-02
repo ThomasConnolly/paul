@@ -1,6 +1,6 @@
 class MeditationsController < ApplicationController
   before_action :set_meditation, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :new]
 
   # GET /meditations
   # GET /meditations.json

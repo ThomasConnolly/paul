@@ -19,8 +19,11 @@ module Paul
     # Settings in config/environments/* take precedence over these.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded. 
-config.active_record.default_timezone = :local
+
+config.time_zone = 'Eastern Time (US & Canada)'    
+config.active_record.default_timezone = :loca
 end
+
 ActionMailer::Base.delivery_method = :smtp
 
 module RailsBootstrap

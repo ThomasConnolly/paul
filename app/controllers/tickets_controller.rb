@@ -8,7 +8,11 @@ class TicketsController < ApplicationController
   end
 
   def index
-    @tickets = Ticket.all
+    if params[:event_id]
+      @tickets = Event.find(params[:event_id]).tickets
+    else
+      @tickets = Ticket.all
+    end  
   end
   
   def new
@@ -36,6 +40,8 @@ class TicketsController < ApplicationController
     def set_ticket
       @ticket = @event.tickets.find(params[:id])  
     end
+
+
 
     def ticket_params
     params.require(:ticket).permit(:event_id, :email, :customer_id, :quantity, :amount, :price, :first_name, :last_name, :honey)

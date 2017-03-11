@@ -87,16 +87,16 @@ protected
 
 
     def self.find_first_by_auth_conditions(warden_conditions)
-  conditions = warden_conditions.dup
-  if login = conditions.delete(:login)
-    where(conditions).where(["lower(full_name) = :value OR lower(email) = :value",
-     { :value => login.downcase }]).first
-  else
-    if conditions[:full_name].nil?
+      conditions = warden_conditions.dup
+      if login = conditions.delete(:login)
+        where(conditions).where(["lower(full_name) = :value OR lower(email) = :value",
+        { :value => login.downcase }]).first
+      else
+      if conditions[:full_name].nil?
       where(conditions).first
-    else
+      else
       where(full_name: conditions[:full_name]).first
+      end
+      end
     end
-  end
-end
 end

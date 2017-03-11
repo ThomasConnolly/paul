@@ -1,12 +1,21 @@
-  <header>
-    <div class="header">
-    <%= cl_image_tag("logos/New_StPaul_LogoWeb.jpg", { id: 'home-logo', width: '325' }) %>
-      <h3 id="menu-four"><%= link_to "<< Return to home page", root_path %></h3>
-      <% if user_signed_in? %>
-
-      <p id="menu-five"><small>
-        Logged in as <%= current_user.full_name.titleize %> |  <%= link_to "Log out", logout_path %> | <%= link_to "Edit account", edit_user_registration_path %> | <%= link_to "Edit profile", edit_profile_path %> 
-      </p>
-      <% end %>        
-    </div>
-  </header>
+<header>
+<div class="mt30"></div>
+<%#= image_tag "http://www.stevefogg.com/wp-content/uploads/2017/03/social_media_posts_daylight_saving6_small.jpg" %>
+<div class="row">
+  <div class="col col-xs-12 col-sm-12  col-md-3 col-lg-3">
+  <%= cl_image_tag("SmExterior_aa6p3r.jpg", width: "40%", class: "image-center") %>
+  
+  </div>
+  <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <%= cl_image_tag("St_Paul_Blue_Button_Logo_ksyj1x.jpg", width: "95%", :fetch_format => :auto, class: "image-center") %>
+      <h5 class="text-center">3901 Davis Boulevard, a couple of blocks east of Airport Road. <%= link_to "Map", 
+      'pages/directions' %> </h5>
+    <%#= cl_image_tag('St_Paul_Red_Button_Logo_nmxbtk.png', width: "550", class: "top") %>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: '450') %>
+      
+  </div> <!--main-logo -->
+  <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+  <%= cl_image_tag("tecShield_fpjf8p.png", width: '93', class: "image-center")%>
+  </div>
+</div> <!-- first six-col -->
+</header>

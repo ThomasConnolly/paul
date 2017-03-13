@@ -21,6 +21,9 @@ class PagesController < ApplicationController
 
   def survey
   end
+
+  def tumaini
+  end
   
 
   def python_tutor

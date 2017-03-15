@@ -8,68 +8,55 @@
 </div>
 <div class="row">
   <div class="col col-md-8 col-sm-12 main-body">
-
-
   <h1 id="welcome">Come worship with us!</h1>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
-    
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
+    class: "floatleft") %>
     <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
     <p><strong>9 a.m.</strong> Adult Christian Formation <%= link_to 'See details', formation_talks_path %> </p>
     <p><strong>10 a.m.</strong> Holy Eucharist </p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
     <p><strong>Way of the Cross</strong> devotional will be Wednesdays in Lent at 5:30 p.m. All are welcome to participate in this tradition.</p>
-   
-     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
-       <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
-       <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-       <div class="mt30"></div>
-       <div><%= cl_image_tag("tumainiDresses_p5jvk1.jpg", width: "80%", class: "image-center") %>
-       <h2>Tumaini dresses given a blessing</h2>
-       <p>Fr. Tad is presented several dresses sewn by the women of St. Paul's and intended for the girls at an orphanage in Tanzania, one of the ten poorest of Africa's countries. From left are Linda Conden, who brought the dresses forth with Marion Kennedy (hidden by the dresses); Sarah Jane Allen and Dr. Susan Wilson of the Tumaini Fund; and Fr. Tad.</p>
-      
-
-        <p>Dr. Wilson is spending a week in Naples, away from her home in the Isle of Guernsey, to speak about the mission she founded at Kagera, Tanzania. She spoke  at both services Sunday and will be busy in private and public meetings through the week. In addition, a dinner will be held on Saturday, March 18, to raise money to support the mission. See Alan Craag or Roger Conant for information about the dinner. See more about Tumaini Fund <%= link_to "here.", 'pages/tumaini' %></p>
-        </div>
-        <br>
-<%= cl_image_tag("meditationsHeader_ytcbkp.jpg", width: "100%") %>
-
-  <% if Date.today.sunday? %>
-    <h2> Today is Sunday, Resurrection Day </h2>
+    <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
+  <div class="mt30"></div>
+    <div><%= cl_image_tag("tumainiDresses_p5jvk1.jpg", width: "80%", class: "image-center") %>
+      <h2>Tumaini dresses given a blessing</h2>
+      <p>Fr. Tad is presented several dresses sewn by the women of St. Paul's and intended for the girls at an orphanage in Tanzania, one of the ten poorest of Africa's countries. From left are Linda Conden, who brought the dresses forth with Marion Kennedy (hidden by the dresses); Sarah Jane Allen and Dr. Susan Wilson of the Tumaini Fund; and Fr. Tad.</p>
+      <p>Dr. Wilson is spending a week in Naples, away from her home in the Isle of Guernsey, to speak about the mission she founded at Kagera, Tanzania. She spoke  at both services Sunday and will be busy in private and public meetings through the week. In addition, a dinner will be held on Saturday, March 18, to raise money to support the mission. See Alan Craag or Roger Conant for information about the dinner. See more about Tumaini Fund <%= link_to "here.", 'pages/tumaini' %></p>
+    </div>
+  <div class="mt30"></div>
+    <%= cl_image_tag("meditationsHeader_ytcbkp.jpg", width: "100%") %>
+    <% if Date.today.sunday? %>
+      <h2> Today is Sunday, Resurrection Day </h2>
       <p>There are six Sundays in the period of Lent, but Sundays are not counted in the 40 days of Lent. <%= link_to "Click here", "http://www.lectionarypage.net" %> and meditate on today's bible readings from today's Liturgy of the Word.  Please come back tomorrow to resume your Lenten meditations.</p>
-   <% else %>
-   <%= render "meditations/show" %>
+    <% else %>
+    <%= render "meditations/show" %>
     <% end %>
- 
-   <div class="mt30"></div>
-<div>
-
- <%= link_to cl_image_tag("poster2017Web_awry5m.jpg", width: '75%', class: "floatright"), 'events/2/tickets/new' %>
-      <div class="mt30"></div><br><p><strong>Click on image<br>for tickets<br>to concert</strong></p>
- <div class="clearall"></div>
- </div>
-    <div class="mt30"></div>
-
+  <div class="mt30"></div>
+    <div>
+      <%= link_to cl_image_tag("poster2017Web_awry5m.jpg", width: '75%', class: "floatright"), 'events/2/tickets/new' %>
+      <div class="mt30"></div>
+        <p><strong>Click on image<br>for tickets<br>to concert</strong></p>
+      <div class="clearall"></div>
+    </div>
+  <div class="mt30"></div>
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
     <div class="mt100"></div>
     <h2>What's Jubilee! all about?</h2>
     <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
-    
-    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
+    <div class="clearall"></div>
+  <div class="mt30"></div>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %>
     <h2>Welcome to the Farmers&rsquo; Market</h2>
-    
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"45%", class: "floatleft") %>
-    <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %> </p> 
+    <p>If you haven't been to our market, you're in for a treat! There's plenty of parking and lots of help from our volunteers. A great way to spend a Saturday morning. More on the market <%= link_to "here.", markets_index_path %> </p>
+  <div class="mt30"></div>     
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center", :fetch_format => :auto) %> 
+  </div><!--main-body -->
 
-    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"85%", class: "image-center", :fetch_format => :auto) %> 
-  
-    <div class="mt30"></div>
-    <div id="newsfeed">
-    <!-- start feedwind code --><iframe  height="400"  width="100%" src="http://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.--></div><!--  end  feedwind code -->
-    </div>
-  </div>
   <div class="col col-md-4 col-sm-6 sidebar">
-
-  <div><%= link_to image_tag("http://login.create.net/images/icons/user/facebook-b_130x50.png"),"https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %></div>
+    <%= link_to image_tag("http://login.create.net/images/icons/user/facebook-b_130x50.png"),"https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
     <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>
@@ -97,8 +84,12 @@
       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 
       pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
-  </div>
-</div>
+    <div class="mt30"></div>
+    <div id="newsfeed">
+    <!-- start feedwind code --><iframe  height="500"  width="100%" src="http://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.-->
+    </div><!--  end  feedwind code -->
+  </div><!-- sidebar -->
+</div><!-- row -->
 
 <%= render "layouts/tickets_popup" %>
 

@@ -32,4 +32,8 @@ class PagesController < ApplicationController
   def how_to_use
   end
 
+  def letsencrypt
+    render text: "5fkhm40on4Hqo0Z2PhPJjX-VfYnIXsdShaxcSWXEUmY"
+  end
+
 end

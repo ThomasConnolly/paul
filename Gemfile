@@ -40,8 +40,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
-gem 'platform-api', git: 'https://github.com/jalada/platform-api', branch: 'master'
-gem 'letsencrypt-rails-heroku', group: 'production'
+
 
 group :development do
   gem 'meta_request'

@@ -1,5 +1,5 @@
 
-<%= render 'layouts/tickets_popup' %>
+<%#= render 'layouts/tickets_popup' %>
 <div class="row">
   <div class="col col-md-12 col-sm-12 col-lg-12">
     <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
@@ -34,13 +34,6 @@
     <% else %>
     <%= render "meditations/show" %>
     <% end %>
-  <div class="mt30"></div>
-    <div>
-      <%= link_to cl_image_tag("poster2017Web_awry5m.jpg", width: '75%', class: "floatright"), 'events/2/tickets/new' %>
-      <div class="mt30"></div>
-        <p><strong>Click on image<br>for tickets<br>to concert</strong></p>
-      <div class="clearall"></div>
-    </div>
   <div class="mt30"></div>
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
     <div class="mt100"></div>
@@ -93,7 +86,7 @@
   </div><!-- sidebar -->
 </div><!-- row -->
 
-<%= render "layouts/tickets_popup" %>
+<%#= render "layouts/tickets_popup" %>
 
 <!--  <a href="http://www.episcopalrelief.org/" target="blank"><img width="99%" height="96" vspace="4" border="0" align="bottom" class="image-center" alt="" src="http://www.episcopalrelief.org/uploaded/images/Press-and-Resources/Link-To-Us/Logo-Link.gif" /></a>
 </div> -->

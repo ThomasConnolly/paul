@@ -17,14 +17,14 @@
       <%= syllabus.title8 %><br>
       <%= syllabus.title9 %><br></p>
       <div class="mt30"></div>
-      <% if current_user && current_user.admin? %>
+      <% if current_user && current_user.has_role?(:admin) %>
       <%= link_to 'Show', syllabus %>&nbsp; 
       <%= link_to 'Edit', edit_syllabus_path(syllabus) %>&nbsp;
       <%= link_to 'Destroy', syllabus, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
 <br>
-<% if current_user && current_user.admin? %>
+<% if current_user && current_user.has_role?(:admin) %>
 <%= link_to 'New Syllabus', new_syllabus_path %>
 <br>
 <%= link_to "Download CSV", syllabuses_path(format: "csv") %><br>

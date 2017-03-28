@@ -147,12 +147,12 @@ ActiveRecord::Schema.define(version: 20170325235102) do
   end
 
   create_table "prayers", force: :cascade do |t|
-    t.string   "date"
-    t.string   "time"
+    t.string   "day_of_prayer"
+    t.string   "time_of_prayer"
     t.string   "name"
     t.string   "honey"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "profiles", force: :cascade do |t|

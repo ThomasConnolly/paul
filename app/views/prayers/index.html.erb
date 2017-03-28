@@ -9,9 +9,9 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Wednesday</h2>
-      <% @prayers.where(date: "Wednesday").each do |p| %> 
+      <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %> 
         <div class="timeblock">
-          <p class="text-center"><small><%= p.time %><br>
+          <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %>
           <% else %>
@@ -28,9 +28,9 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Holy Thursday</h2>
-      <% @prayers.where(date: "Thursday").each do |p| %> 
+      <% @prayers.where(day_of_prayer: "Thursday").each do |p| %> 
         <div class="timeblock">
-          <p class="text-center"><small><%= p.time %><br>
+          <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %>
           <% else %>
@@ -46,9 +46,9 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Good Friday</h2>
-      <% @prayers.where(date: "Friday").each do |p| %> 
+      <% @prayers.where(day_of_prayer: "Friday").each do |p| %> 
         <div class="timeblock">
-          <p class="text-center"><small><%= p.time %><br>
+          <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %>
           <% else %>
@@ -64,9 +64,9 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Holy Saturday</h2>
-      <% @prayers.where(date: "Saturday").each do |p| %> 
+      <% @prayers.where(day_of_prayer: "Saturday").each do |p| %> 
         <div class="timeblock">
-          <p class="text-center"><small><%= p.time %><br>
+          <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %>
           <% else %>

@@ -20,6 +20,8 @@ gem 'jquery-fileupload-rails'
 gem 'simple_form'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'ckeditor'
 gem 'bcrypt'
 gem 'cloudinary'
@@ -40,7 +42,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
-#gem 'recaptcha', require: 'recaptcha/rails'
+
 
 
 group :development do

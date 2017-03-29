@@ -22,9 +22,16 @@ before_action :set_prayer, only: [:show, :edit, :update]
     end
   end
 
+  def edit
+  end
+
   def update
-   @prayer.update(prayer_params)
-      redirect_to @prayer
+    @prayer.update(prayer_params)
+      if verify_recaptcha(model: @prayer) && @prayer.save
+        redirect_to @prayer
+      else
+        render :new
+    end
   end
 
 

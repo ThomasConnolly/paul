@@ -27,7 +27,7 @@ before_action :set_prayer, only: [:show, :edit, :update]
 
   def update
     @prayer.update(prayer_params)
-      if verify_recaptcha(model: @prayer) && @prayer.save
+      if @prayer.save
         redirect_to @prayer
       else
         render :new

@@ -1,7 +1,5 @@
 <%= simple_form_for @prayer do |f| %>
   <%= f.input :name, autofocus: true %><br>
-  <div>
-  <%= recaptcha_tags %>
-  </div>
+
   <%= f.button :submit %>
 <% end %>

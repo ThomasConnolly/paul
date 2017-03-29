@@ -40,6 +40,7 @@ gem 'foreman'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
+#gem 'recaptcha', require: 'recaptcha/rails'
 
 
 group :development do

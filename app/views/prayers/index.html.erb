@@ -20,8 +20,8 @@
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
-          </div>
           <% end %>
+          </div>
         <% end %>
         </div>
       <% end %>
@@ -36,15 +36,15 @@
       <% @prayers.where(day_of_prayer: "Thursday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
-          <% if p.name.present? %>
-          <%= p.name %>
+           <% if p.name.present? %>
+          <%= p.name %></small></p>
           <% else %>
           <%= simple_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
-          </div>
           <% end %>
+          </div>
         <% end %>
         </div>
       <% end %>
@@ -58,15 +58,15 @@
       <% @prayers.where(day_of_prayer: "Friday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
-          <% if p.name.present? %>
-          <%= p.name %>
+           <% if p.name.present? %>
+          <%= p.name %></small></p>
           <% else %>
           <%= simple_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
-          </div>
           <% end %>
+          </div>
         <% end %>
         </div>
       <% end %>
@@ -80,15 +80,15 @@
       <% @prayers.where(day_of_prayer: "Saturday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
-          <% if p.name.present? %>
-          <%= p.name %>
+           <% if p.name.present? %>
+          <%= p.name %></small></p>
           <% else %>
           <%= simple_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
-          </div>
           <% end %>
+          </div>
         <% end %>
         </div>
       <% end %>

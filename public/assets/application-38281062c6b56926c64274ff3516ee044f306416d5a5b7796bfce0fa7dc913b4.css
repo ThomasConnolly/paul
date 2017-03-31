@@ -9523,31 +9523,36 @@ p.center-bold-text {
 }
 
 /* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.mt-30 {
+  margin-top: -30px;
+}
+
+/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 449, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 452, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 455, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 455, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 458, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 458, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 461, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt150 {
   margin-top: 150px;
 }
 
-/* line 461, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 464, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -9557,41 +9562,41 @@ p.center-bold-text {
   padding: 12px;
 }
 
-/* line 469, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 472, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .comment-user {
   color: gray;
   font-size: .9rem;
   float: right;
 }
 
-/* line 474, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 477, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 477, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 480, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 481, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 484, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 485, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 488, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 488, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 491, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }
 
-/* line 491, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 494, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-show {
   font-size: .75rem;
 }

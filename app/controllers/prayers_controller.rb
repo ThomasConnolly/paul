@@ -4,6 +4,7 @@ before_action :set_prayer, only: [:show, :edit, :update]
 
   def index
     @prayers = Prayer.all.order('id')
+    @prayer = Prayer.new
   end
 
   def new

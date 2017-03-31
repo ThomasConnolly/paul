@@ -9,14 +9,18 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Wednesday</h2>
+    <%= render 'form' %>
       <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
-          <%= p.name %>
+          <%= p.name %></small></p>
           <% else %>
           <%= simple_form_for p do |f| %>
-          <%= f.input :name, label: false, placeholder: 'Enter your name' %></small></p>
+          <%= f.input :name, label: false, placeholder: 'Your name here' %>
+          <div class="mt-30">
+          <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
+          </div>
           <% end %>
         <% end %>
         </div>

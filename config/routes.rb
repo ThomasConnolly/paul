@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :meditations
   resources :prayers
+
   root 'home#index'
   get 'home/invitation'
   get 'members/index'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   get 'markets/index'
   get 'leadership/index'
   get 'sunday_school/index'
-  get 'prayer/index'
+  get 'pages/how_to_pray'
   get 'pages/haitian'
   get 'pages/tumaini'
   get 'pages/concert'
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
   get 'pages/python_tutor'
   get 'pages/how_to_use'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
+
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]

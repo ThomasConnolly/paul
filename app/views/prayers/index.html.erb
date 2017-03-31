@@ -40,7 +40,10 @@
           <%= p.name %>
           <% else %>
           <%= simple_form_for p do |f| %>
-          <%= f.input :name, label: false, placeholder: 'Enter your name' %></small></p>
+          <%= f.input :name, label: false, placeholder: 'Your name here' %>
+          <div class="mt-30">
+          <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
+          </div>
           <% end %>
         <% end %>
         </div>
@@ -59,7 +62,10 @@
           <%= p.name %>
           <% else %>
           <%= simple_form_for p do |f| %>
-          <%= f.input :name, label: false, placeholder: 'Enter your name' %></small></p>
+          <%= f.input :name, label: false, placeholder: 'Your name here' %>
+          <div class="mt-30">
+          <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
+          </div>
           <% end %>
         <% end %>
         </div>
@@ -78,7 +84,10 @@
           <%= p.name %>
           <% else %>
           <%= simple_form_for p do |f| %>
-          <%= f.input :name, label: false, placeholder: 'Enter your name' %></small></p>
+          <%= f.input :name, label: false, placeholder: 'Your name here' %>
+          <div class="mt-30">
+          <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
+          </div>
           <% end %>
         <% end %>
         </div>

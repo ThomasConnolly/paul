@@ -25,7 +25,9 @@ class PagesController < ApplicationController
   def tumaini
   end
   
-
+  def how_to_pray
+  end
+  
   def python_tutor
   end
 

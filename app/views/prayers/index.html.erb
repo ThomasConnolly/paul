@@ -9,7 +9,6 @@
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
     <h2 class="text-center">Wednesday</h2>
-    <%= render 'form' %>
       <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>

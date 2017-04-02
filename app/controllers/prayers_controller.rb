@@ -1,5 +1,6 @@
 class PrayersController < ApplicationController
 
+before_action :authenticate_user! except: :index
 before_action :set_prayer, only: [:show, :edit, :update]
 
   def index

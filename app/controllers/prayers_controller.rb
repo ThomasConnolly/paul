@@ -43,7 +43,7 @@ private
   end
 
   def prayer_params
-    params.require(:prayer).permit(:day_of_prayer, :time_of_prayer, :name, :honey)
+    params.require(:prayer).permit(:day_of_prayer, :time_of_prayer, :name, :honey, :pray_time)
     end
   end
 

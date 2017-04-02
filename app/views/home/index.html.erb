@@ -57,17 +57,25 @@
     <div class="mt30"></div>
      
       <%= cl_image_tag("PrayLogo_xl4c08.jpg", width: "99%", class: "image-center") %>
-      <p>Our next <strong>Jubilee! challenge</strong> is for 50 hours of parish prayer during Holy Week. We want the whole Church to be in prayer every waking hour from the <b>Stations of the Cross</b> on Wednesday, April 12 at 5 p.m. to the <b>Great Easter Vigil</b> at 6 p.m. April 15. Sign up <%=link_to 'here.', prayers_path %> When your hour arrives, you will stop what you're doing, wherever you are, and spend the next hour praying. When you sign up you will see some links to helpful hints about how to pray.</p>
+      <p>Our next <strong>Jubilee! challenge</strong> is for 50 hours of parish prayer during Holy Week. We want the whole Church to be in prayer every waking hour from the <b>Stations of the Cross</b> on Wednesday, April 12 at 5 p.m. to the <b>Great Easter Vigil</b> at 6 p.m. April 15. When your hour arrives, you will stop what you're doing, wherever you are, and spend the next hour praying. When you sign up you will see some links to helpful hints about how to pray.</p>
+      <h4><%= link_to 'Sign up to pray for an hour', prayers_path %></h4>
+      <h4><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h4>
+      <div class="mt30"></div>
 
        <p><strong>Deacon Mary Abrams</strong> continues a discussion series based on the book <em>Hazardous Saints,</em> exploring the lives of six Christians who risked all for the sake of the gospel. Like Jesus, each of these Christians was a change agent: <em>The Subversive Bridge-Builder,</em> Barnabas; <em>The Lovable Rebel, </em>Francis of Assisi; <em> The Tightrope Walker, </em> Thomas Cranmer; <em>The Persevering Prophet, </em> Sojourner Truth; <em>The Idealistic Realist, </em> Dorothy Day; and <em>The People's Voice, </em> Oscar Romero.</p>
       <p>Sessions are on Thursdays from 1:30 to 3 p.m. Books are available for $4. You may attend single sessions. This Thursday's video and discussion will feature the life and works of Oscar Romero.</p>
       <div class="mt30"></div>
       <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
-      <p>Join us in <strong>adult Sunday School, </strong> where we are discussing the <em>"Spirituality of Intimacy."</em> It's at 9 a.m. in the parish hall; all are welcome.</p>
-      <p>Tomorrow's focus will be about failures in relationships, and a summary discussion of series. It is the last in the series. <%= link_to "Read the lectures given to date here.", formation_talks_path %> A new series will begin on April 30.</p>
+      <p><strong>Adult Sunday School </strong> will resume April 30 with a three-part series on the 
+      <em>"History of Christian Marriage."</em> It's at 9 a.m. in the parish hall; all are welcome.</p>
+      <p>To read the lectures given in the recently concluded series on the <em>  
+      Spirituality of Intimacy,</em> <%= link_to 'click here.', formation_talks_path %></p>
     <div class="mt30"></div>  
       <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %> 
-      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are <%= link_to 'listed here.', opportunities_path %></p>
+      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, 
+      our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen
+       Lord in the modern world that is in great need. Some of our ministries are 
+       <%= link_to 'listed here.', opportunities_path %></p>
     <div class="mt30"></div>
       <%#= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
       <!-- <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 

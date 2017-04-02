@@ -8,10 +8,11 @@
 
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
-    <h2 class="text-center">Wednesday</h2>
+  <h2 class="center-text"> Put your name in a time box to offer an hour of prayer</h2>
+    <h3 class="text-center">Wednesday</h3>
       <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %> 
         <div class="timeblock">
-          <p class="text-center"><small><%= p.time_of_prayer %><br>
+          <p class="center-text"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %></small></p>
           <% else %>
@@ -31,7 +32,7 @@
 </div>
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
-    <h2 class="text-center">Holy Thursday</h2>
+    <h3 class="text-center">Holy Thursday</h3>
       <% @prayers.where(day_of_prayer: "Thursday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
@@ -53,7 +54,7 @@
 </div>
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
-    <h2 class="text-center">Good Friday</h2>
+    <h3 class="text-center">Good Friday</h3>
       <% @prayers.where(day_of_prayer: "Friday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
@@ -75,7 +76,7 @@
 </div>
 <div class="row">
   <div class="col col-lg-10 col-lg-offset-1 col-sm-12">
-    <h2 class="text-center">Holy Saturday</h2>
+    <h3 class="text-center">Holy Saturday</h3>
       <% @prayers.where(day_of_prayer: "Saturday").each do |p| %> 
         <div class="timeblock">
           <p class="text-center"><small><%= p.time_of_prayer %><br>
@@ -97,4 +98,5 @@
 </div>
 <div>
 <%= render 'who_is_praying' %>
+<h4><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h4>
 </div>

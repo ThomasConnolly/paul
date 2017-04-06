@@ -19,13 +19,7 @@
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-  <div class="mt30"></div>
-    <div><%= cl_image_tag("tumainiDresses_p5jvk1.jpg", width: "80%", class: "image-center") %>
-      <h2>Tumaini dresses given a blessing</h2>
-      <p>Fr. Tad is presented several dresses sewn by the women of St. Paul's and intended for the girls at an orphanage in Tanzania, one of the ten poorest of Africa's countries. From left are Linda Conden, who brought the dresses forth with Marion Kennedy (hidden by the dresses); Sarah Jane Allen and Dr. Susan Wilson of the Tumaini Fund; and Fr. Tad.</p>
-      <!-- <p>Dr. Wilson is spending a week in Naples, away from her home in the Isle of Guernsey, to speak about the mission she founded at Kagera, Tanzania. She spoke  at both services Sunday and will be busy in private and public meetings through the week. In addition, a dinner will be held on Saturday, March 18, to raise money to support the mission. See Alan Craag or Roger Conant for information about the dinner.--> 
-      <p>See more about Tumaini Fund <%= link_to "here.", 'pages/tumaini' %></p>
-    </div>
+
   <div class="mt30"></div>
     <%= cl_image_tag("meditationsHeader_ytcbkp.jpg", width: "100%") %>
     <% if Date.today.sunday? %>
@@ -57,6 +51,7 @@
     <div class="mt30"></div>
      
       <%= cl_image_tag("PrayLogo_xl4c08.jpg", width: "99%", class: "image-center") %>
+      <%= render "prayers/who_is_praying" %>
       <p>Our next <strong>Jubilee! challenge</strong> is for 50 hours of parish prayer during Holy Week. We want the whole Church to be in prayer every waking hour from the <b>Stations of the Cross</b> on Wednesday, April 12 at 5 p.m. to the <b>Great Easter Vigil</b> at 6 p.m. April 15. When your hour arrives, you will stop what you're doing, wherever you are, and spend the next hour praying. When you sign up you will see some links to helpful hints about how to pray.</p>
       <h4><%= link_to 'Sign up to pray for an hour', prayers_path %></h4>
       <h4><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h4>

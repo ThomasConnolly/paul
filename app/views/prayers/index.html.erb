@@ -12,7 +12,7 @@
     <h3 class="text-center">Wednesday</h3>
       <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %> 
         <div class="timeblock">
-          <p class="center-text"><small><%= p.time_of_prayer %><br>
+          <p class="text-center"><small><%= p.time_of_prayer %><br>
           <% if p.name.present? %>
           <%= p.name %></small></p>
           <% else %>

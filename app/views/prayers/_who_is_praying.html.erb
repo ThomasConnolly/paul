@@ -1,5 +1,9 @@
-<% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
-  <% if Time.now.hour.to_s == p.time_of_prayer[0] %>
-    <p><%= p.name %> is praying at this hour.
+
+<% if Date.today == start_date..end_date %>
+
+  <% @prayers.where(day_of_prayer: "Tuesday").each do |p| %>
+    <% if Time.now.hour == p.pray_time %>
+    <p><%= p.name %> is praying at this hour. </p>
     <% end %> 
-    <% end %>
+  <% end %>
+<% end %>

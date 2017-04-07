@@ -6,12 +6,12 @@
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require jquery.slick
-//= require ckeditor/init
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require moment
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require ckeditor/init
 //= require compatibility.coffee
 //= require video
 //= require_tree .

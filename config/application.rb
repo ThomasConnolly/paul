@@ -24,6 +24,10 @@ config.time_zone = 'Eastern Time (US & Canada)'
 config.active_record.default_timezone = :local
 end
 
+config.assets.precompile += Ckeditor.assets
+config.assets.precompile += %w( ckeditor/* )
+config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
 ActionMailer::Base.delivery_method = :smtp
 
 module RailsBootstrap

@@ -439,7 +439,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails
   byebug
   capybara
-  ckeditor (~> 4.2, >= 4.2.2)
+  ckeditor
   cloudinary
   coffee-rails (~> 4.0.0)
   database_cleaner

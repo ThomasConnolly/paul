@@ -6,7 +6,7 @@
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %> 
         <%= f.date_select :delivered_on, id: 'datetimepicker1' %><br>
-        <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' } } %>
+        <%= f.input :body, as: :ckeditor %>
         <%= f.button :submit %>   
     <% end %>
       </div>
@@ -16,5 +16,6 @@
                 $('#datetimepicker1').datetimepicker();
             });
     </script>
+    
   </div>
 </div>

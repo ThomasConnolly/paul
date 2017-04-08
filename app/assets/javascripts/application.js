@@ -11,7 +11,6 @@
 //= require moment
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require ckeditor/init
 //= require compatibility.coffee
 //= require video
 //= require_tree .

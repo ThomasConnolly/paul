@@ -1,4 +1,4 @@
-
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= simple_form_for @story_idea do |f| %>
   <%= f.input :title, placeholder: 'Title of your new topic', 
   label: false, autofocus: true %><br>
@@ -6,7 +6,7 @@
    label: false %><br>
     <%= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture" %>
 
-  <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' }}%>
+  <%= f.input :body, as: :ckeditor %>
 
  
   <div class="submit-post">

@@ -1,6 +1,7 @@
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= simple_form_for @vreport do |f| %>
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'sermon' }}%>
+  <%= f.input :body, as: :ckeditor %>
   
   <div class="submit-post">
    <%= f.submit, class: "btn btn-primary" %> &nbsp; 

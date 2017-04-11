@@ -1,5 +1,7 @@
 class MemberMailer < ApplicationMailer
   default from: "Father Bill <FrBill@saintpaulsnaples.org>"
+  default  bcc: Proc.new { Member.pluck(:email)}
+
 
    def member_survey(member)
     @member = member
@@ -11,7 +13,6 @@ class MemberMailer < ApplicationMailer
     @member = member
     @url = "https://saintpaulsnaples.org/prayers"
     mail(
-      bcc: Proc.new { Member.pluck(:email)}
       subject: "Pray with your Church this Holy Week")
   end
 end

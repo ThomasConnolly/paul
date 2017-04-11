@@ -19,7 +19,6 @@ class Member < ActiveRecord::Base
   acts_as_birthday :birthday
   before_save :set_full_name
 
-  
 
   
 

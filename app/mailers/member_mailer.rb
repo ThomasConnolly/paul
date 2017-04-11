@@ -1,11 +1,17 @@
 class MemberMailer < ApplicationMailer
-  default to: Proc.new { Member.pluck(:email) },
-   from: ("Father Bill <FrBill@saintpaulsnaples.org>")
-  
+  default from: "Father Bill <FrBill@saintpaulsnaples.org>"
 
-  def member_survey(member)
+   def member_survey(member)
     @member = member
-    @url = "http://saintpaulsnaples.org/surveys"
+    @url = "https://saintpaulsnaples.org/surveys"
     mail(subject: "Take the parish survey")
+  end
+
+  def member_prayer(member)
+    @member = member
+    @url = "https://saintpaulsnaples.org/prayers"
+    mail(
+      bcc: Proc.new { Member.pluck(:email).uniq },
+      subject: "Pray with your Church this Holy Week")
   end
 end

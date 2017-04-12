@@ -17,7 +17,7 @@ before_action :set_prayer, only: [:show, :edit, :update]
   def create
     @prayer = Prayer.new(prayer_params)
     if @prayer.save
-      redirect_to @prayers
+      redirect_to prayers_path(@prayer)
     else
       render :new
     end

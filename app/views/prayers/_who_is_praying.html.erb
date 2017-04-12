@@ -1,9 +1,45 @@
 
 <% if Date.today == start_date..end_date %>
 
-  <% @prayers.where(day_of_prayer: "Tuesday").each do |p| %>
+  <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
     <% if Time.now.hour == p.pray_time %>
     <p><%= p.name %> is praying at this hour. </p>
     <% end %> 
+  
+  <p>Praying today are:<ul>
+    <li><%p.name %> </li>
+    </ul>
   <% end %>
+
+    <% @prayers.where(day_of_prayer: "Thursday").each do |p| %>
+    <% if Time.now.hour == p.pray_time %>
+    <p><%= p.name %> is praying at this hour. </p>
+    <% end %> 
+  
+  <p>Praying today are:<ul>
+    <li><%p.name %> </li>
+    </ul>
+  <% end %>
+
+    <% @prayers.where(day_of_prayer: "Friday").each do |p| %>
+    <% if Time.now.hour == p.pray_time %>
+    <p><%= p.name %> is praying at this hour. </p>
+    <% end %> 
+ 
+  <p>Praying today are:<ul>
+    <li><%p.name %> </li>
+    </ul>
+  <% end %>
+
+    <% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
+    <% if Time.now.hour == p.pray_time %>
+    <p><%= p.name %> is praying at this hour. </p>
+    <% end %> 
+ 
+  <p>Praying today are:<ul>
+    <li><%p.name %> </li>
+    </ul>
+   <% end %>
 <% end %>
+
+<h4><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h4>

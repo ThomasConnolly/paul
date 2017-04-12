@@ -5,11 +5,11 @@ body {
 
 .image {
   margin: 0 auto;
-  width: 325px;
+  width: 651px;
 }
 
 .signature {
-  margin: 20px;
+  margin: 40px;
 }
 
 p {
@@ -17,7 +17,7 @@ p {
 }
 
 .wrap {
-  max-width: 40em;
+  max-width: 651px;
   margin: 0 auto;
   padding: 1em;
   background: white;

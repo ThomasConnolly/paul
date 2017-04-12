@@ -27,7 +27,7 @@
   <p><strong>6 p.m. Holy Eucharist and Foot Washing</strong></p>
   <p>Observed as the evening of Jesus' last supper where he instituted the sacrament and the call to serve one another.</p><div class="clearall"></div>
       <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
+    <% @prayers.where(day_of_prayer: "Thursday").each do |p| %>
       <ul>
       <p>  <li><%= p.name %> </li></p>
       </ul>
@@ -43,7 +43,7 @@
   <p><strong>Noon, </strong> Holy Eucharist, veneration of the cross.</p>
   <div class="clearall"></div>
       <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
+    <% @prayers.where(day_of_prayer: "Friday").each do |p| %>
       <ul>
       <p>  <li><%= p.name %> </li></p>
       </ul>
@@ -59,7 +59,7 @@
   <%=cl_image_tag("bible_hubpyl.gif", class: "floatleft", width: "30%") %>
   <p><strong> 6 p.m. </strong>  At the Great Vigil we hear the foundational stories of God's creation of the world, the fall of man and our redemption. We light a new paschal candle and celebrate the resurrection of our Lord and Savior.</p> <div class="clearall"></div>
     <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
+    <% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
       <ul>
       <p>  <li><%= p.name %> </li></p>
       </ul>

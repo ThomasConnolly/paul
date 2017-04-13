@@ -274,19 +274,17 @@ p.center-bold-text {
   border-width: 1px;
   text-align: center;
 }
-ul {
+
+.newspaper  {
+    ul {
   display: block;
-}
-ul li{
+  }
+  ul li{
   list-style-type: none;
   display:inline-block;
   width: 33%;
   float: left;
-}
-.newspaper  {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+  }
 }  
 .align-right {
   text-align: right;

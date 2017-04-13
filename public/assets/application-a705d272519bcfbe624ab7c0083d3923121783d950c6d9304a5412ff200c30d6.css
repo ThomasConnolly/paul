@@ -9315,64 +9315,54 @@ p.center-bold-text {
   text-align: center;
 }
 
-/* line 278, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-ul {
+/* line 280, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.newspaper ul {
   display: block;
 }
-
-/* line 281, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-ul li {
+/* line 283, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.newspaper ul li {
   list-style-type: none;
   display: inline-block;
   width: 33%;
   float: left;
 }
 
-/* line 287, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.newspaper {
-  -webkit-column-count: 3;
-  /* Chrome, Safari, Opera */
-  -moz-column-count: 3;
-  /* Firefox */
-  column-count: 3;
-}
-
-/* line 292, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 290, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 295, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 293, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 300, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 298, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #opportunity-header {
   text-decoration: underline;
 }
 
-/* line 303, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 301, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
   font-size: 1rem;
   float: left;
 }
 
-/* line 307, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 305, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #notice {
   color: green;
 }
 
-/* line 310, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 308, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 315, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 313, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -9381,7 +9371,7 @@ ul li {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 322, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 320, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -9392,13 +9382,13 @@ ul li {
   background-color: #c00;
   color: #fff;
 }
-/* line 332, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 330, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation ul li {
   font-size: .75rem;
   list-style: square;
 }
 
-/* line 338, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 336, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -9410,26 +9400,26 @@ ul li {
   line-height: 1.25;
 }
 
-/* line 350, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 348, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 355, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 353, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 360, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 358, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 363, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 361, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .create-post, .create-vreport, .create-story_idea, .create-jubilee {
   width: 100%;
   height: 140px;
@@ -9439,7 +9429,7 @@ ul li {
   text-align: center;
 }
 
-/* line 371, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 369, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom {
   cursor: pointer;
   text-decoration: none;
@@ -9462,7 +9452,7 @@ ul li {
   background-image: -moz-linear-gradient(-90deg, #d1103d, #660000);
 }
 
-/* line 391, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 389, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:hover {
   cursor: pointer;
   text-decoration: none;
@@ -9483,7 +9473,7 @@ ul li {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 409, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 407, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-custom:active {
   cursor: pointer;
   text-decoration: none;
@@ -9504,18 +9494,18 @@ ul li {
   background-image: -moz-linear-gradient(-90deg, #009900, #330000);
 }
 
-/* line 428, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 426, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-modal-footer {
   width: 100px;
   height: 100px;
 }
 
-/* line 433, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 431, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn {
   margin: 2em;
 }
 
-/* line 437, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 435, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .default-avatar {
   padding-top: 12px;
   text-align: center;
@@ -9527,7 +9517,7 @@ ul li {
   margin-right: 6px;
 }
 
-/* line 447, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 445, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .big-avatar-missing {
   width: 200px;
   height: 260px;
@@ -9539,42 +9529,42 @@ ul li {
   margin-right: 12px;
 }
 
-/* line 457, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 455, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 460, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 458, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-30 {
   margin-top: -30px;
 }
 
-/* line 463, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 461, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 466, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 464, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 469, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 467, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 472, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 470, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 475, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 473, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt150 {
   margin-top: 150px;
 }
 
-/* line 478, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 476, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -9584,41 +9574,41 @@ ul li {
   padding: 12px;
 }
 
-/* line 486, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 484, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .comment-user {
   color: gray;
   font-size: .9rem;
   float: right;
 }
 
-/* line 491, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 489, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 494, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 492, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 498, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 496, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 502, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 500, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 505, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 503, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }
 
-/* line 508, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 506, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-show {
   font-size: .75rem;
 }

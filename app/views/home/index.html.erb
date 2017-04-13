@@ -6,70 +6,81 @@
     <!-- 
   <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> -->
   <%= cl_image_tag("cross-lent_rhj8ln.jpg", class: "image-center", width: "30%") %>
-  <h1 class="text-center"> Holy Week at St. Paul's</h1>
-  <h2> Wednesday</h2>
-  <%= cl_image_tag("WalkWayToday_farqqf.jpg", width: "47%", class: "floatleft") %>
-  <p><strong> 5 p.m. today through Holy Saturday,</strong> parish is in prayer every waking hour. Stations of the Cross begin at 5:30 p.m.</p><div class="clearall"></div>
-    <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
-      <ul>
-      <p>  <li><%= p.name %> </li></p>
-      </ul>
-    <div class="mt30"></div>
+    <h1 class="text-center"> Holy Week at St. Paul's</h1>
+      <h2> Wednesday</h2>
+        <%= cl_image_tag("WalkWayToday_farqqf.jpg", width: "47%", class: "floatleft") %>
+        <p><strong> 5 p.m. today through Holy Saturday,</strong> parish is in prayer every waking hour. Stations of the Cross begin at 5:30 p.m.</p>
+        <div class="clearall"></div>
+        <div class="newspaper">
+          <p><strong>Praying today are:</strong></p>
+            <% @prayers.where(day_of_prayer: "Wednesday").each do |p| %>
+              <ul>
+                <p>  <li><%= p.name %> </li></p>
+              </ul>
+        
+        <div class="mt30"></div>
+        <% end %>
+        </div>
+        <div class="clearall"></div>
+        <div class="mt30"></div>
+  
+      <h2>Holy Thursday</h2>
+        <%= cl_image_tag("0329_NCLO_DM_HOLYTHURSDAY_280_t607_bpztod.jpg", width: "50%", class: "floatleft") %>
+        <p><strong>6 p.m. Holy Eucharist and Foot Washing</strong></p>
+        <p>Observed as the evening of Jesus' last supper where he instituted the sacrament and the call to serve one another.</p>
+        <div class="clearall"></div>
+        <div class="newspaper">
+          <p><strong>Praying today are:</strong></p>
+          <% @prayers.where(day_of_prayer: "Thursday").each do |p| %>
+            <ul>
+            <p>  <li><%= p.name %> </li></p>
+            </ul>
+       
+        <div class="mt30"></div>
+        <% end %>
+         </div>
+        <div class="clearall"></div>
+        <div class="mt30"></div>
+  
+      <h2>Good Friday </h2>
+        <%= cl_image_tag("184976_1893445062745_2385047_n_gpum6o.jpg", width: "17%", class: "floatleft") %>
+        <p><strong>Noon, </strong> Holy Eucharist, veneration of the cross.</p>
+        <div class="clearall"></div>
+        <div class="newspaper">
+          <p><strong>Praying today are:</strong></p>
+          <% @prayers.where(day_of_prayer: "Friday").each do |p| %>
+          <ul>
+          <p>  <li><%= p.name %> </li></p>
+          </ul>
+        
+        <div class="mt30"></div>
+        <% end %>
+        <div class="clearall"></div>
+        </div>
+        <div class="mt30"></div>
+  
+      <h1 class="text-center"> Easter Vigil</h1>
+      <h2>Holy Saturday</h2>
+        <%=cl_image_tag("bible_hubpyl.gif", class: "floatleft", width: "30%") %>
+        <p><strong> 6 p.m. </strong>  At the Great Vigil we hear the foundational stories of God's creation of the world, the fall of man and our redemption. We light a new paschal candle and celebrate the resurrection of our Lord and Savior.</p> 
+        <div class="clearall"></div>
+        <div class="newspaper">
+          <p><strong>Praying today are:</strong></p>
+            <% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
+            <ul>
+            <p>  <li><%= p.name %> </li></p>
+            </ul>   
+          <div class="mt30"></div>
+          <% end %>
+          <div class="clearall"></div>
+          </div>
+          <div class="mt100"></div>
+  
+    <h1 class="text-center">Easter Sunday</h1>
+      <%= cl_image_tag("logos/easter_morning.png", class: "floatleft", width: "300") %>
+      <p><strong>7:45 and 10 a.m.</strong> Joyful celebration of the resurrection of Jesus! There will be the flowering of the cross and special music at all the services. Flowers will be available at all services for those who wish to participate. An Easter Egg Hunt will take place in the courtyard for children 10 and under, at 9:20 a.m.</p>
+    <hr>
  
-  <% end %>
-  <div class="clearall"></div>
-  <div class="mt30"></div>
-  <h2>Holy Thursday</h2>
-  <%= cl_image_tag("0329_NCLO_DM_HOLYTHURSDAY_280_t607_bpztod.jpg", width: "50%", class: "floatleft") %>
-  <p><strong>6 p.m. Holy Eucharist and Foot Washing</strong></p>
-  <p>Observed as the evening of Jesus' last supper where he instituted the sacrament and the call to serve one another.</p><div class="clearall"></div>
-      <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Thursday").each do |p| %>
-      <ul>
-      <p>  <li><%= p.name %> </li></p>
-      </ul>
-    <div class="mt30"></div>
-    
-  <% end %>
-  <div class="clearall"></div>
-  <div class="mt30"></div>
-  <h2>Good Friday </h2>
-  <%= cl_image_tag("184976_1893445062745_2385047_n_gpum6o.jpg", width: "17%", class: "floatleft") %>
-  <p><strong>Noon, </strong> Holy Eucharist, veneration of the cross.</p>
-  <div class="clearall"></div>
-      <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Friday").each do |p| %>
-      <ul>
-      <p>  <li><%= p.name %> </li></p>
-      </ul>
-    <div class="mt30"></div>
-   
-  <% end %>
-  <div class="clearall"></div>
-  <div class="mt30"></div>
-  <h1 class="text-center"> Easter Vigil</h1>
-  <h2>Holy Saturday</h2>
-  <%=cl_image_tag("bible_hubpyl.gif", class: "floatleft", width: "30%") %>
-  <p><strong> 6 p.m. </strong>  At the Great Vigil we hear the foundational stories of God's creation of the world, the fall of man and our redemption. We light a new paschal candle and celebrate the resurrection of our Lord and Savior.</p> <div class="clearall"></div>
-    <p><strong>Praying today are:</strong></p>
-    <% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
-      <ul>
-      <p>  <li><%= p.name %> </li></p>
-      </ul>
-    <div class="mt30"></div>
-         
-  <% end %>
-  <div class="clearall"></div>
-  <div class="mt100"></div>
-  <h1 class="text-center">Easter Sunday</h1>
-  <%= cl_image_tag("logos/easter_morning.png", class: "floatleft", width: "300") %>
-  <p><strong>7:45 and 10 a.m.</strong> Joyful celebration of the resurrection of Jesus! There will be the flowering of the cross and special music at all the services. Flowers will be available at all services for those who wish to participate. An Easter Egg Hunt will take place in the courtyard for children 10 and under, at 9:20 a.m.</p>
-  <hr>
- 
-
-
-
   </div>
 </div>
 <div class="row">

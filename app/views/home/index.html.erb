@@ -46,13 +46,9 @@
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
 
   <div class="mt30"></div>
-    <%= cl_image_tag("meditationsHeader_ytcbkp.jpg", width: "100%") %>
-    <% if Date.today.sunday? %>
-      <h2> Today is Sunday, Resurrection Day </h2>
-      <p>There are six Sundays in the period of Lent, but Sundays are not counted in the 40 days of Lent. <%= link_to "Click here", "http://www.lectionarypage.net" %> and meditate on today's bible readings from today's Liturgy of the Word.  Please come back tomorrow to resume your Lenten meditations.</p>
-    <% else %>
+
     <%= render "meditations/show" %>
-    <% end %>
+  
   <div class="mt30"></div>
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
     <div class="mt100"></div>

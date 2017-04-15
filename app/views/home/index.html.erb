@@ -5,26 +5,7 @@
     <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
     <!-- 
   <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> -->
-  <%= cl_image_tag("cross-lent_rhj8ln.jpg", class: "image-center", width: "30%") %>
-    <h1 class="text-center"> Holy Week at St. Paul's</h1>
-      
-  
-      <h2>Good Friday </h2>
-        <%= cl_image_tag("184976_1893445062745_2385047_n_gpum6o.jpg", width: "17%", class: "floatleft") %>
-        <p><strong>Noon, </strong> Holy Eucharist, veneration of the cross.</p>
-        <div class="clearall"></div>
-        <div class="newspaper">
-          <p><strong>Praying today are:</strong></p>
-          <% @prayers.where(day_of_prayer: "Friday").each do |p| %>
-          <ul>
-          <p>  <li><%= p.name %> </li></p>
-          </ul>
-        
-        <div class="mt30"></div>
-        <% end %>
-        <div class="clearall"></div>
-        </div>
-        <div class="mt30"></div>
+
   
       <h1 class="text-center"> Easter Vigil</h1>
       <h2>Holy Saturday</h2>

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
    @meditations = Meditation.all
-   @meditation = Meditation.publish_on_today.first
+   @meditation = Meditation.find(34)
    @prayers = Prayer.all
   end
 

@@ -7,26 +7,10 @@
   <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> -->
 
   
-      <h1 class="text-center"> Easter Vigil</h1>
-      <h2>Holy Saturday</h2>
-        <%=cl_image_tag("bible_hubpyl.gif", class: "floatleft", width: "30%") %>
-        <p><strong> 6 p.m. </strong>  At the Great Vigil we hear the foundational stories of God's creation of the world, the fall of man and our redemption. We light a new paschal candle and celebrate the resurrection of our Lord and Savior.</p> 
-        <div class="clearall"></div>
-        <div class="newspaper">
-          <p><strong>Praying today are:</strong></p>
-            <% @prayers.where(day_of_prayer: "Saturday").each do |p| %>
-            <ul>
-            <p>  <li><%= p.name %> </li></p>
-            </ul>   
-          <div class="mt30"></div>
-          <% end %>
-          <div class="clearall"></div>
-          </div>
-          <div class="mt100"></div>
-  
-    <h1 class="text-center">Easter Sunday</h1>
-      <%= cl_image_tag("logos/easter_morning.png", class: "floatleft", width: "300") %>
-      <p><strong>7:45 and 10 a.m.</strong> Joyful celebration of the resurrection of Jesus! There will be the flowering of the cross and special music at all the services. Flowers will be available at all services for those who wish to participate. An Easter Egg Hunt will take place in the courtyard for children 10 and under, at 9:20 a.m.</p>
+      <%= cl_image_tag("EmptyCross_av1mlt.jpg", class: "image-center", width: "100%") %>
+      <p><strong>7:45 and 10 a.m.</strong> Joyful celebration of the resurrection of Jesus! The empty cross, above, will be decorated by the congregation with colorful flowers and there will be special music at all the services.</p>
+<hr>
+       <p>An Easter Egg Hunt will take place in the courtyard for children 10 and under, at 9:20 a.m.</p>
     <hr>
  
   </div>
@@ -45,7 +29,7 @@
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
 
-  <div class="mt30"></div>
+  
 
     <%= render "meditations/show" %>
   
@@ -74,10 +58,9 @@
     <div class="mt30"></div>
      
       <%= cl_image_tag("PrayLogo_xl4c08.jpg", width: "99%", class: "image-center") %>
-      <p>The whole Church is in prayer every waking hour for 50 hours this Holy Week. That's one hour for each of the 50 years of our existence as a parish in Naples, a project of our Jubilee! committee.</p>
-      <p>The clock started clicking from the <b>Stations of the Cross</b> on Wednesday at 5 p.m. and runs to the completion of the <b>Great Easter Vigil</b> starting at 6 p.m. on Holy Saturday.</p> 
-      <p>When your hour arrives, you will stop what you're doing, wherever you are, and spend the next hour praying. Even if you didn't sign up to pray, please send up your prayers anyway and know you are in union with your fellow parishioners.</p> 
-      <%= render 'prayers/who_is_praying' %>
+      <p>Our Church family was in prayer for 50 hours during Holy Week, one hour for each of the 50 years we have been in existence. We're celebrating this Jubilee! year with various themes involving the number 50.</p>
+      <p>Just because Holy Week is over doesn't mean we have to stop praying. The Risen Lord knows quite well the world is troubled and needs our prayers.</p>
+     
       <h4><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h4>
       <div class="mt30"></div>
       <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>

@@ -11,7 +11,7 @@ class MeditationsController < ApplicationController
   # GET /meditations/1
   # GET /meditations/1.json
   def show
-    @meditation = Meditation.publish_on_today.first
+    @meditation = Meditation.find(14)
   end
 
   # GET /meditations/new

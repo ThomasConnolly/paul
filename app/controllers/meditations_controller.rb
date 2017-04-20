@@ -11,7 +11,7 @@ class MeditationsController < ApplicationController
   # GET /meditations/1
   # GET /meditations/1.json
   def show
-    @meditation = Meditation.find(14)
+    @meditation = Meditation.find(params[:id])
   end
 
   # GET /meditations/new

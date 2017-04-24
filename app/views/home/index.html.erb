@@ -8,6 +8,7 @@
 
   <div>
       <%= cl_image_tag("flower_cross_t7ebth.jpg", width: "100%") %>
+      <p class="text-center"><strong>We celebrate Easter for 50 days, until Pentecost Sunday, June 4</strong></p>
      
   </div>
   </div>
@@ -18,7 +19,7 @@
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
     class: "floatleft") %>
     <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
-    <p><strong>9 a.m.</strong> Adult Christian Formation resumes April 30 </p>
+    <p><strong>9 a.m.</strong> Adult Christian Formation </p>
     <p><strong>10 a.m.</strong> Holy Eucharist </p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
@@ -39,12 +40,14 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
     <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
     <div class="clearall"></div>
   <div class="mt30"></div>
+    <h2>Home of the Farmers' Market</h2>
+    <p>The market will reopen in "season," next November.
     <!--<%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", width:"90%", class: "image-center", :fetch_format => :auto) %> -->
-    <h2>Welcome to the Farmers&rsquo; Market</h2>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"45%", class: "floatleft") %>
-    <p>The final day of this season's Farmers' Market is next Saturday, April 22. Please come back and join the block party again in November. For more information on the market, <%= link_to "click here.", markets_index_path %></p>
-    <div class="mt30"></div>     
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"65%", class: "image-center", :fetch_format => :auto) %> 
+    <!--<h2>Welcome to the Farmers&rsquo; Market</h2>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/FarmMktLogo.png", width:"45%", class: "floatleft") %>
+    <p>The final day of this season's Farmers' Market is next Saturday, April 22. Please come back and join the block party again in November. -->For more information on the market, <%= link_to "click here.", markets_index_path %></p>
+    <div class="mt30"></div>    
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", :fetch_format => :auto) %> 
     <div class="mt30"></div>
  
   </div><!--main-body -->
@@ -55,30 +58,26 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>
     <div class="mt30"></div>
-     
-      <%= cl_image_tag("PrayLogo_xl4c08.jpg", width: "99%", class: "image-center") %>
-      <p>Our Church family was in prayer for 50 hours during Holy Week, one hour for each of the 50 years we have been in existence. We're celebrating this Jubilee! year with various themes involving the number 50.</p>
-      <p>Just because Holy Week is over doesn't mean we have to stop praying. The Risen Lord knows quite well the world is troubled and needs our prayers.</p>
-
-      <h3><%= link_to 'Tips on how to pray', pages_how_to_pray_path %></h3>
-      <div class="mt30"></div>
-      <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
       <p><strong>Adult Sunday School </strong> will resume April 30 with a three-part series on the 
       <em>"History of Christian Marriage."</em> It's at 9 a.m. in the parish hall; all are welcome.</p>
+      <p> During this series, we will be looking at the two major marital traditions that influenced the Christian understanding of marriage: the marital practices of Judaism and those of the Greco/Roman world. We will have time to explore and discuss what the Scriptures have to say about marriage and also spend time looking at how the concept of marriage evolved over the succeeding centuries. It will be a series that will challenge many of the assumptions we all have about what "makes" marriage and what is the Church's role in that blessed state. Come and join us for what promises to be a fascinating discussion.</p>
       <p>To read the lectures given in the recently concluded series on the <em>  
       Spirituality of Intimacy,</em> <%= link_to 'click here.', formation_talks_path %></p>
-    <div class="mt30"></div>  
+    <div class="mt30"></div>
+      
+      <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
+       
       <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %> 
       <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, 
       our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen
        Lord in the modern world that is in great need. Some of our ministries are 
        <%= link_to 'listed here.', opportunities_path %></p>
     <div class="mt30"></div>
-      <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
+     <!-- <%#= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
       <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 
     <div class="mt30"></div>
       <p><strong>Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
-    <div class="mt30"></div>  
+    <div class="mt30"></div>  -->
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
     <div class="mt30"></div>
       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 

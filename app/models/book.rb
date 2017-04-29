@@ -12,7 +12,6 @@
 #  updated_at :datetime
 #
 
-class Book < ActiveRecord::Base
-  belongs_to :user
+class Book < ApplicationRecord
   validates_presence_of :title
 end

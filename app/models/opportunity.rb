@@ -13,7 +13,7 @@
 #  updated_at :datetime
 #
 
-class Opportunity < ActiveRecord::Base
+class Opportunity < ApplicationRecord
   belongs_to :user
   validates_presence_of :ministry
 end

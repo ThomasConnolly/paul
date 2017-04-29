@@ -62,12 +62,23 @@
         <p><strong>We published a booklet of meditations for Lent, comprised of writings of parishioners and friends of St. Paul's. (The meditations are published every day on the home page, as well. To read all of them, append "/meditations" without the quotes, to the website address at the top of your browser.)
         </strong></p>
         <hr>
-        <h2>April 2017</h2>
+        <h2>April 2017</h2><%=cl_image_tag("PrayLogo_xl4c08.jpg", width: "60%", class: "floatright")%>
+
         <p><strong>Our April Jubilee! challenge was met when we signed up all 50 hours of prayer during Holy Week. We started with the Stations of the Cross on Wednesday evening and ended with the Great Easter Vigil on Holy Saturday evening. Thanks to all who prayed, and please don't stop! </strong></p>
         <p><%= link_to "Some tips on how to pray", pages_how_to_pray_path %></p>
-    
+        <p>Here are the parishioners who signed up for an hour or more:</p>
+        <div class="newspaper">
+          <% @prayer.each do |p| %>
+            <ul>         
+              <li> <%= p.name %> </li>
+            </ul>
+            <% end %>
+            <div class="clearall"></div>
+            <p><small>* Where it says "Whole Church" there was a liturgy or devotion, specifically the Way of the Cross on Wednesday of Holy Week; Maundy Thursday foot-washing and Holy Eucharist, the Good Friday noon service and and extended devotional by our Haitian community; and the Great Vigil of Easter at 6 p.m. on Holy Saturday.</small></p> 
+        </div>
+        <div class="clearall"></div>
         <hr>
-        <h2>May 2017</h2>>
+        <h2>May 2017</h2>
         <p><strong> 500 volunteer hours on outreach projects.
         </strong></p>
         <h2>June 2017</h2>

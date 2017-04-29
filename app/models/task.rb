@@ -10,5 +10,5 @@
 #  deadline    :string           not null
 #
 
-class Task < ActiveRecord::Base
+class Task < ApplicationRecord
 end

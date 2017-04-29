@@ -10,7 +10,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Anniversary < ActiveRecord::Base
+class Anniversary < ApplicationRecord
 
   acts_as_birthday :anniversary
 

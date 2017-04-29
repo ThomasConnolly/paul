@@ -10,7 +10,7 @@
 #  updated_at :datetime
 #
 
-class Homilist < ActiveRecord::Base
+class Homilist < ApplicationRecord
   has_many :sermons
   validates_presence_of :name
 end

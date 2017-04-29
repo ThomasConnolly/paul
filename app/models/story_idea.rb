@@ -11,7 +11,7 @@
 #  url        :string
 #
 
-class StoryIdea < ActiveRecord::Base
+class StoryIdea < ApplicationRecord
   resourcify
 
   belongs_to :user

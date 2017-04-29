@@ -20,7 +20,7 @@
 #  quarter    :integer
 #
 
-class Syllabus < ActiveRecord::Base
+class Syllabus < ApplicationRecord
   validates_presence_of :year
   validates_presence_of :grade
   validates_presence_of :quarter

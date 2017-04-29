@@ -16,7 +16,7 @@
 #  customer_id :string
 #
 
-class Ticket < ActiveRecord::Base
+class Ticket < ApplicationRecord
   belongs_to :event
   before_save :set_amount
   after_update :email_buyer

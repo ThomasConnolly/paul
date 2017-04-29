@@ -30,7 +30,7 @@
 #  invitations_count      :integer          default(0)
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   extend Rolify
   rolify
   

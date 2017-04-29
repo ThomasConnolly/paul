@@ -10,7 +10,7 @@
 #  user_id    :integer
 #
 
-class JubileePlan < ActiveRecord::Base
+class JubileePlan < ApplicationRecord
   
 
   belongs_to :user

@@ -12,7 +12,7 @@
 #  delivered_on :date
 #
 
-class Sermon < ActiveRecord::Base
+class Sermon < ApplicationRecord
   belongs_to :homilist
   validates_presence_of :title, :sermon_body, :delivered_on, :homilist_id
 end

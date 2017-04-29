@@ -6,6 +6,7 @@ class JubileePlansController < ApplicationController
   # GET /jubilees.json
   def index
     @jubilee_plans = JubileePlan.all
+    @prayer = Prayer.all
   end
 
   # GET /jubilees/1

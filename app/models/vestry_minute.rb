@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class VestryMinute < ActiveRecord::Base
+class VestryMinute < ApplicationRecord
   default_scope -> { order('created_at DESC') }
   validates_presence_of :date
 end

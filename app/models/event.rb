@@ -14,7 +14,7 @@
 #  time       :time
 #
 
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   has_many :tickets
   validates_presence_of :title
   

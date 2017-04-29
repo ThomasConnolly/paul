@@ -11,7 +11,7 @@
 #  commentable_type :string
 #
 
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
   belongs_to :user
   validates_presence_of :user_id

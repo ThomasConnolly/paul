@@ -10,7 +10,7 @@
 #  delivered_on :date
 #
 
-class FormationTalk < ActiveRecord::Base
+class FormationTalk < ApplicationRecord
   
   default_scope -> { order('delivered_on ASC') }
   validates_presence_of :title

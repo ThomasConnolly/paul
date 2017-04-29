@@ -28,6 +28,7 @@ development:
   host: localhost
   username: tom
   password: tommycon
+  port: 5432
   
 
   # The specified database role being used to connect to postgres.
@@ -66,6 +67,7 @@ test:
   host: localhost
   username: tom
   password: tommycon
+  port: 5432
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

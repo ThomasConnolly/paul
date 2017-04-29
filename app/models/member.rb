@@ -13,7 +13,7 @@
 #  full_name     :string
 #
 
-class Member < ActiveRecord::Base
+class Member < ApplicationRecord
 
   belongs_to :user
   acts_as_birthday :birthday

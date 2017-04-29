@@ -11,7 +11,7 @@
 #  pay_this   :integer
 #
 
-class Pledge < ActiveRecord::Base
+class Pledge < ApplicationRecord
   belongs_to :user
   validates :amount, :presence => true, :numericality => {:greater_than => 0}
   validates :divisor, :presence => true, :numericality => {:greater_than => 0}

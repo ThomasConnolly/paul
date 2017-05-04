@@ -38,7 +38,7 @@ class User < ApplicationRecord
   before_save :set_full_name
   after_create :assign_default_role
   after_create :add_profile
-  has_attachment :avatar, accept:[:jpg, :png, :gif]
+  #has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one  :profile, dependent: :destroy
@@ -58,8 +58,8 @@ class User < ApplicationRecord
    #Include default devise modules 
    #Others available are:
    #:lockable, :confirmable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :invitable,
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable,
          :authentication_keys => [:login]
 
 

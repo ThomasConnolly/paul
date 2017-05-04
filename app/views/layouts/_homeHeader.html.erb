@@ -35,13 +35,14 @@
           <li> <%=link_to "We make dresses for the Tumaini Fund", pages_tumaini_path %> </li>
           <li> <%=link_to "Activities", activities_index_path %> </li>
           <li> <%=link_to "We celebrate Jubilee!", jubilee_plans_path %> </li>
-          <li> <%=link_to "Family Ties", posts_path %> </li>
-          <% if current_user %>
-          <li> <%= link_to "Communicators' Corner", story_ideas_path %></li>
-          <% end %>
-          <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
-          <li> <%=link_to "Vestry Report", vreports_path %> </li>
-          <% end %>
+          <li> <%#=link_to "Family Ties", posts_path %> </li>
+          <%# if current_user %>
+          <li> <%#= link_to "Communicators' Corner", story_ideas_path %></li>
+          <%# end %>
+          <%#
+           if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
+          <li> <%#=link_to "Vestry Report", vreports_path %> </li>
+          <%# end %>
         </ul> 
     </div> <!-- btn-group action -->
     <div id="shield">

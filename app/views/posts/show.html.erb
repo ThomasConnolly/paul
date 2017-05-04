@@ -5,13 +5,13 @@
  
       <p class="poster-name">By <%= @post.user.full_name.titleize %></p>
 
-  <% if @post.post_picture? %>
-    <%= link_to cl_image_tag(@post.post_picture.path, 
+  <%# if @post.post_picture? %>
+    <%#= link_to cl_image_tag(@post.post_picture.path, 
       :height => 350, :crop => :fit), cloudinary_url(@post.post_picture.path) %>
-  <% end %>
-    <% if @post.photos? %>
-      <%= render 'slides', post: @post %>
-    <% end %> 
+  <%# end %>
+    <%# if @post.photos? %>
+      <%#= render 'slides', post: @post %>
+    <%# end %> 
 
   <p> <%= @post.content %></p>
     <br>

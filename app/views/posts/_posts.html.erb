@@ -1,20 +1,20 @@
 <h2>Here are the latest posts</h2>
 <% @posts.each do |post| %>
-  <% if post.post_picture? %>
-    <%= link_to cl_image_tag(post.post_picture.path, 
+  <%# if post.post_picture? %>
+    <%#= link_to cl_image_tag(post.post_picture.path, 
       :height => 350, :crop => :fit), cloudinary_url(post.post_picture.path) %>
-  <% end %>
-    <% if post.photos? %>
-      <%= render 'slides', post: post %>
+  <%# end %>
+    <%# if post.photos? %>
+      <%#= render 'slides', post: post %>
     <% end %>  
     <br>
-  <% if post.user.avatar.present? %>
+  <%# if post.user.avatar.present? %>
     <div id="avatar-owner">
-      <%= cl_image_tag(post.user.avatar.path, { size: '110x120',
+      <%#= cl_image_tag(post.user.avatar.path, { size: '110x120',
        crop: :fill, gravity: :face, class: "floatleft" }) %>
     </div>
   <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5><p class="center-text"><small>Under construction"</small></p>
     </div>
   <% end %>
   <br>

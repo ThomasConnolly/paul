@@ -1,11 +1,11 @@
 <% @story_ideas.each do |story_idea| %>
     <% if story_idea.user.avatar.present? %>
     <div id="avatar-owner">
-      <%= cl_image_tag(story_idea.user.avatar.path, { size: '110x120', crop: :fill,
+      <%#= cl_image_tag(story_idea.user.avatar.path, { size: '110x120', crop: :fill,
         gravity: :face, class: "floatleft" }) %>
     </div>
-    <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+    <%# else %>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5><p class="text-center"><small>Under construction</small></p>
     </div>
     <% end %>
     <br>

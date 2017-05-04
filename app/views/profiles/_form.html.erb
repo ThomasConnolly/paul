@@ -6,13 +6,13 @@
 
   <h1> Fill out your profile </h1><br>
   
-    <% if current_user.avatar.present? %>
-      <%= link_to cl_image_tag(current_user.avatar.path, 
+    <%# if current_user.avatar.present? %>
+      <%#= link_to cl_image_tag(current_user.avatar.path, 
         { size: '200x260', crop: :fill, class: "floatleft" }), edit_user_path(current_user) %> 
-    <% else %>
-      <%= link_to edit_user_path(current_user) do %>
+    <%# else %>
+      <%#= link_to edit_user_path(current_user) do %>
       <div class="big-avatar-missing">
-      <h3>Click to add<br>Your Picture</h3>
+      <h3>Click to add<br>Your Picture</h3><p class="text-center"><small>Under construction</small></p>
       </div>
       <% end %>
     <% end %>

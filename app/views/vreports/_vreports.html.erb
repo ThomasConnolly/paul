@@ -1,12 +1,12 @@
 
   <% @vreports.each do |vreport| %>
-    <% if vreport.user.avatar.present? %>
+    <%# if vreport.user.avatar.present? %>
     <div id="avatar-owner">
-      <%= cl_image_tag(vreport.user.avatar.path, { size: '110x120', crop: :fill,
+      <%#= cl_image_tag(vreport.user.avatar.path, { size: '110x120', crop: :fill,
         gravity: :face, class: "floatleft" }) %>
     </div>
     <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5><p class="text-center"><small>Under construction</small></p>
     </div>
     <% end %>
       <br>

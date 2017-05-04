@@ -14,19 +14,19 @@
 
 <section>
   <div class="create-post">
-    <% if current_user.avatar? %>
-      <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
+    <%# if current_user.avatar? %>
+      <%#= cl_image_tag(current_user.avatar.path, { size: '110x120', 
         crop: :fill, gravity: :face, class: "floatleft" }) %>
-    <% end %>
-    <% if current_user.avatar.nil? %>
-    <%= link_to edit_user_path(current_user.id) do %>
-    <div class="default-avatar"><h4>Click to add<br>Your Picture</h4>
+    <%# end %>
+    <%# if current_user.avatar.nil? %>
+    <%#= link_to edit_user_path(current_user.id) do %>
+    <div class="default-avatar"><h4>Click to add<br>Your Picture</h4><p class="center-text"><small>Under construction</small></p>
     </div>
     <% end %> 
     <% end %> 
     <br><br>
     <h3>  
-       <%= link_to "Click to post or upload photos",
+       <%= link_to "Click to post",
       new_post_path, remote: true %>
     </h3>  
   </div>

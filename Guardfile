@@ -1,4 +1,3 @@
-
 guard :rspec, cmd: 'spring rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)

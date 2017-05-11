@@ -34,4 +34,5 @@ instructions.pdf
 instructions.png
 instructions.sla
 instructions.sla.autosave
-modal_code.doc
+modal_code.doc/public/packs
+/node_modules

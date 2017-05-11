@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-
-
+  resources :marriage_talks
   resources :meditations
   resources :prayers
 
@@ -110,6 +109,6 @@ Rails.application.routes.draw do
   end
   
   devise_for :views
-  #mount Attachinary::Engine => '/attachinary'
+  # mount Attachinary::Engine => '/attachinary'
 
 end

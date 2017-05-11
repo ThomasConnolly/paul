@@ -93,7 +93,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, 
+    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar, :avatar_cache,
       :stripe_customer_id, :member_id)
   end
 

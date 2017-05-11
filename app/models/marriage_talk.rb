@@ -1,0 +1,2 @@
+class MarriageTalk < ApplicationRecord
+end

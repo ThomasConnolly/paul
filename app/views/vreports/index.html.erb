@@ -1,33 +1,32 @@
 
   <div class="row">
     <div class="col-md-8 col-sm-12 main-body">
-    <h1>Vestry Reports</h1>
       <section>
         <div class="create-vreport">
-          <%# if current_user.avatar.present? %>
-          <%#= cl_image_tag(current_user.avatar.path, { size: '110x120',
-            crop: :fill, gravity: :face, class: "floatleft" }) %>
-          <%# else %>
-          <div class="default-avatar"><h5>Your<br>Picture<br>
-          Here</h5><p class="text-center"><small>Under construction</small></p>
-          </div>
-          <% end %><br><br>
-            <%= link_to new_vreport_path, remote: true do %>
-              <h3>Click here to create a report</h3>
-            <% end %>
-        </div>
-          <div id="vreports-form" style="display:none;">
-          </div>
+          <% if current_user.avatar.url.present? %>
+            <%= image_tag(current_user.avatar.url(:thumb), class: "floatleft") %>
+          <% else %>
+            <div class="default-avatar">
+              <h5>Your<br>Picture<br>Here</h5>
+              <p class="text-center"><small>Under construction</small></p>
+          <% end %>
+           
+
+          <%= link_to new_vreport_path, remote: true do %>
+            <h2>Click here to create a report</h2>
+          <% end %>
+        </div><!-- create vreport end -->
+
+          <div id="vreports-form" style="display:none;"></div>
       </section>
 
       <section>
         <div class="mt30"> </div>
         <div id="vreports">
-        <h2>Here are the latest vestry reports</h2>
           <%= render 'vreports' %>
-        </div>
+        </div><!--vreports end -->
       </section>
-  </div>
+  </div> <!--main-body end -->
 
     <div class="col-md-4 col-sm-6 sidebar">
       <h2>About vestry reports</h2>
@@ -45,11 +44,11 @@
       <p><strong>Farmers' Market, yard sale</strong></p>
       <div class="second-line"><p>Don Anderson</p></div>
       <p><strong>Fellowship</strong></p>
-      <div class="second-line"><p>Van Geoghegan</p></div>
+      <div class="second-line"><p>Carol Diehm</p></div>
       <p><strong>Finance</strong></p>
       <div class="second-line"><p>Dave Abernethy</p></div>
       <p><strong>Internal ministries</strong></p>
-      <div class="second-line"><p>Adrienne McGrain</p></div>
+      <div class="second-line"><p>Judy Allen</p></div>
       <p><strong>Outreach</strong></p>
       <div class="second-line"><p>Lynne LaMarca</p></div>
       <p><strong>Pastoral Care</strong></p>
@@ -66,6 +65,5 @@
       <%= link_to "Click here", "http://www.ecfvp.org/account/register", :target => '_blank' %></p>
       <p>
       <strong>Here's a pdf describing how some other congregations are dealing with change</strong> <%= link_to "Click here", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1457116302/something_more_nmd5we.pdf", :target => "_blank" %> </p>
-    </div>
-  </div>
-</div>
+    </div><!-- sidebar end -->
+  </div><!-- row end -->

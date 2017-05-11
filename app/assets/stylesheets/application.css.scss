@@ -12,10 +12,8 @@
  * file per style scope.
  */
 
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -247,6 +245,7 @@ p.center-bold-text {
   line-height: 1.75;
   font-family: Times, serif;
   text-align: left;
+  margin-bottom: 1.5rem;
 }
 .sermon-box {
   float:right;
@@ -358,10 +357,10 @@ p.center-bold-text {
 }
 .create-post, .create-vreport, .create-story_idea, .create-jubilee{
   width: 100%;
-  height: 140px;
+  height: 180px;
   border: 1px;
   border: 1px solid gray;
-  padding: 10px;
+  padding: 4px;
   text-align: center;
 }
 .btn-custom {
@@ -431,24 +430,24 @@ p.center-bold-text {
 }
 
 .default-avatar{
-  padding-top: 12px;
+  padding-top: 6px;
   text-align: center;
   color: red;
-  width: 90px;
-  height: 110px;
+  width: 110px;
+  height: 160px;
   border: 1px solid black;
   float: left;
-  margin-right: 6px;
+  margin-right: 14px;
 }
 .big-avatar-missing{
-  width: 200px;
-  height: 260px;
-  padding-top: 130px;
+  width: 240px;
+  height: 310px;
+  padding-top: 5px;
   text-align: center;
   color: red;
   border: 2px solid black;
   float: left;
-  margin-right: 12px;
+  margin-right: 20px;
 }
 .mt30 {
   margin-top: 30px;

@@ -17,16 +17,11 @@
       <div class="mt50"></div>
 <%= simple_form_for(@user, html: { class: "form-horizontal", :multipart => true, method: :put }) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :avatar, as: :attachinary, label: false %>
+  <%= f.hidden_field :avatar_cache %>
+  <%= f.input :avatar %>
   <%= f.button :submit, "Submit", class: "btn btn-primary btn-xs" %> &nbsp;
   <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %><br>
 <% end %>
 <div class="mt50"></div>
     </div>
   </div>
-<script>
-  $( document ).ready(function() {
-    $('.attachinary-input');
-    attachinary()
-  });
-</script>

@@ -1,22 +1,20 @@
-
-    <%= simple_form_for(@jubilee_plan) do |f| %>
-        <% if @jubilee_plan.errors.any? %>
+<%= simple_form_for(@jubilee_plan) do |f| %>
+  <% if @jubilee_plan.errors.any? %>
     <div id="error_explanation">
-      <h2>
-        <%= pluralize(@jubilee_plan.errors.count, "error") %> prohibited
-        this post from being saved:
-      </h2>
-      <ul>
-        <% @jubilee_plan.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+      <p><strong><%= pluralize(@jubilee_plan.errors.count, "error") %> prohibited
+    this post from being saved:
+      </strong></p>>
+        <ul>
+          <% @jubilee_plan.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
   <% end %>
-      <%= f.input :title, autofocus: true %>
-      <%= f.input :body %>
+        </ul>
+    </div>
+<% end %>
+  <%= f.input :title, autofocus: true %>
+  <%= f.input :body %>
 
-      <div class="form-actions">
-        <%= f.submit "Submit", class: "btn btn-primary" %>
-      </div>
-    <% end %>
+  <div class="form-actions">
+    <%= f.button :submit class: "btn btn-primary" %>
+  </div>
+<% end %>

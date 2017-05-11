@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/plataformatec/devise.git
-  revision: cc6a5824089ed2cbd015a6951ce6d43d00264486
+  revision: a62faa2c8258ba1c35fe84e147f42c35eccccb8a
   specs:
     devise (4.2.1)
       bcrypt (~> 3.0)
@@ -72,7 +72,7 @@ GEM
       rake (>= 10.4, < 12.0)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (6.7.7.2)
+    autoprefixer-rails (7.0.1)
       execjs
     awesome_print (1.7.0)
     aws_cf_signer (0.1.3)
@@ -107,6 +107,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     ckeditor (4.2.3)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -131,8 +135,8 @@ GEM
     concurrent-ruby (1.0.5)
     css_parser (1.5.0)
       addressable
-    database_cleaner (1.5.3)
-    debug_inspector (0.0.2)
+    database_cleaner (1.6.1)
+    debug_inspector (0.0.3)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
@@ -229,16 +233,16 @@ GEM
     lumberjack (1.0.11)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
-    meta_request (0.3.0)
-      callsite
-      rack-contrib
-      railties
+    meta_request (0.4.2)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.2.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     momentjs-rails (2.17.1)
       railties (>= 3.1)
     multi_json (1.12.1)
@@ -247,7 +251,7 @@ GEM
     nenv (0.3.0)
     netrc (0.11.0)
     nio4r (2.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -255,7 +259,7 @@ GEM
     orm_adapter (0.5.0)
     parser (2.4.0.0)
       ast (~> 2.2)
-    path_expander (1.0.1)
+    path_expander (1.0.2)
     pg (0.20.0)
     premailer (1.10.3)
       addressable
@@ -281,7 +285,7 @@ GEM
       pry (>= 0.9.11)
     public_suffix (2.0.5)
     puma (3.8.2)
-    rack (2.0.1)
+    rack (2.0.2)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-test (0.6.3)
@@ -333,23 +337,23 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rolify (5.1.0)
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-rails (3.5.2)
+      rspec-support (~> 3.6.0)
+    rspec-rails (3.6.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
     ruby_dep (1.5.0)
     ruby_parser (3.9.0)
       sexp_processor (~> 4.1)
@@ -392,7 +396,7 @@ GEM
     tilt (2.0.7)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
-    turbolinks-source (5.0.2)
+    turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -436,8 +440,9 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails
   byebug
   capybara
+  carrierwave
   ckeditor
-  cloudinary (~> 1.8)
+  cloudinary
   coffee-rails
   database_cleaner
   devise!

@@ -1,4 +1,6 @@
 <h3>User</h3>
-
+<% if @user.avatar.url.present? %>
+  <%= image_tag(@user.avatar_url(:standard)) %> 
+<% end %>
 <p> <%= @user.full_name.titleize %></p>  
 <p><%= @user.email %></p>

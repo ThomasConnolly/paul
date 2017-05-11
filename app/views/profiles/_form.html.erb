@@ -1,18 +1,19 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 <div class="mt50"></div>
-<h1><%= link_to "Pay  your pledge on line", new_pledge_path %></h1> 
+<h1><%= link_to "Pay  your pledge on line", new_pledge_path %></h1> <p><small>(Pledge feature is under construction)</small></p>
 <div class="mt30"></div>
+  <div class="scroll-to-bottom"><h4>Be sure to click "save changes" to update your profile information</h4></div>
 
   <h1> Fill out your profile </h1><br>
   
-    <%# if current_user.avatar.present? %>
-      <%#= link_to cl_image_tag(current_user.avatar.path, 
-        { size: '200x260', crop: :fill, class: "floatleft" }), edit_user_path(current_user) %> 
-    <%# else %>
-      <%#= link_to edit_user_path(current_user) do %>
+    <% if current_user.avatar.url.present? %>
+      <%= link_to image_tag(current_user.avatar.url(:standard), 
+        class: "floatleft" ), edit_user_path(current_user) %> 
+    <% else %>
       <div class="big-avatar-missing">
-      <h3>Click to add<br>Your Picture</h3><p class="text-center"><small>Under construction</small></p>
+      <%= link_to edit_user_path(current_user) do %>
+      <h3>Click to add<br>Your Picture</h3>
       </div>
       <% end %>
     <% end %>
@@ -20,7 +21,7 @@
   <h3 class="mt30">Everybody has a story...</h3>
     <p>...And we get to know one another by sharing our story. To get started, look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p>
 
-    <div class="scroll-to-bottom"><h4>Be sure to click "save changes" to update your profile information</h4></div>
+  
 
     <div class='clearall'> </div>
       <h3>Click photo to update it</h3><br>

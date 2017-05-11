@@ -5,10 +5,10 @@
 
   <section>  
     <div class="create-story_idea">
-    <%# if current_user.avatar.present? %>
-      <%#= cl_image_tag(current_user.avatar.path, { size: '110x120', 
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
         crop: :fill, gravity: :face, class: "floatleft" }) %>
-      <%# else %>
+      <% else %>
       <div class="default-avatar"><h5>Your<br>Picture<br>
       Here</h5><p class="text-center"><small>Under construction</small></p>
       </div>

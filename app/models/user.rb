@@ -34,11 +34,10 @@ class User < ApplicationRecord
   extend Rolify
   rolify
   
-  
+
   before_save :set_full_name
   after_create :assign_default_role
   after_create :add_profile
-  #has_attachment :avatar, accept:[:jpg, :png, :gif]
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one  :profile, dependent: :destroy
@@ -53,7 +52,11 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :full_name, uniqueness: { case_sensitive: false }
   
-   attr_accessor :login
+  attr_accessor :avatar
+  
+  mount_uploader :avatar, AvatarUploader
+  
+  attr_accessor :login
 
    #Include default devise modules 
    #Others available are:

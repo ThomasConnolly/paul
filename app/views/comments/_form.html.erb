@@ -2,7 +2,7 @@
     <%= f.input :body, placeholder: 'Type your comment here', 
     input_html: { rows: 2 }, label: false, autofocus: true %>
     <div class="submit-post">
-    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %> &nbsp;
+    <%= f.button :submit, class: "btn btn-primary btn-sm" %> &nbsp;
     <%= link_to "Cancel", :back, class: "btn btn-danger btn-sm" %>
     </div>
   <% end %>

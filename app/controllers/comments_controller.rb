@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
       @comment = @commentable.comments.new comment_params
       @comment.user = current_user
       @comment.save
-        redirect_to :back
+        redirect_back(fallback_location: root_path)
     end
   
     
@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
       @commentable = @comment.commentable
       @comment.destroy
-        redirect_to :back
+        redirect_back(fallback_location: root_path)
     end
 
 

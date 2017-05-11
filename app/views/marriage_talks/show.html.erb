@@ -5,7 +5,7 @@
 
 <h1><%= @marriage_talk.title %></h1>
 <p>
-  <strong>Delivered on<%= @marriage_talk.delivered_on.strftime("%b %d, %Y") %></strong>
+  <strong>Delivered on <%= @marriage_talk.delivered_on.strftime("%b %d, %Y") %></strong>
   <div class="sermon">
   <p>
   <%= raw @marriage_talk.body %>

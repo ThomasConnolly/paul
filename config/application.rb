@@ -5,7 +5,7 @@ require 'csv'
 require 'date'
 require 'time'
 require 'rails/all'
-#require 'attachinary/orm/active_record'
+require 'attachinary/orm/active_record'
 
 
 

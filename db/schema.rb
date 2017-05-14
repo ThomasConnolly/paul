@@ -282,7 +282,6 @@ ActiveRecord::Schema.define(version: 20170511030019) do
     t.integer "invitations_count", default: 0
     t.string "customer_id"
     t.string "card"
-    t.string "avatar"
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

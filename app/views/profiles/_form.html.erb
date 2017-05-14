@@ -3,13 +3,12 @@
 <div class="mt50"></div>
 <h1><%= link_to "Pay  your pledge on line", new_pledge_path %></h1> <p><small>(Pledge feature is under construction)</small></p>
 <div class="mt30"></div>
-  <div class="scroll-to-bottom"><h4>Be sure to click "save changes" to update your profile information</h4></div>
 
   <h1> Fill out your profile </h1><br>
   
-    <% if current_user.avatar.url.present? %>
-      <%= link_to image_tag(current_user.avatar.url(:standard), 
-        class: "floatleft" ), edit_user_path(current_user) %> 
+    <% if current_user.avatar? %>
+      <%= link_to cl_image_tag(current_user.avatar.path, size: '160x234',
+        class: "floatleft"), edit_user_path(current_user) %> 
     <% else %>
       <div class="big-avatar-missing">
       <%= link_to edit_user_path(current_user) do %>
@@ -24,7 +23,7 @@
   
 
     <div class='clearall'> </div>
-      <h3>Click photo to update it</h3><br>
+      <p><strong>Click your photo to update it</strong></p>
   
 <div class="form-group">
   <%= simple_form_for @profile do |f| %>  

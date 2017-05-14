@@ -3,8 +3,8 @@
     <div class="col-md-8 col-sm-12 main-body">
       <section>
         <div class="create-vreport">
-          <% if current_user.avatar.url.present? %>
-            <%= image_tag(current_user.avatar.url(:thumb), class: "floatleft") %>
+          <% if current_user.avatar? %>
+            <%= cl_image_tag(current_user.avatar.path, size: '120x175', class: "floatleft") %>
           <% else %>
             <div class="default-avatar">
               <h5>Your<br>Picture<br>Here</h5>

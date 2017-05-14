@@ -1,9 +1,9 @@
 
   <% @vreports.each do |vreport| %>
-    <% if vreport.user.avatar.url.present? %>
-      <%= image_tag(vreport.user.avatar.url(:thumb), class: "floatleft" ) %>
+    <% if vreport.user.avatar? %>
+      <%= cl_image_tag(vreport.user.avatar.path, {size: '160x234', class: 'floatleft'}) %>
     <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5><p class="text-center"><small>Under construction</small></p>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
     </div>
     <% end %>
       <br>

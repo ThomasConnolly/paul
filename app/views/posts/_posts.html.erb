@@ -1,16 +1,17 @@
 <h2>Here are the latest posts</h2>
 <% @posts.each do |post| %>
-  <%# if post.post_picture_url? %>
-    <%#= link_to image_tag(post.post_picture.url, 
-      :height => 350, :crop => :fit), cloudinary_url(post.post_picture.path) %>
-  <%# end %> 
+  <% if post.post_picture? %>
+    <%= link_to cl_image_tag(post.post_picture.path, 
+      { height: '350', crop: :fit, class: 'floatright' }) %>
+  <% end %> 
     <br>
-  <% if post.user.avatar.url.present? %>
+  
+  <% if post.user.avatar? %>
     <div id="avatar-owner">
-      <%= image_tag(post.user.avatar_url(:thumb), class: "floatleft" ) %>
+      <%= cl_image_tag(post.user.avatar.path, size: '120x175') %>
     </div>
   <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5><p class="center-text"></p>
+    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
     </div>
   <% end %>
   <br>
@@ -33,5 +34,4 @@
       <div class="mt30"></div>
       <%= render partial: 'comments/form', locals: {commentable: post} %>
     </section> 
-
 <% end %>

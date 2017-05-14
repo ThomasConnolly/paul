@@ -6,6 +6,7 @@
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
+//= require attachinary
 //= require moment
 //= require bootstrap-sprockets
 //= require turbolinks

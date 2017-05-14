@@ -10,7 +10,7 @@
       <%= f.input :date %>
       <%= f.input :time, label: "Time. Use military time, e.g. 19 for 7 p.m." %>
       <%= f.input :quantity, label: "Quantity of tickets being printed for this event" %>
-      <%= f.input :url, label: "link to event picture" %>
+      <%= f.input :event_picture, as: :attachinary, label: "Add a picture for this event" %>
     </div>
 
     <div class="form-actions">

@@ -51,10 +51,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :full_name, uniqueness: { case_sensitive: false }
+  has_attachment :avatar, accept: [:png, :jpg, :gif]
   
-  attr_accessor :avatar
-  
-  mount_uploader :avatar, AvatarUploader
   
   attr_accessor :login
 

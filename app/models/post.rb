@@ -15,7 +15,8 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   validates_presence_of :content
   validates_presence_of :user_id
-  mount_uploader :picture, PictureUploader
+  has_attachment :post_picture
+  has_attachments :photos
 
   default_scope -> { order('created_at DESC') }
 

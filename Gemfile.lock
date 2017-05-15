@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/ThomasConnolly/attachinary.git
+  revision: c7bbc9d5d5ea6aee7584e381c82d0b5bea73e49b
+  specs:
+    attachinary (1.3.1)
+      cloudinary (~> 1.1)
+      rails (>= 3.2)
+
+GIT
   remote: git://github.com/elsurudo/simple_form.git
   revision: a1faca93ed39c0f54055890578307bdbade3de0b
   branch: rails-5.1.0
@@ -24,13 +32,6 @@ GIT
   specs:
     stripe (2.8.0)
       faraday (~> 0.9)
-
-PATH
-  remote: attachinary
-  specs:
-    attachinary (1.3.1)
-      cloudinary (~> 1.1)
-      rails (>= 3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -310,7 +311,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
+    rails_on_heroku (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
@@ -480,7 +481,7 @@ DEPENDENCIES
   puma
   rack
   rails (= 5.1)
-  rails_12factor
+  rails_on_heroku
   railties
   regressor
   remotipart

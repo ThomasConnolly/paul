@@ -74,3 +74,4 @@ group :test do
 end
 
 gem 'webpacker'
+gem 'rails_12factor'

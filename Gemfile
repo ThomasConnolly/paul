@@ -23,7 +23,7 @@ gem 'bootstrap3-datetimepicker-rails'
 gem 'ckeditor'
 gem 'bcrypt'
 #gem 'carrierwave'
-gem 'attachinary', :path => 'attachinary'
+gem 'attachinary', github: 'ThomasConnolly/attachinary'
 gem 'cloudinary'
 gem 'jquery-fileupload-rails'
 gem 'remotipart'
@@ -74,4 +74,4 @@ group :test do
 end
 
 gem 'webpacker'
-gem 'rails_12factor'
+gem 'rails_on_heroku'

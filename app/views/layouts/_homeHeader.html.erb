@@ -36,7 +36,7 @@
           <li> <%=link_to "We make dresses for the Tumaini Fund", pages_tumaini_path %> </li>
           <li> <%=link_to "Activities", activities_index_path %> </li>
           <li> <%=link_to "We celebrate Jubilee!", jubilee_plans_path %> </li>
-          <li> <%#=link_to "Family Ties", posts_path %> </li>
+          <li> <%=link_to "Family Ties", posts_path %> </li>
           <% if current_user %>
             <li> <%= link_to "Communicators' Corner", story_ideas_path %></li>
           <% end %>
@@ -55,9 +55,9 @@
   <div class="col col-md-6 col-md-offset-6 col-xs-12 col-sm-12 col-lg-5 col-lg-offset-7">
     <h5> 
       <% if user_signed_in? %>
-       <%= current_user.full_name.titleize %> |  <%= link_to "Log out", destroy_user_session_path, 
-        method: :delete %> |<%= link_to "Edit account", edit_user_registration_path %> 
-        <%#= link_to "Update profile", edit_profile_path(current_user.profile(params[:id])) %>
+       <%= current_user.full_name.titleize %> <%= link_to " | Log out", destroy_user_session_path, 
+        method: :delete %> <%= link_to " | Edit account", edit_user_registration_path %> 
+        <%= link_to " | Update profile", edit_profile_path(current_user.profile) %>
       <% else %>
         <%= link_to "Member sign in", new_user_session_path %>
       <% end %>

@@ -8,7 +8,8 @@
   
   <% if post.user.avatar? %>
     <div id="avatar-owner">
-      <%= cl_image_tag(post.user.avatar.path, size: '120x175') %>
+      <%= cl_image_tag(post.user.avatar.path, { size: '120x175', 
+      crop: :fit }) %>
     </div>
   <% else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>

@@ -21,7 +21,6 @@
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
     class: "floatleft") %>
     <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
-    <p><strong>9 a.m.</strong> Adult Christian Formation </p>
     <p><strong>10 a.m.</strong> Holy Eucharist </p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
@@ -62,12 +61,10 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
     <div class="mt30"></div>
       <p><strong>Adult Sunday School </strong></p>
       <p> 
-      <em>"History of Christian Marriage."</em> is the topic our our current lecture/discussion series, at 9 a.m. in the parish hall; all are welcome.</p>
-      <p> During this series are looking at the two major marital traditions that influenced the Christian understanding of marriage: the marital practices of Judaism and those of the Greco/Roman world. We will have time to explore and discuss what the Scriptures have to say about marriage and also spend time looking at how the concept of marriage evolved over the succeeding centuries. It will be a series that will challenge many of the assumptions we all have about what "makes" marriage and what is the Church's role in that blessed state. Come and join us for what promises to be a fascinating discussion.</p>
-      <p>Lectures are given and discussions led by the Rev. Dr. Wendel (Tad) Meyer.</p>
-      <p><strong>To read the lectures given to date on the History of Marriage, <%= link_to "click here.", marriage_talks_path %> </strong></p>
+      <em>"History of Christian Marriage."</em> lecture/discussion series presented by Fr. Tad, is now available to read <%= link_to 'here.', marriage_talks_path %>
+      <p> During this series we looked at the two major marital traditions that influenced the Christian understanding of marriage: the marital practices of Judaism and those of the Greco/Roman world.</p>
       <p>To read the lectures given in the recently concluded series on the <em>  
-      Spirituality of Intimacy,</em> <%= link_to 'click here.', formation_talks_path %></p>
+      Spirituality of Intimacy,</em> <%= link_to 'click here.', formation_talks_path %> This series also was presented by Fr. Tad (the Rev. Dr. Wendel Meyer to be more formal), plus his wife, the Rev. Ann Stevenson.</p>
     <div class="mt30"></div>
       
       <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
@@ -78,11 +75,11 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
        Lord in the modern world that is in great need. Some of our ministries are 
        <%= link_to 'listed here.', opportunities_path %></p>
     <div class="mt30"></div>
-     <!-- <%#= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
+     <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
       <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 
     <div class="mt30"></div>
       <p><strong>Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
-    <div class="mt30"></div>  -->
+    <div class="mt30"></div> 
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
     <div class="mt30"></div>
       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "image-center", :fetch_format => :auto), 

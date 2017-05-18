@@ -1,4 +1,4 @@
-<%= javascript_include_tag Ckeditor.cdn_url %>
+
 <%= simple_form_for @story_idea do |f| %>
   <%= f.input :title, placeholder: 'Title of your new topic', 
   label: false, autofocus: true %><br>
@@ -15,3 +15,8 @@
   </div>
 <% end %>
 
+<script>
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
+});
+</script>

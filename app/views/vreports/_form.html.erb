@@ -2,7 +2,7 @@
 <%= simple_form_for @vreport do |f| %>
 <div class="form-group">
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %>
+  <%= f.input :body, as: :ckeditor %>
  </div>
   <div class="submit-post">
    <%= f.button :submit, class: "btn btn-primary" %> &nbsp; 

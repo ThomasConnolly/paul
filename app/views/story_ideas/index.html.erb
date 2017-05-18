@@ -1,46 +1,40 @@
-
-  <div class="row">
-    <div class="col-md-8 col-sm-12 main-body">
+<div class="row">
+  <div class="col-md-8 col-sm-12 main-body">
     <p id="notice"><%= notice %></p>
 
-  <section>  
-    <div class="create-story_idea">
-    <% if current_user.avatar.present? %>
-      <%= cl_image_tag(current_user.avatar.path, { size: '110x120', 
-        crop: :fill, gravity: :face, class: "floatleft" }) %>
-      <% else %>
-      <div class="default-avatar"><h5>Your<br>Picture<br>
-      Here</h5><p class="text-center"><small>Under construction</small></p>
-      </div>
-    <% end %><br><br>
-      <%= link_to new_story_idea_path, remote: true do %>
-      <p><strong>Communicate a new topic</strong></p>
-      <% end %>
-    </div>
-    <br>
-    <div id="story_ideas-form" style="display:none;">
-    </div>   
-  </section>
-  <section>
-    <div class="mt30"></div>
-    <div id="story_ideas">
-     <h1>From the Communicators</h1>
-     <% @story_ideas.each do |story_idea| %>
-     <h2><%= link_to story_idea.title, story_idea %></h2>
-     <p>By <%= story_idea.user.full_name.titleize %></p>
+    <section>  
+      <div class="create-story_idea">
+        <% if current_user.avatar? %>
+          <%= cl_image_tag(current_user.avatar.path, size: '120x175', 
+             class: "floatleft") %>
+        <% end %>
+          <%= link_to new_story_idea_path, remote: true do %>
+          <p><strong>Communicate a new topic</strong></p>
+          <% end %>
+      </div><!--create-story_idea-->
+        <div id="story_ideas-form" style="display:none;">
+        </div>   
+    </section>
+    <section>
+      <div class="mt30"></div>
+      <div id="story_ideas">
+        <h2>From the Communicators</h2>
+        <% @story_ideas.each do |story_idea| %>
+          <h3><%= link_to story_idea.title, story_idea %></h3>
+          <p>By <%= story_idea.user.full_name.titleize %></p>
 
-     <% if story_idea.comments.any? %>
-     <p><small><em><%= pluralize story_idea.comments.count, "comment" %>  </em></small></p>
-     <br>
-     <% end %>
-     <div class="mt30"></div>
-     <% end %>
-    </div>
+        <% if story_idea.comments.any? %>
+        <p><small><em><%= pluralize story_idea.comments.count, "comment" %>  </em></small></p>
+        <br>
+        <% end %>
+        <div class="mt30"></div>
+        <% end %>
+      </div><!--story_ideas-->  
+    </section>
+  </div><!--main-body-->
 
-  </section>
-  </div>
-    <div class="col-md-4 col-sm-6 sidebar">
-      <h3> Resources for communicators </h3>
+  <div class="col-md-4 col-sm-6 sidebar">
+    <h3> Resources for communicators </h3>
       <p><%= link_to "Episcopal Church Foundation 'Vital Practices'", "http://www.ecfvp.org/topics/topic/communications/" %>
       <p><%= link_to "Diocesan guidebook for using social media", "http://s3.amazonaws.com/dfc_attachments/public/documents/3221891/3-socialmedia_2016_Guidelines_Final.pdf" %> </p>
 
@@ -48,6 +42,5 @@
       <p><%= link_to "Acts 8, an Episcopal evangelical resource", "http://www.acts8movement.org/" %></p>
       <p><%= link_to "Tips for internal communications, from our Methodist friends", "http://www.umcom.org/learn/5-tips-for-internal-church-communications" %> </p>
 
-    </div>
-  </div>
-</div>
+  </div><!--sidebar-->
+</div><!--row-->

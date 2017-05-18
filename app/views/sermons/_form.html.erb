@@ -1,4 +1,4 @@
-<%= javascript_include_tag Ckeditor.cdn_url %>
+<%#= javascript_include_tag Ckeditor.cdn_url %>
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
 <div class="example" data-no-turbolink>
@@ -10,8 +10,9 @@
       <%= f.input :title, class: 'form-control' %>
       <%= f.input :cites, label: 'Citations', class: 'form-control' %>
       <%= f.date_select :delivered_on, :id => 'datetimepicker1' %><br>
-      <%= f.input :sermon_body, as: :ckeditor %><br>
-
+      <div id="summernote">
+      <%= f.input :sermon_body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %><br>
+      </div>
     
     <%= f.button :submit %>   
   <% end %>
@@ -22,5 +23,6 @@
                 $('#datetimepicker1').datetimepicker();
             });
         </script>
+        
   </div>
 </div>

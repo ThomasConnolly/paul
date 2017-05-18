@@ -1,9 +1,13 @@
-<%= javascript_include_tag Ckeditor.cdn_url %>
-<%= simple_form_for @vestry_minute, html: { multipart: true } do |f| %>
-  <h3>Insert date of the meeting</h3>
+
+<%= simple_form_for @vestry_minute do |f| %>
+
   <div class="form-group">
-    <%= f.date_select :date, :class => 'datepicker' %><br>
-    <%= f.input :minutes, as: :ckeditor %>
+  <p>Date of the meeting:</p>
+    <%= f.date_select :date, id: 'datetimepicker1' %>
+    <div class="mt30"></div>  
+  
+    <%= f.input :minutes, as: :summernote %>
+    
   </div>
 
   <div class="form-actions">
@@ -11,8 +15,3 @@
   </div>
 <% end %>
 
-<script>
-$(document).on('page:load', function() {
-  window['rangy'].initialized = false
-  });
-</script>

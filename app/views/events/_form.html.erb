@@ -4,12 +4,11 @@
   <%= simple_form_for(@event) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-group form-inputs">
       <%= f.input :title %>
       <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
-      <%= f.input :date %>
-      <%= f.input :time, label: "Time. Use military time, e.g. 19 for 7 p.m." %>
-      <%= f.input :quantity, label: "Quantity of tickets being printed for this event" %>
+      <%= f.date_select :date, id: "datetimepicker1" %>
+      <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m."%>
       <%= f.input :event_picture, as: :attachinary, label: "Add a picture for this event" %>
     </div>
 
@@ -17,5 +16,16 @@
       <%= f.button :submit %>
     </div>
   <% end %>
+  <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+    </script>
+  <script>
+$(document).on('page:load', function() {
+  window['rangy'].initialized = false
+  });
+</script>
   </div>
 </div>
+

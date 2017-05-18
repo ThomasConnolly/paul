@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :recipes
   resources :marriage_talks
   resources :meditations
   resources :prayers
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
     end
   end
   resources :vestry_minutes
-  resources :contacts
   resources :pictures
   resources :surveys, only: :index
   get 'activities/index'
@@ -110,5 +110,5 @@ Rails.application.routes.draw do
   
   devise_for :views
   mount Attachinary::Engine => '/attachinary'
-
+  mount Ckeditor::Engine => '/ckeditor'
 end

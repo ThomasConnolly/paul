@@ -1,7 +1,7 @@
 
 <%= simple_form_for @post do |f| %>
   <%= f.input :content, placeholder: 'Type your post here',
-  autofocus: true, label: false, input_html: {rows: "6"} %>
+  autofocus: true, label: false, input_html: {rows: "8"} %>
   
   <div class="upload_picture">
     <%= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>

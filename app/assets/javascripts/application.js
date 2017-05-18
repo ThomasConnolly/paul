@@ -1,5 +1,6 @@
 
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require jquery.ui.widget
@@ -9,7 +10,9 @@
 //= require attachinary
 //= require moment
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require ckeditor/init
+//= require datetimepicker
 //= require compatibility.coffee
 //= require video
 //= require_tree .
+//= require turbolinks

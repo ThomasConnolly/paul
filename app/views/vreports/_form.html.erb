@@ -1,18 +1,17 @@
-<%= javascript_include_tag Ckeditor.cdn_url %>
+
 <%= simple_form_for @vreport do |f| %>
+<div class="form-group">
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :ckeditor %>
-  
+  <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %>
+ </div>
   <div class="submit-post">
    <%= f.button :submit, class: "btn btn-primary" %> &nbsp; 
    <%= link_to "Cancel", :back, class: "btn btn-danger" %>
   </div>
 <% end %>
 
-
-
 <script>
-$(document).on('page:load', function() {
+$(document).on('page:load', function(){
   window['rangy'].initialized = false
-  });
+});
 </script>

@@ -1,13 +1,13 @@
-<%= javascript_include_tag Ckeditor.cdn_url %>
+<%#= javascript_include_tag Ckeditor.cdn_url %>
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
 
-  <div class="example" data-no-turbolink>
+  <div class="example">
     <%= simple_form_for @formation_talk, html: { multipart: true } do |f| %>  
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %> 
         <%= f.date_select :delivered_on, id: 'datetimepicker1' %><br>
-        <%= f.input :body, as: :ckeditor %>
+        <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }  %>
         <%= f.button :submit %>   
     <% end %>
       </div>

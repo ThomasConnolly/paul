@@ -10,7 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
-  def concert
+  def grace_works
+    @work=Work.new
+    @works=Work.all
   end
 
   def calendar

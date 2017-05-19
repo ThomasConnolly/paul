@@ -40,7 +40,6 @@ gem 'figaro'
 gem 'capybara'
 gem 'regressor'
 
-
 group :development do
   gem 'meta_request'
   gem 'better_errors'

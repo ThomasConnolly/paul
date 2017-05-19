@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :marriage_talks
   resources :meditations
   resources :prayers
+  resources :works
 
   root 'home#index'
   get 'home/invitation'
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   get 'pages/how_to_pray'
   get 'pages/haitian'
   get 'pages/tumaini'
-  get 'pages/concert'
+  get 'pages/grace_works'
   get 'pages/albergue'
   get 'pages/calendar'
   get 'pages/directions'

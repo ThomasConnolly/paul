@@ -2,7 +2,7 @@
 <div id="hello"></div>
   <% @events.each do |event| %>
     <h2><%= event.title %></h2>
-    <p><%= event.date.strftime('%A, %B %e, %Y') %>, <%= event.time.strftime('%l:%M %P') %>, <%= number_to_currency event.price*0.01 %> per ticket.</p> 
+    <p><%= event.date.strftime('%A, %B %e, %Y') %>, <%= event.time %>, <%= number_to_currency event.price*0.01 %> per ticket.</p> 
       <h4><%= link_to 'Purchase your tickets', new_event_ticket_path(event) %></h4>
     <br>
     <% if current_user && current_user.has_role?(:admin) %>

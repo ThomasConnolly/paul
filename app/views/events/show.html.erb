@@ -1,7 +1,7 @@
 <h1><%= @event.title %></h1>
 <%= cl_image_tag(@event.event_picture.path, size: '45%') %>
 <p>Ticket price: <%= number_to_currency @event.price*0.01 %></p>
-<p>Event date: <%= @event.date.strftime('%A, %B %e, %Y') %>, time: <%= @event.time.strftime("%l:%M %P") %></p>
+<p>Event date: <%= @event.date.strftime('%A, %B %e, %Y') %>, time: <%= @event.time %></p>
 
 <p><strong><%= link_to "Get tickets!", new_event_ticket_path(@event) %></strong></p>
 <%= link_to 'Edit', edit_event_path %>

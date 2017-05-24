@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
 
-  helper BooksHelper
+
 
   def index
     @books = Book.all
@@ -24,7 +24,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @isbn = Book.new.isbn
   end
 
   def edit

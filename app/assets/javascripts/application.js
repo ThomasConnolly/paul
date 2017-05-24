@@ -11,7 +11,7 @@
 //= require moment
 //= require bootstrap-sprockets
 //= require ckeditor/init
-//= require datetimepicker
+//= require bootstrap-datetimepicker
 //= require compatibility.coffee
 //= require video
 //= require_tree .

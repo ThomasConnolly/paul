@@ -15,4 +15,11 @@ class MemberMailer < ApplicationMailer
     mail(
       subject: "Pray with your Church this Holy Week")
   end
+
+  def member_work(member)
+    @member = member
+    @url = "https://saintpaulsnaples.org/pages/grace_works"
+    mail(
+      subject: "We wish to celebrate your good works")
+  end
 end

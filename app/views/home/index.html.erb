@@ -7,7 +7,6 @@
   <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> -->
 
    
-
   <div>
       <%= cl_image_tag("flower_cross_t7ebth.jpg", width: "100%") %>
     
@@ -16,8 +15,15 @@
      
   </div>
   </div>
-</div>
-<div class="row">
+  <div class="clearall"></div>
+  <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+            <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            </div>
+          <% end %>
+        <% end %>
   <div class="col col-md-8 col-sm-12 main-body">
   <h1 id="welcome">Come worship with us!</h1> 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
@@ -62,7 +68,12 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>
     <div class="mt30"></div>
     <p>
-    <%= link_to cl_image_tag("GoodWorks_w2dwo9.jpg", width: "95%", class: "image-center"), 'pages/grace_works' %> Click the image to find out what this is about.</p>
+    <%= link_to cl_image_tag("GoodWorks_w2dwo9.jpg", width: "95%", class: "image-center"), 'pages/grace_works' %> 
+    We want to celebrate the good works being performed by the folks of St. Paul's. Please add your activities (it's anonymous) in a few words here:
+    <div>  
+    <%= render partial: 'works/form' %>
+  </div>
+    Click the image to get more details.</p>
       <p><strong>Adult Sunday School </strong></p>
       <p> 
       <em>"History of Christian Marriage."</em> lecture/discussion series presented by Fr. Tad, is now available to read <%= link_to 'here.', marriage_talks_path %>

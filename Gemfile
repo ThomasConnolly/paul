@@ -39,6 +39,7 @@ gem 'rolify'
 gem 'figaro'
 gem 'capybara'
 gem 'regressor'
+#gem 'zoom'
 
 group :development do
   gem 'meta_request'

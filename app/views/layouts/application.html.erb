@@ -22,7 +22,9 @@
 <body class="<%= controller_name %>  <%= action_name %>">
   <div class="page">
     <div class="container">
-      <%= render '/layouts/homeHeader' %>
+    
+      <%= render partial: '/layouts/homeHeader' %>
+      
         <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>
             <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
@@ -31,6 +33,7 @@
             </div>
           <% end %>
         <% end %>
+        
 <%= yield %>
   <%= render 'layouts/footer' %> 
 

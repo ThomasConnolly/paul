@@ -36,3 +36,7 @@ instructions.sla
 instructions.sla.autosave
 modal_code.doc/public/packs
 /node_modules
+bookshark_http_api
+get_cover.rb
+needle.rb
+zmarc_stuff

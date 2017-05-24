@@ -1,3 +1,4 @@
+
 <%= simple_form_for(@book) do |f| %>
  
   <div class="form-group">
@@ -15,3 +16,11 @@
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+
+<p><strong>Get book by isbn</strong></p>
+
+<%= form_for @isbn do |isbn| %>
+<%= isbn. input_field %>
+<% end %>
+

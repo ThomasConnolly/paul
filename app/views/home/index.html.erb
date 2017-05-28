@@ -16,23 +16,17 @@
   </div>
   </div>
   <div class="clearall"></div>
-  <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <%= content_tag :div, msg, :id => "flash_#{name}" %>
-            </div>
-          <% end %>
-        <% end %>
+ 
   <div class="col col-md-8 col-sm-12 main-body">
   <h1 id="welcome">Come worship with us!</h1> 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
     class: "floatleft") %>
-    <p><strong>7:45 a.m.</strong> Holy Eucharist (Traditional)</p>
-    <p><strong>10 a.m.</strong> Holy Eucharist </p>
+    <p><strong>9 a.m.</strong> Holy Eucharist </p>
+    <div class="mt-20"></div>
+    <p><small>Children are invited to nursery/Sunday school  </small></p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here", 'pages/directions' %>.</p>
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here.", 'pages/directions' %></p>
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
   <h2>Christ is Risen</h2>
   <p><em>He is not here, He is risen. Matthew 28:5</em></p>
@@ -67,33 +61,21 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
       <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
       <%#= cl_image_tag("UpdateBlue_hipvew.png", width: "95%", class: "image-center top") %>
     <div class="mt30"></div>
-    <p>
-    <%= link_to cl_image_tag("GoodWorks_w2dwo9.jpg", width: "95%", class: "image-center"), 'pages/grace_works' %> 
-    We want to celebrate the good works being performed by the folks of St. Paul's. Please add your activities (it's anonymous) in a few words here:
-    <div>  
-    <%= render partial: 'works/form' %>
-  </div>
-    Click the image to get more details.</p>
-      <p><strong>Adult Sunday School </strong></p>
-      <p> 
-      <em>"History of Christian Marriage."</em> lecture/discussion series presented by Fr. Tad, is now available to read <%= link_to 'here.', marriage_talks_path %>
-      <p> During this series we looked at the two major marital traditions that influenced the Christian understanding of marriage: the marital practices of Judaism and those of the Greco/Roman world.</p>
-      <p>To read the lectures given in the recently concluded series on the <em>  
-      Spirituality of Intimacy,</em> <%= link_to 'click here.', formation_talks_path %> This series also was presented by Fr. Tad (the Rev. Dr. Wendel Meyer to be more formal), plus his wife, the Rev. Ann Stevenson.</p>
+    <p><strong>Jubilee! Cookbook: </strong> We want your recipes! Please submit a 50-year or older recipe for our cookbook. We would like to collect at least 50. This is our June goal for the <em>Jubilee!</em> year. Email or drop them off at the office.</p>
     <div class="mt30"></div>
-      
-      <%#= cl_image_tag("TodTeaching_jxhbzy.png", width: "90%", class: "image-center") %>
-       
+    <p>Sunday, June 11, <strong>Picnic at Lowdermilk Park: </strong> The <em>Holy Name of Jesus </em>congregation has invited the whole parish to join them for their annual picnic. Plan to arrive at the park around 11 a.m. Bring hot dogs, hamburgers, beverages and other goodies for lunch around noon. Following the meal, games have been scheduled for all children. Fr. Panel will be conducting afternoon service in Creole to which all of us are invited.</p>
+
+    <div class="mt30"></div>  
       <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %> 
       <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, 
       our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen
        Lord in the modern world that is in great need. Some of our ministries are 
        <%= link_to 'listed here.', opportunities_path %></p>
     <div class="mt30"></div>
-     <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
-      <p>Wearing you <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 
+     <%#= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
+      <p>Wearing your <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> 
     <div class="mt30"></div>
-      <p><strong>Coffee and snacks </strong>are available during fellowship time after each Sunday service in the parish hall. Parishioners provide the goodies, and you can sign up to share in this expression of love.</p>
+      <p><strong>Coffee and snacks </strong>are available n the parish hall after the Sunday service. </p>
     <div class="mt30"></div> 
       <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
     <div class="mt30"></div>
@@ -107,8 +89,6 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
     </div><!--  end  feedwind code -->
   </div><!-- sidebar -->
 </div><!-- row -->
-
 </div>
-
 <!--  <a href="http://www.episcopalrelief.org/" target="blank"><img width="99%" height="96" vspace="4" border="0" align="bottom" class="image-center" alt="" src="http://www.episcopalrelief.org/uploaded/images/Press-and-Resources/Link-To-Us/Logo-Link.gif" /></a>
 </div> -->

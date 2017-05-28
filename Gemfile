@@ -39,7 +39,7 @@ gem 'rolify'
 gem 'figaro'
 gem 'capybara'
 gem 'regressor'
-gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom'
+#gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom'
 
 group :development do
   gem 'meta_request'

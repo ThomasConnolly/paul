@@ -24,6 +24,12 @@ GIT
       orm_adapter (~> 0.5.0)
 
 GIT
+  remote: https://github.com/bricestacey/ruby-zoom
+  revision: 5348fd415520fa08af33ca7b84113a93d2da9f10
+  specs:
+    zoom (0.5.0)
+
+GIT
   remote: https://github.com/plataformatec/devise.git
   revision: 5e014ab6072551f6c39c391340e6b2089c849d00
   specs:
@@ -503,6 +509,7 @@ DEPENDENCIES
   turbolinks
   uglifier
   webpacker
+  zoom!
 
 RUBY VERSION
    ruby 2.4.1p111

@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/ThomasConnolly/attachinary.git
+  remote: https://github.com/ThomasConnolly/attachinary
   revision: c7bbc9d5d5ea6aee7584e381c82d0b5bea73e49b
   specs:
     attachinary (1.3.1)
@@ -7,7 +7,7 @@ GIT
       rails (>= 3.2)
 
 GIT
-  remote: git://github.com/elsurudo/simple_form.git
+  remote: https://github.com/elsurudo/simple_form
   revision: a1faca93ed39c0f54055890578307bdbade3de0b
   branch: rails-5.1.0
   specs:
@@ -16,8 +16,8 @@ GIT
       activemodel (> 4, < 5.2)
 
 GIT
-  remote: git://github.com/galetahub/ckeditor.git
-  revision: 9e30da0914f19b783ea913524b9c07ca122ee6d9
+  remote: https://github.com/galetahub/ckeditor
+  revision: 238576b0381e8f51590d2179c5bec7cda672530a
   specs:
     ckeditor (4.2.3)
       cocaine

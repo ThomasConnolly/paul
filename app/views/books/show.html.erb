@@ -5,12 +5,12 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author %>
+  <%= @book.author.titleize %>
 </p>
 
 <p>
   <strong>Title:</strong>
-  <%= @book.title %>
+  <%= @book.title.titleize %>
 </p>
 
 <p>
@@ -19,8 +19,8 @@
 </p>
 
 <p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
+  <strong>Description</strong>
+  <%= @book.description %>
 </p>
 
 <p>
@@ -28,5 +28,4 @@
   <%= @book.dewey %>
 </p>
 
-<%#= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

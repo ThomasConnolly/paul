@@ -8,4 +8,4 @@
 // layout file, like app/views/layouts/application.html.erb
 import GoRails from 'gorails'
 console.log(GoRails)
-console.log('Hello World from Go Rails')
+console.log('Hello World from Employees')

@@ -14,4 +14,13 @@
 
 class Book < ApplicationRecord
   validates_presence_of :title
+  validates_presence_of :author
+
+
+  def self.assign_from_row(row)
+    book = Book.where(isbn: row[:isbn]).first_or_initialize
+    book.assign_attributes row.to_hash.slice(
+    :title, :author, :dewey, :isbn, :subject, :description)
+    book
+  end
 end

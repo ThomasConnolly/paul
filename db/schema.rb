@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519125341) do
+ActiveRecord::Schema.define(version: 20170530190036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20170519125341) do
     t.string "dewey", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text "description"
+    t.index ["author", "title"], name: "index_books_on_author_and_title"
   end
 
   create_table "comments", id: :serial, force: :cascade do |t|
@@ -57,6 +59,14 @@ ActiveRecord::Schema.define(version: 20170519125341) do
     t.datetime "updated_at"
     t.integer "commentable_id"
     t.string "commentable_type"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.boolean "manager"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", id: :serial, force: :cascade do |t|

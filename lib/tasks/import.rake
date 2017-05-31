@@ -28,4 +28,12 @@ namespace :import do
     puts "Imported #{import.imported_count} anniversaries"
     puts import.errors.full_messages
 end
+
+  desc "Import books from csv"
+  task books: :environment do
+    import = Book::Import.new file File.open("books.csv")
+    import.process!
+    puts "Imported #{import.imported_count} books"
+    puts import.errors.full_messages
+  end
 end

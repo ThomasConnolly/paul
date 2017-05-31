@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :meditations
   resources :prayers
   resources :works
+  resources :employees, :except => [:new, :edit]
 
   root 'home#index'
   get 'home/invitation'
@@ -49,6 +50,11 @@ Rails.application.routes.draw do
   resources :opportunities
   resources :homilists
   resources :books
+  resources :books do
+    collection do
+      post :import
+    end
+  end
   resource :pledge
   resources :sermons
   resources :purchases, only: [:show]

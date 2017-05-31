@@ -16,11 +16,21 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
 
-
-
   def index
     @books = Book.all
+    @import = Book::Import.new
   end
+
+  def import
+    @import = Book::Import.new book_import_params
+    if @import.save
+      redirect_to books_path, notice: "Imported #{@import.imported_count} books"
+    else
+      @books = Book.all
+      flash[:alert] = "There were #{@import.errors_count} errors in your CSV file"
+      render action: :index
+  end
+end
 
   def new
     @book = Book.new
@@ -63,7 +73,12 @@ class BooksController < ApplicationController
 
 
   private
+
+    def book_import_params
+      params.require(:book_import).permit(:file)
+    end
+    
     def book_params
-      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey)
+      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description)
   end
 end

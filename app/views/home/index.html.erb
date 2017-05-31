@@ -1,40 +1,27 @@
 
 <%#= render 'layouts/tickets_popup' %>
 <div class="row">
-  <div class="col col-md-8  col-md-offset-2 col-sm-12">
-    <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-    <!-- 
-  <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> -->
-
-   
-  <div>
-      <%= cl_image_tag("flower_cross_t7ebth.jpg", width: "100%") %>
-    
-      <h2 class="text-center">We celebrate Easter for 50 days, until Pentecost Sunday, June 4</h2>
-      <p class="text-center"><%= link_to "What is Pentecost?", ('http://www.acts8movement.org/pentecostvideo2017/pentecost-english.mp4') %></p>
-     
-  </div>
-  </div>
-  <div class="clearall"></div>
+  <div class="col col-md-12 col-sm-12">
+    <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
+  <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> 
+  </div>     
  
   <div class="col col-md-8 col-sm-12 main-body">
   <h1 id="welcome">Come worship with us!</h1> 
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", 
-    class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", 
+      width:"220", class: "floatleft") %>
     <p><strong>9 a.m.</strong> Holy Eucharist </p>
     <div class="mt-20"></div>
     <p><small>Children are invited to nursery/Sunday school  </small></p>
     <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
+    <p>June 4 is Pentecost. Here's a brief video that explains the event.</p>
+    <div class="text-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/76KlMHJD6So" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="mt30"></div>
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here.", 'pages/directions' %></p>
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-  <h2>Christ is Risen</h2>
-  <p><strong><em>He is not here, He is risen. Matthew 28:5</em></strong></p>
-  <p>It was an Ecumenical Easter Sunrise Service in Eastern Kentucky. I was the interim rector at St. David’s in Pikeville. All the churches from that community and the neighboring town of Prestonsburg would gather at daybreak at Jenny Wiley State Park. As dawn began to lift the darkness that morning, a faint fog was in the air. Yet one could see the trees just coming into full leaf and the wildflowers were everywhere. We were in a valley surrounded by mountains on all sides. The whole effect was to produce a mystical sense of God’s presence.</p>
-  <p>
-Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector of St. James in Prestonsburg, began his sermon. It was a simple but powerful Easter message as his voice rang through the valley unaided by a microphone. He concluded his message with the angel’s word to Peter and John at the tomb: “He is not here, He is risen.” As these words of triumph were echoing across the valley two things happened simultaneously. The sun burst forth from behind the mountaintop the gathered congregation was facing, lighting the still foggy valley in sparkling splendor. At the same time a nearby coal mine set off a thunderous dynamite explosion that echoed across the valley like a jet breaking the sound barrier. Standing in the midst of this unplanned dramatic production, my heart sang out, echoing Chris’s final words: “Christ is risen indeed!”</p>
-<p><strong><em>Heavenly Father, as we look upon the breathtaking splendor of your Creation it is easy to see your hand at work. But regardless of our personal outward circumstances, as we celebrate this day, may the Risen Lord ever be a fresh reality in our lives. Amen</em></strong></p>
-<p class="text-right">&mdash;Fr. Bill</p>
   
   <div class="mt30"></div>
     <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
@@ -52,6 +39,10 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
     <div class="mt30"></div>    
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", :fetch_format => :auto) %> 
     <div class="mt30"></div>
+
+    <div id="newsfeed">
+    <!-- start feedwind code --><iframe  height="500"  width="100%" src="https://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a></div><!--Please display the above link in your web page according to Terms of Service.-->
+    </div><!--  end  newsfeed -->
  
   </div><!--main-body -->
 
@@ -83,10 +74,7 @@ Together we sang familiar Easter hymns. Then my colleague, Chris Platt, rector o
       pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
     <div class="mt30"></div>
-     
-    <div id="newsfeed">
-    <!-- start feedwind code --><iframe  height="500"  width="100%" src="https://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.-->
-    </div><!--  end  feedwind code -->
+   
   </div><!-- sidebar -->
 </div><!-- row -->
 </div>

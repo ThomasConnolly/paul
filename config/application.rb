@@ -1,10 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
 
+require 'rails/all'
 require 'csv'
 require 'date'
 require 'time'
-require 'rails/all'
 require 'attachinary/orm/active_record'
 
 

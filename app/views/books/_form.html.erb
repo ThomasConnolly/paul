@@ -2,25 +2,12 @@
 <%= simple_form_for(@book) do |f| %>
  
   <div class="form-group">
-    
     <%= f.input :author, class: 'form-control' %>
-  
     <%= f.input :title, class: 'form-control' %>
-
-    <%= f.input :subject, class: 'form-control'  %>
-  
-    <%= f.input :isbn, class: 'form-control'  %>
-  
-    <%= f.input :dewey, class: 'form-control'  %>
-    
+    <%= f.input :subject, class: 'form-control' %>
+    <%= f.input :isbn, class: 'form-control' %>
+    <%= f.input :dewey, class: 'form-control' %>
+    <%= f.input :description, class: 'form-control' %>
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
-
-
-<p><strong>Get book by isbn</strong></p>
-
-<%= form_for @isbn do |isbn| %>
-<%= isbn. input_field %>
-<% end %>
-

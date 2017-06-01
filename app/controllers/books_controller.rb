@@ -15,6 +15,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
+  before_action :admin_only, only: [:new, :edit, :update, :create, :destroy]
+
 
   def index
     @books = Book.all
@@ -29,8 +31,8 @@ class BooksController < ApplicationController
       @books = Book.all
       flash[:alert] = "There were #{@import.errors_count} errors in your CSV file"
       render action: :index
+    end
   end
-end
 
   def new
     @book = Book.new
@@ -66,6 +68,7 @@ end
 
 
 
+
   def set_book
     @book = Book.find(params[:id])
   end
@@ -73,6 +76,12 @@ end
 
 
   private
+
+    def admin_only
+    unless current_user && current_user.has_role?(:admin)
+      redirect_to "/"
+    end
+  end
 
     def book_import_params
       params.require(:book_import).permit(:file)

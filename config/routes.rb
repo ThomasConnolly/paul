@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :recipes
-  resources :marriage_talks
+  resources :marriage_talks, only: [:show, :index, :edit]
   resources :meditations
   resources :prayers
   resources :works
-  resources :employees, :except => [:new, :edit]
 
   root 'home#index'
   get 'home/invitation'

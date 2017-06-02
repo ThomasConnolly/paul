@@ -29,7 +29,7 @@ class BooksController < ApplicationController
       redirect_to books_path, notice: "Imported #{@import.imported_count} books"
     else
       @books = Book.all
-      flash[:alert] = "There were #{@import.errors_count} errors in your CSV file"
+      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
   end

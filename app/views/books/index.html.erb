@@ -1,6 +1,6 @@
 
   <h1>Listing books</h1>
-    <% @books.each do |book| %>
+    
       <table class="table table-striped">
         <tr>
           <th>Author</th>
@@ -8,17 +8,19 @@
           <th>Subject</th>
           <th>Dewey</th>
         </tr>
-          <td><%= book.author %></td>
-          <td><%= book.title %></td>
-          <td><%= book.subject %></td>
-          <td><%= book.dewey %></td>
-          <td><%= link_to 'Show', book_path(book) %></td>
+        <tbody>
+          <td><%= @book.author %></td>
+          <td><%= @book.title %></td>
+          <td><%= @book.subject %></td>
+          <td><%= @book.dewey %></td>
+          <td><%= link_to 'Show', book_path(@book) %></td>
             <% if current_user && current_user.has_role?(:admin) %>
-          <td><%= link_to ' | Edit', edit_book_path(book) %></td>
-          <td><%= link_to ' | Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-            <% end %>  
+          <td><%= link_to ' | Edit', edit_book_path(@book) %></td>
+          <td><%= link_to ' | Delete', @book, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+            <% end %> 
+             </tbody> 
          <% end %> 
-        </tr>
+       
       </table>
 
       <% if current_user && current_user.has_role?(:admin) %>

@@ -1,31 +1,24 @@
 
   <h1>Listing books</h1>
-    
-      <table class="table table-striped">
-        <tr>
-          <th>Author</th>
-          <th>Title</th>
-          <th>Subject</th>
-          <th>Dewey</th>
-        </tr>
-        <tbody>
-          <td><%= @book.author %></td>
-          <td><%= @book.title %></td>
-          <td><%= @book.subject %></td>
-          <td><%= @book.dewey %></td>
-          <td><%= link_to 'Show', book_path(@book) %></td>
+    <% @books.each do |b| %>
+      <p>Author: <b><%= b.author %>,</b> title:  
+          <%= b.title %>, Where to find book:
+          <%= b.dewey %> <%= b.cutter %>
+          <%= link_to 'show', book_path(b) %>
+
             <% if current_user && current_user.has_role?(:admin) %>
-          <td><%= link_to ' | Edit', edit_book_path(@book) %></td>
-          <td><%= link_to ' | Delete', @book, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-            <% end %> 
-             </tbody> 
-         <% end %> 
+              <%= link_to ' | Edit', edit_book_path(b) %>
+              <%= link_to ' | Delete', @book, method: :delete, data: 
+              { confirm: 'Are you sure?' } %><br>
+            <% end %>  
+    <% end %> 
        
-      </table>
+    
 
       <% if current_user && current_user.has_role?(:admin) %>
         <p><strong><%= link_to 'Add a book', new_book_path %></strong></p>
-      <% end %>  
+      <% end %> 
+
         <div class="mt30"></div>
   
       <% if current_user && current_user.has_role?(:admin) %>  
@@ -36,12 +29,13 @@
         <% @import.errors.full_messages.each do |msg| %>
           <div><%= msg %> </div>
         <% end %>
-        <% end %>
-        <%= f.file_field :file %>
+        <%= f.file_field :file %><br>
         <%= f.submit  "Upload books" %>
       <% end %>
       <% end %>
-
-
-
-     
+      <% end %>
+  
+  <p>
+  Download:
+  <%= link_to "CSV", books_path(format: "csv") %>
+  </p>

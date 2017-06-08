@@ -19,9 +19,15 @@ class BooksController < ApplicationController
 
 
   def index
-    @books = Book.all
+    @books = Book.all.order(:id)
     @import = Book::Import.new
+  
+    respond_to do |format|
+      format.html
+      format.csv { send_data @books.to_csv, filename: "books-#{Date.today}.csv", disposition: :inline }
+    end
   end
+
 
   def import
     @import = Book::Import.new book_import_params
@@ -88,6 +94,6 @@ class BooksController < ApplicationController
     end
     
     def book_params
-      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description)
+      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description, :cutter)
   end
 end

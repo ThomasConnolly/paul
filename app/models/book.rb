@@ -16,11 +16,30 @@ class Book < ApplicationRecord
   validates_presence_of :title
   validates_presence_of :author
 
+  after_find :set_cutter
+
+  def self.to_csv
+    attributes = %w{id dewey cutter}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |book|
+        csv << book.attributes.values_at(*attributes)
+      end
+    end
+  end
 
   def self.assign_from_row(row)
     book = Book.where(isbn: row[:isbn]).first_or_initialize
     book.assign_attributes row.to_hash.slice(
     :title, :author, :dewey, :isbn, :subject, :description)
     book
+  end
+
+
+private
+
+    def set_cutter
+      self.cutter = "#{self.author[0,3]}" if self.author?
   end
 end

@@ -17,9 +17,8 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
   before_action :admin_only, only: [:new, :edit, :update, :create, :destroy]
 
-
   def index
-    @books = Book.all.order(:id)
+    @books = Book.all
     @import = Book::Import.new
   
     respond_to do |format|
@@ -29,16 +28,7 @@ class BooksController < ApplicationController
   end
 
 
-  def import
-    @import = Book::Import.new book_import_params
-    if @import.save
-      redirect_to books_path, notice: "Imported #{@import.imported_count} books"
-    else
-      @books = Book.all
-      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
-      render action: :index
-    end
-  end
+ 
 
   def new
     @book = Book.new
@@ -67,12 +57,25 @@ class BooksController < ApplicationController
     end
   end
   
-  def destroy
+    def destroy
     @book.destroy
-      redirect_to books_path
+    respond_to do |format|
+      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
 
+ def import
+    @import = Book::Import.new book_import_params
+    if @import.save
+      redirect_to books_path, notice: "Imported #{@import.imported_count} books"
+    else
+      @books = Book.all
+      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+      render action: :index
+    end
+  end
 
 
   def set_book

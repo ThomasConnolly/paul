@@ -18,6 +18,7 @@ class Book < ApplicationRecord
 
   after_find :set_cutter
 
+  # Export range of books to csv file for label printing
   def self.to_csv
     attributes = %w{id dewey cutter}
     CSV.generate(headers: true) do |csv|
@@ -29,6 +30,7 @@ class Book < ApplicationRecord
     end
   end
 
+  #Importing books from csv file
   def self.assign_from_row(row)
     book = Book.where(isbn: row[:isbn]).first_or_initialize
     book.assign_attributes row.to_hash.slice(

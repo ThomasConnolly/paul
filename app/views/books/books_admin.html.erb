@@ -1,0 +1,79 @@
+
+  <h1>Listing books</h1>
+    <% @books.each do |b| %>
+      <p>Author: <b><%= b.author %>,</b> title:  
+          <%= b.title %>, Where to find book:
+          <%= b.dewey %> <%= b.cutter %>
+          <%= link_to 'show', book_path(b) %>
+
+            <% if current_user && current_user.has_role?(:admin) %>
+              <%= link_to ' | edit', edit_book_path(b) %>
+              <%= link_to ' | delete', b, method: :delete, data: 
+              { confirm: 'Are you sure?' } %><br>
+            <% end %>  
+    <% end %> 
+    <div class="mt100"></div>   
+
+      
+<% if current_user && current_user.has_role?(:admin) %>
+
+  <p><strong>Steps to add books to the library website:</strong></p>
+  <p><strong>1. Find your book.</strong></p>
+  <p>Launch MarcEdit and click on black box, Z39.50/SRU Client. Here are the settings: Retrieve Unicode, character set UTF8. See below for selecting the database.</p>
+  <p>
+  Enter number in search box. No hyphens needed; 10 or 13 digits. Hit enter or mouse click green arrow. If the book is found, the title will appear in the box. Double click the listing in that box and preview the marc record. Call out the Dewey number to your co-worker, who will notate it on the paper from which he or she called out the isbn.</p>
+  <p>
+  If the book is not found using the isbn, try by author. Scroll through the list to find the correct title. Or you can search by title.</p>
+  <p> 
+  In the event the book is not found in the Library of Congress, click "Select Database" and pick another library. If the book is about theology or religion, a good choice for a database is Oxford University. Click the "Select Database" in options box, click on the alternate database and then click "select resource." You selection will now show under the "Query Database" above the search box.</p>
+  <p><strong>2. Save your book</strong></p>
+  <p>
+  When you are in the "View MARC Record" box, you will see a line, "Save File:" Click on the folder icon and give your file this name: "booksJune12" without quotes and using the appropriate date. The machine will append the extension .mrc automatically.</p>
+  <p>
+  Make sure there's a check in the "Append" box, then click on "Download Record," upper left. The record is now saved to the file you named, on the desktop. Repeat the process until you're finished with the number of books you are cataloguing that day. Make sure "append" is checked or you will overwrite all the work you have done.</p>
+  <p><strong>3. Create a csv file of your books</strong></p>
+  <p>In the MarcEdit program, click on "Export Tab Delimited." Migrate to the *.mrc file you just created with all the books, and in the box below where you just named it, select comma delimited. This will save the file with the extension .csv (So don't worry about saving the file with the same name as the file you saved the marc files to, it will have a different extension.) Now hit "next" and click "Normalized field data" and click on "settings" in the lower right corner. Select "load settings and click marcSettings.txt" Then click the "Export" button. A alert will tell you the file has been saved on the desktop. You may now exit MarcEdit
+  <p><strong>4. Edit your csv file</strong></p>
+  <p>
+  This is a two-step process. First the Text import box will open, showing a portion of the file. At this point, move your cursor to the 020 field, click on the header (it should say "standard"), and change the Fields to "Text." Then do the same with the 082 column. If you don't to this, the machine will think these columns are numbers and will drop the leading zeros, if any. Rename them Text and the zeros will be kept. Now take a look at the Separator Options above. The radio button "Separated by" should be selected and the box Comma checked. Hit the OK button at lower right and a new screen will show up.</p>
+  <p>The second step is to edit the file before importing it into the website. First change the header "100" to "author", (no quotes) 245 to title, 650 to subject, 020 to isbn, and 082 to dewey.</p>
+  <p>Finally, edit the body. If there's no name in the author field, use the name that follows the title. It might say something like "edited by William James." In that case, put James, William in the author box You could put (editor) in parens after the name. In the title field, remove the secondary information, usually following a forward slash. We want only the title in this field. You can pretty much leave the subject field alone, even if it's empty.</p>
+  <p>Sometimes there will be multiple isbn listings. just remove all but one. Remove things like ":(dollar)35.00 and (pbk.). Just keep the 10- or 13-digit number.</p>
+  <p>Finally, we want only the three-digit dewey call number and two digits after the period. If there are no digits after the dot, delete the dot. Save the file.</p>
+
+  <p><strong>Make a note of this number (write it down, because it will change after the next step): <%= @last_book %> </strong></p>
+  <p><strong>5. Import your csv file into our website</strong></p>
+  <p>Just click "Choose File" (below on this page) and click on the file with the name you gave it, such as "booksJune9.csv." Then click "upload books."
+  <p><strong>6. Generate a file for printing the labels</strong></p>
+  <p>Click on the CSV below and it will generate a three-column csv file. Again we have a two-step process in creating this file.</p>
+  <p>First, change the Field type of the dewey (082) column to "Text" from "Standard" as you did before for the first .csv file and click OK.</p>
+  <p>Then delete all the rows with the id of 1 through the number you wrote down. You don't want to print labels you've already printed. Save this file. The machine will give it the name "bookLabels-June9.csv."
+  <p><strong>7. Print the labels
+
+  <div class="mt100"></div>
+  <p><strong>To input a single book directly to the website:</strong></p>
+  <p><%= link_to "Click here", new_book_path %></p> 
+
+
+
+  <div class="mt100"></div>
+  
+     
+          <h4>Import books from a csv file</h4>
+            <%= simple_form_for @import, url: import_books_path, multipart: true do |f|%>
+              <% if @import.errors.any? %>
+                <div class="alert alert-error">
+                  <% @import.errors.full_messages.each do |msg| %>
+                    <div><%= msg %> </div>
+                  <% end %>
+              <% end %>
+            <%= f.file_field :file %><br>
+            <%= f.submit  "Upload books" %>
+            <% end %>
+
+
+          <div class="mt100"></div>
+          <p>
+          Create a csv file to print dewey labels:
+          <%= link_to "CSV", books_path(format: "csv") %></p>
+       <% end %>

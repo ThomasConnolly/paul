@@ -14,8 +14,8 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
-  before_action :admin_only, only: [:new, :edit, :update, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy, :book_admin]
+  before_action :admin_only, only: [:new, :edit, :update, :create, :destroy, :book_admin]
 
   def index
     @books=Book.all
@@ -65,7 +65,7 @@ class BooksController < ApplicationController
     def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to books_admin_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

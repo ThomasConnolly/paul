@@ -27993,7 +27993,7 @@ THE SOFTWARE.
 }).call(this);
 $(function(){
     $("#youtube").hide();
-    $("#toVideo").on("click", function(){
+    $("#toNaplesPlayersVideo").on("click", function(){
         $("#youtube").toggle();
     });
 });

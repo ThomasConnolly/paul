@@ -63,13 +63,26 @@
 /******/ 	__webpack_require__.p = "http://localhost:8080/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 12:
-/* unknown exports provided */
+/***/ 0:
+/* exports provided: default */
+/* exports used: default */
+/*!*****************************************!*\
+  !*** ./app/javascript/gorails/index.js ***!
+  \*****************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({ gorails: true });
+
+/***/ }),
+
+/***/ 8:
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./app/javascript/packs/application.js ***!
@@ -78,7 +91,7 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gorails__ = __webpack_require__(/*! gorails */ 9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gorails__ = __webpack_require__(/*! gorails */ 0);
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -89,20 +102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // layout file, like app/views/layouts/application.html.erb
 
 console.log(__WEBPACK_IMPORTED_MODULE_0_gorails__["a" /* default */]);
-console.log('Hello World from Go Rails');
-
-/***/ }),
-
-/***/ 9:
-/* exports provided: default */
-/* exports used: default */
-/*!*****************************************!*\
-  !*** ./app/javascript/gorails/index.js ***!
-  \*****************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({ gorails: true });
+console.log('Hello World from Employees');
 
 /***/ })
 

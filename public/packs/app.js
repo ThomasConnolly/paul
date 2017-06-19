@@ -63,11 +63,12 @@
 /******/ 	__webpack_require__.p = "http://localhost:8080/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */
 /* exports provided: default */
 /* all exports used */
 /*!**************************************************************************************************************!*\
@@ -93,57 +94,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 1 */
-/* unknown exports provided */
-/* all exports used */
-/*!**************************************!*\
-  !*** ./app/javascript/packs/app.vue ***!
-  \**************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!../../../~/vue-loader/lib/selector?type=styles&index=0!./app.vue */ 4)
-}
-var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 2)(
-  /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vue-loader/lib/selector?type=script&index=0!./app.vue */ 0),
-  /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0afbd2e1"}!../../../~/vue-loader/lib/selector?type=template&index=0!./app.vue */ 3),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-0afbd2e1",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/home/tom/paul/app/javascript/packs/app.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0afbd2e1", Component.options)
-  } else {
-    hotAPI.reload("data-v-0afbd2e1", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 2 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/vue-loader/lib/component-normalizer.js ***!
@@ -245,7 +197,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 3 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0afbd2e1"}!./~/vue-loader/lib/selector.js?type=template&index=0!./app/javascript/packs/app.vue ***!
@@ -268,8 +220,9 @@ if (false) {
 }
 
 /***/ }),
-/* 4 */
-/* unknown exports provided */
+/* 4 */,
+/* 5 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./app/javascript/packs/app.vue ***!
@@ -279,11 +232,11 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./app.vue */ 5);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./app.vue */ 10);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../~/vue-style-loader/lib/addStylesClient.js */ 7)("158fbe9f", content, false);
+var update = __webpack_require__(/*! ../../../~/vue-style-loader/lib/addStylesClient.js */ 13)("158fbe9f", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -299,15 +252,19 @@ if(false) {
 }
 
 /***/ }),
-/* 5 */
-/* unknown exports provided */
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./app/javascript/packs/app.vue ***!
   \******************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../~/css-loader/lib/css-base.js */ 6)(true);
+exports = module.exports = __webpack_require__(/*! ../../../~/css-loader/lib/css-base.js */ 11)(true);
 // imports
 
 
@@ -318,8 +275,8 @@ exports.push([module.i, "\np[data-v-0afbd2e1] {\n  font-size: 2em;\n  text-align
 
 
 /***/ }),
-/* 6 */
-/* unknown exports provided */
+/* 11 */
+/* no static exports found */
 /* all exports used */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
@@ -405,8 +362,57 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 7 */
-/* unknown exports provided */
+/* 12 */
+/* no static exports found */
+/* all exports used */
+/*!**************************************!*\
+  !*** ./app/javascript/packs/app.vue ***!
+  \**************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-0afbd2e1","scoped":true,"hasInlineConfig":false}!../../../~/vue-loader/lib/selector?type=styles&index=0!./app.vue */ 5)
+}
+var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 2)(
+  /* script */
+  __webpack_require__(/*! !babel-loader!../../../~/vue-loader/lib/selector?type=script&index=0!./app.vue */ 1),
+  /* template */
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0afbd2e1"}!../../../~/vue-loader/lib/selector?type=template&index=0!./app.vue */ 3),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-0afbd2e1",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/home/tom/paul/app/javascript/packs/app.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0afbd2e1", Component.options)
+  } else {
+    hotAPI.reload("data-v-0afbd2e1", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 13 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/vue-style-loader/lib/addStylesClient.js ***!
@@ -429,7 +435,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(/*! ./listToStyles */ 8)
+var listToStyles = __webpack_require__(/*! ./listToStyles */ 14)
 
 /*
 type StyleObject = {
@@ -631,8 +637,8 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 8 */
-/* unknown exports provided */
+/* 14 */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/vue-style-loader/lib/listToStyles.js ***!

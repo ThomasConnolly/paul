@@ -4,8 +4,8 @@
   <h1><%= @sermon.title %></h1>
     <p><%= @sermon.cites %></p>
       <%= render 'serbox' %>
-    <div class="sermon">
-      <%= raw @sermon.sermon_body %>
+    <div class="sermon"><p class="sermon">
+      <%= raw @sermon.sermon_body %></p>
     </div>
     
     <% if current_user && current_user.has_role?(:admin) %>

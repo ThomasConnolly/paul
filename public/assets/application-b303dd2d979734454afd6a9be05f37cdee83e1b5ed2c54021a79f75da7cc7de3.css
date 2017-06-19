@@ -9328,20 +9328,20 @@ p {
 }
 
 /* line 102, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-p.poem {
+.poem {
   text-indent: 0;
   padding-left: 60px;
   font-style: italic;
 }
 
 /* line 107, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-p.chat-name {
+.chat-name {
   font-size: 1rem;
   font-style: bold;
 }
 
 /* line 111, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-p.owner-edit-links {
+.owner-edit-links {
   font-size: .6rem;
   line-height: 1;
   margin-top: -1rem;
@@ -9350,7 +9350,7 @@ p.owner-edit-links {
 }
 
 /* line 119, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-p.center-bold-text {
+.center-bold-text {
   text-indent: 0;
   text-align: center;
   font-weight: bold;
@@ -9515,7 +9515,7 @@ p.center-bold-text {
   line-height: 1.75;
   font-family: Times, serif;
   text-align: left;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* line 253, /home/tom/paul/app/assets/stylesheets/application.css.scss */

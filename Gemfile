@@ -72,5 +72,4 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'webpacker'
 gem 'rails_on_heroku'

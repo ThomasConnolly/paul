@@ -10,8 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
   // http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
   // The toolbar groups arrangement, optimized for a single toolbar row.
-  config.toolbar = 'Simple';
-      config.toolbar_Simple =[
+  config.toolbarGroups = [
     { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
     { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
     { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },

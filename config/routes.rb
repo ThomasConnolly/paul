@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  
-  resources :marriage_talks, only: [:show, :index, :edit]
+  resources :formation_talks, only: [:show, :index, :edit]
+  resources :marriage_talks, only: [:new,:show, :index, :edit]
   resources :meditations
   resources :prayers
   resources :works
@@ -117,5 +117,4 @@ Rails.application.routes.draw do
   
   devise_for :views
   mount Attachinary::Engine => '/attachinary'
-  mount Ckeditor::Engine => '/ckeditor'
 end

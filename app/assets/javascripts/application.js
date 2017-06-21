@@ -1,5 +1,6 @@
 
-//= require jquery
+//= require jquery3
+//= require popper
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
@@ -9,7 +10,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require moment
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require ckeditor/init
 //= require bootstrap-datetimepicker
 //= require compatibility.coffee

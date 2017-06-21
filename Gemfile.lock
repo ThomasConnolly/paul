@@ -41,6 +41,15 @@ GIT
     stripe (2.11.0)
       faraday (~> 0.9)
 
+GIT
+  remote: https://github.com/twbs/bootstrap-rubygem
+  revision: 7cdeca9a0e8db3bb7548d9fa5bdaad9b644fca32
+  specs:
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.9.9, < 2.0)
+      sass (>= 3.4.19)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,9 +115,6 @@ GEM
     birthday (0.3.1)
       activerecord
       activesupport
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
     bootstrap3-datetimepicker-rails (4.17.47)
@@ -270,6 +276,7 @@ GEM
       ast (~> 2.2)
     path_expander (1.0.2)
     pg (0.21.0)
+    popper_js (1.9.9)
     premailer (1.10.4)
       addressable
       css_parser (>= 1.4.10)
@@ -446,9 +453,9 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   birthday
-  bootstrap-sass
+  bootstrap!
   bootstrap-will_paginate
-  bootstrap3-datetimepicker-rails
+  bootstrap3-datetimepicker-rails (~> 4.17.47)
   byebug
   capybara
   ckeditor!
@@ -471,7 +478,7 @@ DEPENDENCIES
   jquery-ui-rails
   letter_opener
   meta_request
-  momentjs-rails
+  momentjs-rails (>= 2.17)
   nokogiri
   pg
   premailer-rails

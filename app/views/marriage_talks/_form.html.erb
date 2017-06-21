@@ -8,7 +8,7 @@
         <%= f.input :title, class: 'form-control' %> 
         <%= f.date_select :delivered_on, id: 'datetimepicker1' %><br>
         <div id="summernote">
-        <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %>
+        <%= f.input :body, as: :ckeditor %>
         </div>
         <%= f.button :submit %>   
     <% end %>
@@ -19,11 +19,6 @@
         $('#datetimepicker1').datetimepicker();
        });
     </script>
-    
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#summernote').summernote();
-  });
-</script>
+ 
   </div>
 </div>

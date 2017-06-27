@@ -12,6 +12,7 @@
 //= require moment
 //= require bootstrap
 //= require ckeditor/init
+//= require ckeditor/config
 //= require bootstrap-datetimepicker
 //= require compatibility.coffee
 //= require video

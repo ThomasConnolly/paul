@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 
-gem 'rails', '5.1'
+gem 'rails', '5.1.1'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'pg'
 gem 'rack'
@@ -20,7 +20,7 @@ gem 'jbuilder'
 gem 'simple_form', :git => 'https://github.com/elsurudo/simple_form', branch: 'rails-5.1.0'
 gem 'momentjs-rails', '>= 2.17'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-gem 'ckeditor', :git => 'https://github.com/galetahub/ckeditor'
+gem 'ckeditor'
 gem 'bcrypt'
 gem 'attachinary', :git => 'https://github.com/ThomasConnolly/attachinary'
 gem 'cloudinary'
@@ -39,7 +39,7 @@ gem 'rolify'
 gem 'figaro'
 gem 'capybara'
 gem 'regressor'
-#gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom'
+gem 'googlebooks'
 
 group :development do
   gem 'meta_request'
@@ -70,6 +70,8 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
 end
 
 gem 'rails_on_heroku'

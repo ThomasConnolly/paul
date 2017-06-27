@@ -52,11 +52,13 @@ class BooksController < ApplicationController
  end
 
   def show
+    @book = Book.find(params[:id]) 
+    @cover_image = GoogleBooks.search(@book.isbn, { :country => 'US' }).first
   end
 
   def update
       if @book.update(book_params)
-          redirect_to books_admin_path
+          redirect_to book_path(@book)
       else
         render :edit 
     end
@@ -102,6 +104,9 @@ class BooksController < ApplicationController
     end
     
     def book_params
-      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description, :cutter)
+      params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description, :cutter, :url)
   end
 end
+#http://books.google.com/books/content?id=fDZ6N8BACJkC&printsec=frontcover&img=1&zoom=2&edge=none&source=gbs_api
+
+#http://books.google.com/books/content?id=fDZ6N8BACJkC&printsec=frontcover&img=1&zoom=2&edge=none&source=gbs_api

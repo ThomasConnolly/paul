@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :formation_talks, only: [:show, :index, :edit]
   resources :marriage_talks, only: [:new,:show, :index, :edit]
   resources :meditations
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
   resources :opportunities
   resources :homilists
   resources :books
+  
   get 'books_admin', controller: :books
 
   resources :books do

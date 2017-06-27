@@ -28,4 +28,9 @@
   <%= @book.dewey %>
 </p>
 
+<%= image_tag(@cover_image.image_link(:zoom => 2))%><br>
+
+
+<p><strong><%= link_to "Edit", edit_book_path %> </strong><br></p>
+
 <%= link_to 'Back', books_path %>

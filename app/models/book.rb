@@ -17,6 +17,7 @@ class Book < ApplicationRecord
   validates_presence_of :author
 
   after_find :set_cutter
+  after_update :update_search
 
   # Export range of books to csv file for label printing
   def self.to_csv
@@ -41,7 +42,13 @@ class Book < ApplicationRecord
 
 private
 
-    def set_cutter
-      self.cutter = "#{self.author[0,3]}" if self.author?
+  def set_cutter
+    self.cutter = "#{self.author[0,3]}" if self.author?
   end
+
+  def update_search
+    GoogleBooks.search('#{self.isbn', { :country => 'US' }).first
+  end
+
+
 end

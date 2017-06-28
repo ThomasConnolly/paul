@@ -29,7 +29,7 @@
 <% if @book.url.present? %>
   <%= image_tag(@book.url, size: "300x435") %>
   <% else %>
-  <%= image_tag(@cover_image.image_link(:zoom => 2))%><br>  
+  <%= image_tag(@cover_image.image_link(:zoom => 2), size: "300x435")%><br>  
 <% end %>
 
 <p><strong><%= link_to "Edit", edit_book_path %> </strong><br></p>

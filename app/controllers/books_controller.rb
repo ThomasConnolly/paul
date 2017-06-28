@@ -53,7 +53,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id]) 
-    @cover_image = GoogleBooks.search(@book.isbn, { :country => 'US' }).first
+    @cover_image = GoogleBooks.search(@book.isbn, { :zoom => 2, :country => 'US' }).first
   end
 
   def update

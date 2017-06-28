@@ -1,9 +1,9 @@
 
   <h1>Listing books</h1>
     <% @books.each do |b| %>
-      <p>Author: <b><%= b.author %>,</b> title:  
-          <%= b.title %>, Where to find book:
-          <%= b.dewey %> <%= b.cutter %>
+       <p><strong> 
+          <%= b.title %>,</strong> <%= b.author %>, Find book: 
+          <%= b.dewey %> <%= b.cutter %> <%= b.isbn %> <%= b.url %>
           <%= link_to 'show', book_path(b) %>
 
             <% if current_user && current_user.has_role?(:admin) %>

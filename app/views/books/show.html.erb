@@ -1,37 +1,33 @@
-
-<div class="main-body">
-
 <p id="notice"><%= notice %></p>
+<div class="mt100"></div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author.titleize %>
-</p>
+  <div class="row">
+    <div class="col col-md-3 col-md-offset-1">
+      <div class="image-center">
+        <% if @book.url.present? %>
+          <%= image_tag(@book.url, width: "300") %>
+          <% else %>
+          <%= image_tag(@cover_image.image_link(:zoom => 2), width: "300")%><br>  
+        <% end %>
+      </div>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title.titleize %>
-</p>
+    <div class="col col-md-6 col-md-offset-1">
 
-<p>
-  <strong>Subject:</strong>
-  <%= @book.subject %>
-</p>
+      <p> <strong>
+        <%= @book.title.titleize %><br>
+        <%= @book.author.titleize %><br>
+        <%= @book.subject %><br>
+        <%= @book.description %><br>
+        </strong></p>
+        <p> Find the book: <%= @book.dewey %> </p>
+    
 
-<p>
-  <strong>Description</strong>
-  <%= @book.description %>
+      <% if current_user && current_user.has_role?(:admin) %>
+      <p><strong><%= link_to "Edit", edit_book_path %> </strong><br></p>
+      <% end %>
+      
+      <p><%= link_to 'Search for a different book', books_path %></p>
+    </div>
 
-<p>
-  <strong>Dewey:</strong>
-  <%= @book.dewey %>
-</p>
-<% if @book.url.present? %>
-  <%= image_tag(@book.url, width: "335") %>
-  <% else %>
-  <%= image_tag(@cover_image.image_link(:zoom => 2), size: "300x435")%><br>  
-<% end %>
 
-<p><strong><%= link_to "Edit", edit_book_path %> </strong><br></p>
-
-<%= link_to 'Back', books_path %>

@@ -27,7 +27,7 @@
   <%= @book.dewey %>
 </p>
 <% if @book.url.present? %>
-  <%= image_tag(@book.url, size: "300x435") %>
+  <%= image_tag(@book.url, width: "335") %>
   <% else %>
   <%= image_tag(@cover_image.image_link(:zoom => 2), size: "300x435")%><br>  
 <% end %>

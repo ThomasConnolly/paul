@@ -9,6 +9,7 @@
           <% else %>
           <%= image_tag(@cover_image.image_link(:zoom => 2), width: "300")%><br>  
         <% end %>
+        <%= image_tag('http://covers.openlibrary.org/b/isbn/@book.isbn-L.jpg') %>
       </div>
     </div>
 
@@ -20,7 +21,7 @@
         <%= @book.subject %><br>
         <%= @book.description %><br>
         </strong></p>
-        <p> Find the book: <%= @book.dewey %> </p>
+        <p> Label on this book: <%= @book.dewey %> / <%= @book.cutter %></p>
     
 
       <% if current_user && current_user.has_role?(:admin) %>
@@ -29,5 +30,5 @@
       
       <p><%= link_to 'Search for a different book', books_path %></p>
     </div>
-
+    <div class="mt100"></div>
 

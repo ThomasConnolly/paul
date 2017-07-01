@@ -14,7 +14,7 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require bootstrap-datetimepicker
-//= require compatibility.coffee
 //= require video
-//= require_tree .
 //= require turbolinks
+//= require compatibility.coffee
+//= require_tree .

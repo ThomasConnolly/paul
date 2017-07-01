@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 437501e2789dc764c58e57cad0897854c186fa82
+  specs:
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/ThomasConnolly/attachinary
   revision: c7bbc9d5d5ea6aee7584e381c82d0b5bea73e49b
   specs:
@@ -121,9 +129,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    ckeditor (4.2.3)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cloudinary (1.8.1)
       aws_cf_signer
@@ -464,7 +469,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.17.47)
   byebug
   capybara
-  ckeditor
+  ckeditor!
   cloudinary
   coffee-rails
   database_cleaner

@@ -40,6 +40,7 @@ gem 'figaro'
 gem 'capybara'
 gem 'regressor'
 gem 'googlebooks'
+gem 'openlibrary'
 #gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 
 group :development do

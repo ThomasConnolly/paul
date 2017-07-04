@@ -5,11 +5,11 @@
     <div class="col col-md-3 col-md-offset-1">
       <div class="image-center">
         <% if @book.url.present? %>
-          <%= image_tag(@book.url, width: "300") %>
+        <%= image_tag(@book.url, width: "265") %>
+
           <% else %>
-          <%= image_tag(@cover_image.image_link(:zoom => 2), width: "300")%><br>  
-        <% end %>
-        <%= image_tag('http://covers.openlibrary.org/b/isbn/@book.isbn-L.jpg') %>
+          <%= image_tag("https://covers.openlibrary.org/b/isbn/#{@book.isbn}-L.jpg", width: "265") %>
+          <% end %>
       </div>
     </div>
 

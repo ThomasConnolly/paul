@@ -4,6 +4,9 @@
        <p><strong> 
           <%= b.title %>,</strong> <%= b.author %>, Find book: 
           <%= b.dewey %> <%= b.cutter %> <%= b.isbn %> <%= b.url %>
+          <br>
+          <%= image_tag("https://covers.openlibrary.org/b/isbn/#{b.isbn}-M.jpg", width: "100") %>
+
           <%= link_to 'show', book_path(b) %>
 
             <% if current_user && current_user.has_role?(:admin) %>

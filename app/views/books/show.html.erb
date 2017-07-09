@@ -16,11 +16,11 @@
     <div class="col col-md-6 col-md-offset-1">
 
       <p> <strong>
-        <%= @book.title.titleize %><br>
-        <%= @book.author.titleize %><br>
+        <%= @book.title.titleize %></strong><br>
+        <em><%= @book.author.titleize %><br></em>
         <%= @book.subject %><br>
-        <%= @book.description %><br>
-        </strong></p>
+        <%= @book.description %><br></p>
+        
         <p> Label on this book: <%= @book.dewey %> / <%= @book.cutter %></p>
     
 

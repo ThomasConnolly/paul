@@ -18,7 +18,7 @@ class BooksController < ApplicationController
   before_action :admin_only, only: [:new, :edit, :update, :create, :destroy, :book_admin]
 
   def index
-    @books=Book.all
+    @books=Book.all.order(:title)
   end
 
   def books_admin
@@ -31,8 +31,6 @@ class BooksController < ApplicationController
       format.csv { send_data @books.to_csv, filename: "bookLabels-#{Date.today}.csv", disposition: :inline }
     end
   end
-
-
  
 
   def new
@@ -45,15 +43,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to books_admin_path
+      redirect_to books_admin_path, notice: "Book was saved"
     else
       render :new
    end
  end
 
   def show
-    @book = Book.find(params[:id]) 
-    @cover_image = GoogleBooks.search(@book.isbn, { :zoom => 2, :country => 'US' }).first
   end
 
   def update

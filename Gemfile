@@ -42,8 +42,8 @@ gem 'regressor'
 gem 'googlebooks'
 gem 'openlibrary'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
-gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom.git'
-gem 'marc'
+#gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom.git'
+#gem 'marc'
 
 
 group :development do

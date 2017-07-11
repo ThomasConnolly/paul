@@ -93,6 +93,10 @@ p {
     font-size : 1.3rem;
     line-height: 1.75;
 }
+p.tiny {
+  font-size: .75rem;
+  line-height: .5;
+}
 
 .sidebar p{
   font-size: 1.2rem;
@@ -202,24 +206,7 @@ p {
 .update-logo {
   position:relative;
 }
-.update-logo img{
-  position: absolute;
-  -webkit-transition: opacity is ease-in-ease-out;
-  -moz-tansition: opacity is ease-in-out;
-  -o-transition: opacity is ease-in-out;
-  transition: opacity is ease-in-out;
-}
-.update-logo img.top:hover {
-  opacity:0;
-}
 
-.underConstruction {
-  margin-left: 350px;
-  margin-top: 70px;
-  width: 350px;
-  border-width: 1px solid black;
-  padding: 8px;
-}
 .meditation-count {
   color: white;
   font-size: .75rem;

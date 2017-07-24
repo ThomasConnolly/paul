@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  
-  resources :formation_talks, only: [:show, :index, :edit]
+
+  resources :formation_talks, only: [:show, :index, :edit, :new]
   resources :marriage_talks, only: [:new,:show, :index, :edit]
   resources :meditations
   resources :prayers
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'members/import'
   get 'thanks', to: 'tickets#thanks', as: 'thanks'
   get 'pledges/confirmation'
+  
   resources :events do
     resources :tickets, only: [:new, :show, :create, :update, :index]
   end
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
+
   resources :vestry_minutes
   resources :pictures
   resources :surveys, only: :index

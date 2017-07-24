@@ -9,7 +9,7 @@
       <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
       <%= f.input :title, class: 'form-control' %>
       <%= f.input :cites, label: 'Citations', class: 'form-control' %>
-      <%= f.date_select :delivered_on, :id => 'datetimepicker1' %><br>
+      <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
       <div id="summernote">
       <%= f.input :sermon_body, as: :ckeditor %><br>
       </div>
@@ -19,8 +19,8 @@
       </div>
     </div>
 <script type="text/javascript">
-  $(function () {
-    $('#datetimepicker1').datetimepicker();
+  $(document).ready(function () {
+    $('.datepicker').datepicker();
   });
 </script>
 <script>

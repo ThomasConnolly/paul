@@ -7,7 +7,7 @@
     <div class="form-group form-inputs">
       <%= f.input :title %>
       <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
-      <%= f.date_select :date, id: "datetimepicker1" %>
+      <%= f.date_select :date, class: "datepicker" %>
       <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m."%>
       <%= f.input :event_picture, as: :attachinary, label: "Add a picture for this event" %>
     </div>
@@ -17,8 +17,8 @@
     </div>
   <% end %>
    <script type="text/javascript">
-      $(function () {
-        $('#datetimepicker1').datetimepicker();
+      $(document).ready(function () {
+        $('.datepicker').datepicker();
       }); 
     </script>
   <script>
@@ -28,4 +28,3 @@ $(document).on('page:load', function() {
 </script>
   </div>
 </div>
-

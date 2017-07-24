@@ -9,12 +9,12 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require moment
 //= require bootstrap
 //= require ckeditor/init
 //= require ckeditor/config
-//= require bootstrap-datetimepicker
+//= require bootstrap-datepicker
 //= require video
 //= require turbolinks
 //= require compatibility.coffee
+//= require moment
 //= require_tree .

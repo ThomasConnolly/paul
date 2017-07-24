@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/galetahub/ckeditor.git
-  revision: 437501e2789dc764c58e57cad0897854c186fa82
-  specs:
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
-
-GIT
   remote: https://github.com/ThomasConnolly/attachinary
   revision: c7bbc9d5d5ea6aee7584e381c82d0b5bea73e49b
   specs:
@@ -15,35 +7,15 @@ GIT
       rails (>= 3.2)
 
 GIT
-  remote: https://github.com/elsurudo/simple_form
-  revision: a1faca93ed39c0f54055890578307bdbade3de0b
-  branch: rails-5.1.0
-  specs:
-    simple_form (3.4.0)
-      actionpack (> 4, < 5.2)
-      activemodel (> 4, < 5.2)
-
-GIT
-  remote: https://github.com/plataformatec/devise.git
-  revision: 71fc5b351a8e8473733b0ca29d60c06e43a0efe1
-  specs:
-    devise (4.3.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.2)
-      responders
-      warden (~> 1.2.3)
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
-  revision: 94f6f4c809ee541bf035153111731e1daf7b8277
+  revision: 239446761540dedbc7381617ad93d6bb7fe1f247
   specs:
-    stripe (2.12.0)
+    stripe (3.0.2)
       faraday (~> 0.9)
 
 GIT
   remote: https://github.com/twbs/bootstrap-rubygem
-  revision: 7cdeca9a0e8db3bb7548d9fa5bdaad9b644fca32
+  revision: b156edfee2b9629ad4751ee2a118a04f824ef9eb
   specs:
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
@@ -97,7 +69,7 @@ GEM
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (7.1.1.2)
+    autoprefixer-rails (7.1.2.2)
       execjs
     awesome_print (1.8.0)
     aws_cf_signer (0.1.3)
@@ -105,6 +77,10 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -115,20 +91,23 @@ GEM
     birthday (0.3.1)
       activerecord
       activesupport
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
-    bootstrap3-datetimepicker-rails (4.17.47)
-      momentjs-rails (>= 2.8.1)
     builder (3.2.3)
     byebug (9.0.6)
     callsite (0.0.11)
-    capybara (2.14.3)
+    capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cloudinary (1.8.1)
       aws_cf_signer
@@ -148,12 +127,19 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.1)
     css_parser (1.5.0)
       addressable
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
     domain_name (0.5.20170404)
@@ -166,7 +152,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.6)
     equalizer (0.0.11)
-    erubi (1.6.0)
+    erubi (1.6.1)
     erubis (2.7.0)
     eventmachine (1.2.3)
     execjs (2.7.0)
@@ -175,7 +161,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
-    faker (1.7.3)
+    faker (1.8.4)
       i18n (~> 0.5)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
@@ -219,7 +205,7 @@ GEM
     http_parser.rb (0.6.0)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
-    i18n (0.8.4)
+    i18n (0.8.6)
     ice_nine (0.11.2)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -252,6 +238,9 @@ GEM
     lumberjack (1.0.12)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    marc (1.0.0)
+      scrub_rb (>= 1.0.1, < 2)
+      unf
     meta_request (0.4.3)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (>= 1.1, < 3)
@@ -283,18 +272,21 @@ GEM
       ast (~> 2.2)
     path_expander (1.0.2)
     pg (0.21.0)
-    popper_js (1.9.9)
+    popper_js (1.10.8)
     premailer (1.10.4)
       addressable
       css_parser (>= 1.4.10)
       htmlentities (>= 4.0.0)
-    premailer-rails (1.9.6)
+    premailer-rails (1.9.7)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-awesome_print (9.6.11)
+      awesome_print (>= 1.1.0, < 999)
+      pry (>= 0.9.0, < 999)
     pry-byebug (3.4.2)
       byebug (~> 9.0)
       pry (~> 0.10)
@@ -344,9 +336,15 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.0.0)
-    rb-fsevent (0.9.8)
+    rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    react-rails (2.2.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     reek (4.7.1)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
@@ -394,18 +392,26 @@ GEM
       reek (~> 4.4)
       ruby_parser (~> 3.8)
       virtus (~> 1.0)
-    sass (3.4.24)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scrub_rb (1.0.1)
     sexp_processor (4.9.0)
     shellany (0.0.1)
-    shoulda-matchers (3.1.1)
+    shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
     simple_bdd (0.1.0)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -468,15 +474,15 @@ DEPENDENCIES
   binding_of_caller
   birthday
   bootstrap!
+  bootstrap-datepicker-rails
   bootstrap-will_paginate
-  bootstrap3-datetimepicker-rails (~> 4.17.47)
   byebug
   capybara
-  ckeditor!
+  ckeditor
   cloudinary
   coffee-rails
   database_cleaner
-  devise!
+  devise
   email_spec
   factory_girl_rails
   faker
@@ -492,12 +498,15 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   letter_opener
+  marc
   meta_request
-  momentjs-rails (>= 2.17)
+  momentjs-rails
   nokogiri
   openlibrary
   pg
   premailer-rails
+  pry
+  pry-awesome_print
   pry-byebug
   pry-doc
   pry-rails
@@ -507,6 +516,7 @@ DEPENDENCIES
   rails (= 5.1.1)
   rails_on_heroku
   railties
+  react-rails
   regressor
   remotipart
   rest-client (~> 2.0, >= 2.0.2)
@@ -516,7 +526,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   simple_bdd
-  simple_form!
+  simple_form
   simplecov
   simplecov-rcov
   spring

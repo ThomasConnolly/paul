@@ -3,7 +3,7 @@
 
   <div class="form-group">
   <p>Date of the meeting:</p>
-    <%= f.date_select :date, id: 'datetimepicker1' %>
+    <%= f.date_select :date, class: 'datepicker' %>
     <div class="mt30"></div>  
   
     <%= f.input :minutes, as: :ckeditor %>
@@ -16,7 +16,7 @@
 <% end %>
 
   <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker1').datetimepicker();
+    $(document).ready(function () {
+      $('.datepicker').datepicker();
     });
   </script>

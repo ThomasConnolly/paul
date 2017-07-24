@@ -6,7 +6,7 @@
     <%= simple_form_for @marriage_talk, html: { multipart: true } do |f| %>  
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %> 
-        <%= f.date_select :delivered_on, id: 'datetimepicker1' %><br>
+        <%= f.date_select :delivered_on, class: 'datepicker' %><br>
         <div id="summernote">
         <%= f.input :body, as: :ckeditor %>
         </div>
@@ -15,8 +15,8 @@
       </div>
   </div>
     <script type="text/javascript">
-      $(function () {
-        $('#datetimepicker1').datetimepicker();
+      $(document).ready(function () {
+        $('.datepicker').datepicker();
        });
     </script>
  

@@ -1,0 +1,23 @@
+
+<% if @drop5.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@drop5.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @drop5.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+
+<%= simple_form_for @drop5 do |f| %>
+  <%=f.input :name, placeholder: "Your first name" %>
+  <%=f.input :pledge, placeholder: "Number of pounds"%>
+  <%=f.input :how, placeholder: "How do you plan to do it?" %>
+    <div class="honey"><%=f.input :honey %></div>
+  <%=f.submit "Make pledge", class: "btn btn-primary btn-lg" %>
+<% end %>

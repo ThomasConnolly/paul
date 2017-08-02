@@ -49,7 +49,7 @@ gem 'pry'
 gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
-gem 'react-rails'
+#gem 'react-rails'
 
 
 group :development do

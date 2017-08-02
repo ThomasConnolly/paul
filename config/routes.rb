@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'drop5/index'
+  get 'drop5/new'
+
   resources :formation_talks, only: [:show, :index, :edit, :new]
   resources :marriage_talks, only: [:new,:show, :index, :edit]
   resources :meditations

@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col col-lg-6 col-lg-offset-3">
+    <h1>Drop 5! (or more)</h1>
+
+    <a id='kziUd-hGRAl3lSjyCCW4xA' class='gie-single' href='http://www.gettyimages.com/detail/163394991' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a><script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'kziUd-hGRAl3lSjyCCW4xA',sig:'n0XBmRKYWWXE5O2L_HGUgeXw9_obnDUumcINq1la764=',w:'507px',h:'338px',items:'163394991',caption: true ,tld:'com',is360: false })});</script><script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>
+    <div class="mt30"></div>
+     
+      <%=simple_form_for @drop5, url: drop5_new_path do |f| %>
+        <%=f.input :name, placeholder: "Your first name" %>
+        <%=f.input :pledge, placeholder: "Number of pounds"%>
+        <%=f.input :how, placeholder: "How do you plan to do it?" %>
+          <div class="honey"><%=f.input :honey %></div>
+        <%=f.submit "Make pledge", class: "btn btn-primary btn-lg" %>
+      <% end %>
+  </div>
+</div>
+<div class="mt100"></div>
+
+<p>Weight gain with age is common. “Your metabolism gradually slows down,” says Steven Heymsfield, a researcher at the Pennington Biomedical Research Center at Louisiana State University in Baton Rouge. Sarcopenia, a decrease in muscle tissue that occurs with age, is a likely cause — but not the only one.</p>
+<p>
+“People generally become less active as they get older, even more so if they have orthopedic or other painful health issues,” Heymsfield says. “When you’re not burning as many calories but still eating the same amount, you gradually gain weight.”
+</p>
+<p>
+To get the scale to budge, you can’t just cut calories. “Unless it’s coupled with an exercise program, weight loss will result in muscle loss,” Heymsfield explains. That’s why the best strategy combines calorie-burning, muscle-building exercise and diet changes. </p>
+<div class="floatright"><p><small>From <em>Consumer Reports,</em> printed in the <em>Washington Post</em> on July 31.</small></p></div>
+<div class="clearall"></div>
+<div class="mt30"></div>
+
+<h2 id="pledges_to_date">Pledges to date: <%= @drop5_total.sum(:pledge) %></h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Dropping</th>
+      <th>Name</th>
+      <th>Method of losing weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drop5_total.each do |d5| %>
+      <tr>
+       <p> <td><%= d5.pledge %></td> 
+       <strong> <td><%= d5.name %></td> 
+       <em> <td>"<%= d5.how %>"</td></em></strong></p>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="mt100"></div>
+

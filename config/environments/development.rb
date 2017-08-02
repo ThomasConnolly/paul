@@ -11,7 +11,7 @@ Rails.application.configure do
   config.x.webpacker[:dev_server_host] = "http://localhost:8080"
   config.cache_classes = false
 
-  
+  config.log_level = :debug  
 
   # Do not eager load code on boot.
   config.eager_load = false

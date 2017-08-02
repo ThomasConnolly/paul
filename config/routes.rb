@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :drop5
   get 'drop5/index'
   get 'drop5/new'
 

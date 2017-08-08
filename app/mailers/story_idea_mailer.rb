@@ -5,6 +5,6 @@ class StoryIdeaMailer < ApplicationMailer
     @story_idea = story_idea
     @story_idea_id = story_idea.id
     @url = url_for(@story_idea)
-    mail(subject: "There's a new posting for the church Communications Team.")
+    mail(subject: "There's a new posting for the church communications team.")
   end  
 end

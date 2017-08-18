@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 
-gem 'rails', '5.1.1'
+gem 'rails', '5.1.3'
 gem 'devise'
 gem 'pg'
 gem 'rack'
@@ -42,14 +42,10 @@ gem 'regressor'
 gem 'googlebooks'
 gem 'openlibrary'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
-#gem 'zoom', :git => 'https://github.com/bricestacey/ruby-zoom.git'
-#gem 'marc'
-#gem 'enhanced_marc'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
-#gem 'react-rails'
 
 
 group :development do

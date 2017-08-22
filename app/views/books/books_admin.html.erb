@@ -1,11 +1,10 @@
 
   <h1>Listing books</h1>
     <% @books.each do |b| %>
-       <p><strong> 
-          <%= b.title %>,</strong> <%= b.author %>, Find book: 
-          <%= b.dewey %> <%= b.cutter %> <%= b.isbn %> <%= b.url %>
-          <br>
-          <%= image_tag("https://covers.openlibrary.org/b/isbn/#{b.isbn}-S.jpg", 
+       <p class="tiny"> 
+          <%= b.author %>, <%= b.title %> 
+          <%= b.dewey %> <%= b.cutter %> <%#= b.isbn %> <%#= b.url %>
+          <%#= image_tag("https://covers.openlibrary.org/b/isbn/#{b.isbn}-S.jpg", 
             width: "100") %>
 
           <%= link_to 'show', book_path(b) %>

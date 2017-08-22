@@ -2,31 +2,32 @@
 <div class="row">
   <div class="col col-md-12 col-sm-12">
     <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-  <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p> 
-  </div>     
- 
+  <p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's in December.</strong></p>
+  </div>
+
   <div class="col col-md-8 col-sm-12 main-body">
-    <h1 id="welcome">Come worship with us!</h1> 
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", 
+    <h1 id="welcome">Come worship with us!</h1>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
       <p><strong>9 a.m.</strong> Holy Eucharist </p>
       <div class="mt-20"></div>
       <p><small>Children are invited to nursery/Sunday school  </small></p>
+      <p>We
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Information in Creole', pages_haitian_path %></p>
-      
+
     <div class="mt30"></div>
 
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net"  %></strong></p>
     <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here.", 'pages/directions' %></p>
     <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-  
+
     <div class="mt30"></div>
 
       <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
       <div class="mt100"></div>
       <h2>What's Jubilee! all about?</h2>
       <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
-    
+
     <div class="clearall"></div>
     <div class="mt30"></div>
 
@@ -39,30 +40,27 @@
 
     <div class="mt30"></div>
 
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", :fetch_format => :auto) %> 
-    
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", :fetch_format => :auto) %>
+
     <div class="mt30"></div>
 
     <div id="newsfeed">
     <!-- start feedwind code --><iframe  height="500"  width="100%" src="https://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fepiscopaldigitalnetwork.com%2Fens%2Ffeed%2F%3Fcat%3D` -6%2C-8&rssmikle_frame_width=300&rssmikle_frame_height=400&frame_height_by_article=0&rssmikle_target=_blank&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=off&responsive=on&text_align=left&text_align2=left&corner=off&scrollbar=on&autoscroll=on&scrolldirection=up&scrollstep=3&mcspeed=20&sort=Off&rssmikle_title=on&rssmikle_title_bgcolor=%230066FF&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%230066FF&rssmikle_item_border_bottom=on&rssmikle_item_description=on&item_link=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=gl1&rssmikle_timezone=Etc%2FGMT&datetime_format=%25b%20%25e%2C%20%25Y%20%25l%3A%25M%20%25p&item_description_style=text%2Btn&item_thumbnail=full&item_thumbnail_selection=auto&article_num=15&rssmikle_item_podcast=off&" scrolling="no" name="rssmikle_frame" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0"></iframe><div style="font-size:10px; text-align:center; "><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a></div>
     </div><!--  end  newsfeed -->
-    
-    <div>
+
+    <!--<div>
     <a href="http://www.episcopalrelief.org/" target="blank"><img width="65%" vspace="4" border="0" align="bottom" class="image-center" alt="" src="http://www.episcopalrelief.org/uploaded/images/Press-and-Resources/Link-To-Us/Logo-Link.gif" /></a>
-    </div>
- 
+  </div>-->
+
   </div><!--main-body -->
 
   <div class="col col-md-4 col-sm-6 sidebar">
     <%= link_to cl_image_tag("FindFB_ovw6ax.jpg", class: "image-center", width: "100%"),"https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
       <p><%= Date.current.to_formatted_s(:long) %></p>
         <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
-      
+
     <div class="mt30"></div>
 
-    <p><strong>Sunday Brunch </strong> after the service this Sunday, August 13. Hosts are Don and Linda Anderson and Burton and Louise Tucker. </p>
-    <div class="mt30"></div>
- 
 
 
 <%=cl_image_tag("LosingIt_vsww0r.png", width: "99%", class: "image-center") %>
@@ -71,47 +69,47 @@
 
     <p><strong>Drop 5!</strong> We'd like 50 parishioners to pledge to lose five pounds (or more, if it's safe). It's our <strong><em>Jubilee! Challenge</em></strong> for the month. Pledge in August and lose in August, or September, or ... just lose it! </p>
     <p>Just give your first name or initials, the amount you pledge to lose, and a brief statement of how you will accomplish this feat. <%= link_to "Click here.", new_drop5_path %> </p>
-    <p>Starting around Aug. 20 if all goes well we'll start seeing progress reports.</p>
+    <p>
     <p>Pledged so far: <%= @drop5s.sum(:pledge) %> pounds.<em> <%= link_to 'See who\'s "losing it."', drop5s_path(anchor: "pledges_to_date") %></em></p>
-   
-    
+
+
     <div class="mt30"></div>
 
   <!--  <div id="toNaplesPlayersVideo">
       <%#= cl_image_tag("SisterAct_pcoe86.png", width: "95%", class: "image-center") %>
-    </div>  
+    </div>
       <p><b>Hey! That's our church!</b>  Click on the picture to see a 30-second promotional shot at St. Paul's for the play <em>Sister Act, </em> a Naples Players performance at Sugden Theater. A group od 28 from St. Paul's enjoyed the play on Sunday, July 23. The play runs through July.</p>
-      
+
        <div class="mt30"></div> -->
-     
-      <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %> 
-      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this, 
+
+      <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
+      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! In this,
       our Jubilee! year, we wish to add 50 new ministries! We are the hands and feet of the Risen
-       Lord in the modern world that is in great need. Some of our ministries are 
+       Lord in the modern world that is in great need. Some of our ministries are
        <%= link_to 'listed here.', opportunities_path %></p>
-    
+
       <div class="mt30"></div>
 
      <%#= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
      <!-- <p>Wearing your <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week.</p> -->
-    
+
       <div class="mt30"></div>
 
-      <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p> 
-      
+      <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.", 'http://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p>
+
       <div class="mt30"></div>
-      
+
       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "image-center", :fetch_format => :auto), pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
-      
+
       <div class="mt30"></div>
-   
+
   </div><!-- sidebar -->
 
 
 
-    <div id="youtube"> 
-      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" 
+    <div id="youtube">
+      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog"
         aria-labelledby="videoModal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -119,14 +117,14 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-              <iframe width="560" height="315" src=""></iframe> 
+              <iframe width="560" height="315" src=""></iframe>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  
+
    <script>
       $('#toNaplesPlayersVideo').click(function() {
        var src="https://www.youtube.com/embed/hyrQqAs0gIs?rel=0;autoplay=1";

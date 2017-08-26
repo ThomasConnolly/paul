@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get 'comments/new'
   get 'pages/python_tutor'
   get 'pages/how_to_use'
+  get 'pages/ecumenical_concert'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
 
     # get ':id' => 'users#show', as: :user_profile
@@ -54,6 +55,8 @@ Rails.application.routes.draw do
   resources :books
   
   get 'books_admin', controller: :books
+  get 'books_author', controller: :books
+  get 'books_title', controller: :books
 
   resources :books do
     collection do

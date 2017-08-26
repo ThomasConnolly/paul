@@ -31,9 +31,16 @@ class BooksController < ApplicationController
       format.csv { send_data @books.to_csv, filename: "bookLabels-#{Date.today}.csv", disposition: :inline }
     end
   end
- 
+  
+  def books_author
+    @books=Book.all.order(:author)
+  end
 
-  def new
+  def books_title
+    @books=Book.all.order(:title)
+  end
+
+    def new
     @book = Book.new
   end
 

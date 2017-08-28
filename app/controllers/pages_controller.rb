@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
+  def ecumenical_concert
+  end
+
   def grace_works
     @work=Work.new
     @works=Work.all

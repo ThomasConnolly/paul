@@ -2,7 +2,7 @@
 
 <%= simple_form_for(@book) do |f| %>
  
-  <div class="form-group">
+  <div class="form-group form-inline">
     <%= f.input :author, class: 'form-control' %>
     <%= f.input :title, class: 'form-control' %>
     <%= f.input :subject, class: 'form-control' %>
@@ -13,4 +13,3 @@
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
-<p><small>The "url" field is to be used for linking to photos when the wrong picture appears in the link</small></p>

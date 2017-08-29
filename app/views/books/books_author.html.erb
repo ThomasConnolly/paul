@@ -1,8 +1,11 @@
   <h1>Listing books by author</h1>
+  <div class="t30"></div>
+  <%= link_to "see books by title", books_title_path %>
+  <div class="mt30"></div>
     <% @books.each do |b| %>
-<p class="tiny"> 
-          <%= b.author %>, <%= b.title %> 
-          <%= b.dewey %> <%= b.cutter %> <%#= b.isbn %> <%#= b.url %>
+      <p class="tiny"> 
+        <%= b.author %>, <%= b.title %> 
+        <%= b.dewey %> <%= b.cutter %> <%#= b.isbn %> <%#= b.url %>
           <%#= image_tag("https://covers.openlibrary.org/b/isbn/#{b.isbn}-S.jpg", 
             width: "100") %>
 
@@ -14,4 +17,5 @@
               { confirm: 'Are you sure?' } %><br>
             <% end %>  
     <% end %> 
-    <div class="mt100"></div>   
+    <div class="mt100"></div>  
+     

@@ -1,4 +1,8 @@
   <h1>Listing books by title</h1>
+<div class="mt30"></div>
+<%= link_to "see books by author", books_author_path %>
+<div class="mt30"></div>
+
     <% @books.each do |b| %>
           <%= b.title %>, <%= b.author %> 
           <%= b.dewey %> <%= b.cutter %> <%#= b.isbn %> <%#= b.url %>
@@ -13,4 +17,5 @@
               { confirm: 'Are you sure?' } %><br>
             <% end %>  
     <% end %> 
-    <div class="mt100"></div>   
+    <div class="mt100"></div>
+   

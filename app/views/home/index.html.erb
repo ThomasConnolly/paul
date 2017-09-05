@@ -1,17 +1,19 @@
 <div class="row">
   <div class="col col-md-12 col-sm-12">
     <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-  	<p><strong>Bishop Dabney Smith, who oversees 77 churches in the Episcopal Diocese 
-    	of Southwest Florida, helped us launch our Jubilee! during his visit to St. Paul's 
-    	in December.</strong></p>
+  	<p class="text-center"><em>Bishop Dabney Smith helped us launch our Jubilee! year.</em></p>
   </div>
+  <div class="clearall"></div>
+
   <div class="col col-md-8 col-sm-12 main-body">
-    <h1 id="welcome">Come worship with us!</h1>
+    <h1>Come worship with us!</h1>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
       <p><strong>9 a.m.</strong> Holy Eucharist </p>
-      <div class="mt-20"></div>
-      <p><small>Children are invited to nursery/Sunday school  </small></p>
+      <div class="mt-20">
+        <p><small>Children are invited to nursery/Sunday school  </small></p>
+        <p> Beginning Oct. 1 worship services will be at 8 and 10 a.m.</p>
+      </div>
       
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p>
@@ -27,6 +29,7 @@
    <h1> <%= link_to "Help hurricane victims through ERD", "https://www.episcopalrelief.org/hurricane-harvey-response" %></h1>
       <%= cl_image_tag("ERD_vcwkbd.jpg", :width=>404, :crop=>"scale", :class=>"floatleft") %>
        <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p> 
+       <div class="clearall"></div>
     <div class="mt30"></div>
       <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
       <div class="mt100"></div>
@@ -35,7 +38,7 @@
     <div class="clearall"></div>
     <div class="mt30"></div>
     <h2>Home of the Farmers' Market</h2>
-    <p>The market will reopen in "season," next November.
+    <p>The market will reopen in "season," in November.
     	<!--<%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/newFMsign.jpg", 
 	width:"90%", class: "image-center", :fetch_format => :auto) %> -->
     	<!--<h2>Welcome to the Farmers&rsquo; Market</h2>
@@ -63,15 +66,11 @@
       <p><%= Date.current.to_formatted_s(:long) %></p>
         <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
    <div class="mt30"></div>
+   <a id='KfG3S-YFR-lqSHT40hdrtQ' class='gie-single' href='http://www.gettyimages.com/detail/162905135' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a><script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'KfG3S-YFR-lqSHT40hdrtQ',sig:'t6odlasxVKArx2p7k5M6S2yggkGVsmKLpWwkqla-yEU=',w:'594px',h:'396px',items:'162905135',caption: true ,tld:'com',is360: false })});</script><script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>
  
-	<%=cl_image_tag("LosingIt_vsww0r.png", width: "99%", class: "image-center") %>
-    <p><strong>Drop 5!</strong> We'd like 50 parishioners to pledge to lose five pounds (or more, if it's safe).
-	It's our <strong><em>Jubilee! Challenge</em></strong> for the month. Pledge in August and lose 
-	in August, or September, or ... just lose it! </p>
-    <p>Just give your first name or initials, the amount you pledge to lose, and a brief statement of 
-	how you will accomplish this feat. <%= link_to "Click here.", new_drop5_path %> </p>
-    <p>Pledged so far: <%= @drop5s.sum(:pledge) %> pounds.<em> <%= link_to 'See who\'s "losing it."', 
-	drop5s_path(anchor: "pledges_to_date") %></em></p>
+  <p><strong><em>Flowers!</em></strong> Already our wonderful team of God's Gardeners and Master Gardener Diane  Briethaupt are planning how to further beautify our grounds during September Jubilee! It's our goal this month to add 50 new plants to be purchased with the proceeds of $10 donations from 50 parishioners. That's one new plant for each of the 50 years of the existence of our parish. Drop your check in the offering and write "plants" in the memo line. Thanks for participating!</p>
+    <p><strong>The Drop5!</strong> effort was less than stellar in participation, but good luck to those who pledged during August!</p>
+
     <div class="mt30"></div>
   <!--  <div id="toNaplesPlayersVideo">
       <%#= cl_image_tag("SisterAct_pcoe86.png", width: "95%", class: "image-center") %>

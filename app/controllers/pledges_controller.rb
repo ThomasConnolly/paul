@@ -64,7 +64,7 @@ private
 
   def change_pledge
     if current_user.pledge.present?
-      redirect_to edit_pledge_path(current_user.pledge(params[:id]))
+      redirect_to edit_pledge_path
     end
   end
 

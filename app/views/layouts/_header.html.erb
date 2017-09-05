@@ -1,8 +1,8 @@
 <div class="mt30"></div>
 
 <div class="header-row">
-  <div class"road-sign">
-    <%= cl_image_tag("freshSignage_a0oxfc.jpg", :width=>100, :crop=>"scale") %>
+  <div class="road-sign">
+    <%= cl_image_tag("freshSignage_a0oxfc.jpg", width: '110px') %>
   </div>
   <div class="main-logo">
     <%= cl_image_tag("St_Paul_Blue_Button_Logo_ksyj1x.jpg", width: "100%", :fetch_format => :auto) %>
@@ -10,71 +10,6 @@
       'pages/directions' %> </h5>
   </div>
   <div class="shield">
-    <%= cl_image_tag("tecShield_fpjf8p.png", width: '100')%>
+    <%= cl_image_tag("tecShield_fpjf8p.png", width: '110px')%>
   </div>
-  </div>
-  
-<!--
-  <div class="nav">
-    <div class="btn-group" id="faith-button">
-      <button type="button" data-toggle="dropdown" class="btn btn-custom dropdown-toggle">Faith <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li> <%=link_to "Home", root_path %></li>
-          <li> <%=link_to "Worship", worship_index_path %> </li>
-          <li> <%=link_to "Tips on how to pray", pages_how_to_pray_path %> </li>
-          <li> <%=link_to "Sermons", sermons_path %> </li>
-          <li> <%=link_to "Spirituality of Intimacy", formation_talks_path %> </li> 
-          <li> <%=link_to "History of Marriage", marriage_talks_path %> </li>
-          <li> <%=link_to "Sunday School", sunday_school_index_path %> </li>
-          <li> <%=link_to "Leadership", leadership_index_path %> </li>
-          <li> <%=link_to "Vestry Meeting Minutes", vestry_minutes_path %> </li>
-        </ul> 
-    </div> <!-- div class btn-group faith-->
-    <!--<div class="btn-group" id="action-button">
-      <button type="button" data-toggle="dropdown" class="btn btn-custom dropdown-toggle">Action <span class="caret"></span></button>
-        <ul class="dropdown-menu" aria-labelledby="action-button">
-          <li> <%=link_to "There's a place for you", opportunities_path %> </li>
-          <li> <%#=link_to "Your pledge", new_pledge_path %> </li>
-          <li> <%=link_to "Farmers' Market, Gift Shop, Boutique", markets_index_path %> </li>
-          <li> <%=link_to "Children's shelter in the Dominican Republic", pages_albergue_path %> </li>
-          <li> <%=link_to "We make dresses for the Tumaini Fund", pages_tumaini_path %> </li>
-          <li> <%=link_to "Activities", activities_index_path %> </li>
-          <li> <%=link_to "We celebrate Jubilee!", jubilee_plans_path %> </li>
-          <li> <%=link_to "Family Ties", posts_path %> </li>
-          <% if current_user %>
-            <li> <%= link_to "Communicators' Corner", story_ideas_path %></li>
-          <% end %>
-          <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
-          <li> <%=link_to "Vestry Report", vreports_path %> </li>
-          <% end %>
-        </ul> 
-    </div> <!-- btn-group action -->
-      
-  </div> <!--sublogo -->
-</div> <!-- second six cols -->
-</div> <!-- row -->
-
--->
-
-
-<header>
-<div class="mt30"></div>
-<%#= image_tag "http://www.stevefogg.com/wp-content/uploads/2017/03/social_media_posts_daylight_saving6_small.jpg" %>
-<div class="row">
-  <div class="col col-xs-12 col-sm-12  col-md-3 col-lg-3">
-  <%= cl_image_tag("SmExterior_aa6p3r.jpg", width: "40%", class: "image-center") %>
-  
-  </div>
-  <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <%= cl_image_tag("St_Paul_Blue_Button_Logo_ksyj1x.jpg", width: "95%", :fetch_format => :auto, class: "image-center") %>
-      <h5 class="text-center">3901 Davis Boulevard, a couple of blocks east of Airport Road. <%= link_to "Map", 
-      'pages/directions' %> </h5>
-    <%#= cl_image_tag('St_Paul_Red_Button_Logo_nmxbtk.png', width: "550", class: "top") %>
-    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: '450') %>
-      
-  </div> <!--main-logo -->
-  <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
-  <%= cl_image_tag("tecShield_fpjf8p.png", width: '93', class: "image-center")%>
-  </div>
-</div> <!-- first six-col -->
-</header>
+</div>

@@ -62,22 +62,53 @@ div.hidden {
   margin-right: 2000px;
   height: 15px;
 }
-.header-row {
-  max-width: 1300px;
-  margin: 40px auto 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media (min-width: 768px) {
+  .header-row {
+    max-width: 1200px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+   
+  }
+  .road-sign {
+    order:1;
+    flex-basis:120px;
+  }
+  .main-logo {
+    order:2;
+    flex-basis: 500px;
+  }
+  .shield {
+    order: 3;
+    flex-basis: 120px;
+ }
+} 
+
+@media (max-width: 767px) {
+  .header-row {
+    margin: 40px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+   .main-logo {
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    .road-sign {
+      flex-basis: 40%;
+      order: 2;
+    }
+   
+    .shield {
+      flex-basis: 40%;
+      order: 3;
+   }
 }
-/* .road-sign {
-  width: 20%;
-}
-.main-logo {
-  width: 50%;
-}
-.shield {
-  width: 20%;
-} */
 
 h1 {
 color : #5c004c;
@@ -141,28 +172,13 @@ p.tiny {
   text-align: center;
   font-weight: bold;
 }
-
+/*
 .main-logo {
   float: left;
   margin-bottom: 40px;
 }
+*/
 
-#faith-button {
-  float: left;
-  width: 30%;
-  margin-top: 36px;
-}
-
-#action-button {
-  float: left;
-  width: 30%;
-  margin-top: 36px;
-}
-#shield {
-  float: left;
-  width:30%;
-  margin: 0, auto;
-}
 .timeblock {
   width: 188px;
   border-style: outset;
@@ -369,62 +385,6 @@ p.tiny {
   padding: 4px;
   text-align: center;
 }
-.btn-custom {
-  cursor: pointer;
-  text-decoration:none;
-  border: 1px solid rgb(102, 0, 0);
-  padding: 4px 10px 4px 10px;
-  color:rgb(255, 255, 255);
-  font-size: 1.5rem;
-  font-family:arial, serif;
-  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
-  border-radius:5px 5px 5px 5px;
-  -moz-border-radius:5px 5px 5px 5px;
-  -webkit-border-radius:5px 5px 5px 5px;
-  box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -moz-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -webkit-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  background-color: rgb(209, 16, 61);
-  background-image:linear-gradient(-90deg, rgb(209, 16, 61), rgb(102, 0, 0));
-  background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(209, 16, 61)), to(rgb(102, 0, 0)));
-  background-image:-moz-linear-gradient(-90deg, rgb(209, 16, 61), rgb(102, 0, 0));
-}
-.btn-custom:hover{
-  cursor: pointer;
-  text-decoration:none;
-  border: 1px solid rgb(102, 0, 0);
-  padding: 4px 10px 4px 10px;
-  color:rgb(255, 255, 255);
-  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
-  border-radius:5px 5px 5px 5px;
-  -moz-border-radius:5px 5px 5px 5px;
-  -webkit-border-radius:5px 5px 5px 5px;
-  box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -moz-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -webkit-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  background-color: rgb(51, 153, 0);
-  background-image:linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
-  background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
-  background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
-}
-.btn-custom:active{
-  cursor: pointer;
-  text-decoration:none;
-  border: 1px solid rgb(102, 0, 0);
-  padding: 4px 10px 4px 10px;
-  color:rgb(255, 255, 255);
-  text-shadow: 2px 2px #090974 rgb(0, 0, 0);
-  border-radius:5px 5px 5px 5px;
-  -moz-border-radius:5px 5px 5px 5px;
-  -webkit-border-radius:5px 5px 5px 5px;
-  box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -moz-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  -webkit-box-shadow:0px 0px 0px rgb(0, 0, 0);
-  background-color: rgb(51, 153, 0);
-  background-image:linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
-  background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(0, 153, 0)), to(rgb(51, 0, 0)));
-  background-image:-moz-linear-gradient(-90deg, rgb(0, 153, 0), rgb(51, 0, 0));
-}
 
 .btn-modal-footer {
   width: 100px;
@@ -514,4 +474,143 @@ p.tiny {
   }
 .edit-delete-show {
   font-size: .75rem;
-}  
+} 
+
+@media (min-width: 768px) {
+   .nav-box {
+    width: 100%;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    border: 5px;
+    height: 64px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .login {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    width: 27%;
+    align-self: center;
+    padding-left: 6px;
+
+  }
+  .ddropdowns {
+    border: 10px;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .ddropdown {
+    background-color: #2C3E50;
+  }
+
+   
+  #nav {
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      padding:10px;
+  }
+
+  .btn-special {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    border: none;
+    flex:1;
+  }
+   
+  ul#navigation {
+      margin:0px auto;
+      position:relative;
+  }
+   
+  ul#navigation li {
+      display:inline;
+      font-size:12px;
+      font-weight:bold;
+      position:relative;
+  }
+   
+  ul#navigation li a {
+      text-decoration:none;
+      display:inline-block;
+      -webkit-transition:color 0.2s linear, background 0.2s linear;
+      -moz-transition:color 0.2s linear, background 0.2s linear;
+      -o-transition:color 0.2s linear, background 0.2s linear;
+      transition:color 0.2s linear, background 0.2s linear;
+  }
+   
+  ul#navigation li a.first {
+      border-left: 0 none;
+  }
+   
+  ul#navigation li a.last {
+      border-right: 0 none;
+  }
+   
+  ul#navigation li:hover > a {
+      background:#fff;
+  }
+
+  /* Drop-Down Navigation */
+  ul#navigation li:hover > ul{
+  /*these 2 styles are very important,
+  being the ones which make the drop-down to appear on hover */
+      visibility:visible;
+      opacity:1;
+  }
+   
+  ul#navigation ul, ul#navigation ul li ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  /*the next 2 styles are very important,
+  being the ones which make the drop-down to stay hidden */
+      visibility:hidden;
+      opacity:0;
+      position: absolute;
+      z-index: 99999;
+      width:180px;
+      background:#f8f8f8;
+      box-shadow:1px 1px 3px #ccc;
+  /* css3 transitions for smooth hover effect */
+      -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+      transition:opacity 0.2s linear, visibility 0.2s linear;
+  }
+   
+  ul#navigation ul {
+      top: 43px;
+      left: 1px;
+  }
+   
+  ul#navigation ul li ul {
+      top: 0;
+      left: 181px; /* strong related to width:180px; from above */
+  }
+   
+  ul#navigation ul li {
+      clear:both;
+      width:100%;
+      border:0 none;
+  }
+   
+  ul#navigation ul li a {
+      background:none;
+      padding:7px 15px;
+      color:#616161;
+      text-decoration:none;
+      display:inline-block;
+      border:0 none;
+      float:left;
+      clear:both;
+      width:150px;
+  }
+}

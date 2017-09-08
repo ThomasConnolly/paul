@@ -1,0 +1,64 @@
+<div class="col-xs-12">
+  <div class="nav-box">
+    <div class="login">
+      <% if user_signed_in? %>
+        <%= current_user.full_name.titleize %> <%= link_to " | Log out",destroy_user_session_path, method: :delete %> <%= link_to " | Edit account", edit_user_registration_path %> 
+              <%= link_to " | Update profile", edit_profile_path(current_user.profile) %>
+      <% else %>
+        <%= link_to "Member sign in", new_user_session_path %>
+      <% end %>
+    </div><!-- login -->
+  <ul class="nav nav-pills flex-column flex-sm-row justify-content-end">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link" %>
+  </li> 
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      role="button" aria=haspopup="true" aria-expanded="false">Worship</a>
+        <div class="dropdown-menu">
+          <%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Adult Formation", formation_talks_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Children's Sunday School", sunday_school_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "How to pray", pages_how_to_pray_path, {class: "dropdown-item"} %><br>
+        </div>
+      </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      role="button" aria=haspopup="true" aria-expanded="false">Leadership</a>
+        <div class="dropdown-menu">
+          <%= link_to "Clergy and staff", leadership_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Vestry meeting minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
+          <%= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %><br>
+           <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
+           <%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>
+           <% end %>
+        </div>
+      </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      role="button" aria=haspopup="true" aria-expanded="false">Activities</a>
+        <div class="dropdown-menu">
+          <%= link_to "Activities", activities_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Celebrate Jubilee!", jubilee_plans_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Communicators' corner", story_ideas_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Family Ties", posts_path, {class: "dropdown-item"} %><br>
+         
+        </div>
+      </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      role="button" aria=haspopup="true" aria-expanded="false">Markets</a>
+        <div class="dropdown-menu">
+          <%= link_to "Farmers' Market", markets_index_path, class: "dropdown-item" %><br>
+          <%= link_to "Gift Shop", markets_index_path, class: "dropdown-item" %><br>
+          <%= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
+          <%= link_to "Unique Boutique", markets_index_path, class: "dropdown-item" %><br>
+          
+        </div>
+      </li>
+  </ul>    
+</nav>
+</div>

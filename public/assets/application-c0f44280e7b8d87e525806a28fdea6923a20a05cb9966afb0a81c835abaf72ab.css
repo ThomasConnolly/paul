@@ -10063,8 +10063,13 @@ p.tiny {
   font-size: .75rem;
 }
 
+/* line 480, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+p {
+  indent: 20px;
+}
+
 @media (min-width: 768px) {
-  /* line 481, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 486, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .nav-box {
     width: 100%;
     background-color: #2C3E50;
@@ -10075,162 +10080,279 @@ p.tiny {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
 
-  /* line 493, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 498, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .login {
     background-color: #2C3E50;
     color: #FFFFFF;
-    width: 27%;
-    -ms-flex-item-align: center;
-        align-self: center;
-    padding-left: 6px;
+    width: 50%;
+    margin-left: 6px;
   }
 
-  /* line 501, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 506, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  .nav-link {
+    color: #FFFFFF;
+  }
+}
+  /*
   .ddropdowns {
     border: 10px;
-    width: 100%;
+    width:100%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
-
-  /* line 510, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .ddropdown {
     background-color: #2C3E50;
   }
 
-  /* line 515, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   #nav {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      padding:10px;
   }
 
-  /* line 522, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .btn-special {
     background-color: #2C3E50;
     color: #FFFFFF;
     border: none;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex:1;
   }
-
-  /* line 529, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation {
-    margin: 0px auto;
-    position: relative;
+      margin:0px auto;
+      position:relative;
   }
-
-  /* line 534, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation li {
-    display: inline;
-    font-size: 12px;
-    font-weight: bold;
-    position: relative;
+      display:inline;
+      font-size:12px;
+      font-weight:bold;
+      position:relative;
   }
-
-  /* line 541, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation li a {
-    text-decoration: none;
-    display: inline-block;
-    -webkit-transition: color 0.2s linear, background 0.2s linear;
-    transition: color 0.2s linear, background 0.2s linear;
+      text-decoration:none;
+      display:inline-block;
+      -webkit-transition:color 0.2s linear, background 0.2s linear;
+      -moz-transition:color 0.2s linear, background 0.2s linear;
+      -o-transition:color 0.2s linear, background 0.2s linear;
+      transition:color 0.2s linear, background 0.2s linear;
   }
-
-  /* line 550, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation li a.first {
-    border-left: 0 none;
+      border-left: 0 none;
   }
-
-  /* line 554, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation li a.last {
-    border-right: 0 none;
+      border-right: 0 none;
   }
-
-  /* line 558, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation li:hover > a {
-    background: #fff;
+      background:#fff;
   }
 
-  /* Drop-Down Navigation */
-  /* line 563, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-  ul#navigation li:hover > ul {
-    /*these 2 styles are very important,
-    being the ones which make the drop-down to appear on hover */
-    visibility: visible;
-    opacity: 1;
-  }
 
-  /* line 570, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  ul#navigation li:hover > ul{
+  /*these 2 styles are very important,
+  being the ones which make the drop-down to appear on hover 
+      visibility:visible;
+      opacity:1;
+  }
+   
   ul#navigation ul, ul#navigation ul li ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    /*the next 2 styles are very important,
-    being the ones which make the drop-down to stay hidden */
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    z-index: 99999;
-    width: 180px;
-    background: #f8f8f8;
-    -webkit-box-shadow: 1px 1px 3px #ccc;
-            box-shadow: 1px 1px 3px #ccc;
-    /* css3 transitions for smooth hover effect */
-    -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
-    transition: opacity 0.2s linear, visibility 0.2s linear;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  /*the next 2 styles are very important,
+  being the ones which make the drop-down to stay hidden 
+      visibility:hidden;
+      opacity:0;
+      position: absolute;
+      z-index: 99999;
+      width:180px;
+      background:#f8f8f8;
+      box-shadow:1px 1px 3px #ccc;
+  /* css3 transitions for smooth hover effect 
+      -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+      transition:opacity 0.2s linear, visibility 0.2s linear;
   }
-
-  /* line 590, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation ul {
-    top: 43px;
-    left: 1px;
+      top: 43px;
+      left: 1px;
   }
-
-  /* line 595, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation ul li ul {
-    top: 0;
-    left: 181px;
-    /* strong related to width:180px; from above */
+      top: 0;
+      left: 181px; /* strong related to width:180px; from above 
   }
-
-  /* line 600, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation ul li {
-    clear: both;
-    width: 100%;
-    border: 0 none;
+      clear:both;
+      width:100%;
+      border:0 none;
   }
-
-  /* line 606, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+   
   ul#navigation ul li a {
-    background: none;
-    padding: 7px 15px;
-    color: #616161;
-    text-decoration: none;
-    display: inline-block;
-    border: 0 none;
-    float: left;
-    clear: both;
-    width: 150px;
+      background:none;
+      padding:7px 15px;
+      color:#616161;
+      text-decoration:none;
+      display:inline-block;
+      border:0 none;
+      float:left;
+      clear:both;
+      width:150px;
   }
 }
+@media (max-with: 767px) {
+     .nav-box {
+    width: 100%;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    border: 5px;
+    height: 64px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .login {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    width: 27%;
+    align-self: center;
+    padding-left: 6px;
+
+  }
+  .ddropdowns {
+    border: 10px;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .ddropdown {
+    background-color: #2C3E50;
+  }
+
+   
+  #nav {
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      padding:10px;
+  }
+
+  .btn-special {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    border: none;
+    flex:1;
+  }
+   
+  ul#navigation {
+      margin:0px auto;
+      position:relative;
+  }
+   
+  ul#navigation li {
+      display:inline;
+      font-size:12px;
+      font-weight:bold;
+      position:relative;
+  }
+   
+  ul#navigation li a {
+      text-decoration:none;
+      display:inline-block;
+      -webkit-transition:color 0.2s linear, background 0.2s linear;
+      -moz-transition:color 0.2s linear, background 0.2s linear;
+      -o-transition:color 0.2s linear, background 0.2s linear;
+      transition:color 0.2s linear, background 0.2s linear;
+  }
+   
+  ul#navigation li a.first {
+      border-left: 0 none;
+  }
+   
+  ul#navigation li a.last {
+      border-right: 0 none;
+  }
+   
+  ul#navigation li:hover > a {
+      background:#fff;
+  }
+
+  /* Drop-Down Navigation 
+  ul#navigation li:hover > ul{
+  /*these 2 styles are very important,
+  being the ones which make the drop-down to appear on hover 
+      visibility:visible;
+      opacity:1;
+  }
+   
+  ul#navigation ul, ul#navigation ul li ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  /*the next 2 styles are very important,
+  being the ones which make the drop-down to stay hidden 
+      visibility:hidden;
+      opacity:0;
+      position: absolute;
+      z-index: 99999;
+      width:180px;
+      background:#f8f8f8;
+      box-shadow:1px 1px 3px #ccc;
+  /* css3 transitions for smooth hover effect 
+      -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+      -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+      transition:opacity 0.2s linear, visibility 0.2s linear;
+  }
+   
+  ul#navigation ul {
+      top: 43px;
+      left: 1px;
+  }
+   
+  ul#navigation ul li ul {
+      top: 0;
+      left: 181px; /* strong related to width:180px; from above 
+  }
+   
+  ul#navigation ul li {
+      clear:both;
+      width:100%;
+      border:0 none;
+  }
+   
+  ul#navigation ul li a {
+      background:none;
+      padding:7px 15px;
+      color:#616161;
+      text-decoration:none;
+      display:inline-block;
+      border:0 none;
+      float:left;
+      clear:both;
+      width:150px;
+  }
+}
+*/

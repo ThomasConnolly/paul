@@ -497,7 +497,7 @@ p {
   .login {
     background-color: #2C3E50;
     color: #FFFFFF;
-    width: 50%;
+    width: 40%;
     margin-left: 6px;
   
 
@@ -505,6 +505,9 @@ p {
     .nav-link {
       color: #FFFFFF;
     }
+  }
+  .nav-pills {
+    flex-direction: right;
   }
 
   /*

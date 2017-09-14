@@ -8,13 +8,13 @@
         <%= link_to "Member sign in", new_user_session_path %>
       <% end %>
     </div><!-- login -->
-  <ul class="nav nav-pills flex-column flex-sm-row justify-content-end">
+  <ul class="nav nav-pills">
   <li class="nav-item">
     <%= link_to "Home", root_path, class: "nav-link" %>
   </li> 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Worship</a>
+      role="button" aria=haspopup="true" aria-expanded="false">Worship <span class="caret"></span> </a>
         <div class="dropdown-menu">
           <%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
@@ -25,7 +25,7 @@
       </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Leadership</a>
+      role="button" aria=haspopup="true" aria-expanded="false">Leadership <span class="caret"></span></a>
         <div class="dropdown-menu">
           <%= link_to "Clergy and staff", leadership_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
@@ -39,7 +39,7 @@
       </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Activities</a>
+      role="button" aria=haspopup="true" aria-expanded="false">Activities <span class="caret"></span></a>
         <div class="dropdown-menu">
           <%= link_to "Activities", activities_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Celebrate Jubilee!", jubilee_plans_path, {class: "dropdown-item"} %><br>
@@ -50,7 +50,7 @@
       </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Markets</a>
+      role="button" aria=haspopup="true" aria-expanded="false">Markets <span class="caret"></span></a>
         <div class="dropdown-menu">
           <%= link_to "Farmers' Market", markets_index_path, class: "dropdown-item" %><br>
           <%= link_to "Gift Shop", markets_index_path, class: "dropdown-item" %><br>

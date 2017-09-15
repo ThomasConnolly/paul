@@ -10072,7 +10072,7 @@ p {
   /* line 486, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .nav-box {
     width: 100%;
-    background-color: #2C3E50;
+    background-color: #0d4884;
     color: #FFFFFF;
     border: 5px;
     height: 64px;
@@ -10087,7 +10087,7 @@ p {
 
   /* line 498, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .login {
-    background-color: #2C3E50;
+    background-color: #0d4884;
     color: #FFFFFF;
     width: 40%;
     margin-left: 6px;

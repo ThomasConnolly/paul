@@ -10098,12 +10098,19 @@ p {
     color: #FFFFFF;
   }
 }
-/* line 510, /home/tom/paul/app/assets/stylesheets/application.css.scss */
-.nav-pills {
-  -webkit-box-orient: vertical;
+/* line 511, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+.nav-section {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: right;
-          flex-direction: right;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
   /*

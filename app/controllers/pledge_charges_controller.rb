@@ -3,25 +3,26 @@ class PledgeChargesController < ApplicationController
   def new
   end
 
-  def create
-    @pledge = Pledge.find(current_user.pledge.id)
-    @amount = @pledge.pay_this
+def create
+  @pledge = Pledge.find(current_user.pledge.id)
 
-   customer = Stripe::Customer.create(
+  @amount = @pledge.pay_this
+
+  customer = Stripe::Customer.create(
+    :email => params[:stripeEmail],
     :card  => params[:stripeToken]
   )
 
-    
-   charge = Stripe::Subscription.create(
-       :customer    => customer.id,
-       :amount      => @amount,
-       :description => "Pledge Payment",
-       :currency    => 'usd',
-       :plan        => @pledge.plan
-      )
-
+  charge = Stripe::Charge.create(  
+    :customer    => customer.id,
+    :amount      => @amount,
+    :description => "Pledge Payment",
+    :currency    => 'usd',
+    :plan        => @pledge.plan
+  )
   
-  @pledge.update(card: params[:stripeToken], customer_id: customer.id
+  @pledge.update(email: params[:stripeEmail], card: params[:stripeToken], 
+    customer_id: customer.id
   )
 
 rescue Stripe::CardError => e

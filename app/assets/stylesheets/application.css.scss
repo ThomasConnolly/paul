@@ -74,15 +74,15 @@ div.hidden {
   }
   .road-sign {
     order:1;
-    flex-basis:120px;
+    flex-basis:1;
   }
   .main-logo {
     order:2;
-    flex-basis: 500px;
+    flex-basis: 4;
   }
   .shield {
     order: 3;
-    flex-basis: 120px;
+    flex-basis: 1;
  }
 } 
 
@@ -92,20 +92,17 @@ div.hidden {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
   }
    .main-logo {
       flex-basis: 100%;
       order: 1;
     }
-
     .road-sign {
-      flex-basis: 40%;
+      flex-basis: 80px;
       order: 2;
     }
-   
     .shield {
-      flex-basis: 40%;
+      flex-basis: 80px;
       order: 3;
    }
 }
@@ -260,7 +257,6 @@ p.tiny {
   font-size : 1.125rem;
   line-height: 1.5;
 }
-
 
 .sermon p {
   font-size: 1.5rem;
@@ -482,7 +478,7 @@ p {
 
 
 @media (min-width: 768px) {
-   .nav-box {
+  .nav-box {
     width: 100%;
     background-color: #0d4884;
     color: #FFFFFF;
@@ -491,285 +487,20 @@ p {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
-
-   
   }
   .login {
     background-color: #0d4884;
     color: #FFFFFF;
     width: 40%;
     margin-left: 6px;
-  
-
-    }
-    .nav-link {
-      color: #FFFFFF;
-    }
   }
-
-    .nav-section {
-      width: 60%;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-
-
-  /*
-  .ddropdowns {
-    border: 10px;
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .ddropdown {
-    background-color: #2C3E50;
-  }
-
-   
-  #nav {
-      position:relative;
-      width:100%;
-      margin:0 auto;
-      padding:10px;
-  }
-
-  .btn-special {
-    background-color: #2C3E50;
+  .nav-link {
     color: #FFFFFF;
-    border: none;
-    flex:1;
-  }
-   
-  ul#navigation {
-      margin:0px auto;
-      position:relative;
-  }
-   
-  ul#navigation li {
-      display:inline;
-      font-size:12px;
-      font-weight:bold;
-      position:relative;
-  }
-   
-  ul#navigation li a {
-      text-decoration:none;
-      display:inline-block;
-      -webkit-transition:color 0.2s linear, background 0.2s linear;
-      -moz-transition:color 0.2s linear, background 0.2s linear;
-      -o-transition:color 0.2s linear, background 0.2s linear;
-      transition:color 0.2s linear, background 0.2s linear;
-  }
-   
-  ul#navigation li a.first {
-      border-left: 0 none;
-  }
-   
-  ul#navigation li a.last {
-      border-right: 0 none;
-  }
-   
-  ul#navigation li:hover > a {
-      background:#fff;
-  }
-
-
-  ul#navigation li:hover > ul{
-  /*these 2 styles are very important,
-  being the ones which make the drop-down to appear on hover 
-      visibility:visible;
-      opacity:1;
-  }
-   
-  ul#navigation ul, ul#navigation ul li ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-  /*the next 2 styles are very important,
-  being the ones which make the drop-down to stay hidden 
-      visibility:hidden;
-      opacity:0;
-      position: absolute;
-      z-index: 99999;
-      width:180px;
-      background:#f8f8f8;
-      box-shadow:1px 1px 3px #ccc;
-  /* css3 transitions for smooth hover effect 
-      -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
-      -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
-      -o-transition:opacity 0.2s linear, visibility 0.2s linear;
-      transition:opacity 0.2s linear, visibility 0.2s linear;
-  }
-   
-  ul#navigation ul {
-      top: 43px;
-      left: 1px;
-  }
-   
-  ul#navigation ul li ul {
-      top: 0;
-      left: 181px; /* strong related to width:180px; from above 
-  }
-   
-  ul#navigation ul li {
-      clear:both;
-      width:100%;
-      border:0 none;
-  }
-   
-  ul#navigation ul li a {
-      background:none;
-      padding:7px 15px;
-      color:#616161;
-      text-decoration:none;
-      display:inline-block;
-      border:0 none;
-      float:left;
-      clear:both;
-      width:150px;
   }
 }
-@media (max-with: 767px) {
-     .nav-box {
-    width: 100%;
-    background-color: #2C3E50;
-    color: #FFFFFF;
-    border: 5px;
-    height: 64px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-  }
-  .login {
-    background-color: #2C3E50;
-    color: #FFFFFF;
-    width: 27%;
-    align-self: center;
-    padding-left: 6px;
-
-  }
-  .ddropdowns {
-    border: 10px;
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .ddropdown {
-    background-color: #2C3E50;
-  }
-
-   
-  #nav {
-      position:relative;
-      width:100%;
-      margin:0 auto;
-      padding:10px;
-  }
-
-  .btn-special {
-    background-color: #2C3E50;
-    color: #FFFFFF;
-    border: none;
-    flex:1;
-  }
-   
-  ul#navigation {
-      margin:0px auto;
-      position:relative;
-  }
-   
-  ul#navigation li {
-      display:inline;
-      font-size:12px;
-      font-weight:bold;
-      position:relative;
-  }
-   
-  ul#navigation li a {
-      text-decoration:none;
-      display:inline-block;
-      -webkit-transition:color 0.2s linear, background 0.2s linear;
-      -moz-transition:color 0.2s linear, background 0.2s linear;
-      -o-transition:color 0.2s linear, background 0.2s linear;
-      transition:color 0.2s linear, background 0.2s linear;
-  }
-   
-  ul#navigation li a.first {
-      border-left: 0 none;
-  }
-   
-  ul#navigation li a.last {
-      border-right: 0 none;
-  }
-   
-  ul#navigation li:hover > a {
-      background:#fff;
-  }
-
-  /* Drop-Down Navigation 
-  ul#navigation li:hover > ul{
-  /*these 2 styles are very important,
-  being the ones which make the drop-down to appear on hover 
-      visibility:visible;
-      opacity:1;
-  }
-   
-  ul#navigation ul, ul#navigation ul li ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-  /*the next 2 styles are very important,
-  being the ones which make the drop-down to stay hidden 
-      visibility:hidden;
-      opacity:0;
-      position: absolute;
-      z-index: 99999;
-      width:180px;
-      background:#f8f8f8;
-      box-shadow:1px 1px 3px #ccc;
-  /* css3 transitions for smooth hover effect 
-      -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
-      -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
-      -o-transition:opacity 0.2s linear, visibility 0.2s linear;
-      transition:opacity 0.2s linear, visibility 0.2s linear;
-  }
-   
-  ul#navigation ul {
-      top: 43px;
-      left: 1px;
-  }
-   
-  ul#navigation ul li ul {
-      top: 0;
-      left: 181px; /* strong related to width:180px; from above 
-  }
-   
-  ul#navigation ul li {
-      clear:both;
-      width:100%;
-      border:0 none;
-  }
-   
-  ul#navigation ul li a {
-      background:none;
-      padding:7px 15px;
-      color:#616161;
-      text-decoration:none;
-      display:inline-block;
-      border:0 none;
-      float:left;
-      clear:both;
-      width:150px;
-  }
+.nav-section {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
-*/

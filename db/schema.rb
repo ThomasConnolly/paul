@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802012112) do
+ActiveRecord::Schema.define(version: 20170919225317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
-  enable_extension "uuid-ossp"
 
   create_table "anniversaries", id: :serial, force: :cascade do |t|
     t.string "salutation"
@@ -158,6 +156,9 @@ ActiveRecord::Schema.define(version: 20170802012112) do
     t.decimal "amount", precision: 15, scale: 2
     t.decimal "pay_this", precision: 15, scale: 2
     t.string "plan"
+    t.string "card"
+    t.string "customer_id"
+    t.string "email"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|

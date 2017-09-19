@@ -14,12 +14,6 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    ticket = Ticket.create(email: params[:stripeEmail],
-       card: params[:stripeToken], amount: params[:amount],
-       description: charge.description, currency: charge.currency,
-       event_id: 1, customer_id: customer.id, uuid: SecureRandom.uuid)
-
-    redirect_to ticket
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

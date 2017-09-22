@@ -477,27 +477,28 @@ p {
 }
 
 
-@media (min-width: 768px) {
-  .nav-box {
-    width: 100%;
-    background-color: #0d4884;
-    color: #FFFFFF;
-    border: 5px;
-    height: 64px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-  }
-  .login {
-    background-color: #0d4884;
-    color: #FFFFFF;
-    width: 40%;
-    margin-left: 6px;
-  }
-  .nav-link {
-    color: #FFFFFF;
-  }
+
+.nav-box {
+  width: 100%;
+  background-color: #0d4884;
+  color: #FFFFFF;
+  border: 5px;
+  height: 64px;    
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
 }
+.login {
+  background-color: #0d4884;
+  color: #FFFFFF;
+  width: 40%;
+  margin-left: 6px;
+  font-size: .85rem;
+}
+.nav-link {
+  color: #FFFFFF;
+}
+
 .nav-section {
   width: 60%;
   display: flex;

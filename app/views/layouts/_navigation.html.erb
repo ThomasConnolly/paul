@@ -1,67 +1,65 @@
-<div class="col-xs-12">
-  <div class="nav-box">
-    <div class="login">
-			<% if user_signed_in? %>
-				<%= current_user.full_name.titleize %> <%= link_to " | Log out",destroy_user_session_path, method: :delete %> <%= link_to " | Edit account", edit_user_registration_path %> 
-    					<%= link_to " | Update profile", edit_profile_path(current_user.profile) %>
-			<% else %>
-				<%= link_to "Member sign in", new_user_session_path %>
-			<% end %>
-		</div><!-- login -->
-    <nav id="nav">
-      <div class="ddropdowns">
-      	<ul id="navigation">
-      	  <li>
-			    		<%=link_to "Home", root_path, class: "btn btn-special" %>
-	    		</li>
-	    		<li>
-	    		<button class="btn-special"> Worship <span class="caret"></span></button>
-				  	<ul>
-				    	<li><%=link_to "How we worship", worship_index_path %> </li>
-				    	<li><%=link_to "Read sermons", sermons_path %></li>
-					  	<li><%=link_to "Adult Formation", formation_talks_path %></li>
-				  		<li><%=link_to "Children's Sunday School", sunday_school_index_path %></li>
-				    	<li><%=link_to "How to pray", pages_how_to_pray_path %></li>
-				  	</ul>
-					</li>
-				 
-					<li>
-				  <button class="btn-special">Leadership<span class="caret"></span></button>
-				  	<ul>
-				    	<li><%=link_to "Clergy and staff", leadership_index_path %></li>
-				    	<li><%=link_to "Vestry", leadership_index_path %> </li>
-				    	<li><%=link_to "Vestry meeting minutes", vestry_minutes_path %> </li>
-				    	<li><%=link_to "Opportunities to serve", opportunities_path %></li>
-				    	<li><%=link_to "On-line giving", new_pledge_path %> </li>
-				      	<% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
-				         	<li><%=link_to "Vestry Report", vreports_path %> </li>
-				      	<% end %>
-			  		</ul>
-				</li> 
-				       
-
-				<li>
-				  <button class="btn-special">Activities <span class="caret"></span> </button>
-				  	<ul>
-				    	<li><%=link_to "Activities", activities_index_path %></li>
-				    	<li><%=link_to "Celebrate Jubilee!", jubilee_plans_path %></li>
-				    	<li><%=link_to "Communicators' corner", story_ideas_path %></li>
-				    	<li><%=link_to "Family Ties", posts_path %></li>
-				  	</ul>
-				</li> 			
-				        
-				<li>
-				  <button class="btn-special"> Market & Shops <span class="caret"></span> </button>
-				  	<ul>
-				    	<li><%=link_to "Farmers' Market", markets_index_path %></li>
-				    	<li><%=link_to "Gift Shop", markets_index_path %></li>
-				    	<li><%=link_to "Communicators' corner", story_ideas_path %></li>
-				    	<li><%=link_to "Unique Boutique", markets_index_path %></li>
-				  	</ul>
-				</li> 			
-	  	</ul>
-	  	</div>
-	  	</nav>
-	 </div>
-</div>
-
+<nav class="navbar navbar-full navbar-expand-lg nav-box">
+    <div class="navbar-brand login">
+      <% if user_signed_in? %>
+        <%= current_user.full_name.titleize %> <%= link_to " | Log out",destroy_user_session_path, method: :delete %> <%= link_to " | Edit account", edit_user_registration_path %> 
+              <%= link_to " | Update profile", edit_profile_path(current_user.profile) %>
+      <% else %>
+        <%= link_to "Member sign in", new_user_session_path %>
+      <% end %>
+    </div><!-- navbar-brand -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+  		</button>
+    <div class="nav-section">
+  		<ul class="nav nav-pills">
+  			<li class="nav-item">
+    			<%= link_to "Home", root_path, class: "nav-link" %>
+  			</li> 
+  			<li class="nav-item dropdown">
+  				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      		role="button" aria=haspopup="true" aria-expanded="false">Worship <span class="caret"></span> </a>
+      		<div class="dropdown-menu">
+        		<%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
+        		<%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
+        		<%= link_to "Adult Formation", formation_talks_path, {class: "dropdown-item"} %><br>
+        		<%= link_to "Children's Sunday School", sunday_school_index_path, {class: "dropdown-item"} %><br>
+        		<%= link_to "How to pray", pages_how_to_pray_path, {class: "dropdown-item"} %><br>
+      		</div>
+      	</li>
+  			<li class="nav-item dropdown">
+    			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      			role="button" aria=haspopup="true" aria-expanded="false">Leadership <span class="caret"></span></a>
+        	<div class="dropdown-menu">
+          <%= link_to "Clergy and staff", leadership_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Vestry meeting minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
+          <%= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %><br>
+            <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
+           	<%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>
+           	<% end %>
+      		</div>
+      	</li>
+  			<li class="nav-item dropdown">
+    			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      			role="button" aria=haspopup="true" aria-expanded="false">Activities <span class="caret"></span></a>
+        	<div class="dropdown-menu">
+          	<%= link_to "Activities", activities_index_path, {class: "dropdown-item"} %><br>
+          	<%= link_to "Celebrate Jubilee!", jubilee_plans_path, {class: "dropdown-item"} %><br>
+          	<%= link_to "Communicators' corner", story_ideas_path, {class: "dropdown-item"} %><br>
+          	<%= link_to "Family Ties", posts_path, {class: "dropdown-item"} %><br> 
+        	</div>
+      	</li>
+  			<li class="nav-item dropdown">
+    			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+      			role="button" aria=haspopup="true" aria-expanded="false">Markets <span class="caret"></span></a>
+        	<div class="dropdown-menu">
+          	<%= link_to "Farmers' Market", markets_index_path, class: "dropdown-item" %><br>
+          	<%= link_to "Gift Shop", markets_index_path, class: "dropdown-item" %><br>
+          	<%= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
+          	<%= link_to "Unique Boutique", markets_index_path, class: "dropdown-item" %><br>
+        	</div>
+      	</li>
+  		</ul>
+  	</div><!--nav-section-->	    
+</nav>

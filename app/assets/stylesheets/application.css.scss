@@ -70,6 +70,7 @@ div.hidden {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: nowrap;
    
   }
   .road-sign {
@@ -88,10 +89,11 @@ div.hidden {
 
 @media (max-width: 767px) {
   .header-row {
-    margin: 40px auto 0 auto;
+    margin: 20px auto 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;  
   }
    .main-logo {
       flex-basis: 100%;
@@ -476,27 +478,40 @@ p {
   indent: 20px;
 }
 
+.navbar-custom{ 
+  background-color: #0d4884;
+  color: #fff;
+}
 
-
+.navbar-custom .nav-item:active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: yellow;
+}
+.navbar-brand {
+  width: 40%;
+  font-size: .85rem;
+}
 .nav-box {
   width: 100%;
   background-color: #0d4884;
   color: #FFFFFF;
   border: 5px;
   height: 64px;    
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
 .login {
   background-color: #0d4884;
   color: #FFFFFF;
-  width: 40%;
   margin-left: 6px;
   font-size: .85rem;
 }
 .nav-link {
   color: #FFFFFF;
+  text-decoration: none;
+  list-style-type: none;
+  margin-right: 8px;
 }
 
 .nav-section {
@@ -504,4 +519,10 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.dropdown-item {
+  text-decoration: none;
 }

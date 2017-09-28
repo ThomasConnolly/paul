@@ -96,15 +96,17 @@ div.hidden {
     flex-wrap: wrap;  
   }
    .main-logo {
-      flex-basis: 100%;
+      flex-basis: 5;
       order: 1;
     }
     .road-sign {
-      flex-basis: 80px;
+      flex-basis: 1;
+      width: 70px;    
       order: 2;
     }
     .shield {
-      flex-basis: 80px;
+      flex-basis: 1;
+      width: 70px;
       order: 3;
    }
 }
@@ -474,9 +476,14 @@ p.tiny {
   font-size: .75rem;
 } 
 
-p {
-  indent: 20px;
+.navbar-custom {
+  height: 64px;
+  margin-bottom: 40px;
+  background-color: #0d4884;
+  color: #ffffff;
+  display: flex;
 }
+
 
 .navbar-custom{ 
   background-color: #0d4884;
@@ -490,6 +497,9 @@ p {
 .navbar-brand {
   width: 40%;
   font-size: .85rem;
+}
+.text-white {
+  color: #ffffff;
 }
 .nav-box {
   width: 100%;
@@ -521,8 +531,4 @@ p {
   justify-content: flex-end;
   text-decoration: none;
   list-style-type: none;
-}
-
-.dropdown-item {
-  text-decoration: none;
 }

@@ -10,14 +10,8 @@
         <p><%= raw meditation.body %></p>
         <p><strong><em><%= meditation.prayer %> </em></strong></p>
         <p><%= meditation.name %> </p>
-        <p><%= link_to 'Show', meditation %> </p>
+        
           <% if current_user && current_user.has_role?(:admin) %>
             <%= link_to 'Edit', edit_meditation_path(meditation) %>
           <% end %>
-      <div class="mt30"></div>
     <% end %>
-
-<br>
-
-
-<p><%= link_to 'New Meditation', new_meditation_path %></p>

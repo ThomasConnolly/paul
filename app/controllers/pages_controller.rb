@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
+  def profileSlides
+  end
+
   def ecumenical_concert
   end
 

@@ -7,7 +7,7 @@
 
   <div class="col col-md-8 col-sm-12 main-body">
 
-  
+  <div class="nonmobile">
     <h1>Come worship with us!</h1>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
@@ -19,6 +19,21 @@
       
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p>
+  </div><!--nonmobile-->
+  <div class="mobile">
+    <h1>Come worship with us!</h1>
+     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
+        width:"40%", class: "floatleft") %>
+      <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+      <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
+      <div class="mt-20">
+        <p><small>Children are invited to nursery/Sunday school  </small></p>
+      </div>
+      
+      <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+        about our Haitian community', pages_haitian_path %></p>
+
+  </div><!--mobile-->      
     <div class="mt30"></div>
     <p><strong><%= link_to "Click here for the Scripture Readings", "http://www.lectionarypage.net" 
 	%></strong></p>

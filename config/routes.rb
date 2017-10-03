@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'sunday_school/index'
   get 'pages/how_to_pray'
   get 'pages/haitian'
+  get 'pages/profileSlides'
   get 'pages/tumaini'
   get 'pages/grace_works'
   get 'pages/albergue'

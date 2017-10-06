@@ -564,7 +564,9 @@ p.tiny {
   display: none;
   }
   #content-mobile {
-  display: inline-block;
+  display: flex;
+  flex-align: center;
+  justify-content: space-around;
   background-color:  #0d4884;
   width: 100%;
   margin-bottom: 20px;

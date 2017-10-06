@@ -550,3 +550,23 @@ p.tiny {
   text-decoration: none;
   list-style-type: none;
 }
+
+#content-desktop {
+  display: inline;
+}
+#content-mobile {
+  display: none;
+}
+
+@media only screen and(max-width: 800px) {
+  
+  #content-desktop {
+  display: none;
+  }
+  #content-mobile {
+  display: inline-block;
+  background-color:  #0d4884;
+  width: 100%;
+  margin-bottom: 20px;
+  }
+}

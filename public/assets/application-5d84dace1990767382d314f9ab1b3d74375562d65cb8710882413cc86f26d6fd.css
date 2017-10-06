@@ -10179,3 +10179,28 @@ p.tiny {
   text-decoration: none;
   list-style-type: none;
 }
+
+/* line 555, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+#content-desktop {
+  display: inline;
+}
+
+/* line 558, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+#content-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 564, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  #content-desktop {
+    display: none;
+  }
+
+  /* line 567, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  #content-mobile {
+    display: inline-block;
+    background-color: #0d4884;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

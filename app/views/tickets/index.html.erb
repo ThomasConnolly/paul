@@ -4,4 +4,4 @@
 <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, Tickets: <%= t.quantity %>, Purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
 <% end %>
 <% end %>
-<p>Running count of tickets sold: <%= @tickets.where("customer_id != ''").sum(:quantity) %>
+<p>Running count of <%= @event.title %> tickets sold: <%= @tickets.where("customer_id != ''").sum(:quantity) %>

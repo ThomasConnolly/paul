@@ -10,8 +10,10 @@ class TicketsController < ApplicationController
   def index
     if params[:event_id]
       @tickets = Event.find(params[:event_id]).tickets
+      @event = Event.find(params[:event_id])
     else
       @tickets = Ticket.all
+      @ticket = Event.find(params[:event_id]).ticket
     end  
   end
   

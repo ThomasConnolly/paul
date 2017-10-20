@@ -32,7 +32,7 @@
           <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Vestry meeting minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
           <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
-          <%= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %><br>
+          <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
            <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
            <%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>
            <% end %>

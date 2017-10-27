@@ -101,6 +101,7 @@ div.hidden {
 @media (max-width: 767px) {
   .header-row {
     margin: 20px auto 0 auto;
+    display: grid;
     display: flex;
     align-items: center;
     justify-content: space-around;

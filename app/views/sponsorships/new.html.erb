@@ -1,0 +1,22 @@
+<h1>Sponsorship choices</h1>
+
+<h2>Pay full sponsorship ($275) now</h2>
+
+<%= render 'form', sponsorship: @sponsorship %>
+
+<h2>Pay sponsorship over time</h2>
+
+<%= link_to "Monthly", monthly_sponsorship_path %><br>
+<%= link_to "Quarterly", quarterly_sponsorship_path %><br>
+
+<h2>Partial sponsorship</h2>
+<%= render 'form', sponsorship: @sponsorship %>
+
+
+
+
+
+
+
+
+<%= link_to 'Back', sponsorships_path %>

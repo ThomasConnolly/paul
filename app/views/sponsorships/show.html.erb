@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sponsorship.user_id %>
+</p>
+
+<p>
+  <strong>Sponsorship amount:</strong>
+  <%= @sponsorship.amount %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @sponsorship.plan %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @sponsorship.customer_id %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @sponsorship.card %>
+</p>
+
+<p>
+  <strong>Last 4:</strong>
+  <%= @sponsorship.last_4 %>
+</p>
+
+<p>
+  <strong>Expiraton date:</strong>
+  <%= @sponsorship.expiraton_date %>
+</p>
+
+<%= link_to 'Edit', edit_sponsorship_path(@sponsorship) %> |
+<%= link_to 'Back', sponsorships_path %>

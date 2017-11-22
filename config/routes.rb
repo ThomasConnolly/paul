@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :sponsorships
+  get 'quarterly_sponsorship', controller: :sponsorships
+  get 'monthly_sponsorship', controller: :sponsorships
   resources :drop5s
 
   resources :formation_talks, only: [:show, :index, :edit, :new]

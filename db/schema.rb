@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014215935) do
+ActiveRecord::Schema.define(version: 20171122151717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,6 +217,18 @@ ActiveRecord::Schema.define(version: 20171014215935) do
     t.date "delivered_on"
   end
 
+  create_table "sponsorships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amount"
+    t.string "plan"
+    t.string "customer_id"
+    t.string "card"
+    t.integer "last_4"
+    t.date "expiraton_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "story_ideas", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -296,6 +308,7 @@ ActiveRecord::Schema.define(version: 20171014215935) do
     t.string "customer_id"
     t.string "card"
     t.string "avatar"
+    t.string "honey"
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

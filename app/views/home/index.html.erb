@@ -11,27 +11,27 @@
     <h1>Come worship with us!</h1>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
+        <p><strong>1 p.m. Thanksgiving Day Worship</strong> Holy Eucharist</p>
       <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
       <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
         <div class="mt-20">
           <p><small>Children are invited to nursery/Sunday school  </small></p>
         </div>
-      <p><strong>Guest Preacher Nov. 12.</strong> A U.S. Marine, crippled for life on a Vietnam battlefield, turned his life to Christ and now has a powerful message for all of us. Randy Kington will speak, from his wheelchair, on Sunday at the 8 and 10 o'clock services. All are welcome. </p>
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p>
         <div class="mt30"></div>
-        <p><strong><i>Forty Minutes</i></strong> of adult Christian education begins Sunday, Nov. 19, at 9 a.m.</p><p>Fr. Tad Meyer will introduce the series: <i>So, you call yourself an Episcopalian?</i> <%#= link_to "More information here.", adulteducation_path %></p>
+        <p><strong><i>Forty Minutes</i></strong> of adult Christian education resumes Sunday, Dec. 3, at 9 a.m.</p><p>Fr. Bill will introduce the main characters of the Reformation in the early 16th Century.  <%#= link_to "More information here.", adulteducation_path %></p>
   </div><!--nonmobile-->
   <div class="mobile">
     <h1>Come worship with us!</h1>
      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"50%", class: "floatleft") %>
+      <p><strong>1 p.m. Thanksgiving Day </strong> Holy Eucharist </p>
       <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
       <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
       <div class="mt-20">
         <p><small>Children are invited to nursery/Sunday school  </small></p>
       </div> 
-      <p><strong>Guest Preacher Nov. 12.</strong> A U.S. Marine, crippled for life on a Vietnam battlefield, turned his life to Christ and now has a powerful message for all of us. Randy Kington will speak, from his wheelchair, on Sunday at the 8 and 10 o'clock services. All are welcome. </p> 
-      <p><strong>Forty Minutes</strong> of adult Christian education begins Sunday, Nov. 19, at 9 a.m.</p><p>Fr. Tad Meyer will introduce the series, <i>So, you call yourself an Episcopalian?</i></p>  
+      <p><strong>Forty Minutes</strong> of adult Christian education resumes Sunday, Dec 3, at 9 a.m.</p><p>Fr. Bill will introduce the main characters of the Reformation in the early 16th Century. <%#= link_to "More information here.", adulteducation_path %></p>
       
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p>
@@ -45,24 +45,28 @@
 	<%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, 
 	cute introduction to our time-honored Book of Common Prayer.</p>
     <div class="mt30"></div>
-   <h1> <%= link_to "Help hurricane victims through ERD", "https://episcopalrelief.org/" %></h1>
-      <%= cl_image_tag("ERD_vcwkbd.jpg", :width=>404, :crop=>"scale", :class=>"floatleft") %>
-       <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p> 
-       <div class="clearall"></div>
+  
     <div class="mt30"></div>
-      <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
+      
+    <h2>Home of the Farmers' Market</h2>
+    <p>The market is now open for the season. Our clergy will be  blessing domestic pets this Saturday, Nov. 25, on the lawn between Davis Blvd and the church.</p>
+    <p><strong>Blessing of the animals</strong> is usually observed in early October, commemorating the feast day of St. Francis, but we always wait for the market opening to allow for greater participation. If you bring a pet, please make sure it's on a leash or in its carrier.</p><p> 
+      For more information on the market, 
+	<%= link_to "click here.", markets_index_path %></p>
+  <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
       <div class="mt100"></div>
       <h2>What's Jubilee! all about?</h2>
       <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
     <div class="clearall"></div>
     <div class="mt30"></div>
-    <h2>Home of the Farmers' Market</h2>
-    <p>The market will reopen Nov. 11. For more information on the market, 
-	<%= link_to "click here.", markets_index_path %></p>
+     <h1> <%= link_to "Help hurricane victims through ERD", "https://episcopalrelief.org/" %></h1>
+      <%= cl_image_tag("ERD_vcwkbd.jpg", :width=>404, :crop=>"scale", :class=>"floatleft") %>
+       <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p> 
+       <div class="clearall"></div>
     <div class="mt30"></div>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
+      <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
 	width:"95%", class: "image-center", :fetch_format => :auto) %>
-    <div class="mt30"></div>
+    <!-- <div class="mt30"></div> -->
     <div id="newsfeed">
     <iframe src="https://feed.mikle.com/widget/v2/48019/" width="100%" height="500px"></iframe>
     </div><!--  end  newsfeed -->
@@ -79,18 +83,12 @@
         <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
    <div class="mt30"></div>
   
-   <%= image_tag("http://www.ecfvp.org/uploads/vestry_papers/images/two_percent_campaign-325x235.jpg", width: "99%") %>
-   <p><strong><em>Our stewardship pledges </em></strong> will be  offered to the Lord on Consecration Sunday, Nov. 12. If you haven't filled out your pledge card, please do so and put it in the offering plate that day. And remember, our Jubilee! goal is to have all those who can afford it add $50, a dollar for each of our 50 years. </p>
- 
-
-  <div class="mt30"></div>
-
-
 
     <div class="mt30"></div>
-    <p> <strong>November's Jubilee! Challenge</strong> is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. </p>
+    <p> <strong>Our Jubilee! Challenge</strong> is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back on Friday)</p>
+
     <div class="mt30"></div>
-    <p><strong>Join us for coffee</strong> after the morning services each Sunday.</p> 
+    <p><strong>Need a ride to the Jubilee! dinner?</strong> Several parishioners have volunteered to do the driving. Call the office while there are tickets still available and tell them you need a ride.</p> 
     <div class="mt30"></div>
      
       <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>

@@ -34,7 +34,8 @@ class User < ApplicationRecord
   extend Rolify
   rolify
   
-
+  
+  before_save :set_honey_empty
   before_save :set_full_name
   after_create :assign_default_role
   after_create :add_profile
@@ -44,6 +45,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
+  has_one :sponsorship, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
   has_one :pledge, dependent: :destroy
   has_many :vreports, dependent: :destroy
@@ -84,6 +86,10 @@ protected
 
   def add_profile
     self.create_profile if profile.nil?
+  end
+
+  def set_honey_empty
+    self.honey == ""
   end
 
 

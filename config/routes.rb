@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :sponsorships
+  get 'full_sponsorship', controller: :sponsorships
   get 'quarterly_sponsorship', controller: :sponsorships
   get 'monthly_sponsorship', controller: :sponsorships
+  get 'partial_sponsorship', controller: :sponsorships
+
   resources :drop5s
 
   resources :formation_talks, only: [:show, :index, :edit, :new]
@@ -45,6 +48,7 @@ Rails.application.routes.draw do
   get 'pages/python_tutor'
   get 'pages/how_to_use'
   get 'pages/ecumenical_concert'
+  get 'pages/advent'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
 
     # get ':id' => 'users#show', as: :user_profile

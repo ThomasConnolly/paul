@@ -18,3 +18,14 @@
 //= require compatibility.coffee
 //= require moment
 //= require_tree .
+
+
+$(document).on("click", "#display-full-sponsorship", function(){
+	$("#full-sponsorship").show();
+});
+$(document).on("click", "#display-quarterly-sponsorship", function(){
+	$("#quarterly-sponsorship").show();
+});
+$(document).on("click", "#display-monthly-sponsorship", function(){
+	$("#monthly-sponsorship").show();
+});

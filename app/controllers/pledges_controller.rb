@@ -17,11 +17,10 @@ class PledgesController < ApplicationController
   before_action :change_pledge, only: :new
   
 
-  def show
+  def index
   end
   
-  def edit
-
+  def show
   end
 
  def update

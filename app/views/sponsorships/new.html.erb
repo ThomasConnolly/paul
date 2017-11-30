@@ -1,21 +1,24 @@
 <h1>Sponsorship choices</h1>
 
-<h2>Pay full sponsorship ($275) now</h2>
-
-<%= render 'form', sponsorship: @sponsorship %>
-
-<h2>Pay sponsorship over time</h2>
-
-<%= link_to "Monthly", monthly_sponsorship_path %><br>
-<%= link_to "Quarterly", quarterly_sponsorship_path %><br>
-
-<h2>Partial sponsorship</h2>
-<%= render 'form', sponsorship: @sponsorship %>
-
-
-
-
-
+<h2><small>Pay $275 now for one full sponsorship</small></h2>
+  <div>
+    <%= link_to "Pay now", full_sponsorship_path, class: "btn btn-success btn-sm" %>
+  </div>
+</h2> <h2><small>Pay $275, full sponsorship, over time</small></h2>
+  <div>
+  <%= link_to "monthly", monthly_sponsorship_path, class: "btn btn-success btn-sm" %> 
+ 
+ <%= link_to "quarterly", quarterly_sponsorship_path, class: "btn btn-success btn-sm" %>
+  </div>
+<h2><small>Make partial sponsorship, now or over time</small> </h2>
+  <div>
+    <%= simple_form_for @sponsorship do |f| %>
+      <%= f.input :amount, placeholder: "Your donation toward sponsorship" %>
+      <% end %>
+    <%= link_to "One-time gift", partial_sponsorship_path, class: "btn btn-success btn-sm" %>
+    <%= link_to "Monthly", monthly_sponsorship_path, class: "btn btn-success btn-sm" %>
+    <%= link_to "Quarterly", quarterly_sponsorship_path, class: "btn btn-success btn-sm" %>
+  </div>
 
 
 

@@ -32,11 +32,11 @@ class Pledge < ApplicationRecord
 
   def set_plan
     if self.divisor == 4
-      puts self.plan = "quarterly"
+      puts self.plan = "quarterlyPledge"
     elsif self.divisor == 12
-      puts self.plan = "monthly"
+      puts self.plan = "monthlyPledge"
     else
-      puts self.plan = "weekly"
+      puts self.plan = "weeklyPledge"
     end
   end
 end

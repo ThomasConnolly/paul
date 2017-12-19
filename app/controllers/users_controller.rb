@@ -93,8 +93,9 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :full_name, :role, :avatar,
-      :stripe_customer_id, :member_id)
+    params.require(:user).permit(:first_name, :last_name, :full_name, :role, 
+      :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month,
+      :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id )
   end
 
   def admin_only

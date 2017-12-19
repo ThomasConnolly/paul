@@ -1,25 +1,36 @@
-<h1>Sponsorship choices</h1>
+<div class="mt50"></div>
+  <h1>Sponsorship choices</h1>
+    <div class="row">    
+      <div class="col-md-8 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <h2><small>Create a full or partial sponsorship</small></h2>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-<h2><small>Pay $275 now for one full sponsorship</small></h2>
-  <div>
-    <%= link_to "Pay now", full_sponsorship_path, class: "btn btn-success btn-sm" %>
-  </div>
-</h2> <h2><small>Pay $275, full sponsorship, over time</small></h2>
-  <div>
-  <%= link_to "monthly", monthly_sponsorship_path, class: "btn btn-success btn-sm" %> 
- 
- <%= link_to "quarterly", quarterly_sponsorship_path, class: "btn btn-success btn-sm" %>
-  </div>
-<h2><small>Make partial sponsorship, now or over time</small> </h2>
-  <div>
-    <%= simple_form_for @sponsorship do |f| %>
-      <%= f.input :amount, placeholder: "Your donation toward sponsorship" %>
+      <%= simple_form_for(@sponsorship, url: sponsorship_url) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :amount, value: 275, input_html: {id: "sponsorshipAmount"}, label: false %>
+            <p><small>Amount is for a full sponsorship, to override simply type a new amount, in whole dollars.</small></p>
+          <%= f.input :divisor, collection: [["Pay now", 1], ["Monthly", 12], ["Quarterly", 4]], as: :radio_buttons, wrapper_html: {class: 'radio'}, input_html: {id: 'divisor'}, label: false %>
+          <%= f.hidden_field :customer_id %>
+          <%= f.hidden_field :email %>
+          <%= f.hidden_field :source %>
+          <%= f.hidden_field :last_4 %>
+          <%= f.hidden_field :expiraton_date %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
       <% end %>
-    <%= link_to "One-time gift", partial_sponsorship_path, class: "btn btn-success btn-sm" %>
-    <%= link_to "Monthly", monthly_sponsorship_path, class: "btn btn-success btn-sm" %>
-    <%= link_to "Quarterly", quarterly_sponsorship_path, class: "btn btn-success btn-sm" %>
-  </div>
 
+     
 
+  
+  <div class="clearall"></div>
+  <div class="mt50"></div>
 
-<%= link_to 'Back', sponsorships_path %>
+<%= link_to 'Back', root_path %>
+</div></form></div></div>
+

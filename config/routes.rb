@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  resources :sponsorships
-  get 'full_sponsorship', controller: :sponsorships
-  get 'quarterly_sponsorship', controller: :sponsorships
-  get 'monthly_sponsorship', controller: :sponsorships
-  get 'partial_sponsorship', controller: :sponsorships
-
+  
+  resource :sponsorship
   resources :drop5s
-
   resources :formation_talks, only: [:show, :index, :edit, :new]
   resources :marriage_talks, only: [:new,:show, :index, :edit]
   resources :meditations
@@ -18,7 +13,6 @@ Rails.application.routes.draw do
   get 'members/index'
   get 'members/import'
   get 'thanks', to: 'tickets#thanks', as: 'thanks'
-  get 'pledges/confirmation'
   
   resources :events do
     resources :tickets, only: [:new, :show, :create, :update, :index]
@@ -71,7 +65,6 @@ Rails.application.routes.draw do
       post :import
     end
   end
-  resource :pledge
   resources :sermons
   resources :purchases, only: [:show]
   resources :formation_talks
@@ -82,9 +75,10 @@ Rails.application.routes.draw do
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
+  resource :pledge
   resources :ticket_charges, only: [:new, :create]
-  resources :charges, only: [:new, :create]
-  resources :pledge_charges, only: [:new, :create]    
+  resources :pledge_charges, only: [:new, :create]
+  resources :sponsorship_charges, only: [:new, :create]    
   resources :members
   
   resources :users do

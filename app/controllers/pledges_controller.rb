@@ -23,24 +23,6 @@ class PledgesController < ApplicationController
   def show
   end
 
- def update
-
-    @pledge.update_attributes(pledge_params)
-    if  @pledge.save
-        redirect_to pledge_path(@pledge)
-    else
-        render 'edit'
-    end 
-  end
-
-  def confirmation
-  end
-
-  def destroy
-    @pledge.destroy
-      redirect_to '/', notice: 'Your pledge was deleted.'
-  end
-
   def new
     @pledge = Pledge.new
   end
@@ -54,6 +36,30 @@ class PledgesController < ApplicationController
       render :new
     end   
   end
+
+  def edit
+  end
+
+  def update
+    @pledge.update_attributes(pledge_params)
+    if  @pledge.save
+        redirect_to pledge_path(@pledge)
+    else
+        render :edit
+    end 
+  end
+
+  def confirmation
+  end
+
+  def destroy
+    @pledge.destroy
+      redirect_to '/', notice: 'Your pledge was deleted.'
+  end
+
+ 
+
+
 
 private
 
@@ -75,6 +81,7 @@ private
   end
 
   def pledge_params
-    params.require(:pledge).permit [:amount, :divisor, :pay_this, :plan, :customer_id, :card, :email]
+    params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this, 
+      :plan, :customer_id, :source]
   end
 end

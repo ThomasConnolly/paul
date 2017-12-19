@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125221249) do
+ActiveRecord::Schema.define(version: 20171213122626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 20171125221249) do
     t.integer "amount"
     t.integer "pay_this"
     t.string "plan"
-    t.string "card"
+    t.string "source"
     t.string "customer_id"
   end
 
@@ -219,15 +219,14 @@ ActiveRecord::Schema.define(version: 20171125221249) do
 
   create_table "sponsorships", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "amount"
-    t.string "plan", default: "full"
+    t.integer "amount", default: 275
+    t.string "plan"
     t.string "customer_id"
-    t.string "card"
-    t.integer "last_4"
-    t.date "expiraton_date"
+    t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pay_this"
+    t.string "email"
     t.integer "divisor"
   end
 
@@ -277,7 +276,7 @@ ActiveRecord::Schema.define(version: 20171125221249) do
     t.string "last_name"
     t.string "email"
     t.string "customer_id"
-    t.string "card"
+    t.string "source"
     t.string "honey"
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end
@@ -311,6 +310,13 @@ ActiveRecord::Schema.define(version: 20171125221249) do
     t.string "card"
     t.string "avatar"
     t.string "honey"
+    t.string "stripe_id"
+    t.string "stripe_pledge_id"
+    t.string "stripe_sponsorship_id"
+    t.string "card_last4"
+    t.integer "card_exp_year"
+    t.integer "card_exp_month"
+    t.string "card_type"
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

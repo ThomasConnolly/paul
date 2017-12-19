@@ -39,8 +39,6 @@ gem 'puma'
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
-gem 'capybara'
-gem 'regressor'
 gem 'googlebooks'
 gem 'openlibrary'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
@@ -56,7 +54,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'byebug'
-  gem 'rubycritic'
 end
 
 group :development, :test do
@@ -66,11 +63,12 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'pry-doc'
   gem 'spring'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'simple_bdd'
   gem 'letter_opener'
   gem 'email_spec'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do

@@ -12,7 +12,7 @@ class TicketChargesController < ApplicationController
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
-    :card  => params[:stripeToken]
+    :source  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
@@ -23,7 +23,7 @@ class TicketChargesController < ApplicationController
   )
   
   @ticket.update(email: params[:stripeEmail],
-    card: params[:stripeToken], customer_id: customer.id
+    source: params[:stripeToken], customer_id: customer.id
   )
 
 rescue Stripe::CardError => e

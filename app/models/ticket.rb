@@ -20,7 +20,8 @@ class Ticket < ApplicationRecord
   belongs_to :event
   before_save :set_amount
   after_update :email_buyer
-  before_validation :set_honey_must_be_empty
+  #honey used to prevent bots-filled forms from being saved to db
+  validates :honey, absence: true
 
   default_scope -> { order('last_name') }
 
@@ -32,9 +33,6 @@ class Ticket < ApplicationRecord
 
 
   private
-  def set_honey_must_be_empty
-    self.honey == ""
-  end
 
   def email_buyer
     TicketMailer.ticket_receipt(self).deliver

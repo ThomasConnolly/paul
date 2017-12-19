@@ -22,6 +22,7 @@ module Paul
   config.active_record.default_timezone = :local
   config.assets.precompile+=Ckeditor.assets
   config.assets.precompile+=%w(ckeditor/*)
+  config.log_level = :error
   end
 
 

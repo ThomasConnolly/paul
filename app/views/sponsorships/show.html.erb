@@ -1,39 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @sponsorship.user_id %>
+<p>Thank you, 
+  <strong>
+  <%= @sponsorship.user.full_name %>, </strong> for <%= sponsorship_type %> at <em> el Buen Samaritano,</em> the ministry of outreach by St. Paul's and other Episcopalians in the Naples deanery.
+</p>
+<p>You've agreed to pay 
+  <%= number_to_currency @sponsorship.amount %> <%= plan_type %>
 </p>
 
-<p>
-  <strong>Sponsorship amount:</strong>
-  <%= @sponsorship.amount %>
-</p>
+ 
+   <div class="mt100"></div>
+ <p>If this is not correct, click "Edit sponsorship" to make changes. Otherwise click "Submit payment" and enter your credit or debit card information on our secure site.</p>
 
-<p>
-  <strong>Plan:</strong>
-  <%= @sponsorship.plan %>
-</p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @sponsorship.customer_id %>
-</p>
 
-<p>
-  <strong>Card:</strong>
-  <%= @sponsorship.card %>
-</p>
 
-<p>
-  <strong>Last 4:</strong>
-  <%= @sponsorship.last_4 %>
-</p>
+<%= link_to 'Edit sponsorship', edit_sponsorship_path(@sponsorship), class: "btn btn-warning btn-lg" %>
 
-<p>
-  <strong>Expiraton date:</strong>
-  <%= @sponsorship.expiraton_date %>
-</p>
+ <form action="/charge" method="post" id="payment-form">
+        <div class="form-row">
+           <label for="card-element">
+             Enter your card information
+            </label>
+          <div id="card-element">
+            <!-- a Stripe Element will be inserted here. -->
+          </div>
 
-<%= link_to 'Edit', edit_sponsorship_path(@sponsorship) %> |
-<%= link_to 'Back', sponsorships_path %>
+          <!-- Used to display Element errors -->
+          <div id="card-errors" role="alert"></div>
+
+          <button class="btn btn-success btn-lg">Submit Payment</button>
+      </form>
+</div>
+
+
+
+
+
+<%= link_to 'Back', root_path %>

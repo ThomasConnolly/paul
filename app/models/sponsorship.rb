@@ -2,25 +2,21 @@ class Sponsorship < ApplicationRecord
 	belongs_to :user
 	validates :amount, :presence => true, :numericality => {:greater_than => 0}
 	validates_presence_of :user_id
-
-  before_save :set_divisor
   before_save :set_pay_this
+  before_save :set_plan
 
-  def set_divisor
-    if self.plan == "monthly"
-      puts self.divisor = 12
-    elseif self.plan == "quarterly"
-      puts self.divisor = 4
-    else
-      puts self.divisor = 1
-    end
-  end
-
+# change user input to cents from dollars
   def set_pay_this
-  	self.pay_this = self.amount*100 / self.divisor.to_i
+  	self.pay_this = self.amount*100 / self.divisor
   end
 
-  
+  def set_plan
+  	if self.divisor == 12
+  		puts self.plan = "monthly"
+  	elsif self.divisor == 4
+  		puts self.plan = "quarterly"
+  	else
+  		puts self.plan = "full"
+  	end
+  end
 end
-
-

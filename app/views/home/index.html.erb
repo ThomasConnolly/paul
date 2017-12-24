@@ -12,7 +12,7 @@
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
         <h2>Christmas Eve</h2>
-        <p><strong>Morning worship service at 10 a.m.</strong></p>
+        <p><strong>Morning worship service at 10 a.m.</strong></p><p><%= link_to "Fr. Bill's sermon on doing theology with Mary", sermons_path %>
         <p><strong>8:30 p.m. </strong>Sing Christmas songs along with organ and choir</p>
         <p><strong>9 p.m.</strong> Holy Eucharist worship service</p>
         <p><strong>11:45 p.m.</strong> Midnight mass in Creole</p>
@@ -28,8 +28,7 @@
         about our Haitian community', pages_haitian_path %></p>
         <div class="mt30"></div>
         <p><strong><i>Forty Minutes</i></strong> of adult Christian education resumes Sunday, Dec. 3, at 9 a.m.</p><p>Fr. Bill will introduce the main characters of the Reformation in the early 16th Century.  <%#= link_to "More information here.", adulteducation_path %></p> -->
-        <h2 class="text-center">Countdown to Christmas<br><%=link_to "With this Advent calendar", pages_advent_path %>
-        </h2>
+       
 
   </div><!--nonmobile-->
   <div class="mobile">
@@ -53,8 +52,7 @@
       
       <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%#= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p> -->
-         <h2 class="text-center">Countdown to Christmas<br><%=link_to "With this Advent calendar", pages_advent_path %>
-        </h2>
+         
   </div><!--mobile-->      
     <div class="mt30"></div>
     <p><strong><%= link_to "Click here for Sunday Readings", "http://www.lectionarypage.net" 

@@ -60,7 +60,7 @@ class SermonsController < ApplicationController
  
   def sermon_params
     params.require(:sermon).permit(:title, :cites, :delivered_on, 
-      :sermon_body, :id, :homilist_id)
+      :sermon_body, :id, :homilist_id, :audio)
   end
 end
 

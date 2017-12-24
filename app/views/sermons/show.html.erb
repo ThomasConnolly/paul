@@ -6,6 +6,12 @@
       <%= render 'serbox' %>
     <div class="sermon"><p class="sermon">
       <%= raw @sermon.sermon_body %></p>
+      <% if @sermon.audio.present? %>
+        <audio controls>
+          <source src="<%= @sermon.audio %>"  type="audio/mpeg" >
+            Your browser does not support the audio element.
+        </audio>
+      <% end %>  
     </div>
     
     <% if current_user && current_user.has_role?(:admin) %>

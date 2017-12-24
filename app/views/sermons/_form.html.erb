@@ -12,6 +12,7 @@
       <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
       <div id="summernote">
       <%= f.input :sermon_body, as: :ckeditor %><br>
+      <%= f.input :audio, class: 'form-control' %>
       </div>
     
     <%= f.button :submit %>   

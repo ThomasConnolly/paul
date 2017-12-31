@@ -1,4 +1,4 @@
-git <div class="mt50"></div>
+<div class="mt50"></div>
   <div class="row">    
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
       <div class="pledge-text">
@@ -11,10 +11,10 @@ git <div class="mt50"></div>
         <div class="mt30"></div>
         <%= link_to "Edit pledge", edit_pledge_path(@pledge), class: "btn btn-warning btn-lg" %>
       
-    <%= form_with model: @pledge, id: "payment-form" do |form| %>
+    <%= form_with url: pledge_charges_path, id: "pledge-payment-form" do |form| %>
   <div class="form-row">
     <label for="card-element">
-      Enter your card information
+     <p><strong> Enter your credit or debit card information:</strong></p>
     </label>
     <div id="card-element">
       <!-- a Stripe Element will be inserted here. -->
@@ -25,7 +25,7 @@ git <div class="mt50"></div>
   </div>
 
   <input type="submit" class="submit btn btn-success btn-lg" value="Submit Payment">
-</form>
+
 <% end %>
    <div class="mt100"></div>
   </div>

@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function() {
 
   var style = {
     base: {
-      fontSize: '16px'
+      fontSize: '24px'
     },
     invalid: {
       color: 'red'
@@ -29,7 +29,7 @@ card.addEventListener('change', function(event) {
 });
 
 //Create a token or display an error when form is submitted
-var form = document.getElementById('payment-form');
+var form = document.getElementById('pledge-payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -49,14 +49,12 @@ form.addEventListener('submit', function(event) {
 // Create a token when the form is submitted.
 function stripeTokenHandler(token) {
   // Insert the token ID into the form so it gets submitted to the server
-  var form = document.getElementById('payment-form');
+  var form = document.getElementById('pledge-payment-form');
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
   hiddenInput.setAttribute('name', 'stripeToken');
   hiddenInput.setAttribute('value', token.id);
   form.appendChild(hiddenInput);
-
-
 
   ["brand", "exp_month", "exp_year", "last4"].forEach(function(field) {
     addFieldToForm(form, token, field);
@@ -69,7 +67,7 @@ form.submit();
 function addFieldToForm(form, token, field) {
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
-  hiddenInput.setAttribute('name', "user[card_" + field + "]");
+  hiddenInput.setAttribute('name', "card_" + field);
   hiddenInput.setAttribute('value', token.card[field]);
   form.appendChild(hiddenInput);
 

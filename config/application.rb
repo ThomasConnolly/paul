@@ -6,6 +6,9 @@ require 'csv'
 require 'date'
 require 'time'
 require 'attachinary/orm/active_record'
+require 'sprockets/railtie'
+
+
 
 
 #  require 'awesome_print'
@@ -22,7 +25,8 @@ module Paul
   config.active_record.default_timezone = :local
   config.assets.precompile+=Ckeditor.assets
   config.assets.precompile+=%w(ckeditor/*)
-  config.log_level = :error
+  config.log_level = :debug
+
   end
 
 

@@ -28,6 +28,7 @@ class PledgesController < ApplicationController
   end
 
   def create
+
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id if current_user
     if @pledge.save
@@ -82,6 +83,6 @@ private
 
   def pledge_params
     params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this, 
-      :plan, :customer_id, :source]
+      :plan]
   end
 end

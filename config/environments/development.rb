@@ -8,10 +8,8 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   # Make javascript_pack_tag load assets from webpack-dev-server.
-  config.x.webpacker[:dev_server_host] = "http://localhost:8080"
-  config.cache_classes = false
 
-  config.log_level = :debug
+  config.cache_classes = false
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -36,19 +34,16 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.assets.quiet = true
 
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
+  # config.assets.raise_runtime_errors = true
   #config.serve_static_assets = false
   #config.assets.compile = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-end
-  STRIPE_SECRET = "sk_test_6WXPogsWOT7VAkDl67EPu8PE"
-  STRIPE_PUBLIC = "pk_test_p9ozCY1wINl7nqjhbCKifu9X"
-  
-  
+end  

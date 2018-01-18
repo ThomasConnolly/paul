@@ -56,19 +56,20 @@ function stripeTokenHandler(token) {
   hiddenInput.setAttribute('value', token.id);
   form.appendChild(hiddenInput);
 
+
   ["brand", "exp_month", "exp_year", "last4"].forEach(function(field) {
     addFieldToForm(form, token, field);
-  });
+});
 
-  // Submit the form
+// Submit the form
 form.submit();
 }
 
 function addFieldToForm(form, token, field) {
-  var hiddenInput = document.createElement('input');
-  hiddenInput.setAttribute('type', 'hidden');
-  hiddenInput.setAttribute('name', "card_" + field);
-  hiddenInput.setAttribute('value', token.card[field]);
-  form.appendChild(hiddenInput);
+ var hiddenInput = document.createElement('input');
+ hiddenInput.setAttribute('type', 'hidden');
+ hiddenInput.setAttribute('name', "card_" + field);
+ hiddenInput.setAttribute('value', token.card[field]);
+ form.appendChild(hiddenInput);
 
 }

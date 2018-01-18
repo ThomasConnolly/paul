@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226130807) do
+ActiveRecord::Schema.define(version: 20171231112020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -309,7 +309,7 @@ ActiveRecord::Schema.define(version: 20171226130807) do
     t.string "card"
     t.string "avatar"
     t.string "honey"
-    t.string "stripe_id"
+    t.string "source"
     t.string "stripe_pledge_id"
     t.string "stripe_sponsorship_id"
     t.string "card_last4"

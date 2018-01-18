@@ -143,8 +143,6 @@ GEM
     ffi (1.9.18)
     figaro (1.1.1)
       thor (~> 0.14)
-    foreman (0.84.0)
-      thor (~> 0.19.1)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -413,7 +411,6 @@ DEPENDENCIES
   factory_bot
   faker
   figaro
-  foreman
   googlebooks
   guard
   guard-livereload

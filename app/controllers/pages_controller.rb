@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def profileSlides
   end
 
+  def Jubilee
+  end
+
   def ecumenical_concert
   end
 

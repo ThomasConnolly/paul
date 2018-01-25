@@ -8,11 +8,11 @@ class PledgeChargesController < ApplicationController
     @plan = @pledge.plan
     @amount = @pledge.pay_this
     
-    # customer = if current_user.stripe_id?
-    #   Stripe::Customer.retrieve(current_user.stripe_id)
-    # else
-    customer = Stripe::Customer.create(
-    :source  => params[:stripeToken]
+      if current_user.stripe_id?
+        customer = Stripe::Customer.retrieve(current_user.customer_id)
+      else
+      customer = Stripe::Customer.create(
+      :source  => params[:stripeToken]
     )
     
     charge = Stripe::Charge.create(  

@@ -13,6 +13,7 @@ class PledgeChargesController < ApplicationController
       else
       customer = Stripe::Customer.create(
       :source  => params[:stripeToken]
+      end
     )
     
     charge = Stripe::Charge.create(  

@@ -1,6 +1,6 @@
 class MemberMailer < ApplicationMailer
   default from: "Father Bill <FrBill@saintpaulsnaples.org>"
-  default  bcc: Proc.new { Member.pluck(:email)}
+  default  to: Proc.new { Member.pluck(:email)}
 
 
    def member_survey(member)
@@ -23,3 +23,9 @@ class MemberMailer < ApplicationMailer
       subject: "We wish to celebrate your good works")
   end
 end
+
+#instructions on sending the email for surveys:
+#launch rails console
+
+#MemberMailer.member_survey(@member).deliver_later
+#That's it!

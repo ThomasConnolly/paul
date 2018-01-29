@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col col-md-12 col-sm-12">
-    <%= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-  	<p class="text-center"><em>Bishop Dabney Smith helped us launch our Jubilee! year.</em></p>
+    <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
+    <%= cl_image_tag("Pastors_h5vk45.jpg", width: '100%') %>
+  	<p class="text-center"><em>Pastors close our Jubilee! year with a gala dinner, Eucharistic celebration and visit of bishop</em></p>
+    <p class="tiny">From left, the Rev. Tom Damrosch, rector from 2001-2005, the Rev. Tara McGraw, 2006-2015, Susan Joy Smellie, widow of the Rev. Larry, rector from 1971 to 1999, the Rev. Dr. D. William Faupel, priest-in-charge 2015-present, and the Rt. Rev. J. Michael Garrison, who was filling in for an ailing Bishop Smith</p>
   </div>
   <div class="clearall"></div>
 
@@ -9,26 +11,24 @@
 
   <div class='nonmobile'>
     <h1>Come worship with us!</h1>
-    <h3>Today is our special Jubilee! closure</h3>
+  
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
 
-      <p><strong>10 a.m.</strong> Holy Eucharist and Confirmation</p>
-      <p>The Right Rev. J. Michael Garrison presiding</p>
         
         
         
 
-      <!-- <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+      <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
       <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
         <div class="mt-20">
           <p><small>Children are invited to nursery/Sunday school  </small></p>
         </div>
         
-      <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+      <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p>
         <div class="mt30"></div>
-        <p><strong><i>Forty Minutes</i></strong> of adult Christian education, 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all. </p>  --> <%#= link_to "More information here.", adulteducation_path %></p> 
+        <p><strong><i>Forty Minutes</i></strong> of adult Christian education, 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all.  <%#= link_to "More information here.", adulteducation_path %></p> 
        
 
   </div><!--nonmobile-->
@@ -36,20 +36,17 @@
 
       <div class='mobile'>
         <h1>Come worship with us!</h1>
-    <h3>Today is our special Jubilee! closure</h3>
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
 
-      <p><strong>10 a.m.</strong> Holy Eucharist and Confirmation</p>
-      <p>The Right Rev. J. Michael Garrison presiding</p>
-       <!-- <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+      <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
       <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
       <div class="mt-20">
         <p><small>Children are invited to nursery/Sunday school  </small></p>
        
-      <p><strong>Forty Minutes</strong> of adult Christian education 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all.</p> --> <%#= link_to "More information here.", adulteducation_path %></p>
+      <p><strong>Forty Minutes</strong> of adult Christian education 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all.</p> <%#= link_to "More information here.", adulteducation_path %></p>
       
-      <!-- <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+      <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
         about our Haitian community', pages_haitian_path %></p> </div> -->
          
        </div>
@@ -64,17 +61,19 @@
     <div class="mt30"></div>
   
     <div class="mt30"></div>
+
       
     <h2>Home of the Farmers' Market</h2>
-    <p>The market is now open for the season, every Saturday morning through April 2018, 8 a.m. to noon.</p>
+    <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %><p>The market is now open for the season, every Saturday morning through April 2018, 8 a.m. to noon.</p>
    
    <p> 
       For more information on the market, 
 	<%= link_to "click here.", markets_index_path %></p>
-  <%= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
-      <div class="mt100"></div>
+  <%#= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
+   <!--    <div class="mt100"></div>
       <h2>What's Jubilee! all about?</h2>
-      <p><%= link_to "Click here to find out", jubilee_plans_path %></p>
+      <p><%#= link_to "Click here to find out", jubilee_plans_path %></p>
+    <div class="clearall"></div> -->
     <div class="clearall"></div>
     <div class="mt30"></div>
      <h1> <%= link_to "Help hurricane victims through ERD", "https://episcopalrelief.org/" %></h1>
@@ -98,13 +97,14 @@
     <%= link_to cl_image_tag("FindFB_ovw6ax.jpg", class: "image-center", width: "100%"),
 	"https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
       <p><%= Date.current.to_formatted_s(:long) %></p>
-        <%= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
+      <%= cl_image_tag("logos/update.png", width: "90%", class: "image-center") %>
+
+        <%#= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
    <div class="mt30"></div>
   
 
     <div class="mt30"></div>
-    <p> <strong>Our Jubilee! </strong> a year (actually 13 months) comes to a close today on the Feast of the Conversion of St. Paul. Bishop Garrison is graciously stepping in for an ailing Bishop Smith to preside over this morning's worship service.</p>
-    <p>Look for more information and photos of last night's Jubilee gala and today's reception on your website this evening.</p>
+    <p> <strong>Our Jubilee! </strong> year has come to a close as we now turn our efforts to the future. A search committee has been formed to recruit a new rector for St. Paul's. You will be learning more in the coming weeks and months. Our priest-in-charge, the Rev. Dr. D. William Faupel, has decided 2018 will be his last year in that role.</p>  
     <!-- is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back later)</p>
 
     <div class="mt30"></div>

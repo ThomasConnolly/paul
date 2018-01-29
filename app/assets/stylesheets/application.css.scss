@@ -53,6 +53,7 @@ html {font-size: 100%}
   line-height: 1.75;
 }
 
+
 div.hidden {
   display: none;
 }
@@ -168,7 +169,8 @@ p {
 }
 p.tiny {
   font-size: .75rem;
-  line-height: .5;
+  line-height: 1.1;
+  margin-top: -5px;
 }
 
 .sidebar p{

@@ -5,11 +5,10 @@
     <%= cl_image_tag("freshSignage_a0oxfc.jpg", width: '110px') %>
   </div>
   <div class="main-logo">
-    <%= cl_image_tag("St_Paul_Blue_Button_Logo_ksyj1x.jpg", width: "100%", :fetch_format => :auto) %>
-    <h5 class="text-center">3901 Davis Boulevard, a couple of blocks east of Airport Road.<br> <%= link_to "Get directions", 
-      pages_directions_path %> </h5>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: "100%", alt: "logo") %>
+    <h5 class="text-center">3901 Davis Boulevard, a couple of blocks east of Airport Road.</h5>
   </div>
   <div class="shield">
-    <%= cl_image_tag("tecShield_fpjf8p.png", width: '110px')%>
+    <p><strong><%= link_to "Need Directions?", pages_directions_path %></strong></p>
   </div>
 </div>

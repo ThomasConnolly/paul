@@ -14,7 +14,6 @@
 #
 
 class Member < ApplicationRecord
- require 'date'
 
   belongs_to :user
   acts_as_birthday :birthday
@@ -26,10 +25,13 @@ class Member < ApplicationRecord
 def self.assign_from_row(row)
   member = Member.where(membership_id: row[:membership_id]).first_or_initialize
   member.assign_attributes row.to_hash.slice(
-  :last_name, :first_name, :membership_id, :email, :birthday
-    )#.merge(
-     # :birthday => row[4].nil?  ? nil : DateTime.strptime(row[4], "%m/%d/%Y").strftime("%Y/%m/%d")
-    #)
+  :last_name, 
+  :first_name, 
+  :membership_id, 
+  :email,
+  #).merge(
+    :birthday #=> DateTime.strptime(row[4], ("%m/%d/%Y")).strftime("%Y/%m/%d")
+    )
   member
 end
 

@@ -1,4 +1,4 @@
-<h1>Members of our church </h1>
+<h1>Members of St. Paul's</h1>
 
 <h4>Import data</h4>
     <%= simple_form_for @import, url: import_members_path, multipart: true do |f|%>
@@ -18,5 +18,5 @@
 <p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp; 
   <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
   <%= link_to 'Edit', edit_member_path(m) %> 
-  <%= link_to ' | Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+  <%= link_to ' | Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
 <% end %>

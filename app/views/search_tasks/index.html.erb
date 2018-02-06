@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Url</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_tasks.each do |search_task| %>
+      <tr>
+        <td><%= search_task.title %></td>
+        <td><%= search_task.body %></td>
+        <td><%= search_task.url %></td>
+        <td><%= link_to 'Show', search_task %></td>
+        <td><%= link_to 'Edit', edit_search_task_path(search_task) %></td>
+        <td><%= link_to 'Destroy', search_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Search Task', new_search_task_path %>

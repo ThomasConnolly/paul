@@ -19,8 +19,8 @@ class Member < ApplicationRecord
   acts_as_birthday :birthday
   before_save :set_full_name
 
+require 'date'
 
-  
 
 def self.assign_from_row(row)
   member = Member.where(membership_id: row[:membership_id]).first_or_initialize
@@ -29,9 +29,7 @@ def self.assign_from_row(row)
   :first_name, 
   :membership_id, 
   :email,
-  #).merge(
-    :birthday #=> DateTime.strptime(row[4], ("%m/%d/%Y")).strftime("%Y/%m/%d")
-    )
+  :birthday 
   member
 end
 

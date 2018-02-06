@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :search_tasks
   resource :sponsorship
   resources :drop5s
   resources :formation_talks, only: [:show, :index, :edit, :new]

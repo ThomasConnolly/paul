@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @search_task.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @search_task.body %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @search_task.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_task_path(@search_task) %> |
+<%= link_to 'Back', search_tasks_path %>

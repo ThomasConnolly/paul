@@ -19,7 +19,9 @@
 # Ignore application configuration
 
 coverage/
-
+1FebBooks.csv
+Member 2018T.csv
+mailAddressesSent30Jan
 users.csv
 newcsv.txt
 members.csv

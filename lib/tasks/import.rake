@@ -1,9 +1,10 @@
+
 namespace :import do 
 
   desc "Import members from csv"
   task members: :environment do
 
-   ActiveRecord::Base.connection.execute('TRUNCATE members') 
+   #ActiveRecord::Base.connection.execute('TRUNCATE members') 
     
     import = Member::Import.new file: File.open("member.csv")
     import.process!

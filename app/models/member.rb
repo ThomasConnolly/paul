@@ -29,7 +29,7 @@ def self.assign_from_row(row)
   :first_name, 
   :membership_id, 
   :email,
-  :birthday 
+  :birthday)
   member
 end
 

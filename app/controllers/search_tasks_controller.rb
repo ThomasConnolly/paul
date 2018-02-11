@@ -30,7 +30,7 @@ class SearchTasksController < ApplicationController
   def create
     @search_task = current_user.search_tasks.build(search_task_params)
       if @search_task.save
-        # SearchTaskMailer.search_task_created(@search_task).deliver_later
+        SearchTaskMailer.search_task_created(@search_task).deliver_later
         respond_to do |format|
           format.html { redirect_to search_tasks_path(@search_task) }
           format.js

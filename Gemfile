@@ -45,6 +45,8 @@ gem 'pry'
 gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
+gem 'zoom', '~> 0.5.0'
+
 
 
 group :development do

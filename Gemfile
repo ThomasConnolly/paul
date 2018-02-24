@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.4.2'
 
 gem 'rails', '5.1.4'
 gem 'devise'
@@ -45,7 +45,6 @@ gem 'pry'
 gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
-
 
 
 group :development do

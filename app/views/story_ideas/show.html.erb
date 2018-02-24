@@ -3,7 +3,7 @@
     <div class="col col-md-8 col-md-offset-2"><p id="notice"><%= notice %></p>
       <% if @story_idea.user.avatar? %>
         <div id="avatar-owner">
-        <%= cl_image_tag(@story_idea.user.avatar.path, size: '110x120', class: "floatleft") %>
+        <%= cl_image_tag(@story_idea.user.avatar.path, size: '110x170', class: "floatleft") %>
         </div>
       <% end %>
         <% if @story_idea.story_idea_picture? %>

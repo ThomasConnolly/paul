@@ -8,6 +8,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   # Make javascript_pack_tag load assets from webpack-dev-server.
+  config.log_level = :debug 
 
   config.cache_classes = false
 

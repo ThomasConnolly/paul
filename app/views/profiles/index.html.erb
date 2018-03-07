@@ -6,9 +6,9 @@
       <p><strong><%= link_to "Create or edit your profile", edit_profiles_path(profile(params[:id])) %></strong><br></p>
       <% end %>
 <% @profiles.each do |profile| %>
-  <%# if profile.user.avatar.present? %>
-  <!--<div class="post"> <%#= cl_image_tag(profile.user.avatar.path, { size: '100x120', class: "floatleft"}) %>
-  <%# end %> -->
+  <% if profile.user.avatar.present? %>
+  <div class="post"> <%= cl_image_tag(profile.user.avatar.path, { size: '100x120', class: "floatleft"}) %>
+  <% end %> -->
   <h3><%= profile.user %></h3>
   <small><%=link_to "Show this profile", profile_path(profile) %></small></div>
   <div class="clearall"></div> 

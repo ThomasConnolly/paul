@@ -37,6 +37,9 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all
+    @profile = Profile.find(current_user.profile.id)
+    @users = User.order(:last_name)
+    
   end
   
   def new

@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'pages/how_to_use'
   get 'pages/ecumenical_concert'
   get 'pages/advent'
-  get 'pages/Jubilee'
+  get 'pages/jubilee'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
 
     # get ':id' => 'users#show', as: :user_profile

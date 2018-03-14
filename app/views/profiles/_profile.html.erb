@@ -1,5 +1,5 @@
 <h1><%= @profile.user.full_name.titleize  %></h1>
-<%= cl_image_tag(current_user.avatar.path, { size: '210x307' }) if current_user.avatar? %>
+<%= cl_image_tag(@profile.user.avatar.path, { size: '210x307' }) if @profile.user.avatar? %>
 
 <% if current_user == @profile.user %>
     <%= link_to ' | Edit your profile', edit_profile_path(@profile) %> | 

@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def profileSlides
   end
 
-  def Jubilee
+  def jubilee
   end
 
   def ecumenical_concert

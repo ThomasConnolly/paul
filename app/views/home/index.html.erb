@@ -1,73 +1,58 @@
 <div class="row">
-  <div class="col col-md-12 col-sm-12">
+  <div class="col col-md-6 col-sm-12">
+
+
     <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-    <!-- <%#= cl_image_tag("Pastors_h5vk45.jpg", width: '100%') %> -->
-    <%= cl_image_tag("SusanWilson_ftosj2.jpg", width: '100%') %>
+    <!-- <%#= cl_image_tag("Pastors_h5vk45.jpg", width: '100%') %> 
+    <%#= cl_image_tag("SusanWilson_ftosj2.jpg", width: '100%') %>
   	<p class="text-center"><em>Dr. Susan Willson (center) will speak at both services Sunday, March 11, and at coffee between the services. Her topic is the orphanage she founded in 2000 in the AIDS-ravaged northern Tanzania.</em></p>
     <!--Pastors close our Jubilee! year with a gala dinner, Eucharistic celebration and visit with bishop</em></p>
     <p class="tiny">From left, the Rev. Tom Damrosch, rector from 2001-2005, the Rev. Tara McGraw, 2006-2015, Susan Joy Smellie, widow of the Rev. Larry, rector from 1971 to 1999, the Rev. Dr. D. William Faupel, priest-in-charge 2015-present, and the Rt. Rev. J. Michael Garrison, who was filling in for an ailing Bishop Smith</p> -->
-  </div>
-  <div class="clearall"></div>
-
-  <div class="col col-md-8 col-sm-12 main-body">
-
-  <div class='nonmobile'>
     <h1>Come worship with us!</h1>
-  
       <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>  
 
       <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
       <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
         <div class="mt-20">
-          <p><small>Children are invited to nursery/Sunday school  </small></p>
+          <small>Children's nursery/Sunday school </small>
         </div>
-        
-      <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
-        about our Haitian community', pages_haitian_path %></p>
-        <div class="mt30"></div>
-        <p><strong><i>Forty Minutes</i></strong> This week's adult forum will be an in-depth disscussion of the Tumaini Fund, the charity founded by Dr. Susan Wilson. She is giving the sermon at  both services, and at 9 a.m. will discuss the orphanage she founded in northwest Tanzania in 2009.   <!--adult Christian education: 9 a.m. in the parish hall. This Sunday's topic is prayer and worship as practiced in the Anglican communion. All are welcome. 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all. -->  <%#= link_to "More information here.", adulteducation_path %></p> 
-       
+      <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+      about our Haitian community', pages_haitian_path %></p>
+      <div class="mt30"></div>
+      <p><strong><i>Forty Minutes</i></strong> This week's class is the final of the series, "What's an Episcopalian?" It is at 9:10 a.m. Visitors most welcome to join us for coffee and class.   <!--adult Christian education: 9 a.m. in the parish hall. This Sunday's topic is prayer and worship as practiced in the Anglican communion. All are welcome. 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all. -->  <%#= link_to "More information here.", adulteducation_path %></p> 
+     
+      <p><strong><%= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" 
+        %></strong></p>
+  </div><!--first six-column bit-->
 
-  </div><!--nonmobile-->
-
-
-      <div class='mobile'>
-        <h1>Come worship with us!</h1>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
-        width:"220", class: "floatleft") %>
-
-      <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
-      <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
-      <div class="mt-20">
-        <p><small>Children are invited to nursery/Sunday school  </small></p>
-       
-      <p><strong><i>Forty Minutes</i></strong> This week's adult forum will be an in-depth disscussion of the Tumaini Fund, the charity founded by Dr. Susan Wilson. She is giving the sermon at  both services, and at 9 a.m. will discuss the orphanage she founded in northwest Tanzania in 2009.   <!--adult Christian education: 9 a.m. in the parish hall. This Sunday's topic is prayer and worship as practiced in the Anglican communion. All are welcome. 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all. -->  <%#= link_to "More information here.", adulteducation_path %></p> 
-      
-      <p><strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
-        about our Haitian community', pages_haitian_path %></p> 
-      </div>
-      
-       </div>
-    <div class="mt30"></div>
-    <p><strong><%= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" 
-	%></strong></p>
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of 
-	Airport Road.</em> Need a map? <%= link_to "Click here.", pages_directions_path %></p>
-    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> 
-	<%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, 
-	cute introduction to our time-honored Book of Common Prayer.</p>
-    <div class="mt30"></div>
+  <div class="col col-md-6 col-sm-12">
+    <div class="mt50"></div>
+    <%= cl_image_tag("IPaulforWeb_d6mnkx.jpg", width: "95%", class: "image-center") %>
+  </div><!--second six-column bit-->
+</div><!--end first row-->  
+  <div class="row">
   
-    <div class="mt30"></div>
+ <div class="col col-md-8 col-sm-12 main-body">
+      <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of 
+  Airport Road.</em> Need a map? <%= link_to "Click here.", pages_directions_path %></p>
+    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> 
+  <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, 
+  cute introduction to our time-honored Book of Common Prayer.</p>
 
-      
     <h2>Home of the Farmers' Market</h2>
     <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %><p>The market is now open for the season, every Saturday morning through April 2018, 8 a.m. to noon.</p>
    
    <p> 
       For more information on the market, 
 	<%= link_to "click here.", markets_index_path %></p>
+  <div class="clearall"></div>
+  <div class="mt30"></div>
+  <h2>Supporters of Tumaini Fund</h2>
+  <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
+  <p>Dr. Susan Wilson an English family physician is full of energy and zeal for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for thousands of children who lost their moms and dads to AIDS. She spoke at both services on Sunday, March 11, and collected money and these dresses made by the ladies of the church, the ECW (Episcopal Church Women).</p>
+  <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States and are holding a charity banquet Sunday evening (March 18) at the Naples Sailing and Yacht Club.
+  </p>
   <%#= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
    <!--    <div class="mt100"></div>
       <h2>What's Jubilee! all about?</h2>
@@ -105,7 +90,7 @@
 
     <div class="mt30"></div>
     <p> <strong>We're planning! </strong> The vestry has asked Gerald Tysiak, above, to use his business and government skills to conduct a long-range study of the parish. Part of the study involved a workshop with the community at last Sunday's Society of St. Paul annual luncheon. Some 50 parishioners parcipated in helping discover the strengths, weaknesses, threats and opportunities we face going forward.</p>
-    <p>The effort is part a search for a new rector as, the Rev. Dr. D. William Faupel has decided 2018 will be his last year in that role.</p>  
+    <p>The effort is part of a search for a new rector, as the Rev. Dr. D. William Faupel has decided 2018 will be his last year in that role.</p>  
     <!-- is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back later)</p>
 
     <div class="mt30"></div>

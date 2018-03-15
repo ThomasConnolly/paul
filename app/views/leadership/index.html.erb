@@ -38,17 +38,10 @@
           <p>She and Jan have a son, Tracy, an animal
           trainer at the zoo in Louisville.</p>
         </div>
-            <br>
-              <div>       
-            
-              <h2>Saint Paul's Parish Staff</h2>
-              <%= cl_image_tag("IMG_5711_pxoel4.jpg", :width=>295, :crop=>"scale") %>
-                <%#=cl_image_tag("osydiqg3ommfgbs93usc.jpg", width: '295', class: 'floatleft')%><div class="clearall"></div>
-              <b>Deb Avery, Administrative Assistant<br><br>
-              Janet Ross, Parish Accountant<br>
-              239-643-0197</b>  
-              </div>
-    </div>
+  
+
+    </div><!--main_body-->
+
 
       <div class="col-md-4 col-sm-6 sidebar">
         <h1>The Vestry </h1>
@@ -65,5 +58,33 @@
           <p>Rector is an "agent noun," such as actor and inventor. These are nouns formed from the action verb. In the case of rector, the verb is Latin, from "regere," meaning "to rule." Historically a rector was a ruler or governor with temporal powers.</p>
           <p>St. Paul's is led by a priest-in-charge, who for all intents and purposes, is our rector. The vestry, with permission of our bishop, the Rt. Rev. Dabney Smith, has decided to celebrate our Jubilee! year which will culminate with a feast in January 2018, with our priest-in-charge, Fr. Bill.</p>
           <p>After that celebration the vestry will turn its attention to calling a rector who will lead us into the future.</p>
-    </div>
-  </div>
+    </div><!--sidebar-->
+  </div> <!--row-->
+    <div class="clearall"></div>
+    
+  <div class="row">
+    <div class="col col-12">  
+    <h2>Saint Paul's Parish Staff</h2>
+    <div class="staff">
+      <div class="floatleft">
+      <p><strong> Deb Avery </strong><br> Administrative assistant<br>
+        239-643-0197</p>  
+          <figure>
+            <%= cl_image_tag("IMG_5711_pxoel4.jpg", :width=>295, :crop=>"scale") %>
+            <figcaption>Deb Avery</figcaption>
+          </figure>
+      </div> 
+      <div class="floatleft">
+        <p><strong>Janet Ross</strong> <br>Parish accountant<br>
+          239-643-0197</p> 
+      </div>
+      <div class="floatleft">
+        <p><strong>Leissa Martino</strong><br>Kitchen assistant</p>
+          <figure>           
+            <%= cl_image_tag("LeissaMartino_ygqjan.jpg", :width=>549, :crop=>"scale") %>
+            <figcaption> Leissa Martino</figcaption>
+          </figure>
+        </div>
+      </div>
+  </div><!--12-col-->
+</div> <!--row-->

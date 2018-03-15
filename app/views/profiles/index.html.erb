@@ -5,7 +5,7 @@
     <% end %>
 <% @users.each do |user| %>
   <% if user.avatar.present? %>
-  <%= cl_image_tag(user.avatar.path, { size: '100x120', class: "floatleft"}) %>
+  <%= cl_image_tag(user.avatar.path, { size: '120x120', class: "floatleft"}) %>
   <% end %> 
   <h3><%= user.last_name %>, <%= user.first_name %></h3>
     <%if user.profile.cities.present? %>

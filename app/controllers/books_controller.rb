@@ -22,13 +22,13 @@ class BooksController < ApplicationController
   end
 
   def books_admin
-    @books = Book.all.order(:id)
+    @books_admin = Book.all.order(:id)
     @import = Book::Import.new
     @last_book = Book.last.id
 
     respond_to do |format|
       format.html
-      format.csv { send_data @books.to_csv, filename: "bookLabels-#{Date.today}.csv", disposition: :inline }
+      format.csv { send_data @books_admin.to_csv, filename: "bookLabels-#{Date.today}.csv", disposition: :inline }
     end
   end
   

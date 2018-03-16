@@ -14,7 +14,7 @@
     <%if user.profile.cities.present? %>
       <p><small><%=link_to "Show this profile", profile_path(user.profile) %></small></p> 
     <% else %>
-      <p>Remind this person to create a profile.</p>
+      <p>Invite <%= user.first_name %> to create a profile.</p>
     <% end %>
   <% end %>  
 

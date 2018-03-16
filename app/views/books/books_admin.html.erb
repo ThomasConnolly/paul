@@ -2,7 +2,7 @@
   <h1>Listing books</h1>
     <% @books.each do |b| %>
        <p class="tiny"> 
-          <%= b.author %>, <%= b.title %> 
+          <%= b.id %> | <%= b.author %>, <%= b.title %> 
           <%= b.dewey %> <%= b.cutter %> <%#= b.isbn %> <%#= b.url %>
           <%#= image_tag("https://covers.openlibrary.org/b/isbn/#{b.isbn}-S.jpg", 
             width: "100") %>

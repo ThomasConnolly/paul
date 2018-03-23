@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col col-md-6 col-sm-12">
+  
 
 
     <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
@@ -8,8 +8,8 @@
   	<p class="text-center"><em>Dr. Susan Willson (center) will speak at both services Sunday, March 11, and at coffee between the services. Her topic is the orphanage she founded in 2000 in the AIDS-ravaged northern Tanzania.</em></p>
     <!--Pastors close our Jubilee! year with a gala dinner, Eucharistic celebration and visit with bishop</em></p>
     <p class="tiny">From left, the Rev. Tom Damrosch, rector from 2001-2005, the Rev. Tara McGraw, 2006-2015, Susan Joy Smellie, widow of the Rev. Larry, rector from 1971 to 1999, the Rev. Dr. D. William Faupel, priest-in-charge 2015-present, and the Rt. Rev. J. Michael Garrison, who was filling in for an ailing Bishop Smith</p> -->
-    <h1>Come worship with us!</h1>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
+   <!-- <h1>Come worship with us!</h1>
+      <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>  
 
       <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
@@ -17,17 +17,32 @@
         <div class="mt-20">
           <small>Children's nursery/Sunday school </small>
         </div>
-      <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+      <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%#= link_to 'Click for information 
       about our Haitian community', pages_haitian_path %></p>
       <div class="mt30"></div>
-      <p><strong><i>Forty Minutes</i></strong> This week's class is the final of the series, "What's an Episcopalian?" It is at 9:10 a.m. Visitors most welcome to join us for coffee and class.   <!--adult Christian education: 9 a.m. in the parish hall. This Sunday's topic is prayer and worship as practiced in the Anglican communion. All are welcome. 9 a.m. in fellowship hall. Church history is the topic. Lectures followed  by q&a. Talks are independent; come to any or all. -->  <%#= link_to "More information here.", adulteducation_path %></p> 
+      
      
-      <p><strong><%= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" 
-        %></strong></p>
+      <p><strong><%#= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" %></strong> </p>
   </div><!--first six-column bit-->
 
-  <div class="col col-md-6 col-sm-12">
-    <p><strong>Meeting St. Paul</strong></p><%= cl_image_tag("StPaulAct_kuowu6.jpg", height: '490', class: "floatright") %>
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <div class="holy-week">
+      <h1 class="text-center">Join us in worship this Holy Week</h1>
+      <%= cl_image_tag("cross-lent_rhj8ln.jpg", class: "floatleft") %>
+      <p><strong>Palm Sunday</strong>, this Sunday. Jesus arrives in Jerusalem to begin his week of holiness and sacrifice. Masses at 8 and 10 a.m. and 5 p.m. in Creole.</p>
+      <p><strong>Wednesday</strong> Walk with us the Way of the Cross, 5:30 p.m., in the church.</p>
+      <p><strong>Maundy Thursday</strong> Holy Eucharist, washing of feet and stripping of the altar, 6 p.m.</p>
+      <p><strong>Good Friday</strong> A one-hour service at noon featuring solemn collects, reading of the Passion and distribution of reserved sacrament and silent prayer at the cross. Also beginning at noon is a three-hour service in Creole, in Serson Hall.</p>
+      <p>In commemoration of Good Friday, the office is closed.</p>
+      <p><strong>Holy Saturday</strong> 6 p.m. Easter Vigil, combined English and Creole service includes lighting of the paschal candle from a new fire, foundational scripture readings, two baptisms and the first Eucharist of Easter.</p>
+      <%= cl_image_tag("logos/easter_morning.png", class: "image-center") %>
+      <p><strong>Easter Sunday </strong>Masses at 8 and 10 a.m. and 5 p.m. Flowers added to the cross at each service. The 5 p.m. mass is in Creole/French.</p>
+      <span class="mt30"></span>
+     <p><strong><%= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" %></strong> </p>  
+    </div>
+ 
+
+  <!--  <p><strong>Meeting St. Paul</strong></p><%#= cl_image_tag("StPaulAct_kuowu6.jpg", height: '490', class: "floatright") %>
     <p><small>New York actor Charles D. Baker plays the role of Paul and several other historic and biblical figures. He revealed St. Paul to us Thursday evening in John DeMers' dramatic monologue (right).</small></p>
     
     <%#= cl_image_tag("IPaulforWeb_d6mnkx.jpg", width: "95%", class: "image-center") %>

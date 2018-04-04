@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.4.4'
 
-gem 'rails', '5.1.5'
+gem 'rails', '5.1.6'
 gem 'devise'
 gem 'pg', '~> 0.18.4'
 gem 'rack'

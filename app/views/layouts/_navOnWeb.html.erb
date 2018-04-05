@@ -34,10 +34,12 @@
           <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
           <% if user_signed_in? %>
           <%= link_to "Parish survey results", surveys_path, {class: "dropdown-item"} %>
+          <br>
           <% end %>
           <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
            <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
            <%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>
+           <bt>
            <% end %>
            <%= link_to "Our history", history_path, {class: "dropdown-item"} %>
         </div>
@@ -97,10 +99,12 @@
           <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
            <% if user_signed_in? %>
           <%= link_to "Parish survey results", surveys_path %>
+          <br>
           <% end %>
           <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %><br>
            <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
            <%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>
+           <br>
            <% end %>
            <%= link_to "Our history", history_path, {class: "dropdown-item"} %>
         </div>

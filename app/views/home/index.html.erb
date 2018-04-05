@@ -1,5 +1,5 @@
 <div class="row">
-  
+  <figure>
 <%= cl_image_tag("flower_cross_t7ebth.jpg", width: '99%') %>
 
 
@@ -10,8 +10,10 @@
     <!--Pastors close our Jubilee! year with a gala dinner, Eucharistic celebration and visit with bishop</em></p>
     <p class="tiny">From left, the Rev. Tom Damrosch, rector from 2001-2005, the Rev. Tara McGraw, 2006-2015, Susan Joy Smellie, widow of the Rev. Larry, rector from 1971 to 1999, the Rev. Dr. D. William Faupel, priest-in-charge 2015-present, and the Rt. Rev. J. Michael Garrison, who was filling in for an ailing Bishop Smith</p> -->
    
-
+    <figcaption>
       <p><strong>On Easter Sunday </strong> we placed flowers on the empty cross of the Risen Jesus! More photos of our Easter celebration are on our Facebook page <%= link_to "here.", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>  </p>
+    </figcaption>
+  </figure>
     </div>
     <div class="row">
     <div class="col col-md-8 col-sm-12 main-body">
@@ -78,14 +80,18 @@
       <p><%= Date.current.to_formatted_s(:long) %></p>
       <%= cl_image_tag("logos/update.png", width: "90%", class: "image-center") %>
 
-        <%#= cl_image_tag("UpdateRed_fmhsxv.png", width: "85%", class: "image-center") %>
-   <div class="mt30"></div>
-   <%= cl_image_tag("Jerry_qqmmid.jpg", width: "100%") %>
-  
+   <%= cl_image_tag("ParishProfilePDF_cover_hymh4t.png", width: "100%") %>
+   <article>
+    <h2>Search under way<br>For new rector</h2>
 
-    <div class="mt30"></div>
-    <p> <strong>We're planning! </strong> The vestry has asked Gerald Tysiak, above, to use his business and government skills to conduct a long-range study of the parish. Part of the study involved a workshop with the community at last Sunday's Society of St. Paul annual luncheon. Some 50 parishioners parcipated in helping discover the strengths, weaknesses, threats and opportunities we face going forward.</p>
-    <p>The effort is part of a search for a new rector, as the Rev. Dr. D. William Faupel has decided 2018 will be his last year in that role.</p>  
+    <p>With the publication of our newly created parish profile on our diocesean website, our search for a rector has begun. <%= link_to  "click to download a copy of the profile", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %> </p>
+      <p>
+      A seven-person search committee was formed by the vestry and charged to recommend three priests for the position. The vestry makes the final choice from this list.</p>
+      <p>The profile is among the documents that candidates receive in order to learn about our parish, and includes a brief history, our ministries and our desires.</p>
+      <p>Input from a parish survey and the work of a long-range planning team was used as the basis, so parishioners' opinions and expressions are represented.</p>
+      <p>If you know of a priest who would make a good rector for St. Paul's, get that person to read the profile and follow the procedure outlined for submission of materials to the diocese.</p>
+      <p>Cannon Mike Durning, who knows our parish well, is helping us in this effort. </p> 
+    <p>Our priest-in-charge, the Rev. Dr. D. William Faupel, has decided 2018 will be his last year in that role. We will continue to celebrate his leadership and generosity of spirit while we await what God has in store for us.</p>  
     <!-- is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back later)</p>
 
     <div class="mt30"></div>
@@ -111,3 +117,4 @@
       <div class="mt30"></div>
   </div><!-- sidebar -->
 <!-- row -->
+

@@ -44,6 +44,9 @@ class User < ApplicationRecord
   has_many :opportunities
   has_many :books
   has_many :characteristics
+  has_many :ratings
+  has_many :formulate_questions
+  has_many :definitions
   has_one :sponsorship, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
   has_one :pledge, dependent: :destroy

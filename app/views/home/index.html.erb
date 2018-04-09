@@ -1,53 +1,38 @@
 <div class="row">
   <figure>
-<%= cl_image_tag("flower_cross_t7ebth.jpg", width: '99%') %>
-
-
-    <%#= cl_image_tag("jubilee_englbw.jpg", width: '100%', :fetch_format => :auto) %>
-    <!-- <%#= cl_image_tag("Pastors_h5vk45.jpg", width: '100%') %> 
-    <%#= cl_image_tag("SusanWilson_ftosj2.jpg", width: '100%') %>
-  	<p class="text-center"><em>Dr. Susan Willson (center) will speak at both services Sunday, March 11, and at coffee between the services. Her topic is the orphanage she founded in 2000 in the AIDS-ravaged northern Tanzania.</em></p>
-    <!--Pastors close our Jubilee! year with a gala dinner, Eucharistic celebration and visit with bishop</em></p>
-    <p class="tiny">From left, the Rev. Tom Damrosch, rector from 2001-2005, the Rev. Tara McGraw, 2006-2015, Susan Joy Smellie, widow of the Rev. Larry, rector from 1971 to 1999, the Rev. Dr. D. William Faupel, priest-in-charge 2015-present, and the Rt. Rev. J. Michael Garrison, who was filling in for an ailing Bishop Smith</p> -->
-   
+  <%= cl_image_tag("flower_cross_t7ebth.jpg", width: '99%') %>   
     <figcaption>
-      <p><strong>On Easter Sunday </strong> we placed flowers on the empty cross of the Risen Jesus! More photos of our Easter celebration are on our Facebook page <%= link_to "here.", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>  </p>
+    <p><strong>On Easter Sunday </strong> we placed flowers on the empty cross of the Risen Jesus! More photos of our Easter celebration are on our Facebook page <%= link_to "here.", "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>  </p>
     </figcaption>
   </figure>
-    </div>
-    <div class="row">
-    <div class="col col-md-8 col-sm-12 main-body">
-
-    <h1>Come worship with us!</h1>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
+</div>
+<div class="row">
+  <div class="col col-md-8 col-sm-12 main-body">
+  <h1>Come worship with us!</h1>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>  
-
-      <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
-      <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
-        <div class="mt-20">
-          <small>Children's nursery/Sunday school </small>
-        </div>
-      <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
-      about our Haitian community', pages_haitian_path %></p>
-      <div class="mt30"></div>
-      
-     
-      <p><strong><%= link_to "Click here for Scripture Readings", "http://www.lectionarypage.net" %></strong> </p>
-      <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here.", pages_directions_path %></p>
-    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> 
-  <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
-
-    <h2>Home of the Farmers' Market</h2>
-    <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %><p>The market is now open for the season, every Saturday morning through April 2018, 8 a.m. to noon.</p>
-   
+  <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+  <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
+    <div class="mt-20">
+      <small>Children's nursery/Sunday school </small>
+    </div>
+  <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information 
+    about our Haitian community', pages_haitian_path %></p>
+  <div class="mt30"></div>
+    <p><strong><%= link_to "Click here for Scripture Readings", 
+    "http://www.lectionarypage.net" %></strong> </p>
+    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.</em> Need a map? <%= link_to "Click here.", pages_directions_path %></p>
+    <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
+  <h2>Home of the Farmers' Market</h2>
+    <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
+    <p>The market is now open for the season, every Saturday morning through April 21, 8 a.m. to noon.</p>
    <p> 
-      For more information on the market, 
-	<%= link_to "click here.", markets_index_path %></p>
+    For more information on the market, <%= link_to "click here.", markets_index_path %></p>
   <div class="clearall"></div>
   <div class="mt30"></div>
   <h2>Supporters of Tumaini Fund</h2>
-  <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
-  <p>Dr. Susan Wilson an English family physician is full of energy and zeal for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for thousands of children who lost their moms and dads to AIDS. She spoke at both services on Sunday, March 11, and collected money and 34 dresses made by the ladies of the church, the ECW (Episcopal Church Women).</p>
+    <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
+    <p>Dr. Susan Wilson, an English family physician, is full of energy and zeal for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for thousands of children who lost their moms and dads to AIDS. She spoke at both services on Sunday, March 11, and collected money and 34 dresses made by the ladies of our church, the ECW (Episcopal Church Women).</p>
   <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
   </p>
   <%#= cl_image_tag("jubileeButton_omxlnw.jpg", width: "25%", class: 'floatleft') %>
@@ -58,13 +43,13 @@
     <div class="clearall"></div>
     <div class="mt30"></div>
      <h2> <%= link_to "Supporters of 'ERD'", "https://episcopalrelief.org/" %></h2>
-      <%= cl_image_tag("ERD_vcwkbd.jpg", :width=>404, :crop=>"scale", :class=>"floatleft") %>
+       <%= cl_image_tag("ERD_vcwkbd.jpg", :width=>404, :crop=>"scale", :class=>"floatleft") %>
        <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p> 
        <div class="clearall"></div>
     <div class="mt30"></div>
-      <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
 	width:"95%", class: "image-center", :fetch_format => :auto) %>
-    <!-- <div class="mt30"></div> -->
+    <div class="mt30"></div>
     <div id="newsfeed">
     <iframe src="https://feed.mikle.com/widget/v2/48019/" width="100%" height="500px"></iframe>
     </div><!--  end  newsfeed -->
@@ -84,18 +69,17 @@
    <article>
     <h2>Search under way<br>For new rector</h2>
 
-    <p>With the publication of our newly created parish profile on our diocesean website, our search for a rector has begun. <%= link_to  "click to download a copy of the profile", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %> </p>
+    <p>With the publication of our newly created parish profile on our diocesean website, our search for a rector has begun. <%= link_to  "Click to download a copy of the profile", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %> </p>
       <p>
       A seven-person search committee was formed by the vestry and charged to recommend three priests for the position. The vestry makes the final choice from this list.</p>
       <p>The profile is among the documents that candidates receive in order to learn about our parish, and includes a brief history, our ministries and our desires.</p>
       <p>Input from a parish survey and the work of a long-range planning team was used as the basis, so parishioners' opinions and expressions are represented.</p>
       <p>If you know of a priest who would make a good rector for St. Paul's, get that person to read the profile and follow the procedure outlined for submission of materials to the diocese.</p>
-      <p>Cannon Mike Durning, who knows our parish well, is helping us in this effort. </p> 
-    <p>Our priest-in-charge, the Rev. Dr. D. William Faupel, has decided 2018 will be his last year in that role. We will continue to celebrate his leadership and generosity of spirit while we await what God has in store for us.</p>  
-    <!-- is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back later)</p>
+      <p>The Rev. Canon Mike Durning, who knows our parish well, is helping us in this effort. </p> 
+    <p>Our priest-in-charge, the Rev. Dr. D. William Faupel, ("Fr. Bill") has decided 2018 will be his last year in that role. We will continue to celebrate his leadership and generosity of spirit while we await what God has in store for us.</p>  
+    <!-- is to have 50 parishioners engaged in our sponsorship drive for our kids at the el Buen Samaritano children's shelter in the Dominican Republic. Participation will range from full scholarships at $275 each down to a number that meets your preference. <%#= link_to "Click here to donate", new_sponsorship_path %> (The donation page is still under construction; please come back later)</p>-->
 
-    <div class="mt30"></div>
-    <p><strong>Need a ride to the Jubilee! dinner?</strong> Several parishioners have volunteered to do the driving. Call the office while there are tickets still available and tell them you need a ride.</p>  -->
+    
     <div class="mt30"></div>
      
       <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>

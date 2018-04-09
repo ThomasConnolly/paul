@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206175122) do
+ActiveRecord::Schema.define(version: 20180408205627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.index ["author", "title"], name: "index_books_on_author_and_title"
   end
 
+  create_table "cards", force: :cascade do |t|
+    t.bigint "list_id"
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_cards_on_list_id"
+  end
+
+  create_table "characteristics", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_characteristics_on_user_id"
+  end
+
   create_table "comments", id: :serial, force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -59,6 +76,16 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.datetime "updated_at"
     t.integer "commentable_id"
     t.string "commentable_type"
+  end
+
+  create_table "definitions", force: :cascade do |t|
+    t.text "defined"
+    t.bigint "characteristic_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characteristic_id"], name: "index_definitions_on_characteristic_id"
+    t.index ["user_id"], name: "index_definitions_on_user_id"
   end
 
   create_table "drop5s", force: :cascade do |t|
@@ -90,6 +117,16 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.date "delivered_on"
   end
 
+  create_table "formulate_questions", force: :cascade do |t|
+    t.text "question"
+    t.bigint "characteristic_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characteristic_id"], name: "index_formulate_questions_on_characteristic_id"
+    t.index ["user_id"], name: "index_formulate_questions_on_user_id"
+  end
+
   create_table "homilists", id: :serial, force: :cascade do |t|
     t.string "name", limit: 255
     t.string "title", limit: 255
@@ -104,6 +141,13 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "marriage_talks", force: :cascade do |t|
@@ -193,6 +237,16 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rated"
+    t.bigint "characteristic_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characteristic_id"], name: "index_ratings_on_characteristic_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "roles", id: :serial, force: :cascade do |t|
@@ -360,4 +414,12 @@ ActiveRecord::Schema.define(version: 20180206175122) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "lists"
+  add_foreign_key "characteristics", "users"
+  add_foreign_key "definitions", "characteristics"
+  add_foreign_key "definitions", "users"
+  add_foreign_key "formulate_questions", "characteristics"
+  add_foreign_key "formulate_questions", "users"
+  add_foreign_key "ratings", "characteristics"
+  add_foreign_key "ratings", "users"
 end

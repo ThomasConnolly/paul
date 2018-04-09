@@ -43,6 +43,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
+  has_many :characteristics
   has_one :sponsorship, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
   has_one :pledge, dependent: :destroy

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @characteristic.name %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @characteristic.definition %>
+</p>
+<p>
+<%= link_to 'Edit', edit_characteristic_path(@characteristic) %> | You have submitted <%= current_user.characteristics.count %> so far. Please enter at least five. Submit as many as you wish beyond five. </p>
+<p>
+<%= link_to 'Add another characteristic', new_characteristic_path %></p>
+
+<div class="mt100"></div>
+<%= link_to 'Show all characterists submitted so far', characteristics_path %>

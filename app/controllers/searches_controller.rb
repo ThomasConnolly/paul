@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
   # GET /searches.json
   def index
     @characteristics = Characteristic.all
+    @characteristic = Characteristic.new
   end
 
   # GET /searches/1
@@ -73,6 +74,6 @@ class SearchesController < ApplicationController
     #end
 
     def characteristic_params
-      params.fetch(:characteristic, {})
+      params.require(:characteristic).permit(:name, :user_id, :description) 
     end
 end

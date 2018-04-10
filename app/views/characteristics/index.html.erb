@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Characteristics</h1>
+
+
+    <% @characteristics.each do |characteristic| %>
+    
+      <h3><%= characteristic.name %></h3>
+      <p><%= characteristic.definition %></p>
+      
+    <!--  <%#= link_to 'Show', characteristic %> | 
+      <%#= link_to 'Edit', edit_characteristic_path(characteristic) %> <%# if characteristic.user == current_user %> | <%#= link_to 'Destroy', characteristic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%# end %> -->
+    <% end %>
+<br>
+
+<%= link_to 'New Characteristic', new_characteristic_path %>

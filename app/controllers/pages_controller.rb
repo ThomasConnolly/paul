@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def parish_profile
   end
 
+  def long_range
+  end
+
   def profileSlides
   end
 

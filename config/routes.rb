@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   get 'pages/directions'
   get 'pages/parish_profile'
   get 'comments/new'
+  get 'pages/long_range'
   get 'pages/python_tutor'
   get 'pages/how_to_use'
   get 'pages/ecumenical_concert'

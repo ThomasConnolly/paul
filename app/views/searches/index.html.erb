@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col col-md-8 col-sm-12 main">
 <!--<h1>Searching for a rector</h1>-->
-<h1>This page is under construction!</h1>
+<h1>Let the search work begin!</h1>
 <p>
-What does the parish want in a rector? The search team should be able to synthesize this answer based on reading the parish profile, long-range planning team’s initial report, the ministry portfolio and your own understanding of who we are. This effort will start with a list of attributes, virtues or characteristics of a rector who will make a good fit at St. Paul’s.</p>
+What does the parish want in a rector? The search team should be able to synthesize the answer to this question by reading the parish profile, long-range planning team’s initial report, the ministry portfolio and the parish survey and your own understanding of who we are. This effort will start with a list of attributes, virtues or characteristics of a rector who will make a good fit at St. Paul’s.</p>
 <p>
-Your job starts with your coming up with six or more attributes or characteristics, each named with one or two words, and each defined in as many words as you need.</p>  
+Your job starts with your coming up with five or more attributes or characteristics, each named with one or two words, and each defined in as many words as you need.</p>  
 <p>
 When all of us have done this, we’ll each read and absorb this information jointly, consolidate the characteristics as appropriate, and agree on definitions.</p>
 <p>
@@ -15,11 +15,24 @@ Finally we’ll all take a shot at formulating questions whose answers are desig
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">
-    <h4>Links to documents</h4>
+    <h3>Links to documents</h3>
     <p>
-      These are working!</p> 
-     <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %><br>
-     <%= link_to "Parish survey", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" %>
+      Read these documents before submitting your characteristics</p> 
+      <%= cl_image_tag("ParishProfilePDF_cover_hymh4t.png", width: '45%', class: 'image-center') %>
+      <p class="text-center">
+     <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %></p><br>
+    
+          <%= cl_image_tag("2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.jpg", width:'45%', class: 'image-center') %>
+          <p class="text-center">
+          <%= link_to "Ministry Portfolio", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523333229/2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.pdf" %> </p>
           <br>
+          <p class="text-center">
+           <%= link_to "Parish survey", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" %></p>
+          <br>
+          <%= cl_image_tag("Report_Body_of_Strategic_Plan_03312018_qplbsv.jpg", width: "45%", class: "image-center") %></p>
+          <p class= "text-center">
+            <p class="text-center">
+          <%= link_to "Long-range plan", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523335226/Report_Body_of_Strategic_Plan_03312018_qplbsv.pdf" %></p>
+
   </div>
 </div>

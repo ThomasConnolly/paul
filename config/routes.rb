@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :search_questions
   resources :searches, only: [:index]
   get 'Search', to: 'searches#index', as: 'Search'
   resources :characteristics

@@ -53,6 +53,7 @@ class User < ApplicationRecord
   has_many :vreports, dependent: :destroy
   has_many :jubilee_plans, dependent: :destroy
   has_many :search_tasks, dependent: :destroy
+  has_many :search_questions
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :full_name, uniqueness: { case_sensitive: false }

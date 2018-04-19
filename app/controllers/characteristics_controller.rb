@@ -11,13 +11,15 @@ class CharacteristicsController < ApplicationController
   # GET /characteristics/1
   # GET /characteristics/1.json
   def show
+    @rating = Rating.new
+    @rating_user = current_user
+    @characteristic_id = @characteristic.id
   end
 
   # GET /characteristics/new
   def new
     @characteristic = Characteristic.new
     @characteristic.user = current_user
-
   end
 
   # GET /characteristics/1/edit
@@ -55,6 +57,7 @@ class CharacteristicsController < ApplicationController
     end
   end
 
+
   # DELETE /characteristics/1
   # DELETE /characteristics/1.json
   def destroy
@@ -69,10 +72,10 @@ class CharacteristicsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_characteristic
       @characteristic = Characteristic.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def characteristic_params
-      params.require(:characteristic).permit(:name, :definition, :user_id)
+      params.require(:characteristic).permit(:name, :definition, :user_id, 
+        ratings_attributes: [:score, :characteristic_id])
     end
+  end
 end

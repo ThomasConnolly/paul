@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   
+
   resources :search_questions
   resources :searches, only: [:index]
   get 'Search', to: 'searches#index', as: 'Search'
-  resources :characteristics
+  resources :characteristics do
+    resources :ratings, only: [:new, :show, :create, :update, :destroy]
+  end
   resources :search_tasks
   resource :sponsorship
   resources :drop5s

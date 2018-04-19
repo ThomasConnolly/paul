@@ -11,7 +11,21 @@ When all of us have done this, we’ll each read and absorb this information joi
 <p>
 Finally we’ll all take a shot at formulating questions whose answers are designed to help us determine whether a candidate fits our needs.
 </p>
-    <%= render 'characteristics/form' %>
+
+    <%#= render 'characteristics/form' %>
+    <% @characteristics.each do |c| %>
+      <h4><%= c.name %></h4>
+      <p><%= c.definition %> 
+        <% if c.user_id == current_user.id %>
+        <%= link_to "Edit", characteristic_path(c.id) %>
+        <% end -%>
+        <% if c.ratings.user_id != current_user.id %>
+        <%= link_to "Rate this attribute", new_characteristic_rating_path(c.id) %>
+        <% else %>
+        <p>You have rated this attribute</p>
+        <% end -%>
+    <% end -%>    
+
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">
@@ -19,20 +33,30 @@ Finally we’ll all take a shot at formulating questions whose answers are desig
     <p>
       Read these documents before submitting your characteristics</p> 
       <%= cl_image_tag("ParishProfilePDF_cover_hymh4t.png", width: '45%', class: 'image-center') %>
-      <p class="text-center">
-     <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %></p><br>
+    <p class="text-center">
+      <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %></p><br>
     
-          <%= cl_image_tag("2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.jpg", width:'45%', class: 'image-center') %>
-          <p class="text-center">
-          <%= link_to "Ministry Portfolio", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523333229/2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.pdf" %> </p>
+      <%= cl_image_tag("2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.jpg", width:'45%', class: 'image-center') %>
+    <p class="text-center">
+        <%= link_to "Ministry Portfolio", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523333229/2018_ST._Paul_s_OTM_Community_Portfolio_pk3gvc.pdf" %> </p>
           <br>
-          <p class="text-center">
-           <%= link_to "Parish survey", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" %></p>
+    <p class="text-center">
+        <%= link_to "Parish survey", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" %></p>
           <br>
-          <%= cl_image_tag("Report_Body_of_Strategic_Plan_03312018_qplbsv.jpg", width: "45%", class: "image-center") %></p>
-          <p class= "text-center">
-            <p class="text-center">
-          <%= link_to "Long-range plan", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523335226/Report_Body_of_Strategic_Plan_03312018_qplbsv.pdf" %></p>
+        <%= cl_image_tag("Report_Body_of_Strategic_Plan_03312018_qplbsv.jpg", width: "45%", class: "image-center") %></p>
+    <p class="text-center">
+        <%= link_to "Long-range plan", "http://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1523335226/Report_Body_of_Strategic_Plan_03312018_qplbsv.pdf" %></p>
+    <p><strong>Other resources</strong></p>
+    <p class="text-center">
+        <%= link_to "Sample questions, Connecticut", "https://www.episcopalct.org/filerepository/DownloadFile.aspx?FileID=182" %> </p>
+    <p class="text-center">
+        <%= link_to "STAR theory, Texas", "http://aa86e41e7d951355383b-cb342165bfeaa4f2927aec8e5d7de41f.r23.cf2.rackcdn.com/uploaded/c/0e473709_cd-star-notebook.pdf" %> </p>
+    <p class="text-centered">
+        <%= link_to "More questions", "https://discernablefutures.wordpress.com/tag/interview-questions/" %></p>
+               
+
+
+
 
   </div>
 </div>

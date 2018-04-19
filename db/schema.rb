@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410173426) do
+ActiveRecord::Schema.define(version: 20180419013222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,16 @@ ActiveRecord::Schema.define(version: 20180410173426) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.string "score"
+    t.bigint "characteristic_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characteristic_id"], name: "index_ratings_on_characteristic_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
   create_table "roles", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "resource_id"
@@ -397,6 +407,8 @@ ActiveRecord::Schema.define(version: 20180410173426) do
 
   add_foreign_key "cards", "lists"
   add_foreign_key "characteristics", "users"
+  add_foreign_key "ratings", "characteristics"
+  add_foreign_key "ratings", "users"
   add_foreign_key "search_questions", "characteristics"
   add_foreign_key "search_questions", "users"
 end

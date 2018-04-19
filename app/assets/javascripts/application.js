@@ -13,7 +13,6 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require bootstrap-datepicker
-//= require video
 //= require turbolinks
 //= require compatibility.coffee
 //= require moment

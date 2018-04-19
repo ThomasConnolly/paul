@@ -8,9 +8,9 @@
       <h3><%= characteristic.name %></h3>
       <p><%= characteristic.definition %></p>
       
-    <!--  <%#= link_to 'Show', characteristic %> | 
-      <%#= link_to 'Edit', edit_characteristic_path(characteristic) %> <%# if characteristic.user == current_user %> | <%#= link_to 'Destroy', characteristic, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%# end %> -->
+      <%= link_to 'Show', characteristic %> <% if characteristic.user == current_user %>| 
+      <%= link_to 'Edit', edit_characteristic_path(characteristic) %>  | <%= link_to 'Destroy', characteristic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %> 
     <% end %>
 <br>
 

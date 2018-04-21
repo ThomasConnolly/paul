@@ -12,6 +12,7 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
+  
   <%= tag :meta, name: "stripe-public-key", content: Rails.application.secrets.stripe_public_key %>
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
@@ -25,9 +26,7 @@
       <div class="mt20"></div>
 
       <%= render 'layouts/navOnWeb' %>
-     <!-- <div id="clock">
-      </div>
--->        <% flash.each do |name, msg| %>
+         <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>
             <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -35,6 +34,7 @@
             </div>
           <% end %>
         <% end %>
+
         
 <%= yield %>
   <%= render 'layouts/footer' %> 

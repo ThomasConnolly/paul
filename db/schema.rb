@@ -52,15 +52,6 @@ ActiveRecord::Schema.define(version: 20180419013222) do
     t.index ["author", "title"], name: "index_books_on_author_and_title"
   end
 
-  create_table "cards", force: :cascade do |t|
-    t.bigint "list_id"
-    t.string "name"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_cards_on_list_id"
-  end
-
   create_table "characteristics", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
@@ -122,13 +113,6 @@ ActiveRecord::Schema.define(version: 20180419013222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.string "name"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "marriage_talks", force: :cascade do |t|
@@ -405,7 +389,6 @@ ActiveRecord::Schema.define(version: 20180419013222) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "cards", "lists"
   add_foreign_key "characteristics", "users"
   add_foreign_key "ratings", "characteristics"
   add_foreign_key "ratings", "users"

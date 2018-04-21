@@ -11,44 +11,44 @@
  * file per style scope.
  */
 /*!
- * Datepicker for Bootstrap v1.7.1 (https://github.com/uxsolutions/bootstrap-datepicker)
+ * Datepicker for Bootstrap v1.8.0 (https://github.com/uxsolutions/bootstrap-datepicker)
  *
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
-/* line 7, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 7, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker {
   padding: 4px;
   border-radius: 4px;
   direction: ltr;
 }
 
-/* line 14, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 14, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-inline {
   width: 220px;
 }
 
-/* line 17, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 17, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl {
   direction: rtl;
 }
 
-/* line 20, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 20, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl.dropdown-menu {
   left: auto;
 }
 
-/* line 23, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 23, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl table tr td span {
   float: right;
 }
 
-/* line 26, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 26, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown {
   top: 0;
   left: 0;
 }
 
-/* line 30, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 30, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown:before {
   content: '';
   display: inline-block;
@@ -60,7 +60,7 @@
   position: absolute;
 }
 
-/* line 40, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 40, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown:after {
   content: '';
   display: inline-block;
@@ -71,51 +71,51 @@
   position: absolute;
 }
 
-/* line 49, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 49, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-left:before {
   left: 6px;
 }
 
-/* line 52, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 52, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-left:after {
   left: 7px;
 }
 
-/* line 55, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 55, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-right:before {
   right: 6px;
 }
 
-/* line 58, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 58, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-right:after {
   right: 7px;
 }
 
-/* line 61, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 61, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-bottom:before {
   top: -7px;
 }
 
-/* line 64, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 64, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-bottom:after {
   top: -6px;
 }
 
-/* line 67, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 67, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-top:before {
   bottom: -7px;
   border-bottom: 0;
   border-top: 7px solid #999;
 }
 
-/* line 72, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 72, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-top:after {
   bottom: -6px;
   border-bottom: 0;
   border-top: 6px solid #fff;
 }
 
-/* line 77, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 77, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table {
   margin: 0;
   -webkit-touch-callout: none;
@@ -125,7 +125,7 @@
   user-select: none;
 }
 
-/* line 86, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 86, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker td,
 .datepicker th {
   text-align: center;
@@ -135,26 +135,26 @@
   border: none;
 }
 
-/* line 96, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 96, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .table-striped .datepicker table tr td,
 .table-striped .datepicker table tr th {
   background-color: transparent;
 }
 
-/* line 100, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 100, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
   background: #eee;
   cursor: pointer;
 }
 
-/* line 105, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 105, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.old,
 .datepicker table tr td.new {
   color: #999;
 }
 
-/* line 109, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 109, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
   background: none;
@@ -162,13 +162,13 @@
   cursor: default;
 }
 
-/* line 115, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 115, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.highlighted {
   background: #d9edf7;
   border-radius: 0;
 }
 
-/* line 119, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 119, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today,
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
@@ -183,7 +183,7 @@
   color: #000;
 }
 
-/* line 137, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 137, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today:hover:hover,
 .datepicker table tr td.today.disabled:hover,
@@ -207,7 +207,7 @@
   background-color: #fdf59a;
 }
 
-/* line 159, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 159, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:active,
 .datepicker table tr td.today:hover:active,
 .datepicker table tr td.today.disabled:active,
@@ -219,17 +219,17 @@
   background-color: #fbf069 \9;
 }
 
-/* line 169, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 169, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:hover:hover {
   color: #000;
 }
 
-/* line 172, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 172, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today.active:hover {
   color: #fff;
 }
 
-/* line 175, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 175, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range,
 .datepicker table tr td.range:hover,
 .datepicker table tr td.range.disabled,
@@ -238,7 +238,7 @@
   border-radius: 0;
 }
 
-/* line 184, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 184, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today,
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today.disabled,
@@ -253,7 +253,7 @@
   border-radius: 0;
 }
 
-/* line 204, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 204, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today:hover:hover,
 .datepicker table tr td.range.today.disabled:hover,
@@ -277,7 +277,7 @@
   background-color: #f3e97a;
 }
 
-/* line 226, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 226, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today:active,
 .datepicker table tr td.range.today:hover:active,
 .datepicker table tr td.range.today.disabled:active,
@@ -289,7 +289,7 @@
   background-color: #efe24b \9;
 }
 
-/* line 236, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 236, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected,
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
@@ -305,7 +305,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 255, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 255, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected:hover:hover,
 .datepicker table tr td.selected.disabled:hover,
@@ -329,7 +329,7 @@
   background-color: #808080;
 }
 
-/* line 277, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 277, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected:active,
 .datepicker table tr td.selected:hover:active,
 .datepicker table tr td.selected.disabled:active,
@@ -341,7 +341,7 @@
   background-color: #666666 \9;
 }
 
-/* line 287, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 287, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
@@ -357,7 +357,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 306, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 306, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active:hover:hover,
 .datepicker table tr td.active.disabled:hover,
@@ -381,7 +381,7 @@
   background-color: #0044cc;
 }
 
-/* line 328, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 328, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
 .datepicker table tr td.active.disabled:active,
@@ -393,7 +393,7 @@
   background-color: #003399 \9;
 }
 
-/* line 338, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 338, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span {
   display: block;
   width: 23%;
@@ -405,13 +405,13 @@
   border-radius: 4px;
 }
 
-/* line 350, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 350, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span:hover,
 .datepicker table tr td span.focused {
   background: #eee;
 }
 
-/* line 354, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 354, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.disabled,
 .datepicker table tr td span.disabled:hover {
   background: none;
@@ -419,7 +419,7 @@
   cursor: default;
 }
 
-/* line 360, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 360, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active,
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active.disabled,
@@ -435,7 +435,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 379, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 379, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active:hover:hover,
 .datepicker table tr td span.active.disabled:hover,
@@ -459,7 +459,7 @@
   background-color: #0044cc;
 }
 
-/* line 401, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 401, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
 .datepicker table tr td span.active.disabled:active,
@@ -471,18 +471,18 @@
   background-color: #003399 \9;
 }
 
-/* line 411, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 411, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {
   color: #999;
 }
 
-/* line 415, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 415, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch {
   width: 145px;
 }
 
-/* line 418, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 418, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch,
 .datepicker .prev,
 .datepicker .next,
@@ -490,7 +490,7 @@
   cursor: pointer;
 }
 
-/* line 424, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 424, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch:hover,
 .datepicker .prev:hover,
 .datepicker .next:hover,
@@ -498,13 +498,13 @@
   background: #eee;
 }
 
-/* line 430, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 430, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .prev.disabled,
 .datepicker .next.disabled {
   visibility: hidden;
 }
 
-/* line 434, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 434, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .cw {
   font-size: 10px;
   width: 12px;
@@ -512,34 +512,34 @@
   vertical-align: middle;
 }
 
-/* line 440, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 440, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-append.date .add-on,
 .input-prepend.date .add-on {
   cursor: pointer;
 }
 
-/* line 444, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 444, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-append.date .add-on i,
 .input-prepend.date .add-on i {
   margin-top: 3px;
 }
 
-/* line 448, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 448, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input {
   text-align: center;
 }
 
-/* line 451, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 451, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input:first-child {
   border-radius: 3px 0 0 3px;
 }
 
-/* line 456, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 456, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input:last-child {
   border-radius: 0 3px 3px 0;
 }
 
-/* line 461, /home/tom/.rvm/gems/ruby-2.4.2/gems/bootstrap-datepicker-rails-1.7.1.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 461, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange .add-on {
   display: inline-block;
   width: auto;
@@ -10046,7 +10046,7 @@ p.tiny {
 /* line 528, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .navbar-brand {
   width: 35%;
-  font-size: .85rem;
+  font-size: 1rem;
 }
 
 /* line 532, /home/tom/paul/app/assets/stylesheets/application.css.scss */
@@ -10058,7 +10058,7 @@ p.tiny {
 .nav-box {
   width: 100%;
   background-color: #0d4884;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 5px;
   height: 64px;
   margin-bottom: 20px;
@@ -10068,21 +10068,20 @@ p.tiny {
 
 /* line 545, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .login {
-  background-color: #0d4884;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 6px;
   font-size: .85rem;
 }
 
-/* line 551, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 550, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .nav-link {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   list-style-type: none;
   margin-right: 8px;
 }
 
-/* line 558, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 557, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .nav-section {
   width: 60%;
   display: flex;
@@ -10092,23 +10091,23 @@ p.tiny {
   list-style-type: none;
 }
 
-/* line 567, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 566, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #content-desktop {
   display: inline;
 }
 
-/* line 570, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 569, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #content-mobile {
   display: none;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 576, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 575, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   #content-desktop {
     display: none;
   }
 
-  /* line 579, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 578, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   #content-mobile {
     display: flex;
     flex-align: center;

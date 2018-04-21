@@ -20,6 +20,7 @@ class CharacteristicsController < ApplicationController
   def new
     @characteristic = Characteristic.new
     @characteristic.user = current_user
+    @characteristic.build_ratings
   end
 
   # GET /characteristics/1/edit
@@ -75,7 +76,7 @@ class CharacteristicsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def characteristic_params
       params.require(:characteristic).permit(:name, :definition, :user_id, 
-        ratings_attributes: [:score, :characteristic_id])
+        ratings_attributes: [:score, :characteristic_id, :user_id])
     end
   end
 end

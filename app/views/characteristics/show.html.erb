@@ -1,32 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @characteristic.name %></p>
-<p>
-  <strong>Definition:</strong>
-  <%= @characteristic.definition %></p>
-
-  <%= link_to 'Edit', edit_characteristic_path(@characteristic) %> | 
-  <% if current_user.characteristics.count <5 %> 
-    <p>   
-    You have submitted <%= current_user.characteristics.count %> so far. 
-    Please enter at least five and up to as many as you wish. </p>
-  <% elsif current_user.characteristics.count >=5 %> 
-    <p><b>
-    Good for you! Keep adding as many as you desire. </b></p>
-  <% end %></p>
-  <p>
-  <%= link_to 'Add another characteristic', new_characteristic_path %></p>
-  <div class="mt30"></div>
-  <%# unless @characteristic.user.rating.present ? %>
-  
 
   <h4><%= @characteristic.name %></h4>
-  <%# if @characteristic_id.ratings.user_id == current_user rating.present ? %>
-  <p>You already rated this attribute</p>
-  <%# else %>
-
   <p><b>Rate this characteristic</b></p>
   <div>
     <%= form_for([@characteristic, @rating]) do |f| %>

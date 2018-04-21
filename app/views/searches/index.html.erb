@@ -14,17 +14,14 @@ Finally we’ll all take a shot at formulating questions whose answers are desig
 
     <%#= render 'characteristics/form' %>
     <% @characteristics.each do |c| %>
+      <div class="mt30"></div>
       <h4><%= c.name %></h4>
-      <p><%= c.definition %> 
+      <p><%= c.definition %><br> 
         <% if c.user_id == current_user.id %>
-        <%= link_to "Edit", characteristic_path(c.id) %>
+        <%= link_to "Edit", characteristic_path(c.id) %> | 
         <% end -%>
-        <% if c.ratings.user_id != current_user.id %>
         <%= link_to "Rate this attribute", new_characteristic_rating_path(c.id) %>
-        <% else %>
-        <p>You have rated this attribute</p>
-        <% end -%>
-    <% end -%>    
+    <% end %>    
 
   </div> 
 
@@ -51,8 +48,11 @@ Finally we’ll all take a shot at formulating questions whose answers are desig
         <%= link_to "Sample questions, Connecticut", "https://www.episcopalct.org/filerepository/DownloadFile.aspx?FileID=182" %> </p>
     <p class="text-center">
         <%= link_to "STAR theory, Texas", "http://aa86e41e7d951355383b-cb342165bfeaa4f2927aec8e5d7de41f.r23.cf2.rackcdn.com/uploaded/c/0e473709_cd-star-notebook.pdf" %> </p>
-    <p class="text-centered">
+    <p class="text-center">
         <%= link_to "More questions", "https://discernablefutures.wordpress.com/tag/interview-questions/" %></p>
+        <p><b>The interview!</b></p>
+        <p class="text-center">
+         <%= link_to "Interview preparation", "https://www.episcopalchurch.org/files/CDO_Interviewing_in_the_Calling_Process_May2009.pdf" %></p>
                
 
 

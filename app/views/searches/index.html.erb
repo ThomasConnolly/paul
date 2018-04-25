@@ -13,7 +13,7 @@
     <div class="mt50"></div>
   <h2>Communications style</h2>
     <% @characteristics.each do |c| %>    
-       <% if c.kind == "communications" %>
+       <% if c.kind == "communication" %>
         <h4> <%= c.name %> </h4><br> 
           <%= link_to "Add or edit a question for this attribute", 
           edit_characteristic_path(c) %>

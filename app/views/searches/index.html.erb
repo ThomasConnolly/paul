@@ -2,16 +2,16 @@
   <div class="col col-md-8 col-sm-12 main">
 <h1>Questions for a rector</h1>
 <div class="mt100"></div>
-  <h2>Category: Leadership Qualities</h2>
+  <h2>Leadership Qualities</h2>
     <% @characteristics.each do |c| %>
       <% if c.kind == "leadership" %>
         <h4> <%= c.name %> </h4>
         <%= link_to "Add or edit a question for this attribute", 
           edit_characteristic_path(c) %>
       <% end %>
-    <% end -%>
+    <% end %>
     <div class="mt50"></div>
-  <h2>Category: Communications style</h2>
+  <h2>Communications style</h2>
     <% @characteristics.each do |c| %>    
        <% if c.kind == "communications" %>
         <h4> <%= c.name %> </h4><br> 
@@ -20,7 +20,7 @@
       <% end %>
     <% end -%>
     <div class="mt50"></div>
-  <h2>Category: Priest's experience</h2>
+  <h2>Priest's experience</h2>
     <% @characteristics.each do |c| %>
       <% if c.kind == "experience" %>  
         <h4> <%= c.name %> </h4><br> 
@@ -29,7 +29,7 @@
       <% end %>
     <% end -%>  
     <div class="mt50"></div>
-  <h2>Category: Spirituality</h2>
+  <h2>Spirituality</h2>
     <% @characteristics.each do |c| %>
       <% if c.kind == "spirituality" %>  
         <h4> <%= c.name %> </h4> 
@@ -38,7 +38,7 @@
       <% end %>
     <% end -%>
     <div class="mt50"></div>
-  <h2>Category: Leadership Qualities</h4>
+  <h2>Personal / lifestyle</h2>
       <% @characteristics.each do |c| %>
         <% if c.kind == "lifestyle" %>
         <h4> <%= c.name %> </h4><br> 

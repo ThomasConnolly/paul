@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Characteristics</h1>
+<h2>Characteristics</h2>
 
 
     <% @characteristics.each do |characteristic| %>
     
-      <h3><%= characteristic.name %></h3>
-      <p><%= characteristic.definition %></p>
+      <h4><%= characteristic.name %></h4>
       
-      <%= link_to 'Show', characteristic %> <% if characteristic.user == current_user %>| 
+      <p><%= raw characteristic.question %></p>
+      
+      
       <%= link_to 'Edit', edit_characteristic_path(characteristic) %>  | <%= link_to 'Destroy', characteristic, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %> 
-    <% end %>
+
 <div class="mt30"></div>
 <p><b>
 <%= link_to 'Create a new characteristic', new_characteristic_path %></b></p>

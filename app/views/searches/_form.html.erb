@@ -2,11 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :definition %>
-    <%#= f.input :ranking, as: :radio_buttons, collection:
-    [['1', 'not important'], ['2', 'important'], ['3', 'very important'], 
-    ['4', 'essential']] %>
+  
+    <%= f.input :question, as: :ckeditor %>
 
   </div>
 

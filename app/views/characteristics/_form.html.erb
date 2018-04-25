@@ -2,8 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, placeholder: "Name of the attribute or characteristic"%>
-    <%= f.input :definition, placeholder: "What is your meaning of this attribute?" %>
+    <%= f.input :name %>
+    <%= f.radio_button(:kind, "leadership") %>
+        <%= f.label(:kind, "leadership") %>
+        <%= f.radio_button(:kind, "spirituality") %>
+        <%= f.label(:kind, 'spirituality') %>
+        <%= f.radio_button(:kind, "lifestyle") %>
+        <%= f.label(:kind, 'lifestyle') %>
+        <%= f.radio_button(:kind, "communication") %>
+        <%= f.label(:kind, 'communication') %>
+        <%= f.radio_button(:kind, "experience") %>
+        <%= f.label(:kind, 'experience') %>
+    <%= f.input :question, as: :ckeditor %>
   </div>
 
   <div class="form-actions">

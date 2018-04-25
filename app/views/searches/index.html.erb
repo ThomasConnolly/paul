@@ -1,34 +1,60 @@
 <div class="row">
   <div class="col col-md-8 col-sm-12 main">
-<!--<h1>Searching for a rector</h1>-->
-<h1>Let the search work begin!</h1>
-<p>
-What does the parish want in a rector? The search team should be able to synthesize the answer to this question by reading the parish profile, long-range planning team’s initial report, the ministry portfolio and the parish survey and your own understanding of who we are. This effort will start with a list of attributes, virtues or characteristics of a rector who will make a good fit at St. Paul’s.</p>
-<p>
-Your job starts with your coming up with five or more attributes or characteristics, each named with one or two words, and each defined in as many words as you need.</p>  
-<p>
-When all of us have done this, we’ll each read and absorb this information jointly, consolidate the characteristics as appropriate, and agree on definitions.</p>
-<p>
-Finally we’ll all take a shot at formulating questions whose answers are designed to help us determine whether a candidate fits our needs.
-</p>
-
-    <%#= render 'characteristics/form' %>
+<h1>Questions for a rector</h1>
+<div class="mt100"></div>
+  <h2>Category: Leadership Qualities</h2>
     <% @characteristics.each do |c| %>
-      <div class="mt30"></div>
-      <h4><%= c.name %></h4>
-      <p><%= c.definition %><br> 
-        <% if c.user_id == current_user.id %>
-        <%= link_to "Edit", characteristic_path(c.id) %> | 
-        <% end -%>
-        <%= link_to "Rate this attribute", new_characteristic_rating_path(c.id) %>
-    <% end %>    
-
+      <% if c.kind == "leadership" %>
+        <h4> <%= c.name %> </h4>
+        <%= link_to "Add or edit a question for this attribute", 
+          edit_characteristic_path(c) %>
+      <% end %>
+    <% end -%>
+    <div class="mt50"></div>
+  <h2>Category: Communications style</h2>
+    <% @characteristics.each do |c| %>    
+       <% if c.kind == "communications" %>
+        <h4> <%= c.name %> </h4><br> 
+          <%= link_to "Add or edit a question for this attribute", 
+          edit_characteristic_path(c) %>
+      <% end %>
+    <% end -%>
+    <div class="mt50"></div>
+  <h2>Category: Priest's experience</h2>
+    <% @characteristics.each do |c| %>
+      <% if c.kind == "experience" %>  
+        <h4> <%= c.name %> </h4><br> 
+           <%= link_to "Add or edit a question for this attribute", 
+          edit_characteristic_path(c) %>
+      <% end %>
+    <% end -%>  
+    <div class="mt50"></div>
+  <h2>Category: Spirituality</h2>
+    <% @characteristics.each do |c| %>
+      <% if c.kind == "spirituality" %>  
+        <h4> <%= c.name %> </h4> 
+          <%= link_to "Add or edit a question for this attribute", 
+          edit_characteristic_path(c) %>
+      <% end %>
+    <% end -%>
+    <div class="mt50"></div>
+  <h2>Category: Leadership Qualities</h4>
+      <% @characteristics.each do |c| %>
+        <% if c.kind == "lifestyle" %>
+        <h4> <%= c.name %> </h4><br> 
+           <%= link_to "Add or edit a question for this attribute", 
+          edit_characteristic_path(c) %>
+        <% end %>
+      <% end -%>
+     
+        
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">
     <h3>Links to documents</h3>
     <p>
-      Read these documents before submitting your characteristics</p> 
+      All of these documents are of importance to us as a search committee. Please take the time to pore over them.
+    </p> 
       <%= cl_image_tag("ParishProfilePDF_cover_hymh4t.png", width: '45%', class: 'image-center') %>
     <p class="text-center">
       <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %></p><br>
@@ -52,7 +78,7 @@ Finally we’ll all take a shot at formulating questions whose answers are desig
         <%= link_to "More questions", "https://discernablefutures.wordpress.com/tag/interview-questions/" %></p>
         <p><b>The interview!</b></p>
         <p class="text-center">
-         <%= link_to "Interview preparation", "https://www.episcopalchurch.org/files/CDO_Interviewing_in_the_Calling_Process_May2009.pdf" %></p>
+         <%= link_to "Interview preparation", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1524568661/interviewing_qifqyn.pdf" %></p>
                
 
 

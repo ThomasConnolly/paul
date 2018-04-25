@@ -5,22 +5,18 @@ class CharacteristicsController < ApplicationController
   # GET /characteristics
   # GET /characteristics.json
   def index
-    @characteristics = Characteristic.all
+    @characteristics = Characteristic.all.order(updated_at: :desc)
   end
 
   # GET /characteristics/1
   # GET /characteristics/1.json
   def show
-    @rating = Rating.new
-    @rating_user = current_user
-    @characteristic_id = @characteristic.id
   end
 
   # GET /characteristics/new
   def new
     @characteristic = Characteristic.new
     @characteristic.user = current_user
-    @characteristic.build_ratings
   end
 
   # GET /characteristics/1/edit
@@ -29,31 +25,29 @@ class CharacteristicsController < ApplicationController
 
   # POST /characteristics
   # POST /characteristics.json
+
   def create
     @characteristic = Characteristic.new(characteristic_params)
-    @characteristic.user = current_user
-
-    respond_to do |format|
-      if @characteristic.save
-        format.html { redirect_to @characteristic, notice: 'Characteristic was successfully created.' }
-        format.json { render :show, status: :created, location: @characteristic }
-      else
-        format.html { render :new }
-        format.json { render json: @characteristic.errors, status: :unprocessable_entity }
-      end
+    if  @characteristic.save
+      redirect_to characteristics_url
+    else
+      render :new  
     end
-  end
+end
+
+
+
 
   # PATCH/PUT /characteristics/1
   # PATCH/PUT /characteristics/1.json
   def update
     respond_to do |format|
       if @characteristic.update(characteristic_params)
-        format.html { redirect_to @characteristic, notice: 'Characteristic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @characteristic }
+        format.html { redirect_to searches_path, notice: 'Characteristic was successfully updated.' }
+        
       else
         format.html { render :edit }
-        format.json { render json: @characteristic.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -75,8 +69,7 @@ class CharacteristicsController < ApplicationController
       @characteristic = Characteristic.find(params[:id])
     # Never trust parameters from the scary internet, only allow the white list through.
     def characteristic_params
-      params.require(:characteristic).permit(:name, :definition, :user_id, 
-        ratings_attributes: [:score, :characteristic_id, :user_id])
+      params.require(:characteristic).permit(:name, :kind, :definition, :question)
     end
   end
 end

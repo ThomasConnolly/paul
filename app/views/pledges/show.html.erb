@@ -2,7 +2,7 @@
   <div class="row">    
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
       <div class="pledge-text">
-        <p><strong> You have elected the <span id="plan"><em><%= @pledge.plan %></em></span> pay plan for your annual pledge of <%= number_to_currency(@pledge.amount) %>. That would be <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency((@pledge.pay_this.to_f)/100) %>, beginning Jan. 1, 2018.</span></strong></p>
+        <p><strong> You have elected the <span id="plan"><em><%= @pledge.plan %></em></span> pay plan for your annual pledge of <%= number_to_currency(@pledge.amount) %>. That would be <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency((@pledge.pay_this.to_f)/100) %>, </span> beginning today and ending on Concecration Sunday, where our pledges will be offered to God at all the services.</p>
         <div class="mt30"></div>
           <p>If these numbers are not correct, click "edit pledge" to make changes. If OK, click "Pay with Card." You will be taken to a secure website that handles credit and debit card payments for our church.</p>
         <div class="mt30"></div>

@@ -8,7 +8,7 @@ class PledgeChargesController < ApplicationController
     @plan = @pledge.plan
     @amount = @pledge.pay_this
     
-      if current_user.stripe_id?
+      if current_user.stripe_pledge_id?
         customer = Stripe::Customer.retrieve(current_user.customer_id)
       else
       customer = Stripe::Customer.create(

@@ -2,14 +2,15 @@
 <%= simple_form_for(@pledge, url: pledge_path) do |f| %>
   <%= f.error_notification %>
     <div>
-      <h2>Your annual pledge:</h2>
+      <h2>Amount to pay with each payment:</h2>
         <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Amount in whole dollars", label: false %><br>
+        
     </div> 
     <div>   
       <h3>Payments will be made:</h3>
         <%= f.input :divisor, collection: [["Weekly", 52], ["Monthly", 12], 
         ["Quarterly", 4]], as: :radio_buttons, label: false, input_html: {id: "divisor"} %><br>
 
-        <%= f.button :submit, "Calculate payment", class: "btn btn-primary btn-lg" %> 
+        <%= f.button :submit, "Debit or credit card information", class: "btn btn-primary btn-lg" %> 
     </div>
 <% end %>

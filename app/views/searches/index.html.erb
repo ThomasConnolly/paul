@@ -4,38 +4,43 @@
 <div class="mt100"></div>
   <% @characteristics.where(kind: "leadership").take(1).each do |leader| %>
   <h2>Leadership Qualities</h2>
-      <p> Keywords: <i> Compassionate, Accessible, Outreacher,  Stewardship promotor, Formation facilitator, Possessor of sense of humor, motivator, financial experience and interest, self-starter, delegator, grower, energitic and resillient, pastoral </i></p>
-      <%= link_to "Add your question for this category", 
-          edit_characteristic_path(leader) %>
-  <% end -%>
+    <p> Keywords: <i> Compassionate, Accessible, Outreacher,  Stewardship 
+    promotor, Formation facilitator, Possessor of sense of humor, motivator,
+    financial experience and interest, self-starter, delegator, grower, 
+    energetic and resillient, pastoral </i></p>
+     <p> <%= link_to "Add your question for this category", 
+        edit_characteristic_path(leader) %></p>
+  <% end %>
 
-    <div class="mt50"></div>
+  <div class="mt50"></div>
   <% @characteristics.where(kind: "communications").take(1).each do|com| %>  
-  <h2>Communications style</h2>
-   <p>Keywords: <i> worship and music style, preaching style, liturgical style, formation style</i><p>
-          <%= link_to "Add your question for this category", 
-          edit_characteristic_path(com) %>
-  <% end -%>   
-     <div class="mt50"></div>
+    <h2>Communications style</h2>
+    <p>Keywords: <i> worship and music style, preaching style, liturgical style, 
+    formation style</i><p>
+      <p><%= link_to "Add your question for this category", 
+        edit_characteristic_path(com) %></p>
+  <% end %>
+
+  <div class="mt50"></div>
   <% @characteristics.where(kind: "spirituality").take(1).each do |spirit|%>   
   <h2>Spirituality</h2>
-   <p>Keywords: <i> Sense of serenity, prayer and action</i><p>
-          <%= link_to "Add your question for this category", 
-          edit_characteristic_path(spirit) %>
+    <p>Keywords: <i> Sense of serenity, prayer and action</i><p>
+    <p>  <%= link_to "Add your question for this category", 
+        edit_characteristic_path(spirit) %> </p>
   <% end -%>
   <div class="mt50"></div>
   <% @characteristics.where(kind: "lifestyle").take(1).each do |life|%>
   <h2>Personal lifestyle</h2>
    <p>Keywords: <i> Community involvement, health, spousal support, sense of community</i><p>
-          <%= link_to "Add your question for this category", 
-          edit_characteristic_path(life) %>
+      <p><%= link_to "Add your question for this category", 
+          edit_characteristic_path(life) %>  </p>
   <% end -%>        
   <div class="mt50"></div>
   <% @characteristics.where(kind: "experience").take(1).each do |exp| %>
   <h2>Experience</h2>
    <p>Keywords: <i> Especially as how pertinent is priest's experience to our parish</i><p>
-          <%= link_to "Add your question for this category", 
-          edit_characteristic_path(exp) %>
+      <p><%= link_to "Add your question for this category", 
+          edit_characteristic_path(exp) %></p>
   <% end -%>        
   </div> 
 

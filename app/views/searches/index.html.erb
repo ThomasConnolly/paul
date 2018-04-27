@@ -2,52 +2,41 @@
   <div class="col col-md-8 col-sm-12 main">
 <h1>Questions for a rector</h1>
 <div class="mt100"></div>
+  <% @characteristics.where(kind: "leadership").take(1).each do |leader| %>
   <h2>Leadership Qualities</h2>
-    <% @characteristics.each do |c| %>
-      <% if c.kind == "leadership" %>
-        <h4> <%= c.name %> </h4>
-        <%= link_to "Add or edit a question for this attribute", 
-          edit_characteristic_path(c) %>
-      <% end %>
-    <% end %>
+      <p> Keywords: <i> Compassionate, Accessible, Outreacher,  Stewardship promotor, Formation facilitator, Possessor of sense of humor, motivator, financial experience and interest, self-starter, delegator, grower, energitic and resillient, pastoral </i></p>
+      <%= link_to "Add your question for this category", 
+          edit_characteristic_path(leader) %>
+  <% end -%>
+
     <div class="mt50"></div>
+  <% @characteristics.where(kind: "communications").take(1).each do|com| %>  
   <h2>Communications style</h2>
-    <% @characteristics.each do |c| %>    
-       <% if c.kind == "communication" %>
-        <h4> <%= c.name %> </h4><br> 
-          <%= link_to "Add or edit a question for this attribute", 
-          edit_characteristic_path(c) %>
-      <% end %>
-    <% end -%>
-    <div class="mt50"></div>
-  <h2>Priest's experience</h2>
-    <% @characteristics.each do |c| %>
-      <% if c.kind == "experience" %>  
-        <h4> <%= c.name %> </h4><br> 
-           <%= link_to "Add or edit a question for this attribute", 
-          edit_characteristic_path(c) %>
-      <% end %>
-    <% end -%>  
-    <div class="mt50"></div>
+   <p>Keywords: <i> worship and music style, preaching style, liturgical style, formation style</i><p>
+          <%= link_to "Add your question for this category", 
+          edit_characteristic_path(com) %>
+  <% end -%>   
+     <div class="mt50"></div>
+  <% @characteristics.where(kind: "spirituality").take(1).each do |spirit|%>   
   <h2>Spirituality</h2>
-    <% @characteristics.each do |c| %>
-      <% if c.kind == "spirituality" %>  
-        <h4> <%= c.name %> </h4> 
-          <%= link_to "Add or edit a question for this attribute", 
-          edit_characteristic_path(c) %>
-      <% end %>
-    <% end -%>
-    <div class="mt50"></div>
-  <h2>Personal / lifestyle</h2>
-      <% @characteristics.each do |c| %>
-        <% if c.kind == "lifestyle" %>
-        <h4> <%= c.name %> </h4><br> 
-           <%= link_to "Add or edit a question for this attribute", 
-          edit_characteristic_path(c) %>
-        <% end %>
-      <% end -%>
-     
-        
+   <p>Keywords: <i> Sense of serenity, prayer and action</i><p>
+          <%= link_to "Add your question for this category", 
+          edit_characteristic_path(spirit) %>
+  <% end -%>
+  <div class="mt50"></div>
+  <% @characteristics.where(kind: "lifestyle").take(1).each do |life|%>
+  <h2>Personal lifestyle</h2>
+   <p>Keywords: <i> Community involvement, health, spousal support, sense of community</i><p>
+          <%= link_to "Add your question for this category", 
+          edit_characteristic_path(life) %>
+  <% end -%>        
+  <div class="mt50"></div>
+  <% @characteristics.where(kind: "experience").take(1).each do |exp| %>
+  <h2>Experience</h2>
+   <p>Keywords: <i> Especially as how pertinent is priest's experience to our parish</i><p>
+          <%= link_to "Add your question for this category", 
+          edit_characteristic_path(exp) %>
+  <% end -%>        
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">

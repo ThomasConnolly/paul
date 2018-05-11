@@ -50,3 +50,4 @@ zmarc_stuff
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+prepend_2016_to_birthdays.rb

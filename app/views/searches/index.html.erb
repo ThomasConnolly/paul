@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col col-md-8 col-sm-12 main">
-<h1>Questions for a rector</h1>
+<h1>Rate the candidates</h1>
+  <% @candidates.each do |can| %>
+    <h2>The Rev. <%=link_to can.full_name, can.url %></h2>
+    <hr>
+  <% end %>  
 <div class="mt100"></div>
   <% @characteristics.where(kind: "leadership").take(1).each do |leader| %>
   <h2>Leadership Qualities</h2>

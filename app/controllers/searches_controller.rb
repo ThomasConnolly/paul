@@ -6,6 +6,7 @@ class SearchesController < ApplicationController
   def index
     @characteristics = Characteristic.all
     @characteristic = Characteristic.new
+    @candidates = Candidate.all
   end
 
   # GET /searches/1

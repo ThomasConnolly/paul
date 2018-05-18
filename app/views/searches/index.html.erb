@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col col-md-8 col-sm-12 main">
 <h1>Rate the candidates</h1>
+<h5>Start with the Ministry Portfolios in your hand. Select one, then click on that person's name.<br>
+  Please don't skip anyone. If you've decided a certain candidate is not good for St. Paul's, click his or 
+  her name and go to the last line of the survey questions and make a statement to that effect. 
+  This way we will know no one was overlooked.
+  </h5>
+  <p><strong>Problems? Call Tom, 285-9224</strong></p>
   <% @candidates.each do |can| %>
     <h2>The Rev. <%=link_to can.full_name, can.url %></h2>
     <hr>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
-  resources :candidate, only: [:index]
+  get 'candidates/index'
+
+  resources :candidates
   resources :search_questions
   resources :searches, only: [:index]
   get 'Search', to: 'searches#index', as: 'Search'

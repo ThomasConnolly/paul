@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Candidates</h1>
+
+    <% @candidates.each do |candidate| %>
+        <h2><%= candidate.full_name %></h2>
+        <p><small><%= candidate.url %></small></p>
+
+        <%= link_to 'Show', candidate %>
+        <%= link_to 'Edit', edit_candidate_path(candidate) %>
+        <%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
+    <% end %>
+
+<br>
+
+<%= link_to 'New Candidate', new_candidate_path %>

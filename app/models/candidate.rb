@@ -1,10 +1,5 @@
 class Candidate < ApplicationRecord
-  before_save :set_full_name
-
-
-  protected
-
-  def set_full_name
-    self.full_name = "#{self.first_name} #{self.last_name}".strip
-  end
+  validates_presence_of :last_name
+  validates_presence_of :full_name
+  validates_presence_of :url
 end

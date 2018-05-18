@@ -6,7 +6,7 @@ class SearchesController < ApplicationController
   def index
     @characteristics = Characteristic.all
     @characteristic = Characteristic.new
-    @candidates = Candidate.all
+    @candidates = Candidate.all.order(:last_name)
   end
 
   # GET /searches/1

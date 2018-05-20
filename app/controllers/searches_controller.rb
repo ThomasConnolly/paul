@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_characteristic, only: [:show, :edit, :update, :destroy]
 
   # GET /searches
@@ -44,11 +46,13 @@ class SearchesController < ApplicationController
   def update
     respond_to do |format|
       if @characteristic.update(characteristic_params)
-        format.html { redirect_to @characteristic, notice: 'Successfully updated.' }
+        format.html { redirect_to @characteristic, notice: 
+          'Successfully updated.' }
         format.json { render :show, status: :ok, location: @search }
       else
         format.html { render :edit }
-        format.json { render json: @characteristic.errors, status: :unprocessable_entity }
+        format.json { render json: @characteristic.errors, status: 
+          :unprocessable_entity }
       end
     end
   end
@@ -58,7 +62,8 @@ class SearchesController < ApplicationController
   def destroy
     @characteristic.destroy
     respond_to do |format|
-      format.html { redirect_to searches_url, notice: 'Characteristic successfully destroyed'}
+      format.html { redirect_to searches_url, notice: 
+        'Characteristic successfully destroyed'}
     end
   end
 

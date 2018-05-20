@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :searcher_only
   before_action :set_characteristic, only: [:show, :edit, :update, :destroy]
 
   # GET /searches
@@ -78,6 +78,12 @@ class SearchesController < ApplicationController
     #def search_params
     #  params.fetch(:search, {})
     #end
+
+     def searcher_only
+    unless current_user.has_role?(:searcher) 
+      redirect_to root_path, :alert => "Access is restricted."
+    end
+  end
 
     def characteristic_params
       params.require(:characteristic).permit(:name, :user_id, :description) 

@@ -15,40 +15,40 @@
  *
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
-/* line 7, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 7, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker {
   padding: 4px;
   border-radius: 4px;
   direction: ltr;
 }
 
-/* line 14, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 14, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-inline {
   width: 220px;
 }
 
-/* line 17, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 17, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl {
   direction: rtl;
 }
 
-/* line 20, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 20, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl.dropdown-menu {
   left: auto;
 }
 
-/* line 23, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 23, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-rtl table tr td span {
   float: right;
 }
 
-/* line 26, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 26, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown {
   top: 0;
   left: 0;
 }
 
-/* line 30, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 30, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown:before {
   content: '';
   display: inline-block;
@@ -60,7 +60,7 @@
   position: absolute;
 }
 
-/* line 40, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 40, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown:after {
   content: '';
   display: inline-block;
@@ -71,51 +71,51 @@
   position: absolute;
 }
 
-/* line 49, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 49, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-left:before {
   left: 6px;
 }
 
-/* line 52, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 52, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-left:after {
   left: 7px;
 }
 
-/* line 55, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 55, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-right:before {
   right: 6px;
 }
 
-/* line 58, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 58, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-right:after {
   right: 7px;
 }
 
-/* line 61, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 61, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-bottom:before {
   top: -7px;
 }
 
-/* line 64, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 64, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-bottom:after {
   top: -6px;
 }
 
-/* line 67, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 67, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-top:before {
   bottom: -7px;
   border-bottom: 0;
   border-top: 7px solid #999;
 }
 
-/* line 72, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 72, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker-dropdown.datepicker-orient-top:after {
   bottom: -6px;
   border-bottom: 0;
   border-top: 6px solid #fff;
 }
 
-/* line 77, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 77, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table {
   margin: 0;
   -webkit-touch-callout: none;
@@ -125,7 +125,7 @@
   user-select: none;
 }
 
-/* line 86, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 86, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker td,
 .datepicker th {
   text-align: center;
@@ -135,26 +135,26 @@
   border: none;
 }
 
-/* line 96, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 96, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .table-striped .datepicker table tr td,
 .table-striped .datepicker table tr th {
   background-color: transparent;
 }
 
-/* line 100, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 100, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
   background: #eee;
   cursor: pointer;
 }
 
-/* line 105, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 105, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.old,
 .datepicker table tr td.new {
   color: #999;
 }
 
-/* line 109, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 109, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
   background: none;
@@ -162,13 +162,13 @@
   cursor: default;
 }
 
-/* line 115, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 115, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.highlighted {
   background: #d9edf7;
   border-radius: 0;
 }
 
-/* line 119, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 119, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today,
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
@@ -183,7 +183,7 @@
   color: #000;
 }
 
-/* line 137, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 137, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today:hover:hover,
 .datepicker table tr td.today.disabled:hover,
@@ -207,7 +207,7 @@
   background-color: #fdf59a;
 }
 
-/* line 159, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 159, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:active,
 .datepicker table tr td.today:hover:active,
 .datepicker table tr td.today.disabled:active,
@@ -219,17 +219,17 @@
   background-color: #fbf069 \9;
 }
 
-/* line 169, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 169, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today:hover:hover {
   color: #000;
 }
 
-/* line 172, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 172, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.today.active:hover {
   color: #fff;
 }
 
-/* line 175, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 175, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range,
 .datepicker table tr td.range:hover,
 .datepicker table tr td.range.disabled,
@@ -238,7 +238,7 @@
   border-radius: 0;
 }
 
-/* line 184, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 184, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today,
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today.disabled,
@@ -253,7 +253,7 @@
   border-radius: 0;
 }
 
-/* line 204, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 204, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today:hover:hover,
 .datepicker table tr td.range.today.disabled:hover,
@@ -277,7 +277,7 @@
   background-color: #f3e97a;
 }
 
-/* line 226, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 226, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.range.today:active,
 .datepicker table tr td.range.today:hover:active,
 .datepicker table tr td.range.today.disabled:active,
@@ -289,7 +289,7 @@
   background-color: #efe24b \9;
 }
 
-/* line 236, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 236, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected,
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
@@ -305,7 +305,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 255, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 255, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected:hover:hover,
 .datepicker table tr td.selected.disabled:hover,
@@ -329,7 +329,7 @@
   background-color: #808080;
 }
 
-/* line 277, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 277, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.selected:active,
 .datepicker table tr td.selected:hover:active,
 .datepicker table tr td.selected.disabled:active,
@@ -341,7 +341,7 @@
   background-color: #666666 \9;
 }
 
-/* line 287, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 287, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
@@ -357,7 +357,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 306, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 306, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active:hover:hover,
 .datepicker table tr td.active.disabled:hover,
@@ -381,7 +381,7 @@
   background-color: #0044cc;
 }
 
-/* line 328, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 328, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
 .datepicker table tr td.active.disabled:active,
@@ -393,7 +393,7 @@
   background-color: #003399 \9;
 }
 
-/* line 338, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 338, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span {
   display: block;
   width: 23%;
@@ -405,13 +405,13 @@
   border-radius: 4px;
 }
 
-/* line 350, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 350, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span:hover,
 .datepicker table tr td span.focused {
   background: #eee;
 }
 
-/* line 354, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 354, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.disabled,
 .datepicker table tr td span.disabled:hover {
   background: none;
@@ -419,7 +419,7 @@
   cursor: default;
 }
 
-/* line 360, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 360, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active,
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active.disabled,
@@ -435,7 +435,7 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 379, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 379, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active:hover:hover,
 .datepicker table tr td span.active.disabled:hover,
@@ -459,7 +459,7 @@
   background-color: #0044cc;
 }
 
-/* line 401, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 401, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
 .datepicker table tr td span.active.disabled:active,
@@ -471,18 +471,18 @@
   background-color: #003399 \9;
 }
 
-/* line 411, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 411, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {
   color: #999;
 }
 
-/* line 415, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 415, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch {
   width: 145px;
 }
 
-/* line 418, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 418, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch,
 .datepicker .prev,
 .datepicker .next,
@@ -490,7 +490,7 @@
   cursor: pointer;
 }
 
-/* line 424, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 424, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .datepicker-switch:hover,
 .datepicker .prev:hover,
 .datepicker .next:hover,
@@ -498,13 +498,13 @@
   background: #eee;
 }
 
-/* line 430, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 430, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .prev.disabled,
 .datepicker .next.disabled {
   visibility: hidden;
 }
 
-/* line 434, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 434, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .datepicker .cw {
   font-size: 10px;
   width: 12px;
@@ -512,34 +512,34 @@
   vertical-align: middle;
 }
 
-/* line 440, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 440, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-append.date .add-on,
 .input-prepend.date .add-on {
   cursor: pointer;
 }
 
-/* line 444, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 444, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-append.date .add-on i,
 .input-prepend.date .add-on i {
   margin-top: 3px;
 }
 
-/* line 448, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 448, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input {
   text-align: center;
 }
 
-/* line 451, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 451, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input:first-child {
   border-radius: 3px 0 0 3px;
 }
 
-/* line 456, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 456, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange input:last-child {
   border-radius: 0 3px 3px 0;
 }
 
-/* line 461, /home/tom/.rvm/gems/ruby-2.4.4/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
+/* line 461, /home/tom/.rvm/gems/ruby-2.5.1/gems/bootstrap-datepicker-rails-1.8.0.1/vendor/assets/stylesheets/bootstrap-datepicker.css */
 .input-daterange .add-on {
   display: inline-block;
   width: auto;
@@ -9397,17 +9397,672 @@ button.close {
     display: none !important;
   }
 }
-/* line 21, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/*
+ * jQuery Nivo Slider v3.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+/* The Nivo Slider styles */
+/* line 11, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 18, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-width: none;
+}
+
+/* line 25, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-main-image {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+/* line 32, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider a.nivo-imageLink {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  display: none;
+  background: white;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* The slices and boxes in the Slider */
+/* line 49, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-slice {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  top: 0;
+}
+
+/* line 57, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-box {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* line 64, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-box img {
+  display: block;
+}
+
+/* Caption styles */
+/* line 69, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  z-index: 8;
+  padding: 5px 10px;
+  opacity: 0.8;
+  overflow: hidden;
+  display: none;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=8);
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+/* line 88, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption p {
+  padding: 5px;
+  margin: 0;
+}
+
+/* line 93, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption a {
+  display: inline !important;
+}
+
+/* line 97, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-html-caption {
+  display: none;
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+/* line 102, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-directionNav a {
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  cursor: pointer;
+}
+
+/* line 109, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-prevNav {
+  left: 0px;
+}
+
+/* line 113, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-nextNav {
+  right: 0px;
+}
+
+/* Control nav styles (e.g. 1,2,3...) */
+/* line 118, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav {
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* line 123, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav a {
+  cursor: pointer;
+}
+
+/* line 127, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav a.active {
+  font-weight: bold;
+}
+
+/* Themes */
+/* line 133, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light.slider-wrapper {
+  background: #fff;
+  padding: 10px;
+}
+
+/* line 138, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/light/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  overflow: visible;
+}
+
+/* line 145, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 152, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 157, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 164, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url(/assets/light/bullets-405dc19a2319cff81e8642886a2a460bdc1cbdeadd373f72d6b66ac02d6cdaa7.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 174, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav a.active {
+  background-position: 0 100%;
+}
+
+/* line 178, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/light/arrows-b0d7be67046d87cc78a6ce4b2dc14c4fab5868c0fbdb765257b4312cd06016d6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  top: auto;
+  bottom: -36px;
+  z-index: 11;
+}
+
+/* line 190, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-directionNav a:hover {
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+/* line 197, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light a.nivo-nextNav {
+  background-position: 160% 50%;
+  right: 0px;
+}
+
+/* line 202, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light a.nivo-prevNav {
+  background-position: -60% 50%;
+  left: auto;
+  right: 35px;
+}
+
+/* line 208, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 212, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 217, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 221, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled {
+  width: 80%;
+}
+
+/* line 225, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 232, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 238, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/default/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  box-shadow: 0px 1px 5px 0px #4a4a4a;
+}
+
+/* line 247, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 254, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 259, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* line 264, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav a {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/default/bullets-97f65015a491719ae9dbf1afc7948f8e57f946a6822c6a924fb5826265e89af6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 274, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav a.active {
+  background-position: 0 -22px;
+}
+
+/* line 278, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/default/arrows-6821ca4ae2508bdba08e189040928a0769f0a71b12fdd4325c3ae80ef5636bb8.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 292, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default:hover .nivo-directionNav a {
+  opacity: 1;
+}
+
+/* line 296, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default a.nivo-nextNav {
+  background-position: -30px 0;
+  right: 15px;
+}
+
+/* line 301, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default a.nivo-prevNav {
+  left: 15px;
+}
+
+/* line 305, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 309, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 314, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 318, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled {
+  width: 100%;
+}
+
+/* line 322, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 329, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 335, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark.slider-wrapper {
+  background: #222;
+  padding: 10px;
+}
+
+/* line 340, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/dark/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  overflow: visible;
+}
+
+/* line 347, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 354, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 359, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 366, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url(/assets/dark/bullets-a64b6506f6aa55125032d9734e622e9a208d3634571df56205f2310caa693d82.png) no-repeat 0 2px;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 376, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav a.active {
+  background-position: 0 100%;
+}
+
+/* line 380, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/dark/arrows-2e2c15237d579c18591df4cde373cae7e52aab7e6fe4728c3869a7acebba8e5e.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  top: auto;
+  bottom: -36px;
+  z-index: 11;
+}
+
+/* line 392, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-directionNav a:hover {
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* line 399, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark a.nivo-nextNav {
+  background-position: -16px 50%;
+  right: 0px;
+}
+
+/* line 404, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark a.nivo-prevNav {
+  background-position: 11px 50%;
+  left: auto;
+  right: 35px;
+}
+
+/* line 410, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 414, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 419, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 423, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled {
+  width: 80%;
+}
+
+/* line 427, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 434, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 440, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar.slider-wrapper {
+  position: relative;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+/* line 446, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/bar/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+}
+
+/* line 451, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 458, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 463, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav {
+  position: absolute;
+  left: 0;
+  bottom: -41px;
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding: 5px 0;
+  border-top: 1px solid #333;
+  background: #333;
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #565656 0%, #333333 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#565656', endColorstr='#333333', GradientType=0);
+  /* IE6-9 */
+  opacity: 0.5;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 488, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover .nivo-controlNav {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* line 493, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav a {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/bar/bullets-97f65015a491719ae9dbf1afc7948f8e57f946a6822c6a924fb5826265e89af6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 5px 2px 0 2px;
+}
+
+/* line 503, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav a.active {
+  background-position: 0 -22px;
+}
+
+/* line 507, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-directionNav a {
+  display: block;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  top: auto;
+  bottom: 10px;
+  z-index: 11;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  opacity: 0.5;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 525, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar a.nivo-nextNav {
+  right: -50px;
+}
+
+/* line 529, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar a.nivo-prevNav {
+  left: -50px;
+}
+
+/* line 533, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover a.nivo-nextNav {
+  right: 15px;
+  opacity: 1;
+}
+
+/* line 538, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover a.nivo-prevNav {
+  left: 15px;
+  opacity: 1;
+}
+
+/* line 543, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-directionNav a:hover {
+  color: #ddd;
+}
+
+/* line 547, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 555, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover .nivo-caption {
+  bottom: 41px;
+}
+
+/* line 559, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 564, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 568, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled {
+  width: 100%;
+}
+
+/* line 572, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 579, /home/tom/.rvm/gems/ruby-2.5.1/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 22, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 *, *:after, *:before {
   box-sizing: border-box;
 }
 
-/* line 26, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 27, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 html {
   font-size: 100%;
 }
 
-/* line 27, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 28, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 body {
   background-image: url("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1426356142/logos/Saint_Pauls_Logo.gif");
   width: 100%;
@@ -9416,7 +10071,7 @@ body {
   margin: 0px auto;
 }
 
-/* line 34, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 35, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .page {
   color: #333;
   background-color: #fff;
@@ -9428,12 +10083,12 @@ body {
   text-align: left;
 }
 
-/* line 45, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 46, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .main-body {
   padding-right: 36px;
 }
 
-/* line 49, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 50, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sidebar {
   background-color: #eee;
   padding-right: .9rem;
@@ -9442,12 +10097,12 @@ body {
   line-height: 1.75;
 }
 
-/* line 58, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 59, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 div.hidden {
   display: none;
 }
 
-/* line 62, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 63, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .honey {
   margin-left: -2000px;
   margin-right: 2000px;
@@ -9455,19 +10110,19 @@ div.hidden {
 }
 
 @media (max-width: 500px) {
-  /* line 68, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 69, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .nonmobile {
     display: none;
   }
 }
 @media (min-width: 501px) {
-  /* line 73, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 74, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .mobile {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  /* line 79, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 80, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .header-row {
     max-width: 1200px;
     margin-top: 40px;
@@ -9478,26 +10133,26 @@ div.hidden {
     flex-wrap: nowrap;
   }
 
-  /* line 89, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 90, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .road-sign {
     order: 1;
     flex-basis: 1;
   }
 
-  /* line 93, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 94, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .main-logo {
     order: 2;
     flex-basis: 4;
   }
 
-  /* line 97, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 98, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .shield {
     order: 3;
     flex-basis: 1;
   }
 }
 @media (max-width: 767px) {
-  /* line 104, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 105, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .header-row {
     margin: 20px auto 0 auto;
     display: grid;
@@ -9507,32 +10162,32 @@ div.hidden {
     flex-wrap: wrap;
   }
 
-  /* line 112, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 113, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .main-logo {
     flex-basis: 5;
     order: 1;
   }
 
-  /* line 116, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 117, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .road-sign {
     flex-basis: 1;
     width: 70px;
     order: 2;
   }
 
-  /* line 121, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 122, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .shield {
     flex-basis: 1;
     width: 70px;
     order: 3;
   }
 
-  /* line 126, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 127, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .collapse {
     display: none !important;
   }
 
-  /* line 129, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 130, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -9543,7 +10198,7 @@ div.hidden {
     box-shadow: none;
   }
 }
-/* line 141, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 142, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h1 {
   color: #5c004c;
   font-size: 3rem;
@@ -9552,7 +10207,7 @@ h1 {
   margin-top: 1.25rem;
 }
 
-/* line 148, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 149, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h2 {
   color: #5c004c;
   font-size: 2.5rem;
@@ -9561,7 +10216,7 @@ h2 {
   font-style: italic;
 }
 
-/* line 155, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 156, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h3 {
   color: #5c004c;
   font-size: 2.5rem;
@@ -9569,7 +10224,7 @@ h3 {
   font-family: Verdana, Helvetica, Arial, Sans-Serif;
 }
 
-/* line 161, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 162, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 h4 {
   color: #5c004c;
   font-size: 2rem;
@@ -9577,39 +10232,39 @@ h4 {
   margin-top: 1rem;
 }
 
-/* line 167, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 168, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p {
   font-size: 1.3rem;
   line-height: 1.75;
 }
 
-/* line 171, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 172, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 p.tiny {
   font-size: .75rem;
   line-height: 1.1;
   margin-top: -5px;
 }
 
-/* line 177, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 178, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sidebar p {
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-/* line 182, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 183, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poem {
   text-indent: 0;
   padding-left: 60px;
   font-style: italic;
 }
 
-/* line 187, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 188, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
   font-size: 1rem;
   font-style: bold;
 }
 
-/* line 191, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 192, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .owner-edit-links {
   font-size: .6rem;
   line-height: 1;
@@ -9618,7 +10273,7 @@ p.tiny {
   float: left;
 }
 
-/* line 199, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 200, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-bold-text {
   text-indent: 0;
   text-align: center;
@@ -9631,7 +10286,7 @@ p.tiny {
   margin-bottom: 40px;
 }
 */
-/* line 211, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 212, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .timeblock {
   width: 188px;
   border-style: outset;
@@ -9641,20 +10296,20 @@ p.tiny {
   margin-right: 5px;
 }
 
-/* line 220, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 221, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroller {
   background-image: url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
   width: 100%;
   height: 267px;
 }
 
-/* line 226, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 227, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #newsfeed {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 230, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 231, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatleft {
   float: left;
   padding-top: 20px;
@@ -9662,7 +10317,7 @@ p.tiny {
   padding-right: 30px;
 }
 
-/* line 236, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 237, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .floatright {
   float: right;
   padding-left: 30px;
@@ -9670,48 +10325,48 @@ p.tiny {
   padding-bottom: 20px;
 }
 
-/* line 242, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 243, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .footer {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* line 248, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 249, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .clearall {
   clear: both;
 }
 
-/* line 251, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 252, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .image-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 256, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 257, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-image {
   display: block;
   margin: 0, auto;
 }
 
-/* line 260, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 261, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .text-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 264, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 265, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-text {
   margin: 0, auto;
 }
 
-/* line 267, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 268, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .update-logo {
   position: relative;
 }
 
-/* line 271, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 272, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .meditation-count {
   color: white;
   font-size: .75rem;
@@ -9720,7 +10375,7 @@ p.tiny {
   z-index: 1000;
 }
 
-/* line 280, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 281, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .talk-box {
   float: right;
   margin: 15px;
@@ -9734,7 +10389,7 @@ p.tiny {
   line-height: 1.5;
 }
 
-/* line 293, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 294, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon p {
   font-size: 1.5rem;
   line-height: 1.75;
@@ -9743,7 +10398,7 @@ p.tiny {
   margin-bottom: 2rem;
 }
 
-/* line 300, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 301, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-box {
   float: right;
   margin-left: 10px;
@@ -9755,14 +10410,14 @@ p.tiny {
   text-align: center;
 }
 
-/* line 310, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 311, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .sermon-picture {
   float: left;
   margin: 10px;
   display: block;
 }
 
-/* line 316, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 317, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .formation-box {
   float: right;
   margin-left: 30px;
@@ -9773,23 +10428,23 @@ p.tiny {
   text-align: center;
 }
 
-/* line 325, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 326, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .radio {
   display: inline-block;
   margin-right: 40px;
 }
 
-/* line 330, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 331, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .center-button {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 336, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 337, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .newspaper ul {
   display: block;
 }
-/* line 339, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 340, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .newspaper ul li {
   list-style-type: none;
   display: inline-block;
@@ -9797,42 +10452,42 @@ p.tiny {
   float: left;
 }
 
-/* line 346, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 347, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 349, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 350, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 354, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 355, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #opportunity-header {
   text-decoration: underline;
 }
 
-/* line 357, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 358, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .chat-name {
   font-size: 1rem;
   float: left;
 }
 
-/* line 361, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 362, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #notice {
   color: green;
 }
 
-/* line 364, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 365, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 369, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 370, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -9841,7 +10496,7 @@ p.tiny {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 376, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 377, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -9852,13 +10507,13 @@ p.tiny {
   background-color: #c00;
   color: #fff;
 }
-/* line 386, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 387, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #error_explanation ul li {
   font-size: .75rem;
   list-style: square;
 }
 
-/* line 392, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 393, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -9870,26 +10525,26 @@ p.tiny {
   line-height: 1.25;
 }
 
-/* line 404, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 405, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 409, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 410, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 414, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 415, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 417, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 418, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .create-post, .create-vreport, .create-story_idea, .create-jubilee {
   width: 100%;
   height: 180px;
@@ -9899,18 +10554,18 @@ p.tiny {
   text-align: center;
 }
 
-/* line 426, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 427, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn-modal-footer {
   width: 100px;
   height: 100px;
 }
 
-/* line 431, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 432, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .btn {
   margin: 2em;
 }
 
-/* line 435, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 436, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .default-avatar {
   padding-top: 6px;
   text-align: center;
@@ -9922,7 +10577,7 @@ p.tiny {
   margin-right: 14px;
 }
 
-/* line 445, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 446, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .big-avatar-missing {
   width: 240px;
   height: 310px;
@@ -9934,52 +10589,52 @@ p.tiny {
   margin-right: 20px;
 }
 
-/* line 455, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 456, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt20 {
   margin-top: 20px;
 }
 
-/* line 458, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 459, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-20 {
   margin-top: -20px;
 }
 
-/* line 461, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 462, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 464, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 465, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-30 {
   margin-top: -30px;
 }
 
-/* line 467, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 468, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 470, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 471, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 473, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 474, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 476, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 477, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 479, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 480, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .mt150 {
   margin-top: 150px;
 }
 
-/* line 482, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 483, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -9989,46 +10644,46 @@ p.tiny {
   padding: 12px;
 }
 
-/* line 490, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 491, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .comment-user {
   color: gray;
   font-size: .9rem;
   float: right;
 }
 
-/* line 495, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 496, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 498, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 499, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 502, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 503, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 506, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 507, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 509, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 510, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #myModal {
   margin-top: 160px;
 }
 
-/* line 512, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 513, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .edit-delete-show {
   font-size: .75rem;
 }
 
-/* line 516, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 517, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .navbar-custom {
   height: 64px;
   width: 100%;
@@ -10037,24 +10692,24 @@ p.tiny {
   color: #fffff;
 }
 
-/* line 524, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 525, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .navbar-custom .nav-item:active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
   color: yellow;
 }
 
-/* line 528, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 529, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .navbar-brand {
   width: 35%;
   font-size: 1rem;
 }
 
-/* line 532, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 533, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .text-white {
   color: #ffffff;
 }
 
-/* line 535, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 536, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .nav-box {
   width: 100%;
   background-color: #0d4884;
@@ -10066,14 +10721,14 @@ p.tiny {
   align-items: center;
 }
 
-/* line 545, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 546, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .login {
   color: #ffffff;
   margin-left: 6px;
   font-size: .85rem;
 }
 
-/* line 550, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 551, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .nav-link {
   color: #ffffff;
   text-decoration: none;
@@ -10081,7 +10736,7 @@ p.tiny {
   margin-right: 8px;
 }
 
-/* line 557, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 558, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 .nav-section {
   width: 60%;
   display: flex;
@@ -10091,23 +10746,23 @@ p.tiny {
   list-style-type: none;
 }
 
-/* line 566, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 567, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #content-desktop {
   display: inline;
 }
 
-/* line 569, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+/* line 570, /home/tom/paul/app/assets/stylesheets/application.css.scss */
 #content-mobile {
   display: none;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 575, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 576, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   #content-desktop {
     display: none;
   }
 
-  /* line 578, /home/tom/paul/app/assets/stylesheets/application.css.scss */
+  /* line 579, /home/tom/paul/app/assets/stylesheets/application.css.scss */
   #content-mobile {
     display: flex;
     flex-align: center;

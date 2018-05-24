@@ -1,4 +1,4 @@
--<div class="col-md-12" id="content-desktop">
+<div class="col-md-12" id="content-desktop">
   <div class="nav-box">
     <div class="navbar-brand login">
       <% if user_signed_in? %>
@@ -9,13 +9,14 @@
       <% end %>
     </div><!-- login -->
     <div class="nav-section">
-  <ul class="nav nav-pills">
-  <li class="nav-item">
-    <%= link_to "Home", root_path, class: "nav-link" %>
-  </li> 
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Worship <span class="caret"></span> </a>
+      <ul class="nav nav-pills">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+        role="button" aria=haspopup="true" aria-expanded="false">Worship <span 
+        class="caret"></span> </a>
         <div class="dropdown-menu">
           <%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
@@ -24,9 +25,9 @@
           <%= link_to "How to pray", pages_how_to_pray_path, {class: "dropdown-item"} %><br>
         </div>
       </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria=haspopup="true" aria-expanded="false">Leadership <span class="caret"></span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+        role="button" aria=haspopup="true" aria-expanded="false">Leadership <span class="caret"></span></a>
         <div class="dropdown-menu">
           <%= link_to "Clergy and staff", leadership_index_path, {class: "dropdown-item"} %><br>
           <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
@@ -104,8 +105,13 @@
           <%= link_to "Opportunities to serve", opportunities_path, {class: "dropdown-item"} %><br>
            <% if user_signed_in? %>
           <%= link_to "Parish survey results", surveys_path %>
-          <br>
           <% end %>
+          <% if current_user && current_user.has_role?(:searcher) %>
+           <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %><br>
+           <%= link_to "Searchers' page", searches_path, {class: "dropdown-item"} %><br>
+           <% end %>
+          <br>
+        
           <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %><br>
            <% if current_user && current_user.has_role?(:vestry) or current_user && current_user.has_role?(:admin) %>
            <%= link_to "Vestry Report", vreports_path, {class: "dropdown-item"} %>

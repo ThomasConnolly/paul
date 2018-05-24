@@ -17,6 +17,7 @@
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
   <%= csrf_meta_tags %>
+ 
 </head>
 <body class="<%= controller_name %>  <%= action_name %>">
   <div class="page">
@@ -24,7 +25,7 @@
     
       <%= render '/layouts/header' %>
       <div class="mt20"></div>
-
+    
       <%= render 'layouts/navOnWeb' %>
          <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>

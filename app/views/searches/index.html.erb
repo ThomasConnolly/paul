@@ -1,57 +1,37 @@
 <div class="row">
   <div class="col col-md-8 col-sm-12 main">
-<h1>Rate the candidates</h1>
-<h5>Start with the Ministry Portfolios in your hand. Select one, then click on that person's name.<br>
-  Please don't skip anyone. If you've decided a certain candidate is not good for St. Paul's, click his or 
-  her name and go to the last line of the survey questions and make a statement to that effect. 
-  This way we will know no one was overlooked.
-  </h5>
-  <p><strong>Problems? Call Tom, 285-9224</strong></p>
-  <% @candidates.each do |can| %>
-    <h2>The Rev. <%=link_to can.full_name, can.url %></h2>
-    <hr>
-  <% end %>  
-<div class="mt100"></div>
-  <% @characteristics.where(kind: "leadership").take(1).each do |leader| %>
-  <h2>Leadership Qualities</h2>
-    <p> Keywords: <i> Compassionate, Accessible, Outreacher,  Stewardship 
-    promotor, Formation facilitator, Possessor of sense of humor, motivator,
-    financial experience and interest, self-starter, delegator, grower, 
-    energetic and resillient, pastoral </i></p>
-     <p> <%= link_to "Add your question for this category", 
-        edit_characteristic_path(leader) %></p>
-  <% end %>
+    <h1>Search team's job</h1>
+    <p>General outline of the Search committee’s work
+The process usually takes the following shape, infused with humility and prayer:</p>
+<p>1. Meet to share their impressions of the candidates.  This may not be a good time to thin the list!</p>
+<p>2. Send questions to the candidates to see how they communicate in writing.   Questions should be
+about four in number and should be related to the values found in the self‐study.</p>
+<p>3. Contact each candidate.  Contact includes visits, reference checks, and when appropriate, invitations
+for interviews at the parish for which they are being considered.    Candidates should not be asked to
+preach or celebrate in the parish during the process.</p>  
+<p>4. Select final Candidates:  When the Search Committee has interviewed all candidates and determines
+final candidates, Canon to the Ordinary is notified.    The Bishop then makes a final “bishop‐to‐
+bishop” reference check.   At this time, a formal background check is completed (and paid for) by
+Diocesan House.   The background check is the property of the Diocese and may not be disclosed.</p>
+<p>5. Report recommendation to the Vestry.</p>
+<p>6. Vestry invites final candidates to come to the parish for an interview with the Vestry.    If the
+candidate is not from this Diocese, arrangements must be made for an interview with the Bishop.</p>
+<p>7. The Vestry elects, being sure to record its action in the minutes in the form of a resolution and
+recorded vote.  The name of the elected person is presented to the Bishop prior to that person being
+advised, as required by the canons.</p>
+<p class="poem floatright">&mdash;From the diocesean Search Manual <%= link_to "(click for full text)", "https://s3.amazonaws.com/dfc_attachments/public/documents/3169572/2013SEARCH_PROCESS_MANUAL.pdf" %>
+</p>
+<div class="clearall"></div>
 
-  <div class="mt50"></div>
-  <% @characteristics.where(kind: "communications").take(1).each do|com| %>  
-    <h2>Communications style</h2>
-    <p>Keywords: <i> worship and music style, preaching style, liturgical style, 
-    formation style</i><p>
-      <p><%= link_to "Add your question for this category", 
-        edit_characteristic_path(com) %></p>
-  <% end %>
-
-  <div class="mt50"></div>
-  <% @characteristics.where(kind: "spirituality").take(1).each do |spirit|%>   
-  <h2>Spirituality</h2>
-    <p>Keywords: <i> Sense of serenity, prayer and action</i><p>
-    <p>  <%= link_to "Add your question for this category", 
-        edit_characteristic_path(spirit) %> </p>
-  <% end -%>
-  <div class="mt50"></div>
-  <% @characteristics.where(kind: "lifestyle").take(1).each do |life|%>
-  <h2>Personal lifestyle</h2>
-   <p>Keywords: <i> Community involvement, health, spousal support, sense of community</i><p>
-      <p><%= link_to "Add your question for this category", 
-          edit_characteristic_path(life) %>  </p>
-  <% end -%>        
-  <div class="mt50"></div>
-  <% @characteristics.where(kind: "experience").take(1).each do |exp| %>
-  <h2>Experience</h2>
-   <p>Keywords: <i> Especially as how pertinent is priest's experience to our parish</i><p>
-      <p><%= link_to "Add your question for this category", 
-          edit_characteristic_path(exp) %></p>
-  <% end -%>        
+<h2>The candidates:</2>
+  <% @candidates.each do |candidate| %>
+    <h4> <%= candidate.full_name %></h4>
+      <p> <%= link_to "Link", candidate.link1 if candidate.link1? %><br>
+       <%= link_to "Link", candidate.link2 if candidate.link2? %><br>
+       <%= link_to "Link", candidate.link3 if candidate.link3? %></p>
+       
+     <hr>
+     <% end -%>
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">
@@ -83,6 +63,8 @@
         <p><b>The interview!</b></p>
         <p class="text-center">
          <%= link_to "Interview preparation", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1524568661/interviewing_qifqyn.pdf" %></p>
+         <p class="text-center">
+          <%= link_to "Search Manual", "https://s3.amazonaws.com/dfc_attachments/public/documents/3169572/2013SEARCH_PROCESS_MANUAL.pdf" %></p>
                
 
 

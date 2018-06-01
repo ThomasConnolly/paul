@@ -12,7 +12,8 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
-  
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   <%= tag :meta, name: "stripe-public-key", content: Rails.application.secrets.stripe_public_key %>
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
@@ -21,7 +22,7 @@
 </head>
 <body class="<%= controller_name %>  <%= action_name %>">
   <div class="page">
-    <div class="container">
+    
     
       <%= render '/layouts/header' %>
       <div class="mt20"></div>
@@ -35,13 +36,13 @@
             </div>
           <% end %>
         <% end %>
-
+<div class="container" data-behavior="vue">
         
 <%= yield %>
+
   <%= render 'layouts/footer' %> 
 
-    </div>
-  </div> 
-
+    </div><!-- container -->
+  </div> <!-- page -->
 </body>
 </html>

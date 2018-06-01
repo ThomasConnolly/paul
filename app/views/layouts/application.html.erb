@@ -12,7 +12,7 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <%= tag :meta, name: "stripe-public-key", content: Rails.application.secrets.stripe_public_key %>
   <%= cloudinary_js_config %>
@@ -36,7 +36,7 @@
             </div>
           <% end %>
         <% end %>
-<div class="container" data-behavior="vue">
+<div class="container">
         
 <%= yield %>
 

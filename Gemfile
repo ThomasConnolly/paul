@@ -47,7 +47,7 @@ gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
 #gem 'acts_as_list'
-gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+#gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 
 group :development do
   gem 'meta_request'

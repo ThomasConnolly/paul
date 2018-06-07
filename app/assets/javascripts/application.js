@@ -10,7 +10,7 @@
 //= require nivo
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require ckeditor/init
 //= require ckeditor/config
 //= require bootstrap-datepicker

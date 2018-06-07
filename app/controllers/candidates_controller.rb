@@ -52,6 +52,6 @@ end
   end
 
   def candidate_params
-    params.require(:candidate).permit(:last_name, :full_name, :url, :link1, :link2, :link3)
+    params.require(:candidate).permit(:last_name, :full_name, :url, :link1, :link2, :link3, :links_narrative)
   end
 end

@@ -12,13 +12,17 @@
 	position:relative;
 	width:100%;
 	height:auto;
+	margin: auto;
 	overflow: hidden;
+	text-align:center;
 }
 .nivoSlider img {
 	position:absolute;
 	top:0px;
 	left:0px;
-	max-width: none;
+	right:0px;
+	max-width: 1200px;
+	text-align:center;
 }
 .nivo-main-image {
 	display: block !important;
@@ -26,7 +30,7 @@
 	width: 100% !important;
 }
 
-/* If an image is wrapped in a link */
+/* If an image is wrapped in a link 
 .nivoSlider a.nivo-imageLink {
 	position:absolute;
 	top:0px;
@@ -41,7 +45,7 @@
 	background:white; 
 	filter:alpha(opacity=0); 
 	opacity:0;
-}
+}*/
 /* The slices and boxes in the Slider */
 .nivo-slice {
 	display:block;
@@ -102,12 +106,18 @@
 }
 /* Control nav styles (e.g. 1,2,3...) */
 .nivo-controlNav {
+	display: none;
 	text-align:center;
 	padding: 15px 0;
+	
 }
 .nivo-controlNav a {
+	display:none;
 	cursor:pointer;
+	
 }
 .nivo-controlNav a.active {
+	display:none;
 	font-weight:bold;
+	
 }

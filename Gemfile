@@ -48,6 +48,7 @@ gem 'pry-awesome_print'
 gem 'awesome_print'
 #gem 'acts_as_list'
 #gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+gem 'secure_headers', :git => "https://github.com/twitter/secure_headers.git"
 
 group :development do
   gem 'meta_request'

@@ -64,7 +64,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (9.0.0)
-    autoprefixer-rails (8.6.1)
+    autoprefixer-rails (8.6.2)
       execjs
     awesome_print (1.8.0)
     aws_cf_signer (0.1.3)

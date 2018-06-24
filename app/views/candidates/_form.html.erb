@@ -1,7 +1,4 @@
-<%= simple_form_for(@candidate) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+<%= simple_form_for @candidate do |f| %>
     <%= f.input :last_name %>
     <%= f.input :full_name %>
     <%= f.input :url %>
@@ -9,9 +6,8 @@
     <%= f.input :link1 %>
     <%= f.input :link2 %>
     <%= f.input :link3 %>
-  </div>
-  
-  <div class="form-actions">
+    <%= f.input :link4 %>
+    <%= f.input :photo_link %>
+
     <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
 <% end %>

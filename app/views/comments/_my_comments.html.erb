@@ -1,0 +1,15 @@
+<% if @comment.present? && @comment.user == current_user %>
+    <p><%= @comment.body %><p>
+    <%= link_to "Edit your opinions about this candidate", edit_comment_path(@comment) %>
+<%# else %>
+    <%#= render partial: 'comments/form', locals: { commentable: @candidate } %>
+<% end %> 
+
+
+<!-- =begin 
+Dave Kimura commented:
+
+Hello Tom,
+
+The form's url is what is triggering the routes to send it to a particular controller and action. If you have the form set to something like <%#= form_with model: [commentable, comment], .... do |f| %> then it will go to the candidates comments controller or whichever applicable. I believe if you have model: comment instead (if you're using form_with, then it should go to the comments controller. Also, you can override the url parameter in the form to handle this as well with something like <%#= form_with model: [commentable, comment], url: comments_path .... do |f| %>
+=end -->

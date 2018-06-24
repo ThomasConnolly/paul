@@ -39,6 +39,7 @@ class User < ApplicationRecord
   after_create :add_profile
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities

@@ -1,7 +1,3 @@
-<h3> Editing comment </h3>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', [@comment.post, @comment] %>
-|
-<%= link_to '<< Go back', post_comments_path(@comment.post) %>
+<p><strong>Editing you comments</strong></p>
+<%= render 'edit_form' %>
+<%= link_to "<<Back to candidates page", candidates_path %>

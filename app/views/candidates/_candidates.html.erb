@@ -1,0 +1,25 @@
+<% @candidates.each do |candidate| %>
+  <% if candidate.photo_link.present? %>
+    <%= image_tag candidate.photo_link, class: "image-center", width: "60%" %>
+  <% end -%>
+  <h2><%= candidate.full_name %></h2>
+    <% if candidate.links_narrative.present? %>
+      <p><%= candidate.links_narrative %></p>
+    <% else %>
+      <p>No links for this candidate yet</p>
+    <% end %>    
+    <p><%= link_to "Link1", candidate.link1 if candidate.link1? %> &nbsp; &nbsp;
+      <%= link_to "Link2", candidate.link2 if candidate.link2? %> &nbsp; &nbsp;
+      <%= link_to "Link3", candidate.link3 if candidate.link3? %> &nbsp; &nbsp;
+      <%= link_to "Link4", candidate.link4 if candidate.link4? %> &nbsp; &nbsp;
+    </p>
+  
+  <%#= link_to "See comments about #{candidate.full_name}", candidate_comments_path(candidate), locals: { commentable: @candidate }%> 
+
+ <!-- <section id="comments-section"> 
+    <h4>Opinions so far about <%= candidate.full_name %></h4>
+      <%#= render partial: 'comments/comments', locals: {commentable: @candidate} %>-->
+      
+  <hr>
+<br>
+  <% end %>

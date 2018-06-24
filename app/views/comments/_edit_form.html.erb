@@ -1,0 +1,7 @@
+ <%= simple_form_with model: [commentable, comment], url: edit_comment_path, @comment do |f| %>
+ <%#= simple_form_for(@comment, local: true) do |f| %>
+    <p>
+    <%= f.input :body  %>
+    </p>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end -%>

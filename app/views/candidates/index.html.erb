@@ -1,27 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Candidates</h1>
-
-    <% @candidates.each do |candidate| %>
-        <h2><%= candidate.full_name %></h2>
-          <% if candidate.links_narrative.present? %>
-            <p><%= candidate.links_narrative %></p>
-          <% else %>
-            <p>No links for this candidate yet</p>
-          <% end %>  <br>  
-
-          <p>
-            <%= link_to "Link", candidate.link1 if candidate.link1? %><br>
-            <%= link_to "Link", candidate.link2 if candidate.link2? %><br>
-            <%= link_to "Link", candidate.link3 if candidate.link3? %><br></p>
-        
-
-        <%= link_to 'Show', candidate %>
-        <%= link_to 'Edit', edit_candidate_path(candidate) %>
-        <%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <hr>
-    <% end %>
-
-<br>
-
-<%= link_to 'New Candidate', new_candidate_path %>
+<div class="row"></div>
+  <div class="col-lg-6 offset-lg-3">
+    
+    <h1>Candidates</h1>
+      <%= render partial: 'candidates' %>
+      
+  </div>
+</div>

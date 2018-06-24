@@ -1,16 +1,7 @@
-  <%= simple_form_for [commentable, Comment.new] do |f| %>
-    <%= f.input :body, placeholder: 'Type your comment here', 
-    input_html: { rows: 2 }, label: false, autofocus: true %>
-    <div class="submit-post">
-    <%= f.button :submit, class: "btn btn-primary btn-sm" %> &nbsp;
-    <%= link_to "Cancel", :back, class: "btn btn-danger btn-sm" %>
-    </div>
-  <% end %>
-  <br>
-  
+    <%= simple_form_for [commentable, Comment.new], local: true do |f| %>
+    <p>
+    <%= f.input :body, placeholder: "Add your comments"  %>
+    </p>
+    <%= f.button :submit, class: "btn btn-primary" %>
 
-<script>
-$(document).on('page:load', function() {
-  window['rangy'].initialized = false
-  });
-</script>
+  <% end -%>

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get 'candidates/index'
-
-  resources :candidates
+  
+  
   resources :search_questions
   resources :searches, only: [:index]
   get 'Search', to: 'searches#index', as: 'Search'
@@ -101,6 +100,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
+
   resources :profiles
   resources :posts
   resources :posts do
@@ -111,15 +111,23 @@ Rails.application.routes.draw do
     resources :comments, module: :vreports
   end
   resources :story_ideas
+
   resources :story_ideas do
     resources :comments, module: :story_ideas
   end
   resources :jubilee_plans
+
   resources :jubilee_plans do
     resources :comments, module: :jubilee_plans
   end
 
-  resources :comments, only: [:destroy]
+  resources :candidates
+  
+  resources :candidates do
+    resources :comments, module: :candidates
+  end
+  
+  resources :comments
 
     resources :syllabuses do
     collection do

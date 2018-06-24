@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_120303) do
+ActiveRecord::Schema.define(version: 2018_06_22_002819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_06_03_120303) do
     t.string "link2"
     t.string "link3"
     t.text "links_narrative"
+    t.string "link4"
+    t.string "photo_link"
   end
 
   create_table "characteristics", force: :cascade do |t|

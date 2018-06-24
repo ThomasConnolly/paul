@@ -1,5 +1,39 @@
-<p id="notice"><%= notice %></p>
-<%=@candidate.full_name %>
-<%=@candidate.url %>
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+<div class="clearall"></div>
+  <div class="row">
+    <!-- <div class="col-lg-8 offset-2">
+      <h1><%=@candidate.full_name %></h1>
+      <h3>Links to social media</h3>
+      <p>
+      <%= simple_format @candidate.links_narrative %></p>
+      <p><small>
+    <%# if @candidate.link1? %>
+      <%= link_to "Link1", @candidate.link1 %>  &nbsp; &nbsp;
+    <%# end -%> 
+    <%# if @candidate.link2? %>
+      <%= link_to "Link2", @candidate.link2 %> &nbsp; &nbsp;
+    <%# end -%> 
+    <%# if @candidate.link3 %>
+      <%= link_to "Link3", @candidate.link3 %>
+    <%# end -%>
+    <%# if @candidate.link4 %>
+      <%= link_to "Link4", @candidate.link4 %>
+     <%# end -%>  </small></p>
+    
+      <%# if @candidate.comments.any? %>
+    <p><b> Opinions about <%#= @candidate.full_name %></b></p>
+    <%# @candidate.comments.each do |com| %>
+      <%#= simple_format com.body %>
+      <p class="comment-user">
+        &mdash;<%#= com.user.full_name.titleize %></p>
+      <%# if com.user == current_user %>
+    <%#= link_to "Update your thoughts about this candidate", edit_comment_path(com.(params[:id])) %>
+      <%# else %>
+    <p><b>Make your opinions known to the search team </b></p>
+      <%#= render partial: 'comments/form', locals: { commentable: @candidate } %>    
+      <%# end %>
+      <%# end %>
+      <%# end %>
+      <br>
+      <%#= link_to 'See all candidates', candidates_path %>-->
+    </div> 
+  </div>

@@ -56,6 +56,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'byebug'
+  gem 'meta_request'
 end
 
 group :development, :test do

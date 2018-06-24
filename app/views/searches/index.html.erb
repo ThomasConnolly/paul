@@ -23,21 +23,7 @@ advised, as required by the canons.</p>
 </p>
 <div class="clearall"></div>
 
-<h2>The candidates:</2>
-  <% @candidates.each do |candidate| %>
-    <h4> <%= candidate.full_name %></h4>
-      <% if candidate.links_narrative.present? %>
-        <p><%= candidate.links_narrative %></p>
-      <% else %>
-        <p>No links for this candidate yet </p>
-      <% end %>
-
-      <p> <%= link_to "Link", candidate.link1 if candidate.link1? %><br>
-       <%= link_to "Link", candidate.link2 if candidate.link2? %><br>
-       <%= link_to "Link", candidate.link3 if candidate.link3? %></p>
-       
-     <hr>
-     <% end -%>
+<h3><%= link_to "Social media and sermon links", candidates_path %>
   </div> 
 
   <div class="col col-md-4 col-sm-12 sidebar">

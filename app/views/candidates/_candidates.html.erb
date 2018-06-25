@@ -1,7 +1,7 @@
 <% @candidates.each do |candidate| %>
   <% if candidate.photo_link.present? %>
     <%= image_tag candidate.photo_link, class: "image-center", width: "60%" %>
-  <% end -%>
+  <% end %>
   <h2><%= candidate.full_name %></h2>
     <% if candidate.links_narrative.present? %>
       <p><%= candidate.links_narrative %></p>
@@ -14,11 +14,8 @@
       <%= link_to "Link4", candidate.link4 if candidate.link4? %> &nbsp; &nbsp;
     </p>
   
-  <%#= link_to "See comments about #{candidate.full_name}", candidate_comments_path(candidate), locals: { commentable: @candidate }%> 
-
- <!-- <section id="comments-section"> 
-    <h4>Opinions so far about <%= candidate.full_name %></h4>
-      <%#= render partial: 'comments/comments', locals: {commentable: @candidate} %>-->
+  <%= link_to "See comments about #{candidate.full_name}", candidate_path(candidate) %> 
+      <%= render partial: 'comments/comments', locals: {commentable: @candidate} %>
       
   <hr>
 <br>

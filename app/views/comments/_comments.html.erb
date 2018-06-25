@@ -1,13 +1,9 @@
+<% commentable.comments.each do |comment| %>
 
-<section id="comments">
-  <% commentable.comments.each do |comment| %>
-
-    <p><%= comment.body %></p>
-    <p class="floatright"><small> &mdash;<%= comment.user.full_name.titleize %> </small> </p>
+  <p><%= comment.body %></p>
+  <p class="comment-user"> &mdash;<%= comment.user.full_name.titleize %> </p>
     <div class="clearall"></div>
-  <% if comment.user == current_user %>
-    <%= link_to "Edit your comments", edit_comment_path(comment) %> 
-  <% end -%>  
- 
-  </section>
+    <% if comment.user == current_user %>
+      <%= link_to "Edit your comments", edit_comment_path(comment) %> 
+    <% end %> 
 <% end %>

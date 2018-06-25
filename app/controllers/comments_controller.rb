@@ -23,7 +23,11 @@ class CommentsController < ApplicationController
 
   def update
     @comment.update(comment_params)
-    redirect_back(fallback_location: root_path)
+    if @comment.save
+      if @commentable == @candidate
+        redirect_to candidates_path
+      end
+    end
   end
 
 

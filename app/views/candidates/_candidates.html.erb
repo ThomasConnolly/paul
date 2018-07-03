@@ -13,10 +13,9 @@
       <%= link_to "Link3", candidate.link3 if candidate.link3? %> &nbsp; &nbsp;
       <%= link_to "Link4", candidate.link4 if candidate.link4? %> &nbsp; &nbsp;
     </p>
-  
-  <%= link_to "See comments about #{candidate.full_name}", candidate_path(candidate) %> 
-      <%= render partial: 'comments/comments', locals: {commentable: @candidate} %>
-      
+  <p>
+  <%= link_to "See comments about this priest",  
+    candidate_path(candidate) %> </p>
   <hr>
 <br>
   <% end %>

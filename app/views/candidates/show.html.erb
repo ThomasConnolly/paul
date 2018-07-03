@@ -1,36 +1,38 @@
 <div class="clearall"></div>
   <div class="row">
-     <div class="col-lg-8 offset-2">
-         <% if @candidate.photo_link.present? %>
-           <%= image_tag @candidate.photo_link, class: "image-center", width: "60%" %>
-         <% end -%>
-       <h1><%=@candidate.full_name %></h1>
-       <h3>Links to social media</h3>
-         <p><%= simple_format @candidate.links_narrative %></p>
-         <p><small><% if @candidate.link1? %>
-           <%= link_to "Link1", @candidate.link1 %>  &nbsp; &nbsp;
-         <% end -%> 
-         <% if @candidate.link2? %>
-           <%= link_to "Link2", @candidate.link2 %> &nbsp; &nbsp;
-         <% end -%> 
-         <% if @candidate.link3 %>
-           <%= link_to "Link3", @candidate.link3 %>
-         <% end -%>
-         <% if @candidate.link4 %>
-           <%= link_to "Link4", @candidate.link4 %>
-         <% end -%>  </small></p>
+    <div class="col-lg-8 offset-2">
+      <% if @candidate.photo_link.present? %>
+        <%= image_tag @candidate.photo_link, class: "image-center", width: "60%" %>
+      <% end %>
+      <h1><%=@candidate.full_name %></h1>
+      <h3>Links to social media</h3>
+        <p><%= simple_format @candidate.links_narrative %></p>
+        <p><small><% if @candidate.link1? %>
+          <%= link_to "Link1", @candidate.link1 %>  &nbsp; &nbsp;
+        <% end -%> 
+        <% if @candidate.link2? %>
+          <%= link_to "Link2", @candidate.link2 %> &nbsp; &nbsp;
+        <% end -%> 
+        <% if @candidate.link3? %>
+          <%= link_to "Link3", @candidate.link3 %> &nbsp; &nbsp;
+        <% end -%>
+        <% if @candidate.link4? %>
+          <%= link_to "Link4", @candidate.link4 %>
+        <% end -%>  </small></p>
        
          
-           <p><b> Opinions about <%= @candidate.full_name %></b></p>
-             <%= render partial: 'comments/comments', locals: {commentable: @candidate} %>
-             
-         <% if current_user.comments.empty? %>
-           <p><b>Make your opinions known to the search team </b></p>
-             <%= render partial: 'comments/form', locals: {commentable: @candidate} %>    
-         <% end %>
-        
-         
+        <p><b> Opinions about <%= @candidate.full_name %></b></p>
+          <%= render partial: 'comments/comments', locals:
+            {commentable: @candidate} %>     
+        <% if @candidate.comments.where(user: current_user).empty? %>
+          <p><b>Make your opinions known to the search team </b></p>
+            <%= render partial: 'comments/form', locals: 
+              {commentable: @candidate} %>    
+        <% end %>
+       
          <br>
          <%= link_to 'See all candidates', candidates_path %>
-       </div> 
+       
+     </div>
   </div>
+

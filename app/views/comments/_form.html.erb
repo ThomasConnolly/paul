@@ -1,7 +1,7 @@
     <%= simple_form_for [commentable, Comment.new], local: true do |f| %>
     <p>
-    <%= f.input :body, placeholder: "Add your comments"  %>
+    <%= f.input :body %>
     </p>
     <%= f.button :submit, class: "btn btn-primary" %>
 
-  <% end -%>
+  <% end %>

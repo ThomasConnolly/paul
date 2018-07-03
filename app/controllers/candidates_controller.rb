@@ -8,7 +8,7 @@ class CandidatesController < ApplicationController
   
   def index
     @candidates = Candidate.includes(:comments).all.order(:last_name)
-    @candidate = Candidate.new
+    @candidate = Candidate.find_by(params[:id])
   end
 
   def new
@@ -23,11 +23,8 @@ class CandidatesController < ApplicationController
 
 
   def update
-    if @candidate.update(candidate_params)
-      redirect_to candidate_path(@candidate), notice: "Candidate was updated"
-    else
-      render :edit
-    end
+    @candidate.update(candidate_params)
+      redirect_to candidates_path, notice: "Candidate was updated"
   end
 
   def create

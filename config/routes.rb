@@ -8,10 +8,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:index]
   
   get 'Search', to: 'searches#index', as: 'Search'
-  
-  resources :characteristics do
-    resources :ratings, only: [:new, :show, :create, :update, :destroy]
-  end
+
   resources :search_tasks
   
   resource :sponsorship
@@ -156,6 +153,7 @@ Rails.application.routes.draw do
   resources :candidates do
     resources :comments, module: :candidates
   end
+
   
   resources :syllabuses do
     collection do

@@ -56,7 +56,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'byebug'
-  gem 'meta_request'
 end
 
 group :development, :test do
@@ -66,20 +65,23 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'pry-doc'
   gem 'spring'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'simple_bdd'
   gem 'letter_opener'
   gem 'email_spec'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'shoulda-matchers'
 end
 
 group :test do
-  gem 'shoulda-matchers'
+  
   gem 'faker'
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'simplecov-rcov'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 end
 
 gem 'rails_on_heroku'

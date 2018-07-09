@@ -16,6 +16,7 @@
 @import "bootstrap-datepicker";
 @import "bootstrap";
 @import "nivo";
+@import "font-awesome";
 
 
 *, *:after, *:before {
@@ -124,9 +125,9 @@ div.hidden {
       width: 70px;
       order: 3;
    }
-  .collapse {
+  /*.collapse {
     display: none !important;
-  }
+  }*/
 }
 
 h1 {
@@ -192,12 +193,6 @@ p.tiny {
   text-align: center;
   font-weight: bold;
 }
-/*
-.main-logo {
-  float: left;
-  margin-bottom: 40px;
-}
-*/
 
 .timeblock {
   width: 188px;
@@ -518,11 +513,23 @@ p.tiny {
 .navbar-brand {
   width: 35%;
   font-size: 1rem;
+  color: #ffffff;
 }
 .text-white {
   color: #ffffff;
 }
-.nav-box {
+
+.navbar-toggler-icon {
+  padding: 30px;
+}
+
+.fa.fa-navicon {
+  color: white;
+  font-size: 35px;
+  margin-right: 40px;
+}
+
+/*.nav-box {
   width: 100%;
   background-color: #0d4884;
   color: #ffffff;
@@ -553,7 +560,7 @@ p.tiny {
   align-items: center;
   text-decoration: none;
   list-style-type: none;
-}
+}*/
 
 #content-desktop {
   display: inline;

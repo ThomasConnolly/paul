@@ -15,6 +15,7 @@ CKEDITOR.editorConfig = function(config)
     { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] }, 
     { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight']},
     { name: 'links', items: ['Link', 'Unlink']}, 
-    { name: 'insert', items: ['Table', 'HorizontalRule']}
+    { name: 'insert', items: ['Table', 'HorizontalRule']},
+    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] }
   ];
 };

@@ -1,6 +1,7 @@
 
 //= require jquery3
 //= require popper
+//= require bootstrap-sprockets
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
@@ -10,7 +11,6 @@
 //= require nivo
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require bootstrap-sprockets
 //= require ckeditor/init
 //= require ckeditor/config
 //= require bootstrap-datepicker

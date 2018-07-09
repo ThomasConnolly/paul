@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
+  def navbarTest
+  end
+
   def parish_profile
   end
 

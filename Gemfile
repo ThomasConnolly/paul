@@ -6,12 +6,13 @@ gem 'devise'
 gem 'pg', '~> 0.18.4'
 gem 'rack'
 gem 'railties'
+gem 'font-awesome-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+gem 'bootstrap', '4.1.1'
 gem 'autoprefixer-rails'
 gem 'sass-rails'
 gem 'therubyracer',  platforms: :ruby
@@ -81,7 +82,7 @@ group :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'simplecov-rcov'
-  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
+  gem 'rails-controller-testing'
 end
 
 gem 'rails_on_heroku'

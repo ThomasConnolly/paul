@@ -43,20 +43,16 @@
     
       <h2> Tell your story</h2>
         <p>Don't let your fellow parishioners learn at your funeral that they had something in common with you!</p>
-        <p>Click here for  a questionnaire, of sorts, that you can use to introduce your deeper self. You can edit your profile from time to time as you wish.</p>
-         <span class="pull-right"> <%#= link_to "About Me", 
-         edit_profile_path(current_user.profile(params[:id]), 
-         class: 'btn btn-success') %></span><br>
+        <p>Click <%= link_to "here", edit_profile_path(current_user.profile) %> for  a questionnaire, of sorts, that you can use to introduce your deeper self. You can edit your profile from time to time as you wish.</p>
     
       <h2>Life's Events</h2>
         <%= render partial: "members/birthdays" %>
         <%= render partial: "anniversaries/anniversaries" %>
 
       <h3>We're praying for...</h3>
-        <p>Link to parish prayer list and accept readers' input. This page will be seen only by those who are logged in as church members. We will have three levels of authorization: administrators, who can create, edit and delete everything, is the top level. The second is member and this will have two "permissions categories": restricted and full. The third level is "guest," who can view the library page and search for books, for example. Guests will not be able to see this sharing page.</p>
+        <p>Working on this feature.</p>
         <br>
-      <h3>ToDo for this page</h3>
-      <p>Add share to Facebook api</p>
+     
     </section>
   </div> <!--sidebar-->
 </div>

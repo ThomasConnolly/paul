@@ -54,7 +54,7 @@
       <%= link_to "Vestry minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
           
     <% if user_signed_in? %>
-      <%= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" %> <br>
+      <%= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", class: "dropdown-item" %> <br>
     <% end %>
           <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
     <% if current_user && current_user.has_role?(:vestry) or current_user && 
@@ -62,7 +62,7 @@
       <%= link_to "Vestry Report", vreports_path, class: "dropdown-item" %><br>
     <% end %>
     <% if current_user && current_user.has_role?(:searcher) %>
-      <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf" %><br>
+      <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf", class: "dropdown-item" %><br>
       <%= link_to "Searchers' page", searches_path, class: "dropdown-item" %><br>
     <% end %>
       <%= link_to "Our history", history_path, class: "dropdown-item" %>
@@ -76,7 +76,7 @@
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= link_to "Activities", activities_index_path, class: "dropdown-item" %><br>
       <%#= link_to "Celebrate Jubilee!", jubilee_plans_path, {class: "dropdown-item"} %>
-      <%= link_to "We support these children", pages_albergue_path, class: "dropdown-item" %>
+      <%= link_to "We support these children", pages_albergue_path, class: "dropdown-item" %><br>
       <%= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
       <%= link_to "Opportunities to serve", opportunities_path, class: "dropdown-item" %><br>
       <%= link_to "Family Ties", posts_path, class: "dropdown-item" %><br>  
@@ -89,7 +89,6 @@
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= link_to "Farmers' Market", markets_index_path, class: "dropdown-item" %><br>
       <%= link_to "Gift Shop", markets_index_path, class: "dropdown-item" %><br>
-      <%= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
       <%= link_to "Unique Boutique", markets_index_path, class: "dropdown-item" %><br>  
     </div>
       </li>

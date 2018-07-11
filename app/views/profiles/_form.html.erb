@@ -28,25 +28,25 @@
 <div class="form-group">
   <%= simple_form_for @profile do |f| %>  
     <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.</p>
-      <%= f.input :cities, class: "form-control"%><br>
+      <%= f.input :cities, class: "form-control", as: :text, input_html: {rows: 4} %><br>
 
     <p><strong>Growing up: </strong>Write a little about your growing-up years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:</p>
-      <%= f.input :background, class: "form-control"%><br>
+      <%= f.input :background, class: "form-control", as: :text, input_html: {rows: 4} %><br>
   
     <p><strong>Building a career: </strong>This is where you tell us about your work life. Multiple careers? Lots of travel? </p>
-      <%= f.input :career, class: "form-control"%><br>
+      <%= f.input :career, class: "form-control", as: :text, input_html: {rows: 4} %><br>
    
     <p><strong>Family matters: </strong>Tell us about your immediate family first, then any famous or infamous ancestry or offspring. Where are the kids? </p>
-      <%= f.input :family, class: "form-control"%><br>
+      <%= f.input :family, class: "form-control", as: :text, input_html: {rows: 6} %><br>
     
     <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits.  Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?</p>
-      <%= f.input :lifestyle, class: "form-control"%><br>
+      <%= f.input :lifestyle, class: "form-control", as: :text, input_html: {rows: 6} %><br>
   
     <p><strong>Life in the world: </strong>Do you or did you belong to any service organizations or clubs? Tells us about your civic involvement as a volunteer or elected or appointed leader in the secular world. </p>
-     <%= f.input :civic, class: "form-control"%><br>
+     <%= f.input :civic, class: "form-control", as: :text, input_html: {rows: 6} %><br>
     
     <p><strong>The Family of God: </strong>Finally, we come to church. What ministries have you been involved in at St. Paul's or at another church? Are you interested in Christian formation? A Bible study? Do you want to say why you come to St. Paul's?</p> 
-      <%= f.input :church, class: "form-control"%><br>
+      <%= f.input :church, class: "form-control", as: :text, input_html: {rows: 6} %><br>
 
       <%= f.submit "save changes", class: "btn btn-primary" %>
   <% end %> 

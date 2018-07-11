@@ -22,6 +22,7 @@ class Member < ApplicationRecord
 require 'date'
 
 
+
 def self.assign_from_row(row)
   member = Member.where(membership_id: row[:membership_id]).first_or_initialize
   member.assign_attributes row.to_hash.slice(

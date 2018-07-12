@@ -2,7 +2,7 @@
 <div class="mt100"></div>
 
   <div class="row">
-    <div class="col col-md-3 col-md-offset-1">
+    <div class="col-md-3 offset-md-1">
       <div class="image-center">
         <% if @book.url.present? %>
         <%= image_tag(@book.url, width: "265") %>
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="col col-md-6 col-md-offset-1">
+    <div class="col-md-6 offset-md-1">
 
       <p> <strong>
         <%= @book.title.titleize %></strong><br>

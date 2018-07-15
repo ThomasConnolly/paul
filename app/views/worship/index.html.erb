@@ -17,48 +17,43 @@
                
   </div><!-- main_body -->
 
-    <div class="col-md-4 col-sm-6 sidebar"> 
+    <div class="col-md-4 sidebar"> 
       <h2>Spirituality of Intimacy</h2>
         <p>Transcrips of this series of lectures/discussion are available <%= link_to "here.", formation_talks_path %></p>
         <h2>How we pray</h2>
-          <div id="toVideo">
-          <%= cl_image_tag("books-of-common-prayer_oasoqz.jpg", width: "95%", class: "image-center") %>
-          </div>
-            <p>There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer.</b></em>  Click on the video below to see a humorous but informative introduction to the <b>BCP</b></p>
-            <p>Browse or read the <em>Book of Common Prayer</em> on line <%= link_to "here.", "https://www.bcponline.org", target: "blank" %>
-            </p><iframe width="100%" src="https://www.youtube.com/embed/KCn5edLZ72o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> <div class="mt30"></div> 
+          <a href="bcpModal" role="button" data-toggle="modal" data-target="#bcpModal">
+            <%= cl_image_tag("books-of-common-prayer_oasoqz.jpg", width: "95%", class: "image-center") %>
+          </a>
+            <p>There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer.</b></em>  Click on the picture of the books to see a humorous but informative introduction to the <b>BCP</b></p>
+            <p>Browse or read the <em>Book of Common Prayer</em> on line <%= link_to "here.", "https://www.bcponline.org", target: "blank" %></p>
+             <div class="mt30"></div> 
               <h2>Opportunities for spirituality</h2>
                 <p><em><b>Centering prayer</b></em> A small group gathers every Monday at 10 a.m. (in season&mdash;November-April, generally) for meditative prayer in the library. All are invited.  No experience necessary.  Come!  Any Monday or all!  Deepen your connection with God.  Allow your soul to re-center.  A spiritual silence, deeply individual yet wonderfully shared.  Engage a Christian spiritual tradition that is centuries old, yet re-discovered and celebrated today as the popularity of "mindfulness meditation" spreads and its benefits to body, mind, mental state and productivity have been documented by the medical community.  If peace is missing in your life, it can await you here.  Our friend Father Al, Benedictine Abbot and priest of the United Catholic Church, facilitates.</p>
                 <p>Discussion afterward is for all who wish to engage, about a wonderful book for spiritual direction that could be shared by a group who wants to meet after centering prayer in the future.</p>
     </div>
 
-   <!-- <div id="youtube"> 
-      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" 
-        aria-labelledby="videoModal" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <iframe width="560" height="315" src=""></iframe>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-  
-  <!--  <script>
-      $('#toVideo').click(function() {
-       var src="https://www.youtube.com/embed/KCn5edLZ72o?rel=0;autoplay=1";
-       $('#videoModal').modal('show');
-       $('#videoModal iframe').attr('src', src);
-      });
 
-      $('#videoModal button').click(function() {
-        $('#videoModal iframe').removeAttr('src');
-      });
-    </script>-->
+<div class="modal fade" id="bcpModal" tabindex="-1" role="dialog"
+  aria-labelledby="bcpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe  width="100%" height="473" src="https://www.youtube.com/embed/KCn5edLZ72o" allow="autoplay; encrypted-media">
+        </iframe>
+      </div>
+        <div class="modal-footer">
+          <button type="botton" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+  
+  <script>
+    $("#bcpModal").on('hidden.bs.modal', function (e) {
+    $("#bcpModal iframe").attr("src", $("#bcpModal iframe").attr("src"));
+});
+  </script>
 
    <!-- <div id="presiding-bishop"> 
       <div id="videoModalPB" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
@@ -87,3 +82,4 @@
       });
     </script>-->
 </div><!--row -->
+<div class="mt100"></div>

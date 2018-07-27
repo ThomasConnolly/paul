@@ -7,15 +7,12 @@
       <p><%= candidate.links_narrative %></p>
     <% else %>
       <p>No links for this candidate yet</p>
-    <% end %>    
+    <% end %>
     <p><%= link_to "Link1", candidate.link1 if candidate.link1? %> &nbsp; &nbsp;
       <%= link_to "Link2", candidate.link2 if candidate.link2? %> &nbsp; &nbsp;
       <%= link_to "Link3", candidate.link3 if candidate.link3? %> &nbsp; &nbsp;
       <%= link_to "Link4", candidate.link4 if candidate.link4? %> &nbsp; &nbsp;
     </p>
-  <p>
-  <%= link_to "See comments about this priest",  
-    candidate_path(candidate) %> </p>
   <hr>
 <br>
   <% end %>

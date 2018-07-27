@@ -1,11 +1,11 @@
 class CandidatesController < ApplicationController
   before_action :authenticate_user!
-  before_action :searchers_only
+  before_action :vestry_only
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
 
 
 
-  
+
   def index
     @candidates = Candidate.includes(:comments).all.order(:last_name)
     @candidate = Candidate.find_by(params[:id])
@@ -48,14 +48,14 @@ class CandidatesController < ApplicationController
 
   private
 
-   
+
   def set_candidate
     @candidate = Candidate.find(params[:id])
   end
 
 
-  def searchers_only
-    unless current_user.has_role?(:searcher)
+  def vestry_only
+    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin)
       flash[:alert] = "Access denied."
       redirect_to root_path
     end

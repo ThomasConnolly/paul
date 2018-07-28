@@ -6,15 +6,14 @@
 <% @users.each do |user| %>
   <% if user.avatar.present? %>
   <%= cl_image_tag(user.avatar.path, { width: '120', class: "floatleft"}) %>
-  <% end %> 
-  <h3><%= user.full_name %> <%= user.id %></h3>
+  <% end %>
+  <h3><%= user.full_name %> <% if current_user && current_user.has_role?(:admin) %> <%= user.id %> <% end %></h3>
   <% if user.avatar.present? %>
   <div class="clearall"></div>
   <% end %>
     <%if user.profile.cities.present? %>
-      <p><small><%=link_to "Show this profile", profile_path(user.profile) %></small></p> 
+      <p><small><%=link_to "Show this profile", profile_path(user.profile) %></small></p>
     <% else %>
       <p>Invite <%= user.first_name %> to create a profile.</p>
     <% end %>
-  <% end %>  
-
+  <% end %>

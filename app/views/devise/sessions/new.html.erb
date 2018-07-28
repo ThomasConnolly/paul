@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h2>Log in</h2>
-      
+
       <div class="mt30"></div>
-     
+
 
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,7 +20,7 @@
         </div>
       <% end %>
       <h3>Trouble logging in?</h3>
-      <p>If you have registered before, by inserting your first name, last name, email, password and password confirmation, please do not register again.</p>
+      <p>If you have registered before, by inserting your first name, last name, email, password and password confirmation, <em>please do not register again.</em> </p>
       <p> If you forgot your password, click on that question below and we'll send you a way to enter a new password. (Passwords are encrypted, so we don't know what password you entered originally).</p>
       <p>If you're sure you haven't registered before, click "Sign up" to register now.</p>
       <div class="mt100"></div>
@@ -28,5 +28,5 @@
       <%= render "devise/shared/links" %>
 
     </div>
-  </div> 
+  </div>
 </div>

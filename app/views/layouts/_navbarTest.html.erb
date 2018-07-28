@@ -1,37 +1,37 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="container">
- 
+
   <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #0d4884;">
     <div class="navbar-brand">
       <% if user_signed_in? %>
         <%= current_user.full_name.titleize %><br> <%= link_to " Log out",
-          destroy_user_session_path, method: :delete, class: "text-white" %> 
-        <%= link_to " | Edit account", edit_user_registration_path, 
-          class: "text-white"  %> 
-        <%= link_to " | Update profile", 
+          destroy_user_session_path, method: :delete, class: "text-white" %>
+        <%= link_to " | Edit account", edit_user_registration_path,
+          class: "text-white"  %>
+        <%= link_to " | Update profile",
           edit_profile_path(current_user.profile), class: "text-white"  %>
       <% else %>
-        <%= link_to "Sign in or register", new_user_session_path, class: 
+        <%= link_to "Sign in or register", new_user_session_path, class:
           "text-white"  %>
       <% end %>
     </div><!-- login -->
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
       aria-label="Toggle navigation">
       <i class="fa fa-navicon" style="font-size:24pt;color:white"></i>
     </button>
- 
+
   <div class="collapse navbar-collapse" id="navbarNav">
-   <ul class="navbar-nav ml-auto mt-2 mt-lg-0">  
+   <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <%= link_to "Home", root_path, class: "nav-link" %> 
-      </li> 
- 
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" 
-         id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+        <a class="nav-link dropdown-toggle text-white" href="#"
+         id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
          aria-expanded="false">Worship <span class="caret"> </span> </a>
 
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,34 +44,36 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" 
-         data-toggle="dropdown" aria-haspopup="true" 
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+         data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">Leadership <span class="caret"></span></a>
 
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= link_to "Clergy and staff", leadership_index_path, {class: "dropdown-item"} %><br>
       <%= link_to "Vestry", leadership_index_path, {class: "dropdown-item"} %><br>
       <%= link_to "Vestry minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
-          
+
     <% if user_signed_in? %>
       <%= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", class: "dropdown-item" %> <br>
     <% end %>
           <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
-    <% if current_user && current_user.has_role?(:vestry) or current_user && 
+    <% if current_user && current_user.has_role?(:vestry) or current_user &&
         current_user.has_role?(:admin) %>
+      <%= link_to "Rector search page", searches_path, class: "dropdown-item" %><br>
+      <%= link_to "Rector candidates' links", candidates_path, class: "dropdown-item" %> <br>
       <%= link_to "Vestry Report", vreports_path, class: "dropdown-item" %><br>
-    <% end %>
-    <% if current_user && current_user.has_role?(:searcher) %>
       <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf", class: "dropdown-item" %><br>
-      <%= link_to "Searchers' page", searches_path, class: "dropdown-item" %><br>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "Parishioner profiles", profiles_path %>
     <% end %>
       <%= link_to "Our history", history_path, class: "dropdown-item" %>
     </div>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" 
-          data-toggle="dropdown" aria-haspopup="true" 
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+          data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">Activities <span class="caret"></span></a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= link_to "Activities", activities_index_path, class: "dropdown-item" %><br>
@@ -79,21 +81,21 @@
       <%= link_to "We support these children", pages_albergue_path, class: "dropdown-item" %><br>
       <%= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
       <%= link_to "Opportunities to serve", opportunities_path, class: "dropdown-item" %><br>
-      <%= link_to "Family Ties", posts_path, class: "dropdown-item" %><br>  
+      <%= link_to "Family Ties", posts_path, class: "dropdown-item" %><br>
     </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" 
-          data-toggle="dropdown" aria-haspopup="true" 
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+          data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">Markets <span class="caret"></span></a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= link_to "Farmers' Market", markets_index_path, class: "dropdown-item" %><br>
       <%= link_to "Gift Shop", markets_index_path, class: "dropdown-item" %><br>
-      <%= link_to "Unique Boutique", markets_index_path, class: "dropdown-item" %><br>  
+      <%= link_to "Unique Boutique", markets_index_path, class: "dropdown-item" %><br>
     </div>
       </li>
   </ul>
-  </div>    
+  </div>
 </nav>
 </div>
 </div><!--content-desktop--></div>

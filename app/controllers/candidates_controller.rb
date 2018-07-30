@@ -3,9 +3,6 @@ class CandidatesController < ApplicationController
   before_action :vestry_only
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
 
-
-
-
   def index
     @candidates = Candidate.includes(:comments).all.order(:last_name)
     @candidate = Candidate.find_by(params[:id])
@@ -20,7 +17,6 @@ class CandidatesController < ApplicationController
 
   def show
   end
-
 
   def update
     @candidate.update(candidate_params)

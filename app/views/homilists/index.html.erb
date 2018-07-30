@@ -1,20 +1,13 @@
-
-
-
 <h1>Listing homilists</h1>
+  <p> <% @homilists.each do |homilist| %>
+    <%= homilist.name %>,
+    <%= homilist.title %><br>
+    <%= homilist.photo %>
+    <%= link_to 'Edit', edit_homilist_path(homilist) %> <small>
+    <%= link_to ' | Destroy', homilist, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+  <% end %>
 
-
-   <p> <% @homilists.each do |homilist| %>
-      <%= homilist.name %>, 
-        <%= homilist.title %><br>
-        <%= homilist.photo %>
-        <%= link_to 'Edit', edit_homilist_path(homilist) %> <small> 
-        <%= link_to ' | Destroy', homilist, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
-      
-    <% end %>
-  
 
 <br>
 
 <%= link_to 'Add a new preacher', new_homilist_path %>
-

@@ -2,7 +2,7 @@
 
   <p><%= comment.body %></p>
   <p class="comment-user"> &mdash;<%= comment.user.full_name.titleize %> </p>
-    <% if comment.user == current_user %>
+    <% if current_user == comment.user %>
       <%= link_to "Edit your comments", edit_comment_path(comment) %>
     <% end %>
     <hr>

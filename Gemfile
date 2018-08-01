@@ -34,7 +34,7 @@ gem 'actionmailer'
 gem 'premailer-rails'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'httparty'
-gem 'stripe'
+gem 'stripe', '>= 3.19.0'
 gem 'bootstrap-will_paginate'
 gem 'puma'
 gem 'birthday'
@@ -73,11 +73,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'cucumber-rails', require: false
-  #gem 'shoulda-matchers'
 end
 
 group :test do
-  
+
   gem 'faker'
   gem 'database_cleaner'
   gem 'simplecov'

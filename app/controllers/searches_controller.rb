@@ -46,12 +46,12 @@ class SearchesController < ApplicationController
   def update
     respond_to do |format|
       if @characteristic.update(characteristic_params)
-        format.html { redirect_to @characteristic, notice: 
+        format.html { redirect_to @characteristic, notice:
           'Successfully updated.' }
         format.json { render :show, status: :ok, location: @search }
       else
         format.html { render :edit }
-        format.json { render json: @characteristic.errors, status: 
+        format.json { render json: @characteristic.errors, status:
           :unprocessable_entity }
       end
     end
@@ -62,7 +62,7 @@ class SearchesController < ApplicationController
   def destroy
     @characteristic.destroy
     respond_to do |format|
-      format.html { redirect_to searches_url, notice: 
+      format.html { redirect_to searches_url, notice:
         'Characteristic successfully destroyed'}
     end
   end
@@ -80,12 +80,12 @@ class SearchesController < ApplicationController
     #end
 
      def searcher_only
-    unless current_user.has_role?(:searcher) 
+    unless current_user.has_role?(:searcher) or current_user.has_role?(:vestry) 
       redirect_to root_path, :alert => "Access is restricted."
     end
   end
 
     def characteristic_params
-      params.require(:characteristic).permit(:name, :user_id, :description) 
+      params.require(:characteristic).permit(:name, :user_id, :description)
     end
 end

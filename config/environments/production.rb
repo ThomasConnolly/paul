@@ -70,6 +70,8 @@ config.force_ssl = true
   # Set to :debug to see everything in the log.
 config.log_level = :info
 
+config.active_job.queue_adapter = :async
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

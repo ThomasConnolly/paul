@@ -51,7 +51,7 @@ class CandidatesController < ApplicationController
 
 
   def vestry_only
-    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin)
+    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin) or current_user.has_role"(:searcher)
       flash[:alert] = "Access denied."
       redirect_to root_path
     end

@@ -11,13 +11,13 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.action_mailer.raise_delivery_errors = true
-  
+
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.default_url_options = { host: "saintpaulsnaples.org"}
 
   DOMAIN = "saintpaulsnaples.org"
- 
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -31,7 +31,7 @@ config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy 
+  # For large-scale production use, consider using a caching reverse proxy
   # like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
@@ -58,17 +58,17 @@ config.assets.compile = false
   # Generate digests for assets URLs.
 config.assets.digest = true
 
-  # `config.assets.precompile` and `config.assets.version` have moved 
+  # `config.assets.precompile` and `config.assets.version` have moved
   # to config/initializers/assets.rb
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies. 
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
 config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-config.log_level = :info
+config.log_level = :debug
 
 config.active_job.queue_adapter = :async
 

@@ -58,7 +58,7 @@
     <% end %>
           <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
     <% if current_user && current_user.has_role?(:vestry) or current_user &&
-        current_user.has_role?(:searcher) %>
+        current_user.has_role?(:searcher) or current_user && current_user.has_role?(:admin) %>
       <%= link_to "Rector search page", searches_path, class: "dropdown-item" %><br>
       <%= link_to "Rector candidates' links", candidates_path, class: "dropdown-item" %> <br>
       <%= link_to "Vestry Report", vreports_path, class: "dropdown-item" %><br>

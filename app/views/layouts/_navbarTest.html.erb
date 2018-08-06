@@ -53,10 +53,18 @@
       <%= link_to "Vestry minutes", vestry_minutes_path, {class: "dropdown-item"} %><br>
 
           <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
-    <% if current_user && current_user.has_role?(:vestry) or if current_user &&  current_user.has_role?(:searcher) %>
+    <% if current_user && current_user.has_role?(:vestry) %>
       <%= link_to "Rector search page", searches_path, class: "dropdown-item" %><br>
       <%= link_to "Rector candidates", candidates_path, class: "dropdown-item" %> <br>
-    <% end %><% end %>
+    <% end %>
+    <% if current_user && current_user.has_role?(:searcher) %>
+      <%= link_to "Rector search page", searches_path, class: "dropdown-item" %><br>
+      <%= link_to "Rector candidates", candidates_path, class: "dropdown-item" %> <br>
+    <% end %>
+    <% if current_user && current_user.has_role?(:admin) %>
+      <%= link_to "Rector search page", searches_path, class: "dropdown-item" %><br>
+      <%= link_to "Rector candidates", candidates_path, class: "dropdown-item" %> <br>
+    <% end %>
     <% if current_user && current_user.has_role?(:vestry) or if current_user && current_user.has_role?(:admin) %>
       <%= link_to "Vestry Report", vreports_path, class: "dropdown-item" %><br>
     <% end %><% end %>

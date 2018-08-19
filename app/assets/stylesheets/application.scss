@@ -11,8 +11,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  */
- 
- 
+
+
 @import "bootstrap-datepicker";
 @import "bootstrap";
 @import "nivo";
@@ -46,7 +46,6 @@ html {font-size: 100%}
 
 .main-body {
   padding-right: 36px;
-
 }
 .sidebar {
   background-color: #eee;
@@ -55,7 +54,13 @@ html {font-size: 100%}
   font-size: 1rem;
   line-height: 1.75;
 }
-
+.grid-container {
+  display: grid;
+  grid-gap: 36px;
+}
+.thoeni {
+  grid-template-columns: 1fr 1fr;
+}
 
 div.hidden {
   display: none;
@@ -86,7 +91,7 @@ div.hidden {
     align-items: center;
     justify-content: space-around;
     flex-wrap: nowrap;
-   
+
   }
   .road-sign {
     order:1;
@@ -100,7 +105,7 @@ div.hidden {
     order: 3;
     flex-basis: 1;
  }
-} 
+}
 
 @media (max-width: 767px) {
   .header-row {
@@ -109,7 +114,7 @@ div.hidden {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
   }
    .main-logo {
       flex-basis: 5;
@@ -117,7 +122,7 @@ div.hidden {
     }
     .road-sign {
       flex-basis: 1;
-      width: 70px;    
+      width: 70px;
       order: 2;
     }
     .shield {
@@ -170,7 +175,7 @@ p.tiny {
   font-size: 1.2rem;
   line-height: 1.5;
 }
-      
+
 .poem {
     text-indent:0;
     padding-left: 60px;
@@ -211,7 +216,7 @@ p.tiny {
 
 #newsfeed {
   margin-left: 0;
-  margin-right: 0;  
+  margin-right: 0;
 }
 .floatleft {
     float: left;
@@ -292,7 +297,7 @@ p.tiny {
   border-style: solid;
   border-width: 1px;
   text-align:center;
-} 
+}
 .sermon-picture {
   float:left;
   margin:10px;
@@ -327,7 +332,7 @@ p.tiny {
   display:inline-block;
   width: 33%;
   }
-}  
+}
 .align-right {
   text-align: right;
 }
@@ -337,7 +342,7 @@ p.tiny {
   margin-top: -60px;
 }
 #opportunity-header {
-  text-decoration: underline;   
+  text-decoration: underline;
 }
 .chat-name {
   font-size: 1rem;
@@ -371,7 +376,7 @@ p.tiny {
     ul li {
       font-size: .75rem;
       list-style: square;
-  }  
+  }
 }
 
 .flash_notice, .flash_alert {
@@ -534,7 +539,7 @@ p.tiny {
   background-color: #0d4884;
   color: #ffffff;
   border: 5px;
-  height: 64px;    
+  height: 64px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -570,7 +575,7 @@ p.tiny {
 }
 
 @media only screen and(max-width: 800px) {
-  
+
   #content-desktop {
   display: none;
   }

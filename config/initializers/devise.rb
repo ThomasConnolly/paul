@@ -20,14 +20,14 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
   # parameters are used only when authenticating and not when retrieving from
-  # session. If you need permissions, you should implement 
+  # session. If you need permissions, you should implement
   # that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
@@ -58,9 +58,9 @@ Devise.setup do |config|
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only f
-  # for the given strategies, for example, `config.http_authenticatable = 
-  # [:database]` will enable it only for database authentication. The 
-  # supported strategies are: :database = Support basic authentication 
+  # for the given strategies, for example, `config.http_authenticatable =
+  # [:database]` will enable it only for database authentication. The
+  # supported strategies are: :database = Support basic authentication
   # with authentication key + password
   # config.http_authenticatable = false
 
@@ -79,7 +79,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  
+
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
   # requests for sign in and sign up, you need to get a new CSRF token
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 
+  # config.pepper =
   # 'a5ab3bcd55d41cc0d8d40870b0d100e0499ef56e3737a81b9f035e796d2b711538694a7dce558a0233bfc727df7f4e35d914d147013971fd99fda5c13d39b2b1'
 
   # ==> Configuration for :invitable
@@ -243,7 +243,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  # config.email_regexp = /\A[^@]+@[^@]+\z/
+  config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want timeout user session without activity. After this
@@ -316,7 +316,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more info on setting
   # up on your models and hooks.
-  #config.omniauth :facebook, FACEBOOK_CONFIG['facebook_api_key'], 
+  #config.omniauth :facebook, FACEBOOK_CONFIG['facebook_api_key'],
   # FACEBOOK_CONFIG['facebook_api_secret']
 
   # ==> Warden configuration

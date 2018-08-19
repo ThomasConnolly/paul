@@ -33,7 +33,7 @@
 class User < ApplicationRecord
   extend Rolify
   rolify
-  
+
   before_save :set_full_name
   after_create :assign_default_role
   after_create :add_profile
@@ -56,14 +56,13 @@ class User < ApplicationRecord
   has_many :search_questions
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :full_name, uniqueness: { case_sensitive: false }
   has_attachment :avatar, accept: [:png, :jpg, :gif]
   #honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
-  
+
   attr_accessor :login
 
-   #Include default devise modules 
+   #Include default devise modules
    #Others available are:
    #:lockable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -72,18 +71,18 @@ class User < ApplicationRecord
 
 
   def self.assign_from_row(row)
-    user = find_by_full_name(row["first_name" + "last_name"]) || new  
-      user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email, 
+    user = find_by_full_name(row["first_name" + "last_name"]) || new
+      user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email,
         :member_id)
       user  # =====see member.rb for example ======
-  end 
+  end
 
 
 protected
 
   def set_full_name
-    self.full_name = "#{self.first_name} #{self.last_name}".strip
-  end  
+    self.full_name = "#{self.first_name.downcase.titleize} #{self.last_name.downcase.titleize}".strip
+  end
 
   def assign_default_role
     self.add_role(:member) if self.roles.blank?

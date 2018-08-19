@@ -1,28 +1,28 @@
 Rails.application.routes.draw do
 
 
-  
-  
+
+
   resources :search_questions
-  
+
   resources :searches, only: [:index]
-  
+
   get 'Search', to: 'searches#index', as: 'Search'
 
   resources :search_tasks
-  
+
   resource :sponsorship
-  
+
   resources :drop5s
-  
+
   resources :formation_talks, only: [:show, :index, :edit, :new]
-  
+
   resources :marriage_talks, only: [:new,:show, :index, :edit]
-  
+
   resources :meditations
-  
+
   resources :prayers
-  
+
   resources :works
 
   root 'home#index'
@@ -30,11 +30,11 @@ Rails.application.routes.draw do
   get 'members/index'
   get 'members/import'
   get 'thanks', to: 'tickets#thanks', as: 'thanks'
-  
+
   resources :events do
     resources :tickets, only: [:new, :show, :create, :update, :index]
   end
-  
+
   resources :members do
     collection do
       post :import
@@ -42,11 +42,11 @@ Rails.application.routes.draw do
   end
 
   resources :vestry_minutes
-  
+
   resources :pictures
-  
+
   resources :surveys, only: :index
-  
+  get 'pages/rector', as: 'rector'
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'
@@ -74,17 +74,17 @@ Rails.application.routes.draw do
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
   # resources :pledges
-  
+
   resources :worship, only: :index
-  
+
   resources :tasks
-  
+
   resources :opportunities
-  
+
   resources :homilists
-  
+
   resources :books
-  
+
   get 'books_admin', controller: :books
   get 'books_author', controller: :books
   get 'books_title', controller: :books
@@ -94,30 +94,30 @@ Rails.application.routes.draw do
       post :import
     end
   end
-  
+
   resources :sermons
-  
+
   resources :purchases, only: [:show]
-  
+
   resources :formation_talks
-  
+
   devise_for :users
     devise_scope :user do
       get 'register', to: 'devise/registrations#new', as: :register
       get 'login', to: 'devise/sessions#new', as: :login
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
-  
+
   resource :pledge
-  
+
   resources :ticket_charges, only: [:new, :create]
-  
+
   resources :pledge_charges, only: [:new, :create]
-  
-  resources :sponsorship_charges, only: [:new, :create]    
-  
+
+  resources :sponsorship_charges, only: [:new, :create]
+
   resources :members
-  
+
   resources :users do
     collection do
       post :import
@@ -134,7 +134,7 @@ Rails.application.routes.draw do
     resources :comments, module: :posts
   end
   resources :vreports
-  
+
   resources :vreports do
     resources :comments, module: :vreports
   end
@@ -149,12 +149,12 @@ Rails.application.routes.draw do
     resources :comments, module: :jubilee_plans
   end
   resources :candidates
-  
+
   resources :candidates do
     resources :comments, module: :candidates
   end
 
-  
+
   resources :syllabuses do
     collection do
       get "preschool"
@@ -168,14 +168,14 @@ Rails.application.routes.draw do
   end
 
   resources :anniversaries
-  
+
   resources :anniversaries do
     collection do
       post :import
     end
   end
-  
+
   devise_for :views
-  
+
   mount Attachinary::Engine => '/attachinary'
 end

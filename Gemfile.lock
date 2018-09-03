@@ -79,7 +79,7 @@ GEM
     birthday (0.3.1)
       activerecord
       activesupport
-    bootstrap (4.1.1)
+    bootstrap (4.1.3)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -438,7 +438,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   birthday
-  bootstrap (= 4.1.1)
+  bootstrap (= 4.1.3)
   bootstrap-datepicker-rails
   bootstrap-will_paginate
   byebug
@@ -467,7 +467,7 @@ DEPENDENCIES
   meta_request
   momentjs-rails
   nivo-rails
-  nokogiri (~> 1.6, >= 1.6.8)
+  nokogiri
   openlibrary
   pg (~> 0.18.4)
   popper_js
@@ -485,7 +485,7 @@ DEPENDENCIES
   rails_on_heroku
   railties
   remotipart
-  rest-client (~> 2.0, >= 2.0.2)
+  rest-client
   rolify
   rspec-rails
   sass-rails
@@ -495,7 +495,7 @@ DEPENDENCIES
   simplecov-rcov
   spring
   sprockets-rails
-  stripe (>= 3.19.0)
+  stripe
   therubyracer
   turbolinks
   uglifier
@@ -504,4 +504,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.3
+   1.16.4

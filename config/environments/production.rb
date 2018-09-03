@@ -45,7 +45,6 @@ if ENV["RAILS_LOG_TO_STDOUT"].present?
   config.logger = ActiveSupport::TaggedLogging.new(logger)
 end
 
-
   # Compress JavaScripts and CSS.
 config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

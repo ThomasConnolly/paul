@@ -1,12 +1,12 @@
 class MemberMailer < ApplicationMailer
-  default from: "Father Bill <FrBill@saintpaulsnaples.org>"
+  default from: "No reply Saint Paul's Naples"
   default  to: Proc.new { Member.pluck(:email)}
 
 
-   def member_survey(member)
+  def member_meet_rector_elect(member)
     @member = member
-    @url = "https://saintpaulsnaples.org/surveys"
-    mail(subject: "Take the parish survey")
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1535993745/FrTomSmall_ftq4hq.pdf"
+    mail(subject: "Meet our rector-elect")
   end
 
   def member_prayer(member)

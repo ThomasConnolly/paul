@@ -464,6 +464,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   letter_opener
+  mail
   meta_request
   momentjs-rails
   nivo-rails

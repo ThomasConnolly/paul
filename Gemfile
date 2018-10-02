@@ -74,6 +74,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'cucumber-rails', require: false
+  gem 'shoulda-matchers'
 end
 
 group :test do

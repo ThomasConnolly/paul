@@ -8,12 +8,10 @@
   <% if user.avatar.present? %>
   <%= cl_image_tag(user.avatar.path, { width: '120', class: "floatleft"}) %>
   <% end %>
-  <h3>
-    <% if user.has_role?(:vestry) %>* 
-    <% end %>
-    <%= user.full_name %>
-     <%# if current_user && current_user.has_role?(:admin) %><%# end %><%#*</h3>%>
-  <%# if user.avatar.present? %>
+<h2>
+  <% if user.has_role?(:vestry) %> *
+  <% end %>
+  <%= user.full_name %></h2>
   <div class="clearall"></div>
   <%# end %>
     <%if user.profile.cities.present? %>

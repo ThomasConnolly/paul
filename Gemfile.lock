@@ -489,7 +489,7 @@ DEPENDENCIES
   railties
   remotipart
   rest-client
-  rolify
+  rolify (~> 5.2)
   rspec-rails
   sass-rails
   shoulda-matchers

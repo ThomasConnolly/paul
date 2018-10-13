@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col col-lg-12">
-    <%= render 'pages/carousel' %>
+    <figure>
+      <%= cl_image_tag("delegates2018_gvrobm.jpg", width: "100%") %>
+      <figcaption>
+        Our deligates to the 2018 convention of the Diocese of Southwest Florida posed Saturday (Oct. 13) for this photo. From left are Sr. Warden Dick Breithaupt, Alan Cragg, Don Anderson, Fr. Panel Guerrier, Charlene Connolly, Fr. Tom Thoeni, who will join us Nov. 1 as rector-elect, and Priest-in-Charge Fr. Bill Faupel. See "Presiding bishop...", below.</figcaption>
+    </figure>
+    <%#= render 'pages/carousel' %>
     <%#= render 'new_rector' %>
   </div>
 </div>
@@ -28,9 +33,11 @@
       Church,</em></strong> <%=link_to "click here", worship_index_path%>.
       And click on that shelf of red books to get a short, cute introduction
       to our time-honored Book of Common Prayer.</p>
-<h2>A chance to see our presiding bishop</h2>
-    <p>Presiding Bishop Michael Curry will be teaching and preaching at our diocesan convention Friday in Punta Gorda. If you can't make the bus from St. Paul's Friday morning, you can watch here. <br>
-      <iframe width="720" height="800" src="https://boxcast.tv/embed.html#0xsQZsKD9aKbPCatIDMc?showTitle=1&showDescription=1&showHighlights=1&showRelated=1&defaultVideo=next&market=church&showCountdown=1&poster=https%3A%2F%2Fuploads.boxcast.com%2FEPISCDIO%2F2017-10%2Fm0pml5qkom4gnkzfvplf%2Fth.jpg" frameBorder="0" scrolling="auto" allowfullscreen="true"></iframe>
+
+<h2>Presiding bishop celebrates diocese</h2>
+    <p>Presiding Bishop Michael Curry was keynote speaker and primary celebrant of a three-hour Eucharist Friday, the highlights to the first of a two-day annual convention of church business and workshops. In addition to our delegates, pictured above, a busload of St. Paul's folks got to hear the bishop, best known for his sermon at the royal wedding and for branding our church as "the Episcopal branch of the Jesus Movement." Click below to see a recording of his talk and the mass.</p> <br>
+
+      <iframe width="720", height="800", src="https://boxcast.tv/embed.html#0xsQZsKD9aKbPCatIDMc?showTitle=1&showDescription=1&showHighlights=1&showRelated=1&defaultVideo=next&market=church&showCountdown=1&poster=https%3A%2F%2Fuploads.boxcast.com%2FEPISCDIO%2F2017-10%2Fm0pml5qkom4gnkzfvplf%2Fth.jpg", frameBorder="0", scrolling="auto", allowfullscreen="true"></iframe>
     </p>
   <h2>Home of the Farmers' Market</h2>
     <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>

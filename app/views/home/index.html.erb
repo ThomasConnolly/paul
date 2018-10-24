@@ -15,11 +15,15 @@
   <h2>Sundays</h2>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
         width:"220", class: "floatleft") %>
-  <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+        <p> <strong>In order that we might all celebrate the priesthood of Fr. Bill, we are having a single morning worship service this Sunday, Oct. 28, at 10 a.m. We will be saying farewell to the Rev. Dr. D. William Faupel (Fr. Bill), who is retiring from full-time ministry.</strong></p>
+        <%= cl_image_tag("FrBillFaupel_mbqp6v.jpg", width:"40%", class:"floatright") %>
+        <p>Please join us for Holy Eucharist at 10 a.m., followed by a reception/party for Fr Bill, who has served us for the past five years, the last three as priest-in-charge.</p>
+        <p> After this Sunday we will resume our usual schedule of services at 8 and 10 a.m., with a new leader, the Rev. Dr. Thomas Thoeni. Fr. Tom will be installed as the fifth rector of St. Paul's on Jan. 6.</p>
+  <%# <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
   <p><strong>10 a.m.</strong>Holy Eucharist, Rite II </p>
     <div class="mt-20">
       <small>Children's nursery/Sunday school available</small>
-    </div>
+    </div> %>
   <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p>
   <div class="mt30"></div>
@@ -33,13 +37,15 @@
       Church,</em></strong> <%=link_to "click here", worship_index_path%>.
       And click on that shelf of red books to get a short, cute introduction
       to our time-honored Book of Common Prayer.</p>
-
+<%= image_tag("https://s3.amazonaws.com/dfc_attachments/public/documents/3256935/Bishop_Smith_and_Curry.jpg", width:"50%", class: "floatright") %>
 <h2>Presiding bishop celebrates diocese</h2>
-    <p>Presiding Bishop Michael Curry was keynote speaker and primary celebrant of a three-hour Eucharist Friday, the highlights to the first of a two-day annual convention of church business and workshops. In addition to our delegates, pictured above, a busload of St. Paul's folks got to hear the bishop, best known for his sermon at the royal wedding and for branding our church as "the Episcopal branch of the Jesus Movement." Click below to see a recording of his talk and the mass.</p> <br>
+    <p>Presiding Bishop Michael Curry was keynote speaker and primary celebrant of a three-hour Eucharist Friday, the highlights to the first of a two-day annual convention of church business and workshops. In addition to our delegates, pictured above, a busload of St. Paul's folks got to hear the bishop, best known for his sermon at the royal wedding and for branding our church as "the Episcopal branch of the Jesus Movement." Click below to see a recording of his talk and the mass.</p>
+    <p><%= link_to "Keynote by Bishop Curry","https://vimeo.com/295435060" %></p>
+    <p> <%= link_to "Worship service and sermon by Bishop Curry", "https://vimeo.com/295403697" %><br>
 
-      <iframe width="720", height="800", src="https://boxcast.tv/embed.html#0xsQZsKD9aKbPCatIDMc?showTitle=1&showDescription=1&showHighlights=1&showRelated=1&defaultVideo=next&market=church&showCountdown=1&poster=https%3A%2F%2Fuploads.boxcast.com%2FEPISCDIO%2F2017-10%2Fm0pml5qkom4gnkzfvplf%2Fth.jpg", frameBorder="0", scrolling="auto", allowfullscreen="true"></iframe>
+      <%# <iframe whttps://vimeo.com/295403697idth="720", height="800", src="https://boxcast.tv/embed.html#0xsQZsKD9aKbPCatIDMc?showTitle=1&showDescription=1&showHighlights=1&showRelated=1&defaultVideo=next&market=church&showCountdown=1&poster=https%3A%2F%2Fuploads.boxcast.com%2FEPISCDIO%2F2017-10%2Fm0pml5qkom4gnkzfvplf%2Fth.jpg", frameBorder="0", scrolling="auto", allowfullscreen="true"></iframe> %>
     </p>
-  <h2>Home of the Farmers' Market</h2>
+    <h2>Home of the Farmers' Market</h2>
     <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
     <p>The market is now closed for the season, and will reopen in November,
       every Saturday morning through April, 8 a.m. to noon.</p>
@@ -52,7 +58,7 @@
     <%=cl_image_tag("25_aeyuf2.jpg", width: "420", height: "315", class:
       "floatright") %>
     <p>Episcopalians of the Naples Deanery have been supporting the children at
-      a shelter in the Dominican Republic for the last 17 years. The
+      a shelter in the Dom:inican Republic for the last 17 years. The
       <em>Albergue el Buen Samaritano</em> in San Francisco de Macoris, serves
       about a hundred children who would be on the street were it not for the
       shelter. The kids arrive for breakfast, learn their abcs and social skills
@@ -93,8 +99,9 @@
     <%= link_to cl_image_tag("FrTomSmall_ftq4hq.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1535993745/FrTomSmall_ftq4hq.pdf" %>
     <h2>Rector-elect<br>
       To Arrive<br>
-      November 1</h2>
-      <p>Fr. Tom Thoeni (pronounced TAY-nee) is looking forward with joy to his becoming the fifth rector of St. Paul's. Click on the picture above to read or download a copy of a special edition of the St. Paul Pathway.</p>
+      Thursday
+    </h2>
+      <p>Fr. Tom Thoeni (pronounced TAY-nee) is looking forward with joy to his becoming the fifth rector of St. Paul's. He will join us as rector-elect on Nov. 1, 2018, and will be installed by the bishop on the first Sunday in January, 2019. Click on the picture above to read or download a copy of a special edition of the St. Paul Pathway.</p>
       <div class="mt30"></div>
   <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
     <p><strong>There's a place for you</strong> to exercise your ministry at

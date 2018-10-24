@@ -106,7 +106,9 @@ div.hidden {
     flex-basis: 1;
  }
 }
-
+.second-line {
+  margin-top: -18px;
+}
 @media (max-width: 767px) {
   .header-row {
     margin: 20px auto 0 auto;

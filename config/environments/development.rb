@@ -2,7 +2,7 @@ require "letter_opener"
 
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-  #config.webpacker.check_yarn_integrity = true
+  # config.webpacker.check_yarn_integrity = true
   # Verifies that versions and hashed value of the package contents in the project's package.json
   # config.webpacker.check_yarn_integrity = true
   # Verifies that versions and hashed value of the package contents in the project's package.json
@@ -13,9 +13,6 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   # Make javascript_pack_tag load assets from webpack-dev-server.
-
-
-  config.log_level = :debug
 
   config.cache_classes = false
 

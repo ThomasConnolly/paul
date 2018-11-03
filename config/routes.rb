@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :todo_list
   resources :search_questions
 
   resources :searches, only: [:index]

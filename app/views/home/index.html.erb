@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col col-lg-12">
     <figure>
@@ -13,17 +14,13 @@
   <div class="col col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
   <h2>Sundays</h2>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png",
-        width:"220", class: "floatleft") %>
-        <p> <strong>In order that we might all celebrate the priesthood of Fr. Bill, we are having a single morning worship service this Sunday, Oct. 28, at 10 a.m. We will be saying farewell to the Rev. Dr. D. William Faupel (Fr. Bill), who is retiring from full-time ministry.</strong></p>
-        <%= cl_image_tag("FrBillFaupel_mbqp6v.jpg", width:"40%", class:"floatright") %>
-        <p>Please join us for Holy Eucharist at 10 a.m., followed by a reception/party for Fr Bill, who has served us for the past five years, the last three as priest-in-charge.</p>
-        <p> After this Sunday we will resume our usual schedule of services at 8 and 10 a.m., with a new leader, the Rev. Dr. Thomas Thoeni. Fr. Tom will be installed as the fifth rector of St. Paul's on Jan. 6.</p>
-  <%# <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
+
+  <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
   <p><strong>10 a.m.</strong>Holy Eucharist, Rite II </p>
-    <div class="mt-20">
+  <div class="mt-20">
       <small>Children's nursery/Sunday school available</small>
-    </div> %>
+    </div>
   <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p>
   <div class="mt30"></div>
@@ -41,10 +38,9 @@
 <h2>Presiding bishop celebrates diocese</h2>
     <p>Presiding Bishop Michael Curry was keynote speaker and primary celebrant of a three-hour Eucharist Friday, the highlights to the first of a two-day annual convention of church business and workshops. In addition to our delegates, pictured above, a busload of St. Paul's folks got to hear the bishop, best known for his sermon at the royal wedding and for branding our church as "the Episcopal branch of the Jesus Movement." Click below to see a recording of his talk and the mass.</p>
     <p><%= link_to "Keynote by Bishop Curry","https://vimeo.com/295435060" %></p>
-    <p> <%= link_to "Worship service and sermon by Bishop Curry", "https://vimeo.com/295403697" %><br>
-
-      <%# <iframe whttps://vimeo.com/295403697idth="720", height="800", src="https://boxcast.tv/embed.html#0xsQZsKD9aKbPCatIDMc?showTitle=1&showDescription=1&showHighlights=1&showRelated=1&defaultVideo=next&market=church&showCountdown=1&poster=https%3A%2F%2Fuploads.boxcast.com%2FEPISCDIO%2F2017-10%2Fm0pml5qkom4gnkzfvplf%2Fth.jpg", frameBorder="0", scrolling="auto", allowfullscreen="true"></iframe> %>
+    <p> <%= link_to "Worship service and sermon by Bishop Curry", "https://vimeo.com/295403697" %>
     </p>
+      <div class="mt30"></div>
     <h2>Home of the Farmers' Market</h2>
     <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
     <p>The market will reopen for the season Nov. 10. Bring your pets, caged or leashed as needed, for the blessing of animals on Nov. 17. The market is open every Saturday morning through April, 8 a.m. to noon.</p>
@@ -69,23 +65,19 @@
       for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>
       Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of
       Northwest Tanzania. There she established an orphanage for thousands of
-      children who lost their moms and dads to AIDS. She spoke at both services
-      on Sunday, March 11, and collected money and 34 dresses made by the ladies
-      of our church, the ECW (Episcopal Church Women).</p>
+      children who lost their moms and dads to AIDS. In addition to monitary contributions, the ladies
+      of our church, the ECW (Episcopal Church Women) have sewn numerous dresses for Dr. Wilson to distribute.</p>
     <p>Parishioners Mike Moore and Roger Conant are directors for the fund in
       the United States.</p>
-<%#*    <div class="clearall"></div>%>
-<%#*    <div class="mt30"></div>%>
-<%#*  <h2> %><%#= link_to "Supporters of 'ERD'", "https://episcopalrelief.org/" %><%#*</h2>%>
-    <%#= cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft") %>
-<%#*    <p>Episcopal Relief and Development is a charity you can trust to use your%>
-<%#*      resources wisely and lovingly. Click the headline to make a donation to%>
-<%#*      help.</p>%>
-<%#*      <div class="clearall"></div>%>
-<%#*      <div class="mt30"></div>%>
-<%#*<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",%>
-<%#*  width:"95%", class: "image-center", :fetch_format => :auto) %>
-<%#*  <div class="mt30"></div>%>
+<div class="clearall"></div>
+<div class="mt30"></div>
+<h2><%= link_to "Supporters of 'ERD'", "https://episcopalrelief.org/" %></h2>
+    <%= cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft") %>
+<p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p>
+<div class="clearall"></div>
+<div class="mt30"></div>
+<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", fetch_format: "auto") %>
+<div class="mt30"></div>
 
   </div><!--main-body -->
   <div class="col col-md-4 col-sm-8 sidebar">
@@ -95,28 +87,21 @@
     "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
 
   <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center") %>
-    <%= link_to cl_image_tag("FrTomSmall_ftq4hq.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1535993745/FrTomSmall_ftq4hq.pdf" %>
-    <h2>Rector-elect<br>
-      To Arrive<br>
-      Thursday
+    <%= link_to cl_image_tag("FrTomThoeni_lyntpn.jpg", width: "100%"), leadership_index_path %>
+    <h2>Welcome<br>
+      Fr. Tom!<br>
     </h2>
-      <p>Fr. Tom Thoeni (pronounced TAY-nee) is looking forward with joy to his becoming the fifth rector of St. Paul's. He will join us as rector-elect on Nov. 1, 2018, and will be installed by the bishop on the first Sunday in January, 2019. Click on the picture above to read or download a copy of a special edition of the St. Paul Pathway.</p>
+      <p>Fr. Tom Thoeni joined us Thursday, Nov. 1 and will be celebrating his first mass with us this Sunday. Please welcome our new pastor, who will be installed in January as the fifth rector of St. Paul's. He comes to us after 15 years as rector of St. Peters in Plant City in our diocese of Southwest Florida. For a look at his bio, click the photo above.</p>
       <div class="mt30"></div>
   <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
-    <p><strong>There's a place for you</strong> to exercise your ministry at
-    Saint Paul's! We are the hands and feet of the Risen Lord in the modern
-    world that is in great need. Some of our ministries are
+    <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
     <%= link_to "listed here.", opportunities_path %> </p>
     <div class="mt30"></div>
   <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
-    <p>Wearing your <strong> name tag </strong> is an act of hospitality!  We
-    want visitors and our members to feel comfortable at services and coffee
-    hour. If you don't have a name tag, call the office during the week.</p>
+    <p>Wearing your <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week to get one.</p>
     <div class="mt30"></div>
   <%= cl_image_tag("1912588_wbdabz.png", width: "40%", class: "image-center") %>
-    <p><strong>Join us for coffee </strong> after the Sunday morning worship
-    service. It's a time for fellowship and to meet new friends. Parishioners
-    bring snacks to share, and there's always plenty for newcomeres.</p>
+    <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p>
     <div class="mt30"></div>
   <p><strong>Get the Weekly Update in your email box </strong> <%= link_to "by
     signing up here.",
@@ -130,8 +115,7 @@
     <div id="newsfeed">
       <h4>Episcopal News Service</h4>
       <iframe width="100%" height="650" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
-      <%# <iframe src="https://feed.mikle.com/widget/v2/48019/" width="100%" height="600px"></iframe> %>
-      </div><!--  end  newsfeed -->
+    </div><!--  end  newsfeed -->
   </div><!-- sidebar -->
 </div><!-- row -->
 <div class="mt50"></div>

@@ -15,16 +15,20 @@ class PledgesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
   before_action :change_pledge, only: :new
-  
+
 
   def index
   end
-  
+
   def show
   end
 
   def new
     @pledge = Pledge.new
+  end
+
+  def review
+    @pledge = Pledge.find(params[:id])
   end
 
   def create
@@ -35,7 +39,7 @@ class PledgesController < ApplicationController
       redirect_to pledge_path(@pledge)
     else
       render :new
-    end   
+    end
   end
 
   def edit
@@ -47,7 +51,7 @@ class PledgesController < ApplicationController
         redirect_to pledge_path(@pledge)
     else
         render :edit
-    end 
+    end
   end
 
   def confirmation
@@ -58,7 +62,7 @@ class PledgesController < ApplicationController
       redirect_to '/', notice: 'Your pledge was deleted.'
   end
 
- 
+
 
 
 
@@ -82,7 +86,7 @@ private
   end
 
   def pledge_params
-    params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this, 
+    params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this,
       :plan]
   end
 end

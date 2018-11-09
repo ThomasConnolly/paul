@@ -1,14 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'shoulda/matchers'
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
-
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -40,9 +31,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-
   config.use_transactional_fixtures = false
-
+  config.include Helpers::Authentication, type: :feature
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

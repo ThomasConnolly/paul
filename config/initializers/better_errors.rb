@@ -1,1 +1,2 @@
-BetterErrors.editor = :sublime if defined? BetterErrors
+BetterErrors.editor = :atom if defined?
+BetterErrors

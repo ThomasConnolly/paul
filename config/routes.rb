@@ -110,7 +110,6 @@ Rails.application.routes.draw do
     end
 
   resource :pledge
-  get 'review', controller: :pledges
 
   resources :ticket_charges, only: [:new, :create]
 

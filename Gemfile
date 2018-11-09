@@ -69,21 +69,16 @@ group :development, :test do
   gem 'pry-doc'
   gem 'spring'
   gem 'factory_bot_rails'
-  gem 'simple_bdd'
   gem 'letter_opener'
   gem 'email_spec'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'cucumber-rails', require: false
   gem 'shoulda-matchers'
 end
 
 group :test do
   gem 'faker'
   gem 'database_cleaner'
-  gem 'simplecov'
-  gem 'simplecov-rcov'
-  gem 'rails-controller-testing'
 end
 
 gem 'rails_on_heroku'

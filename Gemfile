@@ -72,11 +72,11 @@ group :development, :test do
   gem 'letter_opener'
   gem 'email_spec'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'shoulda-matchers'
 end
 
 group :test do
+  gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
 end

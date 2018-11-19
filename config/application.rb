@@ -7,6 +7,7 @@ require 'date'
 require 'time'
 require 'attachinary/orm/active_record'
 require 'sprockets/railtie'
+require 'rspec-rails'
 
 
 
@@ -21,22 +22,23 @@ module Paul
     # Settings in config/environments/* take precedence over these.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loade
-  config.time_zone = 'Eastern Time (US & Canada)'    
+  config.time_zone = 'Eastern Time (US & Canada)'
   config.active_record.default_timezone = :local
   config.assets.precompile+=Ckeditor.assets
   config.assets.precompile+=%w(ckeditor/*)
   end
 
+Rails.logger = Logger.new(STDOUT)
 
 ActionMailer::Base.delivery_method = :smtp
 
 module RailsBootstrap
 
   class Application < Rails::Application
-    
-   # config.generators do |g|
-    
-    #  g.test_framework :rspec,
+
+  #config.generators do |g|
+
+  #g.test_framework :rspec,
      #   fixtures: true,
       #  view_specs: false,
        # helper_specs: false,
@@ -47,4 +49,3 @@ module RailsBootstrap
       end
     end
   end
-

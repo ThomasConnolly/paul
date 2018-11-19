@@ -44,6 +44,7 @@ gem 'figaro'
 gem 'googlebooks'
 gem 'openlibrary'
 gem 'rest-client'
+gem 'rspec-rails'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-awesome_print'
@@ -62,8 +63,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'guard'
-  gem 'guard-livereload'
+  #gem 'guard'
+  #gem 'guard-livereload'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'pry-doc'
@@ -71,7 +72,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'letter_opener'
   gem 'email_spec'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
 

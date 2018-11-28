@@ -28,7 +28,6 @@ module Paul
   config.assets.precompile+=%w(ckeditor/*)
   end
 
-Rails.logger = Logger.new(STDOUT)
 
 ActionMailer::Base.delivery_method = :smtp
 

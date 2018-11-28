@@ -1,4 +1,5 @@
 class PledgeChargesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
   end
@@ -7,7 +8,7 @@ class PledgeChargesController < ApplicationController
     @pledge = Pledge.find(current_user.pledge.id)
     @plan = @pledge.plan
     @amount = @pledge.pay_this
-    
+
       if current_user.stripe_pledge_id?
         customer = Stripe::Customer.retrieve(current_user.customer_id)
       else
@@ -15,8 +16,8 @@ class PledgeChargesController < ApplicationController
       :source  => params[:stripeToken]
     )
     end
-    
-    charge = Stripe::Charge.create(  
+
+    charge = Stripe::Charge.create(
       customer: customer.id,
       amount: @amount,
       currency: 'usd',
@@ -30,7 +31,7 @@ class PledgeChargesController < ApplicationController
       card_last4: params[:card_last4],
       card_exp_month: params[:card_exp_month],
       card_exp_year: params[:card_exp_year],
-      card_type: params[:card_brand] 
+      card_type: params[:card_brand]
     )
   end
 
@@ -38,3 +39,4 @@ class PledgeChargesController < ApplicationController
       flash[:error] = e.message
       redirect_to pledge_charges_path
   end
+  

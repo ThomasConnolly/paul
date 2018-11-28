@@ -1,6 +1,6 @@
 <div class="mt50"></div>
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
       <div class="pledge-text">
         <p><strong> You have elected the <span id="plan"><em><%= @pledge.plan %></em></span> pay plan for your annual pledge of <%= number_to_currency(@pledge.amount) %>. That would be <%= @pledge.divisor %> payments of <span id="payThis"><%= number_to_currency((@pledge.pay_this.to_f)/100) %>, </span> beginning today and ending on Consecration Sunday, where our pledges will be offered to God at all the services.</p>
         <div class="mt30"></div>

@@ -1,6 +1,6 @@
-<div class="mt50"></div> 
+<div class="mt50"></div>
 <div class="row">
-  <div class="col col-md-10 col-md-offset-1 col-sm-12">  
+  <div class="col-md-10 offset-md-1 col-sm-12">  
   <h1><%= @sermon.title %></h1>
     <p><%= @sermon.cites %></p>
       <%= render 'serbox' %>
@@ -11,12 +11,11 @@
           <source src="<%= @sermon.audio %>"  type="audio/mpeg" >
             Your browser does not support the audio element.
         </audio>
-      <% end %>  
+      <% end %>
     </div>
-    
+
     <% if current_user && current_user.has_role?(:admin) %>
-    <%= link_to 'Edit', edit_sermon_path(@sermon) %> 
+    <%= link_to 'Edit', edit_sermon_path(@sermon) %>
     <% end %>
   </div>
 </div>
- 

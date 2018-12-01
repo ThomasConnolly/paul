@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_215355) do
+ActiveRecord::Schema.define(version: 2018_12_01_123226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,20 +50,6 @@ ActiveRecord::Schema.define(version: 2018_11_25_215355) do
     t.string "cutter"
     t.string "url"
     t.index ["author", "title"], name: "index_books_on_author_and_title"
-  end
-
-  create_table "candidates", force: :cascade do |t|
-    t.string "last_name"
-    t.string "full_name"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "link1"
-    t.string "link2"
-    t.string "link3"
-    t.text "links_narrative"
-    t.string "link4"
-    t.string "photo_link"
   end
 
   create_table "characteristics", force: :cascade do |t|

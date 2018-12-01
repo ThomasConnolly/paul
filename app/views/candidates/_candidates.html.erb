@@ -1,8 +1,0 @@
-<% @candidates.each do |candidate| %>
-  <%= image_tag candidate.photo_link, class: "image-center", width: "60%" %>
-  <h2><%= candidate.full_name %></h2>
-  <%= link_to "Go to Fr. #{candidate.last_name}'s detail page", candidate_path(candidate) %>
-
-  <hr>
-<br>
-  <% end %>

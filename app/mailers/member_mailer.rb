@@ -2,6 +2,12 @@ class MemberMailer < ApplicationMailer
   default from: "Welcome@saintpaulsnaples.org"
   default  to: Proc.new { Member.pluck(:email)}
 
+  def december_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1543942565/December2018F_ifekfm.pdf"
+    mail(
+      subject: "New Pathway newsletter")
+  end
 
   def member_meet_rector_elect(member)
     @member = member

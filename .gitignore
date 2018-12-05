@@ -19,7 +19,7 @@
 # Ignore application configuration
 /config/master.key
 /config/application.yml
-/config/secrets.yml
+# /config/secrets.yml
 /config/facebook.yml
 /config/dropbox.yml
 /config/cloudinary.yml

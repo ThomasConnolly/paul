@@ -1,0 +1,1 @@
+(function(){var t;t=function(){return $(".ckeditor").each(function(){return CKEDITOR.replace($(this).attr("id"))}),$(document).ready(t),$(document).on("page:load",t)}}).call(this);

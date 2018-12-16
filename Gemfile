@@ -12,7 +12,7 @@ gem 'uglifier'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'bootstrap', '4.1.3'
+gem 'bootstrap'
 gem 'autoprefixer-rails'
 gem 'sass-rails'
 gem 'mini_racer'
@@ -82,4 +82,3 @@ group :test do
 end
 
 gem 'rails_on_heroku'
-

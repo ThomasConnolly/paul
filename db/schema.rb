@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_123226) do
+ActiveRecord::Schema.define(version: 2018_12_15_162524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,17 +52,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.index ["author", "title"], name: "index_books_on_author_and_title"
   end
 
-  create_table "characteristics", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "definition"
-    t.string "kind"
-    t.text "question"
-    t.index ["user_id"], name: "index_characteristics_on_user_id"
-  end
-
   create_table "comments", id: :serial, force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -72,13 +61,17 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.string "commentable_type"
   end
 
-  create_table "drop5s", force: :cascade do |t|
-    t.integer "pledge"
-    t.string "name"
-    t.text "how"
-    t.string "honey"
+  create_table "donations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "amount", default: 275
+    t.integer "pay_this"
+    t.boolean "anonymous", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "stripe_email"
+    t.string "customer_id"
+    t.string "source"
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "events", id: :serial, force: :cascade do |t|
@@ -159,6 +152,20 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.datetime "updated_at"
   end
 
+  create_table "pledgers", force: :cascade do |t|
+    t.string "last_name"
+    t.string "salutation"
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.integer "type"
+    t.string "northern_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pledges", id: :serial, force: :cascade do |t|
     t.integer "divisor"
     t.integer "user_id"
@@ -206,16 +213,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.string "score"
-    t.bigint "candidate_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["candidate_id"], name: "index_ratings_on_candidate_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
-  end
-
   create_table "roles", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "resource_id"
@@ -224,25 +221,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.datetime "updated_at"
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
-  end
-
-  create_table "search_questions", force: :cascade do |t|
-    t.text "question"
-    t.bigint "characteristic_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["characteristic_id"], name: "index_search_questions_on_characteristic_id"
-    t.index ["user_id"], name: "index_search_questions_on_user_id"
-  end
-
-  create_table "search_tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "url"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sermons", id: :serial, force: :cascade do |t|
@@ -254,19 +232,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.integer "homilist_id"
     t.date "delivered_on"
     t.string "audio"
-  end
-
-  create_table "sponsorships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "amount", default: 275
-    t.string "plan"
-    t.string "customer_id"
-    t.string "source"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "pay_this"
-    t.string "email"
-    t.integer "divisor"
   end
 
   create_table "story_ideas", id: :serial, force: :cascade do |t|
@@ -386,9 +351,5 @@ ActiveRecord::Schema.define(version: 2018_12_01_123226) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "characteristics", "users"
-  add_foreign_key "ratings", "characteristics", column: "candidate_id"
-  add_foreign_key "ratings", "users"
-  add_foreign_key "search_questions", "characteristics"
-  add_foreign_key "search_questions", "users"
+  add_foreign_key "donations", "users"
 end

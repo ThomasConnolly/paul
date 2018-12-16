@@ -3,18 +3,11 @@ Rails.application.routes.draw do
 
 
 
+  resources :pledgers
+  resources :donations
   resources :todo_list
-  resources :search_questions
-
-  resources :searches, only: [:index]
-
-  get 'Search', to: 'searches#index', as: 'Search'
-
-  resources :search_tasks
 
   resource :sponsorship
-
-  resources :drop5s
 
   resources :formation_talks, only: [:show, :index, :edit, :new]
 
@@ -115,7 +108,7 @@ Rails.application.routes.draw do
 
   resources :pledge_charges, only: [:new, :create]
 
-  resources :sponsorship_charges, only: [:new, :create]
+  resources :albergue_charges, only: [:new, :create]
 
   resources :members
 

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pledgers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Last name</th>
+      <th>Salutation</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th>Type</th>
+      <th>Northern city</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pledgers.each do |pledger| %>
+      <tr>
+        <td><%= pledger.last_name %></td>
+        <td><%= pledger.salutation %></td>
+        <td><%= pledger.address1 %></td>
+        <td><%= pledger.address2 %></td>
+        <td><%= pledger.city %></td>
+        <td><%= pledger.state %></td>
+        <td><%= pledger.postal_code %></td>
+        <td><%= pledger.type %></td>
+        <td><%= pledger.northern_city %></td>
+        <td><%= link_to 'Show', pledger %></td>
+        <td><%= link_to 'Edit', edit_pledger_path(pledger) %></td>
+        <td><%= link_to 'Destroy', pledger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pledger', new_pledger_path %>

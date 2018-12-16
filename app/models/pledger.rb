@@ -1,0 +1,2 @@
+class Pledger < ApplicationRecord
+end

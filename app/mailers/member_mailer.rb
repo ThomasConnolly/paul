@@ -1,6 +1,6 @@
 class MemberMailer < ApplicationMailer
   default from: "Welcome@saintpaulsnaples.org"
-  default  to: Proc.new { Member.pluck(:email)}
+  default  bc: Proc.new { Member.pluck(:email)}
 
   def december_pathway(member)
     @member = member

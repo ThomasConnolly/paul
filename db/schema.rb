@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_162524) do
+ActiveRecord::Schema.define(version: 2018_12_18_122015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,10 @@ ActiveRecord::Schema.define(version: 2018_12_15_162524) do
     t.string "stripe_email"
     t.string "customer_id"
     t.string "source"
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "zip"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -319,6 +323,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_162524) do
     t.integer "card_exp_year"
     t.integer "card_exp_month"
     t.string "card_type"
+    t.integer "donation_id"
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

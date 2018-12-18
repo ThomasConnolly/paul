@@ -57,6 +57,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_attachment :avatar, accept: [:png, :jpg, :gif]
+  has_many :donations
   #honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 

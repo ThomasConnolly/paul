@@ -108,7 +108,7 @@ Rails.application.routes.draw do
 
   resources :pledge_charges, only: [:new, :create]
 
-  resources :albergue_charges, only: [:new, :create]
+  resources :charges, only: [:new, :create]
 
   resources :members
 

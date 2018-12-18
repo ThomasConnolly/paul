@@ -1,11 +1,11 @@
 
-class AlbergueChargesController < ApplicationController
+class ChargesController < ApplicationController
 
   def new
   end
 
+
   def create
-    @donation = Donation.find(params[:id])
 
   # Amount in cents
   @amount = @donation.pay_this
@@ -18,16 +18,16 @@ class AlbergueChargesController < ApplicationController
   charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
-    :description => "Albergue Donation",
+    :description => "Albergue Sponsorship",
     :currency    => 'usd'
   )
 
-  @donation.update(email: params[:stripeEmail],
+  @donation.update(stripe_email: params[:stripeEmail],
     source: params[:stripeToken], customer_id: customer.id
   )
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
-  redirect_to albergue_charges_path
+  redirect_to new_charge_path
   end
 end

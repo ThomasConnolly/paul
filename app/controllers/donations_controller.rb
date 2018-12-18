@@ -21,7 +21,7 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
     @donation.user_id = current_user.id
       if @donation.save
-        redirect_to @donation, notice: 'Enter your credit/debit card information'
+        redirect_to new_charge_path
       else
         render :new
     end

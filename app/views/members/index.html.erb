@@ -15,8 +15,8 @@
     <div class="mt100"></div>
 
 <% @members.each do |m| %>
-<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp; 
+<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp;
   <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
-  <%= link_to 'Edit', edit_member_path(m) %> 
+  <%= link_to 'Edit', edit_member_path(m) %>
   <%= link_to ' | Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
 <% end %>

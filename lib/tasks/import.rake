@@ -1,15 +1,15 @@
 
-namespace :import do 
+namespace :import do
 
   desc "Import members from csv"
   task members: :environment do
 
-   #ActiveRecord::Base.connection.execute('TRUNCATE members') 
-    
+   #ActiveRecord::Base.connection.execute('TRUNCATE members')
+
     import = Member::Import.new file: File.open("member.csv")
     import.process!
     puts "Imported #{import.imported_count} members"
-    puts import.errors.full_messages 
+    puts import.errors.full_messages
   end
 
 
@@ -21,6 +21,14 @@ namespace :import do
     puts import.errors.full_messages
   end
 
+  desc "Import letters from csv"
+  task letters: :environment do
+    import = Letter::Import.new file: File.open("letters.csv")
+    import.process!
+    puts "Imported #{import.imported_count} letters"
+    puts import.errors.full_messages
+  end
+
 
   desc "Import anniversaries from csv"
   task anniversaries: :environment do
@@ -28,7 +36,7 @@ namespace :import do
     import.process!
     puts "Imported #{import.imported_count} anniversaries"
     puts import.errors.full_messages
-end
+  end
 
   desc "Import books from csv"
   task books: :environment do

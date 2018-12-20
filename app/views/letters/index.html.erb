@@ -1,0 +1,18 @@
+<h4>Import data</h4>
+    <%= simple_form_for @import, url: import_letters_path, multipart: true do |f|%>
+      <% if @import.errors.any? %>
+        <div class="alert alert-error">
+        <% @import.errors.full_messages.each do |msg| %>
+        <div><%= msg %> </div>
+        <% end %>
+      <% end %>
+      <%= f.file_field :file %>
+      <%= f.submit  "Upload letters" %>
+    <% end %>
+
+    <div class="mt100"></div>
+
+<% @letters.each do |letter| %>
+ <p> <%= letter.salutation %> <%= letter.last_name %> <%= letter.writer %>
+ <%= link_to "Edit", edit_letter_path(letter) %></p>
+ <% end %>

@@ -89,6 +89,14 @@ Rails.application.routes.draw do
     end
   end
 
+resources :letters
+
+resources :letters do
+  collection do
+    post :import
+  end
+end
+
   resources :sermons
 
   resources :purchases, only: [:show]

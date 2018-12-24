@@ -1,14 +1,14 @@
 <%= simple_form_for(@letter) do |f| %>
 
   <div class="form-group form-inline">
-    <%= f.input :salutation, class: 'form-control' %>
-    <%= f.input :last_name, class: 'form-control' %>
-    <%= f.input :address1, class: 'form-control' %>
-    <%= f.input :address2, class: 'form-control' %>
-    <%= f.input :city, class: 'form-control' %>
-    <%= f.input :state, class: 'form-control' %>
-    <%= f.input :zip_code, class: 'form-control' %>
-    <%= f.input :writer, class: 'form-control' %>
+    <%= f.input :salutation, class: 'form-control', label: false %>
+    <%= f.input :last_name, class: 'form-control', label: false %>
+    <%= f.input :address1, class: 'form-control', label: false %>
+    <%= f.input :address2, class: 'form-control', label: false %>
+    <%= f.input :city, class: 'form-control', label: false %>
+    <%= f.input :state, class: 'form-control', label: false %>
+    <%= f.input :zip_code, class: 'form-control', label: false %>
+    <%= f.input :writer, collection: ["Tom", "Dick", "Gail", "Bev", "Ken", "Roger"], class: 'form-conrol', label: false %>
     <%= f.submit class: 'btn btn-primary' %>
-  </div>
 <% end %>
+  </div>

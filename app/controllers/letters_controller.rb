@@ -28,6 +28,15 @@ class LettersController < ApplicationController
       redirect_to letters_path
   end
 
+  def create
+    @letter = Letter.new(letter_params)
+      if @letter.save
+        redirect_to letters_path
+      else
+        render :new
+      end
+  end
+
 
   def edit
   end
@@ -56,6 +65,6 @@ class LettersController < ApplicationController
 
 
   def letter_params
-    params.require(:letter).permit(:last_name, :salutation, :address1, :address2, :city, :state, :zip_code, :writer)
+    params.require(:letter).permit(:last_name, :salutation, :address1, :address2, :city, :state, :zip, :writer)
   end
 end

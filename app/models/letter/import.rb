@@ -6,7 +6,7 @@ class Letter::Import
 
 def process!
   @imported_count = 0
-  CSV.foreach(file.path, headers: true, header_converters: [:symbol, :date]) do |row|
+  CSV.foreach(file.path, headers: true, header_converters: [:symbol]) do |row|
     letter = Letter.assign_from_row(row)
     if letter.save
       @imported_count += 1

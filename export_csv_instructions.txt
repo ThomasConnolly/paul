@@ -1,0 +1,6 @@
+In console, first create a new file, like so:
+f = File.new("name_of_letter.csv", "w")
+then populate the file like so:
+f << Letter.where(writer: "Tom").order('last_name ASC').to_csv
+final step is to close the file, like so:
+f.close

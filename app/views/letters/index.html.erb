@@ -10,9 +10,9 @@
       <%= f.submit  "Upload letters" %>
     <% end %>
 
-    <div class="mt100"></div>
+  <div class="mt100"></div>
 
 <% @letters.each do |letter| %>
- <p> <%= letter.salutation %> <%= letter.last_name %> <%= letter.writer %>
- <%= link_to "Edit", edit_letter_path(letter) %></p>
- <% end %>
+ <p> <%= letter.salutation %> <%= letter.last_name %> <%= letter.zip %> <%= letter.writer %>
+   <%= link_to "Edit", edit_letter_path(letter) %></p>
+<% end %>

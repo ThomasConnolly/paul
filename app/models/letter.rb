@@ -16,11 +16,11 @@ class Letter < ApplicationRecord
     end
   end
 
-  #Importing letterss from csv file
+  #Importing letters from csv file
   def self.assign_from_row(row)
     letter = Letter.where(last_name: row[:last_name]).first_or_initialize
     letter.assign_attributes row.to_hash.slice(
-    :salutation, :last_name, :address1, :address2, :city, :state, :zip_code)
+    :salutation, :last_name, :address1, :address2, :city, :state, :zip_code, :writer)
     letter
   end
-end 
+end

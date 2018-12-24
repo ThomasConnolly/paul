@@ -1,17 +1,17 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_member, only: [:edit, :show, :update, :destroy]
-  
- 
+
+
   def index
     @members = Member.all.order(:last_name)
     @import = Member::Import.new
     end
-  
+
   def import
     @import = Member::Import.new member_import_params
     if @import.save
-      redirect_to members_path, notice: "Imported #{@import.imported_count} members" 
+      redirect_to members_path, notice: "Imported #{@import.imported_count} members"
     else
       @members = Member.all
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
@@ -24,7 +24,7 @@ class MembersController < ApplicationController
       @member.save
       redirect_to members_path
   end
-  
+
 
   def edit
   end
@@ -38,7 +38,7 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
-  
+
 
 
    private
@@ -53,7 +53,6 @@ class MembersController < ApplicationController
 
 
   def member_params
-    params.require(:member).permit(:last_name, :first_name, :email, :birthday, 
-                                   :membership_id)
+    params.require(:member).permit(:last_name, :first_name, :email, :birthday, :membership_id)
   end
 end

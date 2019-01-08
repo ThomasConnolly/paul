@@ -1,44 +1,36 @@
-
-
 <div class="row">
-  <div class="col col-lg-12">
-    <figure>
-      <%= cl_image_tag("IMG_6245_ffztp0.jpg", :quality=>80, width: "100%") %>
+  <div class="col-lg-12">
+    <h1>Bishop Smith installs fifth rector of Saint Paul's</h1>
+      <%= cl_image_tag("WardensPresent_bdr2e1.jpg", class: "floatleft", width: "60%") %>
+      <%= cl_image_tag("TomAtKneeler_hjnxcq.jpg", class: "floatright", width: "39.9%") %>
       <figcaption>
-        For unto us a Child is Born!  </figcaption>
+        Wardens Dick Breithaupt and Don Anderson present the keys to the chuch to our new rector with the words, "Receive these keys, and let the doors of this place be open to all people" (top).
+      The Rev. Dr. Thomas A. Thoeni kneels in the midst of his parish, praying to God to "be always with me in carrying out the duties of my ministry..." as Bishop Smith observes.  </figcaption>
     </figure>
-    <%#= render 'pages/carousel' %>
-    <%#= render 'new_rector' %>
-    <%#= render 'albergue_popup' %>
   </div>
 </div>
 <div class="row">
-  <div class="col col-md-8 col-sm-12 main-body">
+  <div class="col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
-  <h2>Sundays</h2>
+    <h2 class="center">Sundays</h2>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
-
-  <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
-  <p><strong>Dec. 30, 10 a.m.</strong>Lessons and Carols</p>
-  <!-- <p><strong>10 a.m.</strong>Holy Eucharist, Rite II </p> -->
-  <p class="mt-20">
+    <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
+    <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p>
+    <p class="mt-20">
       <small>Children's nursery/Sunday school available</small>
     </p>
-  <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
+    <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p>
   <div class="mt30"></div>
-    <p><strong><%= link_to "Click here for Scripture Readings",
-    "http://www.lectionarypage.net" %></strong> </p>
-
-    <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
-      Boulevard, a couple of blocks east of Airport Road.</em> Need a map?
-      <%= link_to "Click here.", pages_directions_path %></p>
-    <p>To learn about our worship service and about the<strong> <em>Episcopal
-      Church,</em></strong> <%=link_to "click here", worship_index_path%>.
-      And click on that shelf of red books to get a short, cute introduction
+  <p><strong><%= link_to "Click here for Scripture Readings",
+  "http://www.lectionarypage.net" %></strong> </p>
+  <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
+    Boulevard, a couple of blocks east of Airport Road.</em> Need a map?
+  <%= link_to "Click here.", pages_directions_path %></p>
+  <p>To learn about our worship service and about the<strong> <em>Episcopal
+    Church,</em></strong> <%=link_to "click here", worship_index_path%>.
+    And click on that shelf of red books to get a short, cute introduction
       to our time-honored Book of Common Prayer.</p>
-
-
       <h2>Home of the Farmers' Market</h2>
       <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
       <p>The market is open for the 2018-19 season. Check out our gift shop and Unique Boutique while you're enjoying the block party atmosphere of our dog-friendly market. The market is open every Saturday morning through April, 8 a.m. to noon.</p>

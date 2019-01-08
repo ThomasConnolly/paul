@@ -63,7 +63,7 @@ Rails.application.routes.draw do
   get 'pages/advent'
   get 'pages/jubilee'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
-  get '/.well-known/apple-developer-merchantid-domain-association'
+  #get '/.well-known/apple-developer-merchantid-domain-association' =
 
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting

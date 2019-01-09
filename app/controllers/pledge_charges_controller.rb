@@ -15,7 +15,6 @@ class PledgeChargesController < ApplicationController
       customer = Stripe::Customer.create(
       :source  => params[:stripeToken]
     )
-    end
 
     charge = Stripe::Charge.create(
       customer: customer.id,
@@ -26,8 +25,7 @@ class PledgeChargesController < ApplicationController
 
     current_user.update(
       customer_id: customer.id,
-      source: params[:stripeToken],
-      stripe_pledge_id: @pledge_id,
+      stripe_pledge_id: @pledge.id,
       card_last4: params[:card_last4],
       card_exp_month: params[:card_exp_month],
       card_exp_year: params[:card_exp_year],
@@ -39,4 +37,3 @@ class PledgeChargesController < ApplicationController
       flash[:error] = e.message
       redirect_to pledge_charges_path
   end
-  

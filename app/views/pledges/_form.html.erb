@@ -6,7 +6,7 @@
         <%= f.input :amount, input_html: {id: "pledgeAmount"}, placeholder: "Amount in whole dollars", label: false %><br>
     </div>
     <div>
-      <h3>Payments will be made:</h3>
+      <h2>Payments will be made:</h2>
         <%= f.input :divisor, collection: [["Weekly", 52], ["Monthly", 12],
         ["Quarterly", 4]], as: :radio_buttons, label: false, input_html: {id: "divisor"} %><br>
     </div>

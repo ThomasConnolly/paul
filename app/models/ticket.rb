@@ -25,17 +25,17 @@ class Ticket < ApplicationRecord
 
   default_scope -> { order('last_name') }
 
-  
+
 
   def set_amount
     self.amount = self.quantity * self.price
-   end 
+   end
 
 
   private
 
   def email_buyer
-    TicketMailer.ticket_receipt(self).deliver
+    TicketMailer.thanks(self).deliver
   end
 
 end

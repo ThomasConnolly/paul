@@ -41,3 +41,6 @@ bookshark_http_api
 get_cover.rb
 needle.rb
 zmarc_stuff
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

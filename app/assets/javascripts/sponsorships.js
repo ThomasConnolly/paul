@@ -1,5 +1,4 @@
 document.addEventListener("turbolinks:load", function() {
-	var public_key = document.querySelector("meta[name='stripe-public-key']").content;
-	var stripe = Stripe(public_key);
+	var stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
 	var elements = stripe.elements();
 });

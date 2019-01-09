@@ -1,11 +1,11 @@
 
   <% if @event.event_picture.present? %>
-    <%= cl_image_tag(@event.event_picture.path, size: '50%'. class:"floatright") %>
+    <%= cl_image_tag(@event.event_picture.path, size: '50%', class:"floatright") %>
   <% end %>
   <p>Ticket price: <%= number_to_currency @event.price*0.01 %></p>
   <p>Event date: <%= @event.date.strftime('%A, %B %e, %Y') %>, time: <%= @event.time %></p>
 
   <p><strong><%= link_to "Get tickets!", new_event_ticket_path(@event) %></strong></p>
-<% if current_user? && current_user.has_role? (:admin) %>
+<% if current_user? && current_user.has_role?(:admin) %>
   <%= link_to 'Edit', edit_event_path %>
   <% end %>

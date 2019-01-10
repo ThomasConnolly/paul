@@ -1,14 +1,14 @@
-<div class="mt30"></div> 
+<div class="mt30"></div>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1>Purchase tickets for <%= @event.title %></h1> 
+    <div class="col-md-6 offset-md-3">
+      <h1>Purchase tickets for <%= @event.title %></h1>
         <p><%= @event.date.strftime('%B %e, %Y') %>, <%= @event.time %></p>
     <div class="mt30"></div>
     <h3>You are buying <%= pluralize(@ticket.quantity, "ticket") %> for <%= number_to_currency @ticket.amount*0.01 %></h3>
-    <div class="mt30"></div>     
+    <div class="mt30"></div>
 
-  <%= form_tag ticket_charges_path, id: 'chargeForm' do %> 
-    <script 
+  <%= form_tag ticket_charges_path, id: 'chargeForm' do %>
+    <script
       src="https://checkout.stripe.com/checkout.js">
     </script>
       <%= hidden_field_tag 'stripeToken' %>
@@ -36,7 +36,7 @@
             e.preventDefault();
           })
       </script>
-        
+
   <% end %>
    <div class="mt100"></div>
 

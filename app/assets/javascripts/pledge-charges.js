@@ -4,12 +4,12 @@ document.addEventListener('turbolinks:load', function() {
   var card, elements, form, stripe, stripeTokenHandler, stripe_public_key, style;
   stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
   elements = stripe.elements();
-  /*style = {
+  style = {
     base: {
       fontSize: '24px',
       color: "#32325d",
     }
-  };*/
+  };
   card  = elements.create('card');
   card.mount('#card-element');
   card.addEventListener('change', function(event) {
@@ -36,7 +36,7 @@ document.addEventListener('turbolinks:load', function() {
       });
   });
 });
-function stripeTokenHandler(token) {
+/*function stripeTokenHandler(token) {
   var form = document.getElementById('pledge-payment-form');
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
@@ -59,3 +59,4 @@ function addFieldToFormm(form, token, field){
   form.appendChild(hiddenInput);
 
 }
+*/

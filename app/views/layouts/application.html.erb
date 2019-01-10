@@ -12,15 +12,17 @@
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
   <%= csrf_meta_tags %>
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">
-  <script src="https://js.stripe.com/v3/"></script>
+
   <div class="page">
     <div class="container">
+      <script src="https://js.stripe.com/v3/"></script>
       <%= render '/layouts/header' %>
       <div class="mt20"></div>
       <%= render 'layouts/navbarTest' %>

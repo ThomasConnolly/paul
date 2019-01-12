@@ -1,6 +1,4 @@
-
-
-document.addEventListener('turbolinks:load', function() {
+$( document ).on('ready, turbolinks:load', function() {
   var stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
   var elements = stripe.elements();
   var style = {
@@ -22,15 +20,13 @@ document.addEventListener('turbolinks:load', function() {
   var card = elements.create('card', {style: style});
   card.mount('#card-element');
   card.addEventListener('change', function(event) {
-    var displayError;
-    displayError = document.getElementById('card-errors');
-      if (event.error) {
-        displayError.textContent = event.error.message;
-      } else {
-        displayError.textContent = '';
-    }
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+     }
   });
-
   var form = document.getElementById('payment-form');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -45,6 +41,7 @@ document.addEventListener('turbolinks:load', function() {
       });
   });
 });
+
 function stripeTokenHandler(token) {
   var form = document.getElementById('payment-form');
   var hiddenInput = document.createElement('input');
@@ -52,17 +49,18 @@ function stripeTokenHandler(token) {
   hiddenInput.setAttribute('name', 'stripeToken');
   hiddenInput.setAttribute('value', 'token.id');
   form.appendChild(hiddenInput);
-
-  ["brand", "exp_month", "exp_year", "last4"].forEach(function(field) {
+}
+  /*["brand", "exp_month", "exp_year", "last4"].forEach(function(field) {
     addFieldToForm(form, token, field);
   });
   form.submit();
 }
 
-function addFieldToFormm(form, token, field){
+function addFieldToForm(form, token, field){
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('card_type', 'hidden');
   hiddenInput.setAttribute('name', "user[card_" + field + "]");
   hiddenInput.setAttribute('value', token.card[field]);
   form.appendChild(hiddenInput);
 }
+*/

@@ -10,7 +10,7 @@
     <![endif]-->
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
 
 
   <%= cloudinary_js_config %>

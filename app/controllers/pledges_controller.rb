@@ -12,9 +12,11 @@
 #
 
 class PledgesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new]
+  before_action :change_path, only: :new
+  before_action :redirect_to_login, only: [:show, :edit, :update, :destroy]
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
-  before_action :change_pledge, only: :new
+
 
 
   def index
@@ -69,21 +71,21 @@ class PledgesController < ApplicationController
 private
 
   def set_pledge
-    @pledge = Pledge.find(current_user.pledge.id)
+      @pledge = Pledge.find(current_user.pledge.id)
   end
 
-  def change_pledge
-    if current_user.pledge.present?
-      redirect_to edit_pledge_path
+  def change_path
+    if user_signed_in? && current_user.pledge.present?
+      render edit_pledge_path
     end
   end
 
-  def redirect_to_signup
-    if !user_signed_in?
-      session["user_return_to"] = new_pledge_path
-      redirect_to new_user_registration_path
-    end
-  end
+  # def redirect_to_login
+  #   if !user_signed_in?
+  #     session["user_return_to"] = new_pledge_path
+  #     redirect_to new_user_registration_path
+  #   end
+  # end
 
   def pledge_params
     params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this,

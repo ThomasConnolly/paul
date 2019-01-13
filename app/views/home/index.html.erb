@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-lg-12">
     <h1>Bishop installs fifth rector of St. Paul's</h1>
+    <figure>
       <%= cl_image_tag("WardensPresent_bdr2e1.jpg", class: "floatleft", width: "60%") %>
       <%= cl_image_tag("TomAtKneeler_hjnxcq.jpg", class: "floatright", width: "39.9%") %>
       <figcaption>
@@ -26,7 +27,7 @@
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
   <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
-    Boulevard, a couple of blocks east of Airport Road.</em> Need a map?
+    Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
   <%= link_to "Click here.", pages_directions_path %></p>
   <p>To learn about our worship service and about the<strong> <em>Episcopal
     Church,</em></strong> <%=link_to "click here", worship_index_path%>.
@@ -34,6 +35,8 @@
       to our time-honored Book of Common Prayer.</p>
 
   <div class="mt30"></div>
+  <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "60%", class: "floatleft") %><h2>Pledge Time!</h2>
+  <p>If you didn't get your pledge card in the mail this week, please call the office Monday. Our pledges will be blessed by Fr. Tom on Sunday, Jan. 20. A pledge is your statement of intent regarding the treasure you plan to share for the mission of the church. Please, in the knowledge of God's blessings upon you, be generous!</p><div class="mt30"></div>
     <h2>Home of the Farmers' Market</h2>
       <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
       <p>The market is open for the 2018-19 season. Check out our gift shop and Unique Boutique while you're enjoying the block party atmosphere of our dog-friendly market. The market is open every Saturday morning through April, 8 a.m. to noon.</p>
@@ -95,7 +98,10 @@
   <%= cl_image_tag("bible_hubpyl.gif", width: "100%") %>
   <h2> Read the bible<br>In 90 days!</h2>
   <p>Those who have completed this task of reading the bible cover-to-cover in three months say the experience was well worth the challenge, resulting in a spiritual enrichment.</p>
-  <p>We will undertake this challenge beginning on Sunday, Jan. 13 (not Jan. 1, as previously announced). Deacon Mary Abrams will lead weekly discussions with participants, Sundays at 9 a.m. beginning then.</p>
+  <p>We will undertake this challenge beginning Jan. 13. Deacon Mary Abrams will lead weekly discussions with participants, Sundays at 9 a.m.</p>
+  <%= cl_image_tag("TriviaLogo_xusjpw.jpg", width: "100%") %>
+  <p>Lots of fun! Lots of prizes! Jan. 27 in Trinity Hall. Put together a table of friends who like to play and enjoy a couple of hours of laughter and suspense. (It's between the playoffs and Superbowl, so no football on tv that day!). Refreshments will be available. Proceeds go to the great charity, the TumainiUSA Fund.<%= link_to "Click here", pages_trivia_path %> for more information.</p>
+
     <%= link_to cl_image_tag("December2018F_ifekfm.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1543942565/December2018F_ifekfm.pdf" %>
     <h2>New Pathway<br>
       Available<br>

@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def rector
   end
 
+  def trivia
+  end
+  
   def albergue
   end
 

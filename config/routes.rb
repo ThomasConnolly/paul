@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'pages/history', as: :history
   get 'pages/profileSlides'
   get 'pages/tumaini'
+  get 'pages/trivia'
   get 'pages/grace_works'
   get 'pages/albergue'
   get 'pages/calendar'

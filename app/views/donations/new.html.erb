@@ -1,10 +1,10 @@
  <%= cl_image_tag("DSC08662_bebtjb.jpg", width:"49%")  %><%=cl_image_tag("DSC08624_kzsypr.jpg", width:"49%", class:"floatright")  %>
 <div class="mt30"></div>
-<h1 class="centered_text"><%= current_user.full_name.titleize %> will sponsor a child at the albergue!</h1>
+<h2 class="centered_text">Thanks for helping these children! </h2>
 
 <%= render 'form', donation: @donation %>
 <div class="mt30"></div>
 
+<div class="mt100"></div>
 
-
-<%= link_to 'Back', donations_path %>
+<%= link_to 'Back', root_path %>

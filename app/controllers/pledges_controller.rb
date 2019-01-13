@@ -76,16 +76,16 @@ private
 
   def change_path
     if user_signed_in? && current_user.pledge.present?
-      render edit_pledge_path
+      redirect_to pledge_path(@pledge)
     end
   end
 
-  # def redirect_to_login
-  #   if !user_signed_in?
-  #     session["user_return_to"] = new_pledge_path
-  #     redirect_to new_user_registration_path
-  #   end
-  # end
+  def redirect_to_login
+    if !user_signed_in?
+      session["user_return_to"] = new_pledge_path
+      redirect_to new_user_registration_path
+    end
+  end
 
   def pledge_params
     params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this,

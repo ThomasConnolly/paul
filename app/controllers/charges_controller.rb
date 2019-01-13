@@ -4,11 +4,11 @@ class ChargesController < ApplicationController
   def new
   end
 
-
   def create
+    @donation = Donation.find(params[:donation_id])
 
   # Amount in cents
-  @amount = @donation.pay_this
+    @amount = @donation.pay_this
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],

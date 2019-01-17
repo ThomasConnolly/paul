@@ -1,14 +1,12 @@
 
-class ChargesController < ApplicationController
+class AlbergueChargesController < ApplicationController
 
   def new
   end
 
   def create
-    @donation = Donation.find(params[:donation_id])
+    @sponsor = Sponsorship.find(params[:donation_id])
 
-  # Amount in cents
-    @amount = @donation.pay_this
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -17,12 +15,12 @@ class ChargesController < ApplicationController
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => @amount,
+    :amount      => 27500,
     :description => "Albergue Sponsorship",
     :currency    => 'usd'
   )
 
-  @donation.update(stripe_email: params[:stripeEmail],
+  @sponsorship.update(stripe_email: params[:stripeEmail],
     source: params[:stripeToken], customer_id: customer.id
   )
 

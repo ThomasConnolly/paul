@@ -19,7 +19,7 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(donation_params)
-    @donation.user_id = current_user.id
+
       if @donation.save
         redirect_to new_charge_path
       else

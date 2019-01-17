@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  cities     :string(255)
+#  cities     :text
 #  background :text
 #  career     :text
 #  family     :text

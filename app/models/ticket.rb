@@ -12,8 +12,9 @@
 #  first_name  :string
 #  last_name   :string
 #  email       :string
-#  card        :string
 #  customer_id :string
+#  source      :string
+#  honey       :string
 #
 
 class Ticket < ApplicationRecord

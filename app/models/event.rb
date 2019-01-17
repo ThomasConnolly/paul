@@ -11,7 +11,7 @@
 #  quantity   :integer
 #  amount     :integer
 #  url        :string
-#  time       :time
+#  time       :string
 #
 
 class Event < ApplicationRecord

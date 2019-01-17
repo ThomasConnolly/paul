@@ -2,13 +2,20 @@
 #
 # Table name: pledges
 #
-#  id         :integer          not null, primary key
-#  divisor    :integer
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  amount     :integer
-#  pay_this   :integer
+#  id              :integer          not null, primary key
+#  divisor         :integer
+#  user_id         :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  amount          :integer
+#  pay_this        :integer
+#  plan            :string
+#  subscription_id :string
+#  interval        :integer
+#  interval_count  :integer
+#  status          :integer
+#  start_date      :date
+#  end_date        :date
 #
 
 class Pledge < ApplicationRecord
@@ -18,9 +25,12 @@ class Pledge < ApplicationRecord
   validates_presence_of :user_id
   before_save :set_pay_this
   before_save :set_plan
+  before_save :set_interval
+  before_save :set_interval_count
 
+  enum status: {inactive: 0, active: 1, cancelled: 2}
+  enum interval: {week: 0, month: 1}
 
-  
 
  #Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
 
@@ -32,11 +42,30 @@ class Pledge < ApplicationRecord
 
   def set_plan
     if self.divisor == 4
-      puts self.plan = "quarterlyPledge"
+      puts self.plan = "quarterly"
     elsif self.divisor == 12
-      puts self.plan = "monthlyPledge"
+      puts self.plan = "monthly"
     else
-      puts self.plan = "weeklyPledge"
+      puts self.plan = "weekly"
+    end
+  end
+
+
+  def set_interval
+    if self.divisor == 52
+      puts self.interval = 0
+    else
+      puts self.interval = 1
+    end
+  end
+
+  def set_interval_count
+    if self.divisor == 4
+      puts self.interval_count = 3
+    elsif self.interval_count == 12
+      puts self.interval_count = 1
+    else
+      puts self.interval_count = 1
     end
   end
 end

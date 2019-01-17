@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: letters
+#
+#  id         :bigint(8)        not null, primary key
+#  salutation :string
+#  last_name  :string
+#  address1   :string
+#  address2   :string
+#  city       :string
+#  state      :string
+#  zipcode    :string
+#  writer     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 
 
 class Letter < ApplicationRecord

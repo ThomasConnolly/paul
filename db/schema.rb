@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_161445) do
+ActiveRecord::Schema.define(version: 2019_01_14_235056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,6 +177,12 @@ ActiveRecord::Schema.define(version: 2019_01_08_161445) do
     t.integer "amount"
     t.integer "pay_this"
     t.string "plan"
+    t.string "subscription_id"
+    t.integer "interval"
+    t.integer "interval_count"
+    t.integer "status"
+    t.date "start_date"
+    t.date "end_date"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|
@@ -321,13 +327,13 @@ ActiveRecord::Schema.define(version: 2019_01_08_161445) do
     t.string "avatar"
     t.string "honey"
     t.string "source"
-    t.string "stripe_pledge_id"
     t.string "stripe_sponsorship_id"
     t.string "card_last4"
     t.integer "card_exp_year"
     t.integer "card_exp_month"
     t.string "card_type"
     t.integer "donation_id"
+    t.string "subscription_id"
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

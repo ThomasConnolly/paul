@@ -18,16 +18,18 @@
 #  first_name             :string(255)
 #  last_name              :string(255)
 #  full_name              :string(255)
-#  stripe_customer_id     :string
-#  member_id              :integer
-#  invitation_token       :string
-#  invitation_created_at  :datetime
-#  invitation_sent_at     :datetime
-#  invitation_accepted_at :datetime
-#  invitation_limit       :integer
-#  invited_by_id          :integer
-#  invited_by_type        :string
-#  invitations_count      :integer          default(0)
+#  customer_id            :string
+#  card                   :string
+#  avatar                 :string
+#  honey                  :string
+#  source                 :string
+#  stripe_sponsorship_id  :string
+#  card_last4             :string
+#  card_exp_year          :integer
+#  card_exp_month         :integer
+#  card_type              :string
+#  donation_id            :integer
+#  subscription_id        :string
 #
 
 class User < ApplicationRecord

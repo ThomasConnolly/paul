@@ -1,2 +1,14 @@
+# == Schema Information
+#
+# Table name: marriage_talks
+#
+#  id           :bigint(8)        not null, primary key
+#  title        :string
+#  body         :text
+#  delivered_on :date
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class MarriageTalk < ApplicationRecord
 end

@@ -10,6 +10,7 @@
 #  updated_at   :datetime
 #  homilist_id  :integer
 #  delivered_on :date
+#  audio        :string
 #
 
 class Sermon < ApplicationRecord

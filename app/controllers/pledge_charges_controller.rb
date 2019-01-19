@@ -7,18 +7,28 @@ class PledgeChargesController < ApplicationController
   def create
     @pledge = Pledge.find(current_user.pledge.id)
     @email = current_user.email
-    @plan = @pledge.plan
+    @plan  = @pledge.plan
+    @interval = @pledge.interval
+    @interval_count = @pledge.interval_count
     @amount = @pledge.pay_this
 
+    customer = Stripe::Customer.retrieve(current_user.customer_id) if current_user.stripe_id?
     customer = Stripe::Customer.create(
       :email => @email,
       :source => params[:stripeToken]
     )
 
+    plan = Stripe::Plan.create({
+      :product => {name: "Stewardship"},
+      :amount => @amount,
+      :interval => @interval,
+      :interval_count => @interval_count,
+      :currency => 'usd',
+    })
+
     subscription = Stripe::Subscription.create(
       :customer => customer.id,
-      :plan => @plan,
-      :amount => @amount
+      :plan => plan.id,
     )
       current_user.update({
       customer_id: customer.id,

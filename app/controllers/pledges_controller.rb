@@ -12,9 +12,8 @@
 #
 
 class PledgesController < ApplicationController
-  before_action :authenticate_user!, except: [:new]
+  before_action :authenticate_user!
   before_action :change_path, only: :new
-  before_action :redirect_to_login, only: [:show, :edit, :update, :destroy]
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
 
 
@@ -80,12 +79,12 @@ private
     end
   end
 
-  def redirect_to_login
-    if !user_signed_in?
-      session["user_return_to"] = new_pledge_path
-      redirect_to new_user_registration_path
-    end
-  end
+  # def redirect_to_login
+  #   if !user_signed_in?
+  #     session["user_return_to"] = new_pledge_path
+  #     redirect_to new_user_registration_path
+  #   end
+  # end
 
   def pledge_params
     params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this,

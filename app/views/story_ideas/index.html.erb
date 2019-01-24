@@ -21,7 +21,7 @@
         <h2>From the Communicators</h2>
         <% @story_ideas.each do |story_idea| %>
           <h3><%= link_to story_idea.title, story_idea %></h3>
-          <p>By <%= story_idea.user.full_name.titleize %></p>
+          <p>By <%= story_idea.user.username.titleize %></p>
 
         <% if story_idea.comments.any? %>
         <p><small><em><%= pluralize story_idea.comments.count, "comment" %>  </em></small></p>

@@ -4,7 +4,7 @@
 <%= f.input :what %>
 <%= f.input :when %>
 <%= f.input :where %>
-<%= f.input :user_id, collection: User.all.order(:last_name), label_method: :full_name %>
+<%= f.input :user_id, collection: User.all.order(:last_name), label_method: :username %>
 <%= f.button :submit %>
 <% end %>
 <%= link_to "<< Back", opportunities_path %>

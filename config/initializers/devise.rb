@@ -43,12 +43,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:login, :full_name, :email]
+  config.case_insensitive_keys = [:login, :username, :email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user & when used to authenticate or find user. Default is :email.
-  config.strip_whitespace_keys = [:login, :full_name, :email]
+  config.strip_whitespace_keys = [:login, :username, :email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -121,7 +121,7 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  #config.invite_key = {:full_name => /\D/}
+  #config.invite_key = {:username => /\D/}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -220,7 +220,7 @@ Devise.setup do |config|
   # unconfirmed_email column, and copied to email column on confirmation.
   config.reconfirmable = true
   # Defines which key will be used when confirming an account
-  config.confirmation_keys = [:full_name]
+  config.confirmation_keys = [:username]
 
   # ==> Configuration for :rememberable
   # time user will be remembered without asking for credentials again.

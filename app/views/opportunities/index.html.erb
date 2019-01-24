@@ -10,7 +10,7 @@
           <p><strong>When </strong>&#09;<%= opportunity.when %></p>
           <p><strong>Where </strong>&#09;<%= opportunity.where %></p>
           <!--<%# if opportunity.user.present? %>
-           <p><strong>Vestry liaison person </strong>&#09;<%#= opportunity.user.full_name.titleize %>,  <span class="email"><%#= opportunity.user.email %></span></p>  -->
+           <p><strong>Vestry liaison person </strong>&#09;<%#= opportunity.user.username.titleize %>,  <span class="email"><%#= opportunity.user.email %></span></p>  -->
           <%# end %>
             <% if current_user && current_user.has_role?(:admin) %><p><small>
               <%= link_to "Edit", edit_opportunity_path(opportunity[:id]) %> | <%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>

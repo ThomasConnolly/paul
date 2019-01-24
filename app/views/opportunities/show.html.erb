@@ -27,7 +27,7 @@
 </p>
 <!-- <p> -->
   <!-- <strong>Vestry liaison person</strong> -->
-  <%#= @opportunity.user.full_name.titleize %>
+  <%#= @opportunity.user.username.titleize %>
 <!-- </p> -->
 <% if current_user && current_user.has_role?(:admin) %>
 <%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |

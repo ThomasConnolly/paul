@@ -3,7 +3,7 @@
   <div class="col-md-8 col-md-offset-2">
     <h1>Here's the post</h1>
  
-      <p class="poster-name">By <%= @post.user.full_name.titleize %></p>
+      <p class="poster-name">By <%= @post.user.username.titleize %></p>
 
   <%# if @post.post_picture? %>
     <%#= link_to cl_image_tag(@post.post_picture.path, 
@@ -17,7 +17,7 @@
     <br>
   <% @post.comments.each do |comment| %>
     <p><%= comment.body %></p>
-      <span class="comment-user"> <%= comment.user.full_name.titleize %>
+      <span class="comment-user"> <%= comment.user.username.titleize %>
          made this comment 
         <%= time_ago_in_words(comment.created_at) %> ago. 
       </span></p>

@@ -17,7 +17,7 @@
 #  updated_at             :datetime
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  full_name              :string(255)
+#  username              :string(255)
 #  customer_id            :string
 #  card                   :string
 #  avatar                 :string
@@ -36,7 +36,7 @@ class User < ApplicationRecord
   extend Rolify
   rolify
 
-  before_save :set_full_name
+  before_save :set_username
   after_create :assign_default_role
   after_create :add_profile
   has_many :posts, dependent: :destroy
@@ -74,7 +74,7 @@ class User < ApplicationRecord
 
 
   def self.assign_from_row(row)
-    user = find_by_full_name(row["first_name" + "last_name"]) || new
+    user = find_by_username(row["first_name" + "last_name"]) || new
       user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email,
         :member_id)
       user  # =====see member.rb for example ======
@@ -83,8 +83,8 @@ class User < ApplicationRecord
 
 protected
 
-  def set_full_name
-    self.full_name = "#{self.first_name.downcase.titleize} #{self.last_name.downcase.titleize}".strip
+  def set_username
+    self.username = "#{self.first_name.downcase.titleize} #{self.last_name.downcase.titleize}".strip
   end
 
   def assign_default_role
@@ -99,13 +99,13 @@ protected
     def self.find_first_by_auth_conditions(warden_conditions)
       conditions = warden_conditions.dup
       if login = conditions.delete(:login)
-        where(conditions).where(["lower(full_name) = :value OR lower(email) = :value",
+        where(conditions).where(["lower(username) = :value OR lower(email) = :value",
         { :value => login.downcase }]).first
       else
-      if conditions[:full_name].nil?
+      if conditions[:username].nil?
       where(conditions).first
       else
-      where(full_name: conditions[:full_name]).first
+      where(username: conditions[:username]).first
       end
       end
     end

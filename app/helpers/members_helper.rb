@@ -10,7 +10,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  individual    :string
-#  full_name     :string
+#  username     :string
 #
 
 module MembersHelper

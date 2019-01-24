@@ -1,4 +1,4 @@
-<h1><%= @profile.user.full_name.titleize  %></h1>
+<h1><%= @profile.user.username.titleize  %></h1>
 <%= cl_image_tag(@profile.user.avatar.path, { width: '210' }) if @profile.user.avatar? %>
 
 <% if current_user == @profile.user %>

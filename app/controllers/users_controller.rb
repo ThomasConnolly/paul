@@ -17,7 +17,7 @@
 #  updated_at             :datetime
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  full_name              :string(255)
+#  username              :string(255)
 #  role                   :integer
 #  stripe_customer_id     :string
 #  member_id              :integer
@@ -93,7 +93,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :full_name, :role, 
+    params.require(:user).permit(:first_name, :last_name, :username, :role, 
       :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month,
       :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id )
   end

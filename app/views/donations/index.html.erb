@@ -4,7 +4,7 @@
 
     <% @donations.each do |donation| %>
 
-  <%= number_to_currency donation.amount %>&nbsp;<%= donation.user.full_name.titleize %>&nbsp;<% if donation.anonymous? %>Anonymous!<% end %>
+  <%= number_to_currency donation.amount %>&nbsp;<%= donation.user.username.titleize %>&nbsp;<% if donation.anonymous? %>Anonymous!<% end %>
   <%= link_to 'Show', donation %> <%= link_to 'Edit', edit_donation_path(donation) %> <%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %><br>
 
     <% end %>

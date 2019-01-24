@@ -14,7 +14,7 @@
                 :updated_at[0;37m => [0m[0;32mSun, 19 Nov 2017 03:53:13 EST -05:00[0m,
                 :first_name[0;37m => [0m[0;33m"Thomas"[0m,
                  :last_name[0;37m => [0m[0;33m"Connolly"[0m,
-                 :full_name[0;37m => [0m[0;33m"Thomas Connolly"[0m,
+                 :username[0;37m => [0m[0;33m"Thomas Connolly"[0m,
                  :member_id[0;37m => [0m[1;31mnil[0m,
           :invitation_token[0;37m => [0m[1;31mnil[0m,
      :invitation_created_at[0;37m => [0m[1;31mnil[0m,

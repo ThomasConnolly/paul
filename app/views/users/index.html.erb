@@ -1,28 +1,28 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2"<h3>All Users</h3>
       <% @users.each do |user| %> 
-        <p><strong>  <%= user.full_name.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %></p>
+        <p><strong>  <%= user.username.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %></p>
       <% end %>
       <br>
       <h3> Vestry Members  </h3>
       <% @users.with_role(:vestry).each do |v| %>
-       <p><strong> <%= v.full_name %> </strong>&nbsp;
+       <p><strong> <%= v.username %> </strong>&nbsp;
         <%= v.email %> <br> </p>
         <% end %>
         <br>
         <h3>Administrators</h3>
         <% @users.with_role(:admin).each do |admin| %>
-        <p><strong> <%= admin.full_name %></strong>&nbsp; <%= admin.email %></p>
+        <p><strong> <%= admin.username %></strong>&nbsp; <%= admin.email %></p>
         <% end %>
         <br>
         <h3>Communicators</h3>
         <% @users.with_role(:communicator).each do |comm| %>
-          <p><strong><%= comm.full_name %></strong>&nbsp; <%= comm.email %></p>
+          <p><strong><%= comm.username %></strong>&nbsp; <%= comm.email %></p>
         <% end %>
         <br>
         <h3>Jubilee! planners </h3>
         <% @users.with_role(:jubilee_planner).each do |jub| %>
-          <p><strong><%= jub.full_name %></strong>&nbsp; <%= jub.email %> </p>
+          <p><strong><%= jub.username %></strong>&nbsp; <%= jub.email %> </p>
         <% end %>
         <!-- <h3>Invite users</h3> 
         <%#= simple_form_for(User.new, url: user_invitation_path, 

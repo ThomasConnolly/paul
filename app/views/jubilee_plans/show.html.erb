@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
 <h3> <%= @jubilee_plan.title %> </h3> 
-<p> By <%= @jubilee_plan.user.full_name.titleize %></p>
+<p> By <%= @jubilee_plan.user.username.titleize %></p>
 <p> <%= @jubilee_plan.body %> </p>
   <% if current_user == @jubilee_plan.user %>
     <p><%= link_to "Edit", edit_jubilee_plan_path(@jubilee_plan) %> &nbsp; |

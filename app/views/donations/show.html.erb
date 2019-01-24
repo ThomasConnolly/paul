@@ -1,10 +1,10 @@
 <p><strong>Amount: </strong><%= number_to_currency@donation.amount %>
 </p>
-<p><strong>Donor: </strong><%= @donation.user.full_name.titleize %>
+<p><strong>Donor: </strong><%= @donation.user.username.titleize %>
 </p>
 <% if @donation.anonymous? %>
 <p>
-  <strong><%= @donation.user.full_name.titleize %> wishes to be listed as  anonymous in St. Paul's Pathway.</strong>
+  <strong><%= @donation.user.username.titleize %> wishes to be listed as  anonymous in St. Paul's Pathway.</strong>
 </p>
 <% end %>
 

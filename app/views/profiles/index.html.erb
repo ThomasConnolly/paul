@@ -18,7 +18,7 @@
       <% if user.has_role?(:vestry) %>
         *
       <% end %>
-      <%= user.full_name %></h2>
+      <%= user.username %></h2>
     <div class="clearall"></div>
     <%# end %>
       <%if user.profile.cities.present? %>

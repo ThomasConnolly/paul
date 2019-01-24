@@ -2,5 +2,5 @@
 <% if @user.avatar? %>
   <%= cl_image_tag(@user.avatar.path, size: '160x234') %> 
 <% end %>
-<p> <%= @user.full_name.titleize %></p>  
+<p> <%= @user.username.titleize %></p>  
 <p><%= @user.email %></p>

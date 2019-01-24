@@ -6,16 +6,15 @@ class PledgeChargesController < ApplicationController
 
   def create
     @pledge = Pledge.find(current_user.pledge.id)
-    @email = current_user.email
     @plan  = @pledge.plan
     @interval = @pledge.interval
     @interval_count = @pledge.interval_count
     @amount = @pledge.pay_this
 
-    customer = Stripe::Customer.retrieve(current_user.customer_id) if current_user.stripe_id?
+    # customer = Stripe::Customer.retrieve(current_user.customer_id) if current_user.customer_id?
     customer = Stripe::Customer.create(
-      :email => @email,
-      :source => params[:stripeToken]
+      email: current_user.email,
+      source: params[:stripeToken]
     )
 
     plan = Stripe::Plan.create({
@@ -26,18 +25,19 @@ class PledgeChargesController < ApplicationController
       :currency => 'usd',
     })
 
-    subscription = Stripe::Subscription.create(
-      :customer => customer.id,
-      :plan => plan.id,
-    )
-      current_user.update({
+    subscription = Stripe::Subscription.create({
+      customer: customer.id,
+      plan: plan.id
+    })
+
+      current_user.update_attributes(
       customer_id: customer.id,
       subscription_id: subscription.id,
       card_last4: params[:card_last4],
       card_exp_month: params[:card_exp_month],
       card_exp_year: params[:card_exp_year],
       card_type: params[:card_brand]
-    })
+    )
       @pledge.update({
         subscription_id: subscription.id,
         status: 1

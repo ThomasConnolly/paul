@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_235056) do
+ActiveRecord::Schema.define(version: 2019_01_20_131640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -321,7 +321,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_235056) do
     t.datetime "updated_at"
     t.string "first_name", limit: 255
     t.string "last_name", limit: 255
-    t.string "full_name", limit: 255
+    t.string "username", limit: 255
     t.string "customer_id"
     t.string "card"
     t.string "avatar"
@@ -334,8 +334,8 @@ ActiveRecord::Schema.define(version: 2019_01_14_235056) do
     t.string "card_type"
     t.integer "donation_id"
     t.string "subscription_id"
-    t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username"
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|

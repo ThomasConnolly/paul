@@ -1,7 +1,7 @@
 <% commentable.comments.each do |comment| %>
 
   <p><%= comment.body %></p>
-  <p class="comment-user"> &mdash;<%= comment.user.full_name.titleize %> </p>
+  <p class="comment-user"> &mdash;<%= comment.user.username.titleize %> </p>
     <% if current_user == comment.user %>
       <%= link_to "Edit your comments", edit_comment_path(comment) %>
     <% end %>

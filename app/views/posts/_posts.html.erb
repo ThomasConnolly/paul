@@ -19,7 +19,7 @@
   <% end %>
   <br>
   <p class="poster-name">
-    <%= post.user.full_name.titleize %>::  
+    <%= post.user.username.titleize %>::  
     <%= simple_format(post.content) %></p>  
       <p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
       <% if current_user == post.user %>

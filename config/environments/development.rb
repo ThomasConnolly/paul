@@ -1,4 +1,4 @@
-require "letter_opener"
+# require "letter_opener"
 
 Rails.application.configure do
 
@@ -28,7 +28,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: "localhost:5000"}
+  config.action_mailer.default_url_options = { host: "saintpaulsnaplesorg"}
+  # DOMAIN = "saintpaulsnaples.org"
 
   config.active_job.queue_adapter = :inline
   # Print deprecation notices to the Rails logger.
@@ -56,4 +57,18 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+#   config.action_mailer.delivery_method = :smtp
+#
+#   config.action_mailer.smtp_settings = {
+#   address: "smtp.sendgrid.net",
+#   port: 587,
+#   domain: "saintpaulsnaples.org",
+#   authentiation: "plain",
+#   enable_starttls_auto: true,
+#   user_name: ENV["SENDGRID_USERNAME"],
+#   password: ENV["SENDGRID_PASSWORD"]
+# }
+#
+# config.action_mailer.default_url_options = { host: "localhost 5000"}
 end

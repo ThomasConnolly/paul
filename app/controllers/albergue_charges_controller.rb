@@ -1,31 +1,27 @@
 
 class AlbergueChargesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
   end
 
   def create
-    @sponsor = Sponsorship.find(params[:donation_id])
 
-
-  customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
-  )
-
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => 27500,
-    :description => "Albergue Sponsorship",
-    :currency    => 'usd'
-  )
-
-  @sponsorship.update(stripe_email: params[:stripeEmail],
-    source: params[:stripeToken], customer_id: customer.id
-  )
-
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
+@plan = current_user.albergue_donation.stripe_plan
+@customer = current_user.stripe_customer
+    begin
+      subscription = Stripe::Subscription.create(
+      source: params[:stripeToken],
+      customer: @customer,
+      plan: @plan
+      )
+      current_user.assign_attributes(
+      albergue_sponsor: subscription.id)
+      current_user.save
+      redirect_to root_path, notice: "Thanks for your sponsorship!"
+    rescue Stripe::CardError => e
+        flash.alert = e.message
+        render action: :new
+    end
   end
 end

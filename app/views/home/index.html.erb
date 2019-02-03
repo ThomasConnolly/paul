@@ -26,6 +26,7 @@
   <div class="mt30"></div>
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
+
   <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
     Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
   <%= link_to "Click here.", pages_directions_path %></p>
@@ -36,7 +37,7 @@
 
   <div class="mt30"></div>
   <%= link_to cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "60%", class: "floatleft"), new_pledge_path %><h2>Pledge Time!</h2>
-  <p>If you didn't get your pledge card in the mail this week, please call the office Monday. Our pledges will be blessed by Fr. Tom on Sunday, Jan. 20. A pledge is your statement of intent regarding the treasure you plan to share for the mission of the church. Please, in the knowledge of God's blessings upon you, be generous! To learn about making payments with a credit or debit card or other on-line methods of paying, click on the "Invest with God" image.</p><div class="mt30"></div>
+  <p>If you didn't get your pledge card in the mail or at the annual meeting, please call the office Monday. Our pledges will be blessed by Fr. Tom on Sunday, Feb. 10. A pledge is your statement of intent regarding the treasure you plan to share for the mission of the church. Please, in the knowledge of God's blessings upon you, be generous! To learn about making payments with a credit or debit card or other on-line methods of paying, click on the "Invest with God" image.</p><div class="mt30"></div>
     <h2>Home of the Farmers' Market</h2>
       <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "35%") %>
       <p>The market is open for the 2018-19 season. Check out our gift shop and Unique Boutique while you're enjoying the block party atmosphere of our dog-friendly market. The market is open every Saturday morning through April, 8 a.m. to noon.</p>
@@ -95,14 +96,8 @@
     "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
 
   <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center") %>
-  <%= cl_image_tag("bible_hubpyl.gif", width: "100%") %>
-  <h2> Read the bible<br>In 90 days!</h2>
-  <p>Those who have completed this task of reading the bible cover-to-cover in three months say the experience was well worth the challenge, resulting in a spiritual enrichment.</p>
-  <p>We will undertake this challenge beginning Jan. 13. Deacon Mary Abrams will lead weekly discussions with participants, Sundays at 9 a.m.</p>
-  <%= cl_image_tag("TriviaLogo_xusjpw.jpg", width: "100%") %>
-  <p>Lots of fun! Lots of prizes! Jan. 27 in Trinity Hall. Put together a table of friends who like to play and enjoy a couple of hours of laughter and suspense. (It's between the playoffs and Superbowl, so no football on tv that day!). Refreshments will be available. Proceeds go to the great charity, the TumainiUSA Fund.<%= link_to "Click here", pages_trivia_path %> for more information.</p>
 
-    <%= link_to cl_image_tag("December2018F_ifekfm.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1543942565/December2018F_ifekfm.pdf" %>
+  <%= link_to cl_image_tag("Jan2019Com_zwvih3.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/Jan2019Com_zwvih3.pdf" %>
     <h2>New Pathway<br>
       Available<br>
     </h2>
@@ -112,7 +107,7 @@
     <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
     <%= link_to "listed here.", opportunities_path %> </p>
     <div class="mt30"></div>
-    <p><strong>Men's Group</strong> meetings will resume at noon on Wednesdays in the new year. Bring a lunch and be prepared to enjoy some fellowship with the men of the parish.</p><br>
+    <p><strong>Men's Group</strong> meetings will resume at noon on Wednesdays in the new year. Bring a lunch and be prepared to enjoy some fellowship with the men of the parish. First Wednesday of the month will begin with Holy Communion.</p><br>
   <%# <%= cl_image_tag("logos/nameTag.png", width: "55%", class: "image-center") %>
     <p>Wearing your <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week to get one.</p>
     <div class="mt30"></div>
@@ -133,5 +128,5 @@
       <iframe width="100%" height="775" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
     </div><!--  end  newsfeed -->
   </div><!-- sidebar -->
-</div><!-- row -->
+</div><!-- row -->  <%= render 'concert_popup' %>
 <div class="mt50"></div>

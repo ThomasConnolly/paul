@@ -1,0 +1,20 @@
+ <%= cl_image_tag("DSC08662_bebtjb.jpg", width:"49%")  %><%=cl_image_tag("DSC08624_kzsypr.jpg", width:"49%", class:"floatright")  %>
+<div class="mt30"></div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 col-sm-11 offset-sm-1">
+    <h2 class="text-center">Thanks for helping these children! </h2>
+    <div class="mt100"></div>
+
+    <h2 class="text-center">Sponsor a child for $275.<br>
+      Select a plan to pay now or make <br>monthly payments of $23 </h2>
+
+    <div class="mt30"></div>
+      <%= simple_form_for(@albergue_donation) do |f| %>
+      <h2><%= f.input :plan, as: :radio_buttons, collection: ["Pay now", "Monthly"] %></h2>
+          <%= f.button :submit, "Next: enter card information", class: "btn btn-success btn-lg" %>
+      <% end %>
+  </div>
+</div>
+<div class="mt100"></div>
+
+<%= link_to 'Back', root_path %>

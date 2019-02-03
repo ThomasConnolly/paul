@@ -1,6 +1,19 @@
 class MemberMailer < ApplicationMailer
   default from: "Welcome@saintpaulsnaples.org"
-  default  bc: Proc.new { Member.pluck(:email)}
+  default to: "tom.connolly@comcast.net"
+  # default  bc: Proc.new { Member.where.not(email: nil).pluck(:email)}
+def test(member)
+  @member = member
+  mail(
+    subject: "testing"
+  )
+end
+  def january2019_pathway(member)
+    @member = member
+    @url =  "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/Jan2019Com_zwvih3.pdf"
+    mail(
+      subject: "New Pathway, the parish newsletter")
+  end
 
   def december_pathway(member)
     @member = member

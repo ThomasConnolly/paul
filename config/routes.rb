@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
 
-
-
-
   resources :donations
-  resources :todo_list
 
-  resource :sponsorship
+  resource :stripe_plans, only: [:new, :create]
+
+  resources :albergue_donations
+
+  resources :todo_list
 
   resources :formation_talks, only: [:show, :index, :edit, :new]
 
@@ -69,7 +69,7 @@ Rails.application.routes.draw do
     # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
-  # resources :pledges
+
 
   resources :worship, only: :index
 
@@ -112,11 +112,13 @@ end
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
 
-  resource :pledge
+  resources :pledges
 
   resources :ticket_charges, only: [:new, :create]
 
   resources :pledge_charges, only: [:new, :create]
+
+  resources :albergue_charges, only: [:new, :create]
 
   resources :charges, only: [:new, :create]
 

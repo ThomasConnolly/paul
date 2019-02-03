@@ -1,0 +1,17 @@
+
+<%# <%= link_to simple_form_for(@albergue_donation) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.collection_select  %>
+
+    <p>We will be acknowledging supporters of the albergue in St. Paul's newsletter, Pathway. Is it OK for us to use your name? If you wish to be anonymous, click the button.</p>
+    <h5>
+    <%= f.input :anonymous %></h5>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:"btn-success" %>
+  </div>
+<% end %> %>

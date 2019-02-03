@@ -59,7 +59,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_attachment :avatar, accept: [:png, :jpg, :gif]
-  has_many :donations
+  has_one :albergue_donation, dependent: :destroy
   #honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
@@ -81,8 +81,6 @@ class User < ApplicationRecord
   end
 
 
-protected
-
   def set_username
     self.username = "#{self.first_name.downcase.titleize} #{self.last_name.downcase.titleize}".strip
   end
@@ -94,6 +92,17 @@ protected
   def add_profile
     self.create_profile if profile.nil?
   end
+  #This code is for retrieving Stripe.customer for current_user
+  def stripe_customer
+    if self.stripe_customer_id? && self.stripe_pledge? || self.stripe_customer_id? && self.albergue_sponsor?
+      return Stripe::Customer.retrieve(stripe_customer_id)
+    else
+      stripe_customer = Stripe::Customer.create(
+        email: email)
+      stripe_customer  
+    end
+  end
+
 
 
     def self.find_first_by_auth_conditions(warden_conditions)

@@ -36,8 +36,6 @@ class Pledge < ApplicationRecord
 
  #Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
 
-
-
   def set_pay_this
     self.pay_this = self.amount*100 / self.divisor
   end
@@ -51,7 +49,6 @@ class Pledge < ApplicationRecord
       puts self.plan = "weekly"
     end
   end
-
 
   def set_interval
     if self.divisor == 52
@@ -80,7 +77,7 @@ class Pledge < ApplicationRecord
     end
 
   def update_user
-    self.user.subscription_id = nil
+    self.user.stripe_pledge = nil
 
   end
 end

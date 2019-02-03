@@ -1,50 +1,53 @@
 class PledgeChargesController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-  end
+    def new
+    end
 
-  def create
-    @pledge = Pledge.find(current_user.pledge.id)
-    @plan  = @pledge.plan
-    @interval = @pledge.interval
-    @interval_count = @pledge.interval_count
-    @amount = @pledge.pay_this
+    def create
+      @pledge = Pledge.find(current_user.pledge.id)
+      @interval = @pledge.interval
+      @interval_count = @pledge.interval_count
+      @amount = @pledge.pay_this
 
-    # customer = Stripe::Customer.retrieve(current_user.customer_id) if current_user.customer_id?
-    customer = Stripe::Customer.create(
-      email: current_user.email,
-      source: params[:stripeToken]
-    )
 
-    plan = Stripe::Plan.create({
-      :product => {name: "Stewardship"},
-      :amount => @amount,
-      :interval => @interval,
-      :interval_count => @interval_count,
-      :currency => 'usd',
-    })
+      # @customer = current_user.stripe_customer
+      # @customer.sources.create = params[:stripeToken],
+      # current_user.update_attributes(
+        # card_last4: params[:card_last4],
+        # card_exp_month: params[:card_exp_month],
+        # card_type: params[:card_brand]
+      # )
 
-    subscription = Stripe::Subscription.create({
-      customer: customer.id,
-      plan: plan.id
-    })
+    begin
+      Stripe::Plan.create(
+        product: 'prod_EQwgRcsx2RnqWr',
+        amount: @amount,
+        interval: @interval,
+        interval_count: @interval_count,
+        currency: "usd"
+      )
+      plan = Stripe::Plan.all.data[0]
 
-      current_user.update_attributes(
-      customer_id: customer.id,
-      subscription_id: subscription.id,
-      card_last4: params[:card_last4],
-      card_exp_month: params[:card_exp_month],
-      card_exp_year: params[:card_exp_year],
-      card_type: params[:card_brand]
-    )
-      @pledge.update({
-        subscription_id: subscription.id,
-        status: 1
-        })
-
+      customer = current_user.stripe_customer
+      subscription = customer.subscriptions.create(
+        source: params[:stripeToken],
+        plan: plan.id)
+      current_user.assign_attributes)stripe_pledge: subscription.id)
+      current_user.save
+      @pledge.update(
+        subscription_id: subscription.id
+      )
+      @pledge.save
+      # card_last4: params[:card_last4],
+      # card_exp_month: params[:card_exp_month],
+      # card_exp_year: params[:card_exp_year],
+      # card_type: params[:card_brand]
+      # )
+      redirect_to root_path, notice: "The Stewardship Team thanks you for submitting this payment."
     rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to pledge_path(@pledge)
+        flash[:error] = e.message
+        render action: :new
+    end
   end
 end

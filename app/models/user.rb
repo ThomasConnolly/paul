@@ -46,16 +46,10 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :books
-  has_many :characteristics
-  has_many :ratings
-  has_many :formulate_questions
   has_many :definitions
   has_many :story_ideas, dependent: :destroy
   has_one :pledge, dependent: :destroy
   has_many :vreports, dependent: :destroy
-  has_many :jubilee_plans, dependent: :destroy
-  has_many :search_tasks, dependent: :destroy
-  has_many :search_questions
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_attachment :avatar, accept: [:png, :jpg, :gif]
@@ -97,9 +91,9 @@ class User < ApplicationRecord
     if self.stripe_customer_id? && self.stripe_pledge? || self.stripe_customer_id? && self.albergue_sponsor?
       return Stripe::Customer.retrieve(stripe_customer_id)
     else
-      stripe_customer = Stripe::Customer.create(
-        email: email)
-      stripe_customer  
+      stripe_customer = Stripe::Customer.create(email: email)
+      update(stripe_customer_id: stripe_customer.id)
+      stripe_customer
     end
   end
 

@@ -7,13 +7,12 @@ class AlbergueChargesController < ApplicationController
 
   def create
 
-@plan = current_user.albergue_donation.stripe_plan
 @customer = current_user.stripe_customer
     begin
       subscription = Stripe::Subscription.create(
       source: params[:stripeToken],
       customer: @customer,
-      plan: @plan
+      plan: "plan_ESoIz9Qgn7cyCP"
       )
       current_user.assign_attributes(
       albergue_sponsor: subscription.id)

@@ -21,7 +21,7 @@ class PledgeChargesController < ApplicationController
 
     begin
       Stripe::Plan.create(
-        product: 'prod_EQwgRcsx2RnqWr',
+        product: "prod_ESoh4Ns3aMDQRa",
         amount: @amount,
         interval: @interval,
         interval_count: @interval_count,
@@ -33,16 +33,16 @@ class PledgeChargesController < ApplicationController
       subscription = customer.subscriptions.create(
         source: params[:stripeToken],
         plan: plan.id)
-      current_user.assign_attributes)stripe_pledge: subscription.id)
+      current_user.assign_attributes(stripe_pledge: subscription.id)
       current_user.save
       @pledge.update(
         subscription_id: subscription.id
       )
       @pledge.save
-      # card_last4: params[:card_last4],
-      # card_exp_month: params[:card_exp_month],
-      # card_exp_year: params[:card_exp_year],
-      # card_type: params[:card_brand]
+      # card_last4: params[:user][:card_last4],
+      # card_exp_month: params[:user][:card_exp_month],
+      # card_exp_year: params[:user][:card_exp_year],
+      # card_type: params[:user][:card_brand]
       # )
       redirect_to root_path, notice: "The Stewardship Team thanks you for submitting this payment."
     rescue Stripe::CardError => e

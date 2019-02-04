@@ -15,7 +15,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+Procfile
 # Ignore application configuration
 /config/master.key
 /config/application.yml

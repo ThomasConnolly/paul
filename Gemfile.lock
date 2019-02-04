@@ -358,6 +358,9 @@ GEM
     stripe (4.5.0)
       faraday (~> 0.13)
       net-http-persistent (~> 3.0)
+    stripe_event (2.2.0)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 5.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.20.3)
@@ -451,6 +454,7 @@ DEPENDENCIES
   spring
   sprockets-rails
   stripe
+  stripe_event
   turbolinks
   uglifier
 

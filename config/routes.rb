@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+# mount StripeEvent::Engine, at '/stripe/event'
+
+  post '/stripe/event', to: 'webhooks#event'
 
   resources :donations
 
@@ -112,6 +115,7 @@ end
       get 'signout', to: 'devise/sessions#destroy', as: :logout
     end
 
+  resource :pledge
   resources :pledges
 
   resources :ticket_charges, only: [:new, :create]

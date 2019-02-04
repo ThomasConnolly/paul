@@ -23,8 +23,8 @@ ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',
   :port           => '587',
   :authentication => :plain,
-  :user_name      => 'Rails.credentials.sendgrid_username',
-  :password       => 'Rails.credentials.sendgrid_password',
+  :user_name      => ENV['SENDGRID_USERNAME']
+  :password       => ENV['SENDGRID_PASSWORD']
   :domain         => 'saintpaulsnaples.org',
   :enable_starttls_auto => true
 }

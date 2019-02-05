@@ -9,6 +9,8 @@ Rails.application.initialize!
 #   original_formatter.call(severity, datetime, progname, msg.dump)
 # }
 
+
+
 Rails.logger.debug("Logger created")
 Rails.logger.info("Program started")
 Rails.logger.warn("Nothing to do")
@@ -18,13 +20,3 @@ rescue => error
   Rails.logger.fatal("Caught exception; exiting")
   Rails.logger.fatal(err)
 end
-
-
-ActionMailer::Base.smtp_settings = {
-  address: 'smtp.sendgrid.net',
-  port:            '587',
-  authentication: 'plain',
-  user_name:       ENV['SENDGRID_USERNAME'],
-  password:        ENV['SENDGRID_PASSWORD'],
-  domain:         'saintpaulsnaples.org',
-  enable_starttls_auto: true}

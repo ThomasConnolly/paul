@@ -25,7 +25,6 @@
 users.csv
 newcsv.txt
 members.csv
-accordian.info
 anniversaries.csv
 anniversary .csv
 anniversary.csv
@@ -43,7 +42,3 @@ zmarc_stuff
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-sendgrid.env
-export SENDGRID_API_KEY=API API Key ID: jwB9Eg8yQ-yvPD2UHBuTfQ > sendgrid.env
-echo export SENDGRID_API_KEY=API API Key ID: jwB9Eg8yQ-yvPD2UHBuTfQ > sendgrid.env
-echo sendgrid.env

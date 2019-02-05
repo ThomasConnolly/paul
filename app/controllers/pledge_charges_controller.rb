@@ -5,7 +5,7 @@ class PledgeChargesController < ApplicationController
     end
 
     def create
-      @pledge = Pledge.find(current_user.plecallbackdge.id)
+      @pledge = Pledge.find(current_user.pledge.id)
       @interval = @pledge.interval
       @interval_count = @pledge.interval_count
       @amount = @pledge.pay_this

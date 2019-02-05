@@ -3,6 +3,8 @@ Rails.configuration.stripe = {
   :secret_key      => ENV['STRIPE_SECRET_KEY']
 }
 
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
 # Stripe.api_key = Rails.configuration.stripe[:secret_key]
 # StripeEvent.signing_secret = Rails.application.credentials.stripe_webhook_secret
 #

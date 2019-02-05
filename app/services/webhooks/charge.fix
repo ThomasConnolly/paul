@@ -29,7 +29,7 @@ module Webhooks
     end
 
     def charge_failed
-      
+
     end
   end
 end

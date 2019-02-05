@@ -5,7 +5,7 @@ class PledgeChargesController < ApplicationController
     end
 
     def create
-      @pledge = Pledge.find(current_user.pledge.id)
+      @pledge = Pledge.find(current_user.plecallbackdge.id)
       @interval = @pledge.interval
       @interval_count = @pledge.interval_count
       @amount = @pledge.pay_this
@@ -33,17 +33,18 @@ class PledgeChargesController < ApplicationController
       subscription = customer.subscriptions.create(
         source: params[:stripeToken],
         plan: plan.id)
-      current_user.assign_attributes(stripe_pledge: subscription.id)
+      current_user.assign_attributes(stripe_pledge: subscription.id,
+      card_last4: params[:user][:card_last4],
+      card_exp_month: params[:user][:card_exp_month],
+      card_exp_year: params[:user][:card_exp_year],
+      card_type: params[:user][:card_brand]
+    )
       current_user.save
       @pledge.update(
         subscription_id: subscription.id
       )
       @pledge.save
-      # card_last4: params[:user][:card_last4],
-      # card_exp_month: params[:user][:card_exp_month],
-      # card_exp_year: params[:user][:card_exp_year],
-      # card_type: params[:user][:card_brand]
-      # )
+
       redirect_to root_path, notice: "The Stewardship Team thanks you for submitting this payment."
     rescue Stripe::CardError => e
         flash[:error] = e.message

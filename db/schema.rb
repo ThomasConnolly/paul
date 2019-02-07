@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_192139) do
+ActiveRecord::Schema.define(version: 2019_02_07_030041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albergue_donations", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "plan"
-    t.string "stripe_plan"
+    t.string "plan", default: "plan_EU0tm2nqfqXFYj"
     t.boolean "anonymous", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -187,6 +186,7 @@ ActiveRecord::Schema.define(version: 2019_01_28_192139) do
     t.integer "status"
     t.date "start_date"
     t.date "end_date"
+    t.string "product", default: "prod_ETteQ8s9Ho9sNW"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|

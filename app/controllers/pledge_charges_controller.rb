@@ -9,6 +9,7 @@ class PledgeChargesController < ApplicationController
       @interval = @pledge.interval
       @interval_count = @pledge.interval_count
       @amount = @pledge.pay_this
+      @product = @pledge.product
 
 
       # @customer = current_user.stripe_customer
@@ -21,7 +22,7 @@ class PledgeChargesController < ApplicationController
 
     begin
       Stripe::Plan.create(
-        product: "prod_ESoh4Ns3aMDQRa",
+        product: @product,
         amount: @amount,
         interval: @interval,
         interval_count: @interval_count,
@@ -30,14 +31,15 @@ class PledgeChargesController < ApplicationController
       plan = Stripe::Plan.all.data[0]
 
       customer = current_user.stripe_customer
+      customer.sources.create({source: params[:stripeToken]})
+
       subscription = customer.subscriptions.create(
-        source: params[:stripeToken],
         plan: plan.id)
       current_user.assign_attributes(stripe_pledge: subscription.id,
-      card_last4: params[:user][:card_last4],
-      card_exp_month: params[:user][:card_exp_month],
-      card_exp_year: params[:user][:card_exp_year],
-      card_type: params[:user][:card_brand]
+      card_last4: params[:card_last4],
+      card_exp_month: params[:card_exp_month],
+      card_exp_year: params[:card_exp_year],
+      card_type: params[:card_brand]
     )
       current_user.save
       @pledge.update(

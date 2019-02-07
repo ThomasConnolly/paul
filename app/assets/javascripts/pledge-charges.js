@@ -1,4 +1,8 @@
+
 $( document ).on('ready, turbolinks:load', function() {
+  if (!document.querySelector("#card-element")) {
+      return;
+    }
   var stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
   var elements = stripe.elements();
 

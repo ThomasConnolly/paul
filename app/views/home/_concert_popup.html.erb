@@ -32,15 +32,15 @@
       <div class="modal-header">
 
         <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-        <h2 class="modal-title">Order concert tickets</h2>
+        <h2 class="modal-title">Tonight's concert tickets<br>Available at the door</h2>
       </div>
       <div class="modal-body">
 
-        <%= link_to cl_image_tag("dcvz9u2rydhgzavfiwly.jpg", width: "100%"), new_event_ticket_path(event_id:(4)) %>
-         <p class="center-bold-text">Click photo to order</p>
+        <%= cl_image_tag("dcvz9u2rydhgzavfiwly.jpg", width: "100%") %>
+         <p class="center-bold-text">Tickets available at the door.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Not now</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
       </div>
     </div>
     </div>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :albergue_donations
 
+  resources :albergue_subscriptons
+
   resources :todo_list
 
   resources :formation_talks, only: [:show, :index, :edit, :new]

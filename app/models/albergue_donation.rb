@@ -20,15 +20,4 @@
 
 class AlbergueDonation < ApplicationRecord
   belongs_to :user
-  before_save :set_stripe_plan
-
-
-
-  def set_stripe_plan
-    if self.plan == "Monthly"
-      self.stripe_plan = "plan_EPlm2peOf7k34d"
-    else
-      self.stripe_plan = "plan_EPlniCo1PAVF4G"
-    end
-  end
 end

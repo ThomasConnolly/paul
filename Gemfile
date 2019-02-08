@@ -52,8 +52,8 @@ gem 'awesome_print'
 gem 'simple_form', '4.0.1'
 gem 'sendgrid-ruby'
 #gem 'feedjira'
-gem 'acts_as_list'
-gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+# gem 'acts_as_list'
+# gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 #gem 'secure_headers', :git => "https://github.com/twitter/secure_headers.git"
 
 group :development do

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>St. Paul's Episcopal Church, Naples FL, Spirituality, Prayer, Worship, Farmers Market, Haitian Episcopal Church</title>
+  <meta name="stripe-key" content="<%= Rails.application.credentials.stripe_public_key %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -11,7 +12,9 @@
   <%#= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <script src="https://js.stripe.com/v3/"> </script>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'application' %>
+
 
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
@@ -19,24 +22,18 @@
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">
-
   <div class="page">
     <div class="container">
-      <script src="https://js.stripe.com/v3/"></script>
+
       <%= render '/layouts/header' %>
       <div class="mt20"></div>
       <%= render 'layouts/navbarTest' %>
+      <%= render 'layouts/notices' %>
       <div class="mt30"></div>
-         <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <div class="alert alert-info<%= name == :notice ? "success" : "danger" %> alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <%= content_tag :div, msg, :id => "flash_#{name}" %>
-            </div>
-          <% end %>
-        <% end %>
+
 <%= yield %>
   <%= render 'layouts/footer' %>
+<script src="https://js.stripe.com/v3/"> </script>
     </div><!-- container -->
   </div> <!-- page -->
 </body>

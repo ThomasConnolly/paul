@@ -56,8 +56,8 @@ gem 'annotate'
 gem 'byebug'
 
 group :development, :test do
-  #gem 'guard'
-  #gem 'guard-livereload'
+  gem 'guard'
+  gem 'guard-livereload'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'pry-doc'

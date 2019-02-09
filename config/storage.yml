@@ -1,11 +1,14 @@
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
-
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
-
+# test:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
+#
+# local:
+#   service: Disk
+#   root: <%= Rails.root.join("storage") %>
+# test:
+#   cloud_name: saintpaulsnaples-org
+#   api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+#   api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
 amazon:
   service: S3
   access_key_id: <%= ENV['BUCKETEER_AWS_ACCESS_KEY_ID'] %>
@@ -13,6 +16,24 @@ amazon:
   region: <%= ENV['BUCKETEER_AWS_REGION'] %>
   bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
 
+# development:
+#   cloud_name: saintpaulsnaples-org
+#   api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+#   api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
+#   enhance_image_tag: true
+#   static_file_support: false
+# production:
+#   cloud_name: saintpaulsnaples-org
+#   api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+#   api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
+#   enhance_image_tag: true
+#   static_file_support: true
+# test:
+#   cloud_name: saintpaulsnaples-org
+#   api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+#   api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
+#   enhance_image_tag: true
+#   static_file_support: false
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:

@@ -33,6 +33,7 @@ gem 'actionmailer'
 gem 'premailer-rails'
 gem 'mail'
 gem 'nokogiri'
+gem 'redis'
 gem 'httparty'
 gem 'stripe'
 gem 'stripe_event'
@@ -51,6 +52,7 @@ gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
 gem 'simple_form', '4.0.1'
+gem 'mini_magick'
 
 group :development do
   gem 'meta_request'
@@ -58,6 +60,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'byebug'
+  gem 'capistrano'
+  gem 'web-console'
+  gem 'listen'
 end
 
 group :development, :test do
@@ -67,6 +72,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'pry-doc'
   gem 'spring'
+  gem 'spring-watcher-listen'
   gem 'factory_bot_rails'
   gem 'letter_opener'
   gem 'email_spec'
@@ -77,6 +83,8 @@ group :test do
   gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 gem 'rails_on_heroku'

@@ -52,7 +52,7 @@ class User < ApplicationRecord
   has_many :vreports, dependent: :destroy
   validates :first_name, presence: true
   validates :last_name, presence: true
-  has_attachment :avatar, accept: [:png, :jpg, :gif]
+  # has_attachment :avatar, accept: [:png, :jpg, :gif]
   has_one :albergue_donation, dependent: :destroy
   #honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true

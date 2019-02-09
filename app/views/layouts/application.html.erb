@@ -12,8 +12,8 @@
   <%#= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application' %>
-  <%= stylesheet_pack_tag 'application' %>
+  <%# <%= javascript_pack_tag 'application' %>
+  <%#= stylesheet_pack_tag 'application' %> %>
 
 
   <%= cloudinary_js_config %>
@@ -28,7 +28,7 @@
       <%= render '/layouts/header' %>
       <div class="mt20"></div>
       <%= render 'layouts/navbarTest' %>
-      <%= render 'layouts/notices' %>
+      <%= flash_messages %>
       <div class="mt30"></div>
 
 <%= yield %>

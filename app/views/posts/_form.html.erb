@@ -2,22 +2,22 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :content, placeholder: 'Type your post here',
   autofocus: true, label: false, input_html: {rows: "8"} %>
-  
+
   <div class="upload_picture">
-    <%= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>
+    <%#= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>
   </div>
 
-  <!--<div class="upload_photos"> 
+  <!--<div class="upload_photos">
     <%#= f.input :photos, as: :attachinary, label: 'Upload up to four pictures' %>
   </div>-->
   <div class="clearall"></div>
   <div class="submit-post">
-   <%= f.button :submit, class: "btn btn-primary btn-lg" %> &nbsp; 
+   <%= f.button :submit, class: "btn btn-primary btn-lg" %> &nbsp;
    <%= link_to "Cancel", :back, class: "btn btn-danger btn-slg" %>
   </div>
 <% end %>
-<script>
+<!-- <script>
 $( document ).ready(function() {
   $('.attachinary-input').attachinary()
 });
-</script>
+</script> -->

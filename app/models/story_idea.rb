@@ -16,7 +16,7 @@ class StoryIdea < ApplicationRecord
 
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
-  has_attachment :story_idea_picture, accept: [:jpg, :png, :gif]
+  # has_attachment :story_idea_picture, accept: [:jpg, :png, :gif]
   default_scope -> { order('created_at DESC') }
   validates_presence_of :title
   validates_presence_of :body

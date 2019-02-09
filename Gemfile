@@ -53,6 +53,7 @@ gem 'pry-awesome_print'
 gem 'awesome_print'
 gem 'simple_form', '4.0.1'
 gem 'mini_magick'
+gem 'aws-sdk-s3', require: false
 
 group :development do
   gem 'meta_request'

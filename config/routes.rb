@@ -189,5 +189,5 @@ end
 
   devise_for :views
 
-  mount Attachinary::Engine => '/attachinary'
+  # mount Attachinary::Engine => '/attachinary'
 end

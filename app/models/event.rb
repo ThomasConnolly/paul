@@ -16,8 +16,8 @@
 
 class Event < ApplicationRecord
   has_many :tickets
-  has_attachment :event_picture
+  # has_attachment :event_picture
   validates_presence_of :title
-  
+
 
 end

@@ -38,6 +38,7 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'bootstrap-will_paginate'
 gem 'puma'
+gem 'bootsnap', require: false
 gem 'birthday'
 gem 'rolify'
 gem 'figaro'
@@ -50,10 +51,14 @@ gem 'pry-rails'
 gem 'pry-awesome_print'
 gem 'awesome_print'
 gem 'simple_form', '4.0.1'
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'annotate'
-gem 'byebug'
+
+group :development do
+  gem 'meta_request'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'annotate'
+  gem 'byebug'
+end
 
 group :development, :test do
   gem 'guard'

@@ -12,7 +12,7 @@ gem 'uglifier'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'bootstrap'
+gem 'bootstrap', '>= 4.3.1'
 gem 'autoprefixer-rails'
 gem 'sass-rails'
 gem 'mini_racer'
@@ -78,6 +78,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'email_spec'
   gem 'shoulda-matchers'
+  #gem 'cucumber-rails', require: false
 end
 
 group :test do

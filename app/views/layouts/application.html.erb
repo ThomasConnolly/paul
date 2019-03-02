@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>St. Paul's Episcopal Church, Naples FL, Spirituality, Prayer, Worship, Farmers Market, Haitian Episcopal Church</title>
-  <meta name="stripe-key" content="<%= Rails.application.credentials.stripe_public_key %>">
+  <meta name="stripe-key" content="<%= Rails.application.credentials.stripe[:public_key] %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <%#= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%# <%= javascript_pack_tag 'application' %>
-  <%#= stylesheet_pack_tag 'application' %> %>
-
+  <%#= stylesheet_pack_tag 'application' %>
 
   <%= cloudinary_js_config %>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->

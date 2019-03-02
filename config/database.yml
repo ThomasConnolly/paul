@@ -33,7 +33,7 @@ development:
 test: &test
   <<: *default
   database: paul_test
-  username: postgres
+  username: tom
   password: tommycon
   port: 5432
 

@@ -3,7 +3,7 @@ ruby '2.5.3'
 
 gem 'rails', '5.2.2'
 gem 'devise'
-gem 'pg', '~> 0.18.4'
+gem 'pg'
 gem 'rack'
 gem 'railties'
 gem 'font-awesome-rails'
@@ -67,26 +67,25 @@ group :development do
 end
 
 group :development, :test do
+  gem 'email_spec'
+  gem 'factory_bot_rails'
   gem 'guard'
   gem 'guard-livereload'
+  gem 'letter_opener'
   gem 'pry-byebug'
-  gem 'pry-stack_explorer'
   gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-watcher-listen'
-  gem 'factory_bot_rails'
-  gem 'letter_opener'
-  gem 'email_spec'
-  gem 'shoulda-matchers'
-  #gem 'cucumber-rails', require: false
 end
 
 group :test do
   gem 'capybara'
-  gem 'faker'
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'selenium-webdriver'
 end
 
 gem 'rails_on_heroku'

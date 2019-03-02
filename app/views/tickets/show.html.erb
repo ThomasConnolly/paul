@@ -17,7 +17,7 @@
       <button id ="btn-buy" type="button" class="btn btn-success btn-lg btn-block">Buy Tickets</button>
       <script>
         var handler = StripeCheckout.configure({
-          key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+          key: '<%= Rails.application.credentials.stripe[:public_key] %>',
           zipCode: true,
           image: 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png',
           allowRememberMe: false,

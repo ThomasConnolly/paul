@@ -22,7 +22,7 @@ class TicketChargesController < ApplicationController
     source: params[:stripeToken], customer_id: customer.id)
   @ticket.save
 
-  redirect_to "/", notice: 'Thank you!'
+  redirect_to "/", notice: 'Thank you! Watch for an email from us.'
 
 rescue Stripe::CardError => e
   flash[:error] = e.message

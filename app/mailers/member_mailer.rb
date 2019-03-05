@@ -8,6 +8,14 @@ def test(member)
     subject: "testing"
   )
 end
+
+  def lent2019_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf"
+    mail(
+      subject: "New Pathway, the parish newsletter")
+    end
+  
   def january2019_pathway(member)
     @member = member
     @url =  "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/Jan2019Com_zwvih3.pdf"

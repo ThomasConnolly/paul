@@ -7,39 +7,22 @@
     <h3>You are buying <%= pluralize(@ticket.quantity, "ticket") %> for <%= number_to_currency @ticket.amount*0.01 %></h3>
     <div class="mt30"></div>
 
-  <%= form_tag ticket_charges_path, id: 'chargeForm' do %>
-    <script
-      src="https://checkout.stripe.com/checkout.js">
-    </script>
-      <%= hidden_field_tag 'stripeToken' %>
-      <%= hidden_field_tag 'stripeEmail' %>
-      <%= hidden_field_tag 'ticket_id', @ticket.id %>
-      <button id ="btn-buy" type="button" class="btn btn-success btn-lg btn-block">Buy Tickets</button>
-      <script>
-        var handler = StripeCheckout.configure({
-          key: ENV['STRIPE_SECRET_KEY'],
-          zipCode: true,
-          image: 'https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png',
-          allowRememberMe: false,
-          token: function(token, arg) {
-            document.getElementById("stripeToken").value = token.id;
-            document.getElementById("stripeEmail").value = token.email;
-            document.getElementById("chargeForm").submit();
-          }
-        });
-        document.getElementById("btn-buy").addEventListener('click', function(e) {
-            handler.open({
-              name: '<%= @ticket.event.title %>',
-              description: '<%= @ticket.event.date %>',
-              amount: '<%= @ticket.amount %>'
-            });
-            e.preventDefault();
-          })
-      </script>
-
+  <%= form_with url: ticket_charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %> </p>
+        </div>
+      <% end %>
+    </article>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM"
+          data-description="<%= @event.title %>"
+          image='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png'
+          data-amount="<%= @ticket.amount %>"
+          data-locale="auto"></script>
   <% end %>
+
    <div class="mt100"></div>
-
-
   </div>
 </div>

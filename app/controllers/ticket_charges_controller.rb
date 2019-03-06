@@ -1,11 +1,12 @@
 class TicketChargesController < ApplicationController
 
   def new
+    @ticket = Ticket.find(params[:ticket_id])
+    @amount = @ticket.amount
   end
 
   def create
-    @ticket = Ticket.find(params[:ticket_id])
-    @amount = @ticket.amount
+
 
   customer = Stripe::Customer.create(
     email: params[:stripeEmail],

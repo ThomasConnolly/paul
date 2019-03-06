@@ -1,7 +1,10 @@
 
-Stripe.api_key = ENV['STRIPE_SECRET_KEY']
-
-# Stripe.api_key = Rails.configuration.stripe[:secret_key]
+Rails.configuration.stripe = {
+  :publishable_key => ENV['STRIPE_PUBLISHABLE_KEY'],
+  :secret_key      => ENV['STRIPE_SECRET_KEY']
+}
+#Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
 # StripeEvent.signing_secret = Rails.application.credentials.stripe_webhook_secret
 #
 # StripeEvent.configure do |config|

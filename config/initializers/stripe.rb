@@ -1,5 +1,5 @@
 
-Stripe.api_key = Rails.application.credentials.stripe[:publishable_key]
+Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
 
 # Stripe.api_key = Rails.configuration.stripe[:secret_key]
 # StripeEvent.signing_secret = Rails.application.credentials.stripe_webhook_secret

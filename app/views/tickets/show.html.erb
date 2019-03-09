@@ -4,7 +4,8 @@
       <h1>Purchase tickets for <%= @event.title %></h1>
         <p><%= @event.date.strftime('%B %e, %Y') %>, <%= @event.time %></p>
     <div class="mt30"></div>
-    <h3>You are buying <%= pluralize(@ticket.quantity, "ticket") %> for <%= number_to_currency @ticket.amount*0.01 %></h3>
+    <h3>You are buying <%= pluralize(@ticket.quantity, "ticket") %> for
+      <%= number_to_currency @ticket.amount*0.01 %></h3>
     <div class="mt30"></div>
 
   <%= form_with url: ticket_charges_path do %>
@@ -15,7 +16,7 @@
         </div>
       <% end %>
     </article>
-  
+
     <%= hidden_field_tag 'ticket_id', @ticket.id %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

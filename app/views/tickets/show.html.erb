@@ -15,11 +15,14 @@
         </div>
       <% end %>
     </article>
+  
+    <%= hidden_field_tag 'ticket_id', @ticket.id %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @event.title %>"
-          image='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png'
+          data-image='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png'
           data-amount="<%= @ticket.amount %>"
+          data-zip-code= true
           data-locale="auto"></script>
   <% end %>
 

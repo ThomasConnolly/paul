@@ -1,12 +1,11 @@
 class TicketChargesController < ApplicationController
 
   def new
-    @ticket = Ticket.find(params[:ticket_id])
-    @amount = @ticket.amount
   end
 
   def create
-
+    @ticket = Ticket.find(params[:ticket_id])
+    @amount = @ticket.amount
 
   customer = Stripe::Customer.create(
     email: params[:stripeEmail],
@@ -23,10 +22,9 @@ class TicketChargesController < ApplicationController
     source: params[:stripeToken], customer_id: customer.id)
   @ticket.save
 
-  redirect_to "/", notice: 'Thank you! Watch for an email from us.'
+  redirect_to events_path, notice: "Thanks! Watch for an email from us in a few moments."
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
-  render action: :new
   end
 end

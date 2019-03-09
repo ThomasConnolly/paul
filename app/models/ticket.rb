@@ -5,8 +5,6 @@ class Ticket < ApplicationRecord
 #honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
-  default_scope -> { order('last_name') }
-
   def set_amount
     self.amount = self.quantity * self.price
   end

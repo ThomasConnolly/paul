@@ -31,6 +31,10 @@ class TicketsController < ApplicationController
   def update
   end
 
+  def thanks
+    @event = @ticket.event_id
+  end
+
   private
 
     def set_event

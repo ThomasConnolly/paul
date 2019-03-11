@@ -1,14 +1,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h1>Bishop installs fifth rector of St. Paul's</h1>
-    <figure>
-      <%= cl_image_tag("WardensPresent_bdr2e1.jpg", class: "floatleft", width: "60%") %>
-      <%= cl_image_tag("TomAtKneeler_hjnxcq.jpg", class: "floatright", width: "39.9%") %>
-      <figcaption>
-        Wardens Dick Breithaupt and Don Anderson present the keys to the chuch to our new rector with the words, "Receive these keys, and let the doors of this place be open to all people" (top).
-      The Rev. Dr. Thomas A. Thoeni kneels in the midst of his parish, praying to God to "be always with me in carrying out the duties of my ministry..." as Bishop Dabney Smith observes.  </figcaption>
-    </figure>
+    <%= cl_image_tag("Invitation_nvfefd.png", width: "100%", alt: "Invitation to holy Lent") %>
   </div>
 </div>
 <%= render 'concert_popup' %>
@@ -16,7 +9,8 @@
   <div class="col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
     <h2 class="center">Sundays</h2>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
+    <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
+  <%= cl_image_tag("cross-lent_rhj8ln.jpg", width:"220", class: "floatleft") %>
     <p><strong>8 a.m.</strong> Holy Eucharist, Rite I </p>
     <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p>
     <p class="mt-20">
@@ -27,7 +21,6 @@
   <div class="mt30"></div>
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
-  <p><strong>Ash Wednesday Services</strong> March 6 noon and 5:30 p.m.</p>
 
   <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
     Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
@@ -88,8 +81,8 @@
     "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
 
   <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center") %>
-
-  <%= link_to cl_image_tag("Jan2019Com_zwvih3.jpg", width: "100%"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/Jan2019Com_zwvih3.pdf" %>
+  <%= link_to cl_image_tag("LentSmall2019_imqi3p.jpg", width: "100%"),
+  "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/LentSmall2019_imqi3p.pdf" %>
     <h2>New Pathway<br>
       Available<br>
     </h2>

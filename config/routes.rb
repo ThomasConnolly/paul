@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get 'home/invitation'
   get 'members/index'
   get 'members/import'
-  get 'thanks', to: 'tickets#thanks', as: 'thanks'
 
   resources :events do
     resources :tickets, only: [:new, :show, :create, :update, :index]

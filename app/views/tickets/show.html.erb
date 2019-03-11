@@ -17,6 +17,7 @@
       <% end %>
     </article>
 
+<!-- use :plublishable_key for live, :public_key for test -->
     <%= hidden_field_tag 'ticket_id', @ticket.id %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

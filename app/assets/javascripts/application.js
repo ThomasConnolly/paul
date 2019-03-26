@@ -8,7 +8,6 @@
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload
-//= require nivo
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require ckeditor/init

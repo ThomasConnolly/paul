@@ -15,7 +15,6 @@
 
 @import "bootstrap-datepicker";
 @import "bootstrap";
-@import "nivo";
 @import "font-awesome";
 
 
@@ -143,6 +142,9 @@ font-size : 3rem;
 line-height : 1.25;
 font-family : Verdana, Helvetica, Arial, Sans-Serif;
 margin-top : 1.25rem;
+}
+h1.biggest {
+  font-size: 6rem;
 }
 h2 {
 color : #5c004c;

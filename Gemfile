@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.6.2'
 
 gem 'rails', '5.2.2'
 gem 'devise'
@@ -7,19 +7,19 @@ gem 'pg'
 gem 'rack'
 gem 'railties'
 gem 'font-awesome-rails'
-gem 'coffee-rails'
-gem 'uglifier'
+gem 'coffee-rails' #used by sprockets to minify
+gem 'uglifier' #used by sprockets to minify
+gem 'sassc-rails' #used by sprockets to minify
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'bootstrap', '>= 4.3.1'
 gem 'autoprefixer-rails'
-gem 'sass-rails'
 gem 'mini_racer'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jbuilder'
-gem 'nivo-rails'
+#gem 'nivo-rails'
 gem 'momentjs-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'popper_js'
@@ -54,6 +54,8 @@ gem 'awesome_print'
 gem 'simple_form', '4.0.1'
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
+#gem 'undercover'
+gem 'webpacker', '~> 4.0', '>= 4.0.2'
 
 group :development do
   gem 'meta_request'

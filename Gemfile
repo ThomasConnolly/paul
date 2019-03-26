@@ -55,7 +55,7 @@ gem 'simple_form', '4.0.1'
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 #gem 'undercover'
-gem 'webpacker', '~> 4.0', '>= 4.0.2'
+#gem 'webpacker', '~> 4.0', '>= 4.0.2'
 
 group :development do
   gem 'meta_request'

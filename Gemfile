@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.2'
 
-gem 'rails', '5.2.2'
+gem 'rails', '5.2.3'
 gem 'devise'
 gem 'pg'
 gem 'rack'
@@ -54,6 +54,7 @@ gem 'awesome_print'
 gem 'simple_form', '4.0.1'
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
+gem 'trix-rails', require: 'trix'
 #gem 'undercover'
 #gem 'webpacker', '~> 4.0', '>= 4.0.2'
 
@@ -84,7 +85,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'database_cleaner'
   gem 'faker'
   gem 'selenium-webdriver'

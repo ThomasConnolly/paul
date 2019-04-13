@@ -2,10 +2,10 @@
 <%= simple_form_for @vreport do |f| %>
 <div class="form-group">
   <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :ckeditor %>
+  <%= f.input :body, as: :trix_editor %>
  </div>
   <div class="submit-post">
-   <%= f.button :submit, class: "btn btn-primary" %> &nbsp; 
+   <%= f.button :submit, class: "btn btn-primary" %> &nbsp;
    <%= link_to "Cancel", :back, class: "btn btn-danger" %>
   </div>
 <% end %>

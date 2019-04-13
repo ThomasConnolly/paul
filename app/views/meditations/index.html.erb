@@ -5,12 +5,12 @@
     <% @meditations.each do |meditation| %>
         <p>  <%= meditation.publish_on.strftime("%A, %B %-d, %Y") %><br>
         <strong><%= meditation.title %></strong> </p>
-        
+
         <p><em><%= meditation.scripture %></em></p>
-        <p><%= raw meditation.body %></p>
+        <p><%= sanitize meditation.body %></p>
         <p><strong><em><%= meditation.prayer %> </em></strong></p>
         <p><%= meditation.name %> </p>
-        
+
           <% if current_user && current_user.has_role?(:admin) %>
             <%= link_to 'Edit', edit_meditation_path(meditation) %>
           <% end %>

@@ -1,11 +1,11 @@
 <div class="mt50"></div>
 <div class="row">
-  <div class="col-md-10 offset-md-1 col-sm-12">  
+  <div class="col-md-10 offset-md-1 col-sm-12">
   <h1><%= @sermon.title %></h1>
     <p><%= @sermon.cites %></p>
       <%= render 'serbox' %>
     <div class="sermon"><p class="sermon">
-      <%= raw @sermon.sermon_body %></p>
+      <%= sanitize @sermon.sermon_body %></p>
       <% if @sermon.audio.present? %>
         <audio controls>
           <source src="<%= @sermon.audio %>"  type="audio/mpeg" >

@@ -10,8 +10,7 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require ckeditor/init
-//= require ckeditor/config
+//= require trix
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require compatibility.coffee

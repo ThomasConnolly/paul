@@ -3,7 +3,7 @@
   <%# if post.post_picture? %>
     <%#= link_to cl_image_tag(post.post_picture.path,
       { height: '350', crop: :fit, class: 'floatright' }) %>
-  <%# end %>  %>
+  <%# end %>
     <br>
   <%# if post.post_photos? %>
   <%#= render partial: 'slides' %>
@@ -13,7 +13,7 @@
       <%#= cl_image_tag(post.user.avatar.path, { size: '120x175',
       crop: :fit }) %>
     </div>
-  <%# else %> %>
+  <%# else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
     </div>
   <%# end %>

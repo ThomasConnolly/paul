@@ -12,14 +12,11 @@
     </section>
     <section>
       <div class="create-post">
-        <%# <% if current_user.avatar? %>
+         <%# if current_user.avatar? %>
           <%#= cl_image_tag(current_user.avatar.path, width: '120',
           class: 'floatleft') %>
-        <%# else %> %>
-          <%= link_to edit_user_path(current_user.id) do %>
-          <div class="default-avatar"><h4>Click to add<br>Your Picture</h4>
-                      <!-- </div>
-        <% end %>
+          <div class="default-avatar"><p>Click to add<br>Your Picture</p>
+                     </div>
         <%# end %>
           <h2> <%= link_to "Create a post", new_post_path, remote: true %></h2>
       </div><!--create-post -->

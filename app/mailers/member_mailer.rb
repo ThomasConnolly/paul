@@ -8,14 +8,20 @@ def test(member)
     subject: "testing"
   )
 end
+  def holyWeek2019_pathway(member)
+    @member = member
+    @url = "https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/HolyWeek2019Smr.pdf"
+    mail(
+      subject: "New Pathway, the parish newsletter")
+  end
 
   def lent2019_pathway(member)
     @member = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf"
     mail(
       subject: "New Pathway, the parish newsletter")
-    end
-  
+  end
+
   def january2019_pathway(member)
     @member = member
     @url =  "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1548946906/Jan2019Com_zwvih3.pdf"

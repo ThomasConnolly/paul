@@ -16547,7 +16547,7 @@ p.tiny {
 }
 
 /* line 279, app/assets/stylesheets/application.scss */
-.sermon p {
+.sermon {
   font-size: 1.5rem;
   line-height: 1.62;
   font-family: Times, serif;

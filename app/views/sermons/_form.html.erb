@@ -4,13 +4,13 @@
 <div class="example" data-no-turbolink>
   <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
 
-    <div class="form-group">
+    <div>
       <%= f.label :homilist %><br>
       <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
       <%= f.input :title, class: 'form-control' %>
       <%= f.input :cites, label: 'Citations', class: 'form-control' %>
       <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
-      <div id="summernote">
+      <div>f
       <%= f.input :sermon_body, as: :trix_editor %><br>
       <%= f.input :audio, class: 'form-control' %>
       </div>

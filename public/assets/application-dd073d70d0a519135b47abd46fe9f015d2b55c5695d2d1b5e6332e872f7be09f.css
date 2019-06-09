@@ -16558,7 +16558,7 @@ p.tiny {
 .sermon-box {
   float: right;
   margin-left: 10px;
-  height: 215px;
+  height: auto;
   width: 475px;
   padding: 6px;
   border-style: solid;

@@ -57,6 +57,8 @@ gem 'trix-rails', require: 'trix'
 #gem 'undercover'
 #gem 'webpacker', '~> 4.0', '>= 4.0.2'
 
+
+
 group :development do
   gem 'meta_request'
   gem 'better_errors'
@@ -66,6 +68,7 @@ group :development do
   gem 'capistrano'
   gem 'web-console'
   gem 'listen'
+  gem 'solargraph'
 end
 
 group :development, :test do

@@ -1,15 +1,19 @@
 
-<div class="row">
+<%
+=begin%>
+ <div class="row">
   <div class="col-lg-12 offset-lg-4">
     <%= cl_image_tag("HolySpirit_bjkqcy.jpg", width: "45%", alt: "Pentecost") %>
   </div>
-</div>
+</div> 
+<%
+=end%>
 <%#= render 'concert_popup' %>
 <div class="row">
   <div class="col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
     <h2 class="center">Sundays</h2>
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"220", class: "floatleft") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
 
     <p><strong>9 a.m.</strong> Holy Eucharist </p>
     <!-- <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p> -->
@@ -34,7 +38,7 @@
     And click on that shelf of red books to get a short, cute introduction
       to our time-honored Book of Common Prayer.</p>
   <div class="mt30"></div>
-  <%= link_to cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "30%", class: "floatleft"),
+  <%= link_to cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "40%", class: "floatleft"),
     new_pledge_path %>
     <h2>Stewardship</h2>
   <p>Stewardship at St. Paul's involves investing the three Ts with God. The three
@@ -45,7 +49,7 @@
     debit card or other on-line methods of paying your pledge,
     click on the "Invest with God" image.</p><div class="mt30"></div>
     <h2>Home of the Farmers' Market</h2>
-      <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "25%") %>
+      <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "40%") %>
       <p>The market is now closed until the 2019-2020 season which starts in November.</p>
      <p>For more information on the market, <%= link_to "click here.",
        markets_index_path %></p>
@@ -74,14 +78,15 @@
       the United States.</p>
 <div class="clearall"></div>
 <div class="mt30"></div>
-<h2><%= link_to "Supporters of 'ERD'", "https://episcopalrelief.org/" %></h2>
-    <%= cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft") %>
-<p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the headline to make a donation to help.</p>
+<h2>Supporters of 'ERD'</h2>
+    <%= link_to cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft"), "https://episcopalrelief.org/" %>
+<p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. 
+Click the logo at left to learn more and make a donation.</p>
 <div class="clearall"></div>
 
 <div class="mt30"></div>
 
-<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", fetch_format: "auto") %>
+
 
 
   </div><!--main-body -->
@@ -118,8 +123,15 @@
     <div class="mt30"></div>
     <div id="newsfeed">
       <h4>Episcopal News Service</h4>
-      <iframe width="100%" height="775" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
+      <iframe width="100%" height="775" frameborder="0" class="rssdog" 
+      src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
     </div><!--  end  newsfeed -->
   </div><!-- sidebar -->
 </div><!-- row -->
+<div class="mt30"></div>
+<div class="row">
+<div class="col-md-6 offset-md-3 image-center">
+<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", fetch_format: "auto") %>
+</div>
+</div>
 <div class="mt50"></div>

@@ -7,7 +7,7 @@ namespace :import do
     counter = 0
     
     CSV.foreach(filename, headers: true, header_converters: symbol) do |row|
-      member = Member.where(membership_id; row[:membership_id]).first_or_initialize
+      member = Member.where(membership_id: row[:membership_id]).first_or_initialize
       member.assign_attributes row_to_hash.slice(:first_name, :last_name, 
         :membership_id, :birthday, :email, :away_zip)
       if member.save       
@@ -52,4 +52,3 @@ namespace :import do
     puts "Imported #{import.imported_count} books"
     puts import.errors.full_messages
   end
-end

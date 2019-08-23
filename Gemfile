@@ -56,7 +56,7 @@ gem 'simple_form', '4.0.1'
 gem 'stripe'
 gem 'stripe_event'
 gem 'trix-rails', require: 'trix'
-gem 'webpacker', '4.0.7'
+#gem 'webpacker', '4.0.7'
 
 group :development do
   gem 'annotate'

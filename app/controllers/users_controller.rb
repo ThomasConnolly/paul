@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -23,69 +25,54 @@
 #  member_id              :integer
 #
 
-  
-
-  
-
-
-
 class UsersController < ApplicationController
- 
- before_action :authenticate_user!
- before_action :admin_only, only: [:index, :new, :create]
- before_action :member_only, only: [:show]
- before_action :set_user, only: [:show, :edit, :update]
- 
-  
-  def new  
+  before_action :authenticate_user!
+  before_action :admin_only, only: %i[index new create]
+  before_action :member_only, only: [:show]
+  before_action :set_user, only: %i[show edit update]
+
+  def new
     @user = User.new
     @import = User::Import.new
   end
 
- 
   def index
     @users = User.all.order(:last_name)
     unless current_user.has_role?(:admin)
       redirect_to '/'
-    @import = User::Import.new 
+      @import = User::Import.new
     end
   end
-   
+
   def import
     @import = User::Import.new user_import_params
     if @import.save
-      redirect_to users_path, notice: 
+      redirect_to users_path, notice:
       "Imported #{@import.imported_count} users"
     else
       @users = User.all
-      flash[:alert] =  
-      "There were #{@import.errors.count} errors in your CSV file"
+      flash[:alert] =
+        "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @user = User.new(user_params)
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to profile_path(current_user.profile)
-    end
+    redirect_to profile_path(current_user.profile) if @user.update(user_params)
   end
 
-  def edit
-  end
-  
-   
+  def edit; end
 
-private
+  private
 
   def set_user
-    @user=User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_import_params
@@ -93,21 +80,21 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :role, 
-      :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month,
-      :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id )
+    params.require(:user).permit(:first_name, :last_name, :username, :role,
+                                 :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month,
+                                 :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id)
   end
 
   def admin_only
-    unless current_user.has_role?(:admin) 
-      flash[:alert] = "Access denied."
-      redirect_to root_path 
+    unless current_user.has_role?(:admin)
+      flash[:alert] = 'Access denied.'
+      redirect_to root_path
     end
   end
-  
+
   def member_only
-    unless current_user.has_role?(:admin) or current_user.has_role?(:vestry) or current_user.has_role?(:member)
-      redirect_to root_path, :alert => "Access is restricted."
+    unless current_user.has_role?(:admin) || current_user.has_role?(:vestry) || current_user.has_role?(:member)
+      redirect_to root_path, alert: 'Access is restricted.'
     end
   end
 end

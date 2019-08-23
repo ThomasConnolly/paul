@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -54,42 +56,41 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   # has_attachment :avatar, accept: [:png, :jpg, :gif]
   has_one :albergue_donation, dependent: :destroy
-  #honey used to prevent bots-filled forms from being saved to db
+  # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
   attr_accessor :login
 
-   #Include default devise modules
-   #Others available are:
-   #:lockable, :confirmable, :timeoutable and :omniauthable
+  # Include default devise modules
+  # Others available are:
+  #:lockable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-         :authentication_keys => [:login]
-
+         authentication_keys: [:login]
 
   def self.assign_from_row(row)
-    user = find_by_username(row["first_name" + "last_name"]) || new
-      user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email,
-        :member_id)
-      user  # =====see member.rb for example ======
+    user = find_by_username(row['first_name' + 'last_name']) || new
+    user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email,
+                                             :member_id)
+    user # =====see member.rb for example ======
   end
 
-
   def set_username
-    self.username = "#{self.first_name.downcase.titleize} #{self.last_name.downcase.titleize}".strip
+    self.username = "#{first_name.downcase.titleize} #{last_name.downcase.titleize}".strip
   end
 
   def assign_default_role
-    self.add_role(:member) if self.roles.blank?
+    add_role(:member) if roles.blank?
   end
 
   def add_profile
-    self.create_profile if profile.nil?
+    create_profile if profile.nil?
   end
-  #This code is for retrieving Stripe.customer for current_user
+
+  # This code is for retrieving Stripe.customer for current_user
   def stripe_customer
-    if self.stripe_customer_id? && self.stripe_pledge? || self.stripe_customer_id? && self.albergue_sponsor?
-      return Stripe::Customer.retrieve(stripe_customer_id)
+    if stripe_customer_id? && stripe_pledge? || stripe_customer_id? && albergue_sponsor?
+      Stripe::Customer.retrieve(stripe_customer_id)
     else
       stripe_customer = Stripe::Customer.create(email: email)
       update(stripe_customer_id: stripe_customer.id)
@@ -97,19 +98,17 @@ class User < ApplicationRecord
     end
   end
 
-
-
-    def self.find_first_by_auth_conditions(warden_conditions)
-      conditions = warden_conditions.dup
-      if login = conditions.delete(:login)
-        where(conditions).where(["lower(username) = :value OR lower(email) = :value",
-        { :value => login.downcase }]).first
-      else
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(['lower(username) = :value OR lower(email) = :value',
+                               { value: login.downcase }]).first
+    else
       if conditions[:username].nil?
-      where(conditions).first
+        where(conditions).first
       else
-      where(username: conditions[:username]).first
-      end
+        where(username: conditions[:username]).first
       end
     end
+  end
 end

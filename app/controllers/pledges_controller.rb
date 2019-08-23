@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: pledges
@@ -14,15 +16,11 @@
 class PledgesController < ApplicationController
   before_action :authenticate_user!
   before_action :change_path, only: :new
-  before_action :set_pledge, only: [:show, :edit, :update, :destroy]
+  before_action :set_pledge, only: %i[show edit update destroy]
 
+  def index; end
 
-
-  def index
-  end
-
-  def show
-  end
+  def show; end
 
   def new
     @pledge = Pledge.new
@@ -33,7 +31,6 @@ class PledgesController < ApplicationController
   end
 
   def create
-
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id if current_user
     if @pledge.save
@@ -43,34 +40,28 @@ class PledgesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @pledge.update_attributes(pledge_params)
-    if  @pledge.save
-        redirect_to pledge_path(@pledge)
+    if @pledge.save
+      redirect_to pledge_path(@pledge)
     else
-        render :edit
+      render :edit
     end
   end
 
-  def confirmation
-  end
+  def confirmation; end
 
   def destroy
     @pledge.destroy
-      redirect_to '/', notice: 'Your pledge was deleted.'
+    redirect_to '/', notice: 'Your pledge was deleted.'
   end
 
-
-
-
-
-private
+  private
 
   def set_pledge
-      @pledge = Pledge.find(current_user.pledge.id)
+    @pledge = Pledge.find(current_user.pledge.id)
   end
 
   def change_path
@@ -87,7 +78,7 @@ private
   # end
 
   def pledge_params
-    params.require(:pledge).permit [:user_id, :amount, :divisor, :pay_this,
-      :plan]
+    params.require(:pledge).permit %i[user_id amount divisor pay_this
+                                      plan]
   end
 end

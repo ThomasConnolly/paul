@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PreschoolAsController < ApplicationController
-  before_action :set_preschool_a, only: [:show, :edit, :update, :destroy]
+  before_action :set_preschool_a, only: %i[show edit update destroy]
 
   # GET /preschool_as
   # GET /preschool_as.json
@@ -9,8 +11,7 @@ class PreschoolAsController < ApplicationController
 
   # GET /preschool_as/1
   # GET /preschool_as/1.json
-  def show
-  end
+  def show; end
 
   # GET /preschool_as/new
   def new
@@ -18,8 +19,7 @@ class PreschoolAsController < ApplicationController
   end
 
   # GET /preschool_as/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /preschool_as
   # POST /preschool_as.json
@@ -62,13 +62,14 @@ class PreschoolAsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_preschool_a
-      @preschool_a = PreschoolA.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def preschool_a_params
-      params.require(:preschool_a).permit(:I, :II, :III, :IV)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_preschool_a
+    @preschool_a = PreschoolA.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def preschool_a_params
+    params.require(:preschool_a).permit(:I, :II, :III, :IV)
+  end
 end

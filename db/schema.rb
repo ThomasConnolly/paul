@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_160652) do
+ActiveRecord::Schema.define(version: 2019_08_17_114148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_160652) do
     t.datetime "updated_at", null: false
     t.string "membership_id"
     t.string "username"
+    t.string "away_zip"
   end
 
   create_table "opportunities", id: :serial, force: :cascade do |t|

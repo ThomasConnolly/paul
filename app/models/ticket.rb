@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class Ticket < ApplicationRecord
   belongs_to :event
   before_save :set_amount
   after_update :email_buyer
-#honey used to prevent bots-filled forms from being saved to db
+  # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
   def set_amount
-    self.amount = self.quantity * self.price
+    self.amount = quantity * price
   end
 
   private

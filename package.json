@@ -1,9 +1,13 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^4.0.2"
+    "@rails/webpacker": "^4.0.7",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {
     "browserslist": "^4.5.2",
-    "webpack-dev-server": "^3.2.1"
-  }
+    "webpack-dev-server": "^3.8.0"
+  },
+  "license": "MIT"
 }

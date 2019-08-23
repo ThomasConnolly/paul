@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class SyllabusesController < ApplicationController
-  before_action :set_syllabus, only: [:show, :edit, :update, :destroy]
- 
+  before_action :set_syllabus, only: %i[show edit update destroy]
+
   # GET /syllabuses
   # GET /syllabuses.json
 
   def index
     @syllabuses = Syllabus.all
-  
+
     respond_to do |format|
       format.html
       format.csv { send_data @syllabuses.to_csv, filename: "syllabuses-#{Date.today}.csv" }
@@ -15,27 +17,27 @@ class SyllabusesController < ApplicationController
 
   def import
     Syllabus.import(params[:file])
-    redirect_to root_url, notice: "Syllabuses imported"
+    redirect_to root_url, notice: 'Syllabuses imported'
   end
 
   def preschool
-    @syllabuses = Syllabus.where(grade: "preschool")
+    @syllabuses = Syllabus.where(grade: 'preschool')
     render :index
   end
 
   def primary
-    @syllabuses = Syllabus.where(grade: "primary")
+    @syllabuses = Syllabus.where(grade: 'primary')
     render :index
   end
 
   def intermediate
-    @syllabuses = Syllabus.where(grade: "intermediate")
+    @syllabuses = Syllabus.where(grade: 'intermediate')
     render :index
   end
+
   # GET /syllabuses/1
   # GET /syllabuses/1.json
-  def show
-  end
+  def show; end
 
   # GET /syllabuses/new
   def new
@@ -43,14 +45,13 @@ class SyllabusesController < ApplicationController
   end
 
   # GET /syllabuses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /syllabuses
   # POST /syllabuses.json
   def create
     @syllabus = Syllabus.new(syllabus_params)
-    
+
     respond_to do |format|
       if @syllabus.save
         format.html { redirect_to @syllabus, notice: 'Syllabus was successfully created.' }
@@ -87,14 +88,15 @@ class SyllabusesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_syllabus
-      @syllabus = Syllabus.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def syllabus_params
-      params.require(:syllabus).permit(:year, :grade, :quarter, :theme, :title1, :title2, 
-        :title3, :title4, :title5, :title6, :title7, :title8, :title9)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_syllabus
+    @syllabus = Syllabus.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def syllabus_params
+    params.require(:syllabus).permit(:year, :grade, :quarter, :theme, :title1, :title2,
+                                     :title3, :title4, :title5, :title6, :title7, :title8, :title9)
+  end
 end

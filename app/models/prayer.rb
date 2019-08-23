@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: prayers
@@ -13,6 +15,6 @@
 #
 
 class Prayer < ApplicationRecord
-  validates_presence_of [:day_of_prayer, :time_of_prayer] 
+  validates_presence_of %i[day_of_prayer time_of_prayer]
   validates :honey, absence: true
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: vreports
@@ -17,6 +19,4 @@ class Vreport < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   validates :title, presence: true
   default_scope -> { order('created_at DESC') }
-
-
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MeditationsController < ApplicationController
-  before_action :set_meditation, only: [:edit, :update, :destroy]
+  before_action :set_meditation, only: %i[edit update destroy]
   before_action :authenticate_user!, only: [:new]
 
   # GET /meditations
@@ -20,8 +22,7 @@ class MeditationsController < ApplicationController
   end
 
   # GET /meditations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /meditations
   # POST /meditations.json
@@ -64,13 +65,14 @@ class MeditationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meditation
-      @meditation = Meditation.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def meditation_params
-      params.require(:meditation).permit(:title, :body, :scripture, :name, :prayer, :publish_on, :honey)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_meditation
+    @meditation = Meditation.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def meditation_params
+    params.require(:meditation).permit(:title, :body, :scripture, :name, :prayer, :publish_on, :honey)
+  end
 end

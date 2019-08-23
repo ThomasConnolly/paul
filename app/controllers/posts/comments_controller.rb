@@ -1,22 +1,19 @@
+# frozen_string_literal: true
+
 class Posts::CommentsController < CommentsController
   before_action :set_commentable
   after_action :send_mail
 
-
-  
   def send_mail
     if @comment.save
       @commentable = @comment.commentable_id
       PostCommentMailer.comment_created(@comment).deliver_later
-    end 
+    end
   end
 
-
-
-
-private
+  private
 
   def set_commentable
-    @commentable=Post.find(params[:post_id])
+    @commentable = Post.find(params[:post_id])
   end
 end

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class LettersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_letter, only: [:edit, :show, :update, :destroy]
+  before_action :set_letter, only: %i[edit show update destroy]
 
   def new
-  @letter = Letter.new
+    @letter = Letter.new
   end
 
   def index
@@ -24,45 +26,37 @@ class LettersController < ApplicationController
 
   def update
     @letter.update_attributes(letter_params)
-      @letter.save
-      redirect_to letters_path
+    @letter.save
+    redirect_to letters_path
   end
 
   def create
     @letter = Letter.new(letter_params)
-      if @letter.save
-        redirect_to letters_path
-      else
-        render :new
-      end
+    if @letter.save
+      redirect_to letters_path
+    else
+      render :new
+    end
   end
 
+  def edit; end
 
-  def edit
-  end
-
-  def show
-  end
-
+  def show; end
 
   def destroy
     @letter.destroy
     redirect_to letters_path
   end
 
+  private
 
-
-
-   private
-
-   def letter_import_params
+  def letter_import_params
     params.require(:letter_import).permit(:file)
-  end
+ end
 
-   def set_letter
+  def set_letter
     @letter = Letter.find(params[:id])
-  end
-
+ end
 
   def letter_params
     params.require(:letter).permit(:last_name, :salutation, :address1, :address2, :city, :state, :zip, :writer)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: homilists
@@ -11,56 +13,50 @@
 #
 
 class HomilistsController < ApplicationController
-  before_action :set_Homilist, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :set_Homilist, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create destroy]
   before_action :set_admin_only
 
   def index
     @homilists = Homilist.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @homilist = Homilist.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @homilist = Homilist.new(homilist_params)
-      if @homilist.save
-        redirect_to @homilist
-      else
-        render :new
-      end
+    if @homilist.save
+      redirect_to @homilist
+    else
+      render :new
+    end
   end
 
   def update
-      if @homilist.update(homilist_params)
-        redirect_to @homilist
-      else
-        render :edit 
-      end
+    if @homilist.update(homilist_params)
+      redirect_to @homilist
+    else
+      render :edit
+    end
   end
 
   def destroy
     @homilist.destroy
-      redirect_to @homilists
+    redirect_to @homilists
   end
 
-
-
-
-private
+  private
 
   def set_admin_only
-    unless current_user && current_user.has_role?(:admin)
-      redirect_to "/"
-    end
+    redirect_to '/' unless current_user&.has_role?(:admin)
   end
+
   def set_Homilist
     @homilist = Homilist.find(params[:id])
   end

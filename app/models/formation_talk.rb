@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: formation_talks
@@ -11,7 +13,6 @@
 #
 
 class FormationTalk < ApplicationRecord
-  
   default_scope -> { order('delivered_on ASC') }
   validates_presence_of :title
 end

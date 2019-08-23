@@ -1,12 +1,13 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-# mount StripeEvent::Engine, at '/stripe/event'
+Rails.application.routes.draw do
+  # mount StripeEvent::Engine, at '/stripe/event'
 
   post '/stripe/event', to: 'webhooks#event'
 
   resources :donations
 
-  resource :stripe_plans, only: [:new, :create]
+  resource :stripe_plans, only: %i[new create]
 
   resources :albergue_donations
 
@@ -14,9 +15,9 @@ Rails.application.routes.draw do
 
   resources :todo_list
 
-  resources :formation_talks, only: [:show, :index, :edit, :new]
+  resources :formation_talks, only: %i[show index edit new]
 
-  resources :marriage_talks, only: [:new,:show, :index, :edit]
+  resources :marriage_talks, only: %i[new show index edit]
 
   resources :meditations
 
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
   get 'members/import'
 
   resources :events do
-    resources :tickets, only: [:new, :show, :create, :update, :index]
+    resources :tickets, only: %i[new show create update index]
   end
 
   resources :members do
@@ -70,10 +71,9 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
 
-    # get ':id' => 'users#show', as: :user_profile
+  # get ':id' => 'users#show', as: :user_profile
   # get ':id/setting' => 'users#edit', as: :user_setting
   # match ':id/setting' => 'profiles#update', via: [:put, :patch]
-
 
   resources :worship, only: :index
 
@@ -95,13 +95,13 @@ Rails.application.routes.draw do
     end
   end
 
-resources :letters
+  resources :letters
 
-resources :letters do
-  collection do
-    post :import
+  resources :letters do
+    collection do
+      post :import
+    end
   end
-end
 
   resources :sermons
 
@@ -110,22 +110,22 @@ end
   resources :formation_talks
 
   devise_for :users
-    devise_scope :user do
-      get 'register', to: 'devise/registrations#new', as: :register
-      get 'login', to: 'devise/sessions#new', as: :login
-      get 'signout', to: 'devise/sessions#destroy', as: :logout
-    end
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'signout', to: 'devise/sessions#destroy', as: :logout
+  end
 
   resource :pledge
   resources :pledges
 
-  resources :ticket_charges, only: [:new, :create]
+  resources :ticket_charges, only: %i[new create]
 
-  resources :pledge_charges, only: [:new, :create]
+  resources :pledge_charges, only: %i[new create]
 
-  resources :albergue_charges, only: [:new, :create]
+  resources :albergue_charges, only: %i[new create]
 
-  resources :charges, only: [:new, :create]
+  resources :charges, only: %i[new create]
 
   resources :members
 
@@ -165,12 +165,11 @@ end
     resources :comments, module: :candidates
   end
 
-
   resources :syllabuses do
     collection do
-      get "preschool"
-      get "primary"
-      get "intermediate"
+      get 'preschool'
+      get 'primary'
+      get 'intermediate'
     end
   end
 

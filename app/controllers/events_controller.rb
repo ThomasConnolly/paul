@@ -1,20 +1,19 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :admin_only, only: [:new, :edit, :destroy, :create]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  before_action :admin_only, only: %i[new edit destroy create]
+  before_action :set_event, only: %i[show edit update destroy]
 
   def index
     @events = Event.all.order(date: :desc)
   end
 
-
   def new
     @event = Event.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @event = Event.new(event_params)
@@ -51,18 +50,19 @@ class EventsController < ApplicationController
   end
 
   private
-    def set_event
-      @event = Event.find(params[:id])
-    end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
   def admin_only
-    unless current_user.has_role?(:admin) 
-      flash[:alert] = "Access denied."
-      redirect_to root_path 
+    unless current_user.has_role?(:admin)
+      flash[:alert] = 'Access denied.'
+      redirect_to root_path
     end
   end
-  
-    def event_params
-      params.require(:event).permit(:title, :price, :quantity, :amount, :time, :date, :event_picture)
-    end
+
+  def event_params
+    params.require(:event).permit(:title, :price, :quantity, :amount, :time, :date, :event_picture)
+  end
 end

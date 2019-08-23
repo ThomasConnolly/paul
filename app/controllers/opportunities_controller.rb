@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: opportunities
@@ -14,17 +16,15 @@
 #
 
 class OpportunitiesController < ApplicationController
-  before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
-   
+  before_action :set_opportunity, only: %i[show edit update destroy]
+
   def index
     @opportunities = Opportunity.all.order(:ministry)
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def new
     @users = User.all.order(:last_name)
@@ -50,11 +50,8 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     @opportunity.destroy
-      redirect_to opportunities_path, notice: 'Entry successfully destroyed.'
+    redirect_to opportunities_path, notice: 'Entry successfully destroyed.'
   end
-
-
-
 
   private
 
@@ -63,7 +60,7 @@ class OpportunitiesController < ApplicationController
   end
 
   def opportunity_params
-    params.require(:opportunity).permit(:user_id, :ministry, :who, 
-      :what, :when, :where, :id)
+    params.require(:opportunity).permit(:user_id, :ministry, :who,
+                                        :what, :when, :where, :id)
   end
 end

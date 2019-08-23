@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -12,8 +14,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :members_only
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :all_posts, only: [:index, :create, :update, :destroy]
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :all_posts, only: %i[index create update destroy]
   respond_to :html, :js
 
   def new
@@ -29,40 +31,32 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show; end
 
-  def show
-  end
-  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      PostMailer.post_created(@post).deliver_later  
+      PostMailer.post_created(@post).deliver_later
       respond_to do |format|
         format.html { redirect_to posts_path }
         format.js
       end
     end
   end
-   
-  def edit
-  end
+
+  def edit; end
 
   def update
     @post.update(post_params)
-      redirect_to posts_path
+    redirect_to posts_path
   end
-
 
   def destroy
     @post.destroy
     redirect_to posts_path
   end
 
-
-
-
-
-private
+  private
 
   def all_posts
     @posts = Post.all
@@ -77,8 +71,8 @@ private
   end
 
   def members_only
-    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin) or current_user.has_role?(:member)
-      redirect_to root_path, :alert => "You must be a member of St. Paul's to 
+    unless current_user.has_role?(:vestry) || current_user.has_role?(:admin) || current_user.has_role?(:member)
+      redirect_to root_path, alert: "You must be a member of St. Paul's to
       use this function."
     end
   end

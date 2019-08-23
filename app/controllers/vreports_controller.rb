@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: vreports
@@ -13,9 +15,9 @@
 class VreportsController < ApplicationController
   before_action :authenticate_user!
   before_action :vestry_only
-  before_action :set_vreport, only: [:show, :edit, :update, :destroy]
-  before_action :all_vreports, only: [:index, :create, :update, :destroy]
-  
+  before_action :set_vreport, only: %i[show edit update destroy]
+  before_action :all_vreports, only: %i[index create update destroy]
+
   respond_to :html, :js
 
   def new
@@ -31,46 +33,37 @@ class VreportsController < ApplicationController
     @vreport = Vreport.new
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
-  
+  def edit; end
+
   def create
     @vreport = current_user.vreports.build(vreport_params)
-      if @vreport.save
-        VestryMailer.vreport_created(@vreport).deliver_later
-        respond_to do |format|
-          format.html { redirect_to vreports_path(@vreport) }
-          format.js
+    if @vreport.save
+      VestryMailer.vreport_created(@vreport).deliver_later
+      respond_to do |format|
+        format.html { redirect_to vreports_path(@vreport) }
+        format.js
       end
-    end
   end
-   
+  end
 
   def update
     @vreport.update_attributes(vreport_params)
-      @vreport.save
-      respond_to do |format|
+    @vreport.save
+    respond_to do |format|
       format.html { redirect_to vreports_path }
       format.js
-    end 
+    end
   end
 
-  def edit
-  end
-
+  def edit; end
 
   def destroy
     @vreport.destroy
   end
 
-
-
-
-
-private
+  private
 
   def all_vreports
     @vreports = Vreport.all
@@ -85,8 +78,8 @@ private
   end
 
   def vestry_only
-    unless current_user.has_role?(:vestry) or current_user.has_role?(:admin)
-      redirect_to root_path, :alert => "You must be a member of the St. Paul Vestry to use this function."
+    unless current_user.has_role?(:vestry) || current_user.has_role?(:admin)
+      redirect_to root_path, alert: 'You must be a member of the St. Paul Vestry to use this function.'
     end
   end
 end

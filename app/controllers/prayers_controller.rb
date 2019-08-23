@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class PrayersController < ApplicationController
-  
-before_action :set_prayer, only: [:show, :edit, :update]
+  before_action :set_prayer, only: %i[show edit update]
 
   def index
     @prayers = Prayer.all.order('id')
@@ -11,8 +12,7 @@ before_action :set_prayer, only: [:show, :edit, :update]
     @prayer = Prayer.new
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @prayer = Prayer.new(prayer_params)
@@ -23,20 +23,18 @@ before_action :set_prayer, only: [:show, :edit, :update]
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @prayer.update(prayer_params)
-      if @prayer.save
-        redirect_to @prayer
-      else
-        render :new
-    end
+    if @prayer.save
+      redirect_to @prayer
+    else
+      render :new
+  end
   end
 
-
-private
+    private
 
   def set_prayer
     @prayer = Prayer.find(params[:id])

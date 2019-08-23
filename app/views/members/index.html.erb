@@ -20,3 +20,8 @@
   <%= link_to 'Edit', edit_member_path(m) %>
   <%= link_to ' | Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
 <% end %>
+
+
+<% @diaspora.each do |d| %>
+<p><%=d.first_name %>, <%= d.email %> </p>
+<% end %>

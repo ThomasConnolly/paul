@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
 class Anniversary::Import
   include ActiveModel::Model
   attr_accessor :file, :imported_count
-
-
 
   def process!
     @imported_count = 0
@@ -11,8 +11,8 @@ class Anniversary::Import
       if anniversary.save
         @imported_count += 1
       else
-        errors.add :base, "Line #{$.} - #{anniversary.errors.
-        full_messages.join(",")}"
+        errors.add :base, "Line #{$INPUT_LINE_NUMBER} - #{anniversary.errors
+        .full_messages.join(',')}"
       end
     end
   end

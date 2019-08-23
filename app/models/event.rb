@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: events
@@ -18,6 +20,4 @@ class Event < ApplicationRecord
   has_many :tickets
   # has_attachment :event_picture
   validates_presence_of :title
-
-
 end

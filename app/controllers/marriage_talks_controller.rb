@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MarriageTalksController < ApplicationController
-  before_action :set_marriage_talk, only: [:show, :edit, :update, :destroy]
+  before_action :set_marriage_talk, only: %i[show edit update destroy]
 
   # GET /marriage_talks
   # GET /marriage_talks.json
@@ -9,8 +11,7 @@ class MarriageTalksController < ApplicationController
 
   # GET /marriage_talks/1
   # GET /marriage_talks/1.json
-  def show
-  end
+  def show; end
 
   # GET /marriage_talks/new
   def new
@@ -18,8 +19,7 @@ class MarriageTalksController < ApplicationController
   end
 
   # GET /marriage_talks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /marriage_talks
   # POST /marriage_talks.json
@@ -62,13 +62,14 @@ class MarriageTalksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_marriage_talk
-      @marriage_talk = MarriageTalk.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def marriage_talk_params
-      params.require(:marriage_talk).permit(:title, :body, :delivered_on)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_marriage_talk
+    @marriage_talk = MarriageTalk.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def marriage_talk_params
+    params.require(:marriage_talk).permit(:title, :body, :delivered_on)
+  end
 end

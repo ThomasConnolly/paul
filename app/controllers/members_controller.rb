@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: [:edit, :show, :update, :destroy]
-
+  before_action :set_member, only: %i[edit show update destroy]
 
   def index
     @members = Member.all.order(:last_name)
-    @import = Member::Import.new
-    end
+    @importmember = Member::Import.new
+  end
+
+  def mailer
+    @diaspora = Member.where.not(away_zip: nil).where.not(email: nil)
+  end
 
   def import
     @import = Member::Import.new member_import_params
@@ -16,43 +21,37 @@ class MembersController < ApplicationController
       @members = Member.all
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
+    
     end
   end
 
   def update
     @member.update_attributes(member_params)
-      @member.save
-      redirect_to members_path
+    @member.save
+    redirect_to members_path
   end
 
+  def edit; end
 
-  def edit
-  end
-
-  def show
-  end
-
+  def show; end
 
   def destroy
     @member.destroy
     redirect_to members_path
   end
 
+  private
 
+  def member_import_params
+    #params.require(:member_import).permit(:file)
+    params.permit(:file)
+ end
 
-
-   private
-
-   def member_import_params
-    params.require(:member_import).permit(:file)
-  end
-
-   def set_member
+  def set_member
     @member = Member.find(params[:id])
-  end
-
+ end
 
   def member_params
-    params.require(:member).permit(:last_name, :first_name, :email, :birthday, :membership_id)
+    params.require(:member).permit(:last_name, :first_name, :membership_id, :birthday, :email, :away_zip)
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: books
@@ -20,11 +22,11 @@ class Book < ApplicationRecord
   validates_presence_of :author
 
   after_find :set_cutter
-  #before_save :save_data_from_api
+  # before_save :save_data_from_api
 
   # Export range of books to csv file for label printing
   def self.to_csv
-    attributes = %w{id dewey cutter}
+    attributes = %w[id dewey cutter]
     CSV.generate(headers: true) do |csv|
       csv << attributes
 
@@ -34,18 +36,18 @@ class Book < ApplicationRecord
     end
   end
 
-  #Importing books from csv file
+  # Importing books from csv file
   def self.assign_from_row(row)
     book = Book.where(isbn: row[:isbn]).first_or_initialize
     book.assign_attributes row.to_hash.slice(
-    :title, :author, :dewey, :isbn, :subject, :description)
+      :title, :author, :dewey, :isbn, :subject, :description
+    )
     book
   end
- 
 
-private
+  private
 
   def set_cutter
-    self.cutter = "#{self.author[0,3]}" if self.author?
+    self.cutter = author[0, 3].to_s if author?
   end
 end

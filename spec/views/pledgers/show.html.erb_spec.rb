@@ -1,21 +1,23 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "pledgers/show", type: :view do
+RSpec.describe 'pledgers/show', type: :view do
   before(:each) do
     @pledger = assign(:pledger, Pledger.create!(
-      :last_name => "Last Name",
-      :salutation => "Salutation",
-      :address1 => "Address1",
-      :address2 => "Address2",
-      :city => "City",
-      :state => "State",
-      :postal_code => "Postal Code",
-      :type => 2,
-      :northern_city => "Northern City"
-    ))
+                                  last_name: 'Last Name',
+                                  salutation: 'Salutation',
+                                  address1: 'Address1',
+                                  address2: 'Address2',
+                                  city: 'City',
+                                  state: 'State',
+                                  postal_code: 'Postal Code',
+                                  type: 2,
+                                  northern_city: 'Northern City'
+                                ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Last Name/)
     expect(rendered).to match(/Salutation/)

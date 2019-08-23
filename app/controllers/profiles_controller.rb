@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: profiles
@@ -16,22 +18,19 @@
 #
 
 class ProfilesController < ApplicationController
- before_action :authenticate_user! 
- before_action :set_profile, only: [:show, :edit, :update]
-  
- 
-  def edit
-  end
+  before_action :authenticate_user!
+  before_action :set_profile, only: %i[show edit update]
 
-  def show
-  end
-  
+  def edit; end
+
+  def show; end
+
   def update
     @profile.update_attributes(profile_params)
-    if  @profile.save 
-        redirect_to profile_path(@profile)
+    if @profile.save
+      redirect_to profile_path(@profile)
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -39,27 +38,24 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
     @profile = Profile.find(current_user.profile.id)
     @users = User.order(:last_name)
-    
   end
-  
-  def new
-  end
+
+  def new; end
 
   def create
-     @profile = current_user.build_profile(profile_params)
-  if @profile.save
-    redirect_to current_user_path
-  else
-    render 'new'
-  end
-end
+    @profile = current_user.build_profile(profile_params)
+    if @profile.save
+      redirect_to current_user_path
+    else
+      render 'new'
+    end
+ end
 
+  private
 
-
-private
-    def set_profile
+  def set_profile
     @profile = Profile.find(params[:id])
-  end
+ end
 
   def profile_params
     params.require(:profile).permit(:id, :user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church)

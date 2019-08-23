@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -5,7 +7,6 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = 'c993cbeae938eaef9e19cc391a26fcd9edf2ae7bbe7ab94ed4adfeaa2d0d76926372bb14cce0bf71efca59bd2ac2b5c572c610f7333c6b6d14b7d2f0734b16cb'
-
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -20,7 +21,6 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -43,12 +43,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:login, :username, :email]
+  config.case_insensitive_keys = %i[login username email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user & when used to authenticate or find user. Default is :email.
-  config.strip_whitespace_keys = [:login, :username, :email]
+  config.strip_whitespace_keys = %i[login username email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -121,7 +121,7 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  #config.invite_key = {:username => /\D/}
+  # config.invite_key = {:username => /\D/}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -169,7 +169,6 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
@@ -316,7 +315,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more info on setting
   # up on your models and hooks.
-  #config.omniauth :facebook, FACEBOOK_CONFIG['facebook_api_key'],
+  # config.omniauth :facebook, FACEBOOK_CONFIG['facebook_api_key'],
   # FACEBOOK_CONFIG['facebook_api_secret']
 
   # ==> Warden configuration

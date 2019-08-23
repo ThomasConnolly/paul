@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: donations
@@ -20,7 +22,7 @@
 
 FactoryBot.define do
   factory :donation do
-    type { "" }
+    type { '' }
     amount { 1 }
     pay_this { 1 }
     user { nil }

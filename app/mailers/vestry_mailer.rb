@@ -1,7 +1,8 @@
-class VestryMailer < ApplicationMailer
-  default to: Proc.new { User.with_role(:vestry).pluck(:email) },
-          bcc: Proc.new { User.with_role(:admin).pluck(:email) }
+# frozen_string_literal: true
 
+class VestryMailer < ApplicationMailer
+  default to: proc { User.with_role(:vestry).pluck(:email) },
+          bcc: proc { User.with_role(:admin).pluck(:email) }
 
   def vreport_created(vreport)
     @vreport = vreport

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :albergue_donation do
     user { nil }
-    plan { "MyString" }
-    stripe_plan { "MyString" }
-    stripe_email { "MyString" }
+    plan { 'MyString' }
+    stripe_plan { 'MyString' }
+    stripe_email { 'MyString' }
     anonymous { false }
   end
 end

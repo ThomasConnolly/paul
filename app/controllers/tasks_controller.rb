@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tasks
@@ -12,12 +14,11 @@
 
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :all_tasks, only: [:index, :create, :update, :destroy]
-  before_action :set_tasks, only: [:edit, :update, :destroy]
-  
+  before_action :all_tasks, only: %i[index create update destroy]
+  before_action :set_tasks, only: %i[edit update destroy]
+
   respond_to :html, :js
 
-  
   def index
     @tasks = Task.all
   end
@@ -25,18 +26,18 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
   end
-  
+
   def show
     @task = Task.find(params[:id])
   end
 
   def create
     @task = Task.create(task_params)
-      if @task.save
-        redirect_to @tasks
-      else
-        render :new
-      end
+    if @task.save
+      redirect_to @tasks
+    else
+      render :new
+    end
   end
 
   def update
@@ -46,8 +47,6 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
   end
-
-
 
   private
 

@@ -1,12 +1,11 @@
-class PurchaseMailer <ApplicationMailer
+# frozen_string_literal: true
+
+class PurchaseMailer < ApplicationMailer
   layout 'purchase_mailer'
   default from: "St. Paul's Episcopal Church"
 
-  def purchase_receipt purchase
+  def purchase_receipt(purchase)
     @purchase = purchase
-    mail to: purchase.email, subject: "Thank you"
+    mail to: purchase.email, subject: 'Thank you'
   end
-
 end
-
-  

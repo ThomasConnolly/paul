@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: jubilee_plans
@@ -11,11 +13,9 @@
 #
 
 class JubileePlan < ApplicationRecord
-  
-
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
-  validates_presence_of :title 
-  validates_presence_of :body 
+  validates_presence_of :title
+  validates_presence_of :body
   default_scope -> { order('created_at DESC') }
 end

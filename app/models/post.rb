@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -10,7 +12,6 @@
 #
 
 class Post < ApplicationRecord
-
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   validates_presence_of :content
@@ -19,5 +20,4 @@ class Post < ApplicationRecord
   # has_attachments :photos
 
   default_scope -> { order('created_at DESC') }
-
 end

@@ -1,15 +1,15 @@
+# frozen_string_literal: true
+
 class AnniversariesController < ApplicationController
-  before_action :set_anniversary, only: [:show, :destroy]
+  before_action :set_anniversary, only: %i[show destroy]
   before_action :set_admin_only
 
-
-  
   def index
     @anniversaries = Anniversary.all
     @import = Anniversary::Import.new
     end
 
- def import
+  def import
     @import = Anniversary::Import.new anniversary_import_params
     if @import.save
       redirect_to anniversaries_path, notice: "Imported #{@import.imported_count} anniversaries"
@@ -18,12 +18,10 @@ class AnniversariesController < ApplicationController
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
-  end
+   end
 
-  def show
-  end
+  def show; end
 
-  
   def create
     @anniversary = Anniversary.new(anniversary_params)
 
@@ -38,30 +36,27 @@ class AnniversariesController < ApplicationController
     end
   end
 
-
   def destroy
     @anniversary.destroy
-      redirect_to anniversaries_url, notice: 'Anniversary was successfully destroyed.'
+    redirect_to anniversaries_url, notice: 'Anniversary was successfully destroyed.'
     end
-
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_anniversary
-      @anniversary = Anniversary.find(params[:id])
-    end
 
-    def anniversary_import_params
-    params.require(:anniversary_import).permit(:file)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_anniversary
+    @anniversary = Anniversary.find(params[:id])
   end
 
-    def set_admin_only
-      unless current_user && current_user.has_role?(:admin)
-        redirect_to "/"
-      end
-    end
+  def anniversary_import_params
+    params.require(:anniversary_import).permit(:file)
+end
 
-    def anniversary_params
-      params.require(:anniversary).permit(:salutation, :last_name, :anniversary)
-    end
+  def set_admin_only
+    redirect_to '/' unless current_user&.has_role?(:admin)
+  end
+
+  def anniversary_params
+    params.require(:anniversary).permit(:salutation, :last_name, :anniversary)
+  end
 end

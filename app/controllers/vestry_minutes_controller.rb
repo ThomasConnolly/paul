@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class VestryMinutesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_vestry_minute, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_vestry_minute, only: %i[show edit update destroy]
+  before_action :admin_only, except: %i[index show]
 
   # GET /vestry_minutes
   # GET /vestry_minutes.json
@@ -11,8 +13,7 @@ class VestryMinutesController < ApplicationController
 
   # GET /vestry_minutes/1
   # GET /vestry_minutes/1.json
-  def show
-  end
+  def show; end
 
   # GET /vestry_minutes/new
   def new
@@ -20,8 +21,7 @@ class VestryMinutesController < ApplicationController
   end
 
   # GET /vestry_minutes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /vestry_minutes
   # POST /vestry_minutes.json
@@ -64,19 +64,20 @@ class VestryMinutesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vestry_minute
-      @vestry_minute = VestryMinute.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def vestry_minute_params
-      params.require(:vestry_minute).permit(:date, :minutes)
-    end
-
-    def admin_only
-    unless current_user.has_role?(:admin)
-      redirect_to root_path, :alert => "You must be an administrator to perform this function."
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vestry_minute
+    @vestry_minute = VestryMinute.find(params[:id])
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def vestry_minute_params
+    params.require(:vestry_minute).permit(:date, :minutes)
+  end
+
+  def admin_only
+    unless current_user.has_role?(:admin)
+      redirect_to root_path, alert: 'You must be an administrator to perform this function.'
+    end
+end
 end

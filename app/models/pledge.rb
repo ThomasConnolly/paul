@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: pledges
@@ -20,8 +22,8 @@
 
 class Pledge < ApplicationRecord
   belongs_to :user
-  validates :amount, :presence => true, :numericality => {:greater_than => 0}
-  validates :divisor, :presence => true, :numericality => {:greater_than => 0}
+  validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :divisor, presence: true, numericality: { greater_than: 0 }
   validates_presence_of :user_id
   before_save :set_pay_this
   before_save :set_plan
@@ -30,28 +32,27 @@ class Pledge < ApplicationRecord
   before_destroy :kill_stripe_subscription
   before_destroy :update_user
 
-  enum status: {inactive: 0, active: 1, cancelled: 2}
-  enum interval: {week: 0, month: 1}
+  enum status: { inactive: 0, active: 1, cancelled: 2 }
+  enum interval: { week: 0, month: 1 }
 
-
- #Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
+  # Amount in whole dollars now translated to pennies. Payment at specified intervals (divisor) calculated.
 
   def set_pay_this
-    self.pay_this = self.amount*100 / self.divisor
+    self.pay_this = amount * 100 / divisor
   end
 
   def set_plan
-    if self.divisor == 4
-      puts self.plan = "quarterly"
-    elsif self.divisor == 12
-      puts self.plan = "monthly"
+    if divisor == 4
+      puts self.plan = 'quarterly'
+    elsif divisor == 12
+      puts self.plan = 'monthly'
     else
-      puts self.plan = "weekly"
+      puts self.plan = 'weekly'
     end
   end
 
   def set_interval
-    if self.divisor == 52
+    if divisor == 52
       puts self.interval = 0
     else
       puts self.interval = 1
@@ -59,9 +60,9 @@ class Pledge < ApplicationRecord
   end
 
   def set_interval_count
-    if self.divisor == 4
+    if divisor == 4
       puts self.interval_count = 3
-    elsif self.interval_count == 12
+    elsif interval_count == 12
       puts self.interval_count = 1
     else
       puts self.interval_count = 1
@@ -72,12 +73,11 @@ class Pledge < ApplicationRecord
     # if self.subscription_id?
     #   su = Stripe::Subscription.retrieve(self.subscription_id)
     #     su.delete
-        self.subscription_id = nil
-        self.status = 2
+    self.subscription_id = nil
+    self.status = 2
     end
 
   def update_user
-    self.user.stripe_pledge = nil
-
+    user.stripe_pledge = nil
   end
 end

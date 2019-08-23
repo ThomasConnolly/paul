@@ -66,7 +66,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'byebug'
   gem 'capistrano'
-  gem 'listen'
   gem 'meta_request'
   gem 'solargraph'
   gem 'web-console'

@@ -6,7 +6,7 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.all.order(:last_name)
-    @importmember = Member::Import.new
+    @import = Member::Import.new
     @diaspora = Member.where.not(away_zip: nil).where.not(email: nil)
   end
 
@@ -16,9 +16,9 @@ class MembersController < ApplicationController
       redirect_to members_path, notice: "Imported #{@import.imported_count} members"
     else
       @members = Member.all
-      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+      flash[:alert] = 
+        "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
-    
     end
   end
 
@@ -40,8 +40,7 @@ class MembersController < ApplicationController
   private
 
   def member_import_params
-    #params.require(:member_import).permit(:file)
-    params.permit(:file)
+    params.require(:member_import).permit(:file)
  end
 
   def set_member

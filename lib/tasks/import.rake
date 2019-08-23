@@ -1,24 +1,13 @@
 # frozen_string_literal: true
 
 namespace :import do
+  
   desc 'Import members from csv'
   task members: :environment do
-    filename = File.join Rails.root, "member.csv"
-    counter = 0
-    
-    CSV.foreach(filename, headers: true, header_converters: symbol) do |row|
-      member = Member.where(membership_id: row[:membership_id]).first_or_initialize
-      member.assign_attributes row_to_hash.slice(:first_name, :last_name, 
-        :membership_id, :birthday, :email, :away_zip)
-      if member.save       
-        counter += 1
-      else
-        puts "#{:membership_id} - #{member.errors.full_messages.join(",")}"
-      end
-    end
-
-    puts "Imported #{counter} members"
-    end
+    import = Member::Import.new file: File.open('member.csv')
+    import.process!
+    puts "Imported #{import.imported_count} members"
+    puts import.errors.full_messages
   end
 
   desc 'Import users from csv'

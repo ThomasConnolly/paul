@@ -41,3 +41,4 @@ namespace :import do
     puts "Imported #{import.imported_count} books"
     puts import.errors.full_messages
   end
+end

@@ -7,9 +7,6 @@ class MembersController < ApplicationController
   def index
     @members = Member.all.order(:last_name)
     @importmember = Member::Import.new
-  end
-
-  def mailer
     @diaspora = Member.where.not(away_zip: nil).where.not(email: nil)
   end
 

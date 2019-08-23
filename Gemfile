@@ -56,6 +56,8 @@ gem 'simple_form', '4.0.1'
 gem 'stripe'
 gem 'stripe_event'
 gem 'trix-rails', require: 'trix'
+gem 'rb-readline', '~> 0.5.5'
+gem 'irb', require: false
 #gem 'webpacker', '4.0.7'
 
 group :development do
@@ -82,6 +84,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'listen'
 end
 
 group :test do

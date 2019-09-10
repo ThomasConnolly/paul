@@ -6,7 +6,7 @@ ruby '2.6.3'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '>= 4.3.1'
 gem 'coffee-rails' # used by sprockets to minify
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 gem 'font-awesome-rails'
 gem 'jbuilder'
 gem 'jquery-rails'

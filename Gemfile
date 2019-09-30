@@ -90,8 +90,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'selenium-webdriver', '>= 3.142.3'
+  gem 'webdrivers', '>= 4.1.2'
 end
 
 gem 'rails_on_heroku'

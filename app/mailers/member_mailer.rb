@@ -27,10 +27,7 @@ class MemberMailer < ApplicationMailer
       to: @away_member.each do |diaspora|
         disapora.email
       end
-      from: "KenEastlack@msn.com",
-      subject: "New Pathway in the works"
-    )
-  end
+     
 
   def holyWeek2019_pathway(member)
     @member = member
@@ -39,7 +36,7 @@ class MemberMailer < ApplicationMailer
       subject: 'New Pathway, the parish newsletter'
     )
   end
-
+  
   def lent2019_pathway(member)
     @member = member
     @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf'
@@ -89,5 +86,3 @@ class MemberMailer < ApplicationMailer
     )
   end
 end
-
-

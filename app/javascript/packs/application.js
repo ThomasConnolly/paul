@@ -9,7 +9,6 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require bootstrap-datepicker
 //= require turbolinks
 //= require moment
 //= require_tree .

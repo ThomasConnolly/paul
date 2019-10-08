@@ -7,7 +7,7 @@
     <div class="form-group form-inputs">
       <%= f.input :title %>
       <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
-      <%= f.date_select :date, class: "datepicker" %>
+      <%= f.date_select :date, data: { behavior: "flatpickr" } %>
       <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m." %>
       <%= f.input :url, label: "Add a picture for this event" %>
     </div>
@@ -16,15 +16,6 @@
       <%= f.button :submit %>
     </div>
   <% end %>
-   <script type="text/javascript">
-      $(document).ready(function () {
-        $('.datepicker').datepicker();
-      });
-    </script>
-  <script>
-$(document).on('page:load', function() {
-  window['rangy'].initialized = false
-  });
-</script>
+   
   </div>
 </div>

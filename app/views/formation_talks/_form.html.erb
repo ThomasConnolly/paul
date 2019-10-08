@@ -6,17 +6,13 @@
     <%= bootstrap_form_for @formation_talk, html: { multipart: true } do |f| %>  
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %> 
-        <%= f.date_select :delivered_on, class: 'datepicker' %><br>
+        <%= f.date_select :delivered_on,  data: { behavior: "flatpickr" } %><br>
         <%= f.input :body, as: :ckeditor %>
         <%= f.button :submit %>   
     <% end %>
       </div>
   </div>
-    <script type="text/javascript">
-            $(document).ready(function () {
-                $('.datepicker').datepicker();
-            });
-    </script>
+  
     
   </div>
 </div>

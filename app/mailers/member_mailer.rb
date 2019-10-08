@@ -18,7 +18,8 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
-  
+  # def fall2019(member)
+  #   @member = Member
 
 
   def holyWeek2019_pathway(member)

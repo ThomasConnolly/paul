@@ -1,4 +1,4 @@
-<%#= javascript_include_tag Ckeditor.cdn_url %>
+
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
 
@@ -6,7 +6,7 @@
     <%= bootstrap_form_for @marriage_talk, html: { multipart: true } do |f| %>  
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %> 
-        <%= f.date_select :delivered_on, class: 'datepicker' %><br>
+        <%= f.date_select :delivered_on, data: { behavior: "flatpickr" } %><br>
         <div id="summernote">
         <%= f.input :body, as: :ckeditor %>
         </div>
@@ -14,11 +14,6 @@
     <% end %>
       </div>
   </div>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('.datepicker').datepicker();
-       });
-    </script>
- 
+   
   </div>
 </div>

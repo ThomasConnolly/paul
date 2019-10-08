@@ -19,16 +19,7 @@ class MemberMailer < ApplicationMailer
     )
   end
   
-  def diaspora(member)
-    @member = member
-    @away_members=Member.where.not(away_zip: nil)
-    
-    mail(
-      to: @away_member.each do |diaspora|
-        disapora.email
-    )
-      end
-     
+
 
   def holyWeek2019_pathway(member)
     @member = member

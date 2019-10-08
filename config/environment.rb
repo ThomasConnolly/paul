@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 # Load the Rails application.
-require_relative 'application'
+ require_relative 'application'
 
 # Initialize the Rails application.
-Rails.application.initialize!
+ Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   user_name: 'app36011847@heroku.com',

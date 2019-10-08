@@ -1,7 +1,6 @@
 
-<%= simple_form_for @post do |f| %>
-  <%= f.input :content, as: :trix_editor, autofocus: true, placeholder: 'Type your post here',
- label: false %>
+<%= bootstrap_form_with(@post) do |f| %>
+  <%= f.rich_text_area(:content) %>
 
   <div class="upload_picture">
     <%#= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>

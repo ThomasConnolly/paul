@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# see desktop file "creds.txt" to fix csv dates in calc before importing
 namespace :import do
   
   desc 'Import members from csv'

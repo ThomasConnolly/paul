@@ -1,33 +1,33 @@
 
 <div class="row">
   <div class="col-md-12">
-<div class="example" data-no-turbolink>
-  <%= simple_form_for @sermon, html: { multipart: true } do |f| %>
 
-    <div>
-      <%= f.label :homilist %><br>
-      <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
-      <%= f.input :title, class: 'form-control' %>
-      <%= f.input :cites, label: 'Citations', class: 'form-control' %>
-      <%= f.date_select :delivered_on, :class => 'datepicker' %><br>
-      <div>f
-      <%= f.input :sermon_body, as: :trix_editor %><br>
-      <%= f.input :audio, class: 'form-control' %>
-      </div>
-    <%= f.button :submit %>
-  <% end %>
-      </div>
+  <% if @sermon.errors.any? %>
+    <div class="alert alert danger">
+      <h2><%= pluralize(@sermon.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @sermon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('.datepicker').datepicker();
-  });
-</script>
-<script>
-$(document).on('page:load', function(){
-  window['rangy'].initialized = false
-});
-</script>
+  <% end %>
+  
+    <%= bootstrap_form_with(model: @sermon, local: true) do |f| %>
 
+    <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
+
+    <%= f.text_field :title %>
+  
+    <%= f.text_field :delivered_on, data: { behavior: "flatpickr" } %>
+ 
+    <%= f.rich_text_area :content %>
+
+    <%= f.text_field :audio %>
+  
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+    
   </div>
 </div>

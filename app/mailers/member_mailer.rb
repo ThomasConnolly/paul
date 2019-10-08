@@ -10,7 +10,7 @@ class MemberMailer < ApplicationMailer
  
   default from: 'Welcome@saintpaulsnaples.org'
   default to: 'tom.connolly@comcast.net'
-  default bcc: proc { Member.where.not(email: nil).where.not(away_zip: nil).pluck(:email) }
+  default bcc: proc { Member.where.not(email: nil).pluck(:email) }
   
   def test(member)
     @member = member
@@ -21,8 +21,12 @@ class MemberMailer < ApplicationMailer
   
   def diaspora(member)
     @member = member
+    @away_members=Member.where.not(away_zip: nil)
     
     mail(
+      to: @away_member.each do |diaspora|
+        disapora.email
+      end
       from: "KenEastlack@msn.com",
       subject: "New Pathway in the works"
     )
@@ -40,6 +44,7 @@ class MemberMailer < ApplicationMailer
     @member = member
     @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf'
     mail(
+
       subject: 'New Pathway, the parish newsletter'
     )
   end

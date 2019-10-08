@@ -5,7 +5,8 @@
       { height: '350', crop: :fit, class: 'floatright' }) %>
   <%# end %>
     <br>
-  <%# if post.post_photos? %>
+  <%# if p
+  st.post_photos? %>
   <%#= render partial: 'slides' %>
   <%# end %>
   <%# if post.user.avatar? %>
@@ -20,7 +21,7 @@
   <br>
   <p class="poster-name">
     <%= post.user.username.titleize %>::
-    <%= simple_format(post.content) %></p>
+    <%= post.content %></p>
       <p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
       <% if current_user == post.user %>
       | <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;

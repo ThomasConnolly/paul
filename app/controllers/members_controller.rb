@@ -2,7 +2,7 @@
 
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: %i[edit show update destroy]
+  before_action :set_member
 
   def index
     @members = Member.all.order(:last_name)

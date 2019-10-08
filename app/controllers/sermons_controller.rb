@@ -32,16 +32,21 @@ class SermonsController < ApplicationController
 
   def create
     @sermon = Sermon.new(sermon_params)
-    if @sermon.save
-      redirect_to @sermon
-    else
-      render :new
-  end
+      
+    respond_to do |format|
+      if @sermon.save
+        format.html { redirect_to @sermon, notice: "Sermon was successfully created" }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
     redirect_to @sermon if @sermon.update(sermon_params)
   end
+
+  def edit; end
 
   def destroy
     @sermon.destroy
@@ -55,7 +60,7 @@ class SermonsController < ApplicationController
   end
 
   def sermon_params
-    params.require(:sermon).permit(:title, :cites, :delivered_on,
-                                   :sermon_body, :id, :homilist_id, :audio)
+    params.require(:sermon).permit(:title, :cites, :delivered_on, 
+      :sermon_body, :content, :homilist_id, :audio)
   end
 end

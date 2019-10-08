@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   validates_presence_of :user_id
   # has_attachment :post_picture
   # has_attachments :photos
+  has_rich_text :content
 
   default_scope -> { order('created_at DESC') }
 end

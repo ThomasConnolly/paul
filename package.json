@@ -1,11 +1,20 @@
 {
   "dependencies": {
+    "@rails/actiontext": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.0.7",
     "bootstrap": "^4.3.1",
+    "channels": "^0.0.4",
+    "cloudinary": "^1.15.0",
+    "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
+    "node": "^12.11.0",
     "popper.js": "^1.15.0",
+    "postcss-cssnext": "^3.1.0",
+    "trix": "^1.0.0",
+    "turbolinks": "^5.2.0",
     "yard": "^1.0.3"
   },
   "devDependencies": {

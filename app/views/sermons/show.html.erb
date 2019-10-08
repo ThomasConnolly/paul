@@ -4,7 +4,13 @@
   <h1><%= @sermon.title %></h1>
     <p><%= @sermon.cites %></p>
       <%= render 'serbox' %>
-      <div class="sermon"><%= sanitize @sermon.sermon_body %></div>
+    <div class="sermon">
+      <% if @sermon.sermon_body.present? %>
+        <%= @sermon.sermon_body.html_safe %>
+      <% else %>
+        <%= @sermon.content %>
+      <% end %>    
+    </div>
     <div>
       <% if @sermon.audio.present? %>
         <audio controls>
@@ -17,5 +23,5 @@
     <% if current_user && current_user.has_role?(:admin) %>
     <%= link_to 'Edit', edit_sermon_path(@sermon) %>
     <% end %>
-  </div>
+  </div> 
 </div>

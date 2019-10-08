@@ -15,8 +15,8 @@
     <h2 class="center">Sundays</h2>
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
 
-    <p><strong>9 a.m.</strong> Holy Eucharist </p>
-    <!-- <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p> -->
+    <p><strong>8 a.m.</strong> Holy Eucharist Rite I </p>
+    <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p>
     <p class="mt-20">
       <small>Children's nursery/Sunday school available</small>
     </p>
@@ -38,6 +38,15 @@
     And click on that shelf of red books to get a short, cute introduction
       to our time-honored Book of Common Prayer.</p>
   <div class="mt30"></div>
+  <h2>Home of the Farmers' Market</h2>
+      <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "55%") %>
+      <p>The market will open Nov. 9 for the 2019-2020 season and runs through April. Ample 
+      parking is directed by our volunteer helpers, so it's easy in and out to the greatest
+      block party on a Saturday morning in Naples. Open 8 a.m. to noon. We hope to see you there!</p>
+     <p>For more information on the market, <%= link_to "click here.",
+       markets_index_path %></p>
+      <div class="clearall"></div>
+      <div class="mt30"></div>
   <%= link_to cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "40%", class: "floatleft"),
     new_pledge_path %>
     <h2>Stewardship</h2>
@@ -48,13 +57,7 @@
     for the mission of the church. To learn about making payments with a credit or
     debit card or other on-line methods of paying your pledge,
     click on the "Invest with God" image.</p><div class="mt30"></div>
-    <h2>Home of the Farmers' Market</h2>
-      <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "40%") %>
-      <p>The market is now closed until the 2019-2020 season which starts in November.</p>
-     <p>For more information on the market, <%= link_to "click here.",
-       markets_index_path %></p>
-      <div class="clearall"></div>
-      <div class="mt30"></div>
+    
 
   <h2>Supporters of these children</h2>
     <%=cl_image_tag("25_aeyuf2.jpg", width: "420", height: "315", class:

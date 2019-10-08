@@ -26,6 +26,7 @@ class MemberMailer < ApplicationMailer
     mail(
       to: @away_member.each do |diaspora|
         disapora.email
+    )
       end
      
 
@@ -41,7 +42,6 @@ class MemberMailer < ApplicationMailer
     @member = member
     @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf'
     mail(
-
       subject: 'New Pathway, the parish newsletter'
     )
   end

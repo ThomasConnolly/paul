@@ -7,7 +7,7 @@
 
 
 
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
         <div class="form-inputs">
           <%= f.input :login, placeholder: "Your full name" %>

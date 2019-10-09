@@ -11,7 +11,7 @@
       <% end %>
     <p class="text-center"><strong> <em>"Choose file"</em> from your computer, then submit</strong></p>
    
-<%= simple_form_for(@user, html: { class: "form-horizontal", :multipart => true, method: :put }) do |f| %>
+<%= bootstrap_form_for(@user, html: { class: "form-horizontal", :multipart => true, method: :put }) do |f| %>
   <%= f.error_notification %>
   <%= f.input :avatar, as: :attachinary %>
   <%= f.button :submit, "Submit", class: "btn btn-primary" %> &nbsp;

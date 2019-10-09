@@ -26,7 +26,7 @@
       <p><strong>Click your photo to update it</strong></p>
   
 <div class="form-group">
-  <%= simple_form_for @profile do |f| %>  
+  <%= bootstrap_form_for @profile do |f| %>  
     <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace.</p>
       <%= f.input :cities, class: "form-control", as: :text, input_html: {rows: 4} %><br>
 

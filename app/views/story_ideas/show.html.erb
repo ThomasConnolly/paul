@@ -15,7 +15,7 @@
         <% if @story_idea.url? %>
           <p><%= link_to "Here's the link", @story_idea.url, target: "blank" %> </p>
         <% end %>
-        <p><%= simple_format(@story_idea.body).html_safe %></p><br>
+        <p><%= bootstrap_format(@story_idea.body).html_safe %></p><br>
         <div class="comments-user"><p><small>Submitted
           <%= time_ago_in_words(@story_idea.created_at) %> ago by
           <%= @story_idea.user.username.titleize %> | </small>

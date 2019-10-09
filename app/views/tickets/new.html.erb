@@ -7,7 +7,7 @@
     <h1><%= @event.title %></h1>
     <p><%= @event.date.strftime('%A, %B %e, %Y') %>,
       <%= number_to_currency @event.price*0.01 %> per ticket. </p>
-      <%= simple_form_for([@event, @ticket]) do |f| %>
+      <%= bootstrap_form_for([@event, @ticket]) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
         <%= f.hidden_field :price, :value => @event.price %>

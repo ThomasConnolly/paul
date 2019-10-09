@@ -8,7 +8,7 @@
     <% end %>
       <br>
     <h3><%= vreport.title %></h3>
-      <p><%= simple_format(vreport.body) %>
+      <p><%= bootstrap_format(vreport.body) %>
 
       <span class="edit-delete-line"> Report made
       <%= time_ago_in_words(vreport.created_at) %> ago by

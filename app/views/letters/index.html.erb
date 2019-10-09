@@ -1,5 +1,5 @@
 <h4>Import data</h4>
-    <%= simple_form_for @import, url: import_letters_path, multipart: true do |f|%>
+    <%= bootstrap_form_for @import, url: import_letters_path, multipart: true do |f|%>
       <% if @import.errors.any? %>
         <div class="alert alert-error">
         <% @import.errors.full_messages.each do |msg| %>

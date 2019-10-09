@@ -16,7 +16,7 @@
           <% if p.name.present? %>
           <%= p.name %></small></p>
           <% else %>
-          <%= simple_form_for p do |f| %>
+          <%= bootstrap_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
@@ -39,7 +39,7 @@
            <% if p.name.present? %>
           <%= p.name %></small></p>
           <% else %>
-          <%= simple_form_for p do |f| %>
+          <%= bootstrap_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>
@@ -83,7 +83,7 @@
            <% if p.name.present? %>
           <%= p.name %></small></p>
           <% else %>
-          <%= simple_form_for p do |f| %>
+          <%= bootstrap_form_for p do |f| %>
           <%= f.input :name, label: false, placeholder: 'Your name here' %>
           <div class="mt-30">
           <%= f.button :submit, 'Submit', class: "btn btn-primary btn-xs" %>

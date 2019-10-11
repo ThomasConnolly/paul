@@ -1,29 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h2>Log in</h2>
-
-      <div class="mt30"></div>
-
-
-
+<div class="devise-bootstrap-form">
+  <div class="devise-bootstrap-form-row">
+    <div class="devise-bootstrap-form-col">
+      <h2 class="text-center">Log in</h2>
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-        <div class="form-inputs">
-          <%= f.input :login, placeholder: "Your full name" %>
-          <%= f.input :password, placeholder: "Your password" %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
+      <p><strong> Use either your email or your username to log in</strong></p>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.text_field :login, autocomplete: "username" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Log in", class: "btn btn-lg btn-primary" %>
-        </div>
+      <% if devise_mapping.rememberable? -%>
+        <%= f.form_group do %>
+        <%= f.check_box :remember_me %>
       <% end %>
+      <% end -%>
 
-      <div class="mt100"></div>
-
-      <h3><%= render "devise/shared/links" %><h3>
-
+      <%= f.form_group do %>
+      <%= f.submit "Log in", class: "btn btn-primary btn-block btn-lg" %>
+      <% end %>
+      <% end %>
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

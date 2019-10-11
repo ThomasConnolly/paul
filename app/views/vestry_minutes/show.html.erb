@@ -5,8 +5,11 @@
 
 <p id="notice"><%= notice %></p>
 
-
-  <%= raw @vestry_minute.minutes %>
+  <% if @vestry_minute.minutes.present? %>
+    <%= @vestry_minute.minutes.html_safe %>
+    <% else %>
+    <%= @vestry_minute.body %>
+    <% end %>
   <div class="mt100"></div>
     <% if current_user && current_user.has_role?(:admin) %>
     <%= link_to 'Edit', edit_vestry_minute_path(@vestry_minute) %> |

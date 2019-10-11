@@ -1,21 +1,12 @@
 
 <%= bootstrap_form_for @story_idea do |f| %>
-  <%= f.input :title, placeholder: 'Title of your new topic',
-  label: false, autofocus: true %><br>
-  <%= f.input :url, placeholder: 'Do you wish to link to a website? Enter address here.',
-   label: false %><br>
-    <%#= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture" %>
+  <%= f.text_field :title, autofocus: true %><br>
+  <%= f.text_field :url, placeholder: 'Do you wish to link to a website? Enter address here.',
+   label: false %>
+  <%#= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture" %>
 <div class="mt30"></div>
-    <%= f.input :body, as: :trix_editor %>
+    <%= f.rich_text_area :content %>
 
-  <div class="submit-post">
-    <%= f.button :submit, "Submit", class: "btn btn-primary btn-xs" %> &nbsp;
+    <%= f.submit %>
     <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>
-  </div>
 <% end %>
-
-<!-- <script>
-$(document).on('page:load', function(){
-  window['rangy'].initialized = false
-});
-</script> -->

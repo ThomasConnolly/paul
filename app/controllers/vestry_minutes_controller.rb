@@ -72,7 +72,7 @@ class VestryMinutesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def vestry_minute_params
-    params.require(:vestry_minute).permit(:date, :minutes)
+    params.require(:vestry_minute).permit(:date, :minutes, :body)
   end
 
   def admin_only

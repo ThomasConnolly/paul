@@ -24,7 +24,7 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
-import "bootstrap"
+import "bootstrap/dist/js/bootstrap"
 import "../stylesheets/application"
 import flatpickr from 'flatpickr'
 require("flatpickr/dist/flatpickr.css")

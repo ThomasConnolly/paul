@@ -2,10 +2,8 @@
 <%= bootstrap_form_for @vestry_minute do |f| %>
 
   <p>Date of the meeting:</p>
-    <%= f.date_select :date, data: { behavior: "flatpickr" } %>
+    <%= f.text_field :date, data: { behavior: "flatpickr" } %>
     <div class="mt30"></div>
-
     <%= f.rich_text_area :body %>
-
     <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

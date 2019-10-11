@@ -8,6 +8,7 @@ gem 'bootstrap', '>= 4.3.1'
 gem 'bootstrap_form'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'devise'
+gem 'devise-bootstrap-form'
 gem 'font-awesome-rails'
 gem 'jbuilder'
 gem 'jquery-rails'

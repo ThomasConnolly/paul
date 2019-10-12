@@ -175,6 +175,11 @@ p.tiny {
   margin-top: -5px;
 }
 
+.trix-content {
+  max-height: 800px !important;
+  overflow-y: auto;
+}
+
 .sidebar p{
   font-size: 1.2rem;
   line-height: 1.5;

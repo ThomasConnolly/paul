@@ -20,6 +20,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "devise_bootstrap_form";
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -175,10 +176,7 @@ p.tiny {
   margin-top: -5px;
 }
 
-.trix-content {
-  max-height: 800px !important;
-  overflow-y: auto;
-}
+
 
 .sidebar p{
   font-size: 1.2rem;
@@ -276,7 +274,6 @@ p.tiny {
   z-index: 1000;
 }
 
-
 .talk-box {
   float:right;
   margin:15px;
@@ -290,11 +287,15 @@ p.tiny {
   line-height: 1.5;
 }
 
+.trix-content.form-control {
+  min-height: 300px !important;
+  overflow-y: auto !important; 
+}
+
 .sermon {
   font-size: 1.5rem;
   line-height: 1.62;
   font-family: Times, serif;
-  text-align: left;
 }
 .sermon-box {
   float:right;
@@ -563,4 +564,3 @@ p.tiny {
   margin-bottom: 20px;
   }
 }
-@import "devise_bootstrap_form";

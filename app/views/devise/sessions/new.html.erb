@@ -3,8 +3,8 @@
     <div class="devise-bootstrap-form-col">
       <h2 class="text-center">Log in</h2>
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <p><strong> Use either your email or your username to log in</strong></p>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <p><strong> Use either your email or your username (first and last name you registered with) to log in</strong></p>
+
       <%= f.text_field :login, autocomplete: "username" %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
 

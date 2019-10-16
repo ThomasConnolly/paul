@@ -20,14 +20,18 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    added_attrs = [:username, :login, :email, :password, :password_confirmation, :remember_me]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs 
-    devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :sign_up, 
+      keys: [:first_name, :last_name, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_in, 
+      keys: [:login, :password, :remember_me]
+    devise_parameter_sanitizer.permit :account_update, 
+      keys: [:login, :first_name, :last_name, :email, :password, :password_confirmation, :current_password]
   end
 
   private
-
+  def login
+    @login || self.username || self.email
+  end
   def store_current_location
     store_location_for(:user, request.url)
   end

@@ -15,16 +15,11 @@
 class StoryIdeasController < ApplicationController
   before_action :authenticate_user!
   before_action :set_story_idea, only: %i[show edit update destroy]
-  before_action :all_story_ideas, only: %i[index create update destroy]
+  before_action :find_commentable
 
-  respond_to :html, :js
 
   def new
     @story_idea = StoryIdea.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def index
@@ -40,20 +35,16 @@ class StoryIdeasController < ApplicationController
     @story_idea = current_user.story_ideas.build(story_idea_params)
     if @story_idea.save
       StoryIdeaMailer.story_idea_created(@story_idea).deliver_later
-      respond_to do |format|
-        format.html { redirect_to story_ideas_path(@story_idea) }
-        format.js
-      end
-  end
+      redirect_to story_ideas_path
+    else
+      puts "something went wrong"
+      render :new
+    end
   end
 
   def update
     @story_idea.update_attributes(story_idea_params)
     @story_idea.save
-    respond_to do |format|
-      format.html { redirect_to story_ideas_path }
-      format.js
-    end
   end
 
   def destroy
@@ -62,17 +53,17 @@ class StoryIdeasController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-
-  def all_story_ideas
-    @story_ideas = StoryIdea.all
-  end
-
   def set_story_idea
     @story_idea = StoryIdea.find(params[:id])
   end
 
   def story_idea_params
-    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture, :content, :user_id)
+    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture, 
+       :user_id)
+  end
+
+  def find_commentable
+    @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
+    @commentable = StoryIdea.find_by_id(params[:story_idea_id]) if params[:story_idea_id]
   end
 end

@@ -6,7 +6,7 @@ class AlbergueSubscriptionsChargesController < ApplicationController
   end
 
   def create
-    @albergue_donation = AlbergueDonation.find(current_user_)
+    @albergue_donation = AlbergueDonation.find(current_user)
     @customer = current_user.stripe_customer
     begin
       subscription = Stripe::Subscription.create(

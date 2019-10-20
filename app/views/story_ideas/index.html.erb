@@ -3,17 +3,14 @@
     <p id="notice"><%= notice %></p>
 
     <section>  
-      <div class="create-story_idea">
+      <div>
         <% if current_user.avatar? %>
           <%= cl_image_tag(current_user.avatar.path, size: '120x175', 
              class: "floatleft") %>
         <% end %>
-          <%= link_to new_story_idea_path, remote: true do %>
-          <p><strong>Communicate a new topic</strong></p>
-          <% end %>
-      </div><!--create-story_idea-->
-        <div id="story_ideas-form" style="display:none;">
-        </div>   
+          <p><strong><%= link_to "Communicate a new topic", new_story_idea_path %> </strong></p>
+          
+      </div>
     </section>
     <section>
       <div class="mt30"></div>

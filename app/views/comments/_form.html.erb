@@ -1,4 +1,4 @@
     <%= bootstrap_form_for [commentable, Comment.new], local: true do |f| %>
-    <%= f.input :body, label: false, placeholder: "Type here" %>
+    <%= f.text_area :body, label: false, placeholder: "Type here" %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>

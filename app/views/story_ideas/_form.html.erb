@@ -1,11 +1,11 @@
 
-<%= bootstrap_form_for @story_idea do |f| %>
+<%= bootstrap_form_with(model: @story_idea, local: true) do |f| %>
   <%= f.text_field :title, autofocus: true %><br>
   <%= f.text_field :url, placeholder: 'Do you wish to link to a website? Enter address here.',
    label: false %>
   <%#= f.input :story_idea_picture, as: :attachinary, label: "Upload a picture" %>
 <div class="mt30"></div>
-    <%= f.rich_text_area :content %>
+    <%= f.text_area :body %>
 
     <%= f.submit %>
     <%= link_to "Cancel", :back, class: "btn btn-danger btn-xs" %>

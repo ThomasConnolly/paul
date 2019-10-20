@@ -1,17 +1,7 @@
 
-<%# <%= link_to bootstrap_form_with(@albergue_donation) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= bootstrap_form_with(@albergue_donation, local: true) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.collection_select  %>
 
-    <p>We would like to ackwledge supporters of the albergue in St. Paul's newsletter, <em>Pathway.</em> Is it OK for us to use your name? If you wish to be anonymous, click the button.</p>
-    <p><strong>
-    <%= f.input :anonymous %></strong></p>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class:"btn-success" %>
+    <%= f.button :submit, class:"btn btn-success" %>
   </div>
 <% end %> %>

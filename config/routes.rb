@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   resources :pictures
 
   resources :surveys, only: :index
+  get 'series/index'
   get 'pages/rector', as: 'rector'
   get 'activities/index'
   get 'markets/index'

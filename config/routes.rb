@@ -5,13 +5,13 @@ Rails.application.routes.draw do
 
   post '/stripe/event', to: 'webhooks#event'
 
-  resources :donations
+  #resources :donations
 
   resource :stripe_plans, only: %i[new create]
 
-  resources :albergue_donations
+  #resources :albergue_donations
 
-  resources :albergue_subscriptons
+  #resources :albergue_subscriptons
 
   resources :todo_list
 
@@ -124,7 +124,7 @@ Rails.application.routes.draw do
 
   resources :pledge_charges, only: %i[new create]
 
-  resources :albergue_charges, only: %i[new create]
+  # resources :albergue_charges, only: %i[new create]
 
   resources :charges, only: %i[new create]
 
@@ -151,6 +151,7 @@ Rails.application.routes.draw do
     resources :comments, module: :vreports
   end
   resources :story_ideas
+
 
   resources :story_ideas do
     resources :comments, module: :story_ideas

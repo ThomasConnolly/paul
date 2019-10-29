@@ -12,23 +12,34 @@
 <div class="row">
   <div class="col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
-    <h2 class="center">Sundays</h2>
+  
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
 
-    <p><strong>8 a.m.</strong> Holy Eucharist Rite I </p>
+    <%
+=begin%>
+ <p><strong>8 a.m.</strong> Holy Eucharist Rite I </p>
     <p><strong>9 a.m. </strong> Spiritual studies series starts Oct. 27<br>
     <%= link_to "Click here for more information on series, also available on Wednesday evenings", series_index_path %>
     <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p>
     <p class="mt-20">
       <small>Children's nursery/Sunday school available</small>
+    </p> 
+<%
+=end%>
+<h2 class="center">This Sunday Only (Nov. 3)</h2>
+    <p><strong>One morning worship service, at 9 a.m.</strong> </p>
+    <p class="mt-20">
+      <small>Children's nursery/Sunday school available</small>
     </p>
-    <p><strong>On Nov. 3</strong> we will have only one worship service, at 9 a.m. </p>
     <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p>
   <div class="mt30"></div>
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
 <div class="mt30"></div>
+<p><strong> Spiritual studies series</strong><br>
+    <%= link_to "Sunday morning series resumes Nov. 10, 9 a.m. Alternate class day is Wednesday 6:30 p.m. 
+      Click here for more information on the series.", series_index_path %>
 
 
   <div class="mt30"></div>
@@ -106,8 +117,12 @@ Click the logo at left to learn more and make a donation.</p>
   <div class="mt30"></div>
   <%= link_to cl_image_tag("Oct2019_h7ingj.jpg", width: "100%"), 
   'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1570583126/Oct2019_h7ingj.pdf' %>
- <p><strong>New Pathway available </strong> Click on the image above to read or download the Fall 2018 <em>Pathway,</em> the parish newsletter.</p>
+ <p><strong>New Pathway available </strong> Click on the image above to read or 
+ download the Fall 2018 <em>Pathway,</em> the parish newsletter.</p>
   <div class="mt30"></div>
+  <p><strong>Open house Sunday</strong> Fr. Tom and Quincey will open their newly renovated rectory to parishioners and visitors following the 9 a.m. 
+    service on Sunday, Nov. 3. A jitney, courtesy of <strong><em> God's Gardeners</em></strong>, will shuttle folks from and to the church parking lot.
+    <div class="mt30"></div>
   
   <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center") %>
     <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are

@@ -18,8 +18,17 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
+
+  def november2019(member)
+    @member = member
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1573301967/Nov2019S_so4ixd.pdf'
+    mail(
+      subject: 'New Pathway, the parish newsletter'
+    )
+  end
+
    def october2019(member)
-     @member = Member
+     @member = member
      @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1570583126/Oct2019_h7ingj.pdf'
      mail(
        subject: 'New Pathway, the parish newsletter'

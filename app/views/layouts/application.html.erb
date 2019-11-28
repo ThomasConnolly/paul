@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   <title>St. Paul's Episcopal Church, Naples FL, Spirituality, Prayer, Worship,
     Farmers Market, Haitian Episcopal Church</title>
-
-  <meta name="stripe-key" content=
-    "<%= Rails.configuration.stripe[:publishable_key] %>">
-  <meta name="viewport" content="width=device-width, initial-scale=1,
+  <meta name="viewport", content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
-     
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <script src="https://js.stripe.com/v3/"></script>
+  <%= tag.meta name: "stripe-key", content: Rails.application.credentials.stripe[:public_key] %>
+    
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-
- 
-  <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
-  <%= csrf_meta_tags %>
+  
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">

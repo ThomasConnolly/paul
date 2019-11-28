@@ -1,5 +1,5 @@
 <%= bootstrap_form_for(@characteristic) do |f| %>
-  <%= f.error_notification %>
+  <%= f.alert_message "Please fix the errors below." %>
 
   <div class="form-inputs">
     <%= f.input :question, as: :ckeditor %>

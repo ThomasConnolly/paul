@@ -1,33 +1,16 @@
-
-<%
-=begin%>
- <div class="row">
-  <div class="col-lg-12 offset-lg-4">
-    <%= cl_image_tag("HolySpirit_bjkqcy.jpg", width: "45%", alt: "Pentecost") %>
-  </div>
-</div> 
-<%
-=end%>
-<%#= render 'concert_popup' %>
 <div class="row">
   <div class="col-md-8 col-sm-12 main-body">
   <h1>Come worship with us!</h1>
   
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
-
-    <%
-=begin%>
- <p><strong>8 a.m.</strong> Holy Eucharist Rite I </p>
-    <p><strong>9 a.m. </strong> Spiritual studies series starts Oct. 27<br>
-    <%= link_to "Click here for more information on series, also available on Wednesday evenings", series_index_path %>
-    <p><strong>10 a.m. </strong>Holy Eucharist, Rite II </p>
-    <p class="mt-20">
-      <small>Children's nursery/Sunday school available</small>
-    </p> 
-<%
-=end%>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", 
+    width:"290", class: "floatleft") %>
+<h2>Thanksgiving</h2>
+<p>Holy Eucharist, 1 p.m. today</p>
 <h2>Sundays</h2>
     <p><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
+    <p><strong>9 a.m. </strong> Spiritual studies series under way<br>
+    <%= link_to "Click here for more information on series, also available on 
+    Wednesday evenings", series_index_path %>
     <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
     <p class="mt-20">
       <small>Children's nursery/Sunday school available</small>
@@ -38,9 +21,7 @@
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
 <div class="mt30"></div>
-<p><strong> Spiritual studies series</strong><br>
-    <%= link_to "Sunday morning series resumes Nov. 10, 9 a.m. Alternate class day is Wednesday, 6:30 p.m. 
-      Click here for more information on the series.", series_index_path %>
+
 
 
   <div class="mt30"></div>
@@ -54,9 +35,10 @@
   <div class="mt30"></div>
   <h2>Home of the Farmers' Market</h2>
       <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft", width: "55%") %>
-      <p>The market will open Nov. 9 for the 2019-2020 season and runs through April. Ample 
+      <p>The market is now open for the 2019-2020 season and runs through April. Ample 
       parking is directed by our volunteer helpers, so it's easy in and out to the greatest
-      block party on a Saturday morning in Naples. Open 8 a.m. to noon. We hope to see you there!</p>
+      block party on a Saturday morning in Naples. We hope you'll join 
+      us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
      <p>For more information on the market, <%= link_to "click here.",
        markets_index_path %></p>
       <div class="clearall"></div>
@@ -105,7 +87,6 @@ Click the logo at left to learn more and make a donation.</p>
 
 
 
-
   </div><!--main-body -->
   <div class="col col-md-4 col-sm-8 sidebar">
     <p class="center-text"><%= Date.current.to_formatted_s(:long) %></p>
@@ -114,7 +95,9 @@ Click the logo at left to learn more and make a donation.</p>
     "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
 
   <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center") %>
-
+  <p><strong> Spiritual studies series</strong><br>
+    <%= link_to "Sunday morning series 9 a.m. Alternate class day is Wednesday, 6:30 p.m. 
+      Click here for more information on the series.", series_index_path %>
   <div class="mt30"></div>
   <%= link_to cl_image_tag("Nov2019S_so4ixd.jpg", width: "100%"), 
 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1573301967/Nov2019S_so4ixd.pdf' %>
@@ -139,6 +122,11 @@ Click the logo at left to learn more and make a donation.</p>
   <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class:
     "image-center", :fetch_format => :auto), pages_calendar_path %>
   <h3>Click calendar to see our activities</h3>
+
+
+
+<%#= render 'popup' %>
+
     <div class="mt30"></div>
     <div id="newsfeed">
       <h4>Episcopal News Service</h4>
@@ -153,4 +141,5 @@ Click the logo at left to learn more and make a donation.</p>
 <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center", fetch_format: "auto") %>
 </div>
 </div>
+
 <div class="mt50"></div>

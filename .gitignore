@@ -18,27 +18,10 @@
 # Ignore application configuration
 
 /config/application.yml
-# /config/secrets.yml
 /config/facebook.yml
 /config/dropbox.yml
 /config/cloudinary.yml
-users.csv
-newcsv.txt
-members.csv
-anniversaries.csv
-anniversary .csv
-anniversary.csv
-anniversaryFixed.csv
-instructions.pdf
-instructions.png
-instructions.sla
-instructions.sla.autosave
-modal_code.doc/public/packs
-/node_modules
-bookshark_http_api
-get_cover.rb
-needle.rb
-zmarc_stuff
+
 
 # Ignore master key for decrypting credentials and more.
 /public/packs
@@ -50,3 +33,4 @@ yarn-debug.log*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/.vscode

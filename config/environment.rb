@@ -7,7 +7,13 @@
  #Rails.application.initialize!
  Paul::Application.initialize!
 
-ActionMailer::Base.smtp_settings = {
+# Rails.logger = Logger.new(STDOUT)
+# Rails.logger.level = Logger::DEBUG
+# Rails.logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+
+
+
+ ActionMailer::Base.smtp_settings = {
   user_name: 'app36011847@heroku.com',
   password: Rails.application.credentials.sendgrid[:password],
   domain: 'saintpaulsnaples.org',

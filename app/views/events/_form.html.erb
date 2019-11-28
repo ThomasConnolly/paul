@@ -2,7 +2,7 @@
   <div class="col col-sm-6 col-sm-offset-3">
 
   <%= bootstrap_form_for(@event) do |f| %>
-    <%= f.error_notification %>
+   <%= f.alert_message "Please fix the errors below." %>
 
     <div class="form-group form-inputs">
       <%= f.input :title %>

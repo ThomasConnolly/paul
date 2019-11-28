@@ -6,7 +6,7 @@
 <p id="notice"><%= notice %></p>
 
   <% if @vestry_minute.minutes.present? %>
-    <%= @vestry_minute.minutes.html_safe %>
+    <%= sanitize @vestry_minute.minutes %>
     <% else %>
     <%= @vestry_minute.body %>
     <% end %>

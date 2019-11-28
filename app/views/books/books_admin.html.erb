@@ -49,12 +49,7 @@
   <p>Just click the box "Choose File" and click on the file with the name you gave it, such as "books27June.csv." Then click "upload books."</p>
             <h4>Import books from a csv file</h4>
             <%= bootstrap_form_for @import, url: import_books_path, multipart: true do |f|%>
-              <% if @import.errors.any? %>
-                <div class="alert alert-error">
-                  <% @import.errors.full_messages.each do |msg| %>
-                    <div><%= msg %> </div>
-                  <% end %>
-              <% end %>
+            <%= f.alert_message "Please fix the errors below." %>
             <%= f.file_field :file %><br>
             <%= f.submit  "Upload books" %>
             <% end %>

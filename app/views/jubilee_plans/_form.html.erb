@@ -1,16 +1,5 @@
 <%= bootstrap_form_for(@jubilee_plan) do |f| %>
-  <% if @jubilee_plan.errors.any? %>
-    <div id="error_explanation">
-      <p><strong><%= pluralize(@jubilee_plan.errors.count, "error") %> prohibited
-    this post from being saved:
-      </strong></p>>
-        <ul>
-          <% @jubilee_plan.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-  <% end %>
-        </ul>
-    </div>
-<% end %>
+ <%= f.alert_message "Please fix the errors below." %>
   <%= f.input :title, autofocus: true %>
   <%= f.input :body %>
 

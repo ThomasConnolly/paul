@@ -1,17 +1,4 @@
 
-
-//= require popper
-//= require bootstrap-sprockets
-//= require jquery.turbolinks
-//= require jquery_ujs
-//= require jquery.ui.widget
-//= require jquery.iframe-transport
-//= require jquery.fileupload
-//= require cloudinary/jquery.cloudinary
-//= require attachinary
-//= require turbolinks
-//= require moment
-//= require_tree .
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -23,11 +10,22 @@ require("@rails/activestorage").start()
 require("channels")
 require("trix")
 require("@rails/actiontext")
+// require("local-time").start()
+require("flatpickr/dist/flatpickr.css")
+require("jquery")
+require("bootstrap")
 
-import "bootstrap/dist/js/bootstrap"
+window.Rails = Rails
+
+import "./bootstrap_custom.js"
 import "../stylesheets/application"
 import flatpickr from 'flatpickr'
-require("flatpickr/dist/flatpickr.css")
+// import 'data-confirm-modal'
+
+$(document).on("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+})
 
 document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']", {

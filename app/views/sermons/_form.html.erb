@@ -1,20 +1,9 @@
 
 <div class="row">
   <div class="col-md-12">
-
-  <% if @sermon.errors.any? %>
-    <div class="alert alert danger">
-      <h2><%= pluralize(@sermon.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @sermon.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   
     <%= bootstrap_form_with(model: @sermon, local: true) do |f| %>
+     <%= f.alert_message "Please fix the errors below." %>
 
     <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
 
@@ -25,6 +14,8 @@
     <%= f.text_field :cites %>
  
     <%= f.rich_text_area :content %>
+
+    <%= f.text_area :sermon_body if :sermon_body %>
 
     <%= f.text_field :audio %>
   

@@ -2,11 +2,12 @@
   "dependencies": {
     "@rails/actiontext": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "^4.0.7",
-    "bootstrap": "^4.3.1",
+    "@rails/webpacker": "^4.2.0",
+    "bootstrap": "^4.4.1",
     "channels": "^0.0.4",
     "cloudinary": "^1.15.0",
     "flatpickr": "^4.6.3",
+    "jQuery": "^1.7.4",
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "lodash": "^4.17.15",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {
     "browserslist": "^4.5.2",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.9.0"
   },
   "license": "MIT"
 }

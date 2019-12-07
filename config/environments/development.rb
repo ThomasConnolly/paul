@@ -50,7 +50,7 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Suppress  output for asset requests.
+  # Suppress logger output for asset requests.
   config.assets.quiet = true
 
   # Raises error for missing translations.
@@ -59,5 +59,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
 end

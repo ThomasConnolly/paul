@@ -17,7 +17,7 @@ require("bootstrap")
 
 window.Rails = Rails
 
-import "./bootstrap_custom.js"
+
 import 'css/site'
 import "../stylesheets/application"
 import flatpickr from 'flatpickr'

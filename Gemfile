@@ -59,6 +59,7 @@ gem 'stripe_event'
 #gem 'rb-readline', '~> 0.5.5'
 gem 'irb', require: false
 gem 'webpacker'
+gem 'rails_12factor'
 
 group :development do
   gem 'annotate'

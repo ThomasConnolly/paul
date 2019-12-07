@@ -1,0 +1,1149 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://github.githubassets.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-/YEVWs7BzxfKyUd6zVxjEQcXRWsLbcEjv045Rq8DSoipySmQblhVKxlXLva2GtNd5DhwCxHwW1RM0N9I7S2Vew==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-481a47a96965f6706fb41bae0d14b09a.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-xod5+iick6st6a0tvmfiqwCFLFTRzOkGLX0SAqY7SQFl0Q3sWxKUB2rm1Kw4Vz/57FMg7chtfVYeUB/Yr/xmFQ==" rel="stylesheet" href="https://github.githubassets.com/assets/site-d3c48f1b58ea95d9efb184fd4592b411.css" />
+    <link crossorigin="anonymous" media="all" integrity="sha512-xlKdcTpXrrd+rLG1h8yYl5yt/S94zWLil75KS5529Mf0/RdApUbGTKcFbY0OZMotEz3l11k0GqfDAhasayWehw==" rel="stylesheet" href="https://github.githubassets.com/assets/github-eabfbaded2e91939e805d1a3af34018a.css" />
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Enhance Rails Intellisense in Solargraph · GitHub</title>
+    <meta name="description" content="Enhance Rails Intellisense in Solargraph. GitHub Gist: instantly share code, notes, and snippets.">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch-gist.xml" title="Gist">
+  <link rel="fluid-icon" href="https://gist.github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://github.githubassets.com/images/modules/gists/gist-og-image.png" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Enhance Rails Intellisense in Solargraph" /><meta name="twitter:description" content="Enhance Rails Intellisense in Solargraph. GitHub Gist: instantly share code, notes, and snippets." />
+    <meta property="og:image" content="https://github.githubassets.com/images/modules/gists/gist-og-image.png" /><meta property="og:site_name" content="Gist" /><meta property="og:type" content="article" /><meta property="og:title" content="Enhance Rails Intellisense in Solargraph" /><meta property="og:url" content="https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e" /><meta property="og:description" content="Enhance Rails Intellisense in Solargraph. GitHub Gist: instantly share code, notes, and snippets." /><meta property="article:author" content="262588213843476" /><meta property="article:publisher" content="262588213843476" />
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  
+  
+
+    <meta name="request-id" content="B054:0666:143F0C4:2661821:5DE276BA" data-pjax-transient>
+
+
+  
+
+  <meta name="selected-link" value="gist_code" data-pjax-transient>
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+    <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="gist" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="B054:0666:143F0C4:2661821:5DE276BA" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="3715195194205959866" />
+
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;gist-id&gt;" data-pjax-transient="true" />
+
+
+
+    <meta name="google-analytics" content="UA-3769691-4">
+
+
+<meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+
+    <meta name="octolytics-dimension-public" content="true" /><meta name="octolytics-dimension-gist_id" content="96732764" /><meta name="octolytics-dimension-gist_name" content="28b349566a223dfb439a337aea29713e" /><meta name="octolytics-dimension-anonymous" content="false" /><meta name="octolytics-dimension-owner_id" content="3704922" /><meta name="octolytics-dimension-owner_login" content="castwide" /><meta name="octolytics-dimension-forked" content="false" />
+
+  <meta
+    class="js-ga-set"
+    name="dimension5"
+    content="public"
+  >
+  <meta
+    class="js-ga-set"
+    name="dimension6"
+    content="owned"
+  >
+  <meta
+    class="js-ga-set"
+    name="dimension7"
+    content="ruby"
+  >
+
+
+      <meta name="hostname" content="gist.github.com">
+    <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="gist.github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="NTkwNjJhMDU4NTY4ODcyZTJjMjgyODVkNTliZDc0ZmQ4MDIwZWNhMmE3MDk1NjdmYTBmMDlkYWM0MGU1YzIyY3x7InJlbW90ZV9hZGRyZXNzIjoiNjkuMTM3LjIwNC44NiIsInJlcXVlc3RfaWQiOiJCMDU0OjA2NjY6MTQzRjBDNDoyNjYxODIxOjVERTI3NkJBIiwidGltZXN0YW1wIjoxNTc1MTIyNjE4LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS">
+
+    <meta name="html-safe-nonce" content="061e6b3579c1e39d0ba2daf7dc2563d5e5dde2c7">
+
+  <meta http-equiv="x-pjax-version" content="5889f893dcaa7c2acb03cae96934b7a4">
+  
+
+      <link href="/castwide.atom" rel="alternate" title="atom" type="application/atom+xml">
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-eugfgjBp0ZgIOWm2vVumT2BtsOo+aZto75qwqV3mlYwSC8XIXu6PRH6hh5ms6HN2RbBii0M8cnK9UuJLO3Cyew==" rel="stylesheet" href="https://github.githubassets.com/assets/gist-04c9f30b6b426947b013a993ce8747c8.css" />
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+
+
+
+  </head>
+
+  <body class="logged-out env-production min-width-lg">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="px-2 py-4 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+      <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+
+    
+    
+    
+
+
+        <div class="Header" role="banner" >
+  <div class="Header-item">
+    <a class="Header-link" data-hotkey="g d" aria-label="Gist Homepage" href="/">
+  <svg class="octicon octicon-mark-github v-align-middle d-none" height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+  <svg height="24" class="octicon octicon-logo-github v-align-middle" viewBox="0 0 45 16" version="1.1" width="67" aria-hidden="true"><path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 00-.146-.18zM42.23 9.84c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61h-2.1c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"/></svg>
+  <svg height="24" class="octicon octicon-logo-gist v-align-middle" viewBox="0 0 25 16" version="1.1" width="37" aria-hidden="true"><path fill-rule="evenodd" d="M4.7 8.73h2.45v4.02c-.55.27-1.64.34-2.53.34-2.56 0-3.47-2.2-3.47-5.05 0-2.85.91-5.06 3.48-5.06 1.28 0 2.06.23 3.28.73V2.66C7.27 2.33 6.25 2 4.63 2 1.13 2 0 4.69 0 8.03c0 3.34 1.11 6.03 4.63 6.03 1.64 0 2.81-.27 3.59-.64V7.73H4.7v1zm6.39 3.72V6.06h-1.05v6.28c0 1.25.58 1.72 1.72 1.72v-.89c-.48 0-.67-.16-.67-.7v-.02zm.25-8.72c0-.44-.33-.78-.78-.78s-.77.34-.77.78.33.78.77.78.78-.34.78-.78zm4.34 5.69c-1.5-.13-1.78-.48-1.78-1.17 0-.77.33-1.34 1.88-1.34 1.05 0 1.66.16 2.27.36v-.94c-.69-.3-1.52-.39-2.25-.39-2.2 0-2.92 1.2-2.92 2.31 0 1.08.47 1.88 2.73 2.08 1.55.13 1.77.63 1.77 1.34 0 .73-.44 1.42-2.06 1.42-1.11 0-1.86-.19-2.33-.36v.94c.5.2 1.58.39 2.33.39 2.38 0 3.14-1.2 3.14-2.41 0-1.28-.53-2.03-2.75-2.23h-.03zm8.58-2.47v-.86h-2.42v-2.5l-1.08.31v2.11l-1.56.44v.48h1.56v5c0 1.53 1.19 2.13 2.5 2.13.19 0 .52-.02.69-.05v-.89c-.19.03-.41.03-.61.03-.97 0-1.5-.39-1.5-1.34V6.94h2.42v.02-.01z"/></svg>
+</a>
+  </div>
+
+
+  <div class="Header-item Header-item--full js-site-search">
+      <div class="header-search mr-3">
+
+<!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative js-quicksearch-form" role="search" aria-label="Site" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="header-search-wrapper form-control input-sm js-chromeless-input-container">
+    <input type="text"
+      class="form-control input-sm js-site-search-focus header-search-input"
+      data-hotkey="s,/"
+      name="q"
+      aria-label="Search"
+      placeholder="Search…"
+      autocorrect="off"
+      autocomplete="off"
+      autocapitalize="off">
+  </div>
+
+</form></div>
+
+
+    <nav aria-label="Global" class="d-flex">
+  <a class="Header-link mr-3" data-ga-click="Header, go to all gists, text:all gists" href="/discover">All gists</a>
+
+  <a class="Header-link mr-3" data-ga-click="Header, go to GitHub, text:Back to GitHub" href="https://github.com">Back to GitHub</a>
+
+
+
+</nav>
+
+  </div>
+
+
+
+
+    <div class="Header-item f4 mr-0" role="navigation">
+      <a class="HeaderMenu-link no-underline mr-3" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="965372d903fe3a084931a4daad59c96169c22730470b5476495b420f044d9246" data-ga-click="Header, sign in" href="https://gist.github.com/auth/github?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">
+        Sign&nbsp;in
+</a>        <a class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="819d522d2182cf434b0c894d73980ca9ba5d604108c4ac85d7583f42040cc824" data-ga-click="Header, sign up" href="/join?source=header-gist">
+          Sign&nbsp;up
+</a>    </div>
+</div>
+
+
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+    <div id="js-flash-container">
+
+</div>
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled>
+        <div itemscope itemtype="http://schema.org/Code">
+    <main id="gist-pjax-container" class="gist-content-wrapper" data-pjax-container>
+      
+
+
+  <div class="gist-detail-intro gist-banner">
+    <div class="container-lg px-3">
+      <p class="lead">
+        Instantly share code, notes, and snippets.
+      </p>
+    </div>
+  </div>
+
+
+<div class="gisthead pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-3 mb-4">
+  <div class="container-lg px-3">
+    
+  
+
+
+<div class="mb-3 d-flex">
+  <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+    <a class="avatar mr-1" data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide"><img src="https://avatars2.githubusercontent.com/u/3704922?s=52&amp;v=4" width="26" height="26" alt="@castwide" /></a>
+    <span class="author"><a data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide">castwide</a></span><!--
+        --><span class="path-divider">/</span><!--
+        --><strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a href="/castwide/28b349566a223dfb439a337aea29713e">rails.rb</a></strong>
+
+    <div class="d-block text-small text-gray">
+      Last active <time-ago datetime="2019-11-23T22:08:24Z" class="no-wrap">Nov 23, 2019</time-ago>
+    </div>
+  </h1>
+
+  <ul class="pagehead-actions float-none">
+
+
+
+    <li>
+        <a class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a gist" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist star button&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="726fb3da6f31cfd15d4a2612edbec05f565bb6408439e91bd6fc518eb34dbc5d" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">
+    <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+    Star
+</a>
+  <a class="social-count" aria-label="12 users starred this gist" href="/castwide/28b349566a223dfb439a337aea29713e/stargazers">
+    12
+</a>
+    </li>
+
+      <li>
+          <a class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a gist" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist fork button&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7eda83fd9a1428af814f84f20ef7089d41f33e5782f9068a3b0945d23ac6625a" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">
+    <svg class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+    Fork
+</a>    <span class="social-count">0</span>
+
+      </li>
+  </ul>
+
+</div>
+
+<div class="d-flex">
+  <div class="flex-auto">
+    <nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     aria-label="Gist"
+     data-pjax="#gist-pjax-container">
+
+  <a class="js-selected-navigation-item selected reponav-item" data-pjax="true" data-hotkey="g c" aria-current="page" data-selected-links="gist_code /castwide/28b349566a223dfb439a337aea29713e" href="/castwide/28b349566a223dfb439a337aea29713e">
+    <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+    Code
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-pjax="true" data-hotkey="g r" data-selected-links="gist_revisions /castwide/28b349566a223dfb439a337aea29713e/revisions" href="/castwide/28b349566a223dfb439a337aea29713e/revisions">
+      <svg class="octicon octicon-git-commit" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"/></svg>
+      Revisions
+      <span class="Counter">2</span>
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-pjax="true" data-hotkey="g s" data-selected-links="gist_stars /castwide/28b349566a223dfb439a337aea29713e/stargazers" href="/castwide/28b349566a223dfb439a337aea29713e/stargazers">
+      <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      Stars
+      <span class="Counter">12</span>
+</a>
+</nav>
+
+  </div>
+
+  <div class="file-navigation-options" data-multiple>
+
+    <div class="file-navigation-option v-align-middle">
+
+  <div class="input-group">
+    <div class="input-group-button">
+      <details class="details-reset details-overlay select-menu">
+        <summary class="btn btn-sm select-menu-button" data-ga-click="Repository, clone Embed, location:repo overview">
+          <span data-menu-button>Embed</span>
+        </summary>
+        <details-menu
+          class="select-menu-modal position-absolute"
+          data-menu-input="gist-share-url"
+          style="z-index: 99;" aria-label="Clone options">
+          <div class="select-menu-header">
+            <span class="select-menu-title">What would you like to do?</span>
+          </div>
+          <div class="select-menu-list">
+              <button name="button" type="button" class="select-menu-item width-full" aria-checked="true" role="menuitemradio" value="&lt;script src=&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e.js&quot;&gt;&lt;/script&gt;" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;EMBED&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:96732764,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a7865a6b1457082cfa3530b12b595f9fdc33afbfe5d05c11df13fb556ae2f38d">
+                <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                <div class="select-menu-item-text">
+                  <span class="select-menu-item-heading" data-menu-button-text>
+                    
+                    Embed
+                  </span>
+                    <span class="description">
+                      Embed this gist in your website.
+                    </span>
+                </div>
+</button>              <button name="button" type="button" class="select-menu-item width-full" aria-checked="false" role="menuitemradio" value="https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;SHARE&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:96732764,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="6f62a42a2cc4c7443e76c218d9f62ccb0b33adade90a05f7b34b0452b57f211d">
+                <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                <div class="select-menu-item-text">
+                  <span class="select-menu-item-heading" data-menu-button-text>
+                    
+                    Share
+                  </span>
+                    <span class="description">
+                      Copy sharable link for this gist.
+                    </span>
+                </div>
+</button>              <button name="button" type="button" class="select-menu-item width-full" aria-checked="false" role="menuitemradio" value="https://gist.github.com/28b349566a223dfb439a337aea29713e.git" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_HTTPS&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:96732764,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="304f9f3678889ad975a3fba9fb239cfbfc7a7965e5b5e2d344a546a7e72851ac">
+                <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                <div class="select-menu-item-text">
+                  <span class="select-menu-item-heading" data-menu-button-text>
+                    Clone via
+                    HTTPS
+                  </span>
+                    <span class="description">
+                      Clone with Git or checkout with SVN using the repository’s web address.
+                    </span>
+                </div>
+</button>          </div>
+          <div class="select-menu-list">
+            <a role="menuitem" class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+              <svg class="octicon octicon-question select-menu-item-icon" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"/></svg>
+              <div class="select-menu-item-text">
+                Learn more about clone URLs
+              </div>
+            </a>
+          </div>
+        </details-menu>
+      </details>
+    </div>
+
+    <input
+      id="gist-share-url"
+      type="text"
+      data-autoselect
+      class="form-control input-monospace input-sm"
+      value="&lt;script src=&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e.js&quot;&gt;&lt;/script&gt;"
+      aria-label="Clone this repository at &lt;script src=&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e.js&quot;&gt;&lt;/script&gt;"
+      readonly>
+
+    <div class="input-group-button">
+      <clipboard-copy for="gist-share-url" aria-label="Copy to clipboard" class="btn btn-sm zeroclipboard-button" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:96732764,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="ca35dc78f6361a9203490be36c135bfbe0becc81d8a86f67f961452d4c1782e8"><svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></clipboard-copy>
+    </div>
+  </div>
+</div>
+
+
+    <div class="file-navigation-option">
+</div>
+
+
+    <div class="file-navigation-option">
+      <a class="btn btn-sm" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:96732764,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="622321c3b7df97a1937af591fb2232cab3a7862eea6ea0014ac2769a1fd0ca55" data-ga-click="Gist, download zip, location:gist overview" href="/castwide/28b349566a223dfb439a337aea29713e/archive/d1d4462b92f411b378d87a39482b830e012513bd.zip">Download ZIP</a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="container-lg px-3 new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content gist-content">
+    
+  <div>
+      <div itemprop="about">
+    Enhance Rails Intellisense in Solargraph
+  </div>
+
+
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-rails-rb" class="file">
+      <div class="file-header">
+        <div class="file-actions">
+
+          <a class="btn btn-sm " href="/castwide/28b349566a223dfb439a337aea29713e/raw/d1d4462b92f411b378d87a39482b830e012513bd/rails.rb">Raw</a>
+        </div>
+        <div class="file-info">
+          <span class="icon">
+            <svg class="octicon octicon-gist" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.5 5L10 7.5 7.5 10l-.75-.75L8.5 7.5 6.75 5.75 7.5 5zm-3 0L2 7.5 4.5 10l.75-.75L3.5 7.5l1.75-1.75L4.5 5zM0 13V2c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v11c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1zm1 0h10V2H1v11z"/></svg>
+          </span>
+          <a class="css-truncate" href="#file-rails-rb">
+            <strong class="user-select-contain gist-blob-name css-truncate-target">
+              rails.rb
+            </strong>
+          </a>
+        </div>
+      </div>
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-ruby ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tr>
+        <td id="file-rails-rb-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-rails-rb-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> The following comments fill some of the gaps in Solargraph&#39;s understanding of</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-rails-rb-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> Rails apps. Since they&#39;re all in YARD, they get mapped in Solargraph but</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-rails-rb-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> ignored at runtime.</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-rails-rb-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-rails-rb-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> You can put this file anywhere in the project, as long as it gets included in</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-rails-rb-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> the workspace maps. It&#39;s recommended that you keep it in a standalone file</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-rails-rb-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> instead of pasting it into an existing one.</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-rails-rb-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-rails-rb-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> <span class="pl-c">@!</span><span class="pl-c">parse</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-rails-rb-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   class ActionController::Base</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-rails-rb-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     include ActionController::MimeResponds</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-rails-rb-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     extend ActiveSupport::Callbacks::ClassMethods</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-rails-rb-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     extend AbstractController::Callbacks::ClassMethods</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-rails-rb-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   end</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-rails-rb-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   class ActiveRecord::Base</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-rails-rb-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     extend ActiveRecord::QueryMethods</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-rails-rb-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     extend ActiveRecord::FinderMethods</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-rails-rb-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     extend ActiveRecord::Associations::ClassMethods</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-rails-rb-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     include ActiveRecord::Persistence</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-rails-rb-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   end</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-rails-rb-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> @!override ActiveRecord::FinderMethods#find</span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-rails-rb-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   <span class="pl-c">@</span><span class="pl-c">overload</span><span class="pl-c"> find(id)</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-rails-rb-LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     <span class="pl-c">@</span><span class="pl-c">param</span><span class="pl-c"> <span class="pl-c">id</span> <span class="pl-c"><span class="pl-c">[</span>Integer<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-rails-rb-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     <span class="pl-c">@</span><span class="pl-c">return</span><span class="pl-c"> <span class="pl-c"><span class="pl-c">[</span>self<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-rails-rb-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   <span class="pl-c">@</span><span class="pl-c">overload</span><span class="pl-c"> find(list)</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-rails-rb-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     <span class="pl-c">@</span><span class="pl-c">param</span><span class="pl-c"> <span class="pl-c">list</span> <span class="pl-c"><span class="pl-c">[</span>Array<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-rails-rb-LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     <span class="pl-c">@</span><span class="pl-c">return</span><span class="pl-c"> <span class="pl-c"><span class="pl-c">[</span>Array&lt;self&gt;<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-rails-rb-LC28" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   <span class="pl-c">@</span><span class="pl-c">overload</span><span class="pl-c"> find(*args)</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-rails-rb-LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>     <span class="pl-c">@</span><span class="pl-c">return</span><span class="pl-c"> <span class="pl-c"><span class="pl-c">[</span>Array&lt;self&gt;<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+      <tr>
+        <td id="file-rails-rb-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-rails-rb-LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>   <span class="pl-c">@</span><span class="pl-c">return</span><span class="pl-c"> <span class="pl-c"><span class="pl-c">[</span>self, Array&lt;self&gt;<span class="pl-c">]</span></span></span></span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+
+    <a name="comments"></a>
+    <div class="js-quote-selection-container" data-quote-markdown=".js-comment-body">
+      <div class="js-discussion js-socket-channel" data-channel="marked-as-read:gist:96732764">
+        <div class="ml-6 pl-3">
+          
+  <div class="TimelineItem js-comment-container">
+      
+<div class="avatar-parent-child TimelineItem-avatar ">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide"><img class="avatar rounded-1" height="40" width="40" alt="@castwide" src="https://avatars1.githubusercontent.com/u/3704922?s=88&amp;v=4" /></a>
+
+</div>
+
+
+    
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment TimelineItem-body my-0 " id="gistcomment-2953153">
+    <div class="ml-n3 minimized-comment position-relative  d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white"
+       data-body-version="18dda7adf859a3c97400aa8752f84abd">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b5ae1c7d3b13632f958025e7ca961e3ffc3515f63e55cc944c602836d72013ae" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="ml-n3 timeline-comment unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment--caret "
+       data-body-version="18dda7adf859a3c97400aa8752f84abd"
+       data-unfurl-hide-url="/content_reference_attachments/hide"
+       data-unfurl-authenticity-token="M3SO26z4YlzbVrZl09J8mh8byTJuOou63Qs8QOkfqrCE8jg7t5ARaGuFAg5sxc/1BdeMJHEs4ldCO6biIwTOWA==">
+
+    
+<div class="timeline-comment-header clearfix ">
+  <div class="timeline-comment-actions flex-shrink-0 js-timeline-comment-actions" >
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action link-gray">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy
+    class="dropdown-item btn-link"
+    for="gistcomment-2953153-permalink"
+    role="menuitem"
+    
+    >
+    Copy link
+  </clipboard-copy>
+
+        <button
+    type="button"
+    class="dropdown-item btn-link d-none js-comment-quote-reply"
+    role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+  
+
+    
+  <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the gist.">
+    Owner
+  </span>
+
+
+  <span
+  class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s"
+  aria-label="This user is the author of this gist.">
+  Author
+</span>
+
+
+  
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+
+    <strong class="css-truncate">
+      
+
+  <a class="author link-gray-dark css-truncate-target width-fit" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide">castwide</a>
+  
+
+    </strong>
+
+
+    commented
+
+
+      <a href="#gistcomment-2953153" id="gistcomment-2953153-permalink" class="link-gray js-timestamp"><relative-time datetime="2019-06-25T09:26:06Z" class="no-wrap">Jun 25, 2019</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide" >
+
+      
+<task-lists disabled sortable>
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>I updated the gist to take advantage of some changes in Solargraph 0.34.0. The <code>require</code> calls are no longer needed, I added a few more mixins, and the <code>@!override</code> directive is an experimental feature for supplementing documentation from external gems. See <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="360846485" data-permission-text="Issue title is private" data-url="https://github.com/castwide/solargraph/issues/87" data-hovercard-type="issue" data-hovercard-url="/castwide/solargraph/issues/87/hovercard" href="https://github.com/castwide/solargraph/issues/87">castwide/solargraph#87</a> for more information.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+    </div>
+
+  </div>
+</div>
+
+  </div>
+  <div class="TimelineItem js-comment-container">
+      
+<div class="avatar-parent-child TimelineItem-avatar ">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/users/thornomad/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/thornomad"><img class="avatar rounded-1" height="40" width="40" alt="@thornomad" src="https://avatars0.githubusercontent.com/u/124717?s=88&amp;v=4" /></a>
+
+</div>
+
+
+    
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment TimelineItem-body my-0 " id="gistcomment-2959736">
+    <div class="ml-n3 minimized-comment position-relative  d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white"
+       data-body-version="9874e3ea23dcc736b0972cdd2c53a6b9">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b5ae1c7d3b13632f958025e7ca961e3ffc3515f63e55cc944c602836d72013ae" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="ml-n3 timeline-comment unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment--caret "
+       data-body-version="9874e3ea23dcc736b0972cdd2c53a6b9"
+       data-unfurl-hide-url="/content_reference_attachments/hide"
+       data-unfurl-authenticity-token="EGXz2M0gN7l/5YBWIGGRQVDGrrsJqREy0iAUEA07CVSn40U41khEjc82ND2fdiIuSgrrrRa/eN9NEI6yxyBtvA==">
+
+    
+<div class="timeline-comment-header clearfix ">
+  <div class="timeline-comment-actions flex-shrink-0 js-timeline-comment-actions" >
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action link-gray">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy
+    class="dropdown-item btn-link"
+    for="gistcomment-2959736-permalink"
+    role="menuitem"
+    
+    >
+    Copy link
+  </clipboard-copy>
+
+        <button
+    type="button"
+    class="dropdown-item btn-link d-none js-comment-quote-reply"
+    role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+  
+
+    
+
+
+  
+
+  
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+
+    <strong class="css-truncate">
+      
+
+  <a class="author link-gray-dark css-truncate-target width-fit" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/users/thornomad/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/thornomad">thornomad</a>
+  
+
+    </strong>
+
+
+    commented
+
+
+      <a href="#gistcomment-2959736" id="gistcomment-2959736-permalink" class="link-gray js-timestamp"><relative-time datetime="2019-07-02T11:43:47Z" class="no-wrap">Jul 2, 2019</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+        
+  <span class="d-inline-block text-gray-light">&#8226;</span>
+
+  <details class="details-overlay details-reset d-inline-block dropdown hx_dropdown-fullscreen">
+    <summary class="btn-link no-underline text-gray js-notice">
+      <div class="position-relative">
+        <span>
+            edited
+        </span>
+        <svg height="11" class="octicon octicon-triangle-down v-align-middle" viewBox="0 0 12 16" version="1.1" width="8" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"/></svg>
+      </div>
+    </summary>
+    <details-menu
+      class="dropdown-menu dropdown-menu-s width-auto py-0 js-comment-edit-history-menu"
+      style="max-width: 352px; z-index: 99;"
+      src="/_render_node/MDExOkdpc3RDb21tZW50MjhiMzQ5NTY2YTIyM2RmYjQzOWEzMzdhZWEyOTcxM2U6Mjk1OTczNg==/comments/comment_edit_history_log"
+      preload>
+      <include-fragment class="octocat-spinner my-3" aria-label="Loading"></include-fragment>
+    </details-menu>
+  </details>
+
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide" >
+
+      
+<task-lists disabled sortable>
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>I am trying to extend this to use additional ActiveRecord class methods (in this example, <code>where</code>) ... is this the right approach?</p>
+<pre><code># @!override ActiveRecord::QueryMethods#where
+#   @overload where(str)
+#     @param str [String]
+#     @return [Class&lt;self&gt;]
+#   @overload where(list)
+#     @param list [Array]
+#     @return [Class&lt;self&gt;]
+#   @overload where(**options)
+#     @param options [Hash]
+#     @return [Class&lt;self&gt;]
+</code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+    </div>
+
+  </div>
+</div>
+
+  </div>
+  <div class="TimelineItem js-comment-container">
+      
+<div class="avatar-parent-child TimelineItem-avatar ">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide"><img class="avatar rounded-1" height="40" width="40" alt="@castwide" src="https://avatars1.githubusercontent.com/u/3704922?s=88&amp;v=4" /></a>
+
+</div>
+
+
+    
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment TimelineItem-body my-0 " id="gistcomment-2959988">
+    <div class="ml-n3 minimized-comment position-relative  d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white"
+       data-body-version="8f3886c9ba14d9489d0ffae571d9946b">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b5ae1c7d3b13632f958025e7ca961e3ffc3515f63e55cc944c602836d72013ae" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="ml-n3 timeline-comment unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment--caret "
+       data-body-version="8f3886c9ba14d9489d0ffae571d9946b"
+       data-unfurl-hide-url="/content_reference_attachments/hide"
+       data-unfurl-authenticity-token="KZl4KtOcRn3K/QIZVkCjMtGHStuzVqPvzKaqKFMUS/meH87KyPQ1SXoutnLpVxBdy0sPzaxAygJTljCKmQ8vEQ==">
+
+    
+<div class="timeline-comment-header clearfix ">
+  <div class="timeline-comment-actions flex-shrink-0 js-timeline-comment-actions" >
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action link-gray">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy
+    class="dropdown-item btn-link"
+    for="gistcomment-2959988-permalink"
+    role="menuitem"
+    
+    >
+    Copy link
+  </clipboard-copy>
+
+        <button
+    type="button"
+    class="dropdown-item btn-link d-none js-comment-quote-reply"
+    role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+  
+
+    
+  <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the gist.">
+    Owner
+  </span>
+
+
+  <span
+  class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s"
+  aria-label="This user is the author of this gist.">
+  Author
+</span>
+
+
+  
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+
+    <strong class="css-truncate">
+      
+
+  <a class="author link-gray-dark css-truncate-target width-fit" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/users/castwide/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/castwide">castwide</a>
+  
+
+    </strong>
+
+
+    commented
+
+
+      <a href="#gistcomment-2959988" id="gistcomment-2959988-permalink" class="link-gray js-timestamp"><relative-time datetime="2019-07-02T16:14:32Z" class="no-wrap">Jul 2, 2019</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+        
+  <span class="d-inline-block text-gray-light">&#8226;</span>
+
+  <details class="details-overlay details-reset d-inline-block dropdown hx_dropdown-fullscreen">
+    <summary class="btn-link no-underline text-gray js-notice">
+      <div class="position-relative">
+        <span>
+            edited
+        </span>
+        <svg height="11" class="octicon octicon-triangle-down v-align-middle" viewBox="0 0 12 16" version="1.1" width="8" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"/></svg>
+      </div>
+    </summary>
+    <details-menu
+      class="dropdown-menu dropdown-menu-s width-auto py-0 js-comment-edit-history-menu"
+      style="max-width: 352px; z-index: 99;"
+      src="/_render_node/MDExOkdpc3RDb21tZW50MjhiMzQ5NTY2YTIyM2RmYjQzOWEzMzdhZWEyOTcxM2U6Mjk1OTk4OA==/comments/comment_edit_history_log"
+      preload>
+      <include-fragment class="octocat-spinner my-3" aria-label="Loading"></include-fragment>
+    </details-menu>
+  </details>
+
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide" >
+
+      
+<task-lists disabled sortable>
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>The issue with <code>ActiveRecord::Relation</code> we discussed in <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="451583518" data-permission-text="Issue title is private" data-url="https://github.com/castwide/solargraph/issues/188" data-hovercard-type="issue" data-hovercard-url="/castwide/solargraph/issues/188/hovercard" href="https://github.com/castwide/solargraph/issues/188">castwide/solargraph#188</a> still applies, but yeah, I think that's generally the right idea.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+<!-- Rendered timeline since 2019-11-23 14:08:24 -->
+<div id="partial-timeline-marker"
+      class="js-timeline-marker js-updatable-content"
+      data-url="/castwide/28b349566a223dfb439a337aea29713e/show_partial?partial=gist%2Ftimeline_marker&amp;since=1574546904"
+      data-last-modified="Sat, 23 Nov 2019 22:08:24 GMT"
+      >
+</div>
+
+        </div>
+
+        <div class="discussion-timeline-actions">
+            
+<div class="flash flash-warn mt-3">
+    <a rel="nofollow" class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7708250ceb0345619e97b3339f0eaa5b01b9294b277d1a4c8527f96513881574" href="/join?source=comment-gist">Sign up for free</a>
+    <strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;B054:0666:143F0C4:2661821:5DE276BA&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/castwide/28b349566a223dfb439a337aea29713e&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="55183f812e467f299b98d5993f521a82c7e4a79345d8f092666b9383e3a166ad" href="/login?return_to=https%3A%2F%2Fgist.github.com%2Fcastwide%2F28b349566a223dfb439a337aea29713e">Sign in to comment</a>
+</div>
+
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+</div><!-- /.container -->
+
+    </main>
+  </div>
+
+  </div>
+
+        
+<div class="footer container-lg width-full px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2019 GitHub, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://github.blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" integrity="sha512-+HrX8ahxgj74CUPPmM6Z3OU9WEiCyL7ZNdFDi1qwf32rgamIx9tGkQuWb4dFkMHthTaCuRbi3x2Zu8qtC88+6A==" type="application/javascript" src="https://github.githubassets.com/assets/compat-bootstrap-f87ad7f1.js"></script>
+    
+    
+    
+    
+      <script crossorigin="anonymous" async="async" integrity="sha512-ETENoPvjyDcCtfe634W37Io1o6ecGnULae/XgefR9Ii1Yts3sSTOOAw6uZmjX5KprXgOkFu9JOtwNCJo/QWibQ==" type="application/javascript" src="https://github.githubassets.com/assets/gist-bootstrap-11310da0.js"></script>
+
+    
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden
+    >
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <span class="js-stale-session-flash-signed-in" hidden>You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog">
+  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark hx_rsm" open>
+    <summary role="button" aria-label="Close dialog"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast hx_rsm-dialog hx_rsm-modal">
+      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog>
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+      </button>
+      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
+    </details-dialog>
+  </details>
+</template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+
+  </body>
+</html>
+

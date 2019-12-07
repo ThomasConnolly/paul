@@ -5452,10 +5452,10 @@ node-sass@^4.13.0:
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
 
-node@^12.11.0:
-  version "12.11.0"
-  resolved "https://registry.yarnpkg.com/node/-/node-12.11.0.tgz#a24e49b4a56e5595cd572391464c0484042814a0"
-  integrity sha512-+otbYpjh/BF8VCxF+eYQtp/jzJT8jJF2apQJMt88AKWaY08d6NoKAiz4PseQWlkv1gKYgMjs7WoPkuT8CSIkOw==
+node@^13.3.0:
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-13.3.0.tgz#bd5e39940d13da82234a8f08979526581d2916f6"
+  integrity sha512-mnsd1CoDQmZo5eFE5/M6OB5BpHg7sfFXBVL4IqH/rI5kYjbkWwNnWWnDcfuEVC9Qpnc+NOn3Fdgr3tJZj8OMqw==
   dependencies:
     node-bin-setup "^1.0.0"
 
@@ -7764,6 +7764,11 @@ serialize-javascript@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.0.tgz#9310276819efd0eb128258bb341957f6eb2fc570"
   integrity sha512-a/mxFfU00QT88umAJQsNWOnUKckhNCqOl028N48e7wFmo2/EHpTo9Wso+iJJCMrQnmFvcjto5RJdAHEvVhcyUQ==
+
+serialize-javascript@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.1.tgz#952907a04a3e3a75af7f73d92d15e233862048b2"
+  integrity sha512-MPLPRpD4FNqWq9tTIjYG5LesFouDhdyH0EPY3gVK4DRD5+g4aDqdNSzLIwceulo3Yj+PL1bPh6laE5+H6LTcrQ==
 
 serve-index@^1.9.1:
   version "1.9.1"

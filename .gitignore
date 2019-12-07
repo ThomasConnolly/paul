@@ -16,14 +16,16 @@
 /log/*.log
 /tmp
 # Ignore application configuration
+/storage/*
+!/storage/.keep
 
 /config/application.yml
 /config/facebook.yml
 /config/dropbox.yml
 /config/cloudinary.yml
+/28b349566a223dfb439a337aea29713e
+Procfile.dev
 
-
-# Ignore master key for decrypting credentials and more.
 /public/packs
 /public/packs-test
 /node_modules

@@ -18,7 +18,7 @@ require("bootstrap")
 window.Rails = Rails
 
 
-import 'css/site'
+
 import "../stylesheets/application"
 import flatpickr from 'flatpickr'
 // import 'data-confirm-modal'

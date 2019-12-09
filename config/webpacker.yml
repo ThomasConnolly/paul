@@ -25,7 +25,7 @@ default: &default
     - .png
     - .gif
     - .tiff
-    - .ico
+    - .icoActionView::Template::Error (Webpacker can't find application in /app/public/packs/manifest.json.
     - .svg
     - .eot
     - .otf
@@ -87,7 +87,7 @@ production:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: true
+  compile: false
 
   # Extract and emit a css file
   extract_css: true

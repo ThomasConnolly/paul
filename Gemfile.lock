@@ -98,12 +98,6 @@ GEM
       activesupport
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-    bootstrap (4.4.1)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.14.3, < 2)
-      sassc-rails (>= 2.0.0)
-    bootstrap-datepicker-rails (1.8.0.1)
-      railties (>= 3.0)
     bootstrap_form (4.3.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -275,7 +269,6 @@ GEM
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
-    popper_js (1.14.5)
     premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)
@@ -486,8 +479,6 @@ DEPENDENCIES
   binding_of_caller
   birthday
   bootsnap
-  bootstrap (>= 4.3.1)
-  bootstrap-datepicker-rails
   bootstrap_form
   byebug
   capistrano
@@ -522,7 +513,6 @@ DEPENDENCIES
   momentjs-rails
   nokogiri (>= 1.10.4)
   pg
-  popper_js
   premailer-rails
   pry
   pry-awesome_print
@@ -549,7 +539,6 @@ DEPENDENCIES
   sprockets-rails
   stripe (~> 5.10)
   stripe_event
-  turbolinks
   uglifier
   web-console
   webdrivers

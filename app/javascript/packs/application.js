@@ -10,15 +10,13 @@ require("@rails/activestorage").start()
 require("channels")
 require("trix")
 require("@rails/actiontext")
-// require("local-time").start()
-require("flatpickr/dist/flatpickr.css")
 require("jquery")
-require("bootstrap")
+require("bootstrap/dist/js/bootstrap")
 
-window.Rails = Rails
+import flatpickr from "flatpickr"
+require("flatpickr/dist/flatpickr.css")
 
-import "../stylesheets/application"
-import flatpickr from 'flatpickr'
+
 // import 'data-confirm-modal'
 
 $(document).on("turbolinks:load", () => {
@@ -27,12 +25,9 @@ $(document).on("turbolinks:load", () => {
 })
 
 document.addEventListener("turbolinks:load", () => {
-  flatpickr("[data-behavior='flatpickr']", {
-      dateFormat: "Y-m-d"
-  })  
-});
-
-
+  flatpickr("[data-behavior='flatpickr']"
+  )
+})
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

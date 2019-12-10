@@ -17,7 +17,7 @@ default: &default
   cache_manifest: false
 
   # Extract and emit a css file
-  extract_css: true
+  extract_css: false
 
   static_assets_extensions:
     - .jpg
@@ -25,7 +25,7 @@ default: &default
     - .png
     - .gif
     - .tiff
-    - .icoActionView::Template::Error (Webpacker can't find application in /app/public/packs/manifest.json.
+    - .ico
     - .svg
     - .eot
     - .otf

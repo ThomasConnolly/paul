@@ -7,7 +7,7 @@
     <div class="form-group form-inputs">
       <%= f.input :title %>
       <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
-      <%= f.date_select :date, data: { behavior: "flatpickr" } %>
+      <%= f.date_field :date, data: { behavior: "flatpickr" } %>
       <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m." %>
       <%= f.input :url, label: "Add a picture for this event" %>
     </div>

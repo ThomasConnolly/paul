@@ -19,6 +19,7 @@
  */
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "devise_bootstrap_form";
 
@@ -35,6 +36,15 @@ html {font-size: 100%}
   text-align:center;
   margin: 0px auto;
 }
+
+a:link {
+  text-decoration: none;
+  color: blue;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .page {
  color : #333;
  background-color: #fff;

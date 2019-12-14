@@ -16,7 +16,6 @@ require("bootstrap/dist/js/bootstrap")
 import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 
-
 // import 'data-confirm-modal'
 
 $(document).on("turbolinks:load", () => {

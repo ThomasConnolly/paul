@@ -6,8 +6,8 @@
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
+//require("@rails/activestorage").start()
+//require("channels")
 require("trix")
 require("@rails/actiontext")
 require("jquery")
@@ -18,10 +18,10 @@ require("flatpickr/dist/flatpickr.css")
 
 // import 'data-confirm-modal'
 
-$(document).on("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-  $('[data-toggle="popover"]').popover()
-})
+// $(document).on("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+//   $('[data-toggle="popover"]').popover()
+// })
 
 document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']"

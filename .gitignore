@@ -30,9 +30,10 @@ Procfile.dev
 /public/packs-test
 /node_modules
 /yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+/yarn-debug.log*
+/npm-debug.log
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /.vscode
+export_csv_instructions.txt

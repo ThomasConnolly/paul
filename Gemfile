@@ -13,7 +13,7 @@ gem 'font-awesome-rails'
 # gem 'mini_racer'
 gem 'pg'
 gem 'rack'
-gem 'rails', '6.0.1'
+gem 'rails', '6.0.2'
 gem 'railties'
 gem 'sassc-rails' # used by sprockets to minify
 gem 'sprockets-rails', require: 'sprockets/railtie'

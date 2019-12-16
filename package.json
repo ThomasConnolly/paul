@@ -5,6 +5,7 @@
     "@rails/webpacker": "4.2.1",
     "all": "^0.0.0",
     "bootstrap": "^4.4.1",
+    "bundle-loader": "^0.5.6",
     "channels": "^0.0.4",
     "cloudinary": "^1.15.0",
     "flatpickr": "^4.6.3",
@@ -12,21 +13,26 @@
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "lodash": "^4.17.15",
+    "lodash-template": "^1.0.0",
     "lodash.template": "^4.5.0",
     "node": "^13.3.0",
     "popper.js": "^1.16.0",
     "postcss-custom-properties": "^9.0.2",
     "postcss-preset-env": "^6.7.0",
-    "serialize-javascript": "^2.1.1",
-    "snyk": "^1.251.1",
-    "trix": "^1.0.0",
+    "serialize-javascript": "^2.1.2",
+    "snyk": "^1.260.0",
+    "trix": "1.2.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.41.2",
     "yard": "^1.0.3"
   },
   "devDependencies": {
     "browserslist": "^4.5.2",
+    "bundle-analyzer": "^0.0.6",
     "webpack-dev-server": "^3.9.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "snyk test"
+  }
 }

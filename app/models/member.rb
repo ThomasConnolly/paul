@@ -38,4 +38,8 @@ class Member < ApplicationRecord
   def set_username
     self.username = "#{first_name} #{last_name}".strip
   end
+
+  def formatted_email
+    "#{self.username} <#{self.email}>".strip
+  end
 end

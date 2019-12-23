@@ -1,12 +1,12 @@
-<%
-=begin%>
+
  <div class="mt50"></div>
 <div class="row">
   <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
 
-    <%= form_with url: albergue_charges_path, id: "albergue-payment-form", local: true do |form| %>
-    <div>
+    <%= form_with url: albergue_charges_path, id: "payment-form", local: true, { payment_intent_id: @payment_intent.client_secret } do |form| %>
+    <div class="form-group">
       <label for="card-element">
+      <%= form.text_field :name_on_card, placeholder: "Full name", class: "form-control" %>
        <p><strong> Enter your credit or debit card information:</strong></p>
       </label>
       <div id="card-element">
@@ -22,6 +22,4 @@
   <% end %>
      <div class="mt100"></div>
     </div>
-  </div> 
-<%
-=end%>
+  </div>

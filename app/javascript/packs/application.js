@@ -12,21 +12,23 @@ require("trix")
 require("@rails/actiontext")
 require("jquery")
 require("bootstrap/dist/js/bootstrap")
+require("bootstrap-modal")
 
-import flatpickr from "flatpickr"
-require("flatpickr/dist/flatpickr.css")
+import flatpickr from "flatpickr";
+require("flatpickr/dist/flatpickr.css");
+import "./custom.js";
 
-// import 'data-confirm-modal'
-
-// $(document).on("turbolinks:load", () => {
-//   $('[data-toggle="tooltip"]').tooltip()
-//   $('[data-toggle="popover"]').popover()
-// })
+// document.addEventListener("turbolinks:load", () => {
+//   $('#myModal').modal('show');
+// //   $('[data-toggle="tooltip"]').tooltip()
+// //   $('[data-toggle="popover"]').popover()
+//  })
 
 document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']"
   )
 })
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

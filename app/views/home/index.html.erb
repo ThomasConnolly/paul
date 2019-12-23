@@ -1,6 +1,25 @@
 <div class="row">
   <div class="col-md-8 col-sm-12 main-body">
-  <h1>Come worship with us!</h1>
+  <div>
+        <%= cl_image_tag("Christmas_xblafg.png", class: "image-center") %>
+        <div class="mt30"></div>
+         <h2 class="center-bold-text mb-30">Dec. 24, Christmas Eve<br>
+         Carol Introit/Caroling at 8: 30 p.m.<br>
+         Worship Service 9 p.m.</h2>
+         <div class="mt30"></div>
+         <h2 class="center-bold-text mb-30">
+         Dec. 25, Christmas Day<br>
+         10 a.m. worship service</h2>
+         <div class="mt30"></div>
+         <h2 class=center-bold-text>
+         Dec. 29 Sunday<br>
+         Lessons and Carols<br>
+         One service, 9 a.m.</h2>
+
+      </div> 
+  <%
+=begin%>
+ <h1>Come worship with us!</h1>
   
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", 
     width:"290", class: "floatleft") %>
@@ -15,7 +34,9 @@
       <small>Children's nursery/Sunday school available</small>
     </p>
     <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
-    about our Haitian community', pages_haitian_path %></p>
+    about our Haitian community', pages_haitian_path %></p> 
+<%
+=end%>
   <div class="mt30"></div>
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
@@ -124,7 +145,7 @@ Click the logo at left to learn more and make a donation.</p>
 
 
 
-<%#= render 'popup' %>
+<%#= render 'my_modal' %>
 
     <div class="mt30"></div>
     <div id="newsfeed">

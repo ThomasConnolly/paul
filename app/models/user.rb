@@ -79,6 +79,10 @@ class User < ApplicationRecord
     self.username = "#{first_name.downcase.titleize} #{last_name.downcase.titleize}".strip
   end
 
+  def formatted_email
+    "#{self.username} <#{self.email}>".strip
+  end
+
   def assign_default_role
     add_role(:member) if roles.blank?
   end

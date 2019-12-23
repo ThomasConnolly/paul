@@ -12,7 +12,7 @@
       <div class="form-inputs">
         <%= f.hidden_field :price, :value => @event.price %>
         <%= f.hidden_field :event_id, :value => @event.id %>
-        <%= f.text_field :first_name %> &nbsp;<%= f.input :last_name %> <br>
+        <%= f.text_field :first_name %> &nbsp;<%= f.text_field :last_name %> <br>
         <%= f.number_field :quantity, label: "Number of tickets" %>
       </div>
       <div class="honey">

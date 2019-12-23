@@ -12,7 +12,7 @@ require("trix")
 require("@rails/actiontext")
 require("jquery")
 require("bootstrap/dist/js/bootstrap")
-require("bootstrap-modal")
+
 
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");

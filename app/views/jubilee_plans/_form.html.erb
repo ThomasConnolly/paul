@@ -1,9 +1,0 @@
-<%= bootstrap_form_for(@jubilee_plan) do |f| %>
- <%= f.alert_message "Please fix the errors below." %>
-  <%= f.input :title, autofocus: true %>
-  <%= f.input :body %>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
-<% end %>

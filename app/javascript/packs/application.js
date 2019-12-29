@@ -13,16 +13,15 @@ require("@rails/actiontext")
 require("jquery")
 require("bootstrap/dist/js/bootstrap")
 
-
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");
-import "./custom.js";
+//import "./custom.js";
 
 // document.addEventListener("turbolinks:load", () => {
-//   $('#myModal').modal('show');
-// //   $('[data-toggle="tooltip"]').tooltip()
-// //   $('[data-toggle="popover"]').popover()
-//  })
+$('#myModal').modal()
+//   $('[data-toggle="tooltip"]').tooltip()
+//   $('[data-toggle="popover"]').popover()
+  // })
 
 document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']"

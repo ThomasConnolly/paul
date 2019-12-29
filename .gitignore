@@ -37,4 +37,5 @@ Procfile.dev
 /config/master.key
 /.vscode
 export_csv_instructions.txt
-get-unused-routes.rb
+get-unused-routes.rb.env
+.env

@@ -46,7 +46,6 @@ Rails.application.routes.draw do
 
   resources :surveys, only: :index
   get 'series/index'
-  get 'pages/rector', as: 'rector'
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'
@@ -54,7 +53,6 @@ Rails.application.routes.draw do
   get 'pages/how_to_pray'
   get 'pages/haitian'
   get 'pages/history', as: :history
-  get 'pages/profileSlides'
   get 'pages/tumaini'
   get 'pages/trivia'
   get 'pages/grace_works'
@@ -66,15 +64,8 @@ Rails.application.routes.draw do
   get 'pages/long_range'
   get 'pages/python_tutor'
   get 'pages/how_to_use'
-  get 'pages/ecumenical_concert'
-  get 'pages/advent'
-  get 'pages/jubilee'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
-
-  # get ':id' => 'users#show', as: :user_profile
-  # get ':id/setting' => 'users#edit', as: :user_setting
-  # match ':id/setting' => 'profiles#update', via: [:put, :patch]
 
   resources :worship, only: :index
 

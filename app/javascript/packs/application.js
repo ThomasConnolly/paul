@@ -10,18 +10,18 @@ require("turbolinks").start()
 //require("channels")
 require("trix")
 require("@rails/actiontext")
-require("jquery")
-require("bootstrap/dist/js/bootstrap")
 
+import "bootstrap"
+import "../stylesheets/application"
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");
-//import "./custom.js";
 
-// document.addEventListener("turbolinks:load", () => {
-$('#myModal').modal()
-//   $('[data-toggle="tooltip"]').tooltip()
-//   $('[data-toggle="popover"]').popover()
-  // })
+document.addEventListener("turbolinks:load", () => {
+  
+  // $('[data-toggle="tooltip"]').tooltip()
+  // $('[data-toggle="popover"]').popover()
+  // $('#myModal').modal()
+})
 
 document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']"

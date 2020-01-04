@@ -50,12 +50,13 @@ class User < ApplicationRecord
   has_many :books
   has_many :definitions
   has_many :story_ideas, dependent: :destroy
-  has_one :pledge, dependent: :destroy
-  has_many :vreports, dependent: :destroy
+  has_many :vreports
   validates :first_name, presence: true
   validates :last_name, presence: true
   # has_attachment :avatar, accept: [:png, :jpg, :gif]
-  has_one :albergue_donation, dependent: :destroy
+  has_one :pledge, dependent: :destroy
+  has_many :donations
+  
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
@@ -94,11 +95,11 @@ class User < ApplicationRecord
 
   # This code is for retrieving Stripe.customer for current_user
   def stripe_customer
-    if stripe_customer_id? && stripe_pledge? || stripe_customer_id? && albergue_sponsor?
-      Stripe::Customer.retrieve(stripe_customer_id)
+    if stripe_id? && stripe_pledge? || stripe_id? && albergue_sponsor?
+      Stripe::Customer.retrieve(stripe_id)
     else
       stripe_customer = Stripe::Customer.create(email: email)
-      update(stripe_customer_id: stripe_customer.id)
+      update(stripe_id: stripe_customer.id)
       stripe_customer
     end
   end

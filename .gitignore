@@ -18,6 +18,7 @@
 # Ignore application configuration
 /storage/*
 !/storage/.keep
+/Member2020.csv
 
 /config/application.yml
 /config/facebook.yml

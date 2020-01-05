@@ -21,7 +21,7 @@
     "postcss-custom-properties": "^9.0.2",
     "postcss-preset-env": "^6.7.0",
     "serialize-javascript": "^2.1.2",
-    "snyk": "^1.260.0",
+    "snyk": "^1.272.0",
     "trix": "1.2.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.41.2",

@@ -20,7 +20,7 @@ document.addEventListener("turbolinks:load", () => {
   
   // $('[data-toggle="tooltip"]').tooltip()
   // $('[data-toggle="popover"]').popover()
-  // $('#myModal').modal()
+  $('#myModal').modal()
 })
 
 document.addEventListener("turbolinks:load", () => {

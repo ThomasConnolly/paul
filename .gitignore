@@ -27,7 +27,7 @@
 /28b349566a223dfb439a337aea29713e
 Procfile.dev
 
-/puma.old
+/config/puma.old1
 /*.old
 
 /public/packs

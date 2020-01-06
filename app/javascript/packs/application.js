@@ -11,12 +11,13 @@ require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")
 
+
 import "bootstrap"
 import "../stylesheets/application"
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");
 
-document.addEventListener("turbolinks:load", () => {
+$(document).on("turbolinks:load", () => {
   
   // $('[data-toggle="tooltip"]').tooltip()
   // $('[data-toggle="popover"]').popover()

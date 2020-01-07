@@ -408,3 +408,8 @@ trix-editor .attachment__metadata {
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+/* line 38, app/assets/stylesheets/actiontext.scss */
+trix-editor.form_control {
+  height: auto;
+}

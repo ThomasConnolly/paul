@@ -17,11 +17,11 @@
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3.10.1"
-  },
-  "engines": {
-    "node": "13.5.0"
-  }
+    "version": "0.1.0",
+    "devDependencies": {
+      "webpack-dev-server": "^3.10.1"
+    },
+    "engines": {
+      "node": "13.5.0"
+    }
 }

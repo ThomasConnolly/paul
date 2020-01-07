@@ -35,7 +35,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm rebuild node-sass",
-     "test": "snyk test"
+    "postinstall": "npm rebuild node-sass"
   }
 }

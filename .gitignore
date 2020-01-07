@@ -26,7 +26,7 @@
 /config/cloudinary.yml
 /28b349566a223dfb439a337aea29713e
 Procfile.dev
-
+/app/views/home/newindex.html.erb
 /config/puma.old1
 /*.old
 

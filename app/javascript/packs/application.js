@@ -13,7 +13,7 @@ require("@rails/actiontext")
 
 
 import "bootstrap"
-import "../stylesheets/style"
+import "../stylesheets/application"
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");
 

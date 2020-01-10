@@ -103,7 +103,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_scope :user do
-    get 'register', to: 'devise/registrations#new', as: :register
+    get 'register', to: 'devise/registrations#new', as: :sign_up
     get 'login', to: 'devise/sessions#new', as: :login
     get 'signout', to: 'devise/sessions#destroy', as: :logout
   end

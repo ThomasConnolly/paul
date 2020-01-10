@@ -53,6 +53,7 @@ class User < ApplicationRecord
   has_many :vreports
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates_confirmation_of :password
   # has_attachment :avatar, accept: [:png, :jpg, :gif]
   has_one :pledge, dependent: :destroy
   has_many :donations
@@ -66,7 +67,7 @@ class User < ApplicationRecord
   # Others available are:
   #:lockable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,
+         :recoverable, :rememberable, :trackable, 
          authentication_keys: [:login]
 
   def self.assign_from_row(row)

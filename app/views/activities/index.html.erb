@@ -3,9 +3,6 @@
 <div class="col-lg-8 offset-md-2">
 <h1>Upcoming activities at St. Paul's</h1>
 
-<h2>Men's Group</h2>
-<p> Friday fellowship  meetings of the men of the parish will resume on Wednesday, Dec. 5, at noon. (New day and time!) This informal group welcomes all men of St. Paul's to break bread (bring your lunch) and share some good conversations guided by Fr. Tom. Suggestions for future programs are welcome.   It is a cordial group that would like to include you!</p>
-<br>
 <h2>Episcopal Church Women</h2>
 <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/ecwLogo.jpg", class: "floatright", width: "150") %>
 <p>ECW includes all women of the church, and supports and organizes many activities that enhance the social and spiritual lives of everyone in the community. ECW meets on the first Wednesday of October through May, at 9:30 a.m. </p><p>ECW is responsible for our wonderful Gift Shop, run by Susan Larson and her volunteers; and the Unique Boutique, run by Marion Kennedy and volunteers.
@@ -22,7 +19,11 @@
 
 <p><em><b>AA meets at St Paul's </b></em>Mondays 7 p.m., Trinity Hall.</p>
 
-<p><em><b>Line Dancing Classes</b></em> are offered Tuesdays at 10 a.m. in Trinity Hall. For information call Deana, 239-353-1760. Classes will resume in the Fall.</p>
+<%
+=begin%>
+ <p><em><b>Line Dancing Classes</b></em> are offered Tuesdays at 10 a.m. in Trinity Hall. For information call Deana, 239-353-1760. Classes will resume in the Fall.</p> 
+<%
+=end%>
 
 
 <p><em><b>Episcopal Church Women Crafters</b></em> Thursdays 9:30 a.m., no crafting experience required, Serson Hall.</p>
@@ -30,15 +31,23 @@
 <p><em><b>AA Young Adults</b></em> meet Wednesdays at 6:30 p.m. in Trinity Hall.
 
 <p><em><b>God's Gardeners</b></em>  Thursdays approximately 7:30 a.m. to noon. Group works on the church grounds and facilities inside and out, men and women welcome, meet in the church parking lot.</p>
-
+<%
+=begin%>
+ 
 <p><em><b>Yoga*</b></em> Mondays and Fridays at 9 a.m. in Trinity Hall. Will resume in November 2018.  </p>
 
 <p><em><b>Tai Chi Exercise*</b></em>: Fridays at 10:30 a.m. for beginners.</p>
 <p><em><b>Yang Style Tai Chi Form*</b></em>: Fridays at 11:15 a.m.</p>
-<p>* There is a small fee for yoga and tai chi. Contact Ann for more information at 682-4575 or by email: yoganni@yahoo.com</p>
+<p>* There is a small fee for yoga and tai chi. Contact Ann for more information at 682-4575 or by email: yoganni@yahoo.com</p> 
+<%
+=end%>
 
 <p><em><b>A Women's Way Through the Twelve Steps</b></em> Fridays 5:30 p.m., freewill offering, Trinity Hall (For information please call Carol at 775-5929 or Barbara at 398-3936.)</p>
-<p>*<strong> Seasonal activities, will resume in the fall of 2018.</strong></p>
+<%
+=begin%>
+ <p>*<strong> Seasonal activities, will resume in the fall of 2018.</strong></p> 
+<%
+=end%>
 
 <h2><%= link_to "For Spiritual Activities, click here", worship_index_path %></h2>
 

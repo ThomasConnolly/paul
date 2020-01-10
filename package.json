@@ -8,20 +8,20 @@
     "@rails/ujs": "^6.0.2-1",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
-    "data-confirm-modal": "^1.6.2",
     "expose-loader": "^0.7.5",
     "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
     "local-time": "^2.1.0",
+    "node-sass": "^4.13.0",
     "popper.js": "^1.16.0",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
-    "version": "0.1.0",
-    "devDependencies": {
-      "webpack-dev-server": "^3.10.1"
-    },
-    "engines": {
-      "node": "10.16.3"
-    }
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.1"
+  },
+  "engines": {
+    "node": "13.6.0"
+  }
 }

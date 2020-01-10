@@ -14,8 +14,8 @@ require("@rails/actiontext")
 
 import "bootstrap"
 import "../stylesheets/application"
-import flatpickr from "flatpickr";
-require("flatpickr/dist/flatpickr.css");
+import flatpickr from "flatpickr"
+require("flatpickr/dist/flatpickr.css")
 
 $(document).on("turbolinks:load", () => {
   

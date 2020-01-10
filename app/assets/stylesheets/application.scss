@@ -12,21 +12,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *= require actiontext
- *= require rails_bootstrap_forms
- *= require bootstrap/scss/bootstrap
  *= require_tree .
  *= require_self
  */
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
-@import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "bootstrap";
 @import "devise_bootstrap_form";
+@import "rails_bootstrap_forms";
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 html {font-size: 100%}
  body {

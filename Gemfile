@@ -4,12 +4,12 @@ source 'https://rubygems.org'
 ruby '2.6.5'
 
 gem 'autoprefixer-rails'
-#gem 'bootstrap', '>= 4.3.1'
+gem 'bootstrap', '>= 4.3.1'
 gem 'bootstrap_form'
-gem 'coffee-rails' # used by sprockets to minify
 gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'font-awesome-rails'
+gem 'coffee-rails' # used by sprockets to minify
 # gem 'mini_racer'
 gem 'pg'
 gem 'rack', '2.0.8'

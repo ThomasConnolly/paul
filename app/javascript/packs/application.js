@@ -1,5 +1,3 @@
-import "core-js/stable"
-import "regeneragor-runtime/runtime"
 import Rails from '@rails/ujs'
 Rails.start();
 require("turbolinks").start()

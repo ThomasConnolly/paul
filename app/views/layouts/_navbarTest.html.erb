@@ -12,7 +12,7 @@
         <%= link_to " | Update profile",
           edit_profile_path(current_user.profile), class: "text-white"  %>
       <% else %>
-        <%= link_to "Sign in or register", new_user_session_path, class:
+        <%#= link_to "Sign in or register", new_user_session_path, class:
           "text-white"  %>
       <% end %>
     </div><!-- login -->

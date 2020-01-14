@@ -1,8 +1,9 @@
 
 <%= bootstrap_form_for @vreport do |f| %>
 <div class="form-group">
-  <%= f.input :title, autofocus:true %><br>
-  <%= f.input :body, as: :trix_editor %>
+  <%= f.text_field :title, autofocus:true %><br>
+  <%= f.rich_text_area: :content %>
+  <%= f.text_field :body %>
  </div>
   <div class="submit-post">
    <%= f.button :submit, class: "btn btn-primary" %> &nbsp;

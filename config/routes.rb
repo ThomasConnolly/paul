@@ -7,6 +7,27 @@ Rails.application.routes.draw do
 
   #resources :donations
 
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+  
+  devise_scope :users do
+    get 'sign_in', to: 'users/sessions#new'
+    get 'sign_up', to: 'users/registrations#new'
+    #get 'sign_out', to: 'users/sessions#destroy'
+    get 'forgot_password', to: 'users/passwords#new'
+    get 'reset_password', to: 'users/passwords#edit'
+  end
+
+  resources :users
+
+  resources :users do
+    collection do
+      post :import
+    end
+  end
+
   resource :stripe_plans, only: %i[new create]
 
   #resources :albergue_donations
@@ -101,13 +122,6 @@ Rails.application.routes.draw do
 
   resources :formation_talks
 
-  devise_for :users
-  devise_scope :user do
-    get 'register', to: 'devise/registrations#new', as: :sign_up
-    get 'login', to: 'devise/sessions#new', as: :login
-    get 'signout', to: 'devise/sessions#destroy', as: :logout
-  end
-
   resource :pledge
   resources :pledges
 
@@ -119,13 +133,6 @@ Rails.application.routes.draw do
 
   resources :charges, only: %i[new create]
 
-  resources :members
-
-  resources :users do
-    collection do
-      post :import
-    end
-  end
 
   resources :comments
 
@@ -143,19 +150,8 @@ Rails.application.routes.draw do
   end
   resources :story_ideas
 
-
   resources :story_ideas do
     resources :comments, module: :story_ideas
-  end
-  resources :jubilee_plans
-
-  resources :jubilee_plans do
-    resources :comments, module: :jubilee_plans
-  end
-  resources :candidates
-
-  resources :candidates do
-    resources :comments, module: :candidates
   end
 
   resources :syllabuses do
@@ -178,7 +174,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :views
+
 
   # mount Attachinary::Engine => '/attachinary'
 end

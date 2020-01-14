@@ -1,5 +1,5 @@
-import Rails from '@rails/ujs'
-Rails.start();
+require("@rails/ujs").start()
+global.Rails = Rails;
 require("turbolinks").start()
 //require("@rails/activestorage").start()
 //require("channels")
@@ -7,9 +7,7 @@ require("trix")
 require("@rails/actiontext")
 
 import "css/application"
-import 'jquery'
-import('src/plugins')
-
+import "bootstrap/dist/js/bootstrap"
 import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 

@@ -19,4 +19,5 @@ class Vreport < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   validates :title, presence: true
   default_scope -> { order('created_at DESC') }
+  has_rich_text :content
 end

@@ -82,7 +82,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :role,
                                  :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month,
-                                 :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id)
+                                 :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id, :id)
   end
 
   def admin_only

@@ -63,6 +63,10 @@ class User < ApplicationRecord
 
   attr_accessor :login
 
+  def login
+    @login || self.username || self.email
+  end
+
   # Include default devise modules
   # Others available are:
   #:lockable, :confirmable, :timeoutable and :omniauthable

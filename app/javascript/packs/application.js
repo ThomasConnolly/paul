@@ -6,9 +6,9 @@ require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")
 
-import "css/application"
-import "bootstrap/dist/js/bootstrap"
-import flatpickr from "flatpickr"
+import "css/application";
+import "bootstrap/dist/js/bootstrap";
+import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css")
 
 $(document).on("turbolinks:load", () => {

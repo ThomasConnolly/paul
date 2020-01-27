@@ -30,7 +30,6 @@ Procfile.dev
 /config/puma.old1
 /*.old
 
-/public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log
@@ -43,10 +42,3 @@ Procfile.dev
 export_csv_instructions.txt
 get-unused-routes.rb.env
 .env
-
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity

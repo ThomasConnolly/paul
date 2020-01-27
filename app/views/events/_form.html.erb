@@ -5,11 +5,11 @@
    <%= f.alert_message "Please fix the errors below." %>
 
     <div class="form-group form-inputs">
-      <%= f.input :title %>
-      <%= f.input :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
+      <%= f.text_field :title %>
+      <%= f.text_field :price, label: "Price in pennies per ticket. $21.00 would be input as 2100" %>
       <%= f.date_field :date, data: { behavior: "flatpickr" } %>
-      <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m." %>
-      <%= f.input :url, label: "Add a picture for this event" %>
+      <%= f.text_field :time, placeholder: "Time of event, eg., 7:30 p.m." %>
+      <%= f.url_field :url, label: "Add a picture for this event" %>
     </div>
 
     <div class="form-actions">

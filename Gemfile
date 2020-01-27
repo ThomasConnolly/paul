@@ -4,15 +4,14 @@ source 'https://rubygems.org'
 ruby '2.6.5'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap', '>= 4.3.1'
+#gem 'bootstrap', '>= 4.3.1'
 gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'coffee-rails' # used by sprockets to minify
-# gem 'mini_racer'
 gem 'pg'
-gem 'rack', '2.0.8'
+gem 'rack'
 gem 'rails', '6.0.2'
 gem 'railties'
 gem 'sassc-rails' # used by sprockets to minify
@@ -26,20 +25,16 @@ gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
-#gem 'bootstrap-will_paginate'
 gem 'cloudinary'
 gem 'figaro'
 gem 'googlebooks'
 gem 'httparty'
-#gem 'jquery-fileupload-rails'
+gem 'jbuilder'
 gem 'mail'
-gem 'mini_magick'
 gem 'image_processing'
-# gem 'momentjs-rails'
 gem 'loofah', '~> 2.3', '>= 2.3.1'
 gem 'nokogiri', '>= 1.10.4'
-#gem 'openlibrary'
-#gem 'popper_js'
+# gem 'popper_js'
 gem 'premailer-rails'
 gem 'pry'
 gem 'pry-awesome_print'
@@ -51,10 +46,11 @@ gem 'rolify'
 gem 'rspec-rails'
 gem 'stripe', '~> 5.10'
 gem 'stripe_event'
-#gem 'rb-readline', '~> 0.5.5'
 gem 'irb', require: false
 gem 'webpacker'
 gem 'rails_12factor'
+gem 'scout_apm'
+gem 'rollbar'
 
 group :development do
   gem 'annotate'
@@ -78,9 +74,10 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'shoulda-matchers'
+  gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
-  gem 'listen'
+ 
 end
 
 group :test do

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class MembersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_member
+  # before_action :authenticate_user!
+  #before_action :set_member
 
   def index
     @members = Member.all.order(:last_name)

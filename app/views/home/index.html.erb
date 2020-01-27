@@ -22,10 +22,6 @@
   <p><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
 <div class="mt30"></div>
-
-
-
-  <div class="mt30"></div>
   <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
     Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
   <%= link_to "Click here.", pages_directions_path %></p>
@@ -51,11 +47,9 @@ the services, studying and discussing the Gospel of Matthew. For the Wednesday s
       <div class="mt30"></div>
   <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "40%", class: "floatleft") %>
     <h2>Stewardship</h2>
-  <p>Stewardship at St. Paul's involves investing the three Ts with God. The three
-    Ts are time, talent and treasure. Investing with God is a year-round
-    stewardship. There are many ministries at St. Paul's that could use your
+  <p>Stewardship at St. Paul's involves investing the three Ts with God. The three Ts are time, talent and treasure. Investing with God is a year-round  stewardship. There are many ministries at St. Paul's that could use your
     time and talent. As to treasure, a pledge is your statement of intent to share for the mission of the church.
-    </p><div class="mt30"></div> 
+  </p><div class="mt30"></div> 
     <%
 =begin%>
 #   To learn about making payments with a credit or
@@ -133,18 +127,7 @@ Click the logo at left to learn more and make a donation.</p>
   <h3>Click calendar to see our activities</h3>
 
 
-<%
-=begin%>
- <script>
-  console.time('For Loop')
-    for(var i = 0; i < 2000; i++){
-      console.log(i);
-    }>)
-</script> 
-<%
-=end%>
-
- <%#= render 'my_modal' %> 
+ <%= render "my_modal" %> 
 
 
     <div class="mt30"></div>

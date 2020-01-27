@@ -12,7 +12,7 @@
         <%= link_to " | Update profile",
           edit_profile_path(current_user.profile), class: "text-white"  %>
       <% else %>
-        <%#= link_to "Sign in or register", new_user_session_path, class:
+        <%= link_to "Sign in or register", new_user_session_path, class:
           "text-white"  %>
       <% end %>
     </div><!-- login -->
@@ -55,12 +55,12 @@
             <!-- <%#= link_to "On-line giving", new_pledge_path, {class: "dropdown-item"} %> <br> -->
             
           <%# if current_user && current_user.has_role?(:vestry) or if current_user && current_user.has_role?(:admin) %>
-            <%#= link_to "Vestry Report", vreports_path, class: "dropdown-item" %><br>
+            <%#= link_to "Vestry Report", vreports_path, class: "dropdown-item" %>
           <%# end %><%# end %> 
             <%#= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf", class: "dropdown-item" %><br>
           <%# if user_signed_in? %>
-            <%#= link_to "Parishioner profiles", profiles_path, class: "dropdown-item" %><br>
-            <%#= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", class: "dropdown-item" %> <br>
+            <%#= link_to "Parishioner profiles", profiles_path, class: "dropdown-item" %>
+            <%#= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", class: "dropdown-item" %> 
           <%# end %>
             <%= link_to "Our history", history_path, class: "dropdown-item" %>
          </div>
@@ -72,10 +72,10 @@
           <span class="caret"></span></a>
     
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to "Activities", activities_index_path, class: "dropdown-item" %><br>
-            <%#= link_to "We support these children", pages_albergue_path, class: "dropdown-item" %><br>
-            <%#= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %><br>
-            <%= link_to "Opportunities to serve", opportunities_path, class: "dropdown-item" %><br>
+            <%= link_to "Activities", activities_index_path, class: "dropdown-item" %>
+            <%#= link_to "We support these children", pages_albergue_path, class: "dropdown-item" %>
+            <%#= link_to "Communicators' corner", story_ideas_path, class: "dropdown-item" %>
+            <%= link_to "Opportunities to serve", opportunities_path, class: "dropdown-item" %>
             <%#= link_to "Family Ties", posts_path, class: "dropdown-item" %><br>
         </div>
       </li>

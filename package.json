@@ -2,25 +2,25 @@
   "name": "paul",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.0.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.0.2",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.2-1",
+    "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
-    "env-paths": "^2.2.0",
+    "browserlist": "^1.0.1",
+    "core-js": "3",
+    "data-confirm-modal": "^1.6.2",
     "expose-loader": "^0.7.5",
-    "flatpickr": "^4.6.3",
+    "jqeury": "^0.0.1-security",
     "jquery": "^3.4.1",
+    "liquid-fire": "^0.31.0",
     "local-time": "^2.1.0",
-    "node-sass": "^4.13.0",
-    "nopt": "^4.0.1",
-    "npm": "^6.13.6",
-    "popper.js": "^1.16.0",
-    "sass-node": "^4.11.2",
-    "semver": "^7.1.1",
+    "popper.js": "^1.16.1",
     "trix": "^1.0.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.41.5"
   },
   "version": "0.1.0",
   "devDependencies": {
@@ -28,7 +28,7 @@
   },
   "engines": {
     "npm": "6.13.4",
-    "node": "10.18.1",
+    "node": "13.6.0",
     "yarn": "1.21.1"
   }
 }

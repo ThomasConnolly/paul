@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 offset-md-2">
 
 
 <p id="notice"><%= notice %></p>
+<h2>Vestry meeting of 
+            <%= @vestry_minute.date.strftime("%B %d, %Y") %> </h2>
 
   <% if @vestry_minute.minutes.present? %>
     <%= sanitize @vestry_minute.minutes %>

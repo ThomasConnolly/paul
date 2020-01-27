@@ -1,25 +1,20 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # mount StripeEvent::Engine, at '/stripe/event'
 
-  post '/stripe/event', to: 'webhooks#event'
 
-  #resources :donations
-
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
-  
-  devise_scope :users do
-    get 'sign_in', to: 'users/sessions#new'
-    get 'sign_up', to: 'users/registrations#new'
-    #get 'sign_out', to: 'users/sessions#destroy'
-    get 'forgot_password', to: 'users/passwords#new'
-    get 'reset_password', to: 'users/passwords#edit'
-  end
-
+  devise_for :users, 
+    path: '',
+    path_names: {
+      sign_in: 'sign_in',
+      sign_out: 'logout',
+      password: 'secret',
+      registration: 'register',
+      sign_up: 'signup'
+    }
+    
+   root to: 'home#index' 
+    
   resources :users
 
   resources :users do
@@ -29,7 +24,11 @@ Rails.application.routes.draw do
   end
 
   resource :stripe_plans, only: %i[new create]
+  # mount StripeEvent::Engine, at '/stripe/event'
 
+  post '/stripe/event', to: 'webhooks#event'
+
+  #resources :donations
   #resources :albergue_donations
 
   #resources :albergue_subscriptons
@@ -46,7 +45,6 @@ Rails.application.routes.draw do
 
   resources :works
 
-  root 'home#index'
   get 'home/invitation'
   get 'members/index'
   get 'members/import'

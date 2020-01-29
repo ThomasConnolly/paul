@@ -99,6 +99,10 @@ GEM
       activesupport
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.4.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     bootstrap_form (4.3.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -272,6 +276,7 @@ GEM
     parser (2.7.0.2)
       ast (~> 2.4.0)
     pg (1.2.2)
+    popper_js (1.16.0)
     premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)
@@ -487,6 +492,7 @@ DEPENDENCIES
   binding_of_caller
   birthday
   bootsnap
+  bootstrap (>= 4.3.1)
   bootstrap_form
   byebug
   capistrano
@@ -542,7 +548,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   sprockets-rails
-  stripe (~> 5.10)
+  stripe
   stripe_event
   turbolinks
   uglifier

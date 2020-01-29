@@ -70,6 +70,7 @@ Rails.application.routes.draw do
   get 'leadership/index'
   get 'sunday_school/index'
   get 'pages/how_to_pray'
+  get 'pages/annual_report'
   get 'pages/haitian'
   get 'pages/history', as: :history
   get 'pages/tumaini'

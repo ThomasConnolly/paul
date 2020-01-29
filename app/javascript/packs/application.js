@@ -23,6 +23,7 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 
-const webpacker = ("Hello Webpacker")
-console.log(webpacker);
+document.addEventListener("turbolinks:load", () => {
+  $('#myModal').modal('show')
+})
 

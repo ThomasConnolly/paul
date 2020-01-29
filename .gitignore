@@ -20,6 +20,7 @@
 !/storage/.keep
 /Member2020.csv
 /server.pass.key.bak
+/config/initializers/devise.bak
 /config/application.yml
 /config/facebook.yml
 /config/dropbox.yml

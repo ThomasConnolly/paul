@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
   def test; end
 
-  def navbarTest; end
+  def annnual_report; end
 
   def parish_profile; end
 

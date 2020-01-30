@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <%= cl_image_tag ("BillyDawnWeb_wd4get"), size: "70%", class: "image-center" %>
+    <%= cl_image_tag("20B24-Concert_Poster_grmyya.jpg", size: "450px", class: "image-center") %>
       <p>Ticket price: <%= number_to_currency @event.price*0.01 %> </p>
       <p>Event date: <%= @event.date.strftime('%A, %B %e, %Y') %>, time: <%= @event.time %></p>
       <p><strong><%= link_to "Get tickets!", new_event_ticket_path(@event) %></strong></p>

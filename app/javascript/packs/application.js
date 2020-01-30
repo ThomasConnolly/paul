@@ -7,14 +7,13 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")
-// require("@rails/activestorage").start()
-// require("channels")
+//require("@rails/activestorage").start()
+//require("channels")
 // require("local-time").start()
 
 window.Rails = Rails
 
-// import 'bootstrap/dist/js/bootstrap'
-import 'bootstrap'
+import 'bootstrap/dist/js/bootstrap'
 import "src/application"
 
 document.addEventListener("turbolinks:load", () => {

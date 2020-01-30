@@ -52,7 +52,7 @@ class EventsController < ApplicationController
   private
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.last
   end
 
   def admin_only

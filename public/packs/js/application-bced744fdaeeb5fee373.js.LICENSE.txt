@@ -1,4 +1,21 @@
 /*!
+   * Sizzle CSS Selector Engine v2.3.4
+   * https://sizzlejs.com/
+   *
+   * Copyright JS Foundation and other contributors
+   * Released under the MIT license
+   * https://js.foundation/
+   *
+   * Date: 2019-04-08
+   */
+
+/*!
+  * Bootstrap v4.4.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+
+/*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
  *
@@ -12,16 +29,15 @@
  * Date: 2019-05-01T21:04Z
  */
 
-/*!
-   * Sizzle CSS Selector Engine v2.3.4
-   * https://sizzlejs.com/
-   *
-   * Copyright JS Foundation and other contributors
-   * Released under the MIT license
-   * https://js.foundation/
-   *
-   * Date: 2019-04-08
-   */
+/**
+  * @license
+  * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+  * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+  * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+  * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+  * Code distributed by Google as part of the polymer project is also
+  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+  */
 
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
@@ -47,19 +63,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-/**
-  * @license
-  * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-  * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-  * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-  * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-  * Code distributed by Google as part of the polymer project is also
-  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-  */
-
-/*!
-  * Bootstrap v4.4.1 (https://getbootstrap.com/)
-  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */

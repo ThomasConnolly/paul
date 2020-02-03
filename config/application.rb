@@ -12,6 +12,7 @@ module Paul
     config.load_defaults 6.0
 
     config.beginning_of_week = :sunday
+    config.active_record.default_timezone = :local
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

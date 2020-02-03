@@ -9,7 +9,6 @@ require("trix")
 require("@rails/actiontext")
 //require("@rails/activestorage").start()
 //require("channels")
-require("local-time").start()
 
 window.Rails = Rails
 

@@ -8,7 +8,7 @@ gem 'bootstrap', '>= 4.3.1'
 gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'
-gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'pg'
 gem 'rack'

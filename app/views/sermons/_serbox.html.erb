@@ -3,6 +3,6 @@
     <h2>Sunday Sermon</h2>
     <p><strong> <%= @sermon.homilist.name %><br> 
     <em><%= @sermon.homilist.title %></em></strong></p>
-    <p><%= @sermon.delivered_on.strftime("%B %d, %Y") %> </p>
+    <p><small><%= @sermon.delivered_on.strftime("%b %-d, %Y") %> </small></p>
 </div>
   

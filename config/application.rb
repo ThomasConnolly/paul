@@ -1,5 +1,4 @@
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -12,7 +11,7 @@ module Paul
     config.load_defaults 6.0
 
     config.beginning_of_week = :sunday
-    config.active_record.default_timezone = :local
+    config.time_zone = "Eastern Time (US & Canada)"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

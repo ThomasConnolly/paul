@@ -1,10 +1,10 @@
 <%= bootstrap_form_for @opportunity do |f| %>
-<%= f.input :ministry %>
-<%= f.input :who %>
-<%= f.input :what %>
-<%= f.input :when %>
-<%= f.input :where %>
-<%= f.input :user_id, collection: User.all.order(:last_name), label_method: :username %>
+<%= f.text_field :ministry %>
+<%= f.text_field :who %>
+<%= f.text_field :what %>
+<%= f.text_field :when %>
+<%= f.text_field :where %>
+<%= f.text_field :user_id, collection: User.all.order(:last_name), label: :username %>
 <%= f.button :submit %>
 <% end %>
 <%= link_to "<< Back", opportunities_path %>

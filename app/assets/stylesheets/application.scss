@@ -174,16 +174,24 @@ font-family : Times, Serif;
 margin-top : 1rem;
 }
 p {
-    font-size : 1.3rem;
-    line-height: 1.62;
-    margin-bottom: 15px;
+    text-indent: 1em;
+    font-size : 1.4rem;
+    line-height: 1.75;
+    margin-bottom: 24;
+}
+p.list{
+  text-indent: 0;
 }
 p.tiny {
   font-size: .75rem;
   line-height: 1.1;
   margin-top: -5px;
 }
-
+p.teaser{
+  font-size: 1rem;
+  line-height: 1;
+  padding-right: 10px;
+}
 .sidebar p{
   font-size: 1.2rem;
   line-height: 1.5;
@@ -278,10 +286,21 @@ p.tiny {
   overflow-y: auto !important; 
 }
 
+.flex-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-center-image{
+  display: flex;
+  justfy-content: space-around;
+}
 .sermon {
   font-size: 1.5rem;
   line-height: 1.62;
   font-family: Times, serif;
+  padding-bottom: 24pt;
+
 }
 .sermon-box {
     float:right;

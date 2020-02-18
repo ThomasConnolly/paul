@@ -62,6 +62,8 @@ group :development do
   gem 'solargraph'
   gem 'web-console'
   gem 'derailed'
+  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 1.0'  
 end
 
 group :development, :test do
@@ -69,7 +71,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'guard'
   gem 'guard-livereload'
-  gem 'letter_opener'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-stack_explorer'

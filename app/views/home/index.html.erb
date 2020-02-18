@@ -1,24 +1,35 @@
-<div class="row">
+<div class="flex-container">
+  <div>
+  <h2>Way of Love</h2>
+    <p class="teaser">Use this lent (Ash Wednesday is Feb. 26) to draw closer to God and live a Jesus-centered life. Join the Rev. Dr. Mary Abrams, our deacon, on either Wednesdays at 6 p.m. beginning Feb. 19 or Sundays between the services. Get acquainted with the material by watching the video at right, featuring the Most Rev. Michael Curry, presiding bishop of the Episcopal Church. All are welcome!</p>
+  </div>
 
-  <div class="col-md-8 col-sm-12 main-body">
- <h1>Come worship with us!</h1>
+  <div>
+    <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/jroyof2vje" width="400" height="225"></iframe>
+  </div>
   
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", 
-    width:"290", class: "floatleft") %>
+  <div class="mt-30">
+    <%= link_to cl_image_tag("Way_of_Love_Primary_Graphic_kllhuk.jpg", :width=>250, :crop=>"scale"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/c_scale,w_1221/v1582034015/Way_of_Love_Primary_Graphic_kllhuk.jpg" %>
+  </div>
+</div> <!-- flex-container -->
+<div class="container">
+  <div class=row>
+    <div class="col-md-8 col-sm-12 main-body">
+     <h1>Come worship with us!</h1>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
 
 <h2>Sundays</h2>
-    <p><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
-    <p><strong>9 a.m. </strong> Learn about Matthew's gospel<br>
-    <small>Fr. Tom leads discussion, Serson Hall library. Also available Wednesdays at 6:30 p.m.</small></p> 
-    <p><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
-    <p class="mt-20">
+    <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
+    <p class="list"><strong>9 a.m. </strong> Learn how to live in Jesus (see video, above), Serson Hall library. Also available Wednesdays at 6 p.m.</small></p> 
+    <p class="list"><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
+    <p class="mt-20 list">
       <small>Children's nursery/Sunday school available</small>
     </p>
-    <p> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
+    <p class="list"> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p> 
 
   <div class="mt30"></div>
-  <p><strong><%= link_to "Click here for Scripture Readings",
+  <p class="list"><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
 <div class="mt30"></div>
   <p><em><strong> Directions: </strong> </em> We are at 3901 Davis
@@ -145,3 +156,4 @@ Click the logo at left to learn more and make a donation.</p>
 </div>
 
 <div class="mt50"></div>
+</div>

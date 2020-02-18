@@ -26,3 +26,7 @@ document.addEventListener("turbolinks:load", () => {
   $('#myModal').modal('show')
 })
 
+//document.addEventListener("click", () => {
+//  $('#bcpModal').modal('show')
+//})
+

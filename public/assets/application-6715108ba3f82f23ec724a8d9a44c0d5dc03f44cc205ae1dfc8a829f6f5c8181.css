@@ -5523,7 +5523,7 @@ p.teaser {
 .flex-center-image {
   display: -webkit-box;
   display: flex;
-  justfy-content: space-around;
+  justify-content: space-around;
 }
 
 /* line 298, app/assets/stylesheets/application.scss */

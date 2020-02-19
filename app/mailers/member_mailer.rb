@@ -18,7 +18,14 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
-  
+
+  def Lenten(member)
+    @member = member
+    mail(
+      subject: "Deacon Mary's program is 6:30 p.m., not 6 p.m. Wednesday" 
+    )
+  end
+
   def Feb2020_pathway(member)
     @member = Member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1581604526/Feb2020Web_iyezxj.pdf"

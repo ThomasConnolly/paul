@@ -107,13 +107,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :letters
 
-  resources :letters do
-    collection do
-      post :import
-    end
-  end
 
   resources :sermons
 
@@ -174,6 +168,7 @@ Rails.application.routes.draw do
   end
 
 
-
-  # mount Attachinary::Engine => '/attachinary'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
+  # mount Attachinary::Engine => '/attachinary'
+#end

@@ -22,9 +22,9 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 
-document.addEventListener("turbolinks:load", () => {
-  $('#myModal').modal('show')
-})
+//document.addEventListener("turbolinks:load", () => {
+//  $('#myModal').modal('show')
+//})
 
 //document.addEventListener("click", () => {
 //  $('#bcpModal').modal('show')

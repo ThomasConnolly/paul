@@ -65,6 +65,7 @@ Rails.application.routes.draw do
 
   resources :surveys, only: :index
   get 'series/index'
+  get 'pages/way_of_love'
   get 'activities/index'
   get 'markets/index'
   get 'leadership/index'

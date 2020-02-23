@@ -1,19 +1,18 @@
-<div class="mt30"></div>
-<div class="col col-lg-12">
-<div class="header-row">
+<div class="row header-row">
+  <div class="main-logo">
+    <figure>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: "100%", alt: "logo", class: "center-image") %>
+      <figcaption class="text-center">
+    3901 Davis Blvd., a couple of blocks east of Airport Rd
+      </figcaption>
+    </figure>
+  </div><!-- main-logo -->
+  
   <div class="road-sign">
     <%= cl_image_tag("street-sign_emrjtx", width: '110px') %>
   </div>
-  <div class="main-logo">
-    <div class="figure">
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg", width: "100%", alt: "logo", class: "center-image") %>
-      <div class="figcaption text-center">
-    3901 Davis Blvd., a couple of blocks east of Airport Rd
-      </div>
-    </div>
-  </div><!-- main-logo -->
-  <div class="shield">
-    <p><strong><%= link_to "Need map?", pages_directions_url %></strong></p>
+  
+  <div class="map">
+    <p><strong><%= link_to "Map", pages_directions_url %></strong></p>
   </div>
 </div><!-- header-row -->
-</div><!-- column -->

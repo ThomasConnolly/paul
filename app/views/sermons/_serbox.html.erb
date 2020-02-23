@@ -1,8 +1,8 @@
 <div class="sermon-box">
   <%= image_tag(@sermon.homilist.photo, width: '150', :class => "floatleft") %>
     <h2>Sunday Sermon</h2>
-    <p><strong> <%= @sermon.homilist.name %><br> 
-    <em><%= @sermon.homilist.title %></em></strong></p>
+    <p class="ser-name"><strong> <%= @sermon.homilist.name %></strong></p> 
+    <p class="ser-title"><em><%= @sermon.homilist.title %></em></p>
     <p><small><%= @sermon.delivered_on.strftime("%b %-d, %Y") %> </small></p>
 </div>
   

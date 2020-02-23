@@ -61,9 +61,12 @@ a:hover {
 .sidebar {
   background-color: #eee;
   padding-right: .9rem;
-  margin-top : 1.25rem;
-  font-size: 1rem;
-  line-height: 1.62;
+  margin-top: 1.25rem;
+  height: 100%;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.62;
+    }
 }
 .grid-container {
   display: grid;
@@ -78,70 +81,70 @@ div.hidden {
   margin-right: 2000px;
   height: 15px;
 }
-@media (max-width: 500px) {
-  .nonmobile {
-  display: none;
-  }
-}
-@media (min-width: 501px) {
-  .mobile {
-  display: none;
-  }
-}
 
-@media (min-width: 768px) {
-  .header-row {
-    max-width: 1200px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-
-  }
-  .road-sign {
-    order:1;
-    flex-basis:1;
-  }
-  .main-logo {
-    order:2;
-    flex-basis: 4;
-  }
-  .shield {
-    order: 3;
-    flex-basis: 1;
- }
-}
-.second-line {
-  margin-top: -18px;
-}
-@media (max-width: 767px) {
-  .header-row {
-    margin: 20px auto 0 auto;
-    display: grid;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+.header-row {
+  margin-top: 50px;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
    .main-logo {
-      flex-basis: 5;
+      flex-basis: auto;
       order: 1;
     }
     .road-sign {
-      flex-basis: 1;
-      width: 70px;
       order: 2;
-    }
-    .shield {
       flex-basis: 1;
-      width: 70px;
+      width: 110px;
+    }
+    .map {
       order: 3;
-   }
-  /*.collapse {
-    display: none !important;
-  }*/
+      flex-basis: 1;
+      width: 110px;
+    }
+      @media (min-width: 768px) {
+        max-width: 1200px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+          .road-sign {
+            order:1;
+            flex-basis: 1;
+          }
+          .main-logo {
+            order:2;
+            flex-basis: auto;
+          }
+          .map {
+            order: 3;
+            flex-basis: 1;
+        }
+  }
+}
+.way-of-love {
+  display: flex;
+
+    .love-text{
+      width: 100%;
+    }
+    .iframe{ 
+      width: 100%;
+    }
+    .love-image{
+      width: 100%;
+  }
+}
+
+.second-line {
+  margin-top: -18px;
 }
 
 h1 {
@@ -154,6 +157,7 @@ margin-top : 1.25rem;
 h1.biggest {
   font-size: 6rem;
 }
+
 h2 {
 color : #5c004c;
 font-size : 2.5rem;
@@ -191,10 +195,6 @@ p.teaser{
   font-size: 1rem;
   line-height: 1;
   padding-right: 10px;
-}
-.sidebar p{
-  font-size: 1.2rem;
-  line-height: 1.5;
 }
 
 .poem {
@@ -305,15 +305,20 @@ p.teaser{
 .sermon-box {
     float:right;
     margin:15px;
-    height:225px;
+    height:210px;
     width:450px;
     padding:10px 10px 10px 10px;
     border:solid black;
     text-align:center;
-    font-family : Verdana, Helvetica, Arial, Sans-Serif;
-    font-size : 1.125rem;
-    line-height: 1.5;
+      .ser-name {
+        font-size: 1.125rem;
+        line-height: 1;
+      }
+      .ser-title {
+        margin-top: -12px;
+      }
 }
+
 .sermon-picture {
   float:left;
   margin:10px;

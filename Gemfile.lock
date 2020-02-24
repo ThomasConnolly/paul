@@ -527,6 +527,7 @@ DEPENDENCIES
   meta_request
   nokogiri (>= 1.10.4)
   pg
+  popper_js
   premailer-rails
   pry
   pry-awesome_print

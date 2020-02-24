@@ -14,7 +14,7 @@ require("@rails/actiontext")
 window.Rails = Rails
 
 import 'bootstrap/dist/js/bootstrap';
-import "src/application";
+import "css/site"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()

@@ -3,18 +3,21 @@
   <div class=row>
     <div class="col-md-8 col-sm-12 main-body">
      <h1>Come worship with us!</h1>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
+      <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft") %>
+      
+      <%= cl_image_tag("184976_1893445062745_2385047_n_gpum6o.jpg", width:"200", class: "image-center") %>
 
+<h2> Ash Wednesday</h2>
+<p class="list">Imposition  of ashes and Holy Eucharist, noon and 5:30 p.m.</p>
 <h2>Sundays</h2>
     <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
-    <p class="list"><strong>9 a.m. </strong> Learn how to live in Jesus (see video, above), Serson Hall library. Also available Wednesdays at 6:30 p.m.</small></p> 
+    <p class="list"><strong>9 a.m. </strong> Learn how to live in Jesus <%= link_to "(see video here.)", pages_way_of_love_path %> Serson Hall library. Also available Wednesdays at 6:30 p.m.</p> 
     <p class="list"><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
-    <p class="mt-20 list">
+    <p class="mt-30 list">
       <small>Children's nursery/Sunday school available</small>
     </p>
     <p class="list"> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
     about our Haitian community', pages_haitian_path %></p> 
-    <p class="list"><strong>Ash Wednesday</strong> Imposition of ashes and Holy Eucharist at noon and 5:30 p.m.</p>
 
   <div class="mt30"></div>
   <p class="list"><strong><%= link_to "Click here for Scripture Readings",
@@ -102,7 +105,7 @@ Click the logo at left to learn more and make a donation.</p>
 
   <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center") %>
   <h2>Way of Love</h2>
-    <p>Use this lent (Ash Wednesday is Feb. 26) to draw closer to God and live a Jesus-centered life. Join the Rev. Dr. Mary Abrams, our deacon, on either Wednesdays at 6:30 p.m. or Sundays between the services. Get acquainted with the material by watching the video <%= link_to "here,", pages_way_of_love_path %> featuring the Most Rev. Michael Curry, presiding bishop of the Episcopal Church. All are welcome!
+    <p>Use this lent (Ash Wednesday is Feb. 26) to draw closer to God and live a Jesus-centered life. Join the Rev. Dr. Mary Abrams, our deacon, on  Wednesdays at 6:30 p.m. or Sundays between the services. Get acquainted with the material by watching the video <%= link_to "here,", pages_way_of_love_path %> featuring the Most Rev. Michael Curry, presiding bishop of the Episcopal Church. All are welcome!
   <p><strong> Annual Meeting reports</strong><br>
     <%= link_to "Reports from the rector and lay leaders available here.", pages_annual_report_path %> </p>
   <div class="mt30"></div>

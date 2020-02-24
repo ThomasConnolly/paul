@@ -2,7 +2,7 @@
 <p>Running count of <%= @event.title %> tickets sold: <%= @tickets.where.not("customer_id": nil).sum(:quantity) %>
 
 <% @tickets.each do |t| %>
-<% if t.customer_id.present? %>
-<p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, Tickets: <%= t.quantity %>, Purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
-<% end %>
+  <% if t.customer_id.present? %>
+    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, Tickets: <%= t.quantity %>, Purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
+  <% end %>
 <% end %>

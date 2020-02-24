@@ -10,15 +10,21 @@ require("trix")
 require("@rails/actiontext")
 //require("@rails/activestorage").start()
 //require("channels")
+require("css/site.scss")
 
 window.Rails = Rails
 
 import 'bootstrap/dist/js/bootstrap';
-import "css/site";
+import { strictEqual } from "assert";
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
+})
+
+document.addEventListener("turbolinks:load",() => {
+  flatpickr("[data-behavior='flatpickr']",
+  )
 })
 
 
@@ -26,7 +32,7 @@ document.addEventListener("turbolinks:load", () => {
 //  $('#myModal').modal('show')
 //})
 
-//document.addEventListener("click", () => {
-//  $('#bcpModal').modal('show')
-//})
+document.addEventListener("click", () => {
+  $('#bcpModal').modal('show')
+})
 

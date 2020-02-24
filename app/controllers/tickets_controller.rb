@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
 
   def index
     @tickets = if params[:event_id]
-                 Event.find(params[:event_id]).tickets
+                 Event.find(params[:event_id]).tickets.order(:last_name)
                else
                  Ticket.all
                end

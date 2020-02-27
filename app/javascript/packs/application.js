@@ -10,11 +10,11 @@ require("trix")
 require("@rails/actiontext")
 //require("@rails/activestorage").start()
 //require("channels")
-require("src/styles")
+require("src/application.scss")
 
 window.Rails = Rails
 
-import "bootstrap";
+import "bootstrap/dist/js/bootstrap";
 import { strictEqual } from "assert";
 
 document.addEventListener("turbolinks:load", () => {

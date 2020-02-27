@@ -10,7 +10,7 @@ require("trix")
 require("@rails/actiontext")
 //require("@rails/activestorage").start()
 //require("channels")
-require("css/site.scss")
+require("src/styles")
 
 window.Rails = Rails
 

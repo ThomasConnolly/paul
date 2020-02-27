@@ -16,17 +16,18 @@
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
 @import "font-awesome";
-// @import "bootstrap";
+@import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "devise_bootstrap_form";
 
 html {
   box-sizing: border-box;
+  margin: 0px;
+  font-size: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
-html {font-size: 100%}
  body {
   background-image:url("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1426356142/logos/Saint_Pauls_Logo.gif");
   width : 100%;
@@ -42,7 +43,6 @@ a:link {
 a:hover {
   text-decoration: underline;
 }
-
 .page {
  color : #333;
  background-color: #fff;
@@ -52,6 +52,7 @@ a:hover {
  min-height:100%;
  font-family : Verdana, Helvetica, Arial, Sans-Serif;
  text-align:left;
+ width: 100%;
  max-width: 1200px;
 }
 
@@ -82,50 +83,7 @@ div.hidden {
   height: 15px;
 }
 
-.header{
-  margin-top: 50px;
-  margin-right: 0;
-  margin-left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-   .main-logo {
-      width: 100%;
-      order: 1;
-      
-    }
-    .road-sign {
-      order: 2;
-    }
-    .map {
-      order: 3;
-    }
-      @media (min-width: 768px) {
-        max-width: 1200px;
-        margin-top: 50px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: nowrap;
 
-          .road-sign {
-            order:1;
-            flex-basis: 1;
-          }
-          .main-logo {
-            order:2;
-            flex-basis: auto;
-          }
-          .map {
-            order: 3;
-            flex-basis: 1;
-        }
-  }
-}
 .way-of-love {
   display: flex;
 
@@ -188,12 +146,6 @@ p.tiny {
   line-height: 1.1;
   margin-top: -5px;
 }
-p.teaser{
-  font-size: 1rem;
-  line-height: 1;
-  padding-right: 10px;
-}
-
 .poem {
     text-indent:0;
     padding-left: 60px;
@@ -283,15 +235,6 @@ p.teaser{
   overflow-y: auto !important; 
 }
 
-.flex-container{
-  display: flex;
-  justify-content: space-around;
-}
-
-.flex-center-image{
-  display: flex;
-  justify-content: space-around;
-}
 .sermon {
   font-size: 1.5rem;
   line-height: 1.62;
@@ -332,11 +275,6 @@ p.teaser{
   text-align: center;
 }
 
-.center-button {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .newspaper  {
     ul {
   display: block;
@@ -355,9 +293,7 @@ p.teaser{
   margin-left: 600px;
   margin-top: -60px;
 }
-#opportunity-header {
-  text-decoration: underline;
-}
+
 .chat-name {
   font-size: 1rem;
   float: left;
@@ -501,7 +437,7 @@ p.teaser{
   margin-left: 200px;
 }
 #myModal {
-  margin-top: 160px;
+  margin-top: 130px;
   }
 .edit-delete-show {
   font-size: .75rem;
@@ -544,19 +480,4 @@ p.teaser{
 }
 #content-mobile {
   display: none;
-}
-
-@media only screen and(max-width: 800px) {
-
-  #content-desktop {
-  display: none;
-  }
-  #content-mobile {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color:  #0d4884;
-  width: 100%;
-  margin-bottom: 20px;
-  }
 }

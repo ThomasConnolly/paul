@@ -14,7 +14,7 @@ require("src/styles")
 
 window.Rails = Rails
 
-import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap';
 import { strictEqual } from "assert";
 
 document.addEventListener("turbolinks:load", () => {

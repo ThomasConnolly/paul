@@ -16,7 +16,8 @@ window.$ = window.jQuery = jQuery;
 require("bootstrap")
 //require("@rails/activestorage").start()
 //require("channels")
-require("src/application.scss")
+
+import"src/application"
 
 
 window.Rails = Rails

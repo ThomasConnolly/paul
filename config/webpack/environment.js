@@ -7,6 +7,7 @@ environment.plugins.append(
   jQuery: 'jquery',
   jquery: 'jquery',
   Popper: ['popper.js', 'default'],
+  'window.Tether': "tether",
   Rails: '@rails/ujs'
 })
 );

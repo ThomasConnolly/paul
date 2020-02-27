@@ -8,14 +8,21 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")
+var jQuery = require("jquery")
+
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
+require("bootstrap")
 //require("@rails/activestorage").start()
 //require("channels")
 require("src/application.scss")
 
+
 window.Rails = Rails
 
-import "bootstrap/dist/js/bootstrap";
 import { strictEqual } from "assert";
+
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()

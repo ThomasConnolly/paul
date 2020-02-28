@@ -8,17 +8,29 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")
-var jQuery = require("jquery")
-
-global.$ = global.jQuery = jQuery;
+import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 
-require("bootstrap")
+import 'bootstrap/dist/js/bootstrap';
 //require("@rails/activestorage").start()
 //require("channels")
-
-import"src/application"
-
+import "src/application.scss";
+// Make $ available on the window object
+// for SJR views and jQuery plugins
+// that may expect `$` to be globally available.
+environment.loaders.append('expose', {
+  test: require.resolve('jquery'),
+  use: [
+    {
+      loader: 'expose-loader',
+      options: 'jQuery',
+    },
+    {
+      loader: 'expose-loader',
+      options: '$',
+    },
+  ],
+});
 
 window.Rails = Rails
 
@@ -30,8 +42,8 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="popover"]').popover()
 })
 
-document.addEventListener("turbolinks:load",() => {
-  flatpickr("[data-behavior='flatpickr']",
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("[data-behavior='flatpickr']"
   )
 })
 

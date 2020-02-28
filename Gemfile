@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.6.5'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap'
+#gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'

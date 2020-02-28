@@ -10,11 +10,10 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-
+import "src/application.scss";
 import 'bootstrap/dist/js/bootstrap';
 //require("@rails/activestorage").start()
 //require("channels")
-import "src/application.scss";
 // Make $ available on the window object
 // for SJR views and jQuery plugins
 // that may expect `$` to be globally available.

@@ -5,7 +5,6 @@ class PagesController < ApplicationController
 
   def rector; end
 
-  def trivia; end
 
   def albergue; end
 
@@ -15,20 +14,7 @@ class PagesController < ApplicationController
 
   def parish_profile; end
 
-  def long_range; end
-
-  def profileSlides; end
-
-  def jubilee; end
-
   def history; end
-
-  def ecumenical_concert; end
-
-  def grace_works
-    @work = Work.new
-    @works = Work.all
-  end
 
   def calendar; end
 

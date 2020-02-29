@@ -15,4 +15,5 @@ class VestryMinute < ApplicationRecord
   has_rich_text :body
   default_scope -> { order('created_at DESC') }
   validates_presence_of :date
+  validates_presence_of :body
 end

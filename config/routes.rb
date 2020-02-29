@@ -39,12 +39,6 @@ Rails.application.routes.draw do
 
   resources :marriage_talks, only: %i[new show index edit]
 
-  resources :meditations
-
-  resources :prayers
-
-  resources :works
-
   get 'home/invitation'
   get 'members/index'
   get 'members/import'
@@ -75,14 +69,11 @@ Rails.application.routes.draw do
   get 'pages/haitian'
   get 'pages/history', as: :history
   get 'pages/tumaini'
-  get 'pages/trivia'
-  get 'pages/grace_works'
   get 'pages/albergue'
   get 'pages/calendar'
   get 'pages/directions'
   get 'pages/parish_profile'
   get 'comments/new'
-  get 'pages/long_range'
   get 'pages/python_tutor'
   get 'pages/how_to_use'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'

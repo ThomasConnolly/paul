@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_221003) do
+ActiveRecord::Schema.define(version: 2020_02_29_034918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,15 +93,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_221003) do
     t.index ["author", "title"], name: "index_books_on_author_and_title"
   end
 
-  create_table "comments", id: :serial, force: :cascade do |t|
-    t.text "body"
-    t.integer "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "commentable_id"
-    t.string "commentable_type"
-  end
-
   create_table "donations", force: :cascade do |t|
     t.bigint "user_id"
     t.boolean "anonymous", default: false, null: false
@@ -142,45 +133,12 @@ ActiveRecord::Schema.define(version: 2020_01_29_221003) do
     t.datetime "updated_at"
   end
 
-  create_table "jubilee_plans", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end
-
-  create_table "letters", force: :cascade do |t|
-    t.string "salutation"
-    t.string "last_name"
-    t.string "address1"
-    t.string "address2"
-    t.string "city"
-    t.string "state"
-    t.string "zipcode"
-    t.string "writer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "marriage_talks", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.date "delivered_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "meditations", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "scripture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "prayer"
-    t.date "publish_on"
-    t.string "honey"
   end
 
   create_table "members", id: :serial, force: :cascade do |t|
@@ -228,16 +186,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_221003) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
-  end
-
-  create_table "prayers", id: :serial, force: :cascade do |t|
-    t.string "day_of_prayer"
-    t.string "time_of_prayer"
-    t.string "name"
-    t.string "honey"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "pray_time"
   end
 
   create_table "profiles", id: :serial, force: :cascade do |t|
@@ -381,13 +329,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_221003) do
     t.string "title"
     t.integer "user_id"
     t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "works", force: :cascade do |t|
-    t.string "my_act"
-    t.string "honey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

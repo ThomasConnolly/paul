@@ -35,3 +35,7 @@ document.addEventListener("turbolinks:load", () => {
 document.addEventListener("click", () => {
   $('#bcpModal').modal('show')
 })
+
+$(document).ready(function(){
+  $(".dropdown-toggle").dropdown();
+});

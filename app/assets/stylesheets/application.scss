@@ -22,7 +22,7 @@
 html {
   box-sizing: border-box;
   margin: 0px;
-  font-size: 100%;
+  font-size: 1rem;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -133,8 +133,8 @@ margin-top : 1rem;
 }
 p {
     text-indent: 1em;
-    font-size : 1.4rem;
-    line-height: 1.75;
+    font-size : 1.3rem;
+    line-height: 1.5;
     margin-bottom: 24;
 }
 p.list{
@@ -160,27 +160,6 @@ p.tiny {
   margin-top: -1rem;
   padding-right: 300px;
   float: left;
-}
-
-.center-bold-text {
-  text-indent: 0;
-  text-align: center;
-  font-weight: bold;
-}
-
-.timeblock {
-  width: 188px;
-  border-style: outset;
-  border-width: medium;
-  border-color: gray;
-  float: left;
-  margin-right: 5px;
-}
-
-.scroller {
-  background-image:url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
-  width: 100%;
-  height: 267px;
 }
 
 #newsfeed {

@@ -5157,7 +5157,7 @@ a {
 html {
   box-sizing: border-box;
   margin: 0px;
-  font-size: 100%;
+  font-size: 1rem;
 }
 
 /* line 27, app/assets/stylesheets/application.scss */
@@ -5304,8 +5304,8 @@ h4 {
 /* line 134, app/assets/stylesheets/application.scss */
 p {
   text-indent: 1em;
-  font-size: 1.4rem;
-  line-height: 1.75;
+  font-size: 1.3rem;
+  line-height: 1.5;
   margin-bottom: 24;
 }
 
@@ -5344,36 +5344,12 @@ p.tiny {
 }
 
 /* line 165, app/assets/stylesheets/application.scss */
-.center-bold-text {
-  text-indent: 0;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* line 171, app/assets/stylesheets/application.scss */
-.timeblock {
-  width: 188px;
-  border-style: outset;
-  border-width: medium;
-  border-color: gray;
-  float: left;
-  margin-right: 5px;
-}
-
-/* line 180, app/assets/stylesheets/application.scss */
-.scroller {
-  background-image: url("s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/Composite1.png");
-  width: 100%;
-  height: 267px;
-}
-
-/* line 186, app/assets/stylesheets/application.scss */
 #newsfeed {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 190, app/assets/stylesheets/application.scss */
+/* line 169, app/assets/stylesheets/application.scss */
 .floatleft {
   float: left;
   padding-top: 20px;
@@ -5381,7 +5357,7 @@ p.tiny {
   padding-right: 30px;
 }
 
-/* line 196, app/assets/stylesheets/application.scss */
+/* line 175, app/assets/stylesheets/application.scss */
 .floatright {
   float: right;
   padding-left: 30px;
@@ -5389,55 +5365,55 @@ p.tiny {
   padding-bottom: 20px;
 }
 
-/* line 202, app/assets/stylesheets/application.scss */
+/* line 181, app/assets/stylesheets/application.scss */
 .footer {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* line 208, app/assets/stylesheets/application.scss */
+/* line 187, app/assets/stylesheets/application.scss */
 .clearall {
   clear: both;
 }
 
-/* line 211, app/assets/stylesheets/application.scss */
+/* line 190, app/assets/stylesheets/application.scss */
 .image-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 216, app/assets/stylesheets/application.scss */
+/* line 195, app/assets/stylesheets/application.scss */
 .center-image {
   display: block;
   margin: 0, auto;
 }
 
-/* line 220, app/assets/stylesheets/application.scss */
+/* line 199, app/assets/stylesheets/application.scss */
 .text-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 224, app/assets/stylesheets/application.scss */
+/* line 203, app/assets/stylesheets/application.scss */
 .center-text {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 228, app/assets/stylesheets/application.scss */
+/* line 207, app/assets/stylesheets/application.scss */
 .update-logo {
   position: relative;
 }
 
-/* line 232, app/assets/stylesheets/application.scss */
+/* line 211, app/assets/stylesheets/application.scss */
 .trix-content.form-control {
   min-height: 300px !important;
   overflow-y: auto !important;
 }
 
-/* line 237, app/assets/stylesheets/application.scss */
+/* line 216, app/assets/stylesheets/application.scss */
 .sermon {
   font-size: 1.5rem;
   line-height: 1.62;
@@ -5445,7 +5421,7 @@ p.tiny {
   padding-bottom: 24pt;
 }
 
-/* line 244, app/assets/stylesheets/application.scss */
+/* line 223, app/assets/stylesheets/application.scss */
 .sermon-box {
   float: right;
   margin: 15px;
@@ -5456,25 +5432,25 @@ p.tiny {
   text-align: center;
 }
 
-/* line 252, app/assets/stylesheets/application.scss */
+/* line 231, app/assets/stylesheets/application.scss */
 .sermon-box .ser-name {
   font-size: 1.125rem;
   line-height: 1;
 }
 
-/* line 256, app/assets/stylesheets/application.scss */
+/* line 235, app/assets/stylesheets/application.scss */
 .sermon-box .ser-title {
   margin-top: -12px;
 }
 
-/* line 261, app/assets/stylesheets/application.scss */
+/* line 240, app/assets/stylesheets/application.scss */
 .sermon-picture {
   float: left;
   margin: 10px;
   display: block;
 }
 
-/* line 267, app/assets/stylesheets/application.scss */
+/* line 246, app/assets/stylesheets/application.scss */
 .formation-box {
   float: right;
   margin-left: 30px;
@@ -5485,49 +5461,49 @@ p.tiny {
   text-align: center;
 }
 
-/* line 278, app/assets/stylesheets/application.scss */
+/* line 257, app/assets/stylesheets/application.scss */
 .newspaper ul {
   display: block;
 }
 
-/* line 281, app/assets/stylesheets/application.scss */
+/* line 260, app/assets/stylesheets/application.scss */
 .newspaper ul li {
   list-style-type: none;
   display: inline-block;
   width: 33%;
 }
 
-/* line 287, app/assets/stylesheets/application.scss */
+/* line 266, app/assets/stylesheets/application.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 290, app/assets/stylesheets/application.scss */
+/* line 269, app/assets/stylesheets/application.scss */
 #back_to_index {
   position: absolute;
   margin-left: 600px;
   margin-top: -60px;
 }
 
-/* line 296, app/assets/stylesheets/application.scss */
+/* line 275, app/assets/stylesheets/application.scss */
 .chat-name {
   font-size: 1rem;
   float: left;
 }
 
-/* line 300, app/assets/stylesheets/application.scss */
+/* line 279, app/assets/stylesheets/application.scss */
 #notice {
   color: green;
 }
 
-/* line 303, app/assets/stylesheets/application.scss */
+/* line 282, app/assets/stylesheets/application.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 308, app/assets/stylesheets/application.scss */
+/* line 287, app/assets/stylesheets/application.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -5537,7 +5513,7 @@ p.tiny {
   background-color: #f0f0f0;
 }
 
-/* line 315, app/assets/stylesheets/application.scss */
+/* line 294, app/assets/stylesheets/application.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -5549,13 +5525,13 @@ p.tiny {
   color: #fff;
 }
 
-/* line 325, app/assets/stylesheets/application.scss */
+/* line 304, app/assets/stylesheets/application.scss */
 #error_explanation ul li {
   font-size: .75rem;
   list-style: square;
 }
 
-/* line 331, app/assets/stylesheets/application.scss */
+/* line 310, app/assets/stylesheets/application.scss */
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -5567,26 +5543,26 @@ p.tiny {
   line-height: 1.25;
 }
 
-/* line 343, app/assets/stylesheets/application.scss */
+/* line 322, app/assets/stylesheets/application.scss */
 .flash_notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-/* line 348, app/assets/stylesheets/application.scss */
+/* line 327, app/assets/stylesheets/application.scss */
 .flash_alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
 
-/* line 353, app/assets/stylesheets/application.scss */
+/* line 332, app/assets/stylesheets/application.scss */
 .post-items {
   list-style: none;
 }
 
-/* line 356, app/assets/stylesheets/application.scss */
+/* line 335, app/assets/stylesheets/application.scss */
 .create-post, .create-vreport, .create-story_idea, .create-jubilee {
   width: 100%;
   height: 180px;
@@ -5596,7 +5572,7 @@ p.tiny {
   text-align: center;
 }
 
-/* line 364, app/assets/stylesheets/application.scss */
+/* line 343, app/assets/stylesheets/application.scss */
 .default-avatar {
   padding-top: 6px;
   text-align: center;
@@ -5608,7 +5584,7 @@ p.tiny {
   margin-right: 14px;
 }
 
-/* line 374, app/assets/stylesheets/application.scss */
+/* line 353, app/assets/stylesheets/application.scss */
 .big-avatar-missing {
   width: 240px;
   height: 310px;
@@ -5620,52 +5596,52 @@ p.tiny {
   margin-right: 20px;
 }
 
-/* line 384, app/assets/stylesheets/application.scss */
+/* line 363, app/assets/stylesheets/application.scss */
 .mt20 {
   margin-top: 20px;
 }
 
-/* line 387, app/assets/stylesheets/application.scss */
+/* line 366, app/assets/stylesheets/application.scss */
 .mt-20 {
   margin-top: -20px;
 }
 
-/* line 390, app/assets/stylesheets/application.scss */
+/* line 369, app/assets/stylesheets/application.scss */
 .mt30 {
   margin-top: 30px;
 }
 
-/* line 393, app/assets/stylesheets/application.scss */
+/* line 372, app/assets/stylesheets/application.scss */
 .mt-30 {
   margin-top: -30px;
 }
 
-/* line 396, app/assets/stylesheets/application.scss */
+/* line 375, app/assets/stylesheets/application.scss */
 .mt50 {
   margin-top: 50px;
 }
 
-/* line 399, app/assets/stylesheets/application.scss */
+/* line 378, app/assets/stylesheets/application.scss */
 .mt60 {
   margin-top: 60px;
 }
 
-/* line 402, app/assets/stylesheets/application.scss */
+/* line 381, app/assets/stylesheets/application.scss */
 .mt100 {
   margin-top: 100px;
 }
 
-/* line 405, app/assets/stylesheets/application.scss */
+/* line 384, app/assets/stylesheets/application.scss */
 .mt-100 {
   margin-top: -100px;
 }
 
-/* line 408, app/assets/stylesheets/application.scss */
+/* line 387, app/assets/stylesheets/application.scss */
 .mt150 {
   margin-top: 150px;
 }
 
-/* line 411, app/assets/stylesheets/application.scss */
+/* line 390, app/assets/stylesheets/application.scss */
 .scroll-to-bottom {
   position: fixed;
   margin-left: 400px;
@@ -5675,47 +5651,47 @@ p.tiny {
   padding: 12px;
 }
 
-/* line 419, app/assets/stylesheets/application.scss */
+/* line 398, app/assets/stylesheets/application.scss */
 .comment-user {
   font-size: .9rem;
   float: right;
   margin-top: -30px;
 }
 
-/* line 424, app/assets/stylesheets/application.scss */
+/* line 403, app/assets/stylesheets/application.scss */
 .poster-name {
   font-size: 1rem;
 }
 
-/* line 427, app/assets/stylesheets/application.scss */
+/* line 406, app/assets/stylesheets/application.scss */
 .upload_picture {
   width: 300px;
   float: left;
 }
 
-/* line 431, app/assets/stylesheets/application.scss */
+/* line 410, app/assets/stylesheets/application.scss */
 .upload_photos {
   width: 300px;
   float: left;
 }
 
-/* line 435, app/assets/stylesheets/application.scss */
+/* line 414, app/assets/stylesheets/application.scss */
 .submit-post, .submit-vreport {
   margin-left: 200px;
 }
 
-/* line 438, app/assets/stylesheets/application.scss */
+/* line 417, app/assets/stylesheets/application.scss */
 #myModal {
   margin-top: 130px;
 }
 
-/* line 441, app/assets/stylesheets/application.scss */
+/* line 420, app/assets/stylesheets/application.scss */
 .edit-delete-show {
   font-size: .75rem;
   padding-left: 30px;
 }
 
-/* line 446, app/assets/stylesheets/application.scss */
+/* line 425, app/assets/stylesheets/application.scss */
 .navbar-custom {
   height: 64px;
   width: 100%;
@@ -5724,42 +5700,42 @@ p.tiny {
   color: #ffffff;
 }
 
-/* line 454, app/assets/stylesheets/application.scss */
+/* line 433, app/assets/stylesheets/application.scss */
 .navbar-custom .nav-item:active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
   color: white;
 }
 
-/* line 458, app/assets/stylesheets/application.scss */
+/* line 437, app/assets/stylesheets/application.scss */
 .navbar-brand {
   width: 35%;
   font-size: .8rem;
   color: #ffffff;
 }
 
-/* line 463, app/assets/stylesheets/application.scss */
+/* line 442, app/assets/stylesheets/application.scss */
 .text-white {
   color: #ffffff;
 }
 
-/* line 467, app/assets/stylesheets/application.scss */
+/* line 446, app/assets/stylesheets/application.scss */
 .navbar-toggler-icon {
   padding: 30px;
 }
 
-/* line 471, app/assets/stylesheets/application.scss */
+/* line 450, app/assets/stylesheets/application.scss */
 .fa.fa-navicon {
   color: white;
   font-size: 35px;
   margin-right: 40px;
 }
 
-/* line 477, app/assets/stylesheets/application.scss */
+/* line 456, app/assets/stylesheets/application.scss */
 #content-desktop {
   display: inline;
 }
 
-/* line 480, app/assets/stylesheets/application.scss */
+/* line 459, app/assets/stylesheets/application.scss */
 #content-mobile {
   display: none;
 }

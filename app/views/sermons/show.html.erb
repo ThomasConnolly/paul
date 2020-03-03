@@ -1,28 +1,29 @@
-<div class="mt50"></div>
-<div class="row">
-  <div class="col-md-10 offset-md-1 col-sm-12">
-  <h1><%= @sermon.title %></h1>
-    <p><small><%= @sermon.cites %></small></p>
-    <%= render 'serbox' %>  
-    <div class="sermon">
-      <% if @sermon.sermon_body.present? %>
-        <%= @sermon.sermon_body.html_safe %>
-      <% else %>
-        <%= @sermon.content %>
-      <% end %>    
-    </div>
-    <div class="clearall"></div>
-    <div>
-      <% if @sermon.audio.present? %>
-        <audio controls>
-          <source src="<%= @sermon.audio %>"  type="audio/mpeg" >
-            Your browser does not support the audio element.
-        </audio>
-      <% end %>
-    </div>
-
+<div class="container mt-50">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-sm-12">
+      <h1><%= @sermon.title %></h1>
+        <p><small><%= @sermon.cites %></small></p>
+          <div class="float-right">
+            <%= render 'serbox' %>  
+          </div>
+            <div class="sermon">
+              <% if @sermon.sermon_body.present? %>
+                <%= @sermon.sermon_body.html_safe %>
+              <% else %>
+                <%= @sermon.content %>
+              <% end %>    
+            </div>
+              <div class="mt-30">
+                <% if @sermon.audio.present? %>
+                  <audio controls>
+                    <source src="<%= @sermon.audio %>"  type="audio/mpeg" >
+                      Your browser does not support the audio element.
+                  </audio>
+                <% end %>
+              </div>
+     </div>
     <% if current_user && current_user.has_role?(:admin) %>
-    <%= link_to 'Edit', edit_sermon_path(@sermon) %>
+      <%= link_to 'Edit', edit_sermon_path(@sermon) %>
     <% end %>
   </div> 
 </div>

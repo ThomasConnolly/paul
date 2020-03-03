@@ -23,7 +23,7 @@
 html {
   box-sizing: border-box;
   margin: 0px;
-  font-size: 1rem;
+  font-size: 16px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -58,6 +58,8 @@ a:hover {
 
 .main-body {
   padding-right: 36px;
+  font-size : 1.2rem;
+  line-height: 1.6;
 }
 .sidebar {
   background-color: #eee;
@@ -65,8 +67,8 @@ a:hover {
   margin-top: 1.25rem;
   height: 100%;
     p {
-      font-size: 1.1rem;
-      line-height: 1.62;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 }
 .grid-container {
@@ -98,9 +100,6 @@ div.hidden {
   }
 }
 
-.second-line {
-  margin-top: -18px;
-}
 
 h1 {
 color : #5c004c;
@@ -134,8 +133,7 @@ margin-top : 1rem;
 }
 p {
     text-indent: 1em;
-    font-size : 1.3rem;
-    line-height: 1.5;
+
     margin-bottom: 24;
 }
 p.list{
@@ -215,14 +213,13 @@ p.tiny {
 }
 
 .sermon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.62;
   font-family: Times, serif;
   padding-bottom: 24pt;
 
 }
 .sermon-box {
-    float:right;
     margin:15px;
     height:210px;
     width:450px;
@@ -235,6 +232,9 @@ p.tiny {
       }
       .ser-title {
         margin-top: -12px;
+      } 
+      @media only screen and (min-width: 700px) {
+        float: right;
       }
 }
 

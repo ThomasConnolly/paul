@@ -212,7 +212,7 @@ p.tiny {
   overflow-y: auto !important; 
 }
 
-.sermon {
+.sermon  {
   font-size: 1.4rem;
   line-height: 1.62;
   font-family: Times, serif;
@@ -220,30 +220,11 @@ p.tiny {
 
 }
 .sermon-box {
-    margin:15px;
+    padding:10px;
     height:210px;
     width:450px;
-    padding:10px 10px 10px 10px;
     border:solid black;
-    text-align:center;
-      .ser-name {
-        font-size: 1.125rem;
-        line-height: 1;
-      }
-      .ser-title {
-        margin-top: -12px;
-      } 
-      @media only screen and (min-width: 700px) {
-        float: right;
-      }
 }
-
-.sermon-picture {
-  float:left;
-  margin:10px;
-  display:block;
-}
-
 .formation-box {
   float:right;
   margin-left: 30px;
@@ -277,9 +258,7 @@ p.tiny {
   font-size: 1rem;
   float: left;
 }
-#notice {
-  color: green;
-}
+
 .field_with_errors {
   padding: 2px;
   background-color: red;

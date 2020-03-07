@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def rector; end
 
+  def stay_safe; end
 
   def albergue; end
 

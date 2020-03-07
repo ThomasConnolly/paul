@@ -76,6 +76,7 @@ Rails.application.routes.draw do
   get 'comments/new'
   get 'pages/python_tutor'
   get 'pages/how_to_use'
+  get 'pages/stay_safe'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
 

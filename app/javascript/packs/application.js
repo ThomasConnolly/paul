@@ -10,13 +10,15 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-
-import 'bootstrap/dist/js/bootstrap';
+//import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap';
 import "src/application.scss";
+import flatpickr from "flatpickr";
+require("flatpickr/dist/flatpickr.css")
 //require("@rails/activestorage").start()
 //require("channels")
-
 window.Rails = Rails
+
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
@@ -24,18 +26,20 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 document.addEventListener("turbolinks:load", () => {
+  $(document).ready(function(){
+    $("#myModal").modal('show');
+});
+})
+
+document.addEventListener("turbolinks:load", () => {
   flatpickr("[data-behavior='flatpickr']"
   )
-})
+});
 
-//document.addEventListener("turbolinks:load", () => {
-//  $('#myModal').modal('show')
-//})
-
-document.addEventListener("click", () => {
+document.addEventListener("click", () => { 
   $('#bcpModal').modal('show')
-})
+});
 
 $(document).ready(function(){
-  $(".dropdown-toggle").dropdown();
-});
+  $for(".dropdown-toggle").dropdown();
+})

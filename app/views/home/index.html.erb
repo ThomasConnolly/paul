@@ -1,137 +1,135 @@
-
 <div class="container">
-  <div class=row>
-    <div class="col-md-8 col-sm-12 main-body">
-     <h1>Come worship with us!</h1>
-      <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
-      
-      <%= cl_image_tag("cross-lent_rhj8ln.jpg", width:"140", class: "floatleft img-fluid") %>
+    <div class=row>
+        <div class="col-md-8 col-sm-12 main-body">
+            <h1>Worship services cancelled</h1>
+            <p> Watch this space for information on joining us electronically </p>
+            <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
 
-<h2>Sundays</h2>
-    <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
-    <p class="list"><strong>9 a.m. </strong> Learn how to live in Jesus <%= link_to "(see video here.)", pages_way_of_love_path %> Serson Hall library. Also available Wednesdays at 6:30 p.m.</p> 
-    <p class="list"><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
-    <p class="mt-n4 list">
-      <small>Children's nursery/Sunday school available</small>
-    </p>
-    <p class="list"> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
-    about our Haitian community', pages_haitian_path %></p> 
+            <%= cl_image_tag("cross-lent_rhj8ln.jpg", width:"140", class: "floatleft img-fluid") %>
 
-  <p class="list mt-3"><strong><%= link_to "Click here for Scripture Readings",
+            <!-- <h2>Sunday services cancelled</h2>
+            <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
+    <p class="list"><strong>9 a.m. </strong> Learn how to live in Jesus <%= link_to "(see video here.)", pages_way_of_love_path %> Serson Hall library. Also available Wednesdays at 6:30 p.m.</p>
+            <p class="list"><strong>10 a.m.</strong> Holy Eucharist, Rite II</p>
+            <p class="mt-n4 list">
+                <small>Children's nursery/Sunday school available</small>
+            </p>
+            <p class="list"> <strong>5 p.m.</strong> Holy Eucharist (in Creole) <%= link_to 'Click for information
+    about our Haitian community', pages_haitian_path %></p> -->
+
+            <p class="list mt-3"><strong><%= link_to "Click here for Scripture Readings",
   "http://www.lectionarypage.net" %></strong> </p>
 
-  <p class="mt-3"><em><strong> Directions: </strong> </em> We are at 3901 Davis
-    Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
-  <%= link_to "Click here.", pages_directions_path %></p>
-  <p>To learn about our worship service and about the<strong> <em>Episcopal
-    Church,</em></strong> <%=link_to "click here", worship_index_path%>.
-    And click on that shelf of red books to get a short, cute introduction
-      to our time-honored Book of Common Prayer.</p>
-  <%
-=begin%>
- <h2>Spiritual studies series</h2>
-<p>Join us, either Wednesday evenings or Sundays between 
-the services, studying and discussing the Gospel of Matthew. For the Wednesday session, Jan. 15 or Sunday Jan. 19, read the first two chapters of Matthew.</p>
-<p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Wednesday class starts at 6:30 p.m., and Sunday class is at 9 a.m.</p>
-<p>Both sessions are in the library, Serson Hall. </p> 
-<%
-=end%>
-  <h2 class="mt3">Home of the Farmers' Market</h2>
-      <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft img-fluid", width: "55%") %>
-      <p>The market is now open for the 2019-2020 season and runs through April. Ample 
-      parking is directed by our volunteer helpers, so it's easy in and out to the greatest
-      block party on a Saturday morning in Naples. We hope you'll join 
-      us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
-     <p>For more information on the market, <%= link_to "click here.",
+            <!-- <p class="mt-3"><em><strong> Directions: </strong> </em> We are at 3901 Davis
+                Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
+                <%= link_to "Click here.", pages_directions_path %></p> -->
+            <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>.
+                And click on that shelf of red books to get a short, cute introduction to our time-honored Book of Common Prayer.</p>
+
+            <h2>Spiritual studies series cancelled </h2>
+            <!--   <p>Join us, either Wednesday evenings or Sundays between
+                the services, studying and discussing the Gospel of Matthew. For the Wednesday session, Jan. 15 or Sunday Jan. 19, read the first two chapters of Matthew.</p>
+            <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Wednesday class starts at 6:30 p.m., and Sunday class is at 9 a.m.</p>
+            <p>Both sessions are in the library, Serson Hall. </p> -->
+
+
+            <h2 class="mt3">Farmers' Market cancelled</h2>
+            <%= cl_image_tag("mktLogo_ggxhct.png", class: "floatleft img-fluid", width: "55%") %>
+            <!--   <p>The market is now open for the 2019-2020 season and runs through April. Ample
+                parking is directed by our volunteer helpers, so it's easy in and out to the greatest
+                block party on a Saturday morning in Naples. We hope you'll join
+                us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
+            <p>For more information on the market, <%= link_to "click here.",
        markets_index_path %></p>
-      <div class="clearall"></div>
-  
-  <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "40%", class: "floatleft mt-3") %>
-    <h2>Stewardship</h2>
-  <p>Stewardship at St. Paul's involves investing the three Ts with God. The three Ts are time, talent and treasure. Investing with God is a year-round  stewardship. There are many ministries at St. Paul's that could use your
-    time and talent. As to treasure, a pledge is your statement of intent to share for the mission of the church.
- 
-    <%
+            <div class="clearall"></div>
+            -->
+
+            <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "40%", class: "floatleft mt-3") %>
+            <h2>Stewardship</h2>
+            <p>Stewardship at St. Paul's involves investing the three Ts with God. The three Ts are time, talent and treasure. Investing with God is a year-round stewardship. There are many ministries at St. Paul's that could use your
+                time and talent. As to treasure, a pledge is your statement of intent to share for the mission of the church.
+
+                <%
 =begin%>
-#   To learn about making payments with a credit or
-#     debit card or o    ther on-line methods of paying your pledge,
-#     click on the "Invest with God" image.
-<%
+                # To learn about making payments with a credit or
+                # debit card or o ther on-line methods of paying your pledge,
+                # click on the "Invest with God" image.
+                <%
 =end%>
-    
 
-  <h2 class="mt-3">Supporters of these children</h2>
-    <%=cl_image_tag("25_aeyuf2.jpg", width: "420", height: "315", class:
+
+                <h2 class="mt-3">Supporters of these children</h2>
+                <%=cl_image_tag("25_aeyuf2.jpg", width: "420", height: "315", class:
       "floatright") %>
-    <p>Episcopalians of the Naples Deanery have been supporting the children at
-      a shelter in the Dominican Republic for the last 17 years. The
-      <em>Albergue el Buen Samaritano</em> in San Francisco de Macoris, serves
-      about a hundred children who would be on the street were it not for the
-      shelter. The kids arrive for breakfast, learn their abcs and social skills
-      and get lots of love that may otherwise be missing in their young lives.
-      It is a ministry of love and affection, above all.</p>
-  <h2 class="mt3">Supporters of Tumaini Fund</h2>
-    <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
-    <p>Dr. Susan Wilson, an English family physician, is full of energy and zeal
-      for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>
-      Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of
-      Northwest Tanzania. There she established an orphanage for thousands of
-      children who lost their moms and dads to AIDS. In addition to monitary contributions, the ladies
-      of our church, the ECW (Episcopal Church Women) have sewn numerous dresses for Dr. Wilson to distribute.</p>
-    <p>Parishioners Mike Moore and Roger Conant are directors for the fund in
-      the United States.</p>
-<div class="clearall"></div>
+                <p>Episcopalians of the Naples Deanery have been supporting the children at
+                    a shelter in the Dominican Republic for the last 17 years. The
+                    <em>Albergue el Buen Samaritano</em> in San Francisco de Macoris, serves
+                    about a hundred children who would be on the street were it not for the
+                    shelter. The kids arrive for breakfast, learn their abcs and social skills
+                    and get lots of love that may otherwise be missing in their young lives.
+                    It is a ministry of love and affection, above all.</p>
+                <h2 class="mt3">Supporters of Tumaini Fund</h2>
+                <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
+                <p>Dr. Susan Wilson, an English family physician, is full of energy and zeal
+                    for the Lord. She founded <em>Tumaini </em>(the word means "hope") <em>
+                        Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of
+                    Northwest Tanzania. There she established an orphanage for thousands of
+                    children who lost their moms and dads to AIDS. In addition to monitary contributions, the ladies
+                    of our church, the ECW (Episcopal Church Women) have sewn numerous dresses for Dr. Wilson to distribute.</p>
+                <p>Parishioners Mike Moore and Roger Conant are directors for the fund in
+                    the United States.</p>
+                <div class="clearall"></div>
 
-<h2 class="mt3">Supporters of 'ERD'</h2>
-    <%= link_to cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft"), "https://episcopalrelief.org/" %>
-<p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. 
-Click the logo at left to learn more and make a donation.</p>
-<div class="clearall"></div>
+                <h2 class="mt3">Supporters of 'ERD'</h2>
+                <%= link_to cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft"), "https://episcopalrelief.org/" %>
+                <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly.
+                    Click the logo at left to learn more and make a donation.</p>
+                <div class="clearall"></div>
 
-<%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center mt-3", fetch_format: "auto") %>
+                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center mt-3", fetch_format: "auto") %>
 
-       <div><%= render "my_modal" %></div> 
- 
-      </div><!--main-body --> 
+                <div><%= render "my_modal" %></div>
 
-      <div class="col col-md-4 col-sm-8 sidebar">
-        <p class="center-text"><%= Date.current.strftime("%A, %B %e, %Y") %></p>
-        <%= link_to cl_image_tag("FindFB_ovw6ax.jpg", class: "image-center",
+        </div>
+        <!--main-body -->
+
+        <div class="col col-md-4 col-sm-8 sidebar">
+            <p class="center-text"><%= Date.current.strftime("%A, %B %e, %Y") %></p>
+            <%= link_to cl_image_tag("FindFB_ovw6ax.jpg", class: "image-center",
            width: "99%"),
           "https://www.facebook.com/St-Pauls-Episcopal-Church-376885279316133/" %>
-      <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center mt-3") %>
-      <h2 class="mt-3">Stay Safe</h2>
-        <p><%= link_to "Click here for Fr. Tom's suggestions on how to live safely in a germ-filled world.", pages_stay_safe_path %>
-      <h2 class="mt-3">Way of Love</h2>
-        <p>Use this lent to draw closer to God and live a Jesus-centered life. Join the Rev. Dr. Mary Abrams, our deacon, on  Wednesdays at 6:30 p.m. or Sundays between the services. Get acquainted with the material by watching the video <%= link_to "here,", pages_way_of_love_path %> featuring the Most Rev. Michael Curry, presiding bishop of the Episcopal Church. All are welcome!
-      <p class=mt-3><strong> Annual Meeting reports</strong><br>
-        <%= link_to "Reports from the rector and lay leaders available here.", pages_annual_report_path %> </p>
-      <div class="mt-3"></div>
-        <%= link_to cl_image_tag("March2020S_uwawdz.jpg", width: "100%"), 
+            <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center mt-3") %>
+            <h2 class="mt-3">Stay Safe</h2>
+            <p><%= link_to "Click here for Fr. Tom's suggestions on how to live safely in a germ-filled world.", pages_stay_safe_path %>
+                <h2 class="mt-3">Way of Love</h2>
+                <p>Use this lent to draw closer to God and live a Jesus-centered life. Watch this video <%= link_to "here,", pages_way_of_love_path %> featuring the Most Rev. Michael Curry, presiding bishop of the Episcopal Church, speaking about his program, <em>The Way of Love</em> </p>
+                <p class=mt-3><strong> Annual Meeting reports</strong><br>
+                    <%= link_to "Reports from the rector and lay leaders available here.", pages_annual_report_path %> </p>
+                <div class="mt-3"></div>
+                <%= link_to cl_image_tag("March2020S_uwawdz.jpg", width: "100%"), 
           "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1583598830/March2020S_uwawdz.pdf" %>
-      <p><strong>New Pathway available </strong> Click on the image above to  read or download the latest edition (March 7, 2020) of <em>Pathway,</em> the parish newsletter.</p>
+                <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (March 7, 2020) of <em>Pathway,</em> the parish newsletter.</p>
 
-      <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center mt-3") %>
-      <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
-      <%= link_to "listed here.", opportunities_path %> </p>
-    
-      <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality!  We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week to get one.</p>
-  
-      <%= cl_image_tag("1912588_wbdabz.png", width: "40%", class: "mt-3 image-center") %>
-       <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p>
-  
-      <p class="mt-3"><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.",'https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p>
-  
-      <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class:
+                <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center mt-3") %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
+                    <%= link_to "listed here.", opportunities_path %> </p>
+
+                <!-- <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call the office during the week to get one.</p>
+
+                    <%= cl_image_tag("1912588_wbdabz.png", width: "40%", class: "mt-3 image-center") %>
+                    <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p> -->
+
+                <p class="mt-3"><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.",'https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p>
+
+                <!--       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class:
         "mt-3 image-center", :fetch_format => :auto), pages_calendar_path %>
-      <h3>Click calendar to see our activities</h3>
+                    <h3>Click calendar to see our activities</h3> -->
 
-      <div id="newsfeed" class="mt-3">
-        <h4>Episcopal News Service</h4>
-        <iframe width="100%" height="775" frameborder="0" class="rssdog" 
-        src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
-      </div><!--  end  newsfeed -->
-    </div><!-- sidebar -->
+                <div id="newsfeed" class="mt-3">
+                    <h4>Episcopal News Service</h4>
+                    <iframe width="100%" height="775" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.episcopalnewsservice.org%2Ffeed%2F%3Fcat%3D-6%252C-8&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
+                </div><!--  end  newsfeed -->
+        </div><!-- sidebar -->
     </div><!-- row -->
 </div>
 

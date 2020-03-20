@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-require("@rails/ujs").start()
 require("turbolinks").start()
 require("trix")
 require("@rails/actiontext")

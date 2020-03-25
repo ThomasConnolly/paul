@@ -1,22 +1,6 @@
+<%= bootstrap_form_with(model: @post) do |f| %>
+<%= f.rich_text_area(:content) %>
 
-<%= bootstrap_form_with(@post) do |f| %>
-  <%= f.rich_text_area(:content) %>
-
-  <div class="upload_picture">
-    <%#= f.input :post_picture, as: :attachinary, label: "Upload a picture" %>
-  </div>
-
-  <!--<div class="upload_photos">
-    <%#= f.input :photos, as: :attachinary, label: 'Upload up to four pictures' %>
-  </div>-->
-  <div class="clearall"></div>
-  <div class="submit-post">
-   <%= f.button :submit, class: "btn btn-primary btn-lg" %> &nbsp;
-   <%= link_to "Cancel", :back, class: "btn btn-danger btn-slg" %>
-  </div>
+<%= f.submit class: "btn btn-primary" %> &nbsp;
+<%= link_to "Cancel", :back, class: "btn btn-danger" %>
 <% end %>
-<!-- <script>
-$( document ).ready(function() {
-  $('.attachinary-input').attachinary()
-});
-</script> -->

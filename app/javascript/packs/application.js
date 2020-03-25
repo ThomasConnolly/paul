@@ -42,3 +42,4 @@ document.addEventListener("click", () => {
 $(document).ready(function(){
   $for(".dropdown-toggle").dropdown();
 })
+import "controllers"

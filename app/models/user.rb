@@ -54,7 +54,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates_confirmation_of :password
-  # has_attachment :avatar, accept: [:png, :jpg, :gif]
+  has_one_attached :avatar
   has_one :pledge, dependent: :destroy
   has_many :donations
   
@@ -90,7 +90,7 @@ class User < ApplicationRecord
   end
 
   def assign_default_role
-    add_role(:member) if roles.blank?
+    add_role(:member)
   end
 
 

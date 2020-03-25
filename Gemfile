@@ -11,7 +11,7 @@ gem 'font-awesome-rails'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'pg'
 gem 'rack'
-gem 'rails', '6.0.2'
+gem 'rails', '6.0.2.2'
 gem 'railties'
 gem 'sassc-rails' # used by sprockets to minify
 gem 'sprockets-rails', require: 'sprockets/railtie'
@@ -56,6 +56,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
+  gem 'break'
   gem 'capistrano'
   gem 'meta_request'
   gem 'solargraph'

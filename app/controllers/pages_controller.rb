@@ -7,8 +7,6 @@ class PagesController < ApplicationController
 
   def albergue; end
 
-  def test; end
-
   def annnual_report; end
 
   def parish_profile; end
@@ -19,8 +17,6 @@ class PagesController < ApplicationController
 
   def haitian; end
 
-  def survey; end
-
   def tumaini; end
 
   def how_to_pray; end
@@ -28,6 +24,8 @@ class PagesController < ApplicationController
   def python_tutor; end
 
   def how_to_use; end
+
+  def way_of_love; end
 
   def letsencrypt
     render text: '6CRaNQDPQLLlN_5YaBJ1C00KN-CeT3CcGpEa8Q159T8.t6OHJtTG0T4j8fGWYAHHy6vcUSK_LBe9_JwtCMZ811c'

@@ -1,41 +1,42 @@
 <h2>Here are the latest posts</h2>
 <% @posts.each do |post| %>
-  <%# if post.post_picture? %>
-    <%#= link_to cl_image_tag(post.post_picture.path,
+<%# if post.post_picture? %>
+<%#= link_to cl_image_tag(post.post_picture.path,
       { height: '350', crop: :fit, class: 'floatright' }) %>
-  <%# end %>
-    <br>
-  <%# if p
+<%# end %>
+<br>
+<%# if p
   st.post_photos? %>
-  <%#= render partial: 'slides' %>
-  <%# end %>
-  <%# if post.user.avatar? %>
-    <div id="avatar-owner">
-      <%#= cl_image_tag(post.user.avatar.path, { size: '120x175',
+<%#= render partial: 'slides' %>
+<%# end %>
+<%# if post.user.avatar? %>
+<div id="avatar-owner">
+    <%#= cl_image_tag(post.user.avatar.path, { size: '120x175',
       crop: :fit }) %>
-    </div>
-  <%# else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
-    </div>
-  <%# end %>
-  <br>
-  <p class="poster-name">
+</div>
+<%# else %>
+<div class="default-avatar">
+    <h5>Your<br>Picture<br>Here</h5>
+</div>
+<%# end %>
+<br>
+<p class="poster-name">
     <%= post.user.username.titleize %>::
     <%= post.content %></p>
-      <p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
-      <% if current_user == post.user %>
-      | <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
-      <%=link_to post,  method: :delete, data:
+<p> <span class="edit-delete-line"> Posted <%= time_ago_in_words(post.created_at) %> ago. &nbsp; <%= link_to "Show", post_path(post[:id]) %>
+        <% if current_user == post.user %>
+        | <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
+        <%=link_to post,  method: :delete, data:
         { confirm: 'This will delete your post and all its comments.'
           }, remote: true do %> Delete! </span></p>
 
-        <% end %>
-      <% end %>
-    <div class="clearall"></div>
+<% end %>
+<% end %>
+<div class="clearall"></div>
 
-    <section id="comments-section">
-      <%= render partial: 'comments/comments', locals: {commentable: post} %>
+<!--  <section id="comments-section">
+      <%#= render partial: 'comments/comments', locals: {commentable: post} %>
       <div class="mt30"></div>
-      <%= render partial: 'comments/form', locals: {commentable: post} %>
-    </section>
+      <%#= render partial: 'comments/form', locals: {commentable: post} %>
+    </section> -->
 <% end %>

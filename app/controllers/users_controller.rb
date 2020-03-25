@@ -93,7 +93,7 @@ class UsersController < ApplicationController
   end
 
   def member_only
-    unless current_user.has_role?(:admin) || current_user.has_role?(:vestry) || current_user.has_role?(:member)
+    unless current_user.has_role?(:member)
       redirect_to root_path, alert: 'Access is restricted.'
     end
   end

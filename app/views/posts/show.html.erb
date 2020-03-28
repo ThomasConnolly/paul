@@ -10,7 +10,7 @@
         <%# if @post.photos? %>         <%#= render 'slides', post: @post %>
         <%# end %>
 
-        <p> <%= @post.content %></p>
+        <%= @post.content %>
         <h3>Comments</h3>
         <%= render partial: "comments/form", locals: { commentable: @post } %>
         <%= render @post.comments.where(parent_id: nil) %>

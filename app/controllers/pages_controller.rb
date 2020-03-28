@@ -3,6 +3,8 @@
 class PagesController < ApplicationController
   def directions; end
 
+  def youtube; end
+
   def stay_safe; end
 
   def albergue; end

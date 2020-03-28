@@ -6,8 +6,8 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.0.2",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "^5.0.0",
+    "@rails/ujs": "^6.0.2-2",
+    "@rails/webpacker": "^5.0.1",
     "bootstrap": "^4.4.1",
     "browserlist": "^1.0.1",
     "cjs": "^0.0.11",
@@ -20,6 +20,7 @@
     "jqeury": "^0.0.1-security",
     "jquery": "^3.4.1",
     "liquid-fire": "^0.31.0",
+    "node": "^13.12.0",
     "node-sass": "^4.13.1",
     "npm": "^6.14.1",
     "popper": "^1.0.1",
@@ -31,7 +32,7 @@
     "tether": "^1.4.7",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.41.5"
+    "webpack": "^4.42.1"
   },
   "version": "0.1.0",
   "devDependencies": {
@@ -40,7 +41,7 @@
   },
   "engines": {
     "npm": "6.14.1",
-    "node": "13.9.0",
+    "node": "13.12.0",
     "yarn": "1.22.4"
   }
 }

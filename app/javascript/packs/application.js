@@ -9,13 +9,16 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-//import 'bootstrap/dist/js/bootstrap';
+import "controllers";
 import 'bootstrap';
+//import 'bootstrap/dist/js/bootstrap';
 import "src/application.scss";
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css")
 //require("@rails/activestorage").start()
 //require("channels")
+import Rails from '@rails/ujs';
+Rails.start();
 window.Rails = Rails
 
 

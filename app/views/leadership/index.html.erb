@@ -2,16 +2,16 @@
   <div class="row">
     <h1>Saint Paul’s Clergy &amp; Staff</h1>
     <div class="col-md-8 col-sm-12 main-body">
-      <%= cl_image_tag("TomThoeni_gdukok.jpg", width: "295", class: "floatleft") %>
-      <h2 class="text-center">Rector: The Rev. Dr. <br>Thomas A Thoeni</h2>
-      <p class="text-center"><b>239-643-0197<br>Cell: 813-763-0441</b></p> <br><a href="mailto:fathertomt@gmail.com"> <h4>FatherTomT@gmail.com</h4></a><br>
+      <%= cl_image_tag("TomThoeni_gdukok.jpg", width: "295", class: "floatleft", alt: "Fr. Thoeni photo") %>
+      <h2 class="text-center mt-4">Rector: The Rev. Dr. <br>Thomas A Thoeni</h2>
+      <p class="list text-center"><b>239-643-0197<br>Cell: 813-763-0441</b></p> <br><a href="mailto:fathertomt@gmail.com"> <h4>FatherTomT@gmail.com</h4></a><br>
       <p>Fr. Tom joined St. Paul’s on Nov. 1, 2018, after 15 years as rector of St. Peter's Episcopal Church in Plant City, FL. He was installed as rector on Jan. 6, 2019.</p><p> He has lived all but six years of his life in his native state, Florida. He grew up in Jacksonville the younger of two children. He earned a Bachelor of Design from the College of Fine Arts at the University of Florida. During his years at UF, he was deeply involved at the Chapel of the Incarnation, where he discerned his call to the priesthood and met and married his wife, Quincey.</p>
       <p>He attended Seabury-Western Theological Seminary in Evanston, just north of Chicago. There he received his Master of Divinity degree and served as the seminary equivalent of class president, and earning a reputation as a mediator and trusted bridge builder between people of disparate viewpoints.</p>
       <p>After seminary Fr. Tom served churches in Albany, Ga, and Pensacola before being called as rector at St. Peter's. As rector there he brought a sense of stability and health, with the areas of buildings and grounds, lay ministry, outreach and administration being particularly strengthened.</p>
       <p>In 2012, Fr. Thoeni earned his Doctor of Ministry in a joint program between Seabury-Western Theological Seminary and Church Divinity School of the Pacific in Berkeley, Calif. </p>
-      <p>He and Quincey have two sons in college.</p>
+      <p class="mb-5">He and Quincey have two sons in college.</p>
 
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/MaryA.jpg", width: "295", class: "floatleft mt-4") %>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/mugShots/MaryA.jpg", width: "295", class: "floatleft mt-4", alt: "Mary Abrams photo") %>
       <h2 class="text-center">Deacon: The Rev. Dr. <br>Mary Abrams</h2>
       <p>Deacon Mary joins the Saint Paul's family seasonally. She and her husband, Jan, spend summer in her hometown Louisville, KY. "The Episcopal Church has been my spiritual home since I was nine years old," says Mary.</p>
       <p>She is retired from a career as an educator, including 30 years as Dean of Students at Jefferson Community College in Louisville. She earned her doctorate in 1986 and became a Licensed Clinical Psychologist.</p>
@@ -39,37 +39,35 @@
 
     </div><!--sidebar-->
   </div> <!--row-->
-    <div class="clearall"></div>
   <div class="row"> 
     <div class="col-lg-12 mt-5">
-    <h2>Saint Paul's Parish Staff</h2>
-  </div>
-  <div class="row">
-    <div class="col-auto">
-      <p><strong> Deb Avery </strong><br> Administrative assistant<br>
-        239-643-0197</p>
-      <figure>
-        <%= cl_image_tag("DebAvery_mpuxrv.jpg", width: "250", height: "300") %>
-        <figcaption>Deb Avery</figcaption>
-      </figure>
-    </div>
-    <div class="col-auto">
-      <p><strong>Janet Ross</strong> <br>Parish accountant<br>
-        239-643-0197</p>
-      <figure>
-        <%= cl_image_tag("JanRoss3_eej6ck.jpg", width: "250", height: "300") %> 
-      <figcaption>Janet Ross</figcaption>
-      </figure>  
-    </div>
-
-    <div class="col-auto">
-      <p><strong>Garnel Gurrier</strong><br>Fellowship events attendant</p>
-      <div class="mt50"></div>
-        <figure>
-          <%= cl_image_tag("GarnelMug_c4zfff.jpg", width: "250", height: "300") %>
-          <figcaption> Garnel Guerrier</figcaption>
-        </figure>
-    </div>
-  </div>
-  </div><!--12-col-->
-</div>
+    <h2 class="text-center">Saint Paul's Parish Staff</h2>
+      <div class="d-flex justify-content-around mb-5">
+        <div class="card">
+          <img class="card-img-top">
+            <%= cl_image_tag("DebAvery_mpuxrv.jpg", width: "250", height: "300", alt: "Deb Avery photo") %> 
+          <div class="card-body">
+            <h4 class="card-title">Deb Avery</h4>
+            <p class="card-text text-center">Administrative Assistant<br>
+                239-643-0197</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top">
+            <%= cl_image_tag("JanRoss3_eej6ck.jpg", width: "245", height: "300", alt: "Janet Ross photo") %> 
+          <div class="card-body">
+            <h4 class="card-title">Janet Ross</h4>
+            <p class="card-text text-center">Parish Accountant<br>
+                239-643-0197</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top">
+             <%= cl_image_tag("GarnelMug_c4zfff.jpg", width: "255", height: "300", alt: "Garnel photo") %> 
+          <div class="card-body">
+            <h4 class="card-title">Garnel Gurrier</h4>
+            <p class="card-text text-center">Fellowship events attendant<br>
+          </div>
+        </div>
+ 
+</div> <!-- container -->

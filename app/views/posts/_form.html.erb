@@ -1,6 +1,4 @@
-<%= bootstrap_form_with(model: @post), local: true do |f| %>
-<%= f.rich_text_area(:content) %>
-
-<%= f.submit class: "btn btn-primary" %> &nbsp;
-<%= link_to "Cancel", :back, class: "btn btn-danger" %>
+<%= bootstrap_form_with model: @post do |f| %>
+  <%= f.rich_text_area(:content) %>
+  <%= f.submit class: "btn btn-primary" %> &nbsp; <%= link_to "Cancel", :back, class: "btn btn-danger" %>
 <% end %>

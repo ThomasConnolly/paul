@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   before_action :members_only
   before_action :set_post, only: %i[show edit update destroy]
   before_action :all_posts, only: %i[index create update destroy]
-  respond_to :html, :js
 
   def new
     @post = Post.new
@@ -38,34 +37,24 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      redirect_to posts_path
       PostMailer.post_created(@post).deliver_later
-      respond_to do |format|
-        format.html { redirect_to posts_path }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
     end
   end
 
   def edit; end
 
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Post was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_path, notice: 'Post successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to posts_path, notice: 'Post successfully destroyed.'
   end
 
   private

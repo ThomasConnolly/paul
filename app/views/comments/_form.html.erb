@@ -1,6 +1,6 @@
-
-    <%= bootstrap_form_with model: [commentable, Comment.new], local: true, html: { class: local_assigns[:class], data: { target: local_assigns[:target] } } do |f| %>
-    <%= f.text_area :body, hide_label: true, placeholder: "Type comment here" %>
-    <%= f.hidden_field :parent_id, value: local_assigns[:parent_id] %>
-    <%= f.submit class: "btn btn-primary mt-n1 mb-5" %>
-    <% end %>
+<%= bootstrap_form_with model: [commentable, Comment.new], 
+  html: { class: local_assigns[:class], data: { target: local_assigns[:target] }} do |f| %>
+<%= f.text_area :body, hide_label: true, placeholder: "Type comment here" %>
+  <%= f.hidden_field :parent_id, value: local_assigns[:parent_id] %>
+  <%= f.submit class: "btn btn-primary mt-n1 mb-5" %>
+<% end %>

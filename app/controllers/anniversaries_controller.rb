@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class AnniversariesController < ApplicationController
   before_action :set_anniversary, only: %i[show destroy]
   before_action :set_admin_only
@@ -7,7 +6,7 @@ class AnniversariesController < ApplicationController
   def index
     @anniversaries = Anniversary.all
     @import = Anniversary::Import.new
-    end
+  end
 
   def import
     @import = Anniversary::Import.new anniversary_import_params
@@ -18,13 +17,12 @@ class AnniversariesController < ApplicationController
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
-   end
+  end
 
   def show; end
 
   def create
     @anniversary = Anniversary.new(anniversary_params)
-
     respond_to do |format|
       if @anniversary.save
         format.html { redirect_to @anniversary, notice: 'Anniversary was successfully created.' }
@@ -39,7 +37,7 @@ class AnniversariesController < ApplicationController
   def destroy
     @anniversary.destroy
     redirect_to anniversaries_url, notice: 'Anniversary was successfully destroyed.'
-    end
+  end
 
   private
 
@@ -50,7 +48,7 @@ class AnniversariesController < ApplicationController
 
   def anniversary_import_params
     params.require(:anniversary_import).permit(:file)
-end
+  end
 
   def set_admin_only
     redirect_to '/' unless current_user&.has_role?(:admin)

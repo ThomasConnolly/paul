@@ -1,16 +1,4 @@
 # frozen_string_literal: true
-
-# == Schema Information
-#
-# Table name: posts
-#
-#  id         :integer          not null, primary key
-#  content    :text
-#  created_at :datetime
-#  updated_at :datetime
-#  user_id    :integer
-#
-
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :members_only
@@ -28,10 +16,10 @@ class PostsController < ApplicationController
 
   def show
     @comments = if params[:comment]
-        @post.comments.where(id: params[:comment])
-      else
-        @post.comments.where(parent_id: nil)
-      end
+      @post.comments.where(id: params[:comment])
+    else
+      @post.comments.where(parent_id: nil)
+    end
   end
 
   def create
@@ -54,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-      redirect_to posts_path, notice: 'Post successfully destroyed.'
+    redirect_to posts_path, notice: 'Post successfully destroyed.'
   end
 
   private

@@ -1,55 +1,53 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.6.5'
+ruby '2.7.1'
 
-gem 'autoprefixer-rails'
-gem 'bootstrap_form'
-gem 'devise'
-gem 'devise-bootstrap-form'
-gem 'font-awesome-rails'
-gem 'coffee-rails' # used by sprockets to minify
-gem 'pg'
-gem 'rack'
-gem 'rails', '6.0.2.2'
-gem 'railties'
-gem 'sassc-rails' # used by sprockets to minify
-gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'turbolinks'
-gem 'uglifier' # used by sprockets to minify
 gem 'actionmailer'
-# gem 'attachinary', git: 'https://github.com/ThomasConnolly/attachinary'
+gem 'autoprefixer-rails'
 gem 'awesome_print'
 gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
+gem 'bootstrap_form'
+gem 'devise'
+gem 'devise-bootstrap-form'
+gem 'coffee-rails' # used by sprockets to minify
 gem 'cloudinary'
 gem 'figaro'
-gem 'googlebooks'
+gem 'font-awesome-rails'
 gem 'httparty'
+gem 'image_processing', '~> 1.10'
+gem 'irb', require: false
 gem 'jbuilder'
-gem 'mail'
-gem 'image_processing'
 gem 'loofah', '~> 2.3', '>= 2.3.1'
+gem 'mail'
 gem 'nokogiri'
-#gem 'popper_js'
 gem 'premailer-rails'
 gem 'pry'
 gem 'pry-awesome_print'
 gem 'pry-rails'
 gem 'puma'
+gem 'pg'
+gem 'rack'
+gem 'rails', '6.0.2.2'
+gem 'rails_12factor'
+gem 'railties'
 gem 'redis'
 gem 'rest-client'
 gem 'rolify'
+gem 'rollbar'
 gem 'rspec-rails'
+gem 'sassc-rails' # used by sprockets to minify
+gem 'scout_apm'
+gem 'shrine', '~> 3.2'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stripe'
 gem 'stripe_event'
-gem 'irb', require: false
+gem 'turbolinks'
+gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'
-gem 'rails_12factor'
-gem 'scout_apm'
-gem 'rollbar'
 
 group :development do
   gem 'annotate'
@@ -58,12 +56,12 @@ group :development do
   gem 'byebug'
   gem 'break'
   gem 'capistrano'
+  gem 'derailed'
+  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 1.0'
   gem 'meta_request'
   gem 'solargraph'
   gem 'web-console'
-  gem 'derailed'
-  gem 'letter_opener'
-  gem 'letter_opener_web', '~> 1.0'  
 end
 
 group :development, :test do
@@ -71,14 +69,13 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'guard'
   gem 'guard-livereload'
+  gem 'listen'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'shoulda-matchers'
-  gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
- 
 end
 
 group :test do

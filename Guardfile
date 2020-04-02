@@ -31,6 +31,7 @@ guard 'livereload' do
     jpeg: :jpeg
     # less: :less, # uncomment if you want LESS stylesheets done in browser
   }
+end
 
   rails_view_exts = %w[erb haml slim]
 
@@ -47,7 +48,6 @@ guard 'livereload' do
           }x) do |m|
       path = m[1]
       "/assets/#{path}.#{type}"
-    end
   end
 
   # file needing a full reload of the page anyway

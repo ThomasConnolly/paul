@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable
     else
-      redirect_to @commentable, alert: "Something went wrong"
+      redirect_to @commentable, alert: 'Something went wrong'
     end
   end
 
@@ -19,8 +19,7 @@ class CommentsController < ApplicationController
 
   private
 
-    def comment_params
-      params.require(:comment).permit(:body, :parent_id)
-    end
-  
+  def comment_params
+    params.require(:comment).permit(:body, :parent_id)
+  end
 end

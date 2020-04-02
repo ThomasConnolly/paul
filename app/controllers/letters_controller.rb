@@ -11,7 +11,7 @@ class LettersController < ApplicationController
   def index
     @letters = Letter.all.order(:last_name)
     @import = Letter::Import.new
-    end
+  end
 
   def import
     @import = Letter::Import.new letter_import_params
@@ -52,11 +52,11 @@ class LettersController < ApplicationController
 
   def letter_import_params
     params.require(:letter_import).permit(:file)
- end
+  end
 
   def set_letter
     @letter = Letter.find(params[:id])
- end
+  end
 
   def letter_params
     params.require(:letter).permit(:last_name, :salutation, :address1, :address2, :city, :state, :zip, :writer)

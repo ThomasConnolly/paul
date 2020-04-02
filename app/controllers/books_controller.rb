@@ -1,19 +1,4 @@
 # frozen_string_literal: true
-
-# == Schema Information
-#
-# Table name: books
-#
-#  id         :integer          not null, primary key
-#  author     :string(255)
-#  title      :string(255)
-#  subject    :string(255)
-#  isbn       :string(255)
-#  dewey      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new edit update create destroy book_admin]
@@ -44,7 +29,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-end
+  end
 
   def edit; end
 
@@ -54,8 +39,8 @@ end
       redirect_to books_admin_path, notice: 'Book was saved'
     else
       render :new
-   end
- end
+    end
+  end
 
   def show; end
 
@@ -64,7 +49,7 @@ end
       redirect_to book_path(@book)
     else
       render :edit
-  end
+    end
   end
 
   def destroy
@@ -73,7 +58,7 @@ end
       format.html { redirect_to books_admin_path, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
-end
+  end
 
   def import
     @import = Book::Import.new book_import_params
@@ -84,7 +69,7 @@ end
       flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
-   end
+  end
 
   def set_book
     @book = Book.find(params[:id])
@@ -94,7 +79,7 @@ end
 
   def admin_only
     redirect_to '/' unless current_user&.has_role?(:admin)
-end
+    end
 
   def book_import_params
     params.require(:book_import).permit(:file)
@@ -102,7 +87,7 @@ end
 
   def book_params
     params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description, :cutter, :url)
-end
+  end
 end
 # http://books.google.com/books/content?id=fDZ6N8BACJkC&printsec=frontcover&img=1&zoom=2&edge=none&source=gbs_api
 

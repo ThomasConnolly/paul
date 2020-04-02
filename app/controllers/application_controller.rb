@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_current_location, unless: :devise_controller?
@@ -20,18 +19,21 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, 
-      keys: [:first_name, :last_name, :email, :password, :password_confirmation, :remember_me])
-    devise_parameter_sanitizer.permit(:sign_in, 
+    devise_parameter_sanitizer.permit(:sign_up,
+      keys: [:first_name, :last_name, :email, :password,                    :password_confirmation, :remember_me])
+    devise_parameter_sanitizer.permit(:sign_in,
       keys: [:login, :password, :password_confirmation, :remember_me])
-    devise_parameter_sanitizer.permit(:account_update, 
-      keys: [:username, :email, :password, :password_confirmation, :current_password])
+    devise_parameter_sanitizer.permit(:account_update,
+      keys: [:username, :email, :password, :password_confirmation,:current_password])
   end
 
+
   private
+  
   def login
-    @login || self.username || self.email
+    @login || username || email
   end
+
   def store_current_location
     store_location_for(:user, request.url)
   end

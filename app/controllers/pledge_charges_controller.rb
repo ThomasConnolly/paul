@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class PledgeChargesController < ApplicationController
   before_action :authenticate_user!
 
@@ -52,5 +51,5 @@ class PledgeChargesController < ApplicationController
       flash[:error] = e.message
       render action: :new
     end
-end
+  end
 end

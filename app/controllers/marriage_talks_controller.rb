@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class MarriageTalksController < ApplicationController
   before_action :set_marriage_talk, only: %i[show edit update destroy]
 
@@ -28,10 +27,10 @@ class MarriageTalksController < ApplicationController
 
     respond_to do |format|
       if @marriage_talk.save
-        format.html { redirect_to @marriage_talk, notice: 'Marriage talk was successfully created.' }
+        format.html { redirect_to @marriage_talk, notice: 'Marriage talk was successfully created.'}
         format.json { render :show, status: :created, location: @marriage_talk }
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @marriage_talk.errors, status: :unprocessable_entity }
       end
     end
@@ -42,11 +41,11 @@ class MarriageTalksController < ApplicationController
   def update
     respond_to do |format|
       if @marriage_talk.update(marriage_talk_params)
-        format.html { redirect_to @marriage_talk, notice: 'Marriage talk was successfully updated.' }
-        format.json { render :show, status: :ok, location: @marriage_talk }
+        format.html { redirect_to @marriage_talk, notice: 'Marriage talk was successfully updated.'}
+        format.json { render :show, status: :ok, location: @marriage_talk}
       else
-        format.html { render :edit }
-        format.json { render json: @marriage_talk.errors, status: :unprocessable_entity }
+        format.html { render :edit}
+        format.json { render json: @marriage_talk.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -56,8 +55,8 @@ class MarriageTalksController < ApplicationController
   def destroy
     @marriage_talk.destroy
     respond_to do |format|
-      format.html { redirect_to marriage_talks_url, notice: 'Marriage talk was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to marriage_talks_url, notice: 'Marriage talk was successfully destroyed.'}
+      format.json { head :no_content}
     end
   end
 

@@ -12,18 +12,11 @@
     </section>
     <section>
       <div class="create-post">
-         <%# if current_user.avatar? %>
-          <%#= cl_image_tag(current_user.avatar.path, width: '120',
-          class: 'floatleft') %>
-          <div class="default-avatar"><p>Click to add<br>Your Picture</p>
-                     </div>
-        <%# end %>
           <h2> <%= link_to "Create a post", new_post_path, local: true %></h2>
       </div><!--create-post -->
           <div class="mt30"></div>
             <div id="post-form" style="display:none;">
             </div>
-
     </section>
       <div class="mt30"></div>
     <section>

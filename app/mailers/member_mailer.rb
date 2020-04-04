@@ -26,8 +26,16 @@ class MemberMailer < ApplicationMailer
     )
   end
 
+  def holy_week_2020_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/q_100/v1586024909/HolyWeek20_mihkbp.pdf"
+    mail(
+      subject: "A new Pathway, the St. Paul parish newsletter, for you"
+    )
+  end
+
   def mar2020_pathway(member)
-    @meber = Member
+    @meber = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1583598830/March2020S_uwawdz.pdf"
     mail(
       subject: "A new Pathway, the parish newsletter, for you"

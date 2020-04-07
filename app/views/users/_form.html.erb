@@ -4,7 +4,7 @@
      <% if current_user.avatar? %>
       <%= cl_image_tag(current_user.avatar.path, size: '240x350', class: 'image-center') %>
       <% else %>
-      <div class="border w-25 text-center">
+      <div class="border text-center">
       <h4>Your<br>Photo<br>Here</h4>
       </div>
       <br>
@@ -12,11 +12,10 @@
     <p class="text-center"><strong> <em>"Choose file"</em> from your computer, then submit</strong></p>
    
 <%= bootstrap_form_for(@user) do |f| %>
-  <%= f.hidden_field(picture_cache) %>
-  <%= f.file_field(:avatar)%>
+  <%= f.text_field :avatar, as: :attachinary %>
   <%= f.button :submit, "Submit", class: "btn btn-primary" %> &nbsp;
   <%= link_to "Cancel", :back, class: "btn btn-danger" %><br>
 <% end %>
-<div class="mt-5"></div>
+<div class="mt50"></div>
     </div>
   </div>

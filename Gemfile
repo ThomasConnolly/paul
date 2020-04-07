@@ -14,6 +14,7 @@ gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'coffee-rails' # used by sprockets to minify
+gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro'
 gem 'font-awesome-rails'

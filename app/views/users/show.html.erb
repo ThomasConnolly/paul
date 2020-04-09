@@ -1,6 +1,6 @@
 <h3>User</h3>
 <% if @user.avatar? %>
-  <%= cl_image_tag(@user.avatar.path, size: '160x234') %> 
+  <%= image_tag(@user.avatar) %> 
 <% end %>
 <p> <%= @user.username.titleize %></p>  
 <p><%= @user.email %></p>

@@ -15,8 +15,8 @@ import 'bootstrap';
 import "src/application.scss";
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css")
-//require("@rails/activestorage").start()
-//require("channels")
+require("@rails/activestorage").start()
+// require("channels")
 import Rails from '@rails/ujs';
 Rails.start();
 window.Rails = Rails

@@ -12,7 +12,7 @@
 <div class="mt30">
   <% @users.each do |user| %>
     <% if user.avatar.present? %>
-      <%= cl_image_tag(user.avatar.path, { width: '120', class: "floatleft"}) %>
+      <%= image_tag user.avatar, width: "120", class: "floatleft" %>
     <% end %>
     <h2>
       <% if user.has_role?(:vestry) %>

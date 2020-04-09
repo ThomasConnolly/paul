@@ -49,12 +49,12 @@ class User < ApplicationRecord
   has_many :opportunities
   has_many :books
   has_many :definitions
-  has_many :story_ideas, dependent: :destroy
+  has_many :story_ideas
   has_many :vreports
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates_confirmation_of :password
-  has_one_attached :avatar, dependent: :destroy
+  has_one_attached :avatar
   has_one :pledge, dependent: :destroy
   has_many :donations
   
@@ -63,9 +63,9 @@ class User < ApplicationRecord
 
   attr_accessor :login
 
-  # def login
-  #   @login || self.username || self.email
-  # end
+  def login
+    @login || self.username || self.email
+  end
 
   # Include default devise modules
   # Others available are:
@@ -115,5 +115,5 @@ class User < ApplicationRecord
     where(conditions.to_h).where(
       ["lower(username) = :value OR lower(email) = :value",
       { value: login.strip.downcase }]).first
-    end
   end
+end

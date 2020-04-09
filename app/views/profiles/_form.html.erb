@@ -8,32 +8,18 @@
 
   <h1> Fill out your profile </h1><br>
   
-    <%
-=begin%>
- <% if current_user.avatar? %>
-      <%= link_to cl_image_tag(current_user.avatar.path, size: '160x234',
-        class: "floatleft"), edit_user_path(current_user) %> 
+    <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar, size: '160x234',
+        class: "floatleft" %> 
     <% else %>
-      <div class="big-avatar-missing">
-      <%= link_to edit_user_path(current_user) do %>
+      <%= link_to "Add or change your profile picture", edit_user_path(current_user) %>
       <h3>Click to add<br>Your own picture</h3>
-      </div>
       <% end %>
-    <% end %> 
-<%
-=end%>
 
   <h3 class="mt30">Everybody has a story...</h3>
     <p>...And we get to know one another by sharing our story.
     look at the questions below and fill out the boxes you want to fill out. 
     You can always come back to edit your profile.</p>
-
-    <%
-=begin%>
- <div class='clearall'> </div>
-      <p><strong>Click your photo to update it</strong></p> 
-<%
-=end%>
   
   <%= bootstrap_form_for(@profile) do |f| %>
    <%= f.alert_message "Please fix the errors below." %>

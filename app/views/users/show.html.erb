@@ -1,8 +1,9 @@
 <h3>User</h3>
-<% if @user.avatarattached? %>
-  <%= image_tag current_user.avatar %> 
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar %> 
 <% else %>
-  <%= image_tag 'default_avatar'%>
+  <h5>Upload a profile picture</h5>
+  <%= render partial 'form' %>
 <% end %>
 <p> <%= @user.username.titleize %></p>  
 <p><%= @user.email %></p>

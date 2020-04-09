@@ -1,22 +1,21 @@
 <div class="mt-5"></div>
   <div class="row">
     <div class="col-md-4 offset-md-4">
-     <% if current_user.avatar? %>
-      <%= image_tag(current_user.avatar, size: '240x350', class: 'image-center') %>
+      <% if current_user.avatar.present? %>
+        <%= image_tag current_user.avatar, width: "100%" %>
       <% else %>
-      <div class="border text-center">
-      <h4>Your<br>Photo<br>Here</h4>
-      </div>
-      <br>
+        <div class="border text-center">
+          <h4>Your<br>Photo<br>Here</h4>
+        </div>
       <% end %>
-    <p class="text-center"><strong> <em>"Choose file"</em> from your computer, then submit</strong></p>
+      <h5 class="text-center mt-2 mb-3"><strong>To add or change your profile photo,  <em>"Choose file"</em> from your computer, then upload to our server.</strong>
+      </h5>
    
-<%= bootstrap_form_for(@user) do |f| %>
-  <%= f.file_field :avatar, direct_upload: true %>
-  <%= f.submit "upload", class: "btn btn-primary"%> &nbsp;
-  <%= link_to "cancel", :back, class: "btn btn-danger" %><br>
-<% end %>
-<div class="mt50"></div>
+      <%= bootstrap_form_for(@user) do |f| %>
+        <%= f.file_field :avatar, direct_upload: true %>
+        <%= f.submit "upload", class: "btn btn-primary"%> &nbsp;
+          <%= link_to "cancel", :back, class: "btn btn-danger" %><br>
+      <% end %>
     </div>
   </div>
   

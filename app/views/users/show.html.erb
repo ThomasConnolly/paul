@@ -1,6 +1,8 @@
 <h3>User</h3>
-<% if @user.avatar? %>
-  <%= image_tag(@user.avatar) %> 
+<% if @user.avatarattached? %>
+  <%= image_tag current_user.avatar %> 
+<% else %>
+  <%= image_tag 'default_avatar'%>
 <% end %>
 <p> <%= @user.username.titleize %></p>  
 <p><%= @user.email %></p>

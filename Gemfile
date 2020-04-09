@@ -15,6 +15,7 @@ gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'cloudinary'
+gem 'activestorage-cloudinary-service'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'httparty'

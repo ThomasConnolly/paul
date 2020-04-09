@@ -11,7 +11,7 @@
 <% end %>
 <div class="mt30">
   <% @users.each do |user| %>
-    <% if user.avatar.present? %>
+    <% if user.avatar.attached? %>
       <%= image_tag user.avatar, width: "120", class: "floatleft" %>
     <% end %>
     <h2>

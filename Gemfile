@@ -43,7 +43,6 @@ gem 'rollbar'
 gem 'rspec-rails'
 gem 'sassc-rails' # used by sprockets to minify
 gem 'scout_apm'
-gem 'shrine', '~> 3.2'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stripe'
 gem 'stripe_event'

@@ -1,13 +1,4 @@
-
-
-<p> <%= @post.user.username %> has created a post in <em><strong>Family Ties</strong></em>. You may 
-read it by logging in to the website and <%=link_to "clicking this link.", @url %>
+<p> <%= @post.user.username.titleize %> has created a post in <em><strong>Family Ties</strong></em>, our <em>Facebook</em>-like chat center for members of St. Paul's. You may read it by logging in to the website and <%=link_to "clicking this link.", @url %>
 </p>
-
-
-<div class="mt100"></div>
-
-<p>This message is generated automatically when a post has been created for members of St. Paul's. </p>
-
-<p>Would you like a quick tutorial on how to use the "Family Ties" social media page on our
-   website? <%= link_to "Click here", "http://www.saintpaulsnaples.org/pages/how_to_use" %></p>
+<div class="mt-5"></div>
+<p>This message is generated automatically when a post has been created for parishioners. </p>

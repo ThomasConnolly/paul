@@ -1,6 +1,6 @@
 <div class="col-md-4 offset-md4 text-center"> 
 <h1><%= @profile.user.username.titleize  %></h1>
-  <% if @profile.user.avatar.present? %>
+  <% if @profile.user.avatar.attached? %>
     <%= image_tag @profile.user.avatar, width: "100%", class: "center" %>
   <% end %>
   <p><% if current_user == @profile.user %>

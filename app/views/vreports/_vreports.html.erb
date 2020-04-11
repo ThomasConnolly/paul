@@ -1,7 +1,7 @@
 
   <% @vreports.each do |vreport| %>
     <% if vreport.user.avatar? %>
-      <%= cl_image_tag(vreport.user.avatar.path, {width: '160', class: 'floatleft'}) %>
+      <%= image_tag(vreport.user.avatar, width: '160', class: 'floatleft') %>
     <% else %>
     <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
     </div>

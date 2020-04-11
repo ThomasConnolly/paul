@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :members_only
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_post, only: %i[show edit update destroy]
   before_action :all_posts, only: %i[index create update destroy]
 
@@ -12,6 +11,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @pray_fors = PrayFor.all
   end
 
   def show
@@ -57,12 +57,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:content, :post_picture, photos: [])
-  end
-
-  def members_only
-    unless current_user.has_role?(:member)
-      redirect_to root_path, alert: "You must be a member of St. Paul's to
-      use this function."
-    end
   end
 end

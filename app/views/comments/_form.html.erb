@@ -1,3 +1,4 @@
+<%if !current_user %><h2>Users must be signed in in order to post comments </h2><%end%>
 <%= bootstrap_form_with model: [commentable, Comment.new], 
   html: { class: local_assigns[:class], data: { target: local_assigns[:target] }} do |f| %>
 <%= f.text_area :body, hide_label: true, placeholder: "Type comment here" %>

@@ -1,18 +1,25 @@
 <div class="container">
 <h2>Here are the latest posts</h2>
   <% @posts.each do |post| %>
-    <div>
-      <%= image_tag post.user.avatar, width:"30%", class: "floatleft" %>
-      <%# <h5> Your<br>Picture<br>Here</h5><br> <p> <small> (Under construction) </small></p> %>
+    <div class b mr-3 text-center floatleft>
+      <% if post.user.avatar.attached? %>
+        <%= image_tag post.user.avatar, width:"30%", class: "floatleft" %>
+      <% elsif %>
+        <% user_signed_in? %>
+        <h5><%= link_to "Add your Picture Here", edit_user_path(current_user) %>
+      <% else %>
+        <%= link_to "Please sign in or register", new_user_path %>
+      <% end %>
+      
       <p class="list"><em><%= post.user.username.titleize %>::</em></p>
       <p><%= post.content %></p>
-      <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. <%= pluralize(post.comments.count, "comment") %> </small >&nbsp; 
+      <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. <%= pluralize(post.comments.count, "comment") %> </small >&nbsp; <span class="show-edit-delete">
         <%= link_to "Show", post_path(post[:id]) %> |
-        <% if current_user == post.user || current_user.has_role?(:admin) %>
+        <% if current_user == post.user || user_signed_in? && current_user.has_role?(:admin) %>
           <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
           <%= link_to "Delete", post_path(post), 
             method: :delete, data: { confirm: "Are you sure you want to 
-            delete the post?" }%> 
+            delete the post?" }%> </span>
         <% end %></p>
     </div>
       <div class="clearall"></div>

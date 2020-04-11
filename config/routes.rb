@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :pray_fors
   resources :photos
   devise_for :users, 
     path: '',

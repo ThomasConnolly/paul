@@ -4,13 +4,13 @@
 <div class="row">
 <% @pathways.each do |p|%>
   <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">
+    <div class="card" style="width: 200px;">
       <div class="card-img-top" alt="pathway image">
-        <%= link_to p.image, p.link %>  
+      <%= image_tag "#{p.image}", width: "100%" %>
       </div>  <!-- card- image -->
         <div class="card-body">
           <h4 class="card-title"> <%= p.title %> </h4>
-            <p><strong>Click image to download</strong></p>
+           <%= link_to "Download", "#{p.link}" %>
         </div> <!-- card-body -->
     </div> <!-- card -->
   </div> <!-- column -->
@@ -18,7 +18,7 @@
 </div>
 
 
-</div>
+<%# </div>
 <div class="row">
 
   <!-- Grid column -->
@@ -74,4 +74,4 @@
 
 </div>
 <!-- Grid row -->
-</div>
+</div> %>

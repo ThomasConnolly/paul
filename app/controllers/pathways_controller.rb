@@ -9,7 +9,9 @@ def edit; end
 
 def show; end
 
-def new; end
+def new
+  @pathway = Pathway.new
+end
 
 
 def create

@@ -1,0 +1,13 @@
+  <% @pathways.each do |p|%>
+    <div class="card" style="width: 180px;">
+      <div class="card-img-top" alt="pathway image">
+        <%= link_to p.image, p.link %>
+      </div>  
+      <div class="card-body">
+        <h4 class="card-title"> <%= p.title %> </h4>
+        <a href="#" class="btn btn-primary">Click image to download</a>
+      </div> 
+    </div>
+    <% end %>
+
+<%= link_to 'New Pathway', new_pathway_path %>

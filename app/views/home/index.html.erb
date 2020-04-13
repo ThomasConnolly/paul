@@ -1,13 +1,25 @@
 <div class="container">
   <div class=row>
-    <div class="col-md-8 col-sm-12 main-body">
+    <div class="col-md-3">
+      <%= cl_image_tag("Communion2_xrxvjq.jpg", width: "100%") %>
+    </div>
+    <div class="col-md-6"> 
+      <%= cl_image_tag("Communion1_k9enjy.jpg", width: "100%") %>
+      <p>No one was there to flower the cross on Easter because of the virus that is affecting the world right now. Several scores of parishioners drove through to recieve Holy Communion and a blessing from Fr. Tom</p>   
+    </div>
+    <div class="col-md-3">
+       <%= cl_image_tag("Communion4_dgqdf4.jpg", width: "100%") %>
+    </div>
+  </div>  
+  <div class="row">
+  <div class="col-md-8 col-sm-12 main-body">
+  <h1>We follow Jesus Christ</h1>
 
-        <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
+    <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
+    <p><strong><em>In ordinary times </em></strong> you will find us worshipping our Lord using the two rites of Holy Eucharist, Rite I at 8 a.m. and Rite II at 10 a.m.</p>
+    <p>In these times, we live stream one holy mass at 10 a.m.on Sundays on YouTube. You can go to our YouTube page <%= link_to "by clicking here.", "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %> You can subscribe to our page so it's easier to find us on Sunday morning. We post the service bulletin a few days ahead so you can follow the liturgy and give the responses. Check back here for the link on Thursdays.
 
-
-    <h1 class="mt-5">Easter Sunday Holy Eucharist</h1>
-      <%= cl_image_tag("logos/easter_morning.png", width: "290", class: "floatleft img-fluid") %>
-      <p>Come to church. Stay in the safety of your car. Recieve Holy Communion and the Lord's blessing. Rejoice, for the Lord is risen!</p><p>This "drive through" Easter will be active from 9 to 11 a.m. All are welcome.</p>
+    
       <p class="mt-1 mb-1">To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
       <p class="mt-1"><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%>
             </p>
@@ -30,21 +42,22 @@
         <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Wednesday class starts at 6:30 p.m., and Sunday class is at 9 a.m.</p>
         <p>Both sessions are in the library, Serson Hall. </p> -->
         <h2 class="mt3">Farmers' Market cancelled</h2>
-        <%= cl_image_tag("mktLogo_ggxhct.png", class: "image-center img-fluid", width: "55%") %>
+        <%= cl_image_tag("mktLogo_ggxhct.png", class: "img-center img-fluid", width: "35%") %>
         <div class="clearall"></div>
-        <!--   <p>The market is now open for the 2019-2020 season and runs through April. Ample parking is directed by our volunteer helpers, so it's easy in and out to the greatest block party on a Saturday morning in Naples. We hope you'll join us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
+        <!--   <p>The market is now open for the 2019-2020 season and runs through 2pril. Ample parking is directed by our volunteer helpers, so it's easy in and out to the greatest block party on a Saturday morning in Naples. We hope you'll join us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
         <p>For more information on the market, <%= link_to "click here.",
         markets_index_path %></p>
         <div class="clearall"></div> -->
-        <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "45%", class: "floatleft mt-3") %>
-        <h2>Stewardship</h2>
+        <%= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "35%", class: "floatleft mt-1") %>
+        <h2 class="mt-5">Stewardship</h2>
         <p>Stewardship at St. Paul's involves investing the three Ts with God. The three Ts are time, talent and treasure. Investing with God is a year-round stewardship. There are many ministries at St. Paul's that could use your time and talent. As to treasure, a pledge is your statement of intent to share for the mission of the church.
         To learn about making payments with a credit or debit card or o ther on-line methods of paying your pledge, click on the "Invest with God" image.
+        <div class="clearfix"></div>
         <h2 class="mt-3">Supporters of these children</h2>
         <%=cl_image_tag("25_aeyuf2.jpg", width: "420", height: "315", class:
           "floatright") %>
         <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San Francisco de Macoris, serves a hundred children who would be on the street were it not for the shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of love that may otherwise be missing in their young lives.</p>
-        <p>It is a ministry of love and affection, above all.</p>
+        <p>It is a ministry of love and affection, above all.</p> <div class="clearfix"></div>
         <h2 class="mt3">Supporters of Tumaini Fund</h2>
         <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
           <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for thousands of children who lost their moms and dads to AIDS. In addition to monitary contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous dresses for Dr. Wilson to distribute.</p>
@@ -66,7 +79,7 @@
         <h2 class="mt-3">Stay Safe</h2>
         <p><%= link_to "Click here for Fr. Tom's suggestions on how to live safely in a dangerous world.", pages_stay_safe_path %> 
         <%= link_to cl_image_tag("HolyWeek20_mihkbp.jpg", width: "100%", alt: "pathway photo"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/q_100/v1586024909/HolyWeek20_mihkbp.pdf" %>
-        <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (March 7, 2020) of <em>Pathway,</em> the parish newsletter.</p>
+        <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (April 4http://localhost:5000/, 2020) of <em>Pathway,</em> the parish newsletter.</p>
         <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center mt-3") %>
         <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
         <%= link_to "listed here.", opportunities_path %> </p>

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :pathways
   resources :pray_fors
   resources :photos
   devise_for :users, 
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
   resources :vestry_minutes
   resources :pictures
   resources :surveys, only: :index
+  
   get 'series/index'
   get 'pages/way_of_love'
   get 'activities/index'

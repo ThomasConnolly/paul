@@ -2,7 +2,7 @@ class PathwaysController < ApplicationController
 before_action :set_pathway, only: [:show, :edit, :update, :destroy]
 
 def index
-  @pathways = Pathway.all
+  @pathways = Pathway.all.order('title DESC')
 end
 
 def edit; end

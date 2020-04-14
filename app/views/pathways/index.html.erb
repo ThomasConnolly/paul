@@ -1,5 +1,5 @@
 <div class="container">
-<% if user_signed_in && current_user.has_role?(:admin) %>
+<% if user_signed_in? && current_user.has_role?(:admin) %>
 <%= link_to 'Add a new Pathway card', new_pathway_path %> 
 <% end %>
 <div class="mb-5">

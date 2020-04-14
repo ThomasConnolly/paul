@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class MembersController < ApplicationController
-  # before_action :authenticate_user!
-  #before_action :set_member
+  before_action :authenticate_user!
+  before_action :set_member, only: %i[show update edit destroy]
 
   def index
     @members = Member.all.order(:last_name)
@@ -34,8 +34,10 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to members_path
+    redirect_to members_path, notice: "Member successfully deleted"
   end
+
+
 
   private
 

@@ -1,27 +1,28 @@
 <h1>Members of St. Paul's</h1>
 
 <h4>Import data</h4>
-    <%= bootstrap_form_for @import, url: import_members_path, multipart: true do |f|%>
-      <% if @import.errors.any? %>
-        <div class="alert alert-error">
-        <% @import.errors.full_messages.each do |msg| %>
-        <div><%= msg %> </div>
-        <% end %>
-      <% end %>
-      <%= f.file_field :file %>
-      <%= f.submit  "Upload members" %>
+  <%= form_for @import, url: import_members_path, multipart: true do |f|%>
+    <% if @import.errors.any? %>
+      <div class="alert alert-error">
+      <% @import.errors.full_messages.each do |msg| %>
+      <div><%= msg %> </div>
     <% end %>
+    <%= f.file_field :file %>
+    <%= f.submit  "Upload members" %>
+  <% end %>
 
-    <div class="mt100"></div>
+    <div class="mt-5"></div>
 
-<% @members.each do |m| %>
-<p><strong><%= m.first_name %>&nbsp;<%= m.last_name %></strong>,&nbsp;
-  <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
-  <%= link_to 'Edit', edit_member_path(m) %>
-  <%= link_to ' | Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
-<% end %>
+  <% @members.each do |m| %>
+    <p><strong><%= m.username.titleize %></strong>,&nbsp;
+    <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
+    <%= link_to 'Edit', edit_member_path(m) %>
+    <%= link_to ' | Delete', member_path(m), method: :delete, data: { confirm: 
+    'Are you sure?' } %></small></p>
+  <% end %>
 
-
-<% @diaspora.each do |d| %>
-<p><%=d.first_name %> <%= d.email %> </p>
-<% end %>
+<h2> Members in the diaspora </h2>
+  <% @diaspora.each do |d| %>
+    <p><%=d.first_name %> <%= d.email %> </p>
+  <% end %>
+  <% end %>

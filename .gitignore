@@ -49,3 +49,5 @@ get-unused-routes.rb
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+*.txt
+members.csv

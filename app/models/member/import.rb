@@ -21,3 +21,11 @@ class Member::Import
     errors.none?
   end
 end
+
+
+
+
+# CSV.foreach(file, col_sep: ';', headers: true) do |row|
+#   data = row.to_h.transform_keys(&:strip)
+#   birthday = Date.parse("2020-#{data['month']}-#{data['day']}")
+# end

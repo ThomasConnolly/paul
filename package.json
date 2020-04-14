@@ -20,7 +20,7 @@
     "flatpickr": "^4.6.3",
     "font-awesome": "^4.7.0",
     "jqeury": "^0.0.1-security",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "liquid-fire": "^0.31.0",
     "lodash": "^4.17.15",
     "node": "^13.12.0",

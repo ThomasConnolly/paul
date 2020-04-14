@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   resources :formation_talks, only: %i[show index edit new]
   resources :marriage_talks, only: %i[new show index edit]
   get 'home/invitation'
-  get 'members/index'
   get 'members/import'
   resources :events do
     resources :tickets, only: %i[new show create update index]

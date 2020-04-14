@@ -49,6 +49,7 @@ class StoryIdeasController < ApplicationController
 
   def destroy
     @story_idea.destroy
+    redirect_to story_ideas_path
   end
 
   private

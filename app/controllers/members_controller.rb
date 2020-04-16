@@ -16,11 +16,11 @@ class MembersController < ApplicationController
       redirect_to members_path, notice: "Imported #{@import.imported_count} members"
     else
       @members = Member.all
-      flash[:alert] =
-        "There were #{@import.errors.count} errors in your CSV file"
+      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
       render action: :index
     end
   end
+
 
   def update
     @member.update_attributes(member_params)

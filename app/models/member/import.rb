@@ -11,7 +11,8 @@ class Member::Import
       if member.save  
         @imported_count += 1
       else
-        errors.add :base, "Line #{$.} - #{member.errors.full_messages.join(',')}"
+        errors.add :base, "Line #{$.} - 
+        #{member.errors.full_messages.join(',')}"
       end
     end
   end

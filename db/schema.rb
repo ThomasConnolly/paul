@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_155303) do
+ActiveRecord::Schema.define(version: 2020_04_15_150038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -331,18 +331,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_155303) do
     t.string "first_name", limit: 255
     t.string "last_name", limit: 255
     t.string "username", limit: 255
-    t.string "stripe_id"
-    t.string "card"
     t.string "avatar"
     t.string "honey"
-    t.string "source"
-    t.string "albergue_sponsor"
-    t.string "card_last4"
-    t.integer "card_exp_year"
-    t.integer "card_exp_month"
-    t.string "card_type"
-    t.integer "donation_id"
-    t.string "stripe_pledge"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end

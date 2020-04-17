@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Anniversaries </h1>
 <% @anniversaries.each do |a| %>
-<p><strong><%= a.salutation %>&nbsp;<%= a.last_name %></strong>,&nbsp;<%= a.anniversary %>
+<p><strong><%= a.salutation %>&nbsp;<%= a.last_name %></strong>,&nbsp;<%= a.anniversary %><small> <%= link_to "delete", anniversary_path(a), method: :delete, data: { confirm: 'Are you sure?'}  %></small></p>
 <% end %>
 <div class="mt30"></div>
   <h4>Import data</h4>
@@ -16,3 +16,4 @@
       <%= f.submit  "Upload anniversaries" %>
     <% end %>
     
+   

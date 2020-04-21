@@ -14,7 +14,7 @@
 #
 
 class PledgesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new]
   before_action :change_path, only: :new
   before_action :set_pledge, only: %i[show edit update destroy]
 

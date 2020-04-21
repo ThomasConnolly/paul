@@ -1,0 +1,12 @@
+<div>
+  <%= bootstrap_form_for @pledge do |f| %>
+   <%= f.alert_message "Please fix the errors below." %>
+    <div>
+      <h2>Make a donation now:</h2>
+        <%= f.number_field :amount, input_html: {id: "donationAmount"}, placeholder: "Amount in whole dollars", label: false %><br>
+    </div>
+    <div>
+      <%= f.submit "Pay now", class: "btn btn-primary btn-lg" %>
+    </div>
+  <% end %>
+</div>

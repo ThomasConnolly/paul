@@ -2,7 +2,7 @@ class PathwaysController < ApplicationController
 before_action :set_pathway, only: [:show, :edit, :update, :destroy]
 
 def index
-  @pathways = Pathway.all.order('title DESC')
+  @pathways = Pathway.all.order('pubdate DESC')
 end
 
 def edit; end
@@ -44,6 +44,6 @@ private
   end
 
   def pathway_params
-    params.require(:pathway).permit(:image, :link, :title)
+    params.require(:pathway).permit(:image, :link, :pubdate)
   end
 end

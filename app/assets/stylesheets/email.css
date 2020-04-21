@@ -26,11 +26,11 @@ p {
 .greeting {
   text-align: center;
   font-weight: bold;
-  font-size: 110%;
+  font-size: 1.2rem;
 }
 
 .footer {
-  font-size: 90%;
+  font-size: 1rem;
   color: #666;
 }
 
@@ -47,6 +47,6 @@ a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-left: 250px;
 }

@@ -24,6 +24,14 @@ html {
   box-sizing: border-box;
   margin: 0px;
   font-size: 16px;
+  
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -53,7 +61,6 @@ a:hover {
  font-family : Verdana, Helvetica, Arial, Sans-Serif;
  text-align:left;
  width: 100%;
- max-width: 1200px;
 }
 
 .main-body {
@@ -133,7 +140,6 @@ margin-top : 1rem;
 }
 p {
     text-indent: 1em;
-
     margin-bottom: 24;
 }
 p.list{

@@ -21,17 +21,19 @@ class Member < ApplicationRecord
   before_save :set_username
 
   require 'date'
-
+  
+  #Importing members from csv file
   def self.assign_from_row(row)
     member = Member.where(membership_id: row[:membership_id]).first_or_initialize
     member.assign_attributes row.to_hash.slice(
       :last_name,
       :first_name,
       :membership_id,
-      :birthday,
       :email,
       :away_zip
-      )
+    ).merge(
+      :birthday => DateTime.strptime(row[3], "%m/%d/%Y").strftime("%Y-%m-%d")
+    )
     member
   end
 

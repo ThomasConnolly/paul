@@ -1,9 +1,8 @@
 <div class="container">
 <% if user_signed_in? && current_user.has_role?(:admin) %>
-<%= link_to 'Add a new Pathway card', new_pathway_path %> 
+  <%= link_to 'Add a new Pathway card', new_pathway_path %> 
 <% end %>
-<div class="mb-5">
-</div>
+<div class="mb-5"></div>
 <div class="row">
 <% @pathways.each do |p|%>
   <div class="col-lg-3 col-md-4 col-sm-6">
@@ -12,8 +11,10 @@
       <%= image_tag "#{p.image}", width: "100%" %>
       </div>  <!-- card- image -->
         <div class="card-body">
-          <h4 class="card-title"> <%= p.title %> </h4>
-           <%= link_to "Download", "#{p.link}" %>
+          <h4 class="card-title text-center"> <%= p.pubdate.strftime("%B %Y") %> </h4>
+          <div class="text-center">
+            <%= link_to "Download", "#{p.link}" %>
+          </div>
         </div> <!-- card-body -->
     </div> <!-- card -->
   </div> <!-- column -->

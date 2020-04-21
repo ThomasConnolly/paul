@@ -1,46 +1,38 @@
-<div class="container">
-  <div class="row">
-  <div class="col-lg-12">
-    
-  <nav class="navbar navbar-expand-md navbar-dark mb-5">
-    <div class="navbar-brand">
-      <% if user_signed_in? %>
-        <%= current_user.username.titleize %><br> 
-        <%= link_to " Log out", destroy_user_session_path, method: :delete, class: "text-white" %>
-        <%= link_to " | Edit account", edit_user_registration_path,
-          class: "text-white"  %>
-        <%= link_to " | Update profile",
-          edit_profile_path(current_user.profile), class: "text-white"  %>
-      <% else %>
-        <%= link_to "Sign in or register", new_user_session_path, class:
-          "text-white"  %>
-      <% end %>
-    </div><!-- login -->
-
+<nav class="navbar navbar-expand-md navbar-dark mb-5" >
+  <div class="navbar-brand">
+  <% if user_signed_in? %>
+    <%= current_user.username.titleize %><br>
+  <span>    
+    <h6><%= link_to " Log out", destroy_user_session_path, method: :delete, class: "text-white" %>
+    <%= link_to " | Edit account", edit_user_registration_path, class: "text-white" %>
+    <%= link_to " | Update profile",
+      edit_profile_path(current_user.profile), class: "text-white" %>
+  <% else %>
+    <%= link_to "Sign in or register", new_user_session_path, class: "text-white" %></h6>
+  <% end %>
+  </span></div><!--  navbar brand & login -->
     <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
       aria-label="Toggle navigation">
-     
     </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-   <ul class="navbar-nav ml-auto mt-n1 mt-lg-0">
-      <li class="nav-item active">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto mt-n1 mt-lg-0">
+        <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-
-      <li class="nav-item dropdown">
+        </li>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" href="#"
          id="navbardrop" data-toggle="dropdown" aria-haspopup="true"
          aria-expanded="false">Worship <span class="caret"> </span> </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
-            <%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
-            <%= link_to "Adult Formation", formation_talks_path, {class: "dropdown-item"} %><br>
-            <%= link_to "Children's Sunday School", sunday_school_index_path, {class: "dropdown-item"} %><br>
-            <%= link_to "How to pray", pages_how_to_pray_path, {class: "dropdown-item"} %><br>
-          </div>
-      </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "How we worship", worship_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Read sermons", sermons_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Adult Formation", formation_talks_path, {class: "dropdown-item"} %><br>
+          <%= link_to "Children's Sunday School", sunday_school_index_path, {class: "dropdown-item"} %><br>
+          <%= link_to "How to pray", pages_how_to_pray_path, {class: "dropdown-item"} %><br>
+        </div>  
+        </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
@@ -93,7 +85,5 @@
       </li>
   </ul>
 </div><!-- collapse navbar-collapse -->
-</nav>
-</div><!--column-->
-</div><!-- row -->
-</div><!-- container -->
+</nav
+>

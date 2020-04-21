@@ -30,7 +30,7 @@ Procfile.dev
 /app/views/home/newindex.html.erb
 /config/puma.old1
 /*.old
-
+/*.csv
 /public/packs-test
 /node_modules
 /yarn-error.log
@@ -50,4 +50,3 @@ get-unused-routes.rb
 yarn-debug.log*
 .yarn-integrity
 *.txt
-members.csv

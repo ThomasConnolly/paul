@@ -5,7 +5,7 @@
     <section>  
       <div>
         <% if current_user.avatar.attached? %>
-          <%= image_tag(current_user.avatar, size: '120x175', 
+          <%= image_tag(current_user.avatar, width: '240', height: 'auto', 
              class: "floatleft") %>
         <% end %>
           <p><strong><%= link_to "Communicate a new topic", new_story_idea_path %> </strong></p>

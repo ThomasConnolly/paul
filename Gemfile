@@ -43,7 +43,7 @@ gem 'rspec-rails'
 gem 'sassc-rails' # used by sprockets to minify
 gem 'scout_apm'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'stripe'
+gem 'stripe', '~>5.17'
 gem 'stripe_event'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify

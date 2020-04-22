@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark mb-5" >
-  <div class="navbar-brand">
+<nav class="navbar navbar-expand-md navbar-dark mb-5">
+<div class="navbar-brand">
   <% if user_signed_in? %>
     <%= current_user.username.titleize %><br>
   <span>    
@@ -11,10 +11,13 @@
     <%= link_to "Sign in or register", new_user_session_path, class: "text-white" %></h6>
   <% end %>
   </span></div><!--  navbar brand & login -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto mt-n1 mt-lg-0">

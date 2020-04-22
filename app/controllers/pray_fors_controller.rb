@@ -35,14 +35,10 @@ class PrayForsController < ApplicationController
   # PATCH/PUT /pray_fors/1
   # PATCH/PUT /pray_fors/1.json
   def update
-    respond_to do |format|
-      if @pray_for.update(pray_for_params)
-        format.html { redirect_to @pray_for, notice: 'Pray for was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pray_for }
-      else
-        format.html { render :edit }
-        format.json { render json: @pray_for.errors, status: :unprocessable_entity }
-      end
+    if @pray_for.update(pray_for_params)
+      redirect_to posts_path 
+    else
+      render :edit 
     end
   end
 

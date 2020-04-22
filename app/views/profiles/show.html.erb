@@ -1,7 +1,7 @@
-<div class="col-md-4 offset-md4 text-center"> 
-<h1><%= @profile.user.username.titleize  %></h1>
+<div class="col-md-4 offset-md-4 text-center"> 
+<h2><%= @profile.user.username.titleize  %></h2>
   <% if @profile.user.avatar.attached? %>
-    <%= image_tag @profile.user.avatar, width: "100%", class: "center" %>
+    <%= image_tag @profile.user.avatar, width: "100%", class: "d-block mx-auto" %>
   <% end %>
   <p><% if current_user == @profile.user %>
     <%= link_to 'Add or change your profile picture', edit_user_path(current_user) %>

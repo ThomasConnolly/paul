@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>We are praying for</h1>
+  <%= link_to "Let's pray for... (Click to add a new name)",
+   new_pray_for_path %> <div class="mb-4"></div> 
 
   <% @pray_fors.each do |pray_for| %>
-        <p><strong><%= pray_for.first_name %></strong></p>
-        <p><%= pray_for.reason %></p>
-        
-        <% if user_signed_in? && current_user.has_role?(:admin) %>
-          <%= link_to 'Edit', edit_pray_for_path(pray_for) %> | 
-          <%= link_to 'Destroy', pray_for, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+    <p class="list"><strong><%= pray_for.first_name %></strong><br>
+    <%= pray_for.reason %><br>
+    <% if user_signed_in? && current_user.has_role?(:admin) %>
+      <%= link_to 'Edit', edit_pray_for_path(pray_for) %> | 
+      <%= link_to 'Destroy', pray_for, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
   <% end %>
-  <div class="mt-5></mt-5">
-  <%= link_to "Let's pray for... (Click to add a new name)",
-   new_pray_for_path %>
+  
+<div class="mt-5></mt-5">
+  

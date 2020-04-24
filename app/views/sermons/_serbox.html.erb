@@ -1,16 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="sermon-box">
-      <div class="sermon-picture float-left mr-10">
+      <div class="sermon-picture float-left mr-1">
         <%= image_tag(@sermon.homilist.photo, height: '183') %>
       </div>
         <div class="ser-text text-center">
           <h4>Sunday Sermon</h4>
-          <p class="ser-name mt-4"><strong> <%= @sermon.homilist.name %></strong>
-          </p> 
-          <p class="ser-title mb-3"><em><%= @sermon.homilist.title %></em>
-          </p>
-          <p class="ser-date mt-4"><%= @sermon.delivered_on.strftime("%b. %-d, %Y") %> </p>
+          <p class="ser-name mt-2"><strong> <%= @sermon.homilist.name %></strong><br>
+          <span class="ser-title"><em><%= @sermon.homilist.title %></em>
+          </span>
+          <p class="ser-date mt-1"><%= @sermon.delivered_on.strftime("%b. %-d, %Y") %> </p>
         </div>
      </div>
   </div>

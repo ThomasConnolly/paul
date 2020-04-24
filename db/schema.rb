@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_001203) do
+ActiveRecord::Schema.define(version: 2020_04_24_131738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_04_20_001203) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "albergue_children", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "albergue_donations", force: :cascade do |t|
     t.bigint "user_id"
     t.string "plan", default: "plan_EU0tm2nqfqXFYj"
@@ -53,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_001203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "child_name"
+    t.integer "child_id"
     t.index ["user_id"], name: "index_albergue_donations_on_user_id"
   end
 
@@ -91,6 +100,20 @@ ActiveRecord::Schema.define(version: 2020_04_20_001203) do
     t.string "cutter"
     t.string "url"
     t.index ["author", "title"], name: "index_books_on_author_and_title"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "donation_id", null: false
+    t.string "card_brand"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.string "stripe_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["donation_id"], name: "index_cards_on_donation_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -182,6 +205,18 @@ ActiveRecord::Schema.define(version: 2020_04_20_001203) do
     t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "donations_id", null: false
+    t.integer "amount"
+    t.string "card_id"
+    t.string "stripe_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["donations_id"], name: "index_payments_on_donations_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -360,6 +395,10 @@ ActiveRecord::Schema.define(version: 2020_04_20_001203) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albergue_donations", "users"
+  add_foreign_key "cards", "donations"
+  add_foreign_key "cards", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "users"
+  add_foreign_key "payments", "donations", column: "donations_id"
+  add_foreign_key "payments", "users"
 end

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-
+  resources :donations
+  resources :cards
+  resources :payment
+  resources :albergue_children
   resources :pathways
   resources :pray_fors
   resources :photos

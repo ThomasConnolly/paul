@@ -5,14 +5,15 @@
 # Table name: members
 #
 #  id            :integer          not null, primary key
-#  last_name     :string
-#  first_name    :string
-#  email         :string
+#  away_zip      :string
 #  birthday      :date
+#  email         :string
+#  first_name    :string
+#  last_name     :string
+#  username      :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  membership_id :string
-#  username     :string
 #
 
 class Member < ApplicationRecord

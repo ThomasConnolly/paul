@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :donations
+  resources :donations do
+    resource :payment
+  end
+  
   resources :cards
-  resources :payment
   resources :albergue_children
   resources :pathways
   resources :pray_fors
@@ -79,7 +81,6 @@ Rails.application.routes.draw do
     end
   end
   resources :sermons
-  resources :purchases, only: [:show]
   resources :formation_talks
   resource :pledge
   resources :pledges

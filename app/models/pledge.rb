@@ -5,19 +5,20 @@
 # Table name: pledges
 #
 #  id              :integer          not null, primary key
-#  divisor         :integer
-#  user_id         :integer
-#  created_at      :datetime
-#  updated_at      :datetime
 #  amount          :integer
-#  pay_this        :integer
-#  plan            :string
-#  subscription_id :string
+#  divisor         :integer
+#  end_date        :date
 #  interval        :integer
 #  interval_count  :integer
-#  status          :integer
+#  pay_this        :integer
+#  plan            :string
+#  product         :string           default("prod_ETteQ8s9Ho9sNW")
 #  start_date      :date
-#  end_date        :date
+#  status          :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  subscription_id :string
+#  user_id         :integer
 #
 
 class Pledge < ApplicationRecord

@@ -1,0 +1,8 @@
+<div class="col-md-4 offset-md-4 col sm-8 offset-sm-2">
+<%= bootstrap_form_with model: @donation do |f| %>
+ 
+    <%= f.number_field :dollars, prepend: "$", append: ".00", placeholder: "(whole dollars only)" %>
+   
+    <%= f.submit "Make donation", class: "btn btn-success" %>
+<% end %>
+</div>

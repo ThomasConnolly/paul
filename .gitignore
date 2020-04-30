@@ -50,3 +50,4 @@ get-unused-routes.rb
 yarn-debug.log*
 .yarn-integrity
 *.txt
+/config/credentials/development.key

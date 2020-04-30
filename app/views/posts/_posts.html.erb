@@ -9,6 +9,7 @@
         <h5><%= link_to "Add your Picture Here", edit_user_path(current_user) %>
       <% else %>
         <%= link_to "Please sign in or register", new_user_path %>
+        <%= link_to "Read profile", profile_path(post.user) %>
       <% end %>
       
       <p class="list"><em><%= post.user.username.titleize %>::</em></p>

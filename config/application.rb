@@ -12,6 +12,9 @@ require 'rails/all'
 
       config.beginning_of_week = :sunday
       config.time_zone = 'Eastern Time (US & Canada)'
+      config.generators do |g|
+        g.stylesheets false
+      end
 
       # Settings in config/environments/* take precedence over these.
       # Application configuration can go into files in config/initializers

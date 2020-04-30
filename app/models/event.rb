@@ -5,15 +5,16 @@
 # Table name: events
 #
 #  id         :integer          not null, primary key
-#  title      :string
-#  price      :integer
+#  amount     :integer
 #  date       :date
+#  photo      :string
+#  price      :integer
+#  quantity   :integer
+#  time       :string
+#  title      :string
+#  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  quantity   :integer
-#  amount     :integer
-#  url        :string
-#  time       :string
 #
 
 class Event < ApplicationRecord

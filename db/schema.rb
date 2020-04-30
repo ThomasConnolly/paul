@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_131738) do
+ActiveRecord::Schema.define(version: 2020_04_30_121412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_131738) do
   create_table "albergue_children", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "avatar"
     t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_131738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "child_name"
-    t.integer "child_id"
     t.index ["user_id"], name: "index_albergue_donations_on_user_id"
   end
 
@@ -130,12 +130,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_131738) do
 
   create_table "donations", force: :cascade do |t|
     t.bigint "user_id"
-    t.boolean "anonymous", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "stripe_email"
-    t.string "plan"
-    t.string "stripe_plan"
+    t.string "type"
+    t.string "stripe_intent"
+    t.integer "amount"
+    t.integer "dollars"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -209,13 +209,15 @@ ActiveRecord::Schema.define(version: 2020_04_24_131738) do
 
   create_table "payments", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "donations_id", null: false
-    t.integer "amount"
-    t.string "card_id"
+    t.bigint "donation_id", null: false
     t.string "stripe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["donations_id"], name: "index_payments_on_donations_id"
+    t.string "card_brand"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.index ["donation_id"], name: "index_payments_on_donation_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
@@ -399,6 +401,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_131738) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "users"
-  add_foreign_key "payments", "donations", column: "donations_id"
+  add_foreign_key "payments", "donations"
   add_foreign_key "payments", "users"
 end

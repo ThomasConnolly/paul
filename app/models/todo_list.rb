@@ -4,9 +4,9 @@
 #
 # Table name: todo_lists
 #
-#  id          :bigint(8)        not null, primary key
-#  title       :string
+#  id          :bigint           not null, primary key
 #  description :text
+#  title       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

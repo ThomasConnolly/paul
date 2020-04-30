@@ -4,20 +4,22 @@
 #
 # Table name: donations
 #
-#  id           :bigint(8)        not null, primary key
-#  user_id      :bigint(8)
-#  amount       :integer          default(275)
-#  pay_this     :integer
-#  anonymous    :boolean          default(FALSE), not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  stripe_email :string
-#  customer_id  :string
-#  source       :string
-#  name         :string
-#  address      :string
-#  city         :string
-#  zip          :string
+#  id            :bigint           not null, primary key
+#  amount        :integer
+#  dollars       :integer
+#  stripe_intent :string
+#  type          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :bigint
+#
+# Indexes
+#
+#  index_donations_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 
 require 'rails_helper'

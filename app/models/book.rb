@@ -6,15 +6,19 @@
 #
 #  id          :integer          not null, primary key
 #  author      :string(255)
-#  title       :string(255)
-#  subject     :string(255)
-#  isbn        :string(255)
+#  cutter      :string
+#  description :text
 #  dewey       :string(255)
+#  isbn        :string(255)
+#  subject     :string(255)
+#  title       :string(255)
+#  url         :string
 #  created_at  :datetime
 #  updated_at  :datetime
-#  description :text
-#  cutter      :string
-#  url         :string
+#
+# Indexes
+#
+#  index_books_on_author_and_title  (author,title)
 #
 
 class Book < ApplicationRecord

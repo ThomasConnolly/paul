@@ -5,33 +5,28 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
+#  avatar                 :string
+#  current_sign_in_at     :datetime
+#  current_sign_in_ip     :inet
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
-#  current_sign_in_at     :datetime
+#  first_name             :string(255)
+#  honey                  :string
+#  last_name              :string(255)
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string(255)
+#  sign_in_count          :integer          default(0), not null
+#  username               :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  username              :string(255)
-#  customer_id            :string
-#  card                   :string
-#  avatar                 :string
-#  honey                  :string
-#  source                 :string
-#  stripe_sponsorship_id  :string
-#  card_last4             :string
-#  card_exp_year          :integer
-#  card_exp_month         :integer
-#  card_type              :string
-#  donation_id            :integer
-#  subscription_id        :string
+#
+# Indexes
+#
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_username              (username)
 #
 
 class User < ApplicationRecord
@@ -47,8 +42,6 @@ class User < ApplicationRecord
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities
-  has_many :books
-  has_many :definitions
   has_many :story_ideas
   has_many :vreports
   validates :first_name, presence: true
@@ -57,6 +50,9 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_one :pledge, dependent: :destroy
   has_many :donations
+  has_many :sponsorships
+  has_many :albergue_children
+  
   
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true

@@ -1,0 +1,14 @@
+<% if @albergue_child.avatar.attached? %>
+   <%= image_tag @albergue_child.avatar, width:"30%", class: "image-center" %>
+   <% end %>
+<p>
+  <strong>Name</strong>
+  <%= @albergue_child.first_name %>  <%= @albergue_child.last_name %>
+</p>
+<p>
+  <strong>Birthday:</strong>
+  <%= @albergue_child.birthday %>
+</p>
+
+<%= link_to 'Edit', edit_albergue_child_path(@albergue_child) %> |
+<%= link_to 'Back', albergue_children_path %>

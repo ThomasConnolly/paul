@@ -1,0 +1,11 @@
+<h1>Create your donation</h1>
+  <% if user_signed_in? %>
+    <%= render 'form', donation: @donation %>
+  <% else %>
+    <p><strong>Start by signing in, or if you have not registered, by registering. If you have been registered but forgot your password, click <em>Sign in</em> then click on "forgot my password" and you will get an email with instructions about how to set a new password. Click one:</p>
+      <h2>
+        <%= link_to "Register", new_user_registration_path %> &nbsp; 
+        <%= link_to "Sign-in", new_user_session_path %></h2>
+  <% end %>
+  
+  <div class="mb-5"></div>

@@ -5,7 +5,6 @@ ruby '2.7.1'
 
 gem 'actionmailer'
 gem 'autoprefixer-rails'
-gem 'awesome_print'
 gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'birthday'
@@ -39,11 +38,10 @@ gem 'redis'
 gem 'rest-client'
 gem 'rolify'
 gem 'rollbar'
-gem 'rspec-rails'
 gem 'sassc-rails' # used by sprockets to minify
 gem 'scout_apm'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'stripe', '~>5.17'
+gem 'stripe', '~> 5.20'
 gem 'stripe_event'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
@@ -73,6 +71,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-watcher-listen'

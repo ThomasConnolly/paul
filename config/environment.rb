@@ -19,9 +19,9 @@ Rails.application.initialize!
   ActionMailer::Base.smtp_settings = {
     user_name: 'app36011847@heroku.com',
     password: Rails.application.credentials.sendgrid,
-    domain: 'SaintPaulsNaples.org,
+    domain: 'SaintPaulsNaples.org',
     address: 'smtp.sendgrid.net',
     port: 587,
     authentication: 'plain',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
   }

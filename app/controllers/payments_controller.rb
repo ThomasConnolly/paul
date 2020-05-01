@@ -4,15 +4,14 @@ class PaymentsController < ApplicationController
   before_action :set_stripe
 
   def show
-    @payment_intent = Stripe::PaymentIntent.create(
+    intent = Stripe::PaymentIntent.create(
       amount: @donation.amount,
       currency: 'usd',
     )
   end
 
   def create
-   
-    @payment_intent = Stripe::PaymentIntent.retrieve
+   @payment_intent = Stripe::PaymentIntent.retrieve(intent.id)
       if @payment_intent.status == "succeeded"
         charge = @payment_intent.charges.data.first
         card = charge.payment_method_details.card

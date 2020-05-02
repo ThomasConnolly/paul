@@ -39,6 +39,7 @@ gem 'rest-client'
 gem 'rolify'
 gem 'rollbar'
 gem 'sassc-rails' # used by sprockets to minify
+#gem 'sendgrid-actionmailer', '~> 3.0', '>= 3.0.2'
 gem 'scout_apm'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stripe', '~> 5.20'

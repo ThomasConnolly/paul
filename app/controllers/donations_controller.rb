@@ -6,7 +6,6 @@ class DonationsController < ApplicationController
     @donations = Donation.all
   end
 
- 
   def show
   end
 
@@ -23,7 +22,7 @@ class DonationsController < ApplicationController
   # POST /donations.json
   def create
     @donation = Donation.new(donation_params)
-    @donation.user_id = current_user.id if current_user
+    @donation.user_id = current_user.id
 
     respond_to do |format|
       if @donation.save
@@ -61,7 +60,6 @@ class DonationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_donation
       @donation = Donation.find(params[:id])
     end

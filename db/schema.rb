@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_121412) do
+ActiveRecord::Schema.define(version: 2020_05_03_204153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -209,7 +209,6 @@ ActiveRecord::Schema.define(version: 2020_04_30_121412) do
 
   create_table "payments", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "donation_id", null: false
     t.string "stripe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -217,7 +216,6 @@ ActiveRecord::Schema.define(version: 2020_04_30_121412) do
     t.string "card_last4"
     t.string "card_exp_month"
     t.string "card_exp_year"
-    t.index ["donation_id"], name: "index_payments_on_donation_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
@@ -370,6 +368,11 @@ ActiveRecord::Schema.define(version: 2020_04_30_121412) do
     t.string "username", limit: 255
     t.string "avatar"
     t.string "honey"
+    t.string "stripe_customer_id"
+    t.string "card_brand"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end
@@ -401,6 +404,5 @@ ActiveRecord::Schema.define(version: 2020_04_30_121412) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "users"
-  add_foreign_key "payments", "donations"
   add_foreign_key "payments", "users"
 end

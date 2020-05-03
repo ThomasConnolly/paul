@@ -6,6 +6,10 @@
 #
 #  id                     :integer          not null, primary key
 #  avatar                 :string
+#  card_brand             :string
+#  card_exp_month         :string
+#  card_exp_year          :string
+#  card_last4             :string
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  email                  :string(255)      default(""), not null
@@ -22,6 +26,7 @@
 #  username               :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  stripe_customer_id     :string
 #
 # Indexes
 #

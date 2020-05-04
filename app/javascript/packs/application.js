@@ -54,6 +54,7 @@ $(document).ready(function(){
     const stripe = Stripe(public_key)
     
     const elements = stripe.elements()
+    
     const card = elements.create('card')
     card.mount('#card-element')
     

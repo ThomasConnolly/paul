@@ -14,7 +14,7 @@
     <%= tag.meta name: "stripe-key", content:
      Rails.application.credentials.stripe[:public_key] %>
    <% else %>
-     <%= tag.meta name: "stripe-key", content: ENV[STRIPE_PUBLISHABLE_KEY] %>
+     <%= tag.meta name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
    <% end %>
   
     

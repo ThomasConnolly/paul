@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~rfs/scss";
 
+$enable-gradients: true;
+
 .navbar-dark {
   background-color: #0d4884;
 }

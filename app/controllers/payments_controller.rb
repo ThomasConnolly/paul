@@ -19,14 +19,12 @@ class PaymentsController < ApplicationController
 
       @payment = Payment.create({
         stripe_id: charge.id,
-        user_id: current_user.id,
         card_brand: card.brand.titleize,
         card_last4: card.last4,
         card_exp_month: card.exp_month,
         card_exp_year: card.exp_year,
       })
       @payment.update({
-        user_id: current_user.id,
         stripe_id: charge.id,
         card_brand: params[card.brand],
         card_last4: params[card.last4],
@@ -55,7 +53,7 @@ class PaymentsController < ApplicationController
     end
 
     def payment_params
-      params.require(:payment).permit(:user_id, stripe_id, card_brand, card_last4, card_exp_month, card_exp_year )
+      params.require(:payment).permit(stripe_id, card_brand, card_last4, card_exp_month, card_exp_year )
     end
 end
 

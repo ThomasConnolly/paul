@@ -1,0 +1,5 @@
+class RemoveUserFromPayments < ActiveRecord::Migration[6.0]
+  def change
+    remove_column :payments, :user_id, :bigint
+  end
+end

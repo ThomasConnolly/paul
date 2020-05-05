@@ -9,7 +9,7 @@ end
 
 if Rails.env.production?
   Rails.configuration.stripe = {
-    publishable_key: ENV["STRIPE_PUBLISHABLE_KEY"],
+    public_key: ENV["STRIPE_PUBLISHABLE_KEY"],
     private_key: ENV["STRIPE_SECRET_KEY"],
   }
   

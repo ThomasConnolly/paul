@@ -4,13 +4,12 @@
 
   <div>
     <h2>Credit or debit card</h2>
-    <div id="card-element"> </div>
+    <div id="card-element" class="form-control" style='height: 2.4em; padding-top: .7em; font-size: 1.4rem'>
   </div>
 
   <div>
-    <h2> Name on card</h2>
     <div>
-      <%= f.text_field :name_on_card, placeholder: "Name on card" %>
+      <%= f.text_field :name_on_card, placeholder: "Full name" %>
     </div>
     <%= f.hidden_field :payment_intent_id, value: @payment_intent.id %>
     <button class="btn btn-primary">Submit payment</button>

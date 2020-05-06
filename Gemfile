@@ -24,6 +24,7 @@ gem 'loofah', '~> 2.3', '>= 2.3.1'
 gem 'mail'
 gem 'mini_magick'
 gem 'nokogiri'
+
 gem 'premailer-rails'
 gem 'pry'
 gem 'pry-awesome_print'
@@ -42,7 +43,7 @@ gem 'sassc-rails' # used by sprockets to minify
 gem 'scout_apm'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stripe', '~> 5.20'
-gem 'stripe_event'
+gem 'stripe_event', '>= 2.3.0, < 3'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'

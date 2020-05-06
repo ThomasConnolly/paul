@@ -54,8 +54,17 @@ $(document).ready(function(){
     const stripe = Stripe(public_key)
     
     const elements = stripe.elements()
+
+    var style = {
+      base: {
+        color: '#303238',
+        fontSize: '24px',
+        fontFamily: '"Open Sans", sans-serif',
+        fontSmoothing: 'antialiased',
+      }
+    }
     
-    const card = elements.create('card')
+    const card = elements.create('card', {style: style})
     card.mount('#card-element')
     
     card.addEventListener("change", (event) => {

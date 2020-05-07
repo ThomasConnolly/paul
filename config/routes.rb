@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :donations do
-    resource :payment
+  resources :donations
+  resources :subscriptions
+  resources :events do
+    resources :tickets, only: %i[new show create update index]
   end
-  
-  resources :cards
   resources :albergue_children
+  root to: 'home#index' 
   resources :pathways
   resources :pray_fors
   resources :photos
@@ -18,33 +19,26 @@ Rails.application.routes.draw do
       registration: 'register',
       sign_up: 'signup'
     }  
-  root to: 'home#index' 
+ 
   resources :users do
     collection do
       post :import
     end
   end
 
-  resource :stripe_plans, only: %i[new create]
-  # mount StripeEvent::Engine, at '/stripe/event'
-  post '/stripe/event', to: 'webhooks#event'
   resources :todo_list
   resources :formation_talks, only: %i[show index edit new]
   resources :marriage_talks, only: %i[new show index edit]
-  get 'home/invitation'
-  get 'members/import'
-  resources :events do
-    resources :tickets, only: %i[new show create update index]
-  end
+
   resources :members do
     collection do
       post :import
     end
   end
   resources :vestry_minutes
-  resources :pictures
   resources :surveys, only: :index
-  
+
+  get 'members/import'
   get 'series/index'
   get 'pages/way_of_love'
   get 'activities/index'
@@ -68,7 +62,6 @@ Rails.application.routes.draw do
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
 
   resources :worship, only: :index
-  resources :tasks
   resources :opportunities
   resources :homilists
   resources :books
@@ -98,6 +91,7 @@ Rails.application.routes.draw do
   resources :story_ideas do
     resources :comments, module: :story_ideas
   end
+  resources :tasks
   resources :syllabuses do
     collection do
       get 'preschool'

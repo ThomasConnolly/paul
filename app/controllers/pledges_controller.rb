@@ -1,17 +1,3 @@
-# frozen_string_literal: true
-
-# == Schema Information
-#
-# Table name: pledges
-#
-#  id         :integer          not null, primary key
-#  amount     :integer
-#  divisor    :integer
-#  pay_this   :integer
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#
 
 class PledgesController < ApplicationController
   before_action :authenticate_user!, except: [:new]
@@ -58,6 +44,8 @@ class PledgesController < ApplicationController
     redirect_to '/', notice: 'Your pledge was deleted.'
   end
 
+
+
   private
 
   def set_pledge
@@ -66,16 +54,16 @@ class PledgesController < ApplicationController
 
   def change_path
     if user_signed_in? && current_user.pledge.present?
-      redirect_to pledge_path(@pledge)
+      redirect_to pledge_path(current_user.pledge)
     end
   end
 
-  # def redirect_to_login
-  #   if !user_signed_in?
-  #     session["user_return_to"] = new_pledge_path
-  #     redirect_to new_user_registration_path
-  #   end
-  # end
+   def redirect_to_login
+     if !user_signed_in?
+       session["user_return_to"] = new_pledge_path
+       redirect_to new_user_registration_path
+     end
+   end
 
   def pledge_params
     params.require(:pledge).permit %i[user_id amount divisor pay_this

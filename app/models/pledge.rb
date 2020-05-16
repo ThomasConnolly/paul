@@ -8,7 +8,7 @@
 #  amount          :integer
 #  divisor         :integer
 #  end_date        :date
-#  interval        :integer
+#  interval        :string
 #  interval_count  :integer
 #  pay_this        :integer
 #  plan            :string

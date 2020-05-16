@@ -1,11 +1,11 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_donation
+  before_action :set_pledge
   before_action :set_stripe
 
   def show
     @payment_intent = Stripe::PaymentIntent.create(
-      amount: @donation.amount,
+      amount: @pledge.amount,
       currency: 'usd',
     )
   end
@@ -45,11 +45,11 @@ class PaymentsController < ApplicationController
   
     def set_stripe
       Stripe.api_key = 
-      Rails.application.credentials.stripe[:private_key] 
+      Rails.application.credentials.stripe[:public_key] 
     end
 
-    def set_donation
-      @donation = Donation.find(params[:donation_id])
+    def set_pledge
+      @pledge = Pledge.find(params[:pledge_id])
     end
 
     def payment_params

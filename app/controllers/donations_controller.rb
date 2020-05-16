@@ -24,19 +24,14 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
     @donation.user_id = current_user.id
 
-    respond_to do |format|
-      if @donation.save
-        format.html { redirect_to @donation, notice: 'Next step' }
-        format.json { render :show, status: :created, location: @donation }
-      else
-        format.html { render :new }
-        format.json { render json: @donation.errors, status: :unprocessable_entity }
-      end
+    if @donation.save
+      redirect_to donation_pay_path(@donation), method: "post"
+    else
+      render :new
     end
   end
+  
 
-  # PATCH/PUT /donations/1
-  # PATCH/PUT /donations/1.json
   def update
     respond_to do |format|
       if @donation.update(donation_params)

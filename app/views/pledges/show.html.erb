@@ -11,7 +11,7 @@
       <div class="mt30"></div>
       <%= link_to "Edit pledge", edit_pledge_path(@pledge), class: "btn btn-warning btn-lg" %>
     </div>
-      <%= form_with url: pledge_charges_path, method: :post, id: 'payment-form' do |form| %>
+      <%= form_with url: pledge_payment_path(@pledge), method: :post, id: 'payment-form' do |form| %>
       <div>
         <label for="card-element">
         Enter credit or debit card information </label>

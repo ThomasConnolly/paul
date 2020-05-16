@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :donations
-  resources :subscriptions
+  resources :donations do
+    resource :payments
+  end
+  resources :pledges do
+    resource :payment
+  end
   resources :events do
     resources :tickets, only: %i[new show create update index]
   end
+  resources :ticket_charges, only: %i[new create]
   resources :albergue_children
   root to: 'home#index' 
   resources :pathways
@@ -19,7 +24,12 @@ Rails.application.routes.draw do
       registration: 'register',
       sign_up: 'signup'
     }  
- 
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+  end
+
   resources :users do
     collection do
       post :import
@@ -75,11 +85,6 @@ Rails.application.routes.draw do
   end
   resources :sermons
   resources :formation_talks
-  resource :pledge
-  resources :pledges
-  resources :ticket_charges, only: %i[new create]
-  resources :pledge_charges, only: %i[new create]
-  resources :charges, only: %i[new create]
   resources :comments
   resources :profiles
   resources :posts do

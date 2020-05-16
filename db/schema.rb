@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_123243) do
+ActiveRecord::Schema.define(version: 2020_05_14_185344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,45 +207,6 @@ ActiveRecord::Schema.define(version: 2020_05_07_123243) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "pay_charges", id: :serial, force: :cascade do |t|
-    t.string "owner_type"
-    t.integer "owner_id"
-    t.string "processor", null: false
-    t.string "processor_id", null: false
-    t.integer "amount", null: false
-    t.integer "amount_refunded"
-    t.string "card_type"
-    t.string "card_last4"
-    t.string "card_exp_month"
-    t.string "card_exp_year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pay_subscriptions", id: :serial, force: :cascade do |t|
-    t.integer "owner_id"
-    t.string "name", null: false
-    t.string "processor", null: false
-    t.string "processor_id", null: false
-    t.string "processor_plan", null: false
-    t.integer "quantity", default: 1, null: false
-    t.datetime "trial_ends_at"
-    t.datetime "ends_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "status"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.string "stripe_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "card_brand"
-    t.string "card_last4"
-    t.string "card_exp_month"
-    t.string "card_exp_year"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.text "image_data"
@@ -262,12 +223,12 @@ ActiveRecord::Schema.define(version: 2020_05_07_123243) do
     t.integer "pay_this"
     t.string "plan"
     t.string "subscription_id"
-    t.integer "interval"
-    t.integer "interval_count"
     t.integer "status"
     t.date "start_date"
     t.date "end_date"
     t.string "product", default: "prod_ETteQ8s9Ho9sNW"
+    t.string "interval"
+    t.integer "interval_count"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|
@@ -400,11 +361,6 @@ ActiveRecord::Schema.define(version: 2020_05_07_123243) do
     t.string "card_last4"
     t.string "card_exp_month"
     t.string "card_exp_year"
-    t.string "processor"
-    t.string "processor_id"
-    t.datetime "trial_ends_at"
-    t.string "card_type"
-    t.text "extra_billing_info"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end

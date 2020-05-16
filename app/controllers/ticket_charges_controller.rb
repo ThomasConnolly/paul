@@ -15,8 +15,8 @@ class TicketChargesController < ApplicationController
         amount: @ticket.amount,
         currency: 'usd',
       }]
-      success_url: ticket_charges_path({CHECKOUT_SESSION_ID}),
-      cancel_url: new_event_ticket_path
+    #  success_url: ticket_charges_path({CHECKOUT_SESSION_ID}),
+    #  cancel_url: new_event_ticket_path
     )
   end
 end

@@ -17,6 +17,6 @@
 #  index_webhook_events_on_source                  (source)
 #  index_webhook_events_on_source_and_external_id  (source,external_id)
 #
-class WebhookEvent < ApplicationRecord
-  enum state: { pending: 0, processing: 1, processed: 2, failed: 3 }
-end
+# class WebhookEvent < ApplicationRecord
+#   enum state: { pending: 0, processing: 1, processed: 2, failed: 3 }
+# end

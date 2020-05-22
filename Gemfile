@@ -42,7 +42,7 @@ gem 'sassc-rails' # used by sprockets to minify
 gem 'scout_apm'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stripe', '~> 5.20'
-gem 'stripe_event', '~> 2.3'
+#gem 'stripe_event', '~> 2.3'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'

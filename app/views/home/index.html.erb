@@ -1,6 +1,8 @@
 <div class="container">
- <!-- <div class="d-flex align-content-center justify-content-center mb-5"> %>
-  <%#= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!", new_donation_path, class: "btn btn-primary btn-lg text-white" %></div> -->
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
+    <div class="d-flex align-content-center justify-content-center mb-5">
+    <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!", new_donation_path, class: "btn btn-primary btn-lg text-white" %></div>
+  <% end %>
   <div class=row>
     <div class="col-md-3">
       <%= cl_image_tag("Communion2_xrxvjq.jpg", width: "100%") %>
@@ -21,9 +23,11 @@
     <p><strong><em>In ordinary times </em></strong> you will find us worshipping our Lord using the two rites of Holy Eucharist, Rite I at 8 a.m. and Rite II at 10 a.m.</p>
     <p>In these times, we live stream one holy mass at 9 a.m.on Sundays on YouTube. You can go to our YouTube page <%= link_to "by clicking here.", "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %> You can subscribe to our page so it's easier to find us on Sunday morning. We post the service bulletin a few days ahead so you can follow the liturgy and give the responses. Check back here for the link on Thursdays.
   
-    <p><strong><%= link_to "Here is the bulletin for Sunday, May 17", 
-    "https://files.constantcontact.com/8e9e5e43101/aec28e42-7791-417e-9dfb-f3550b18d911.pdf" %></strong></p>
+    <p><strong><%= link_to "Here is the bulletin for Sunday, May 24", 
+    "https://files.constantcontact.com/8e9e5e43101/4d6d84e6-79a1-4f66-96cc-ec27b891d3a0.pdf" %></strong></p>
     
+    
+
       <p class="mt-1 mb-1">To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
       <p class="mt-1"><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%>
             </p>

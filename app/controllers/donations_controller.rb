@@ -25,7 +25,7 @@ class DonationsController < ApplicationController
     @donation.user_id = current_user.id
 
     if @donation.save
-      redirect_to donation_pay_path(@donation), method: "post"
+      redirect_to donation_path(@donation)
     else
       render :new
     end

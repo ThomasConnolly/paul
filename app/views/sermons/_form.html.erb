@@ -3,7 +3,6 @@
   <div class="col-md-12">
   
     <%= bootstrap_form_with(model: @sermon, local: true) do |f| %>
-     <%= f.alert_message "Please fix the errors below." %>
 
     <%= f.collection_select :homilist_id, Homilist.all, :id, :name, include_blank: true, label: 'Homilist' %>
 

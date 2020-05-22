@@ -1,4 +1,4 @@
-class TicketChargesController < ApplicationController
+class ChargesController < ApplicationController
 
 
   def new; end

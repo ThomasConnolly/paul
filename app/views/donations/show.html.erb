@@ -1,5 +1,7 @@
-<h1><%= @donation.user.username.titleize %></h1>
-<p><strong><%= formatted_amount @donation.amount %></strong></p>
+<h1><%= @donation.user.username.titleize %>'s donation is <%= formatted_amount @donation.amount %></h1>
+<div class="text-center" max-width="400px">
+<%= button_to "Pay now", checkout_create_path, method: :post, remote: true, params: {id: @donation.id}, class: "btn btn-success btn-lg" %>
+</div>
 <div class="mt-5 mb-5"></div>
 
 <% if current_user == @donation.user %>

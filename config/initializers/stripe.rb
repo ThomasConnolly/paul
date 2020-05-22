@@ -2,6 +2,7 @@ if Rails.env.development?
   Rails.configuration.stripe = {
     public_key: Rails.application.credentials.stripe[:public_key],
     private_key: Rails.application.credentials.stripe[:private_key],
+    signing_secret: Rails.application.credentials.stripe[:signing_secret]
  }
   Stripe.api_key = Rails.application.credentials.stripe[:private_key]
 end
@@ -10,6 +11,21 @@ if Rails.env.production?
   Rails.configuration.stripe = {
     public_key: ENV["STRIPE_PUBLISHABLE_KEY"],
     private_key: ENV["STRIPE_SECRET_KEY"],
+    signing_secret: ENV["SIGNING_SECRET"]
   }
   Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
 end
+StripeEvent.signing_secret = Rails.application.credentials.stripe  [:signing_secret]
+
+class PaymentIncomplete < StandardError
+  attr_reader :payment_intent
+
+  def initialize(payment_intent)
+    @payment_intent = payment_intent
+  end
+end
+
+# StripeEvent.configure do |events|
+#   events.subscribe 'customer.subscription.updated', 
+#   SubscriptionUpdatedWebhook.new
+#  end

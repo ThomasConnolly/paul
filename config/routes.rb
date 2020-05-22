@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :donations do
-    resource :payments
+
+  mount StripeEvent::Engine, at: '/webhooks/stripe'
+
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
   end
+
+  resources :donations
+
   resources :pledges do
     resource :payment
   end
@@ -24,11 +32,6 @@ Rails.application.routes.draw do
       registration: 'register',
       sign_up: 'signup'
     }  
-  scope '/checkout' do
-    post 'create', to: 'checkout#create', as: 'checkout_create'
-    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
-    get 'success', to: 'checkout#success', as: 'checkout_success'
-  end
 
   resources :users do
     collection do

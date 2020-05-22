@@ -4,21 +4,21 @@
 #
 # Table name: pledges
 #
-#  id              :integer          not null, primary key
-#  amount          :integer
-#  divisor         :integer
-#  end_date        :date
-#  interval        :string
-#  interval_count  :integer
-#  pay_this        :integer
-#  plan            :string
-#  product         :string           default("prod_ETteQ8s9Ho9sNW")
-#  start_date      :date
-#  status          :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  subscription_id :string
-#  user_id         :integer
+#  id             :integer          not null, primary key
+#  amount         :integer
+#  divisor        :integer
+#  end_date       :date
+#  interval       :string
+#  interval_count :integer
+#  pay_this       :integer
+#  plan           :string
+#  start_date     :date
+#  status         :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  plan_id        :string           default("prod_ETteQ8s9Ho9sNW")
+#  stripe_id      :string
+#  user_id        :integer
 #
 
 class Pledge < ApplicationRecord
@@ -30,7 +30,7 @@ class Pledge < ApplicationRecord
   before_save :set_plan
   before_save :set_interval
   before_save :set_interval_count
-  before_destroy :kill_stripe_subscription
+  belongs_to :subscriptions
   before_destroy :update_user
 
   enum status: { inactive: 0, active: 1, cancelled: 2 }
@@ -68,17 +68,5 @@ class Pledge < ApplicationRecord
     else
       puts self.interval_count = 1
     end
-  end
-
-  def kill_stripe_subscription
-    # if self.subscription_id?
-    #   su = Stripe::Subscription.retrieve(self.subscription_id)
-    #     su.delete
-    self.subscription_id = nil
-    self.status = 2
-    end
-
-  def update_user
-    user.stripe_pledge = nil
   end
 end

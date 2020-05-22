@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
-  #mount StripeEvent::Engine, at: '/webhooks/stripe'
+  mount StripeEvent::Engine, at: '/webhooks/stripe'
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'

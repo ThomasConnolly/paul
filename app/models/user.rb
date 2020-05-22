@@ -27,6 +27,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  stripe_customer_id     :string
+#  stripe_id              :string
 #
 # Indexes
 #
@@ -57,6 +58,7 @@ class User < ApplicationRecord
   has_many :donations
   has_many :sponsorships
   has_many :albergue_children
+  has_many :subscriptions
 
   
   
@@ -101,15 +103,15 @@ class User < ApplicationRecord
   end
 
   # This code is for retrieving Stripe.customer for current_user
-  def stripe_customer
-    if stripe_id? && stripe_pledge? || stripe_id? && albergue_sponsor?
-      Stripe::Customer.retrieve(stripe_id)
-    else
-      stripe_customer = Stripe::Customer.create(email: email)
-      update(stripe_id: stripe_customer.id)
-      stripe_customer
-    end
-  end
+  # def stripe_customer
+  #   if stripe_id? && stripe_pledge? || stripe_id? && albergue_sponsor?
+  #     Stripe::Customer.retrieve(stripe_id)
+  #   else
+  #     stripe_customer = Stripe::Customer.create(email: email)
+  #     update(stripe_id: stripe_customer.id)
+  #     stripe_customer
+  #   end
+  # end
 
   def self.find_for_database_authentication warden_condition
     conditions = warden_condition.dup

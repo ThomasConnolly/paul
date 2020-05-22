@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_195057) do
+ActiveRecord::Schema.define(version: 2020_05_22_183617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -223,11 +223,11 @@ ActiveRecord::Schema.define(version: 2020_05_19_195057) do
     t.integer "amount"
     t.integer "pay_this"
     t.string "plan"
-    t.string "subscription_id"
+    t.string "stripe_id"
     t.integer "status"
     t.date "start_date"
     t.date "end_date"
-    t.string "product", default: "prod_ETteQ8s9Ho9sNW"
+    t.string "plan_id", default: "prod_ETteQ8s9Ho9sNW"
     t.string "interval"
     t.integer "interval_count"
   end
@@ -288,6 +288,17 @@ ActiveRecord::Schema.define(version: 2020_05_19_195057) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "url"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "plan_id"
+    t.string "user_id"
+    t.boolean "active", default: true
+    t.datetime "current_period_ends"
+    t.string "stripe_id"
+    t.string "pledge_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "syllabuses", id: :serial, force: :cascade do |t|
@@ -362,6 +373,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_195057) do
     t.string "card_last4"
     t.string "card_exp_month"
     t.string "card_exp_year"
+    t.string "stripe_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end

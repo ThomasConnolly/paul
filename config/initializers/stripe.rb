@@ -15,15 +15,15 @@ if Rails.env.production?
   }
   Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
 end
-StripeEvent.signing_secret = Rails.application.credentials.stripe  [:signing_secret]
+# StripeEvent.signing_secret = Rails.application.credentials.stripe  [:signing_secret]
 
-class PaymentIncomplete < StandardError
-  attr_reader :payment_intent
+# class PaymentIncomplete < StandardError
+#   attr_reader :payment_intent
 
-  def initialize(payment_intent)
-    @payment_intent = payment_intent
-  end
-end
+#   def initialize(payment_intent)
+#     @payment_intent = payment_intent
+#   end
+# end
 
 # StripeEvent.configure do |events|
 #   events.subscribe 'customer.subscription.updated', 

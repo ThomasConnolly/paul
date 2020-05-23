@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_131449) do
+ActiveRecord::Schema.define(version: 2020_05_23_143031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -216,20 +216,16 @@ ActiveRecord::Schema.define(version: 2020_05_23_131449) do
   end
 
   create_table "pledges", id: :serial, force: :cascade do |t|
-    t.integer "divisor"
     t.integer "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "amount"
-    t.integer "pay_this"
     t.string "plan"
     t.string "stripe_id"
-    t.integer "status"
     t.date "start_date"
     t.date "end_date"
     t.string "plan_id", default: "prod_ETteQ8s9Ho9sNW"
-    t.string "interval"
-    t.integer "interval_count"
+    t.boolean "active", default: true
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|

@@ -4,21 +4,17 @@
 #
 # Table name: pledges
 #
-#  id             :integer          not null, primary key
-#  amount         :integer
-#  divisor        :integer
-#  end_date       :date
-#  interval       :string
-#  interval_count :integer
-#  pay_this       :integer
-#  plan           :string
-#  start_date     :date
-#  status         :integer
-#  created_at     :datetime
-#  updated_at     :datetime
-#  plan_id        :string           default("prod_ETteQ8s9Ho9sNW")
-#  stripe_id      :string
-#  user_id        :integer
+#  id         :integer          not null, primary key
+#  active     :boolean          default(TRUE)
+#  amount     :integer
+#  end_date   :date
+#  plan       :string
+#  start_date :date
+#  created_at :datetime
+#  updated_at :datetime
+#  plan_id    :string           default("prod_ETteQ8s9Ho9sNW")
+#  stripe_id  :string
+#  user_id    :integer
 #
 
 

@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   resources :donations
 
-  resources :pledges do
-    resource :payment
+  resources :pledge do
+    resource :payments
   end
   resources :events do
     resources :tickets, only: %i[new show create update index]

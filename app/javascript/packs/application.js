@@ -51,7 +51,7 @@ $(document).ready(function(){
     if (form == null) { return }
     
     const public_key = document.querySelector("meta[name='stripe-key']").getAttribute("content")
-    const stripe = Stripe(public_key)
+    const stripe = Stripe("pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM")
     
     const elements = stripe.elements()
 

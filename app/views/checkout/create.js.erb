@@ -1,4 +1,4 @@
-const stripe = Stripe('<%= Rails.application.credentials.stripe[:public_key] %>');
+const stripe = Stripe("pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM");
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'

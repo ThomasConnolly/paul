@@ -9,6 +9,7 @@ class CheckoutController < ApplicationController
     end
     
     
+    
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -22,5 +23,4 @@ class CheckoutController < ApplicationController
       cancel_url: checkout_cancel_url,
     )
   end
-   
 end

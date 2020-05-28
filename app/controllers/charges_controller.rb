@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-
+#use to checkout ticket purchases
 
   def new; end
 

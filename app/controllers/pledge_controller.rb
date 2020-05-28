@@ -1,19 +1,13 @@
 
-class PledgesController < ApplicationController
+class PledgeController < ApplicationController
   before_action :authenticate_user!, except: [:new]
   before_action :change_path, only: :new
   before_action :set_pledge, only: %i[show edit update destroy]
-
-  def index; end
 
   def show; end
 
   def new
     @pledge = Pledge.new
-  end
-
-  def review
-    @pledge = Pledge.find(params[:id])
   end
 
   def create
@@ -66,7 +60,6 @@ class PledgesController < ApplicationController
    end
 
   def pledge_params
-    params.require(:pledge).permit %i[user_id amount divisor pay_this
-                                      plan]
+    params.require(:pledge).permit %i[user_id amount stripe_id plan_id plan]
   end
 end

@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :links
   mount StripeEvent::Engine, at: '/webhooks/stripe'
-
+  
+  resources :donations
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
     get 'success', to: 'checkout#success', as: 'checkout_success'
   end
 
-  resources :donations
-
-  resources :pledge do
-    resource :payments
+  resources :pledge
+  scope '/payment' do
+    post 'create', to: 'payment#create', as: 'payment_create'
+    get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
+    get 'success', to: 'payment#success', as: 'payment_success'
   end
+
   resources :events do
     resources :tickets, only: %i[new show create update index]
   end

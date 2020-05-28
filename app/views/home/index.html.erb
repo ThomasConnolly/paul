@@ -23,8 +23,8 @@
     <p><strong><em>In ordinary times </em></strong> you will find us worshipping our Lord using the two rites of Holy Eucharist, Rite I at 8 a.m. and Rite II at 10 a.m.</p>
     <p>In these times, we live stream one holy mass at 9 a.m.on Sundays on YouTube. You can go to our YouTube page <%= link_to "by clicking here.", "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %> You can subscribe to our page so it's easier to find us on Sunday morning. We post the service bulletin a few days ahead so you can follow the liturgy and give the responses. Check back here for the link on Thursdays.
   
-    <p><strong><%= link_to "Here is the bulletin for Sunday, May 24", 
-    "https://files.constantcontact.com/8e9e5e43101/4d6d84e6-79a1-4f66-96cc-ec27b891d3a0.pdf" %></strong></p>
+    <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", 
+    "#{@bulletin.url}" %></strong></p>
     
     
 
@@ -32,7 +32,7 @@
       <p class="mt-1"><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%>
             </p>
       <div class="clearfix"></div>
-       <p class="list mt-1"><strong><%= link_to "Click here for Scripture Readings","http://www.lectionarypage.net" %></strong> </p> 
+       <p class="mt-1"><strong><%= link_to "Click here for Scripture Readings","http://www.lectionarypage.net" %></strong> </p> 
 
       <!-- <h2>Sunday services cancelled</h2>
       <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
@@ -46,9 +46,13 @@
       <%= link_to "Click here.", pages_directions_path %></p> -->
       <h2 class="mt-3">Spiritual studies with Fr. Tom on Zoom</h2>
        <p>Join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., studying and discussing the Gospel of Matthew. </p>
-        <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. To join in this evening, <%= link_to "click here", "https://us02web.zoom.us/j/89493101099?pwd=eE5JRncwRkw4SndNVlRnNXd3OGUvdz09" %>. </p>
+        <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. To join in this evening, </p>
         <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so beore the meeting, in case you need to download and install the program and test your sound and video. To prepare for this session, read Chapter 5 of Matthew.</strong></p>
-        
+        <p>Links to the Bible study sessions:</p> 
+        <p><%= @day_bible.date.strftime("%A, %b %d") %>, <%= @day_bible.time %>
+        <%= link_to"Click here", "#{@day_bible.url}" %></p>
+        <p><%= @evening_bible.date.strftime("%A, %b %d") %>, <%= @evening_bible.time %> <%= link_to "Click here", "#{@evening_bible.url}" %></p>
+
         <%= cl_image_tag("mktLogo_ggxhct.png", class: "image-center img-fluid", width: "40%") %>
         <h2 class="mt3">Farmers' Market? Hope to see you in November!</h2>
         <div class="clearall"></div>
@@ -84,13 +88,21 @@
       <div class="col col-md-4 col-sm-8 sidebar">
         <p class="center-text"><%= Date.current.strftime("%A, %B %e, %Y") %></p>
         <%= cl_image_tag("logos/update.png", width: "99%", class: "image-center mt-3") %>
-        <h2 class="mt-3">Stay Safe</h2>
+       
+        <h2 class="mt-3">All the links</h2>
+        <p><strong><%= link_to "Sunday worship service, 9 a.m.", "#{@worship.url}" %></strong> Stream on your phone, computer or television</p>
+         <p><strong><%= link_to "Sunday bulletin", "#{@bulletin.url}" %></strong></p>
+          <p><strong><%= link_to "Sunday coffee hour", "#{@coffee.url}" %></strong>Have a chat via your </p>
+           <p><strong><%= link_to "Tuesday Bible study", "#{@day_bible.url}" %></strong></p>
+            <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>
+             <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
+       
+        <p>Chat with your fellow parishioners via your home computer after the Sunday service by <%= link_to "clicking here.", "https://us02web.zoom.us/j/86744708060?pwd=dlh5eUdNZjJWSjh1SHNod3dSOXVqdz09" %> Starts at 10:15 a.m.</p>
+
+         <h2 class="mt-3">Stay Safe</h2>
         <p><%= link_to "Click here for Fr. Tom's suggestions on how to live safely in a dangerous world.", pages_stay_safe_path %> 
         </p>
-        <h2 class="mt-3">Coffee Hour</h2>
-        <p>Chat with your fellow parishioners via your home computer tomorrow after the service by <%= link_to "clicking here.", "https://us02web.zoom.us/j/86744708060?pwd=dlh5eUdNZjJWSjh1SHNod3dSOXVqdz09" %>
-        <h2 class="mt-3">Wine-Time</h2>
-        <p>Join Fr. Tom Fridays at 5:30 p.m. for a glass of wine (at your table, of course). <%= link_to "Click here", "https://us02web.zoom.us/j/81317005838?pwd=VGg0V1VLRzM4WWpJTi9rTXVqcTRJZz09" %></p>
+      
         <%= link_to cl_image_tag("HolyWeek20_mihkbp.jpg", width: "100%", alt: "pathway photo"), "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/q_100/v1586024909/HolyWeek20_mihkbp.pdf" %>
         <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (April 4, 2020) of <em>Pathway,</em> the parish newsletter.</p>
         <p><strong>Previous editions of <em>Pathway</em> <%= link_to "can be found here", pathways_path %></p>

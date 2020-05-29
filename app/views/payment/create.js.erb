@@ -1,4 +1,4 @@
-const stripe = Stripe("pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM");
+const stripe = "{{ env('STRIPE_PUBLISHABLE_KEY') }}"
 
 stripe.redirectToCheckout({
   sessionId: '{{CHECKOUT_SESSION_ID}}'

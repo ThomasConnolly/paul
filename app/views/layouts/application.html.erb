@@ -10,20 +10,15 @@
   <%= csp_meta_tag %>
   
   <script src="https://js.stripe.com/v3/"></script>
-  <%
-=begin%>
+
  <% if Rails.env.development? %> 
-<%
-=end%>
+
     <%= tag.meta name: "stripe-key", content:
      Rails.application.credentials.stripe[:public_key] %>
-   <%
-=begin%>
+  
  <% else %>
      <%= tag.meta name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
    <% end %> 
-<%
-=end%>
   
     
   <%= favicon_link_tag 'favicon.ico' %>

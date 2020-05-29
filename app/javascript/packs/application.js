@@ -50,8 +50,8 @@ $(document).ready(function(){
     const form = document.querySelector("#payment-form")
     if (form == null) { return }
     
-    const public_key = document.querySelector("meta[name='stripe-key']").getAttribute("content")
-    const stripe = Stripe("pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM")
+    //const public_key = document.querySelector("meta[name='stripe-key']").getAttribute("content")
+    const stripe = "{{ env('STRIPE_PUBLISHABLE_KEY') }}"
     
     const elements = stripe.elements()
 

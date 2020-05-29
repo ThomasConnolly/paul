@@ -1,7 +1,6 @@
-const stripe = "{{ env('STRIPE_PUBLISHABLE_KEY') }}";
+const stripe = "{{ env('STRIPE_PUBLISHABLE_KEY') }}"
 
 stripe.redirectToCheckout({
-  sessionId: '<%= @session.id %>'
+  sessionId: '{{CHECKOUT_SESSION_ID}}'
 }).then (function (result) {
-  console.log(result.error.message);
 });

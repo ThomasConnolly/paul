@@ -10,7 +10,7 @@ class CheckoutController < ApplicationController
     
     
     
-    @session = Stripe::Checkout::Session.create(
+    session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         currency: 'usd',

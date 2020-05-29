@@ -1,7 +1,6 @@
 const stripe = Stripe("pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM");
 
 stripe.redirectToCheckout({
-  sessionId: '<% = @session.id %>'
+  sessionId: '{{CHECKOUT_SESSION_ID}}'
 }).then (function (result) {
-  console.log(result.error.message);
 });

@@ -1,4 +1,4 @@
-const stripe = ENV['STRIPE_PUBLISHABLE_KEY']
+const stripe = ('meta[name="stripe-key"]').attr('content')
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'

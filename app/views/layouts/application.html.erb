@@ -11,15 +11,7 @@
   
   <script src="https://js.stripe.com/v3/"></script>
 
- <%# if Rails.env.development? %> 
-
-    <%#= tag.meta name: "stripe-key", content:
-     Rails.application.credentials.stripe[:public_key] %>
-  
- <%# else %>
-     <%= tag.meta name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
-   <%# end %> 
-  
+  <%= tag.meta name: "stripe-key", content: Rails.application.credentials[:public_key] %>
     
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -27,6 +19,7 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   
 </head>
+
 
 <body class="<%= controller_name %>  <%= action_name %>">
   <div class="page">

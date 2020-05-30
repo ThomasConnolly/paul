@@ -9,6 +9,8 @@ post '/webhook_events/:source', to: 'webhook_events#create'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
     get 'success', to: 'checkout#success', as: 'checkout_success'
   end
+  
+  resources :links
 
   resources :pledge
   scope '/payment' do

@@ -66,7 +66,6 @@ class LinksController < ApplicationController
       current_user.has_role? (:admin)
     end
 
-
     # Only allow a list of trusted parameters through.
     def link_params
       params.require(:link).permit(:event, :time, :date, :url)

@@ -1,7 +1,9 @@
-const stripe = Stripe('<%= Rails.application.credentials.stripe[:public_key] %>');
+const stripe = Stripe('<%= ENV["STRIPE_PUBLISHABLE_KEY" %>');
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
 }).then (function (result) {
     console.log(result.error.message);
 });
+
+//const stripe = "{{ env('STRIPE_PUBLISHABLE_KEY') }}"

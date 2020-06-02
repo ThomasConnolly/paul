@@ -17,6 +17,8 @@ class CheckoutController < ApplicationController
         name: "St. Paul's Episcopal Church",
         description: "Donation to St. Paul's",
       }],
+      customer: current_user.stripe_id,
+      client_reference_id: current_user.id,
       success_url: checkout_success_url + '?session_id{CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,
     )

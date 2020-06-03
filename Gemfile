@@ -12,7 +12,7 @@ gem 'birthday'
 gem 'bootsnap', require: false
 gem 'bootstrap_form'
 gem 'devise'
-gem 'devise-bootstrap-form'
+gem 'devise-bootstrap-form', '>= 0.3.0'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'cloudinary'
 gem 'figaro'

@@ -1,5 +1,5 @@
 
-class PledgeController < ApplicationController
+class PledgesController < ApplicationController
   before_action :authenticate_user!, except: [:new]
   before_action :change_path, only: :new
   before_action :set_pledge, only: %i[show edit update destroy]
@@ -31,11 +31,16 @@ class PledgeController < ApplicationController
     end
   end
 
-  def confirmation; end
-
   def destroy
+    Stripe::Subscription.delete(@pledge.stripe_id) if @pledge.stripe_id
     @pledge.destroy
-    redirect_to '/', notice: 'Your pledge was deleted.'
+    # def destroy
+    #   subscription_to_remove = params[:id]
+    #   customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    #   customer.subscriptions.retrieve(subscription_to_remove).delete
+    #   current_user.subscribed = false
+  
+    redirect_to root_path, notice: "Your subscription has been canceled."
   end
 
 

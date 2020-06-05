@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
-post '/webhook_events/:source', to: 'webhook_events#create'
+# post '/webhook_events/:source', to: 'webhook_events#create'
   
   resources :donations
   scope '/checkout' do
@@ -12,7 +12,8 @@ post '/webhook_events/:source', to: 'webhook_events#create'
   
   resources :links
 
-  resources :pledge
+  resources :pledges
+
   scope '/payment' do
     post 'create', to: 'payment#create', as: 'payment_create'
     get 'cancel', to: 'payment#cancel', as: 'payment_cancel'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_170815) do
+ActiveRecord::Schema.define(version: 2020_06_04_014321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -373,7 +373,6 @@ ActiveRecord::Schema.define(version: 2020_05_25_170815) do
     t.string "username", limit: 255
     t.string "avatar"
     t.string "honey"
-    t.string "stripe_customer_id"
     t.string "card_brand"
     t.string "card_last4"
     t.string "card_exp_month"

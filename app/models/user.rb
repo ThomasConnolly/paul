@@ -26,7 +26,6 @@
 #  username               :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  stripe_customer_id     :string
 #  stripe_id              :string
 #
 # Indexes

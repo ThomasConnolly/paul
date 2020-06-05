@@ -1,6 +1,4 @@
 class PaymentController < ApplicationController
- #use for pledge checkout
-
 
   def create
     @pledge = Pledge.find(params[:id])
@@ -9,8 +7,13 @@ class PaymentController < ApplicationController
       redirect_to root_path
       return
     end
-  
-    session = Stripe::Checkout::Session.create(
+    @customer = if current_user.stripe_id?
+      Stripe::Customer.retrieve(current_user.stripe_id)
+    else
+      Stripe::Customer.create(email: current_user.email)
+    end
+
+    @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       subscription_data: {
         items: [{ 
@@ -18,12 +21,17 @@ class PaymentController < ApplicationController
           quantity: @pledge.amount,
           }],
       },
-      customer: current_user.stripe_id,
-      client_reference_id: current_user.id,
+      customer: @customer,
       success_url: payment_success_url + '?session_id{CHECKOUT_SESSION_ID}',
-      cancel_url: root_url,
+      cancel_url: payment_cancel_url,
     )
 
-    render json: { session_id: session.id }
+      respond_to do |format|
+        format.js # render create.js.erb
+      end
+   end
+
+  def update_user
+  current_user.update!(stripe_id: @customer.id)
   end
 end

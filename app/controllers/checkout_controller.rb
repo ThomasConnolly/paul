@@ -7,7 +7,16 @@ class CheckoutController < ApplicationController
       redirect_to root_path
       return
     end
+    @customer = if current_user.stripe_id?
+      Stripe::Customer.retrieve(current_user.stripe_id)
+    else
+      Stripe::Customer.create(email: current_user.email)
+    end
     
+    def update_user
+      current_user.update(stripe_id: @customer.id)
+    end
+
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -17,14 +26,17 @@ class CheckoutController < ApplicationController
         name: "St. Paul's Episcopal Church",
         description: "Donation to St. Paul's",
       }],
-      customer: current_user.stripe_id,
-      client_reference_id: current_user.id,
+      customer: @customer,
       success_url: checkout_success_url + '?session_id{CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,
     )
 
-    respond_to do |format|
-      format.js # render create.js.erb
+      respond_to do |format|
+        format.js # render create.js.erb
+      end
     end
+  
+  def update_user
+    current_user.update!(stripe_id: @customer.id)
   end
 end

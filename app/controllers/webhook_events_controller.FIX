@@ -3,27 +3,23 @@ class WebhookEventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    if !signatures_valid?
+    if !valid_signatures?
       render json: {message: "signature invalid"}, status: 400
       return
     end
 
-    #check if already handled
-    if !WebhookEvent.find_by(external_id: external_id, source: params[:source]).nil?
-      render json: {}
+    #check if already handled; idempotent
+    if !WebhookEvent.find_by(source:params[:source], external_id: external_id).nil?
+      render json: { message: "Already procesed #{ external_id }"}
       return
     end
 
-    # save it
-    event = WebhookEvent.create!(webhook_params)
-
-    # and process
+    event = WebhookEvent.create(webhook_params)
     ProcessEventsJob.perform_later(event.id)
-
     render json: params
   end
 
-  def signatures_valid?
+  def valid_signatures?
     if params[:source] == 'stripe'
       begin
         wh_secret = Rails.application.credentials.stripe[:signing_secret]
@@ -32,12 +28,7 @@ class WebhookEventsController < ApplicationController
           request.env['HTTP_STRIPE_SIGNATURE'],
           wh_secret
         )
-      rescue Stripe::SignatureVerificationError => e
-        return false
-      end
     end
-
-    true
   end
 
   def webhook_params

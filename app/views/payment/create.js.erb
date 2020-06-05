@@ -1,6 +1,6 @@
-//const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
 
-const stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
+//const stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'

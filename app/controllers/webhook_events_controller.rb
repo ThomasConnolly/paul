@@ -28,7 +28,12 @@ class WebhookEventsController < ApplicationController
           request.env['HTTP_STRIPE_SIGNATURE'],
           wh_secret
         )
+      rescue Stripe::SignatureVerificationError => e
+        return false
+      end
     end
+
+    true
   end
 
   def webhook_params

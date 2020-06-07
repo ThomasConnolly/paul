@@ -12,6 +12,8 @@ class PaymentController < ApplicationController
     else
       Stripe::Customer.create(email: current_user.email)
     end
+    
+    current_user.update!(stripe_id: @customer.id)
 
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -30,8 +32,4 @@ class PaymentController < ApplicationController
         format.js # render create.js.erb
       end
    end
-
-  def update_user
-  current_user.update!(stripe_id: @customer.id)
-  end
 end

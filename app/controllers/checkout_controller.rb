@@ -7,15 +7,14 @@ class CheckoutController < ApplicationController
       redirect_to root_path
       return
     end
+
     @customer = if current_user.stripe_id?
       Stripe::Customer.retrieve(current_user.stripe_id)
     else
       Stripe::Customer.create(email: current_user.email)
     end
-    
-    def update_user
-      current_user.update(stripe_id: @customer.id)
-    end
+
+    current_user.update!(stripe_id: @customer.id)
 
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -34,9 +33,5 @@ class CheckoutController < ApplicationController
       respond_to do |format|
         format.js # render create.js.erb
       end
-    end
-  
-  def update_user
-    current_user.update!(stripe_id: @customer.id)
   end
 end

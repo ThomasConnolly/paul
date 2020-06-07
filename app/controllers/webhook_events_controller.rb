@@ -13,7 +13,6 @@ class WebhookEventsController < ApplicationController
       render json: { message: "Already procesed #{ external_id }"}
       return
     end
-
     event = WebhookEvent.create(webhook_params)
     ProcessEventsJob.perform_later(event.id)
     render json: params

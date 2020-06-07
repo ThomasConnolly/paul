@@ -7,6 +7,6 @@
 
 
 class ApplicationMailer < ActionMailer::Base
-  default from: "St. Paul's" <NoResponse@SaintPaulsNaples.org>
+  default from: 'NoResponse@SaintPaulsNaples.org'
   layout 'mailer'
 end

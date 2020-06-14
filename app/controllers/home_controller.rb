@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     @coffee = Link.find_by(event: "coffee")
     @day_bible = Link.find_by(event: "day_bible")
     @evening_bible = Link.find_by(event: "evening_bible")
+    @pathway = Pathway.order("created_at ASC").last
   end
 
   def show
@@ -18,5 +19,6 @@ class HomeController < ApplicationController
     @coffee = Link.find_by(event: "coffee")
     @day_bible = Link.find_by(event: "day_bible")
     @evening_bible = Link.find_by(event: "evening_bible")
+    @pathway = Pathway.order("created_at ASC").last
   end
 end

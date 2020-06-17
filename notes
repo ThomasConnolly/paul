@@ -1,0 +1,2 @@
+1. Get a handle on updating pledges and donations either in the controller or via webhooks (or both)
+2. Fix issues with story ideas and send readership data to all on communications list.

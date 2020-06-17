@@ -30,10 +30,14 @@ class PledgesController < ApplicationController
       render :edit
     end
   end
-
-  def destroy
+  
+  def cancel_now!
     Stripe::Subscription.delete(@pledge.stripe_id) if @pledge.stripe_id
     @pledge.destroy
+  end
+  
+  def destroy
+
     # def destroy
     #   subscription_to_remove = params[:id]
     #   customer = Stripe::Customer.retrieve(current_user.stripe_id)

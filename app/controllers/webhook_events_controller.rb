@@ -7,12 +7,12 @@ class WebhookEventsController < ApplicationController
       render json: {message: "signature invalid"}, status: 400
       return
     end
-
     #check if already handled; idempotent
     if !WebhookEvent.find_by(source:params[:source], external_id: external_id).nil?
       render json: { message: "Already procesed #{ external_id }"}
       return
     end
+
     event = WebhookEvent.create(webhook_params)
     ProcessEventsJob.perform_later(event.id)
     render json: params

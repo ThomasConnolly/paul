@@ -2,15 +2,15 @@
 #
 # Table name: donations
 #
-#  id              :bigint           not null, primary key
-#  amount          :integer
-#  dollars         :integer
-#  status          :string
-#  stripe_customer :string
-#  type            :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  user_id         :bigint
+#  id         :bigint           not null, primary key
+#  amount     :integer
+#  dollars    :integer
+#  status     :string
+#  type       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  stripe_id  :string
+#  user_id    :bigint
 #
 # Indexes
 #

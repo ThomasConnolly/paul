@@ -2,7 +2,6 @@ class PaymentController < ApplicationController
 
   def create
     @pledge = Pledge.find(params[:id])
-
     if @pledge.nil?
       redirect_to root_path
       return
@@ -13,8 +12,6 @@ class PaymentController < ApplicationController
       Stripe::Customer.create(email: current_user.email)
     end
     
-    current_user.update!(stripe_id: @customer.id)
-
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       subscription_data: {
@@ -30,6 +27,9 @@ class PaymentController < ApplicationController
 
       respond_to do |format|
         format.js # render create.js.erb
-      end
-   end
+     
+      current_user.update!(stripe_id: @customer.id)
+      @pledge.update!(stripe_id: @session.subscription)
+    end
+  end
 end

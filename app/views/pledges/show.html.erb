@@ -16,9 +16,7 @@
       <div class="mt-5 mb-5"></div>
 
       <% if current_user == @pledge.user %>
-      <%= link_to 'Edit', edit_pledge_path(@pledge) %> | 
-
-      <%= link_to 'Cancel this pledge', new_pledge_path %>
+      <%= link_to 'Edit or cancel', edit_pledge_path(@pledge) %> | 
       <% end %>
       </div>
   </div>

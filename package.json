@@ -35,7 +35,8 @@
     "tether": "^1.4.7",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.42.1"
+    "webpack": "^4.42.1",
+    "websocket-extensions": "^0.1.4"
   },
   "version": "0.1.0",
   "devDependencies": {

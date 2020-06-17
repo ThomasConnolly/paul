@@ -13,3 +13,12 @@ Rails.configuration.stripe = {
 }
 Stripe.api_key = ENV["STRIPE_SECRET_KEY"] 
 end
+
+StripeEvent.configure do |events|
+  events.subscribe 'checkout.session.completed' do |event|
+
+  event.class         #=> Stripe::Event
+  event.type          #=> "charge.failed"
+  event.data.object   #=> <Stripe::Charge:03fxxxx>
+  end
+end

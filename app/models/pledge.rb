@@ -39,6 +39,6 @@ end
 #   self.plan_id = 'plan_HCxus7BSYo1eSh' if plan == "monthly"
 #   self.plan_id = 'plan_HCxvLz92uVgU3a'  if plan == "weekly"
 #   end
-# end
+#git sta end
 
 

@@ -1,5 +1,6 @@
 class PaymentController < ApplicationController
-
+  protect_from_forgery except: :webhook
+  
   def create
     @pledge = Pledge.find(params[:id])
     if @pledge.nil?
@@ -10,6 +11,7 @@ class PaymentController < ApplicationController
       Stripe::Customer.retrieve(current_user.stripe_id)
     else
       Stripe::Customer.create(email: current_user.email)
+      current_user.update!(stripe_id: @customer.id)
     end
     
     @session = Stripe::Checkout::Session.create(
@@ -24,12 +26,9 @@ class PaymentController < ApplicationController
       success_url: payment_success_url + '?session_id{CHECKOUT_SESSION_ID}',
       cancel_url: payment_cancel_url,
     )
-
       respond_to do |format|
         format.js # render create.js.erb
      
-      current_user.update!(stripe_id: @customer.id)
-      @pledge.update!(stripe_id: @session.subscription)
     end
   end
 end

@@ -1,4 +1,5 @@
 class CheckoutController < ApplicationController
+protect_from_forgery except: :webhook
 
   def create
     @donation = Donation.find(params[:id])
@@ -8,13 +9,12 @@ class CheckoutController < ApplicationController
       return
     end
 
-    @customer = if current_user.stripe_id?
-      Stripe::Customer.retrieve(current_user.stripe_id)
+    if current_user.stripe_id?
+      @customer = Stripe::Customer.retrieve(current_user.stripe_id)
     else
-      Stripe::Customer.create(email: current_user.email)
+      @customer = Stripe::Customer.create(email: current_user.email)
+      current_user.update!(stripe_id: @customer.id)
     end
-
-    current_user.update!(stripe_id: @customer.id)
 
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -29,9 +29,8 @@ class CheckoutController < ApplicationController
       success_url: checkout_success_url + '?session_id{CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,
     )
-
       respond_to do |format|
         format.js # render create.js.erb
-      end
+    end
   end
 end

@@ -16,6 +16,7 @@ class WebhookEventsController < ApplicationController
     event = WebhookEvent.create(webhook_params)
     ProcessEventsJob.perform_later(event.id)
     render json: params
+    
   end
 
   def valid_signatures?
@@ -31,7 +32,6 @@ class WebhookEventsController < ApplicationController
         return false
       end
     end
-
     true
   end
 

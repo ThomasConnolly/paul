@@ -35,16 +35,14 @@ class PledgesController < ApplicationController
     Stripe::Subscription.delete(@pledge.stripe_id) if @pledge.stripe_id
     @pledge.destroy
   end
-  
-  def destroy
 
-    # def destroy
-    #   subscription_to_remove = params[:id]
-    #   customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    #   customer.subscriptions.retrieve(subscription_to_remove).delete
-    #   current_user.subscribed = false
+  def destroy
+    customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    customer.subscriptions.retrieve(current_user.pledge.stripe_id).delete
+    current_user.update(stripe_id: nil)
+    @pledge.destroy
   
-    redirect_to root_path, notice: "Your subscription has been canceled."
+    redirect_to root_path, notice: "Your pledge has been canceled."
   end
 
 

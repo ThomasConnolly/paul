@@ -73,8 +73,8 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'spring'
-  gem 'spring-watcher-listen'
+  #gem 'spring'
+  #gem 'spring-watcher-listen'
 end
 
 group :test do

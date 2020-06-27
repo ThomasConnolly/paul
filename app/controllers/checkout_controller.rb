@@ -25,6 +25,7 @@ protect_from_forgery except: :webhook
         name: "St. Paul's Episcopal Church",
         description: "Donation to St. Paul's",
       }],
+      client_reference_id: @donation.id,
       customer: @customer,
       success_url: checkout_success_url + '?session_id{CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,

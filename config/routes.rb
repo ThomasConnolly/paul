@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  mount StripeEvent::Engine, at: '/stripe/webhook'
+  post '/webhook_events/:source', to: 'webhook_events#create'
   
   resources :donations
   scope '/checkout' do

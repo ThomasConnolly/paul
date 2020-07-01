@@ -12,7 +12,7 @@ class PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.new(pledge_params)
-    @pledge.user_id = current_user.id if current_user
+    @pledge.user_id = current_user.id
     if @pledge.save
       redirect_to pledge_path(@pledge)
     else
@@ -30,18 +30,9 @@ class PledgesController < ApplicationController
       render :edit
     end
   end
-  
-  def cancel_now!
-    Stripe::Subscription.delete(@pledge.stripe_id) if @pledge.stripe_id
-    @pledge.destroy
-  end
 
   def destroy
-    customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    customer.subscriptions.retrieve(current_user.pledge.stripe_id).delete
-    current_user.update(stripe_id: nil)
     @pledge.destroy
-  
     redirect_to root_path, notice: "Your pledge has been canceled."
   end
 
@@ -67,6 +58,6 @@ class PledgesController < ApplicationController
    end
 
   def pledge_params
-    params.require(:pledge).permit %i[user_id amount stripe_id plan_id plan]
+    params.require(:pledge).permit %i[user_id amount stripe_id plan_id plan status]
   end
 end

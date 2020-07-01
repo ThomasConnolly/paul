@@ -10,19 +10,18 @@ module Events
         #checkout_session is now the variable that refers to all the data in that particular webhook so we can use +checkout_session.customer.id for example
       end
 
-      def update_records
-        user = User.find_by(stripe_id: checkout_session.customer)
-        case checkout_session.mode 
-        when 'subscription'
-          pledge = Pledge.find(user.pledge.id)
-          pledge.update!(stripe_id: checkout_session.subscription)
-        when 'payment'
-          donation = Donation.where(user: user.id).last
-          donation.update!(
-            stripe_id: checkout_session.payment_intent,
-            status: 1
-          )
-        end
+      user = User.find_by(stripe_id: checkout_session.customer)
+      case checkout_session.mode 
+      when 'subscription'
+        pledge = user.pledge
+        pledge.update!(stripe_id: checkout_session.subscription)
+      when 'payment'
+        donation = Donation.find_by(checkout_session.client_reference_id)
+        donation.update!(
+          stripe_id: checkout_session.payment_intent,
+          status: 1
+        )
+      
       end
     end
   end

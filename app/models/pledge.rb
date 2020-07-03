@@ -23,7 +23,7 @@ class Pledge < ApplicationRecord
   validates_presence_of :user_id
   validates_presence_of :plan_id
   before_save :set_plan_id
-  before_destroy :cancel_stripe_subscription
+  before_destroy :cancel_stripe_subscription, if: :stripe_id
   
   def set_plan_id
     if Rails.env.production?
@@ -40,6 +40,5 @@ class Pledge < ApplicationRecord
 
   def cancel_stripe_subscription
     subscription = Stripe::Subscription.retrieve(self.stripe_id).delete
-    self.update(stripe_id: nil)
   end
 end

@@ -18,11 +18,10 @@
   <h1>We follow Jesus Christ...</h1>
   <h2>...whether we stay at home or join a small number of people in public worship</h2>
   <p>Above all, we pray you will stay safe. If you desire to join a maximum of 50 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. We must turn away folks if we reach that guideline number.</p>
-  <p>Please join us on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %>
+  <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %>
 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
-    <p><strong><em>In ordinary times </em></strong> you will find us worshipping our Lord using the two rites of Holy Eucharist, Rite I at 8 a.m. and Rite II at 10 a.m.</p>
-    <p> to our YouTube page <%= link_to "by clicking here.", "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %> You can subscribe to our page so it's easier to find us on Sunday morning. We post the service bulletin a few days ahead so you can follow the liturgy and give the responses. Check back here for the link on Thursdays.
+   
   
     <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
     

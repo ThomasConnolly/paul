@@ -11,15 +11,17 @@
 #  first_name    :string
 #  last_name     :string
 #  username      :string
+#  yday          :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  membership_id :string
 #
 
 class Member < ApplicationRecord
-  # belongs_to :user
+
   acts_as_birthday :birthday
   before_save :set_username
+  before_save :set_yday
 
   require 'date'
   
@@ -40,6 +42,10 @@ class Member < ApplicationRecord
 
   def set_username
     self.username = "#{first_name} #{last_name}".strip
+  end
+
+  def set_yday
+    self.yday = self.birthday.yday
   end
 
   def formatted_email

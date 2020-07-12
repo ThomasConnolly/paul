@@ -48,6 +48,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :opportunities
   has_many :story_ideas
+  has_many :tasks
   has_many :vreports
   validates :first_name, presence: true
   validates :last_name, presence: true

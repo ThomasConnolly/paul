@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby '2.7.1'
 
 gem 'actionmailer'
+gem 'acts_as_list'
 gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'aws-sdk-s3', require: false

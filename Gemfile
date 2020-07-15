@@ -87,3 +87,5 @@ group :test do
 end
 
 gem 'rails_on_heroku'
+
+gem "stimulus_reflex", "~> 3.2"

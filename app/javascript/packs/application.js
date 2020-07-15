@@ -12,7 +12,6 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-import "controllers";
 import 'bootstrap';
 import 'data-confirm-modal';
 import "src/application.scss";

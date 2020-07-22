@@ -22,9 +22,11 @@
 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %>
    
-  
-    <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
-    
+      <% if @bulletin.url.present? %>
+        <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
+      <% else %>
+        <p>Sunday's bulletin will be available here on Thursday.</p>
+      <% end %>'    
       <p class="mt-1 mb-1">To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
       <p class="mt-1"><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%>
             </p>
@@ -44,7 +46,7 @@
       <h2 class="mt-3">Spiritual studies with Fr. Tom on Zoom</h2>
        <p>Join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., studying and discussing the Gospel of Matthew. </p>
         <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. To join in this evening, </p>
-        <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so beore the meeting, in case you need to download and install the program and test your sound and video. To prepare for this session, read Chapter 5 of Matthew.</strong></p>
+        <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so beore the meeting, in case you need to download and install the program and test your sound and video. </strong></p>
         <p>Links to the Bible study sessions:</p> 
         <p><%= @day_bible.date.strftime("%A, %b %d") %>, <%= @day_bible.time %>
         <%= link_to"Click here", "#{@day_bible.url}" %></p>
@@ -88,7 +90,12 @@
        
         <h2 class="mt-3">All the links</h2>
         <p><strong><%= link_to "Sunday worship service, 9 a.m.", "#{@worship.url}" %></strong> Stream on your phone, computer or television. Subscribe to our YouTube channel using this link.</p>
-         <p><strong><%= link_to "Sunday bulletin", "#{@bulletin.url}" %></strong></p>
+          <% if @bulletin.url.present? %>
+            <p><strong><%= link_to "Sunday bulletin", "#{@bulletin.url}" %></strong></p>  
+          <% else %>
+            <p><strong> Sunday's bulletin will be linked here on Thursday
+            </strong></p>
+          <% end %>
           <p><strong><%= link_to "Sunday coffee hour", "#{@coffee.url}" %></strong></p>
            <p><strong><%= link_to "Tuesday Bible study", "#{@day_bible.url}" %></strong></p>
             <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>

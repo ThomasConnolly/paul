@@ -25,6 +25,15 @@ class MemberMailer < ApplicationMailer
       subject: "Deacon Mary's program is 6:30 p.m., not 6 p.m. Wednesday" 
     )
   end
+
+  def midSummer2020_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1596816752/Aug2020Sm_ofmerc.pdf"
+    mail(
+      subject: "The latest Pathway, the St. Paul parish newsletter, for you"
+    )
+  end
+
   def summer2020_pathway(member)
     @member = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1591980296/summer_r8otjd.pdf"

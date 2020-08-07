@@ -45,7 +45,7 @@ class Member < ApplicationRecord
   end
 
   def set_yday
-    self.yday = self.birthday.yday
+    self.yday = self.birthday.yday unless birthday.nil?
   end
 
   def formatted_email

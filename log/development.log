@@ -1,0 +1,21 @@
+  [1m[35m (158.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "webhook_events"[0m
+  [1m[36mWebhookEvent Load (28.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (116.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 280], ["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (18.1ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 279], ["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (53.7ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (0.9ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (0.9ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (32.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 182], ["LIMIT", 1]]
+  [1m[36mUser Load (50.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (13.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 319], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (51.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "card_brand" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-08-22 22:39:50.349439"], ["card_brand", "Visa:\n"], ["id", 319]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 319], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 319], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "card_brand" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-08-22 22:41:45.233400"], ["card_brand", "Visa"], ["id", 319]]
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "card_brand" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-08-22 22:44:22.807127"], ["card_brand", nil], ["id", 319]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m

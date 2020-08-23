@@ -7,7 +7,7 @@ class WebhookEventsController < ApplicationController
       render json: {message: "signature invalid"}, status: 400
       return
     end
-    #check if already handled; idempotent
+    # idempotent
     if !WebhookEvent.find_by(source:params[:source], external_id: external_id).nil?
       render json: { message: "Already procesed #{ external_id }"}
       return
@@ -35,16 +35,16 @@ class WebhookEventsController < ApplicationController
     true
   end
 
+  def external_id
+    return params[:id] if params[:source] == 'stripe'
+    SecureRandom.hex
+  end
+
   def webhook_params
     {
       source: params[:source],
       data: params.except(:source, :controller, :action).permit!,
       external_id: external_id
     }
-  end
-
-  def external_id
-    return params[:id] if params[:source] == 'stripe'
-    SecureRandom.hex
   end
 end

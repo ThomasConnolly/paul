@@ -86,6 +86,5 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'rails_on_heroku'
 
 gem "stimulus_reflex", "~> 3.2"

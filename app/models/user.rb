@@ -52,6 +52,7 @@ class User < ApplicationRecord
   has_many :vreports
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates_uniqueness_of :username
   validates_confirmation_of :password
   has_one_attached :avatar
   has_one :pledge, dependent: :destroy

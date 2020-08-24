@@ -19,3 +19,623 @@
   [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "card_brand" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-08-22 22:44:22.807127"], ["card_brand", nil], ["id", 319]]
   [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (29.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (27.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (31.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 142.9ms | Allocations: 8129)
+  Rendered layouts/_header.html.erb (Duration: 20.5ms | Allocations: 1501)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (97.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 212.4ms | Allocations: 31673)
+  Rendered layouts/_footer.html.erb (Duration: 18.3ms | Allocations: 717)
+Completed 200 OK in 1307ms (Views: 959.6ms | ActiveRecord: 200.1ms | Allocations: 82948)
+
+
+Processing by PathwaysController#index as HTML
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mRole Load (44.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 181.7ms | Allocations: 19633)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1240)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 2582)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 527)
+Completed 200 OK in 197ms (Views: 138.1ms | ActiveRecord: 55.8ms | Allocations: 32242)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (2.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3071)
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 1240)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 12.8ms | Allocations: 4806)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 522)
+Completed 200 OK in 62ms (Views: 30.9ms | ActiveRecord: 7.4ms | Allocations: 28265)
+
+
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q7A7g2IxGvABxUlqpIv7V/CYCFtakvrnQ3SsHk38K+duwRs5kQIRmSakBMJ56dFei6H6jddEaZoDBwhT7WssXg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:5000/
+Completed 302 Found in 169ms (ActiveRecord: 0.5ms | Allocations: 8699)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3057)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1239)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 620)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 522)
+Completed 200 OK in 33ms (Views: 15.0ms | ActiveRecord: 2.0ms | Allocations: 23680)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 16.2ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 167.6ms | Allocations: 11667)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 516)
+Completed 200 OK in 186ms (Views: 183.9ms | ActiveRecord: 0.0ms | Allocations: 23330)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 30.9ms | Allocations: 4144)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 516)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms | Allocations: 15321)
+
+
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"UvjMfE/Q1uISRNyQTOC2CBETMTo277s2Ax+C8eB6Mi1jTflY6nErLcfREfHh2cAUCLLt+jMX5x4pydsmbDTmnA==", "user"=>{"first_name"=>"Thomas", "last_name"=>"Connolly", "email"=>"tommy@tommycon.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Create (47.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "username") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "tommy@tommycon.com"], ["encrypted_password", "$2a$11$ltUSDB7Bbqreug2EddB16ugVfG15l3gGOFIel3EhukwXyxEncnWnu"], ["created_at", "2020-08-24 00:52:30.340126"], ["updated_at", "2020-08-24 00:52:30.340126"], ["first_name", "Thomas"], ["last_name", "Connolly"], ["username", "Thomas Connolly"]]
+  [1m[36mRole Load (1.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mRole Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 320], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mRole Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mCACHE Role Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 320], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mUser::HABTM_Roles Create (0.4ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 320], ["role_id", 2]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 320], ["LIMIT", 1]]
+  ↳ app/models/user.rb:103:in `add_profile'
+  [1m[36mProfile Create (6.2ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 320], ["created_at", "2020-08-24 00:52:30.426774"], ["updated_at", "2020-08-24 00:52:30.426774"]]
+  ↳ app/models/user.rb:103:in `add_profile'
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2020-08-24 00:52:30.457751"], ["last_sign_in_at", "2020-08-24 00:52:30.457751"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2020-08-24 00:52:30.458489"], ["id", 320]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/
+Completed 302 Found in 308ms (ActiveRecord: 80.5ms | Allocations: 38790)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3070)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1240)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 320], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 320], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 4.8ms | Allocations: 4711)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 524)
+Completed 200 OK in 42ms (Views: 24.8ms | ActiveRecord: 2.4ms | Allocations: 27929)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."last_name" = $1[0m  [["last_name", "Connolly"]]
+  [1m[36mActiveStorage::Attachment Load (14.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (29.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 320], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 320], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 320], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "thomas connolly"], ["id", 320], ["LIMIT", 1]]
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lm4XJteC1H1+6ov5Oa1qytkSuMc3xq6c9UEYWU3wEN6hww9agRQ1BUcOyRF1HC8kkb8lxCFkz8MzH3KtL7Ka9g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 320], ["LIMIT", 1]]
+Redirected to http://localhost:5000/
+Completed 302 Found in 22ms (ActiveRecord: 0.7ms | Allocations: 16956)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3084)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1240)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 628)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 520)
+Completed 200 OK in 38ms (Views: 12.5ms | ActiveRecord: 2.0ms | Allocations: 31520)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2238)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 514)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 13606)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3503)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 514)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.0ms | Allocations: 14664)
+
+
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"HLL3JJx84fT8oraeIXG7xukMeeGQmQ71ZHCZKT8cFk5KH3rZWPjhbyaR4ApLIU+T8jz1CWPB6pwzcI8P9A4L4Q==", "user"=>{"first_name"=>"thomas", "last_name"=>"connolly", "email"=>"tedward@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "username") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "tedward@gmail.com"], ["encrypted_password", "$2a$11$wos.OxIBQjLIjdCrpZc1Nu13BaCmwHWzwuteekiG8ySaITH6ruVeK"], ["created_at", "2020-08-24 01:00:35.792486"], ["updated_at", "2020-08-24 01:00:35.792486"], ["first_name", "thomas"], ["last_name", "connolly"], ["username", "Thomas Connolly"]]
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mRole Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 321], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mRole Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mCACHE Role Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 321], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mUser::HABTM_Roles Create (0.3ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 321], ["role_id", 2]]
+  ↳ app/models/user.rb:98:in `assign_default_role'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 321], ["LIMIT", 1]]
+  ↳ app/models/user.rb:103:in `add_profile'
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 321], ["created_at", "2020-08-24 01:00:35.839852"], ["updated_at", "2020-08-24 01:00:35.839852"]]
+  ↳ app/models/user.rb:103:in `add_profile'
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2020-08-24 01:00:35.863449"], ["last_sign_in_at", "2020-08-24 01:00:35.863449"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2020-08-24 01:00:35.863790"], ["id", 321]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/
+Completed 302 Found in 214ms (ActiveRecord: 34.2ms | Allocations: 52248)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3056)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1239)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 321], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 321], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 6.4ms | Allocations: 4708)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 528)
+Completed 200 OK in 34ms (Views: 17.3ms | ActiveRecord: 2.4ms | Allocations: 27911)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 321], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 321], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 321], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "thomas connolly"], ["id", 321], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "thomas connolly"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "first_name", "last_name", "username") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "billybob@billy.com"], ["created_at", "2020-08-24 01:03:47.523647"], ["updated_at", "2020-08-24 01:03:47.523647"], ["first_name", "Thomas"], ["last_name", "Connolly"], ["username", "Thomas Connolly"]]
+  [1m[36mRole Load (1.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  [1m[36mRole Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 322], ["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "member"], ["LIMIT", 1]]
+  [1m[36mRole Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 322], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser::HABTM_Roles Create (0.3ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 322], ["role_id", 2]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 322], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 322], ["created_at", "2020-08-24 01:03:47.621290"], ["updated_at", "2020-08-24 01:03:47.621290"]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 322], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 8129)
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 1501)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 321], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 321], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 70.8ms | Allocations: 31683)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 720)
+Completed 200 OK in 167ms (Views: 111.9ms | ActiveRecord: 16.4ms | Allocations: 82956)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "thomas connolly"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lRR3Zk6gZUP3RxsYVI8NwX8hsUiLRgkcH/V3SKS6RPeuFyrQmQOAiBBNjkXFtOF1auj3XqbJY/a2md+do/C0SQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 321], ["LIMIT", 1]]
+Redirected to http://localhost:5000/
+Completed 302 Found in 13ms (ActiveRecord: 0.3ms | Allocations: 8622)
+
+
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3066)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1240)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 631)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 522)
+Completed 200 OK in 27ms (Views: 13.7ms | ActiveRecord: 1.7ms | Allocations: 23763)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 35.0ms | Allocations: 11681)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 516)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms | Allocations: 23348)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 200)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 4145)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 514)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 16585)
+
+
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Gw+IWhwswIM2+WDl6MYCqJvi/T51Kz1+nSKhnHPBLCGjQIDU4e2dckLM6yIP0jKrTHtJvVeuE/HIiNZOgKvFjQ==", "user"=>{"first_name"=>"Thomas ", "last_name"=>"Connolly", "email"=>"tom@comtom.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 220)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3427)
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1238)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 581)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 586)
+Completed 200 OK in 146ms (Views: 18.7ms | ActiveRecord: 0.8ms | Allocations: 25013)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/index.html.erb
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_markup.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (Duration: 0.8ms | Allocations: 98)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (Duration: 1.1ms | Allocations: 80)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/style.css.erb within layouts/inlined_string (Duration: 1.5ms | Allocations: 254)
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/console.js.erb within layouts/javascript (Duration: 30.0ms | Allocations: 4356)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/main.js.erb within layouts/javascript (Duration: 0.8ms | Allocations: 77)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/error_page.js.erb within layouts/javascript (Duration: 0.9ms | Allocations: 172)
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/index.html.erb (Duration: 49.9ms | Allocations: 7015)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "tom.connolly@comcast.net"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "thomas connolly"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "thomas connolly"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 8129)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1501)
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1446)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 717)
+Completed 200 OK in 95ms (Views: 46.8ms | ActiveRecord: 9.3ms | Allocations: 52679)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 24.4ms | Allocations: 13372)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 522)
+Completed 200 OK in 85ms (Views: 34.5ms | ActiveRecord: 24.5ms | Allocations: 40106)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 200)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 112)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4157)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 516)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 15685)
+
+
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"8px7IqAHVZY7IVr5WHQEFi72xkvriJpR2864M6JFH3BK03OsXcYIZ08U0T6/YDQV+W9yyMkNtN6OZM/hUS/23A==", "user"=>{"first_name"=>"thomas", "last_name"=>"connolly", "email"=>"tom.connolly@comcast.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "tom.connolly@comcast.net"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 221)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3356)
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 1238)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 581)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 586)
+Completed 200 OK in 39ms (Views: 16.0ms | ActiveRecord: 2.9ms | Allocations: 25365)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 322], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "billybob@billy.com"], ["id", 322], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 322], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 322], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (29.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC[0m  [["user_id", 322]]
+  [1m[36mComment Load (35.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 322], ["commentable_type", "User"]]
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 322], ["LIMIT", 1]]
+  [1m[36mProfile Destroy (0.4ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = $1[0m  [["id", 272]]
+  [1m[36mPledge Load (8.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 322], ["LIMIT", 1]]
+  [1m[36mUser::HABTM_Roles Destroy (15.7ms)[0m  [1m[31mDELETE FROM "users_roles" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 322]]
+  [1m[36mUser Destroy (93.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 322]]
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 321], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 321], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC[0m  [["user_id", 321]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 321], ["commentable_type", "User"]]
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 321], ["LIMIT", 1]]
+  [1m[36mProfile Destroy (1.1ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = $1[0m  [["id", 271]]
+  [1m[36mPledge Load (0.7ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 321], ["LIMIT", 1]]
+  [1m[36mUser::HABTM_Roles Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users_roles" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 321]]
+  [1m[36mUser Destroy (2.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 321]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 320], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 320], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at DESC[0m  [["user_id", 320]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 320], ["commentable_type", "User"]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 320], ["LIMIT", 1]]
+  [1m[36mProfile Destroy (0.9ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = $1[0m  [["id", 270]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 320], ["LIMIT", 1]]
+  [1m[36mUser::HABTM_Roles Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users_roles" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 320]]
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 320]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 319], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/index.html.erb
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_markup.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (Duration: 0.2ms | Allocations: 98)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (Duration: 0.1ms | Allocations: 80)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/style.css.erb within layouts/inlined_string (Duration: 0.2ms | Allocations: 254)
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/console.js.erb within layouts/javascript (Duration: 4.1ms | Allocations: 4355)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/main.js.erb within layouts/javascript (Duration: 0.2ms | Allocations: 77)
+  Rendering /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/error_page.js.erb within layouts/javascript (Duration: 0.3ms | Allocations: 172)
+  Rendered /home/tom/.rvm/gems/ruby-2.7.1/gems/web-console-4.0.4/lib/web_console/templates/index.html.erb (Duration: 8.6ms | Allocations: 7014)
+  [1m[35m (22.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."email" = $1[0m  [["email", "stripe@example.com"]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "stripe@example.com"]]
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 319], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "stripe@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "stripe@example.com"], ["LIMIT", 1]]
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 7954)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1501)
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1446)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 718)
+Completed 200 OK in 97ms (Views: 46.8ms | ActiveRecord: 8.5ms | Allocations: 51585)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 13242)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 514)
+Completed 200 OK in 63ms (Views: 36.6ms | ActiveRecord: 4.4ms | Allocations: 38546)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 199)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5464)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 516)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 16658)
+
+
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"NiPZxqQjJrYrDQV1i0pnZSvXLPGwcw0zsQMozVwsNNOObNFIWeJ7R184jrJsXldm/E6YcpL2I7zkqV8fr0bdfw==", "user"=>{"first_name"=>"Jennie", "last_name"=>"Rosenblat", "email"=>"stripe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "stripe@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 221)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3357)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1238)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 581)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 586)
+Completed 200 OK in 142ms (Views: 16.2ms | ActiveRecord: 1.6ms | Allocations: 25002)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2059)
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1242)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 597)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 514)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 13325)
+
+

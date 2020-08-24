@@ -38,7 +38,10 @@ class User < ApplicationRecord
   extend Rolify
   rolify
 
-  before_save :set_username
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  before_create :set_username
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
   after_create :assign_default_role
   after_create :add_profile
   has_many :posts, dependent: :destroy
@@ -50,9 +53,6 @@ class User < ApplicationRecord
   has_many :story_ideas
   has_many :tasks
   has_many :vreports
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates_uniqueness_of :username
   validates_confirmation_of :password
   has_one_attached :avatar
   has_one :pledge, dependent: :destroy

@@ -8,6 +8,7 @@
     "@rails/activestorage": "^6.0.2-2",
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.2.1",
+    "bl": "4.0.3",
     "bootstrap": "4.5.2",
     "browserlist": "^1.0.1",
     "channels": "^0.0.4",

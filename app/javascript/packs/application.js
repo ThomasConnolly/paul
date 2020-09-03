@@ -12,8 +12,8 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-import 'bootstrap';
-import 'data-confirm-modal';
+import "bootstrap";
+import "data-confirm-modal";
 import "src/application.scss";
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css")

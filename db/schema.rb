@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_12_005504) do
+ActiveRecord::Schema.define(version: 2020_08_25_012508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -296,6 +296,21 @@ ActiveRecord::Schema.define(version: 2020_07_12_005504) do
     t.string "url"
   end
 
+  create_table "stripe_reports", force: :cascade do |t|
+    t.string "date"
+    t.integer "amount"
+    t.integer "fee"
+    t.integer "net"
+    t.bigint "pledge_id"
+    t.bigint "donation_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["donation_id"], name: "index_stripe_reports_on_donation_id"
+    t.index ["pledge_id"], name: "index_stripe_reports_on_pledge_id"
+    t.index ["user_id"], name: "index_stripe_reports_on_user_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.string "plan_id"
     t.string "user_id"
@@ -424,4 +439,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_005504) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "users"
+  add_foreign_key "stripe_reports", "donations"
+  add_foreign_key "stripe_reports", "pledges"
+  add_foreign_key "stripe_reports", "users"
 end

@@ -50,18 +50,14 @@ class User < ApplicationRecord
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities
-  has_many :story_ideas
+  has_many :story_ideas, dependent: :destroy
   has_many :tasks
   has_many :vreports
   validates_confirmation_of :password
   has_one_attached :avatar
   has_one :pledge, dependent: :destroy
-  has_many :donations
-  has_many :sponsorships
-  has_many :albergue_children
+  has_many :donations, dependent: :destroy
 
-
-  
   
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true

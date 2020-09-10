@@ -24,21 +24,8 @@
 #  fk_rails_...  (pledge_id => pledges.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class StripeReport < ApplicationRecord
-  belongs_to :user
-  belongs_to :pledge, optional: true
-  belongs_to :donation, optional: true
+require 'rails_helper'
 
-  before_save :calculate_fee
-  before_save :calculate_net
-
-
-  def calculate_fee
-    fee_value = ((self.amount * 0.029)+30).round
-    self.fee = fee_value
-  end
-
-  def calculate_net
-    self.net = self.amount - self.fee
-  end
+RSpec.describe StripeReport, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

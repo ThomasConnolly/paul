@@ -24,21 +24,14 @@
 #  fk_rails_...  (pledge_id => pledges.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class StripeReport < ApplicationRecord
-  belongs_to :user
-  belongs_to :pledge, optional: true
-  belongs_to :donation, optional: true
-
-  before_save :calculate_fee
-  before_save :calculate_net
-
-
-  def calculate_fee
-    fee_value = ((self.amount * 0.029)+30).round
-    self.fee = fee_value
-  end
-
-  def calculate_net
-    self.net = self.amount - self.fee
+FactoryBot.define do
+  factory :stripe_report do
+    date { "MyString" }
+    user { nil }
+    pledge { nil }
+    donation { nil }
+    amount { 1 }
+    fee { 1 }
+    net { 1 }
   end
 end

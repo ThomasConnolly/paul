@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_012508) do
+ActiveRecord::Schema.define(version: 2020_09_09_163548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -297,29 +297,17 @@ ActiveRecord::Schema.define(version: 2020_08_25_012508) do
   end
 
   create_table "stripe_reports", force: :cascade do |t|
-    t.string "date"
+    t.bigint "user_id", null: false
+    t.bigint "pledge_id"
+    t.bigint "donation_id"
     t.integer "amount"
     t.integer "fee"
     t.integer "net"
-    t.bigint "pledge_id"
-    t.bigint "donation_id"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["donation_id"], name: "index_stripe_reports_on_donation_id"
     t.index ["pledge_id"], name: "index_stripe_reports_on_pledge_id"
     t.index ["user_id"], name: "index_stripe_reports_on_user_id"
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.string "plan_id"
-    t.string "user_id"
-    t.boolean "active", default: true
-    t.datetime "current_period_ends"
-    t.string "stripe_id"
-    t.string "pledge_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "syllabuses", id: :serial, force: :cascade do |t|

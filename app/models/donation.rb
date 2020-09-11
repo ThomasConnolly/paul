@@ -22,9 +22,9 @@
 #
 class Donation < ApplicationRecord
   belongs_to :user
+  validates: amount, presence: true, numericality: { only_integer: true }
   validates_presence_of :dollars
   before_save :set_amount
-  before_destroy :cancel_stripe
 
   
   
@@ -33,7 +33,5 @@ class Donation < ApplicationRecord
     amount
   end
 
-  def cancel_stripe
-    Stripe::Subscription.delete(stripe_id)
-  end
+
 end

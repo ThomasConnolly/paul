@@ -1,30 +1,28 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+
+  root to: 'home#index'
   post '/webhook_events/:source', to: 'webhook_events#create'
-  
   resources :donations
-  scope '/checkout' do
-    post 'create', to: 'checkout#create', as: 'checkout_create'
-    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
-    get 'success', to: 'checkout#success', as: 'checkout_success'
-  end
-  
-  resources :links
+    scope '/checkout' do
+      post 'create', to: 'checkout#create', as: 'checkout_create'
+      get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+      get 'success', to: 'checkout#success', as: 'checkout_success'
+    end
 
   resources :pledges
-
-  scope '/payment' do
-    post 'create', to: 'payment#create', as: 'payment_create'
-    get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
-    get 'success', to: 'payment#success', as: 'payment_success'
-  end
+    scope '/payment' do
+      post 'create', to: 'payment#create', as: 'payment_create'
+      get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
+      get 'success', to: 'payment#success', as: 'payment_success'
+    end
 
   resources :events do
     resources :tickets, only: %i[new show create update index]
   end
   resources :ticket_charges, only: %i[new create]
   resources :albergue_children
-  root to: 'home#index' 
+  resources :links
   resources :pathways
   resources :pray_fors
   resources :photos
@@ -79,6 +77,7 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
 
+  resources :stripe_reports, only: %i[index show]
   resources :worship, only: :index
   resources :opportunities
   resources :homilists
@@ -91,6 +90,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
+
   resources :sermons
   resources :formation_talks
   resources :comments

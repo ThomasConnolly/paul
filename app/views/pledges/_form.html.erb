@@ -1,5 +1,5 @@
 <%= bootstrap_form_for(@pledge) do |f| %>
-  <%= f.number_field :amount, prepend: "$", append: ".00" %>
+  <%= f.number_field :dollars, prepend: "$", append: ".00" %>
   <%= f.form_group :plan, label: { text: "Frequency" } do %>
   <%= f.radio_button :plan, "weekly", label: "Weekly", inline: true %>
   <%= f.radio_button :plan, "monthly", label: "Monthly", inline: true %>

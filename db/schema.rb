@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_163548) do
+ActiveRecord::Schema.define(version: 2020_09_11_194712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -232,10 +232,9 @@ ActiveRecord::Schema.define(version: 2020_09_09_163548) do
     t.integer "amount"
     t.string "plan"
     t.string "stripe_id"
-    t.date "start_date"
-    t.date "end_date"
     t.string "plan_id", default: "prod_ETteQ8s9Ho9sNW"
     t.string "status"
+    t.integer "dollars"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|

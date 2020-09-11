@@ -7,12 +7,13 @@ class PaymentController < ApplicationController
       redirect_to root_path
       return
     end
-    @customer = if current_user.stripe_id?
-      Stripe::Customer.retrieve(current_user.stripe_id)
+    
+    if current_user.stripe_id?
+      @customer = Stripe::Customer.retrieve(current_user.stripe_id)
     else
-      Stripe::Customer.create(email: current_user.email)
-    end
+      @customer = Stripe::Customer.create(email: current_user.email)
       current_user.update!(stripe_id: @customer.id)
+    end
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       subscription_data: {
@@ -27,8 +28,6 @@ class PaymentController < ApplicationController
     )
       respond_to do |format|
         format.js # render create.js.erb
-
-    
 
     end
   end

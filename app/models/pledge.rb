@@ -6,9 +6,8 @@
 #
 #  id         :integer          not null, primary key
 #  amount     :integer
-#  end_date   :date
+#  dollars    :integer
 #  plan       :string
-#  start_date :date
 #  status     :string
 #  created_at :datetime
 #  updated_at :datetime
@@ -19,10 +18,11 @@
 
 class Pledge < ApplicationRecord
   belongs_to :user
-  validates :amount, presence: true, numericality: { only_integer: true }
+  validates :dollars, presence: true, numericality: { only_integer: true }
   validates_presence_of :user_id
   validates_presence_of :plan_id
   before_save :set_plan_id
+  before_save :set_amount
   before_destroy :cancel_stripe_subscription, if: :stripe_id
   
   def set_plan_id
@@ -37,6 +37,9 @@ class Pledge < ApplicationRecord
     end
   end
 
+  def set_amount
+    self.amount = self.dollars.to_i * 100
+  end
 
   def cancel_stripe_subscription
     subscription = Stripe::Subscription.retrieve(self.stripe_id).delete

@@ -554,7 +554,7 @@ DEPENDENCIES
   puma
   rack
   rails (= 6.0.3.3)
-  railties
+  railties (>= 6.0.3.3)
   receipts
   redis
   rest-client

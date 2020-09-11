@@ -22,7 +22,7 @@
 #
 class Donation < ApplicationRecord
   belongs_to :user
-  validates: amount, presence: true, numericality: { only_integer: true }
+  validates :amount, presence: true, numericality: { only_integer: true }
   validates_presence_of :dollars
   before_save :set_amount
 

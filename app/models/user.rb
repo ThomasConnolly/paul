@@ -41,7 +41,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_create :set_username
-  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, presence: true
   after_create :assign_default_role
   after_create :add_profile
   has_many :posts, dependent: :destroy

@@ -26,6 +26,7 @@ class Donation < ApplicationRecord
   validates_presence_of :dollars
   before_save :set_amount
 
+
   
   
   def set_amount

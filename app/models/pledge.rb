@@ -24,6 +24,7 @@ class Pledge < ApplicationRecord
   before_save :set_plan_id
   before_save :set_amount
   before_destroy :cancel_stripe_subscription, if: :stripe_id
+
   
   def set_plan_id
     if Rails.env.production?
@@ -43,5 +44,6 @@ class Pledge < ApplicationRecord
 
   def cancel_stripe_subscription
     subscription = Stripe::Subscription.retrieve(self.stripe_id).delete
+    self.stripe_id = nil
   end
 end

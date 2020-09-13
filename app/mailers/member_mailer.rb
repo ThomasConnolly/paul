@@ -10,7 +10,7 @@ class MemberMailer < ApplicationMailer
  
   default from: 'Welcome@saintpaulsnaples.org'
   default to: 'tom.connolly@comcast.net'
-  #default bcc: proc { Member.where.not(email: nil).pluck(:email) }
+  default bcc: proc { Member.where.not(email: nil).pluck(:email) }
   
   def test(member)
     @member = member

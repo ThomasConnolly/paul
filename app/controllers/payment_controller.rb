@@ -8,15 +8,13 @@ class PaymentController < ApplicationController
       redirect_to root_path
       return
     end
-  binding.pry
     @customer = if current_user.stripe_id?
       Stripe::Customer.retrieve(current_user.stripe_id)
     else
       Stripe::Customer.create(email: current_user.email)
     end
-    binding.pry
     current_user.update(stripe_id: @customer.id)
-    binding.pry
+  
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       subscription_data: {

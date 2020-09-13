@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  before_create :set_username
+  before_save :set_username
   validates :email, presence: true
   after_create :assign_default_role
   after_create :add_profile
@@ -83,7 +83,7 @@ class User < ApplicationRecord
   end
 
   def set_username
-    self.username = "#{first_name.downcase.titleize} #{last_name.downcase.titleize}".strip
+    self.username = "#{self.first_name} #{self.last_name}"
   end
 
   def formatted_email

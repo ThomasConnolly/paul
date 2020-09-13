@@ -19,11 +19,11 @@ class MemberMailer < ApplicationMailer
     )
   end
 
-  def wedding(member)
+  def wedding2(member)
     @member = member
-    @url = "https://youtu.be/kItv6D7A2H8"
+  
     mail(
-      subject: "A wedding at St. Paul's"
+      subject: (resending with clear links) A wedding at St. Paul's
     )
   end
 

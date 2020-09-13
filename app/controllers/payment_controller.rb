@@ -1,4 +1,5 @@
 class PaymentController < ApplicationController
+  before_action :authenticate_user!
   protect_from_forgery except: :webhook
   
   def create
@@ -7,13 +8,15 @@ class PaymentController < ApplicationController
       redirect_to root_path
       return
     end
-    
-    if current_user.stripe_id?
-      @customer = Stripe::Customer.retrieve(current_user.stripe_id)
+  binding.pry
+    @customer = if current_user.stripe_id?
+      Stripe::Customer.retrieve(current_user.stripe_id)
     else
-      @customer = Stripe::Customer.create(email: current_user.email)
-      current_user.update!(stripe_id: @customer.id)
+      Stripe::Customer.create(email: current_user.email)
     end
+    binding.pry
+    current_user.update(stripe_id: @customer.id)
+    binding.pry
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       subscription_data: {

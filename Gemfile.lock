@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/rails/sprockets-rails.git
-  revision: c269f5e01fdffa5c41350e855183d94ff33d318a
+  revision: 1bf94e2a90e0bb315511249db6e080088523a747
   specs:
-    sprockets-rails (3.2.1)
+    sprockets-rails (3.2.2)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -237,7 +237,7 @@ GEM
     irb (1.2.4)
       reline (>= 0.0.1)
     jaro_winkler (1.5.4)
-    jbuilder (2.10.0)
+    jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
     launchy (2.5.0)
@@ -516,7 +516,6 @@ DEPENDENCIES
   bootsnap
   bootstrap_form
   break
-  byebug
   capistrano
   capybara
   cloudinary

@@ -22,17 +22,13 @@
 #
 class Donation < ApplicationRecord
   belongs_to :user
-  validates :amount, presence: true, numericality: { only_integer: true }
-  validates_presence_of :dollars
+  validates_presence_of :dollars, numericality: { only_integer: true }
   before_save :set_amount
 
 
-  
   
   def set_amount
     self.amount = self.dollars.to_i * 100
     amount
   end
-
-
 end

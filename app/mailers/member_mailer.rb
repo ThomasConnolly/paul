@@ -21,9 +21,8 @@ class MemberMailer < ApplicationMailer
 
   def wedding2(member)
     @member = member
-  
     mail(
-      subject: (resending with clear links) A wedding at St. Paul's
+      subject: "(resending with clear links) A wedding at St. Paul's"
     )
   end
 

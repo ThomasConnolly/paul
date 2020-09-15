@@ -52,7 +52,7 @@
           <%# if current_user && current_user.has_role?(:vestry) or if current_user && current_user.has_role?(:admin) %>
             <%#= link_to "Vestry Report", vreports_path, class: "dropdown-item" %>
           <%# end %><%# end %> 
-            <%#= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf", class: "dropdown-item" %><br>
+            <%= link_to "Parish profile", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf", class: "dropdown-item" %><br>
           <%# if user_signed_in? %>
             <%#= link_to "Parishioner profiles", profiles_path, class: "dropdown-item" %>
             <%#= link_to "Parish survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", class: "dropdown-item" %> 

@@ -3,10 +3,10 @@ class WebhookEventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    if !valid_signatures?
-      render json: {message: "signature invalid"}, status: 400
-      return
-    end
+    # if !valid_signatures?
+    #   render json: {message: "signature invalid"}, status: 400
+    #   return
+    # end
     # idempotent
     if !WebhookEvent.find_by(source:params[:source], external_id: external_id).nil?
       render json: { message: "Already procesed #{ external_id }"}

@@ -13,6 +13,7 @@ class PledgesController < ApplicationController
   def create
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id
+    
     if @pledge.save
       redirect_to pledge_path(@pledge)
     else
@@ -58,6 +59,6 @@ class PledgesController < ApplicationController
    end
 
   def pledge_params
-    params.require(:pledge).permit %i[user_id amount stripe_id plan_id plan status]
+    params.require(:pledge).permit %i[user_id amount dollars stripe_id plan_id plan status]
   end
 end

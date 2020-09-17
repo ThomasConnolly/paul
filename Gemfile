@@ -10,7 +10,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
-gem 'bootstrap_form'
+gem "comfy_bootstrap_form", "~> 4.0.0"
 gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'coffee-rails' # used by sprockets to minify
@@ -37,12 +37,11 @@ gem 'receipts'
 gem 'redis'
 gem 'rest-client'
 gem 'rolify'
-gem 'sassc-rails' # used by sprockets to minify
 #gem 'sendgrid-actionmailer', '~> 3.0', '>= 3.0.2'
 gem 'scout_apm'
 gem 'sprockets-rails', git: 'https://github.com/rails/sprockets-rails.git'
+gem 'sassc-rails' # used by sprockets to minify
 gem 'stripe', '~> 5.20'
-gem 'stripe_event', '~> 2.3'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'

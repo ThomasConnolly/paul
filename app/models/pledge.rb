@@ -18,11 +18,10 @@
 
 class Pledge < ApplicationRecord
   belongs_to :user
-  validates :dollars, presence: true, numericality: { only_integer: true }
+  validates :dollars, presence: true
   validates_presence_of :user_id
   validates_presence_of :plan_id
   before_save :set_plan_id
-  before_save :set_amount
   before_destroy :cancel_stripe_subscription, if: :stripe_id
 
   
@@ -36,10 +35,6 @@ class Pledge < ApplicationRecord
       self.plan_id = 'plan_HCxus7BSYo1eSh' if plan == "monthly"
       self.plan_id = 'plan_HCxvLz92uVgU3a'  if plan == "weekly"
     end
-  end
-
-  def set_amount
-    self.amount = self.dollars.to_i * 100
   end
 
   def cancel_stripe_subscription

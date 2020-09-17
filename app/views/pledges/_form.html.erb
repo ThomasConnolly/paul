@@ -1,10 +1,6 @@
-<%= bootstrap_form_for(@pledge) do |f| %>
-  <%= f.number_field :dollars, prepend: "$", append: ".00" %>
-  <%= f.form_group :plan, label: { text: "Frequency" } do %>
-  <%= f.radio_button :plan, "weekly", label: "Weekly", inline: true %>
-  <%= f.radio_button :plan, "monthly", label: "Monthly", inline: true %>
-  <%= f.radio_button :plan, "quarterly", label: "Quarterly", inline: true %>
-  <% end %>
-  
-<%= f.submit "Continue", class: "btn btn-success btn-lg mb-5" %>
+<%= bootstrap_form_with model: @pledge do |f| %>
+  <%= f.number_field :dollars %>
+  <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, :to_s, bootstrap: {check_inline: true} %>
+ 
+  <%= f.submit "Proceed", class: "btn btn-lg btn-success"%>
 <% end %> 

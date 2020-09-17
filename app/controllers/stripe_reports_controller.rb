@@ -21,12 +21,12 @@ class StripeReportsController < ApplicationController
   end
 
   def stripe_report_params
-    params.require(:stripe_report).permit(:user, :amount, :fee, :net, :donation, :pledge)
+    params.require(:stripe_report).permit(:user, :amount, :fee, :net, :donation, :pledge, :date)
   end
 
   def admin_only
     unless current_user.has_role?(:admin)
-      redirect_to root_path, alert: 'The information is restricted to administrators.'
+      redirect_to root_path, alert: 'This information is restricted to administrators.'
     end
   end
 end

@@ -20,7 +20,7 @@ class PaymentController < ApplicationController
       subscription_data: {
         items: [{ 
           plan: @pledge.plan_id,
-          quantity: @pledge.amount,
+          quantity: @pledge.dollars,
           }],
       },
       customer: @customer,

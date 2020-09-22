@@ -109,6 +109,11 @@ GEM
       activesupport
     bootsnap (1.4.8)
       msgpack (~> 1.0)
+    bootstrap-email (0.3.2)
+      actionmailer (>= 3)
+      nokogiri (~> 1.6)
+      premailer-rails (~> 1.9)
+      rails (>= 3)
     bootstrap_form (4.5.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -509,6 +514,7 @@ DEPENDENCIES
   binding_of_caller
   birthday
   bootsnap
+  bootstrap-email
   break
   capistrano
   capybara

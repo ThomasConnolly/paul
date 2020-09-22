@@ -1,0 +1,32 @@
+<p>
+Here's the latest Stripe report:</p>
+<br>
+ <%= @stripe_report.each do |r|%>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Stripe Fee</th>
+      <th>Net to Church</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= r.created_at.strftime("%b %_d, %Y") %></td>
+      <td><%= r.user.username %></td>
+      <td><%= r.amount/100.to_i %></td>
+      <td><%= r.fee/100.to_f %></td>
+      <td><%= r.net/100.to_f %></td>
+    </tr>
+  </tbody>
+</table>
+<% end %> 
+
+<%= link_to "Click here", @url %> to see the latest report.on the website.</p>
+
+<div class="mt100"></div>
+
+<p><small>This message is generated automatically when Stripe sends data to our website.</small></p>

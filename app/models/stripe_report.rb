@@ -28,10 +28,9 @@ class StripeReport < ApplicationRecord
   belongs_to :user
   belongs_to :pledge, optional: true
   belongs_to :donation, optional: true
-
   before_save :calculate_fee
   before_save :calculate_net
-  before_save :set_date if :date.blank?
+  
 
 
   def calculate_fee
@@ -41,9 +40,5 @@ class StripeReport < ApplicationRecord
 
   def calculate_net
     self.net = self.amount - self.fee
-  end
-
-  def set_date
-    self.date = Time_at(self.edate)
   end
 end

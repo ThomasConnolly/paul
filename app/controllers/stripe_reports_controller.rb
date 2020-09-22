@@ -5,12 +5,18 @@ class StripeReportsController < ApplicationController
 
   respond_to :html, :js
 
+  def new
+    @stripe_report = StripeReport.new
+  end
+
   def index
     @stripe_reports = StripeReport.all
   end
 
   def show; end
 
+  def create; end
+    
 
 
   private
@@ -21,7 +27,7 @@ class StripeReportsController < ApplicationController
   end
 
   def stripe_report_params
-    params.require(:stripe_report).permit(:user, :amount, :fee, :net, :donation, :pledge, :date)
+    params.require(:stripe_report).permit(:user_id, :amount, :fee, :net, :donation_id, :pledge_id)
   end
 
   def admin_only

@@ -10,6 +10,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
+gem 'bootstrap-email'
 gem "comfy_bootstrap_form", "~> 4.0.0"
 gem 'devise'
 gem 'devise-bootstrap-form'

@@ -11,7 +11,7 @@ gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
 gem 'bootstrap-email'
-gem "comfy_bootstrap_form", "~> 4.0.0"
+gem "bootstrap_form"
 gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'coffee-rails' # used by sprockets to minify

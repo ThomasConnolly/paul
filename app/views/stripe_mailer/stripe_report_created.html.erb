@@ -1,7 +1,6 @@
 <p>
 Here's the latest Stripe report:</p>
 <br>
- <%= @stripe_report.each do |r|%>
 
 <table class="table">
   <thead>
@@ -11,21 +10,26 @@ Here's the latest Stripe report:</p>
       <th>Amount</th>
       <th>Stripe Fee</th>
       <th>Net to Church</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><%= r.created_at.strftime("%b %_d, %Y") %></td>
-      <td><%= r.user.username %></td>
-      <td><%= r.amount/100.to_i %></td>
-      <td><%= r.fee/100.to_f %></td>
-      <td><%= r.net/100.to_f %></td>
+      <td><%= @stripe_report.created_at.strftime("%b %_d, %Y") %></td>
+      <td><%= @stripe_report.user.username %></td>
+      <td><%= number_to_currency(@stripe_report.amount/100.to_i) %></td>
+      <td><%= @stripe_report.fee/100.to_f %></td>
+      <td><%= @stripe_report.net/100.to_f %></td>
+      <td><% if @stripe_report.pledge_id == nil %>
+        Donation
+        <% else %>
+          <%= @stripe_report.pledge.plan %>
+        <% end %> </td>
     </tr>
   </tbody>
 </table>
 <% end %> 
 
-<%= link_to "Click here", @url %> to see the latest report.on the website.</p>
 
 <div class="mt100"></div>
 

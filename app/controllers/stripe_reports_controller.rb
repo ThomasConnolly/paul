@@ -15,7 +15,12 @@ class StripeReportsController < ApplicationController
 
   def show; end
 
-  def create; end
+  def create
+    @stripe_report = StripeReport.new(params[:stripe_report])
+    if @stripe_report.save
+      StripeMailer.stripe_report_created(@stripe_report).deliver_later
+    end
+  end
     
 
 
@@ -32,7 +37,7 @@ class StripeReportsController < ApplicationController
 
   def admin_only
     unless current_user.has_role?(:admin)
-      redirect_to root_path, alert: 'This information is restricted to administrators.'
+      redirect_to root_path, alert: 'This information is private.'
     end
   end
 end

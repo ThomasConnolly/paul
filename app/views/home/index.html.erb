@@ -21,7 +21,7 @@
   <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %>
 
     <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"290", class: "floatleft img-fluid") %><br>
-    <p><strong>Our own Fr. Tom </strong> will be delivering one of this year's diocesan workshops this evening, entitled "Baptismal Covenant. Five Questions" It's a virtual workshop and all are invited to attend by clicking <%= link_to "this link", "https://episcopalswfl.zoom.us/j/96589981679?pwd=aCs5aFo1cFFQVGxsRzFoT21IK1hUUT09" %> at 7 p.m. Wednesday, Sept. 23, 2020. Fr. Tom is well acquainted with the sacrament of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
+    <p><strong>Our own Fr. Tom </strong> delivered one of this year's diocesan workshops, entitled "Baptismal Covenant. Five Questions" It's a virtual workshop and all are invited to attend by clicking <%= link_to "this link", "https://www.dioswfl.org/tv.html" %>. Fr. Tom is well acquainted with the sacrament of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
    <br>
       <% if @bulletin.url.present? %>
         <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>

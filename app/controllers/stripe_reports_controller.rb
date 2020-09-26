@@ -9,18 +9,16 @@ class StripeReportsController < ApplicationController
     @stripe_report = StripeReport.new
   end
 
+  def create
+    @stripe_report = StripeReport.new(params[:stripe_report])
+  end
+
   def index
     @stripe_reports = StripeReport.all
   end
 
   def show; end
 
-  def create
-    @stripe_report = StripeReport.new(params[:stripe_report])
-    if @stripe_report.save
-      StripeMailer.stripe_report_created(@stripe_report).deliver_later
-    end
-  end
     
 
 

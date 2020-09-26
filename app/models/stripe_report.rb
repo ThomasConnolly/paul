@@ -30,6 +30,7 @@ class StripeReport < ApplicationRecord
   belongs_to :donation, optional: true
   before_save :calculate_fee
   before_save :calculate_net
+
   
 
 

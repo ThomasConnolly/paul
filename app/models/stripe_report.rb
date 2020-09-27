@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  amount      :integer
+#  date_paid   :date
 #  fee         :integer
 #  net         :integer
 #  created_at  :datetime         not null

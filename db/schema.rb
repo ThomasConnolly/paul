@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_194712) do
+ActiveRecord::Schema.define(version: 2020_09_27_204955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -304,6 +304,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_194712) do
     t.integer "net"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date_paid"
     t.index ["donation_id"], name: "index_stripe_reports_on_donation_id"
     t.index ["pledge_id"], name: "index_stripe_reports_on_pledge_id"
     t.index ["user_id"], name: "index_stripe_reports_on_user_id"

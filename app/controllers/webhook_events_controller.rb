@@ -22,7 +22,8 @@ class WebhookEventsController < ApplicationController
   def valid_signatures?
     if params[:source] == 'stripe'
       begin
-        wh_secret = ENV['STRIPE_SIGNING_SECRET']
+        wh_secret = Rails.application.credentials.stripe[Rails.env.to_sym][:signing_secret]
+
         Stripe::Webhook.construct_event(
           request.body.read,
           request.env['HTTP_STRIPE_SIGNATURE'],

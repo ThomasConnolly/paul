@@ -17,7 +17,12 @@
       <tr><% @stripe_reports.each do |sr| %>
         <td><%= sr.user.username %></td>
         <td><%= number_to_currency(sr.amount/100.0) %></td>
-        <td><%= sr.created_at.strftime("%b %-d, %Y") %></td>
+        <% if sr.date_paid.present? %>
+          <td><%= sr.date_paid.strftime("%b %-d, %Y") %>
+        <% else %>
+          <td><%= sr.created_at.strftime("%b %-d, %Y") %>  
+        <% end %>  
+        </td>
         <td><%= number_to_currency(sr.fee/100.0) %></td>
         <td><%= number_to_currency(sr.net/100.0) %></td>
         <td><% if sr.pledge_id == nil %>

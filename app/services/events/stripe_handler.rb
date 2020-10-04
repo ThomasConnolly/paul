@@ -25,7 +25,7 @@ module Events
               StripeMailer.report_created(stripe_report).deliver_later
           end
 
-      when 'invoice.payment_succeeded'
+      when 'invoice.paid'
         pledge_payment = stripe_event.data.object
         user = User.find_by(stripe_id: pledge_payment.customer)
         stripe_report = StripeReport.create(user_id: user.id, amount: pledge_payment.amount_paid, pledge_id: user.pledge.id )

@@ -26,10 +26,10 @@
         <td><%= number_to_currency(sr.fee/100.0) %></td>
         <td><%= number_to_currency(sr.net/100.0) %></td>
         <td><% if sr.pledge_id == nil %>
-                  donation
-                <% else %>
-                  <%= sr.pledge.plan %>  
-                <% end %></td>
+              donation
+            <% else %>
+              <%= sr.pledge.plan %>  
+            <% end %></td>
       </tr>
     </tbody>
     <% end %>

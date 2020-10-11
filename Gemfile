@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.7.1'
+ruby '2.7.2'
 
 gem 'actionmailer'
 gem 'acts_as_list'
@@ -30,9 +30,9 @@ gem 'premailer-rails'
 gem 'pry'
 gem 'pry-rails'
 gem 'puma', '4.3.6'
-gem 'pg'
+gem 'pg', '1.2.3'
 gem 'rack'
-gem 'rails', '6.0.3.3'
+gem 'rails', '6.0.3.4'
 gem 'railties', '>= 6.0.3.3'
 gem 'receipts'
 gem 'redis'

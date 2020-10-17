@@ -90,12 +90,18 @@
         
         <p class="center-text"><%= Date.current.strftime("%A, %B %e, %Y") %></p>
         <%= link_to cl_image_tag("dioConvLogo_kew8i3", width: "99%", class: "image-center mt-3"), "https://www.dioswfl.org/tv.html" %>
-        <p>Click on the image above, which is the logo for this year's convention of the Diocese of Southwest Florida, 
-          to see all the links, including Fr. Tom's workshop on the Baptismal covenant, today's 
-          Evening Prayer with the bishop and tomorrow's live stream of the business portion of the convention. </p>   
+        <p>Bishop Dabney Smith put the wheels in motion Oct. 17, at this year's annual convention, for the selection of his
+          replacement. He asked the convention to authorize the election of a bishop coadjutor, who would serve with the
+           bishop for a maximum of three years, then become bishop.
+        </p>
+        <p>Bishop Smith said it may take 18 months to install a bishop coadjutor, beginning with a meeting of  
+          all the deans plus the standing committee. Our own rector, the Very Rev. Thomas Thoeni, is one of the seven deans in the 
+          diocese, representing the Naples Deanery.
+        </p>
+        <p>Click on the image above, the logo for the convention, to see the bishop's announcement. The link will take you to
+           the convention business meeting, the opening liturgy, and
+          all the workshops, including Fr. Tom's talk on the Baptismal covenant.</p>   
         <h2 class="mt-3">All the links</h2>
-        
-        <p></p>
         <p><strong><%= link_to "Sunday worship service, 9 a.m.", "#{@worship.url}" %></strong> Stream on your phone, computer or television. Subscribe to our YouTube channel using this link.</p>
           <% if @bulletin.url.present? %>
             <p><strong><%= link_to "Sunday bulletin", "#{@bulletin.url}" %></strong></p>  

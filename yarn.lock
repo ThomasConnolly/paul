@@ -7407,10 +7407,10 @@ node-sass@^4.13.1, node-sass@^4.14.1:
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
 
-node@^14.13.1:
-  version "14.13.1"
-  resolved "https://registry.yarnpkg.com/node/-/node-14.13.1.tgz#b6cd2c0f4baad3ebaa274d251ab21e56dbc4ef9a"
-  integrity sha512-X8oMUs+fSAr+uTrVqiaunZPvXRVkVvo5J+6I1N01nlG7H+wmckYtvgxUBCBWo5HD1xAyL2vbIiwU+qW9ascTQg==
+node@^14.14.0:
+  version "14.14.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-14.14.0.tgz#c668075a5f2017da332327f5c0a1740a69e0c34a"
+  integrity sha512-A0KO0Y3S23tWUyuL9DR7onuGaNjtQwWRC7oQF3yc7ZzRp6i+jbyA+fWv+5OaxfV6nJ6cKjK2unz/qsVl3MagbQ==
   dependencies:
     node-bin-setup "^1.0.0"
 

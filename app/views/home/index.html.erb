@@ -45,8 +45,9 @@
       We are at 3901 Davis Boulevard, a couple of blocks east of Airport Road.<em> Need a map?</em>
       <%= link_to "Click here.", pages_directions_path %></p> -->
       <h2 class="mt-3">Spiritual studies with Fr. Tom on Zoom</h2>
-       <p>Join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., studying and discussing the Gospel of Matthew. </p>
-        <p>Fr. Tom will lead us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. To join in this evening, </p>
+
+       <p>The Tuesday afternoon and Wednesday evening bible studies will resume Nov. 10. Anyone may join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., in studying and discussing the Gospel of Matthew. </p>
+        <p>Fr. Tom leads us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. </p>
         <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so before the meeting, in case you need to download and install the program and test your sound and video. </strong></p>
         <p>Links to the Bible study sessions:</p> 
         <p><%= @day_bible.date.strftime("%A, %b %d") %>, <%= @day_bible.time %>
@@ -56,8 +57,6 @@
         <%= cl_image_tag("mktLogo_ggxhct.png", class: "image-center img-fluid", width: "40%") %>
         <h2 class="mt3">Farmers' Market? Hope to see you in November!</h2>
         <p>Our plans are to have a cautious opening of the Farmers' Market on Nov. 7, where masks and physical distancing will be required. Since our shops are small spaces, they will remain closed until it is safe.</p>
-        <div class="clearall"></div>
-        <!--   <p>The market is now open for the 2019-2020 season and runs through April. Ample parking is directed by our volunteer helpers, so it's easy in and out to the greatest block party on a Saturday morning in Naples. We hope you'll join us for a cup of coffee, and a hot dog if you'd like, on us! Open 8 a.m. to noon.</p>
         <p>For more information on the market, <%= link_to "click here.",
         markets_index_path %></p>
         <div class="clearall"></div> -->
@@ -110,9 +109,10 @@
             </strong></p>
           <% end %>
           <p><strong><%= link_to "Sunday coffee hour", "#{@coffee.url}" %></strong></p>
-           <p><strong><%= link_to "Tuesday Bible study", "#{@day_bible.url}" %></strong></p>
-            <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>
-             <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
+          <p><strong>Bible studies will resume Nov. 10</strong></p>
+          <p><strong><%= link_to "Tuesday Bible study", "#{@day_bible.url}" %></strong></p>
+          <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>
+          <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
         <%= link_to cl_image_tag("weddingVideoScreen_cg0aos.jpg", width: "99%", class: "image-center mt-3"), "https://youtu.be/kItv6D7A2H8" %>
         <p>Click the image to see a national news clip about the recent wedding at St. Paul's during Covid-19. </p>
          <h2 class="mt-3">Stay Safe</h2>

@@ -27,7 +27,7 @@
         <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
       <% else %>
         <p>Sunday's bulletin will be available here on Thursday.</p>
-      <% end %>'    
+      <% end %> 
       <p class="mt-1 mb-1">To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
       <p class="mt-1"><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%>
             </p>
@@ -50,16 +50,16 @@
         <p>Fr. Tom leads us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. </p>
         <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so before the meeting, in case you need to download and install the program and test your sound and video. </strong></p>
         <p>Links to the Bible study sessions:</p> 
-        <p><%= @day_bible.date.strftime("%A, %b %d") %>, <%= @day_bible.time %>
-        <%= link_to"Click here", "#{@day_bible.url}" %></p>
-        <p><%= @evening_bible.date.strftime("%A, %b %d") %>, <%= @evening_bible.time %> <%= link_to "Click here", "#{@evening_bible.url}" %></p>
+        <p> Tuesdays, 1 p.m.,
+        <%= link_to"click here", "#{@day_bible.url}" %></p>
+        <p>Wednesdays 6:30 p.m., <%= link_to "click here", "#{@evening_bible.url}" %></p>
 
         <%= cl_image_tag("mktLogo_ggxhct.png", class: "image-center img-fluid", width: "40%") %>
         <h2 class="mt3">Farmers' Market? Hope to see you in November!</h2>
         <p>Our plans are to have a cautious opening of the Farmers' Market on Nov. 7, where masks and physical distancing will be required. Since our shops are small spaces, they will remain closed until it is safe.</p>
         <p>For more information on the market, <%= link_to "click here.",
         markets_index_path %></p>
-        <div class="clearall"></div> -->
+        <div class="clearall"></div>
         <%#= cl_image_tag("PledgeBtnLGarnetGold_tjbcx6.png", width: "35%", class: "floatleft mt-1") %>
         <%# <h2 class="mt-5">Stewardship</h2>
         <p>Stewardship at St. Paul's involves investing the three Ts with God. The three Ts are time, talent and treasure. Investing with God is a year-round stewardship. There are many ministries at St. Paul's that could use your time and talent. As to treasure, a pledge is your statement of intent to share for the mission of the church.
@@ -76,13 +76,12 @@
           <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.</p>
           <div class="clearall"></div>
           <h2 class="mt3">Supporters of 'ERD'</h2>
-          <%= link_to cl_image_tag("ERD_vcwkbd.jpg", width: '404', crop: "scale", class: "floatleft"), "https://episcopalrelief.org/" %>
+
+          <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal Relief &amp; Development", width: '404', crop: "scale", class: "floatleft"), "https://episcopalrelief.org/" %>
           <p>Episcopal Relief and Development is a charity you can trust to use your resources wisely and lovingly. Click the logo at left to learn more and make a donation.</p>
           <div class="clearall"></div>
           <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", width:"95%", class: "image-center mt-3", fetch_format: "auto") %>
-      
-          <div><%#= render "my_modal" %></div>
-
+    
       </div> <!--main-body -->
 
       <div class="col col-md-4 col-sm-8 sidebar">

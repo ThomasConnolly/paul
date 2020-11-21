@@ -61,6 +61,6 @@ class DonationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donation_params
-      params.require(:donation).permit(:user, :dollars, :amount, :type, :stripe_plan)
+      params.require(:donation).permit(:user, :dollars, :amount, :type, :stripe_plan, :memo)
     end
 end

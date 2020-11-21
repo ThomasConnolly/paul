@@ -1,14 +1,11 @@
 # == Schema Information
 #
-# Table name: albergue_children
+# Table name: thankfuls
 #
 #  id         :bigint           not null, primary key
-#  birthday   :date
-#  first_name :string
-#  last_name  :string
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class AlbergueChild < ApplicationRecord
-  has_one_attached :avatar
+class Thankful < ApplicationRecord
 end

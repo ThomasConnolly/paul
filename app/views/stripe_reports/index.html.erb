@@ -11,6 +11,8 @@
         <th>Stripe fee</th>
         <th>Net</th>
         <th>Type</th>
+        <th>Memo</th>
+        <th>
       </tr>
     </thead>
     <tbody>
@@ -25,11 +27,16 @@
         </td>
         <td><%= number_to_currency(sr.fee/100.0) %></td>
         <td><%= number_to_currency(sr.net/100.0) %></td>
-        <td><% if sr.pledge_id == nil %>
+        <td><% if sr.pledge_id.nil? %>
               donation
             <% else %>
               <%= sr.pledge.plan %>  
             <% end %></td>
+        <td><% if sr.donation&.memo.nil? %>
+              - - -
+            <% else %>
+              <%= sr.donation.memo %> 
+            <% end %>   </td>
       </tr>
     </tbody>
     <% end %>

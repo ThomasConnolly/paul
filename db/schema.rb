@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_204955) do
+ActiveRecord::Schema.define(version: 2020_11_20_021544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_09_27_204955) do
   create_table "albergue_children", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "avatar"
     t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_204955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "child_name"
+    t.integer "child_id"
     t.index ["user_id"], name: "index_albergue_donations_on_user_id"
   end
 
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_204955) do
     t.integer "amount"
     t.integer "dollars"
     t.string "status"
+    t.string "memo"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -333,6 +334,12 @@ ActiveRecord::Schema.define(version: 2020_09_27_204955) do
     t.string "description"
     t.string "deadline"
     t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "thankfuls", force: :cascade do |t|
+    t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,7 +3,6 @@
 # Table name: albergue_children
 #
 #  id         :bigint           not null, primary key
-#  avatar     :string
 #  birthday   :date
 #  first_name :string
 #  last_name  :string

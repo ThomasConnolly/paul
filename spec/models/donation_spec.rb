@@ -7,6 +7,7 @@
 #  id         :bigint           not null, primary key
 #  amount     :integer
 #  dollars    :integer
+#  memo       :string
 #  status     :string
 #  type       :string
 #  created_at :datetime         not null

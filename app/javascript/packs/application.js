@@ -15,6 +15,7 @@ window.$ = window.jQuery = jQuery;
 import "bootstrap";
 import "data-confirm-modal";
 import "src/application.scss";
+import "../stylesheets/application"
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css")
 require("@rails/activestorage").start()

@@ -1,0 +1,18 @@
+{
+  "application.css": "/packs/css/application-de145fed.css",
+  "application.js": "/packs/js/application-0b6c8260433d45597152.js",
+  "application.js.map": "/packs/js/application-0b6c8260433d45597152.js.map",
+  "entrypoints": {
+    "application": {
+      "css": [
+        "/packs/css/application-de145fed.css"
+      ],
+      "js": [
+        "/packs/js/application-0b6c8260433d45597152.js"
+      ],
+      "js.map": [
+        "/packs/js/application-0b6c8260433d45597152.js.map"
+      ]
+    }
+  }
+}

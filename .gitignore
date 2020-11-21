@@ -42,7 +42,6 @@ Procfile.dev
 /.vscode
 export_csv_instructions.txt
 get-unused-routes.rb
-/public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log

@@ -3,13 +3,13 @@ class EnsFeed < ApplicationRecord
     xml = HTTParty.get(feed_url).body
     feed = Feedjira.parse(xml)
     feed.entries.each do |entry|
-      unless exists? guid: entry.guid
+      unless exists? guid: entry.id
       create!(
         title: entry.title,
         summary: entry.summary,
         url: entry.url,
         published_at: entry.published,
-        guid: entry.guid
+        guid: entry.id
       )
       end    
     end

@@ -3,10 +3,9 @@ class CreateEnsFeeds < ActiveRecord::Migration[6.0]
     create_table :ens_feeds do |t|
       t.string :title
       t.text :summary
-      t.text :link
       t.string :url
       t.datetime :published_at
-      t.string :uuid
+      t.string :guid
 
       t.timestamps
     end

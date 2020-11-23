@@ -141,6 +141,16 @@ ActiveRecord::Schema.define(version: 2020_11_20_021544) do
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
+  create_table "ens_feeds", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.string "url"
+    t.datetime "published_at"
+    t.string "guid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", id: :serial, force: :cascade do |t|
     t.string "title"
     t.integer "price"

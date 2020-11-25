@@ -8,8 +8,11 @@ class HomeController < ApplicationController
     @bulletin = Link.find_by(event: "bulletin")
     @wine = Link.find_by(event: "wine_time")
     @coffee = Link.find_by(event: "coffee")
+    @tgiving_coffee = Link.find_by(event: "tgiving_coffee")
     @day_bible = Link.find_by(event: "day_bible")
     @evening_bible = Link.find_by(event: "evening_bible")
+    @thanksgiving = Link.find_by(event: "thanksgiving")
+    @thanksgiving_bulletin = Link.find_by(event: "thanksgiving_bulletin")
     @pathway = Pathway.order("created_at ASC").last
     @birthdays_today = Member.where('EXTRACT(month FROM birthday) = ? AND EXTRACT(day FROM birthday) = ?', Date.today.strftime('%m'), Date.today.strftime('%d'))
   end

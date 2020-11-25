@@ -18,6 +18,14 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
+
+  def thankfuls(member)
+    @member = member
+    @url = "https://www.saintpaulsnaples.org"
+    mail(
+      subject: "We want your note of thanks for Thursday's liturgy"
+    )
+  end
   
   def fall2020_pathway(member)
     @member = member

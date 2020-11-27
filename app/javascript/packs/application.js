@@ -12,7 +12,8 @@ require("trix")
 require("@rails/actiontext")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-import "bootstrap";
+import "controllers"
+import "bootstrap/dist/js/bootstrap";
 import "data-confirm-modal";
 import "src/application.scss";
 import "../stylesheets/application"
@@ -28,7 +29,7 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 document.addEventListener("turbolinks:load", () => {
-  $(document).ready(function () {
+  $(function () {
     $("#myModal").modal('show')
     })
   });
@@ -42,6 +43,10 @@ document.addEventListener("click", () => {
   $('#bcpModal').modal('show')
 });
 
-$(document).ready(function(){
+$(function(){
   $(".dropdown-toggle").dropdown();
 })
+
+(function () {
+  console.log('Hello World from Webpacker');
+});

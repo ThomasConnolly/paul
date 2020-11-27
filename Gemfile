@@ -43,7 +43,7 @@ gem 'rolify'
 gem 'rss'
 gem 'scout_apm'
 gem 'sprockets-rails', git: 'https://github.com/rails/sprockets-rails.git'
-gem 'sassc-rails' # used by sprockets to minify
+gem 'sassc-rails' # used by sprockets to minify; faster than sass-rails
 gem 'stripe', '~> 5.20'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify

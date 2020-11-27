@@ -114,7 +114,7 @@ Rails.application.configure do
     domain: 'SaintPaulsNaples.org',
     address: 'smtp.sendgrid.net',
     port: 587,
-    authentication: 'plain',
+    authentication: 'apikey',
     enable_starttls_auto: true,
   }
 

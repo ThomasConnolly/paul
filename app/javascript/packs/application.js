@@ -7,20 +7,20 @@ Rails.start();
 window.Rails = Rails
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-require("turbolinks").start()
-require("trix")
-require("@rails/actiontext")
+require("turbolinks").start();
+require("trix");
+require("@rails/actiontext");
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
-import "controllers"
+import "controllers";
 import "bootstrap/dist/js/bootstrap";
 import "data-confirm-modal";
 import "src/application.scss";
-import "../stylesheets/application"
+import "../stylesheets/application";
 import flatpickr from "flatpickr";
-require("flatpickr/dist/flatpickr.css")
-require("@rails/activestorage").start()
-require("channels")
+require("flatpickr/dist/flatpickr.css");
+require("@rails/activestorage").start();
+require("channels");
 
 
 document.addEventListener("turbolinks:load", () => {

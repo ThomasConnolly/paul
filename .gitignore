@@ -43,6 +43,7 @@ Procfile.dev
 export_csv_instructions.txt
 get-unused-routes.rb
 /public/packs-test
+/public/assets
 /node_modules
 /yarn-error.log
 yarn-debug.log*

@@ -122,10 +122,10 @@
         <%= cl_image_tag("1912588_wbdabz.png", width: "40%", class: "mt-3 image-center") %>
         <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p> -->
         <p class="mt-3"><strong>Get the Weekly Update in your email box </strong> <%= link_to "by signing up here.",'https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2' %></p>
-        <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "mt-3 image-center", :fetch_format => :auto), pages_calendar_path %>
+        <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%", class: "mt-3 mx-auto d-block", :fetch_format => :auto), pages_calendar_path %>
         <h3>Click calendar to see our activities</h3>
-          <div>
-            <h4>Episcopal News Service</h4>
+          <div class="mt-3">
+            <h2>Episcopal News Service</h2>
             <% @ens_feed.each do |feed| %>
               <h5><%= link_to "#{feed.title}", feed.url %></h5>
               <p><%= feed.summary.gsub(/[&#8230;]/, '...') %></p>

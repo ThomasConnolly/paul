@@ -45,6 +45,7 @@ gem 'stripe', '~> 5.20'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'
+gem 'whenever'
 
 group :development do
   gem 'annotate'

@@ -13,7 +13,6 @@ gem 'bootsnap', require: false
 gem 'bootstrap-email'
 gem "bootstrap_form"
 gem 'devise'
-gem 'devise-bootstrap-form'
 gem 'coffee-rails' # used by sprockets to minify
 gem 'cloudinary'
 gem 'feedjira'
@@ -42,7 +41,6 @@ gem 'rolify'
 #gem 'sendgrid-actionmailer', '~> 3.0', '>= 3.0.2'
 gem 'rss'
 gem 'scout_apm'
-gem 'sprockets-rails', git: 'https://github.com/rails/sprockets-rails.git'
 gem 'stripe', '~> 5.20'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
@@ -84,6 +82,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-
-gem "stimulus_reflex", "~> 3.2"

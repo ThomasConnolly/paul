@@ -1,6 +1,6 @@
 <div class="clearfix"></div>
 <div class="container">
-  <div class="d-flex justify-content-center mb-4">
+  <div class="d-flex justify-content-center mb-5">
     <%= link_to "Your gifts, of talent and treasure, are appreciated. Click here to donate", 
     new_donation_path, class: "btn btn-primary btn-lg text-white" %>
   </div>
@@ -19,7 +19,7 @@
   <div class="col-md-8 col-sm-12 main-body">
   <h1>We follow Jesus Christ...</h1>
   <h2>...whether we stay at home or join a small number of people in public worship</h2>
-  <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "floatleft img-fluid") %><p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.) We must turn away folks if we reach that guideline number.</p>
+  <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid") %><p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.) We must turn away folks if we reach that guideline number.</p>
   <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %>
   </p>
     
@@ -56,7 +56,7 @@
         <%= link_to"click here", "#{@day_bible.url}" %></p>
         <p>Wednesdays 6:30 p.m., <%= link_to "click here", "#{@evening_bible.url}" %></p>
 
-        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "image-center img-fluid", width: "40%") %>
+        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block", width: "40%") %>
         <h2 class="mt3">Farmers' Market open</h2>
         <p>The market is open Saturdays from 8 a.m. to noon. Masks and physical distancing are  required. Since our shops (Gift Shop and Unique Boutique) are small spaces, they will remain closed until it is safe.</p>
         <%= cl_image_tag("maskRequired_nwpodl.png", :width=>430, :crop=>"scale", class: "image-center") %>
@@ -74,7 +74,7 @@
         <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San Francisco de Macoris, serves a hundred children who would be on the street were it not for the shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of love that may otherwise be missing in their young lives.</p>
         <p>It is a ministry of love and affection, above all.</p> <div class="clearfix"></div>
         <h2 class="mt3">Supporters of Tumaini Fund</h2>
-        <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "floatright") %>
+        <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "70%", class: "float-right") %>
           <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for thousands of children who lost their moms and dads to AIDS. In addition to monitary contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous dresses for Dr. Wilson to distribute.</p>
           <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.</p>
           <div class="clearall"></div>

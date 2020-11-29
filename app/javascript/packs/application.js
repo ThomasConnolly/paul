@@ -2,6 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+
 import Rails from '@rails/ujs';
 Rails.start();
 window.Rails = Rails
@@ -14,14 +15,13 @@ import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import "controllers";
 import "bootstrap/dist/js/bootstrap";
+import "../src/application.scss"
 import "data-confirm-modal";
-import "src/application.scss";
-import "../stylesheets/application";
 import flatpickr from "flatpickr";
 require("flatpickr/dist/flatpickr.css");
 require("@rails/activestorage").start();
 require("channels");
-
+import "controllers"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
@@ -43,10 +43,7 @@ document.addEventListener("click", () => {
   $('#bcpModal').modal('show')
 });
 
-$(function(){
-  $(".dropdown-toggle").dropdown();
-})
+$(".dropdown-toggle").dropdown();
 
-(function () {
-  console.log('Hello World from Webpacker');
-});
+console.log('Hello World from Webpacker');
+

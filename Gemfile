@@ -13,11 +13,9 @@ gem 'bootsnap', require: false
 gem 'bootstrap-email'
 gem "bootstrap_form"
 gem 'devise'
-gem 'coffee-rails' # used by sprockets to minify
 gem 'cloudinary'
 gem 'feedjira'
 gem 'figaro'
-gem 'font-awesome-rails'
 gem 'httparty'
 gem 'image_processing', '~> 1.10'
 gem 'irb', require: false

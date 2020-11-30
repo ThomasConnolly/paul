@@ -23,6 +23,7 @@ require("@rails/activestorage").start();
 require("channels");
 import "controllers"
 
+
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()

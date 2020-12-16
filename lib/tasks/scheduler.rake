@@ -5,6 +5,10 @@ task :update_feed => :environment do
   puts "done."
 end
 
+task :clear_excess => :environment do
+  EnsFeed.first.destroy if EnsFeed.count > 11
+end
+
 task :send_reminders => :environment do
   User.send_reminders
 end

@@ -4,6 +4,8 @@ class HomeController < ApplicationController
 
   def index
     @ens_feed = EnsFeed.all.order('published_at DESC').limit(6)
+    @christmas_eve = Link.find_by(event: "christmas_eve")
+    @christmas_day = Link.find_by(event: "christmas_day")
     @worship = Link.find_by(event: "worship")
     @bulletin = Link.find_by(event: "bulletin")
     @wine = Link.find_by(event: "wine_time")

@@ -21,10 +21,18 @@
   <h2>...whether we stay at home or join a small number of people in public worship</h2>
   <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid") %><p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.) We must turn away folks if we reach that guideline number.</p>
   <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %>
-  </p>
+  </p> <div class="clearall"></div>
+  <%= cl_image_tag("ChristmasAtStPauls_lioeey.png", width: "100%") %>
+  <h2>Christmas Eve</h2>
+  <p>Join us at 8:30 p.m. Dec. 24 for soft-voiced carols, then Holy Eucharist at 9 p.m., our version of midnight mass.If you don't wish to venture out, we will be live-streaming this worship service on our YouTube channel. Either way, have a merry Christmas!</p>
+  <h2> Christmas</h2>
+  <p>We will have 15 minutes of caroling, sotto voce, before a 10 a.m. mass on Christmas morning. It will be live streamed on our YouTube channel. Merry Christmas to one and all! </p>
+
     
     <h2>Five questions of baptism</h2><p><strong>Our own Fr. Tom </strong> delivered one of this year's diocesan  convention workshops, entitled <em>"Baptismal Covenant: Five Questions."</em> Since it was a virtual workshop, it can be viewed by clicking <%= link_to "this link", "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well acquainted with the sacrament of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
    <br>
+        <p><strong><%= link_to "Here is the bulletin for Christmas Eve services", "#{@christmas_eve.url}" %></strong></p>
+        <p><strong><%=link_to "And for Christmas Day", "#{@christmas_day.url}" %></strong></p>
       <% if @bulletin.url.present? %>
         <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
       <% else %>

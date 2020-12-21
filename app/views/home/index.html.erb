@@ -28,9 +28,7 @@
   <h2> Christmas</h2>
   <p>We will have 15 minutes of caroling, sotto voce, before a 10 a.m. mass on Christmas morning. It will be live streamed on our YouTube channel. Merry Christmas to one and all! </p>
 
-    
-    <h2>Five questions of baptism</h2><p><strong>Our own Fr. Tom </strong> delivered one of this year's diocesan  convention workshops, entitled <em>"Baptismal Covenant: Five Questions."</em> Since it was a virtual workshop, it can be viewed by clicking <%= link_to "this link", "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well acquainted with the sacrament of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
-   <br>
+
         <p><strong><%= link_to "Here is the bulletin for Christmas Eve services", "#{@christmas_eve.url}" %></strong></p>
         <p><strong><%=link_to "And for Christmas Day", "#{@christmas_day.url}" %></strong></p>
       <% if @bulletin.url.present? %>
@@ -43,6 +41,9 @@
             </p>
       <div class="clearfix"></div>
        <p class="mt-1"><strong><%= link_to "Click here for Scripture Readings","http://www.lectionarypage.net" %></strong> </p> 
+           
+    <h2>Five questions of baptism</h2><p><strong>Our own Fr. Tom </strong> delivered one of this year's diocesan  convention workshops, entitled <em>"Baptismal Covenant: Five Questions."</em> Since it was a virtual workshop, it can be viewed by clicking <%= link_to "this link", "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well acquainted with the sacrament of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
+      <br>
 
       <!-- <h2>Sunday services cancelled</h2>
       <p class="list"><strong>8 a.m.</strong> Holy Eucharist, Rite I</p>
@@ -56,14 +57,14 @@
       <%= link_to "Click here.", pages_directions_path %></p> -->
       <h2 class="mt-3">Spiritual studies with Fr. Tom on Zoom</h2>
 
-       <p>The Tuesday afternoon and Wednesday evening bible studies will start on Tuesday, Dec. 8 and Wednesday evening, Dec. 9. Anyone may join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., in studying and discussing the Gospel of Mark. </p>
-        <p>Fr. Tom leads us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Sessions are standalone, meaning that if you missed a session you may join the following week and fit right in. There is no prerequsite, no fee, and registration isn't required. Just click the link and be ready to absorb some new knowledge.
+       <p>The Tuesday afternoon and Wednesday evening bible studies will resume after the new year, when anyone may join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., in studying and discussing the Gospel of Mark.  </p>
+        <p>Fr. Tom leads us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Sessions are standalone, meaning that if you missed a session you may join the following week and fit right in. There is no prerequsite, no fee, and registration isn't required. Just click a link and be ready to absorb some new knowledge in 2021.
         </p>
         <p class="mb-3"><strong>If you haven't used Zoom before, make that click an hour or so before the meeting, in case you need to download and install the program and test your sound and video. </strong></p>
-        <p>Links to the Bible study sessions:</p> 
+        <!-- <p>Links to the Bible study sessions:</p> 
         <p> Tuesdays, 1 p.m.,
         <%= link_to"click here", "#{@day_bible.url}" %></p>
-        <p>Wednesdays 6:30 p.m., <%= link_to "click here", "#{@evening_bible.url}" %></p>
+        <p>Wednesdays 6:30 p.m., <%= link_to "click here", "#{@evening_bible.url}" %></p> -->
 
         <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block", width: "40%") %>
         <h2 class="mt3">Farmers' Market open</h2>

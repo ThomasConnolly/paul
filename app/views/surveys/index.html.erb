@@ -1,14 +1,39 @@
-<div class="col-md-8 col-md-offset-2">
+<p id="notice"><%= notice %></p>
 
-  <div class="center"></div>
-  <h2><%=link_to "Use this link to open the survey results", "https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses", target: "blank" %></h2>
-  <h3 class="center"><small>It may take a few seconds for the page to load. When you see a red line with the notice "not accepting responses," scroll down to view results.</small></h3>
-    <div class="mt30"></div>
-<!--<iframe src="https://docs.google.com/forms/d/1ABZ7lBDQaVCbe3q4A1OiS5hUJcVd1HP4gawG1QK-QpI/edit#responses" width="760" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>-->
-  
-  </div>
-</div>
+<h1>Surveys</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>A1</th>
+      <th>A2</th>
+      <th>A3</th>
+      <th>Added comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<!-- The iframe below is for the initial St. Paul's Survey of 2016
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe95KM-z0aOT5GBkS85Bqq_RCer4eUk-VF3FLzaeVQ7eg8UXA/viewform?embedded=true" width="940" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> -->
+  <tbody>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.q1 %></td>
+        <td><%= survey.q2 %></td>
+        <td><%= survey.q3 %></td>
+        <td><%= survey.a1 %></td>
+        <td><%= survey.a2 %></td>
+        <td><%= survey.a3 %></td>
+        <td><%= survey.added_comments %></td>
+        <td><%= link_to 'Show', survey %></td>
+        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survey', new_survey_path %>

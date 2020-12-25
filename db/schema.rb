@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_021544) do
+ActiveRecord::Schema.define(version: 2020_12_23_013847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -319,6 +319,19 @@ ActiveRecord::Schema.define(version: 2020_11_20_021544) do
     t.index ["donation_id"], name: "index_stripe_reports_on_donation_id"
     t.index ["pledge_id"], name: "index_stripe_reports_on_pledge_id"
     t.index ["user_id"], name: "index_stripe_reports_on_user_id"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "q1"
+    t.string "q2"
+    t.string "q3"
+    t.text "a1"
+    t.text "a2"
+    t.text "a3"
+    t.text "added_comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "syllabuses", id: :serial, force: :cascade do |t|

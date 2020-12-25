@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :surveys
   resources :thankfuls
   root to: 'home#index'
   post '/webhook_events/:source', to: 'webhook_events#create'

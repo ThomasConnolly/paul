@@ -6,13 +6,15 @@
   </div>
 </div>
   <div class=row>
-    <div class="col-md-4">
-      <h2>A Thankful Church</h2>
-      <p>Instead of a sermon on Thanksgiving Day, Fr. Tom invited us to ponder the responses of parishioners to the question, "What are you thankful for, even in the midst of this horrific pandemic?"</p>
-      <p>Click on the video to see those responses.</p>
+ <figure><%= cl_image_tag("christmasChoir_cnls9q.jpg", width:"100%") %>
+   <figcaption>
+     <p><strong>Minified, masked and safely distant,</strong> our choir appeared on Christmas Eve for the first time since the Spring of the year. It was a treat indeed.</p>
+   </figcaption>
+ </figure>
+      
     </div>
     <div class="col-md-8 d-flex justify-content-center">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/0-ThmohwqfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
   </div>    
 </div>  
   <div class="row">
@@ -127,6 +129,9 @@
        
         <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathway,</em> the parish newsletter.</p>
         <p><strong>Previous editions of <em>Pathway</em> <%= link_to "can be found here", pathways_path %></strong></p>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/0-ThmohwqfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><strong>A Thankful Church.</strong> Instead of a sermon on Thanksgiving Day, Fr. Tom invited us to ponder the responses of parishioners to the question, "What are you thankful for, even in the midst of this horrific pandemic?"</p>
+      <p>Click on the video to see those responses.</p>  
         <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%", class: "image-center mt-3") %>
         <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries are
         <%= link_to "listed here.", opportunities_path %> </p>

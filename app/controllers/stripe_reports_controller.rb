@@ -34,7 +34,7 @@ class StripeReportsController < ApplicationController
   end
 
   def admin_only
-    unless current_user.has_role?(:admin)
+    unless current_user.has_role?(:admin)||current_user.has_role?(:controller)
       redirect_to root_path, alert: 'This information is private.'
     end
   end

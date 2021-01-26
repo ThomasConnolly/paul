@@ -14,6 +14,7 @@ class LinksController < ApplicationController
     @coffee = Link.find_by(event: "coffee")
     @day_bible = Link.find_by(event: "day_bible")
     @evening_bible = Link.find_by(event: "evening_bible")
+    @annual_meeting = Link.find_by(event: "annual meeting")
   end
 
   def show
@@ -24,6 +25,7 @@ class LinksController < ApplicationController
     @coffee = Link.find_by(event: "coffee")
     @day_bible = Link.find_by(event: "day_bible")
     @evening_bible = Link.find_by(event: "evening_bible")
+    @annual_meeting = Link.find_by(event: "annual meeting")
   end
 
   # GET /links/1/edit

@@ -26,8 +26,7 @@
       <% else %>
         <p>Sunday's bulletin will be available here on Thursday.</p>
       <% end %> 
-      <h2>Annual Meeting this Sunday, Jan. 31</h2>
-        <p>Episcopal churches hold annual meetings to elect lay persons to serve on the vestry, akin to a board of directors, and to conduct other business. Our annual meeting is this Sunday, and will be held both in person and on Zoom. If you would like to join virtually, <%= link_to "click here", "https://us02web.zoom.us/j/83405500540?pwd=SGM3bHhHanNVeHlVdUE3aG4xVzZoQT09" %> The meeting will follow Sunday worship, and will begin at 10:15 a.m.</p>
+
         <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong> <%=link_to "click here", worship_index_path%>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
         <p><%= link_to "Click here for the on-line Book of Common Prayer", "https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf"%></p>
       <div class="clearfix"></div>
@@ -52,7 +51,6 @@
         <h2 class="mt3">Farmers' Market open</h2>
         <%= cl_image_tag("maskRequired_nwpodl.png", width: 430, crop: "scale", class: "float-right pl-3") %>
         <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and introduce yourself to new friends and have a hot dog, on us! The market is open Saturdays from 8 a.m. to noon. Browse and buy books, jewelery and lots of produce. Masks and physical distancing are required.</p> 
-        <%= cl_image_tag("captKen_y7odha.jpg", width: "200", class: "float-left pr-3") %><p>We are sad to announce the death of Capt. Ken, who was with us from the start of the Farmers' Market, selling his fresh shrimp and other seafood, always with a friendly smile. Ken Pearson went to be with our Lord on Jan. 16, 2021. Please keep his wife, Audrey, and their family in your prayers, for their comfort and peace in their hearts.</p>
         <p>For more information on the market, <%= link_to "click here.",
         markets_index_path %> </p>
         <div class="clearall"></div>      
@@ -87,10 +85,10 @@
             <p><strong> Sunday's bulletin will be linked here on Thursday
             </strong></p>
           <% end %>
-            <!-- <p><strong>"Sunday coffee hour", "" </strong></p> -->
-            <p><strong>No coffee hour this Sunday. </strong>Annual meeing on zoom at 10:15 a.m. <%= link_to "join by clicking here", "https://us02web.zoom.us/j/83405500540?pwd=SGM3bHhHanNVeHlVdUE3aG4xVzZoQT09" %> </p>
-            <p><strong>Bible studies begin Dec. 1 on Zoom.</strong></p>
-            <p><strong><%= link_to "Tuesday Bible study", "#{@day_bible.url}" %></strong></p>
+          <p><strong><%= link_to "Sunday coffee hour", "#{@coffee_url}" %> </strong></p>
+         
+            <p><strong>Bible studies on Zoom.</strong></p>
+            <p><strong><%= link_to "Tuesday bible study", "#{@day_bible.url}" %></strong></p>
             <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>
             <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
 

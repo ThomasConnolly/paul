@@ -1,4 +1,4 @@
-<div class="modal fade modal" id="myModal">
+<div class="modal fade modal-lg" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,22 +9,18 @@
             <div class="modal-body">
                 <p>Limited seating (distances will be kept), but you can stream it live!</p><br>
 
-                <p><strong>$25 per person in church; $20 for high quality live stream link to your tv or computer.</strong> <%= link_to "by clicking here", "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A/" %></p>
+                <p><strong>$25 per person in church; $20 for high quality live stream link to your tv or computer.</strong> </p>
                 <br>
-                <p>
-                    Be safe, folks. May God bless you and may you know that you are not alone.</p>
-
-                <%= link_to cl_image_tag("15Mar2021Todds_act7cs.jpg", width: "60%"), 
-           %>
+                
+                <%= cl_image_tag("15Mar2021Todds_act7cs.jpg", width: "100%"%>
             </div>
-
-            <div class="modal-footer">
             
                 <p><strong><%= link_to "Click to buy in-person tickets", events_8_tickets_path %></strong></p>
                 <p><strong><%= link_to "Click to stream the concert", events_9_tickets_path %></strong></p>
                 
-
+                <div class="modal-footer">
                 <button type="buton" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
             </div>
         </div>
     </div>

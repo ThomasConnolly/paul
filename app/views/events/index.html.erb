@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-<div id="hello"></div>
+
   <% @events.each do |event| %>
     <h2><%= event.title %></h2>
     <p><%= event.date.strftime('%A, %B %e, %Y') %>, <%= event.time %>, <%= number_to_currency event.price*0.01 %> per ticket.</p> 

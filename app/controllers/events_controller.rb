@@ -11,7 +11,9 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
-
+  
+  def show; end
+    
   def edit; end
 
   def create
@@ -51,7 +53,7 @@ class EventsController < ApplicationController
   private
 
   def set_event
-    @event = Event.last
+    @event = Event.find(params[:id])
   end
 
   def admin_only

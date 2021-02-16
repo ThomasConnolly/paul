@@ -6,21 +6,21 @@
   </div>
 </div>
 <div class=row>
-  <figure><%= cl_image_tag("christmasChoir_cnls9q.jpg", width:"100%") %>
-    <figcaption>
-      <p><strong>Minified, masked and safely distant,</strong> our choir appeared on Christmas Eve for the first time since the Spring of the year. It was a treat indeed.</p>
-    </figcaption>
-  </figure>    
+  <h2>Lent begins Feb. 17</h2>
+  <p> <%= cl_image_tag("AshWednesdayLogo_ugdsjz.jpg", class: "float-right", width:"65%") %>
+  Ashes and sackcloth were used to symbolize our sinfulness and mortality in Old Testament times. As Christian liturgy evolved, into the Middle Ages, the priest would sprinkle a small amount on the head of each person. It's unknown when the practice of forming a cross&mdash;or sometimes a smudge&mdash;took root. This year, because of the pandemic, priests of our diocese will sprinkle  ashes. Please note this is optional, but the thoughts and prayers are a powerful reminder of the penetential season of Lent, 40 days before Easter (subtracting Sundays, the day of resurrection).</p>
+    
 </div>  
 <div class="row">
   <div class="col-md-8 col-sm-12 main-body">
     <h1>We follow Jesus Christ...</h1>
       <h2>...whether we stay at home or join a small number of people in public worship</h2>
-        <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid") %>
+        <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid pr-2") %>
           <p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.) We must turn away folks if we reach that guideline number.</p>
           <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %></p> 
       <div class="clearall"></div>
-      
+      <hr>
+     
       <% if @bulletin.url.present? %>    
         <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
       <% else %>
@@ -37,7 +37,7 @@
       <br>
 
       <h2 class="mt-3">Spiritual studies with Fr. Tom on Zoom</h2>
-
+        <p><strong>Note: Bible studies referred to below will resume next week (Feb. 23 & 24)</strong></p>
        <p>The Tuesday afternoon and Wednesday evening bible studies will resume after the new year, when anyone may join us, either Tuesdays at 1 p.m. or Wednesdays at 6:30 p.m., in studying and discussing the Gospel of Mark.  </p>
         <p>Fr. Tom leads us in a conversation about the spiritual meanings of the gospel and how it is applicable in our lives today. Sessions are standalone, meaning that if you missed a session you may join the following week and fit right in. There is no prerequsite, no fee, and registration isn't required. Just click a link and be ready to absorb some new knowledge in 2021.
         </p>
@@ -87,7 +87,7 @@
           <% end %>
           <p><strong><%= link_to "Sunday coffee hour", "#{@coffee.url}" %> </strong></p>
          
-            <p><strong>Bible studies on Zoom.</strong></p>
+            <p><strong>Bible studies will re-Zoom next week.</strong></p>
             <p><strong><%= link_to "Tuesday bible study", "#{@day_bible.url}" %></strong></p>
             <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p>
             <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
@@ -118,5 +118,7 @@
     </div><!-- row -->
   </div>
 
-
+<%#= render partial: 'myModal' %>
 <div class="mt-5"></div>
+
+

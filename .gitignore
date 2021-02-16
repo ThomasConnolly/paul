@@ -33,8 +33,14 @@ Procfile.dev
 /*.csv
 /public/packs-test
 /node_modules
-/yarn-error.log
-/yarn-debug.log*
+
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
 /npm-debug.log
 
 # Ignore master key for decrypting credentials and more.
@@ -44,13 +50,12 @@ export_csv_instructions.txt
 get-unused-routes.rb
 /public/packs-test
 /public/assets
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
 *.txt
 notes
 /*.FIX
+/public/packs
+/public/packs-test
+
 /public/packs
 /public/packs-test
 /node_modules

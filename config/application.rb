@@ -21,7 +21,7 @@ require 'rails/test_unit/railtie'
   module Paul
     class Application < Rails::Application
       # Initialize configuration defaults originally generated Rails version.
-      config.load_defaults 6.0
+      config.load_defaults 6.1
 
       config.beginning_of_week = :sunday
       config.time_zone = 'Eastern Time (US & Canada)'

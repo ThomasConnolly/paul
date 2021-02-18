@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
   def show; end
 
   def update
-    @profile.update_attributes(profile_params)
+    @profile.update(profile_params)
     if @profile.save
       redirect_to profile_path(@profile)
     else

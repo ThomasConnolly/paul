@@ -24,7 +24,7 @@ class PledgesController < ApplicationController
   def edit; end
 
   def update
-    @pledge.update_attributes(pledge_params)
+    @pledge.update(pledge_params)
     if @pledge.save
       redirect_to pledge_path(@pledge)
     else

@@ -25,7 +25,7 @@ class LettersController < ApplicationController
   end
 
   def update
-    @letter.update_attributes(letter_params)
+    @letter.update(letter_params)
     @letter.save
     redirect_to letters_path
   end

@@ -13,6 +13,7 @@ class PaymentController < ApplicationController
     else
       Stripe::Customer.create(email: current_user.email)
     end
+    
     current_user.update(stripe_id: @customer.id)
   
     @session = Stripe::Checkout::Session.create(
@@ -25,7 +26,7 @@ class PaymentController < ApplicationController
       },
       customer: @customer,
       success_url: payment_success_url + '?session_id{CHECKOUT_SESSION_ID}',
-      cancel_url: payment_cancel_url,
+      cancel_url: payment_cancel_url
     )
       respond_to do |format|
         format.js # render create.js.erb

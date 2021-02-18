@@ -23,7 +23,7 @@ class MembersController < ApplicationController
 
 
   def update
-    @member.update_attributes(member_params)
+    @member.update(member_params)
     @member.save
     redirect_to members_path
   end

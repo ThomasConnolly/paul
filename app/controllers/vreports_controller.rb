@@ -49,7 +49,7 @@ class VreportsController < ApplicationController
   end
 
   def update
-    @vreport.update_attributes(vreport_params)
+    @vreport.update(vreport_params)
     @vreport.save
     respond_to do |format|
       format.html { redirect_to vreports_path }

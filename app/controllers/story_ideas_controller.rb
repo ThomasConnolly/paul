@@ -43,7 +43,7 @@ class StoryIdeasController < ApplicationController
   end
 
   def update
-    @story_idea.update_attributes(story_idea_params)
+    @story_idea.update(story_idea_params)
     @story_idea.save
   end
 

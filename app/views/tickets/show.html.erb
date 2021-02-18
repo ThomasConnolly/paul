@@ -8,36 +8,4 @@
       <%= number_to_currency @ticket.amount*0.01 %></h3>
     <div class="mt30"></div>
 
-  <%= form_with url: ticket_charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %> </p>
-        </div>
-      <% end %>
-    </article>
-
-    <%= hidden_field_tag 'ticket_id', @ticket.id %>
-    <script src="https://js.stripe.com/v3/" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:public_key] %>"
-          data-description="<%= @event.title %>"
-          data-image='https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Shield.png'
-          data-amount="<%= @ticket.amount %>"
-          data-zip-code= true
-          data-locale="auto"></script>
-  <% end %>
-
-   <div class="mt100"></div>
-  </div>
-</div>
-
-      <script src="https://js.stripe.com/v3/" data-amount="2000"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-      </script>
+<%= link)"Checkout", new_checkout_tickets_path %>

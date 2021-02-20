@@ -13,7 +13,7 @@
     "babel-loader": "^8.2.1",
     "bable-loader": "^0.0.1-security",
     "bl": "4.0.3",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "browserlist": "^1.0.1",
     "channels": "^0.0.4",
     "chokidar": "^3.4.3",

@@ -27,7 +27,7 @@ protect_from_forgery except: :webhook
       }],
       client_reference_id: @donation.id,
       customer: @customer,
-      success_url: checkout_success_url + '?session_id{CHECKOUT_SESSION_ID}',
+      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,
     )
       respond_to do |format|

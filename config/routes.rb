@@ -19,11 +19,18 @@ Rails.application.routes.draw do
       get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
       get 'success', to: 'payment#success', as: 'payment_success'
     end
+  
+  
+  scope '/checkout_tickets' do
+    post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'
+    get 'cancel', to: 'checkout_tickets#cancel', as: 'cancel'
+    get 'success', to: 'checkout_tickets#success', as: 'success'
+  end
 
   resources :events do
     resources :tickets, only: %i[new show create update index]
   end
-  resources :ticket_charges, only: %i[new create]
+  
   resources :albergue_children
   resources :links
   resources :pathways

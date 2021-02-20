@@ -11,12 +11,13 @@
       <%= bootstrap_form_for([@event, @ticket]) do |f| %>
         <%= f.hidden_field :price, :value => @event.price %>
         <%= f.hidden_field :event_id, :value => @event.id %>
-        <%= f.text_field :first_name %> &nbsp;<%= f.text_field :last_name %> <br>
-        <%= f.number_field :quantity, label: "Number of tickets" %>
+        <%= f.text_field :first_name %> &nbsp;<%= f.text_field :last_name %> 
+        <%= f.text_field :email %> <br>
+        <%= f.number_field :quantity, label: "Number of tickets (1 if streaming)" %>
       <div class="honey">
         <%= f.text_field :honey %>
       </div>
-        <%= f.submit "Create order", class: "btn btn-primary" %>
+        <%= f.submit "Review your order", class: "btn btn-primary btn-lg" %>
     <% end %>
   </div>
 </div>

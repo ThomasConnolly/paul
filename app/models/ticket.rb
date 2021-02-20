@@ -6,13 +6,13 @@
 #
 #  id          :integer          not null, primary key
 #  amount      :integer
+#  checkout    :string
 #  email       :string
 #  first_name  :string
 #  honey       :string
 #  last_name   :string
 #  price       :decimal(, )
 #  quantity    :integer
-#  source      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  customer_id :string

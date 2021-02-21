@@ -22,7 +22,8 @@ class CheckoutTicketsController < ApplicationController
         cancel_url: checkout_cancel_url,
       )
         respond_to do |format|
-          format.js # render create.js.erb
+          format.js
+          render nothing: true
 
         @ticket.update(
           customer_id: @customer.id,

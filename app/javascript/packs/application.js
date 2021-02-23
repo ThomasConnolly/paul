@@ -46,4 +46,5 @@ document.addEventListener("click", () => {
 
 $(".dropdown-toggle").dropdown();
 
+
 console.log('Hello World from Webpacker');

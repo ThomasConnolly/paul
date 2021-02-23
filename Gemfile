@@ -16,6 +16,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'feedjira'
 gem 'figaro'
+#gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
 gem 'irb', require: false

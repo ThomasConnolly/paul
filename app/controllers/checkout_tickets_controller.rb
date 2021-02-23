@@ -29,9 +29,6 @@ class CheckoutTicketsController < ApplicationController
         checkout: @session.id)
     end
   end
-
-  
-
 end
 
   

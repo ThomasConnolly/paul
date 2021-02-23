@@ -1,8 +1,5 @@
-<% if Rails.env.production? %>
-  const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-<% else %>
-  const stripe = Stripe('pk_test_i3Ry2iGGqQIXZiVwJ2eimNOM');
-<% end %>
+
+const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
 }).then (function (result) {

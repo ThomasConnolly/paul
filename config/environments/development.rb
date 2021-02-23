@@ -63,12 +63,12 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker  
   
   ActionMailer::Base.smtp_settings = {
-    user_name: 'app36011847@heroku.com',
-    password: Rails.application.credentials.sendgrid,
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
     domain: 'SaintPaulsNaples.org',
     address: 'smtp.sendgrid.net',
     port: 587,
-    authentication: 'apikey',
+    authentication: ENV['SENDGRID_API'],
     enable_starttls_auto: true,
   }
 

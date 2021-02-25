@@ -1,4 +1,5 @@
 class CheckoutTicketsController < ApplicationController
+  STRIPE_API_KEY = Rails.application.credential.stripe[:secret_key]
   protect_from_forgery except: :webhook
   
   def create
@@ -8,7 +9,9 @@ class CheckoutTicketsController < ApplicationController
       redirect_to root_path
       return
     end
+
     @customer = Stripe::Customer.create(email: @ticket.email)
+
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{

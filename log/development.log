@@ -20425,3 +20425,7 @@ Processing by TicketsController#new as HTML
 Completed 200 OK in 29ms (Views: 15.5ms | ActiveRecord: 2.6ms | Allocations: 23515)
 
 
+Started POST "/webhook_events" for 127.0.0.1 at 2021-02-24 22:15:45 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/webhook_events"):
+  

@@ -20915,3 +20915,327 @@ Started POST "/__better_errors/586c9c45aab78e1c/variables" for 127.0.0.1 at 2021
   [1m[36mPrayFor Load (0.3ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mCACHE PrayFor Load (0.0ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-02-25 10:12:31 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 8502)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1449)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 13.2ms | Allocations: 11407)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 499)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 23494)
+Completed 200 OK in 63ms (Views: 25.3ms | ActiveRecord: 14.9ms | Allocations: 39578)
+
+
+Started GET "/events" for 127.0.0.1 at 2021-02-25 10:12:34 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."date" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/events/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 26.9ms | Allocations: 21233)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1192)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 1167)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 324)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 24829)
+Completed 200 OK in 36ms (Views: 27.0ms | ActiveRecord: 5.8ms | Allocations: 27514)
+
+
+Started GET "/events/9/tickets/new" for 127.0.0.1 at 2021-02-25 10:12:37 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"event_id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 8833)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1192)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 1926)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 13187)
+Completed 200 OK in 28ms (Views: 14.9ms | ActiveRecord: 2.9ms | Allocations: 23357)
+
+
+Started POST "/events/9/tickets" for 127.0.0.1 at 2021-02-25 10:12:46 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"n7BsGqEAlZwTNOucPcoEsbpU7JgCiLQwpuyXDQIJA5jimGjcVf3e9DlfRMQlrBYhGhpMfCpAd-Dhm5Vj187dWA", "ticket"=>{"price"=>"2000", "event_id"=>"9", "first_name"=>"Thomas", "last_name"=>"Connolly", "email"=>"tom.connolly@comcast.net", "quantity"=>"1", "honey"=>""}, "commit"=>"Review your order", "event_id"=>"9"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "created_at", "updated_at", "event_id", "quantity", "amount", "first_name", "last_name", "email", "honey") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["price", "2000.0"], ["created_at", "2021-02-25 15:12:46.081127"], ["updated_at", "2021-02-25 15:12:46.081127"], ["event_id", 9], ["quantity", 1], ["amount", 2000], ["first_name", "Thomas"], ["last_name", "Connolly"], ["email", "tom.connolly@comcast.net"], ["honey", ""]]
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+Redirected to http://localhost:5000/events/9/tickets/253
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms | Allocations: 3144)
+
+
+Started GET "/events/9/tickets/253" for 127.0.0.1 at 2021-02-25 10:12:46 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"event_id"=>"9", "id"=>"253"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."id" = $2 LIMIT $3[0m  [["event_id", 9], ["id", 253], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:44:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 451)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1193)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 1926)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4854)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 6739)
+
+
+Started POST "/checkout_tickets/create" for 127.0.0.1 at 2021-02-25 10:12:48 -0500
+Processing by CheckoutTicketsController#create as JS
+  Parameters: {"authenticity_token"=>"QzOfbbyTDA91sAi41YAc_GwCDKM7GCRkx_GzvdjG4mv2kdv2eArAVTqbkto89TCWir98EKYk5-fHJ_R1VMGmIA", "id"=>"253"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = $1 LIMIT $2[0m  [["id", 253], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_tickets_controller.rb:5:in `create'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_tickets_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/checkout_tickets_controller.rb:27:in `block in create'
+  [1m[36mTicket Update (0.4ms)[0m  [1m[33mUPDATE "tickets" SET "updated_at" = $1, "customer_id" = $2, "checkout" = $3 WHERE "tickets"."id" = $4[0m  [["updated_at", "2021-02-25 15:12:49.974785"], ["customer_id", "cus_J0n6flijtpivw0"], ["checkout", "cs_test_a1ByJnuRMHcyiWLQeswGZNTWGkO7FKnJSAKGnGtZQC6Rp6G7nPsGTtrTDA"], ["id", 253]]
+  ↳ app/controllers/checkout_tickets_controller.rb:27:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering ticket_mailer/thanks.html.erb within layouts/mailer
+  Rendered ticket_mailer/thanks.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 172)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 315)
+TicketMailer#thanks: processed outbound mail in 3.0ms
+Delivered mail 6037be71f10f8_1e27216aa8448e5@tom-G7.mail (36.8ms)
+Date: Thu, 25 Feb 2021 10:12:49 -0500
+From: NoResponse@SaintPaulsNaples.org
+To: tom.connolly@comcast.net
+Message-ID: <6037be71f10f8_1e27216aa8448e5@tom-G7.mail>
+Subject: Thank you
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6037be71f0d5d_1e27216aa8447b7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6037be71f0d5d_1e27216aa8447b7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Thank you!
+
+Your 1 ticket will be at the door in the name of Thomas
+Connolly. Doors open at 6:30 p.m. Enjoy the show.
+
+We are the Episcopal branch of the Jesus movement
+-------------------------------------------------
+----==_mimepart_6037be71f0d5d_1e27216aa8447b7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <p><b><em>Thank you!</em></b></p>
+<p> Your 1 ticket will be at the door in the name of Thomas Connolly. Doors open at 6:30 p.m. Enjoy the show.</p>
+<div class="mt100"></div>
+<h3>We are the Episcopal branch of the Jesus movement</h3>
+
+  </body>
+</html>
+
+----==_mimepart_6037be71f0d5d_1e27216aa8447b7--
+
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/checkout_tickets_controller.rb:27:in `block in create'
+  Rendering checkout_tickets/create.js.erb
+  Rendered checkout_tickets/create.js.erb (Duration: 0.5ms | Allocations: 177)
+Completed 200 OK in 1187ms (Views: 2.5ms | ActiveRecord: 20.3ms | Allocations: 94137)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-25 10:16:34 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.2ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 7096)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1193)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 23.8ms | Allocations: 19776)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 29305)
+Completed 200 OK in 57ms (Views: 29.9ms | ActiveRecord: 12.5ms | Allocations: 42450)
+
+
+Started GET "/events" for 127.0.0.1 at 2021-02-25 10:16:40 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."date" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/events/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:8
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 14789)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1192)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 1167)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 18383)
+Completed 200 OK in 32ms (Views: 22.7ms | ActiveRecord: 5.5ms | Allocations: 20455)
+
+
+Started GET "/events/9/tickets/new" for 127.0.0.1 at 2021-02-25 10:16:45 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"event_id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2494)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1192)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 1926)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6847)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 2.7ms | Allocations: 16267)
+
+
+Started POST "/events/9/tickets" for 127.0.0.1 at 2021-02-25 10:16:54 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"nvwoWq04C3rtg2y1AnxrEmVCpwKcW6wL-hOCmnp9Mw3j1CycWcVAEsfow-0aGnmCxQwH5rSTb9u9ZID0r7rtzQ", "ticket"=>{"price"=>"2000", "event_id"=>"9", "first_name"=>"Thomas", "last_name"=>"Connolly", "email"=>"ThomasEConnolly@outlook.com", "quantity"=>"1", "honey"=>""}, "commit"=>"Review your order", "event_id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "created_at", "updated_at", "event_id", "quantity", "amount", "first_name", "last_name", "email", "honey") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["price", "2000.0"], ["created_at", "2021-02-25 15:16:54.067585"], ["updated_at", "2021-02-25 15:16:54.067585"], ["event_id", 9], ["quantity", 1], ["amount", 2000], ["first_name", "Thomas"], ["last_name", "Connolly"], ["email", "ThomasEConnolly@outlook.com"], ["honey", ""]]
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tickets_controller.rb:24:in `create'
+Redirected to http://localhost:5000/events/9/tickets/254
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms | Allocations: 2987)
+
+
+Started GET "/events/9/tickets/254" for 127.0.0.1 at 2021-02-25 10:16:54 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"event_id"=>"9", "id"=>"254"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."id" = $2 LIMIT $3[0m  [["event_id", 9], ["id", 254], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:44:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 271)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1191)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1907)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4648)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 6373)
+
+
+Started POST "/checkout_tickets/create" for 127.0.0.1 at 2021-02-25 10:16:57 -0500
+Processing by CheckoutTicketsController#create as JS
+  Parameters: {"authenticity_token"=>"JS1f1-EW8MrmJJe5wHSPMTK9f2GpVGwy096WZKyvicCQjxtMJY88kKkPDdspAaNb1AAP0jRor7HTCNGsIKjNiw", "id"=>"254"}
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = $1 LIMIT $2[0m  [["id", 254], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_tickets_controller.rb:5:in `create'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_tickets_controller.rb:17:in `create'
+  Rendering checkout_tickets/create.js.erb
+  Rendered checkout_tickets/create.js.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 1057ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 5183)
+
+

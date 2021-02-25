@@ -24,9 +24,7 @@ class CheckoutTicketsController < ApplicationController
       respond_to do |format|
         format.js
 
-      @ticket.update(
-        customer_id: @customer.id,
-        checkout: @session.id)
+   
     end
   end
 end

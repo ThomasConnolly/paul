@@ -1,32 +1,24 @@
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
-<div class="mt50"></div>
-<!--<h1><%#= link_to "Pay  your pledge on line",
-   new_pledge_path %></h1> <p><small>(Pledge feature is
-    under construction)</small></p>-->
-
-
-  <h1> Fill out your profile </h1><br>
-  
+  <div class="col-md-8 col-md-offset-2 mt-5">
+  <h1> Complete your profile </h1><br>
     <% if current_user.avatar? %>
       <%= image_tag current_user.avatar, size: '160x234',
-        class: "floatleft" %> 
+        class: "float-left" %> 
     <% else %>
       <%= link_to "Add or change your profile picture", edit_user_path(current_user) %>
       <h3>Click to add<br>Your own picture</h3>
-      <% end %>
+    <% end %>
 
   <h3 class="mt30">Everybody has a story...</h3>
-    <p>...And we get to know one another by sharing our story.
-    look at the questions below and fill out the boxes you want to fill out. 
-    You can always come back to edit your profile.</p>
+    <p>...And we get to know one another by sharing our story. Look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p>
   
   <%= bootstrap_form_for(@profile) do |f| %>
-   <%= f.alert_message "Please fix the errors below." %>
-    <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace. (Just the name of the places, no narrative yet. We'll use this information to see if you have any ')</p>
-      <%= f.text_area :cities %>
+    <%= f.alert_message "Please fix the errors below." %>
+    
+    <p><strong>Important locations:</strong> Name the cities or towns that have been important in your life, starting with your birthplace. (Just the name of the places, no narrative yet. We'll use this information to see if you have any geographical connections with other parishioners.)</p>
+      <%= f.text_area :cities, placeholder: "High Point, NC, for example" %>
 
-    <p><strong>Growing up: </strong>Write a little about your growing-up years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:</p>
+    <p><strong>Growing up: </strong>Write a little about your early years, before launching your career. Did you play sports in school or were you named homecoming queen? What sort of education do you have:</p>
       <%= f.text_area :background %><br>
   
     <p><strong>Building a career: </strong>This is where you tell us about your work life. Multiple careers? Lots of travel? </p>
@@ -35,7 +27,7 @@
     <p><strong>Family matters: </strong>Tell us about your immediate family first, then any famous or infamous ancestry or offspring. Where are the kids? </p>
       <%= f.text_area :family %><br>
     
-    <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits.  Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?</p>
+    <p><strong>Hobbies and other activities: </strong>Lifestyle questions concern your off-the-job pursuits. Are you a sailor, chef or musician? What skills have you acquired over the years? Handy with tools? How many holes-in-one or 300-games?</p>
       <%= f.text_area :lifestyle %><br>
   
     <p><strong>Life in the world: </strong>Do you or did you belong to any service organizations or clubs? Tells us about your civic involvement as a volunteer or elected or appointed leader in the secular world. </p>
@@ -44,5 +36,5 @@
     <p><strong>The Family of God: </strong>Finally, we come to church. What ministries have you been involved in at St. Paul's or at another church? Are you interested in Christian formation? A Bible study? Do you want to say why you come to St. Paul's?</p> 
       <%= f.text_area :church %><br>
 
-      <%= f.submit "save changes", class: "btn btn-primary" %>
+    <%= f.submit "save changes", class: "btn btn-primary" %>
   <% end %> 

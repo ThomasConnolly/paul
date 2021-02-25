@@ -1,5 +1,5 @@
 class CheckoutTicketsController < ApplicationController
-  STRIPE_API_KEY = Rails.application.credential.stripe[:secret_key]
+  STRIPE_API_KEY = Rails.application.credentials.stripe[:secret_key]
   protect_from_forgery except: :webhook
   
   def create

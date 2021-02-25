@@ -25,7 +25,7 @@
 class Ticket < ApplicationRecord
   belongs_to :event
   before_save :set_amount
-  # after_update :email_buyer
+  after_update :email_buyer
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
   validates :quantity, presence: true
@@ -36,7 +36,7 @@ class Ticket < ApplicationRecord
 
   private
 
-  # def email_buyer
-  #   TicketMailer.thanks(self).deliver
-  # end
+  def email_buyer
+    TicketMailer.thanks(self).deliver
+  end
 end

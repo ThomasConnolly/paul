@@ -1,5 +1,6 @@
 class CheckoutTicketsController < ApplicationController
-  STRIPE_API_KEY = Rails.application.credentials.stripe[:secret_key]
+  #Stripe.api_key = "sk_test_0AqInf4x5zH6lqth616XDU7b"
+
   protect_from_forgery except: :webhook
   
   def create
@@ -26,10 +27,16 @@ class CheckoutTicketsController < ApplicationController
     )
       respond_to do |format|
         format.js
-
    
     end
   end
+
+  def success
+    @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+    @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+  end
+
+  def cancel; end
 end
 
   

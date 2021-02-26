@@ -10,7 +10,7 @@
           If your circumstances change or for any other reason you wish to edit or remove these settings you may do so at any time.</strong></p>
 
       <div class="text-center" max-width="400px">
-      <%= button_to "Pay with card", payment_create_url, method: :post, remote: true, params: {id: @pledge.id}, class: "btn btn-success btn-lg" %>
+      <%= button_to "Pay with card", payment_create_url, method: "post", remote: true, params: {id: @pledge.id}, class: "btn btn-success btn-lg" %>
       </div>
       <div class="mt-5 mb-5"></div>
 

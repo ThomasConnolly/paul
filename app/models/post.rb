@@ -17,6 +17,8 @@ class Post < ApplicationRecord
   validates_presence_of :content
   validates_presence_of :user_id
   has_rich_text :content
+  has_one_attached :picture
+  has_many_attached :photos
   
 
 

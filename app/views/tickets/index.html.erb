@@ -1,8 +1,17 @@
 <h1>Ticket Call List</h1>
-<p>Running count of <%= @event.title %> tickets sold: <%= @tickets.where.not("customer_id": nil).sum(:quantity) %>
 
-<% @tickets.each do |t| %>
-  <% if t.customer_id.present? %>
+<p>Running count of tickets sold: <br>Streaming the show:<%= @tickets.where.not("customer_id": nil).where(event_id: 8).sum(:quantity) %><br>
+  In-person tickets: <%= @tickets.where.not("customer_id": nil).where(event_id: 9).sum(:quantity) %><br>
+
+
+<h2>Live stream customers</h2>
+  <% @tickets.where.not(customer_id: nil).where(event_id: 8).each do |t|
     <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, Tickets: <%= t.quantity %>, Purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
+  <% end %>
+
+  <h2>In-Person customers</h2>
+    <% @tickets.where.not(customer_id: nil).where(event_id:9).each do |t| %>
+      <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, Tickets: <%= t.quantity %>, Purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
+      <p><strong>Running count of live stream ticket sales: <%= t.sum(:quantity)</strong></p>
   <% end %>
 <% end %>

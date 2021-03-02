@@ -1,4 +1,5 @@
 class PrayForsController < ApplicationController
+  before_action authenticate_user! except: [:show, index]
   before_action :set_pray_for, only: [:show, :edit, :update, :destroy]
 
   # GET /pray_fors

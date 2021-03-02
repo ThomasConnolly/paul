@@ -28,9 +28,9 @@ Rails.application.routes.draw do
   end
 
   resources :events do
-    resources :tickets, only: %i[new show create update index]
+    resources :tickets, only: %i[new show create update]
   end
-  
+   resources :tickets, only: %[index]
   resources :albergue_children
   resources :links
   resources :pathways

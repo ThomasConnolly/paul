@@ -2,17 +2,13 @@
 
 class TicketsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :set_event
+  before_action :set_event, except: :index
   before_action :set_ticket, only: %i[show edit update destroy]
 
   def show; end
 
   def index
-    @tickets = if params[:event_id]
-                 Event.find(params[:event_id]).tickets.order(:last_name)
-               else
-                 Ticket.all
-               end
+    @tickets = Ticket.all
   end
 
   def new

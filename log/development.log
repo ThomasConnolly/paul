@@ -26052,3 +26052,508 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 26ms (Views: 19.1ms | ActiveRecord: 3.1ms | Allocations: 19143)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/" for 127.0.0.1 at 2021-03-02 12:24:39 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 10564)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1449)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (2.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 37.0ms | Allocations: 23249)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 37406)
+Completed 200 OK in 96ms (Views: 47.8ms | ActiveRecord: 25.1ms | Allocations: 53897)
+
+
+Started GET "/events/9/tickets" for 127.0.0.1 at 2021-03-02 12:25:14 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  Parameters: {"event_id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2[0m  [["event_id", 9], ["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2[0m  [["event_id", 9], ["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2 ORDER BY "tickets"."last_name" ASC[0m  [["event_id", 9], ["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2 ORDER BY "tickets"."last_name" ASC[0m  [["event_id", 9], ["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 26381)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 26436)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 24.3ms | Allocations: 71064)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/views/tickets/index.html.erb:14
+  app/views/tickets/index.html.erb:13
+
+Started POST "/__better_errors/b665e182cb9b7a0f/variables" for 127.0.0.1 at 2021-03-02 12:25:14 -0500
+Started GET "/events/8/tickets" for 127.0.0.1 at 2021-03-02 12:38:08 -0500
+Processing by TicketsController#index as HTML
+  Parameters: {"event_id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `set_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2[0m  [["event_id", 8], ["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2[0m  [["event_id", 8], ["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2 ORDER BY "tickets"."last_name" ASC[0m  [["event_id", 8], ["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $2 ORDER BY "tickets"."last_name" ASC[0m  [["event_id", 8], ["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 10259)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1201)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1201)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 13903)
+Completed 200 OK in 45ms (Views: 16.5ms | ActiveRecord: 10.0ms | Allocations: 28067)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:39:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tickets"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/tom/paul/config/environment.rb:7)
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:45:12 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 39ms (ActiveRecord: 7.7ms | Allocations: 23371)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:40:in `set_event'
+
+Started POST "/__better_errors/5773a50df87b4b45/variables" for 127.0.0.1 at 2021-03-02 12:45:12 -0500
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:49:33 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 63ms (ActiveRecord: 10.0ms | Allocations: 24078)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:36:in `set_event'
+
+Started POST "/__better_errors/7d859ce1d6cdeb4e/variables" for 127.0.0.1 at 2021-03-02 12:49:33 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:50:11 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 39ms (ActiveRecord: 6.7ms | Allocations: 25656)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:36:in `set_event'
+
+Started POST "/__better_errors/c5bc3bba16a74677/variables" for 127.0.0.1 at 2021-03-02 12:50:12 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:50:13 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 1.0ms | Allocations: 2288)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:36:in `set_event'
+
+Started POST "/__better_errors/065d582b013e1f8c/variables" for 127.0.0.1 at 2021-03-02 12:50:13 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 12:50:13 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 1.0ms | Allocations: 2288)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:36:in `set_event'
+
+Started POST "/__better_errors/8641458dca489ff8/variables" for 127.0.0.1 at 2021-03-02 12:50:13 -0500
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/tom/paul/config/environment.rb:7)
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/events/8" for 127.0.0.1 at 2021-03-02 13:04:08 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:56:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mRole Load (2.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/events/show.html.erb:8
+  Rendered events/show.html.erb within layouts/application (Duration: 30.6ms | Allocations: 34662)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1635)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 12.8ms | Allocations: 15678)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 56297)
+Completed 200 OK in 118ms (Views: 44.5ms | ActiveRecord: 17.8ms | Allocations: 90426)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:04:17 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 404 Not Found in 41ms (ActiveRecord: 6.3ms | Allocations: 23645)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Event without an ID:
+  app/controllers/tickets_controller.rb:36:in `set_event'
+
+Started POST "/__better_errors/db54c44d88fc6980/variables" for 127.0.0.1 at 2021-03-02 13:04:17 -0500
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:06:53 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 22262)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 22450)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 8.7ms | Allocations: 52099)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/views/tickets/index.html.erb:14
+  app/views/tickets/index.html.erb:13
+
+Started POST "/__better_errors/68c86372c74351c7/variables" for 127.0.0.1 at 2021-03-02 13:06:53 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:08:16 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 5564)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 5598)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.5ms | Allocations: 8038)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/views/tickets/index.html.erb:14
+  app/views/tickets/index.html.erb:13
+
+Started POST "/__better_errors/2c28d317f4c97cd8/variables" for 127.0.0.1 at 2021-03-02 13:08:17 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:08:20 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 5201)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5235)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.0ms | Allocations: 6782)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/views/tickets/index.html.erb:14
+  app/views/tickets/index.html.erb:13
+
+Started POST "/__better_errors/3ca95549d2d3a44a/variables" for 127.0.0.1 at 2021-03-02 13:08:20 -0500
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:10:23 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 19068)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 3577)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 16.5ms | Allocations: 19770)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 47562)
+Completed 200 OK in 75ms (Views: 33.7ms | ActiveRecord: 9.6ms | Allocations: 74531)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:11:23 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mCACHE Ticket Load (0.0ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 4655)
+  Rendered layouts/_header.html.erb (Duration: 17.3ms | Allocations: 8792)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 14.2ms | Allocations: 11936)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 504)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 27542)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 3.6ms | Allocations: 30018)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2021-03-02 13:11:49 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 8]]
+  ↳ app/views/tickets/index.html.erb:8
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."customer_id" IS NOT NULL AND "tickets"."event_id" = $1[0m  [["event_id", 9]]
+  ↳ app/views/tickets/index.html.erb:13
+  Rendered tickets/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4590)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1437)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 1919)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 478)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 9989)
+Completed 200 OK in 42ms (Views: 28.8ms | ActiveRecord: 4.5ms | Allocations: 12458)
+
+

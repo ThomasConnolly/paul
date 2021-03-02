@@ -1,12 +1,8 @@
 class PrayForsController < ApplicationController
-  before_action authenticate_user! except: [:show, index]
+  before_action authenticate_user! except: [:show]
   before_action :set_pray_for, only: [:show, :edit, :update, :destroy]
 
-  # GET /pray_fors
-  # GET /pray_fors.json
-  def index
-    @pray_fors = PrayFor.all
-  end
+
 
   # GET /pray_fors/1
   # GET /pray_fors/1.json

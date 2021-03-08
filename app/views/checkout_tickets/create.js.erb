@@ -1,4 +1,4 @@
-const stripe = Stripe('pk_live_SOqAqUmLi3XPCGYk57W3bX4L');
+const stripe = Stripe('pk_live_SOqAqUmLi3XPCGYk57W3bX4L'); 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
 }).then (function (result) {

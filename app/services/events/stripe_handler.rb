@@ -16,11 +16,16 @@ module Events
               StripeMailer.report_created(stripe_report).deliver_later
                 
             when 'payment'
+              if checkout_session.client_reference_id[0..2]=="tic"
+                ticket = Ticket.find(checkout_session.client_reference_id[4..6].to_i)
+                ticket.update!(customer_id: checkout_session.customer)
+              else
               donation = Donation.find(checkout_session.client_reference_id)
               donation.update!(
                 stripe_id: checkout_session.payment_intent,
                 status: 1
               )
+              end
               stripe_report = StripeReport.create(amount: donation.amount, donation_id: donation.id, user_id: user.id)
               StripeMailer.report_created(stripe_report).deliver_later
           end

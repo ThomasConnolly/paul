@@ -20,6 +20,7 @@ protect_from_forgery except: :webhook
       payment_method_types: ['card'],
       line_items: [{
         currency: 'usd',
+        metadata: {class: 'Donation'},
         amount: @donation.amount,
         quantity: 1,
         name: "St. Paul's Episcopal Church",

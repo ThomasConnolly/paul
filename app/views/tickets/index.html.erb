@@ -6,10 +6,10 @@
 
 <h2>Live stream customers</h2>
   <% @tickets.where.not(customer_id: nil).where(event_id: 8).each do |t| %>
-    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= t.quantity %> tickets, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
+    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= pluralize(t.quantity, 'ticket') %>, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
     <% end %>
 
 <h2>In-person customers</h2>
   <% @tickets.where.not(customer_id: nil).where(event_id: 9).each do |t| %>
-    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= t.quantity %> tickets, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
+    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= pluralize(t.quantity, 'ticket') %>, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
   <% end %>

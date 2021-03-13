@@ -1,8 +1,9 @@
 <h1>Ticket Call List</h1>
 
-<p>Running count of tickets sold: <br>Streaming the show:<%= @tickets.where.not("customer_id": nil).where(event_id: 8).sum(:quantity) %><br>
-  In-person tickets: <%= @tickets.where.not("customer_id": nil).where(event_id: 9).sum(:quantity) %><br>
-
+<p>Running count of tickets sold: </p>
+<p>Streaming the show:<%= @tickets.where.not("customer_id": nil).where(event_id: 8).sum(:quantity) %></p>
+<p>In-person tickets: <%= @tickets.where.not("customer_id": nil).where(event_id: 9).sum(:quantity) %></p>
+<Script></Script>
 
 <h2>Live stream customers</h2>
   <% @tickets.where.not(customer_id: nil).where(event_id: 8).each do |t| %>

@@ -30731,3 +30731,296 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 87ms (Views: 41.6ms | ActiveRecord: 11.9ms | Allocations: 80359)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/tom/paul/config/environment.rb:7)
+Started GET "/" for 127.0.0.1 at 2021-03-13 11:36:43 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.1ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 10565)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1449)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (2.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 50.1ms | Allocations: 23249)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 77.7ms | Allocations: 37408)
+Completed 200 OK in 115ms (Views: 63.7ms | ActiveRecord: 27.5ms | Allocations: 53897)
+
+
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e21b34b9-ed51-4fcf-bbc0-51c9df339bb8) to Async(default) with arguments: "MemberMailer", "lent2021_pathway", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8] Performing ActionMailer::MailDeliveryJob (Job ID: e21b34b9-ed51-4fcf-bbc0-51c9df339bb8) from Async(default) enqueued at 2021-03-13T16:37:54Z with arguments: "MemberMailer", "lent2021_pathway", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8]   [1m[35m (1.7ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8]   Rendering member_mailer/lent2021_pathway.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8]   Rendered member_mailer/lent2021_pathway.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 432)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8]   Rendered layout layouts/mailer.html.erb (Duration: 1.8ms | Allocations: 1800)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8] MemberMailer#lent2021_pathway: processed outbound mail in 25.8ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8] Delivered mail 604cea628f63e_52e81127416088@tom-G7.mail (90.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8] Date: Sat, 13 Mar 2021 11:37:54 -0500
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <604cea628f63e_52e81127416088@tom-G7.mail>
+Subject: Pathways, your parish newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_604cea628e0c7_52e811274159b7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_604cea628e0c7_52e811274159b7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+HTML Email
+
+Newsletter 
+( https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.pdf )
+
+
+Click on the image to read or download and print your
+copy of Pathways
+----==_mimepart_604cea628e0c7_52e811274159b7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0;" bgcolor="#cccccc">
+    
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Email</title>
+
+
+
+
+<center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 40px;">
+<table class="main" width="100%" style="border-spacing: 0; width: 100%; max-width: 600px; font-family: sans-serif; color: #4a4a4a; margin: 0 auto;" bgcolor="#ffffff">
+<!-- jpg of pathway -->
+  <tr>
+    <td class="img" style="padding: 0;">
+      <a href="https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.pdf"><img src="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.jpg" alt="Newsletter" width="600" style="max-width: 100%; border: 0;"></a>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding: 0;">
+      <table width="100%" style="border-spacing: 0;">
+        <tr>
+          <td style="padding: 15px;" align="center">
+            <p>Click on the image to read or download and print your 
+              copy of <em>Pathways</em></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+     
+  </center>
+</body>
+</html>
+
+----==_mimepart_604cea628e0c7_52e811274159b7--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e21b34b9-ed51-4fcf-bbc0-51c9df339bb8] Performed ActionMailer::MailDeliveryJob (Job ID: e21b34b9-ed51-4fcf-bbc0-51c9df339bb8) from Async(default) in 126.68ms
+Started GET "/pathways" for 127.0.0.1 at 2021-03-13 11:39:55 -0500
+Processing by PathwaysController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mRole Load (2.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 66.6ms | Allocations: 27770)
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1193)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 19.3ms | Allocations: 9356)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 333)
+  Rendered layout layouts/application.html.erb (Duration: 91.9ms | Allocations: 39566)
+Completed 200 OK in 95ms (Views: 79.2ms | ActiveRecord: 13.5ms | Allocations: 41578)
+
+
+Started GET "/pathways/new" for 127.0.0.1 at 2021-03-13 11:39:58 -0500
+Processing by PathwaysController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/new.html.erb within layouts/application
+  Rendered pathways/_form.html.erb (Duration: 25.7ms | Allocations: 9056)
+  Rendered pathways/new.html.erb within layouts/application (Duration: 28.3ms | Allocations: 9348)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1191)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 4.8ms | Allocations: 1943)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 324)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 13714)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.5ms | Allocations: 14371)
+
+
+Started POST "/pathways" for 127.0.0.1 at 2021-03-13 11:41:48 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PathwaysController#create as HTML
+  Parameters: {"authenticity_token"=>"Bx2G4rGyGZKVJuDK4NnjXR1sgU_c-nb9_cBYKlSZ9oUi-_Hn13Y45VFC-l7Qb1tCf-NMDkSutqmKBzO56miyOg", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf", "pubdate"=>"2021-03-13"}, "commit"=>"Add a pathway"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pathways_controller.rb:19:in `create'
+  [1m[36mPathway Create (1.7ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.jpg"], ["pubdate", "2021-03-13"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"], ["created_at", "2021-03-13 16:41:48.448460"], ["updated_at", "2021-03-13 16:41:48.448460"]]
+  ↳ app/controllers/pathways_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pathways_controller.rb:19:in `create'
+Redirected to http://localhost:5000/pathways
+Completed 302 Found in 19ms (ActiveRecord: 6.5ms | Allocations: 21199)
+
+
+Started GET "/pathways" for 127.0.0.1 at 2021-03-13 11:41:48 -0500
+Processing by PathwaysController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 16]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 29736)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1451)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 13.0ms | Allocations: 11008)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 44335)
+Completed 200 OK in 68ms (Views: 56.5ms | ActiveRecord: 9.6ms | Allocations: 46427)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-13 11:42:00 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 8422)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1192)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 1923)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 12772)
+Completed 200 OK in 36ms (Views: 15.3ms | ActiveRecord: 7.8ms | Allocations: 23319)
+
+

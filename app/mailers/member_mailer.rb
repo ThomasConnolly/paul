@@ -19,6 +19,14 @@ class MemberMailer < ApplicationMailer
     )
   end
 
+  def pathways_link(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"
+    mail(
+      subject: 'Trouble getting Pathways?'
+    )
+  end
+
   def lent2021_pathway(member)
     @member = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"

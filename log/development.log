@@ -31024,3 +31024,507 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 36ms (Views: 15.3ms | ActiveRecord: 7.8ms | Allocations: 23319)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/" for 127.0.0.1 at 2021-03-15 20:19:29 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (1.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 10539)
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 1449)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (3.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 71.7ms | Allocations: 23249)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 107.5ms | Allocations: 37382)
+Completed 200 OK in 173ms (Views: 88.6ms | ActiveRecord: 41.2ms | Allocations: 53877)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/tom/paul/config/environment.rb:7)
+  [1m[35m (21.4ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering member_mailer/pathways_link.html.erb within layouts/mailer
+  Rendered member_mailer/pathways_link.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 248)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 427)
+MemberMailer#pathways_link: processed outbound mail in 49.6ms
+Delivered mail 604ffae9b3d6c_8b4824e09821@tom-G7.mail (55.2ms)
+Date: Mon, 15 Mar 2021 20:25:13 -0400
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <604ffae9b3d6c_8b4824e09821@tom-G7.mail>
+Subject: Trouble getting Pathways?
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_604ffae9b2479_8b4824e0981d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_604ffae9b2479_8b4824e0981d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+HTML Email
+
+Newsletter 
+( https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg )
+
+
+If the link sent to you did not allow you to view the
+new Pathways, please use this one. Just click on the image above.
+----==_mimepart_604ffae9b2479_8b4824e0981d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0;" bgcolor="#cccccc">
+    
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Email</title>
+
+
+
+
+<center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 40px;">
+<table class="main" width="100%" style="border-spacing: 0; width: 100%; max-width: 600px; font-family: sans-serif; color: #4a4a4a; margin: 0 auto;" bgcolor="#ffffff">
+<!-- jpg of pathway -->
+  <tr>
+    <td class="img" style="padding: 0;">
+      <a href="https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg"><img src="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf" alt="Newsletter" width="600" style="max-width: 100%; border: 0;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0;">
+      <table width="100%" style="border-spacing: 0;">
+        <tr>
+          <td style="padding: 15px;" align="center">
+            <p>If the link sent to you did not allow you to view the new <em>Pathways,</em> please use this one. Just click on the image above.
+              </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+     
+  </center>
+</body>
+</html>
+
+----==_mimepart_604ffae9b2479_8b4824e0981d--
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering member_mailer/pathways_link.html.erb within layouts/mailer
+  Rendered member_mailer/pathways_link.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 4)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.3ms | Allocations: 74)
+MemberMailer#pathways_link: processed outbound mail in 2.9ms
+Delivered mail 6050042157719_8b4824e098551@tom-G7.mail (67.9ms)
+Date: Mon, 15 Mar 2021 21:04:33 -0400
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <6050042157719_8b4824e098551@tom-G7.mail>
+Subject: Trouble getting Pathways?
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_60500421564be_8b4824e09842a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_60500421564be_8b4824e09842a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+HTML Email
+
+Newsletter 
+( https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg )
+
+
+If the link sent to you did not allow you to view the
+new Pathways, please use this one. Just click on the image above.
+----==_mimepart_60500421564be_8b4824e09842a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0;" bgcolor="#cccccc">
+    
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Email</title>
+
+
+
+
+<center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 40px;">
+<table class="main" width="100%" style="border-spacing: 0; width: 100%; max-width: 600px; font-family: sans-serif; color: #4a4a4a; margin: 0 auto;" bgcolor="#ffffff">
+<!-- jpg of pathway -->
+  <tr>
+    <td class="img" style="padding: 0;">
+      <a href="https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg"><img src="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf" alt="Newsletter" width="600" style="max-width: 100%; border: 0;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0;">
+      <table width="100%" style="border-spacing: 0;">
+        <tr>
+          <td style="padding: 15px;" align="center">
+            <p>If the link sent to you did not allow you to view the new <em>Pathways,</em> please use this one. Just click on the image above.
+              </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+     
+  </center>
+</body>
+</html>
+
+----==_mimepart_60500421564be_8b4824e09842a--
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering member_mailer/pathways_link.html.erb within layouts/mailer
+  Rendered member_mailer/pathways_link.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 4)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.8ms | Allocations: 74)
+MemberMailer#pathways_link: processed outbound mail in 10.5ms
+Delivered mail 605005471d268_8b4824e0988f7@tom-G7.mail (50.5ms)
+Date: Mon, 15 Mar 2021 21:09:27 -0400
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <605005471d268_8b4824e0988f7@tom-G7.mail>
+Subject: Trouble getting Pathways?
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_605005471c0c2_8b4824e098752";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_605005471c0c2_8b4824e098752
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+HTML Email
+
+Newsletter 
+( https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg )
+
+
+If the link sent to you did not allow you to view the
+new Pathways, please use this one. Just click on the image above.
+----==_mimepart_605005471c0c2_8b4824e098752
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0;" bgcolor="#cccccc">
+    
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Email</title>
+
+
+
+
+<center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 40px;">
+<table class="main" width="100%" style="border-spacing: 0; width: 100%; max-width: 600px; font-family: sans-serif; color: #4a4a4a; margin: 0 auto;" bgcolor="#ffffff">
+<!-- jpg of pathway -->
+  <tr>
+    <td class="img" style="padding: 0;">
+      <a href="https://cloudinary.com/console/lui/media_library#/dialog/image/upload/lentSm2021_ska6qh.jpg"><img src="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf" alt="Newsletter" width="600" style="max-width: 100%; border: 0;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0;">
+      <table width="100%" style="border-spacing: 0;">
+        <tr>
+          <td style="padding: 15px;" align="center">
+            <p>If the link sent to you did not allow you to view the new <em>Pathways,</em> please use this one. Just click on the image above.
+              </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+     
+  </center>
+</body>
+</html>
+
+----==_mimepart_605005471c0c2_8b4824e098752--
+
+DEPRECATION WARNING: Initialization autoloaded the constant ActionText::ContentHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /home/tom/paul/config/environment.rb:7)
+Started GET "/" for 127.0.0.1 at 2021-03-15 21:10:23 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_eve"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "christmas_day"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "tgiving_coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "day_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:14:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:15:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:16:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "thanksgiving_bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:17:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:18:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:107
+  Rendered home/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 17073)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1766)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:3
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 30.7ms | Allocations: 30577)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 49.1ms | Allocations: 53114)
+Completed 200 OK in 96ms (Views: 43.6ms | ActiveRecord: 17.5ms | Allocations: 90910)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering member_mailer/pathways_link.html.erb within layouts/mailer
+  Rendered member_mailer/pathways_link.html.erb within layouts/mailer (Duration: 11.1ms | Allocations: 2201)
+  Rendered layout layouts/mailer.html.erb (Duration: 11.2ms | Allocations: 2264)
+MemberMailer#pathways_link: processed outbound mail in 16.7ms
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering member_mailer/pathways_link.html.erb within layouts/mailer
+  Rendered member_mailer/pathways_link.html.erb within layouts/mailer (Duration: 8.5ms | Allocations: 6846)
+  Rendered layout layouts/mailer.html.erb (Duration: 8.9ms | Allocations: 7015)
+MemberMailer#pathways_link: processed outbound mail in 11.2ms
+Delivered mail 60500681c36f9_8b4824e099145@tom-G7.mail (49.6ms)
+Date: Mon, 15 Mar 2021 21:14:41 -0400
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <60500681c36f9_8b4824e099145@tom-G7.mail>
+Subject: Trouble getting Pathways?
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_60500681c24e8_8b4824e0990f4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_60500681c24e8_8b4824e0990f4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+HTML Email
+
+
+( https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf )
+
+
+If the link sent to you did not allow you to view the
+new Pathways, please use this one. Just click on the image above.
+----==_mimepart_60500681c24e8_8b4824e0990f4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0;" bgcolor="#cccccc">
+    
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Email</title>
+
+
+
+
+<center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 40px;">
+<table class="main" width="100%" style="border-spacing: 0; width: 100%; max-width: 600px; font-family: sans-serif; color: #4a4a4a; margin: 0 auto;" bgcolor="#ffffff">
+<!-- jpg of pathway -->
+  <tr>
+    <td class="img" style="padding: 0;">
+      <a href="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"><img width="550" src="https://res-1.cloudinary.com/saintpaulsnaples-org/image/upload/lentSm2021_ska6qh.jpg" style="border: 0;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0;">
+      <table width="100%" style="border-spacing: 0;">
+        <tr>
+          <td style="padding: 15px;" align="center">
+            <p>If the link sent to you did not allow you to view the new <em>Pathways,</em> please use this one. Just click on the image above.
+              </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+     
+  </center>
+</body>
+</html>
+
+----==_mimepart_60500681c24e8_8b4824e0990f4--
+

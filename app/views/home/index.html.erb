@@ -6,21 +6,26 @@
   </div>
 </div>
 <div class=row>
-  <%= cl_image_tag("JoePhyllisAshes_m9orei.jpg", class: "float-left mr-3", width: "47%", ) %>
-  <%= cl_image_tag("BarbaraMAshesz_zcddwy.jpg", class: "float-right ml-3", width: "47%") %>  
-  <p>Parishioners Joe and Phyllis Tracy, left, and Barbara Metcalfe, right, were drivethrough recipients on Ash Wednesday</p>
-  <h2>Lent begins with a dusting</h2>
-  <p>
-  Ashes and sackcloth were used in Old Testament times to symbolize our sinfulness and mortality. As Christian liturgy evolved, into the Middle Ages, the priest would sprinkle a small amount on the head of each person. It's unknown when the practice of forming a cross&mdash;or sometimes a smudge&mdash;took root. This year, because of the pandemic, priests of our diocese sprinkled  ashes. While ashes are optional, the thoughts and prayers are a powerful reminder of the penetential season of Lent, 40 days before Easter (subtracting Sundays, the day of resurrection).</p>  
-</div>  
-<div class="row">
-  <div class="col-md-8 col-sm-12 main-body">
+  <div class= "col-md-8 col-sm-12 main-body">
+
+  <%= cl_image_tag("HolyWeekGraphic_nw8m4b.jpg", width: "99%") %>
+  
     <h1>We follow Jesus Christ...</h1>
-      <h2>...whether we stay at home or join a small number of people in public worship</h2>
+      <h2>...whether we stay at home or join a limited number of people in public worship</h2>
         <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid pr-2") %>
-          <p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.) We must turn away folks if we reach that guideline number.</p>
-          <p>Please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %></p> 
+          <p>Above all, we pray you will stay safe. If you desire to join a maximum of 115 persons in our sanctuary Sunday morning, you must wear a mask and maintain physical distancing per the CDC guidelines. (Pews are so marked.)</p>
+          <p>Otherwise, please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %></p> 
       <div class="clearall"></div>
+      <h2>Holy Thursday</h2>
+      <p><em><strong> 6 p.m. April 1</strong></em> Our Last Supper with Jesus. Following the Eucharistic feast, the altar will be stripped bare and the body and blood of our savior will be removed to the chapel. </p>
+      <h2>Good Friday</h2>
+      <p><em><strong>Noon</strong></em> we reflect on the the passion of our Lord, who takes away the sins of the world. Our Haitian brothers and sisters will gather in Trinity Hall for their service in Creole, noon to 3 p.m. Because of Covid, the Stations of the Cross will be virtual only. <%= link_to "Click here for this powerful reflection on the pasion and death of Jesus, the Christ.", "https://youtu.be/4KjGdrQmKoM" %></p>
+      <h2>Holy Saturday</h2>
+      <p><em><strong>9 a.m.</strong></em> Reflect with us in this brief morning service.</p>
+      <h2>Easter Vigil</h2>
+      <p><em><strong>8 p.m.</strong></em> A new light pierces the darkness of our universe and we recall our foundational teachings, the history of God's work in the world. </p>
+      <h2>Easter Sunday</h2>
+      <p><em><strong>9 a.m. </strong></em>The Lord is Risen!</p>
       <% if @bulletin.url.present? %>    
         <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime("%A, %b %d")}", "#{@bulletin.url}" %></strong></p>
       <% else %>

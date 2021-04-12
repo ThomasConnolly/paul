@@ -72,6 +72,17 @@ class UsersController < ApplicationController
 
   def edit; end
 
+  def delete_avatar
+    avatar = ActiveStorage::Attachment,find(params[:avatar_id])
+    if current_user == avatar.record || current_user.admin?
+      avatar.purge
+      redirect_back(fallback_location: request.referer)
+    else
+      redirect_to root_url, notice: "Not yours to delete!"
+    end
+  end
+
+  
   private
 
   def set_user

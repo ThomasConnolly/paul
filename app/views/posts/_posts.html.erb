@@ -2,28 +2,26 @@
   <h2>Here are the latest posts</h2>
     <p>Anyone can read these posts, but to create a post or to make a comment, you must be signed in.  <%= link_to "Click to sign in or register", new_user_registration_path %></p>
   <% @posts.each do |post| %>
-    <div class="mr-3 text-center float-left">
+    <div>
       <% if post.user.avatar.attached? %>
-        <%= image_tag post.user.avatar, width:"30%", class: "float-left" %>
+        <%= image_tag post.user.avatar, width:"30%", class: "float-left pr-3" %>
       <% else %>
         <% post.user_signed_in? %>
-        <h5><%= link_to "Click to add your photo", edit_user_path(post.user) %>
+        <h5><%= link_to "Click to add your photo", edit_user_path(post.user) %></h5>
       <% end %>
       <%= image_tag post.picture if post.picture.present? %>
-      <p class="list"><em><%= post.user.username.titleize %>::</em></p>
-      <p><%= post.content %></p>
+      <p><em><%= post.user.username.titleize %>::</em> &nbsp; <%= post.content %></p>
       <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. <%= pluralize(post.comments.count, "comment") %> </small> &nbsp; <span><small>
         <%= link_to "Show", post_path(post[:id]) %> |
         <% if current_user == post.user || user_signed_in? && current_user.has_role?(:admin) %>
           <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
           <%= link_to "Delete", post_path(post), 
-            method: :delete, data: { confirm: "Are you sure you want to 
-            delete the post?" }%> </small></span>
+            method: :delete, data: { confirm: "Are you sure you want to delete the post?" }%> </small></span>
         <% end %></p>
+        <div class="clearfix"></div>
+        <hr>
     </div>
-      <div class="clearall"></div>
-      <hr>
-        <% end %>
+  <% end %>
 </div>
       
 

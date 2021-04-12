@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 mt-5">
   <h1> Complete your profile </h1><br>
-    <% if current_user.avatar? %>
-      <%= image_tag current_user.avatar.variant(resize: '160x234',
-        class: "float-left") %> 
+    <% if @profile.user.avatar.attached? %>
+      <%= image_tag @profile.user.avatar, width: "60%", class: "image-center" %> 
     <% else %>
-      <%= link_to "Add or change your profile picture", edit_user_path(current_user) %>
-      <h3>Click to add<br>Your own picture</h3>
+      <%= link_to "Add profile picture", edit_user_path(current_user) %>
     <% end %>
+    <% if @profile.user.avatar.attached? %>
+      <%= link_to "Change your profile picture", edit_user_path(current_user) %>
+      <% end %>
 
   <h3 class="mt30">Everybody has a story...</h3>
     <p>...And we get to know one another by sharing our story. Look at the questions below and fill out the boxes you want to fill out. You can always come back to edit your profile.</p>

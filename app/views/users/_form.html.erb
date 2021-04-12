@@ -1,8 +1,8 @@
 <div class="mt-5"></div>
   <div class="row">
     <div class="col-md-4 offset-md-4">
-      <% if current_user.avatar.attached? %>
-        <%= image_tag current_user.avatar, width: "100%" %>
+      <% if @user.avatar.attached? %>
+        <%= url_for(@user.avatar, width: "100%") %>
       <% else %>
         <div class="border text-center">
           <h4>Your<br>Photo<br>Here</h4>

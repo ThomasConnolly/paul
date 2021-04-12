@@ -1311,6 +1311,13 @@ acorn@^7.0.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
+activestorage@^5.2.5:
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/activestorage/-/activestorage-5.2.5.tgz#433e58dbc8dfba28528ec9edfaa583dfa641e312"
+  integrity sha512-8wlhmeI74iUrC59uY9ksOrh9D7vZot+iJKSJY82V0Z7EKMu96qmvYvrd0JEiK4lAJI4iUqcKZOeAoR2dmNQccg==
+  dependencies:
+    spark-md5 "^3.0.0"
+
 agent-base@4, agent-base@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.3.0.tgz#8165f01c436009bccad0b1d122f05ed770efc6ee"

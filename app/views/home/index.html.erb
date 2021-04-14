@@ -80,9 +80,9 @@
         <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
       <% end %>
         <p><strong><%= link_to "Sunday coffee hour", "#{@coffee.url}" %> </strong></p> 
-     <!--   <p><strong>Bible studies</strong></p>
+   <p><strong>Bible studies (New as of this week: Paul's letter to the Ephesians)</strong></p>
          <p><strong><%= link_to "Tuesday bible study", "#{@day_bible.url}" %></strong></p>
-        <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p> -->
+        <p><strong><%= link_to "Wednesday evening bible study", "#{@evening_bible.url}" %></strong></p> 
         <p><strong><%= link_to "Friday wine time", "#{@wine.url}" %></strong></p>
         <%= link_to cl_image_tag("#{@pathway.image}", width: "99%"), "#{@pathway.link}" %>
         <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathway,</em> the parish newsletter.</p>

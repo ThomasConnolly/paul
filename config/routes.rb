@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :shots
+  resources :reserve_slots
   resources :surveys
   resources :thankfuls
   root to: 'home#index'
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
     get 'cancel', to: 'checkout_tickets#cancel', as: 'cancel'
     get 'success', to: 'checkout_tickets#success', as: 'success'
   end
+  resources :vaccinations, only: %i[new create index]
 
   resources :events do
     resources :tickets, only: %i[new show create update]

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vaccination schedule, May 1, 2021, St. Paul's Episcopal Church, Naples FL</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Last name</th>
+      <th>First name</th>
+      <th>Born</th>
+      <th>Email</th>
+      <th>Phone</th>
+      
+    
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shots.each do |shot| %>
+      <tr>
+        <td><%= shot.shot_time %></td>
+        <td><%= shot.last_name %></td>
+        <td><%= shot.first_name %></td>
+        <td><%= shot.dob %></td>
+        <td><%= shot.email %></td>
+        <td><%= shot.phone %></td>
+        
+        <td><%= link_to 'Show', shot %></td>
+        <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+        <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New reservation', new_shot_path %>

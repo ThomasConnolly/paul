@@ -1,0 +1,20 @@
+
+<%= bootstrap_form_for(@shot) do |f| %>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+  <div class="form-inputs">
+    <%= f.text_field :last_name %> <%= f.text_field :first_name %>
+    <%= f.text_field :email %>
+    <%= f.text_field :phone %>
+    <%= f.date_field :dob, as: :bootstrap_datepicker, label: "Date of birth" %>
+  </div>
+  <div class="honey">
+    <%= f.text_field :honey %>
+  </div>
+<h2>Please double check, especially your phone and email, before submitting.</h2>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>
+</div>

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby '2.7.2'
 
 gem 'actionmailer'
+gem 'activerecord-import'
 gem 'active_storage_validations'
 gem 'acts_as_list'
 gem 'amazing_print'

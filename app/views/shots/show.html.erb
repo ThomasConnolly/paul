@@ -6,10 +6,12 @@ Appointment time: <%= @shot.shot_time %>
 
 </p>
 
-<h2>Your appointment is for <%= @shot.shot_time %> on Saturday, May 1 at St. Paul's Episcopal Church. We have not been told which vaccine will be used. If for any reason you cannot make your appointment, please inform us at welcome@saintpaulsnaples.org so we may make room for someone else.<br>
+<h2>Your appointment is for <%= @shot.shot_time %> on Saturday, May 1 at St. Paul's Episcopal Church. We have not been told which vaccine will be used, and you may even have a chance to select between all of the approved labels. <br>
+  If for any reason you cannot make your appointment, please inform us at welcome@saintpaulsnaples.org so we may make room for someone else.<br>
 
 To expedite your visit, please <%= link_to "download and fill out the authorization document", "http://sarasota.floridahealth.gov/_files/_documents/2020/_documents/consent-form-12-292020.pdf" %> and bring it with you to your appointment. <br>
 Here are links to that document in <%= link_to "Spanish", "http://sarasota.floridahealth.gov/_files/_documents/2020/_documents/moderna-vaccine-screening-and-consent-form-spanish.pdf" %> and <%= link_to "Creole", "http://sarasota.floridahealth.gov/_files/_documents/2020/_documents/moderna-vaccine-screening-and-consent-form-creole.pdf" %>
+<p>We've been told that you may have to fill out a fresh concent form when you get here, because the state wishes to handle only forms printed on both sides. So perhaps you may want to merely download and familiarize yourself with the requirements and fields on the form.</p>
 </h2>
 <br>
 <h2><%= link_to "Click here to make another appointment for your party", new_shot_path %></h2>

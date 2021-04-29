@@ -12,6 +12,7 @@ require 'action_text/engine'
 require 'action_view/railtie'
 require 'action_cable/engine'
 require 'rails/test_unit/railtie'
+require 'csv'
 
 
   # Require the gems listed in Gemfile, including any gems

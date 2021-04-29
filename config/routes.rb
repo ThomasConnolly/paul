@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  root to: 'home#index'
+
   resources :shots
-  resources :reserve_slots
   resources :surveys
   resources :thankfuls
-  root to: 'home#index'
+  
   post '/webhook_events/:source', to: 'webhook_events#create'
 
   resources :donations
@@ -55,7 +56,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :todo_list
+  resources :todo_lists
   resources :formation_talks, only: %i[show index edit new]
   resources :marriage_talks, only: %i[new show index edit]
 

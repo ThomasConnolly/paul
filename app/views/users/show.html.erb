@@ -1,9 +1,10 @@
-<h3>User</h3>
+<div class="col-md-4 offset-md-4"><h3>User</h3>
 <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar %> 
+  <%= image_tag(@user.avatar, width: "80%", class: "center-image") %> 
 <% else %>
   <h5>Upload a profile picture</h5>
-  <%= render partial 'form' %>
+  <%= render 'form' %>
 <% end %>
 <p> <%= @user.username.titleize %></p>  
 <p><%= @user.email %></p>
+</div>

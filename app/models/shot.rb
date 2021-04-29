@@ -83,7 +83,20 @@ class Shot < ApplicationRecord
     save!
   end
 
-  def set_status
-    self.status = "reserved"
+    def set_status
+      self.status = "reserved"
+    end
+
+    def self.to_csv
+      attributes = %w{time last_name first_name phone dob }
+
+      CSV.generate(headers: true) do |csv|
+        csv << attributes
+        
+        all.each do |shot|
+          csv << shot.attributes.values_at(*attributes)
+      end
+    end
   end
+
 end

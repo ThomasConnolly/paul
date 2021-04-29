@@ -8,6 +8,11 @@ class ShotsController < ApplicationController
   # GET /shots or /shots.json
   def index
     @shots = Shot.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @shots.to_csv, filename: "StPaul_vaccinations.csv" }
+    end
   end
 
   # GET /shots/1 or /shots/1.json

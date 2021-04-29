@@ -55,6 +55,7 @@ class User < ApplicationRecord
   has_many :vreports
   validates_confirmation_of :password
   has_one_attached :avatar, dependent: :destroy
+  has_many_attached :photos
   validates :avatar, content_type: [:png, :jpg,]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy

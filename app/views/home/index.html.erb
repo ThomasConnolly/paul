@@ -1,10 +1,13 @@
 <div class="clearfix"></div>
+<div><h1 class="biggest text-center">Covid shots tomorrow</h1>
+<h2 class="text-center mb-5"><%= link_to "Click here to register", new_shot_path %></h2></div>
 <div class="container">
+  
   <div class="d-flex justify-content-center mb-5">
     <%= link_to "Your gifts, of talent and treasure, are appreciated. Click here to donate", 
     new_donation_path, class: "btn btn-primary btn-lg text-white" %>
   </div>
-</div>
+</div> <!-- container -->
 <div class=row>
   <div class= "col-md-8 col-sm-12 main-body">
 
@@ -44,10 +47,10 @@
         <p>Wednesdays 6:30 p.m., <%= link_to "click here", "#{@evening_bible.url}" %></p> -->
 
         <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block", width: "40%") %>
-        <h2 class="mt3">Farmers' Market last Saturday</h2>
-        <%= cl_image_tag("maskRequired_nwpodl.png", width: 430, crop: "scale", class: "float-right pl-3") %>
-        <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and introduce yourself to new friends and have a hot dog, on us! The market is open Saturdays from 8 a.m. to noon. Browse and buy books, jewelery and lots of produce. Masks and physical distancing are required. The final day for this season is this Saturday, April 10. </p> 
-        <p>For more information on the market, <%= link_to "click here.",
+        <h2 class="mt3">Home of the great Farmers' Market</h2>
+        <p>(The market is closed for the summer, and will reopen in November). </p>
+        <!-- <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and introduce yourself to new friends and have a hot dog, on us! The market is open Saturdays from 8 a.m. to noon. Browse and buy books, jewelery and lots of produce. Masks and physical distancing are required. </p>  -->
+        <p>For more information about the market, <%= link_to "click here.",
         markets_index_path %> </p>
         <div class="clearall"></div>      
         <h2 class="mt-3">Supporters of these children</h2>
@@ -108,16 +111,16 @@
         </div><!--  end  newsfeed -->
   </div><!-- sidebar -->
 </div><!-- row -->
-
-<div class="modal fade modal-lg" id="myModal">
-  <div class="modal-dialog">
+<!-- 
+<div class="modal fade modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h1 class="modal-title">Sign up for vaccine shots, May 1 </h1>
+      <h1 class="modal-title" id="myModalLabel">Sign up for vaccine shots, May 1 </h1>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;</button>
       </div>
       <div class="modal-body">
-        <p>The state is providing us with vaccine and medical personnel for a Covid-19 vaccination day, May 1. <%= link_to "Click here to register", new_shot_path %> The brand is Johnson & Johnson, the "one and done" shot.
+        <p>The state is providing us with vaccine and medical personnel for a Covid-19 vaccination day, May 1. <%= link_to "Click here to register for your shot", new_shot_path %>
          </p>
       </div>
       <div class="modal-footer">
@@ -125,6 +128,4 @@
       </div>
     </div>
   </div>
-</div>
-
-  
+</div> -->

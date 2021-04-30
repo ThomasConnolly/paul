@@ -22,7 +22,9 @@ import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 Rails.start()
 Turbolinks.start()
+import * as ActiveStorage from "@rails/activestorage"
 ActiveStorage.start()
+
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()

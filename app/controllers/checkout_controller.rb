@@ -20,7 +20,6 @@ protect_from_forgery except: :webhook
       payment_method_types: ['card'],
       line_items: [{
         currency: 'usd',
-        metadata: {class: 'Donation'},
         amount: @donation.amount,
         quantity: 1,
         name: "St. Paul's Episcopal Church",
@@ -28,6 +27,7 @@ protect_from_forgery except: :webhook
       }],
       client_reference_id: @donation.id,
       customer: @customer,
+      mode: 'payment',
       success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url,
     )

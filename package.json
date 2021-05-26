@@ -23,6 +23,7 @@
     "core-js": "^3.7.0",
     "css-loader": "^3.4.2",
     "data-confirm-modal": "^1.6.2",
+    "dns-packet": "^5.2.4",
     "dot-prop": "^6.0.0",
     "elliptic": "^6.5.3",
     "email": "^0.2.6",

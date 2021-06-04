@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :todo_lists do
+    resources :todo_items
+  end
+  namespace :todo_list do
+    resources :todo_items
+  end
   root to: 'home#index'
 
   resources :shots
@@ -56,7 +62,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :todo_lists
   resources :formation_talks, only: %i[show index edit new]
   resources :marriage_talks, only: %i[new show index edit]
 

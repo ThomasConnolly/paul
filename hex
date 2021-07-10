@@ -1,0 +1,539 @@
+[1m[1;34mconstants[0m[0m: [0;33mImport[0m  [0;34mPhotosAttachmentsAssociationExtension[0m
+[1m[1;34mObject.methods[0m[0m: yaml_tag
+[1m[1;34mActiveModel::Naming#methods[0m[0m: model_name
+[1m[1;34mActiveSupport::Benchmarkable#methods[0m[0m: benchmark
+[1m[1;34mActiveSupport::DescendantsTracker#methods[0m[0m: 
+  descendants  direct_descendants  subclasses
+[1m[1;34mActiveRecord::ConnectionHandling#methods[0m[0m: 
+  clear_active_connections!              connection_db_config          
+  clear_all_connections!                 connection_pool               
+  clear_cache!                           connection_specification_name 
+  clear_query_caches_for_current_thread  connection_specification_name=
+  clear_reloadable_connections!          connects_to                   
+  connected?                             flush_idle_connections!       
+  connected_to                           lookup_connection_handler     
+  connected_to?                          postgresql_connection         
+  connected_to_many                      primary_class?                
+  connecting_to                          remove_connection             
+  connection                             retrieve_connection           
+  connection_config                      while_preventing_writes       
+[1m[1;34mActiveRecord::QueryCache::ClassMethods#methods[0m[0m: cache  uncached
+[1m[1;34mActiveRecord::Querying#methods[0m[0m: 
+  and                 find_by_sql            last              references     
+  annotate            find_each              last!             reorder        
+  any?                find_in_batches        left_joins        reselect       
+  average             find_or_create_by      left_outer_joins  rewhere        
+  calculate           find_or_create_by!     limit             second         
+  count               find_or_initialize_by  lock              second!        
+  count_by_sql        first                  many?             second_to_last 
+  create_or_find_by   first!                 maximum           second_to_last!
+  create_or_find_by!  first_or_create        merge             select         
+  create_with         first_or_create!       minimum           strict_loading 
+  delete_all          first_or_initialize    none              sum            
+  delete_by           forty_two              none?             take           
+  destroy_all         forty_two!             offset            take!          
+  destroy_by          fourth                 one?              third          
+  distinct            fourth!                only              third!         
+  eager_load          from                   optimizer_hints   third_to_last  
+  except              group                  or                third_to_last! 
+  exists?             having                 order             touch_all      
+  extending           ids                    pick              unscope        
+  extract_associated  in_batches             pluck             update_all     
+  fifth               includes               preload           where          
+  fifth!              joins                  readonly        
+[1m[1;34mActiveModel::Translation#methods[0m[0m: human_attribute_name
+[1m[1;34mActiveRecord::Translation#methods[0m[0m: i18n_scope  lookup_ancestors
+[1m[1;34mActiveRecord::DelegatedType#methods[0m[0m: delegated_type
+[1m[1;34mActiveRecord::Explain#methods[0m[0m: collecting_queries_for_explain  exec_explain
+[1m[1;34mActiveRecord::Enum#methods[0m[0m: enum
+[1m[1;34mActiveRecord::Delegation::DelegateCache#methods[0m[0m: 
+  generate_relation_method            relation_delegate_class
+  initialize_relation_delegate_cache
+[1m[1;34mActiveRecord::Aggregations::ClassMethods#methods[0m[0m: composed_of
+[1m[1;34mActiveRecord::Core::ClassMethods#methods[0m[0m: 
+  ===                       filter_attributes   generated_association_methods
+  _internal?                filter_attributes=  initialize_find_by_cache     
+  arel_attribute            find                inspect                      
+  arel_table                find_by             predicate_builder            
+  cached_find_by_statement  find_by!            type_caster                  
+[1m[1;34mActiveRecord::Persistence::ClassMethods#methods[0m[0m: 
+  _delete_record  create   destroy  insert_all   update    
+  _insert_record  create!  insert   insert_all!  upsert    
+  _update_record  delete   insert!  instantiate  upsert_all
+[1m[1;34mActiveRecord::ReadonlyAttributes::ClassMethods#methods[0m[0m: 
+  attr_readonly  readonly_attribute?  readonly_attributes
+[1m[1;34mActiveRecord::ModelSchema::ClassMethods#methods[0m[0m: 
+  _default_attributes     ignored_columns           reset_table_name       
+  attribute_types         ignored_columns=          sequence_name          
+  attributes_builder      inheritance_column        sequence_name=         
+  column_defaults         inheritance_column=       symbol_column_to_string
+  column_for_attribute    next_sequence_value       table_exists?          
+  column_names            prefetch_primary_key?     table_name             
+  columns                 protected_environments    table_name=            
+  columns_hash            protected_environments=   type_for_attribute     
+  content_columns         quoted_table_name         yaml_encoder           
+  full_table_name_prefix  reset_column_information
+  full_table_name_suffix  reset_sequence_name     
+[1m[1;34mActiveRecord::Inheritance::ClassMethods#methods[0m[0m: 
+  abstract_class   base_class?                   polymorphic_class_for
+  abstract_class=  descends_from_active_record?  polymorphic_name     
+  abstract_class?  finder_needs_type_condition?  sti_class_for        
+  base_class       new                           sti_name             
+[1m[1;34mActiveRecord::Scoping::ClassMethods#methods[0m[0m: 
+  current_scope  current_scope=  scope_attributes
+[1m[1;34mActiveRecord::Scoping::Default::ClassMethods#methods[0m[0m: 
+  before_remove_const  scope_attributes?  unscoped
+[1m[1;34mActiveRecord::Scoping::Named::ClassMethods#methods[0m[0m: 
+  all  default_extensions  default_scoped  scope  scope_for_association
+[1m[1;34mActiveRecord::Sanitization::ClassMethods#methods[0m[0m: 
+  disallow_raw_sql!            sanitize_sql_for_conditions     
+  sanitize_sql                 sanitize_sql_for_order          
+  sanitize_sql_array           sanitize_sql_hash_for_assignment
+  sanitize_sql_for_assignment  sanitize_sql_like               
+[1m[1;34mActiveModel::Conversion::ClassMethods#methods[0m[0m: _to_partial_path
+[1m[1;34mActiveRecord::Integration::ClassMethods#methods[0m[0m: collection_cache_key  to_param
+[1m[1;34mActiveModel::Validations::ClassMethods#methods[0m[0m: 
+  clear_validators!  validates   validates_each  validators   
+  validate           validates!  validates_with  validators_on
+[1m[1;34mActiveModel::Callbacks#methods[0m[0m: define_model_callbacks
+[1m[1;34mActiveSupport::Callbacks::ClassMethods#methods[0m[0m: 
+  __update_callbacks  normalize_callback_params  set_callback 
+  define_callbacks    reset_callbacks            skip_callback
+[1m[1;34mActiveModel::Validations::HelperMethods#methods[0m[0m: 
+  validates_acceptance_of    validates_exclusion_of  validates_inclusion_of
+  validates_confirmation_of  validates_format_of   
+[1m[1;34mActiveRecord::Validations::ClassMethods#methods[0m[0m: 
+  validates_absence_of  validates_numericality_of  validates_uniqueness_of
+  validates_associated  validates_presence_of    
+  validates_length_of   validates_size_of        
+[1m[1;34mActiveRecord::CounterCache::ClassMethods#methods[0m[0m: 
+  decrement_counter  increment_counter  reset_counters
+[1m[1;34mActiveRecord::Attributes::ClassMethods#methods[0m[0m: attribute  load_schema!
+[1m[1;34mActiveRecord::Locking::Optimistic::ClassMethods#methods[0m[0m: 
+  locking_column   locking_enabled?      update_counters
+  locking_column=  reset_locking_column
+[1m[1;34mActiveModel::AttributeMethods::ClassMethods#methods[0m[0m: 
+  alias_attribute   attribute_method_affix   define_attribute_method
+  attribute_alias   attribute_method_prefix
+  attribute_alias?  attribute_method_suffix
+[1m[1;34mActiveRecord::AttributeMethods::ClassMethods#methods[0m[0m: 
+  _has_attribute?           has_attribute?              
+  attribute_method?         inherited                   
+  attribute_names           initialize_generated_modules
+  dangerous_class_method?   method_defined_within?      
+  define_attribute_methods  undefine_attribute_methods  
+[1m[1;34mActiveRecord::AttributeMethods::PrimaryKey::ClassMethods#methods[0m[0m: 
+  dangerous_attribute_method?           primary_key         reset_primary_key
+  get_primary_key                       primary_key=      
+  instance_method_already_implemented?  quoted_primary_key
+[1m[1;34mActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods#methods[0m[0m: 
+  define_attribute
+[1m[1;34mActiveRecord::AttributeMethods::Serialization::ClassMethods#methods[0m[0m: serialize
+[1m[1;34mActiveModel::Validations::Callbacks::ClassMethods#methods[0m[0m: 
+  after_validation  before_validation
+[1m[1;34mActiveRecord::Timestamp::ClassMethods#methods[0m[0m: 
+  all_timestamp_attributes_in_model       
+  current_time_from_proper_timezone       
+  timestamp_attributes_for_create_in_model
+  timestamp_attributes_for_update_in_model
+  touch_attributes_with_time              
+[1m[1;34mActiveRecord::Associations::ClassMethods#methods[0m[0m: 
+  belongs_to  has_and_belongs_to_many  has_many  has_one
+[1m[1;34mActiveModel::SecurePassword::ClassMethods#methods[0m[0m: has_secure_password
+[1m[1;34mActiveRecord::NestedAttributes::ClassMethods#methods[0m[0m: 
+  accepts_nested_attributes_for
+[1m[1;34mActiveRecord::Transactions::ClassMethods#methods[0m[0m: 
+  after_commit         after_destroy_commit  after_save_commit    before_commit
+  after_create_commit  after_rollback        after_update_commit  transaction  
+[1m[1;34mActiveRecord::NoTouching::ClassMethods#methods[0m[0m: no_touching
+[1m[1;34mActiveRecord::Reflection::ClassMethods#methods[0m[0m: 
+  _reflect_on_association      reflect_on_all_associations         
+  clear_reflections_cache      reflect_on_all_autosave_associations
+  reflect_on_aggregation       reflect_on_association              
+  reflect_on_all_aggregations  reflections                         
+[1m[1;34mActiveRecord::Store::ClassMethods#methods[0m[0m: 
+  _store_accessors_module  store  store_accessor  stored_attributes
+[1m[1;34mActiveRecord::SecureToken::ClassMethods#methods[0m[0m: 
+  generate_unique_secure_token  has_secure_token
+[1m[1;34mActiveRecord::SignedId::ClassMethods#methods[0m[0m: 
+  combine_signed_id_purposes  find_signed!        signed_id_verifier=
+  find_signed                 signed_id_verifier
+[1m[1;34mActiveRecord::Suppressor::ClassMethods#methods[0m[0m: suppress
+[1m[1;34mActiveRecord::Acts::List::ClassMethods#methods[0m[0m: acts_as_list
+[1m[1;34mRailslove::Acts::Birthday::ClassMethods#methods[0m[0m: acts_as_birthday
+[1m[1;34mOrmAdapter::ToAdapter#methods[0m[0m: to_adapter
+[1m[1;34mRolify#methods[0m[0m: 
+  adapter            resourcify   role_join_table_name   rolify        
+  adapter=           role_class   role_join_table_name=  scopify       
+  resource_adapter   role_cname   role_table_name        strict_rolify 
+  resource_adapter=  role_cname=  role_table_name=       strict_rolify=
+[1m[1;34mDevise::Models#methods[0m[0m: devise  devise_modules_hook!
+[1m[1;34mActiveStorage::Attached::Model::ClassMethods#methods[0m[0m: 
+  has_many_attached  has_one_attached
+[1m[1;34mActiveStorage::Reflection::ActiveRecordExtensions::ClassMethods#methods[0m[0m: 
+  reflect_on_all_attachments  reflect_on_attachment
+[1m[1;34mActionText::Attribute::ClassMethods#methods[0m[0m: has_rich_text
+[1m[1;34mActiveRecord::Import::Connection#methods[0m[0m: establish_connection
+[1m[1;34mActiveRecord::Base.methods[0m[0m: 
+  __callbacks=                                     
+  __callbacks?                                     
+  _attr_readonly                                   
+  _attr_readonly=                                  
+  _attr_readonly?                                  
+  _before_commit_callbacks                         
+  _before_commit_callbacks=                        
+  _commit_callbacks                                
+  _commit_callbacks=                               
+  _create_callbacks                                
+  _create_callbacks=                               
+  _destroy_callbacks                               
+  _destroy_callbacks=                              
+  _find_callbacks                                  
+  _find_callbacks=                                 
+  _initialize_callbacks                            
+  _initialize_callbacks=                           
+  _reflections=                                    
+  _reflections?                                    
+  _rollback_callbacks                              
+  _rollback_callbacks=                             
+  _save_callbacks                                  
+  _save_callbacks=                                 
+  _touch_callbacks                                 
+  _touch_callbacks=                                
+  _update_callbacks                                
+  _update_callbacks=                               
+  _validate_callbacks                              
+  _validate_callbacks=                             
+  _validation_callbacks                            
+  _validation_callbacks=                           
+  _validators=                                     
+  _validators?                                     
+  action_on_strict_loading_violation               
+  action_on_strict_loading_violation=              
+  after_create                                     
+  after_destroy                                    
+  after_find                                       
+  after_initialize                                 
+  after_save                                       
+  after_touch                                      
+  after_update                                     
+  aggregate_reflections                            
+  aggregate_reflections=                           
+  aggregate_reflections?                           
+  allow_unsafe_raw_sql                             
+  allow_unsafe_raw_sql=                            
+  around_create                                    
+  around_destroy                                   
+  around_save                                      
+  around_update                                    
+  attachment_reflections=                          
+  attachment_reflections?                          
+  attribute_aliases                                
+  attribute_aliases=                               
+  attribute_aliases?                               
+  attribute_method_matchers                        
+  attribute_method_matchers=                       
+  attribute_method_matchers?                       
+  attributes_to_define_after_schema_loads          
+  attributes_to_define_after_schema_loads=         
+  attributes_to_define_after_schema_loads?         
+  before_create                                    
+  before_destroy                                   
+  before_save                                      
+  before_update                                    
+  belongs_to_required_by_default                   
+  belongs_to_required_by_default=                  
+  belongs_to_required_by_default?                  
+  bulk_import                                      
+  bulk_import!                                     
+  cache_timestamp_format                           
+  cache_timestamp_format=                          
+  cache_timestamp_format?                          
+  cache_versioning                                 
+  cache_versioning=                                
+  cache_versioning?                                
+  collection_cache_versioning                      
+  collection_cache_versioning=                     
+  collection_cache_versioning?                     
+  configurations                                   
+  configurations=                                  
+  connected_to_stack                               
+  connection_class                                 
+  connection_class=                                
+  connection_class?                                
+  connection_classes                               
+  connection_handler                               
+  connection_handler=                              
+  connection_handlers                              
+  connection_handlers=                             
+  current_preventing_writes                        
+  current_role                                     
+  current_shard                                    
+  default_connection_handler                       
+  default_connection_handler=                      
+  default_connection_handler?                      
+  default_role                                     
+  default_role=                                    
+  default_role?                                    
+  default_scope_override                           
+  default_scope_override=                          
+  default_scopes                                   
+  default_scopes=                                  
+  default_shard                                    
+  default_shard=                                   
+  default_shard?                                   
+  default_timezone                                 
+  default_timezone=                                
+  defined_enums=                                   
+  defined_enums?                                   
+  destroy_association_async_job                    
+  destroy_association_async_job=                   
+  dump_schema_after_migration                      
+  dump_schema_after_migration=                     
+  dump_schemas                                     
+  dump_schemas=                                    
+  error_on_ignored_order                           
+  error_on_ignored_order=                          
+  has_many_inversing                               
+  has_many_inversing=                              
+  immutable_strings_by_default                     
+  immutable_strings_by_default=                    
+  immutable_strings_by_default?                    
+  implicit_order_column                            
+  implicit_order_column=                           
+  implicit_order_column?                           
+  import                                           
+  import!                                          
+  import_helper                                    
+  import_with_validations                          
+  import_without_validations_or_callbacks          
+  include_root_in_json                             
+  include_root_in_json=                            
+  include_root_in_json?                            
+  index_nested_attribute_errors                    
+  index_nested_attribute_errors=                   
+  internal_metadata_table_name                     
+  internal_metadata_table_name=                    
+  internal_metadata_table_name?                    
+  legacy_connection_handling                       
+  legacy_connection_handling=                      
+  local_stored_attributes                          
+  local_stored_attributes=                         
+  lock_optimistically                              
+  lock_optimistically=                             
+  lock_optimistically?                             
+  logger                                           
+  logger=                                          
+  maintain_test_schema                             
+  maintain_test_schema=                            
+  nested_attributes_options=                       
+  nested_attributes_options?                       
+  partial_writes                                   
+  partial_writes=                                  
+  partial_writes?                                  
+  pluralize_table_names                            
+  pluralize_table_names=                           
+  pluralize_table_names?                           
+  primary_key_prefix_type                          
+  primary_key_prefix_type=                         
+  queues                                           
+  queues=                                          
+  reading_role                                     
+  reading_role=                                    
+  record_timestamps                                
+  record_timestamps=                               
+  record_timestamps?                               
+  schema_format                                    
+  schema_format=                                   
+  schema_migrations_table_name                     
+  schema_migrations_table_name=                    
+  schema_migrations_table_name?                    
+  signed_id_verifier_secret                        
+  signed_id_verifier_secret=                       
+  skip_time_zone_conversion_for_attributes         
+  skip_time_zone_conversion_for_attributes=        
+  skip_time_zone_conversion_for_attributes?        
+  store_full_class_name                            
+  store_full_class_name=                           
+  store_full_class_name?                           
+  store_full_sti_class                             
+  store_full_sti_class=                            
+  store_full_sti_class?                            
+  strict_loading_by_default                        
+  strict_loading_by_default=                       
+  strict_loading_by_default?                       
+  strict_loading_violation!                        
+  supports_import?                                 
+  supports_on_duplicate_key_update?                
+  supports_setting_primary_key_of_imported_objects?
+  suppress_multiple_database_warning               
+  suppress_multiple_database_warning=              
+  synchronize                                      
+  table_name_prefix                                
+  table_name_prefix=                               
+  table_name_prefix?                               
+  table_name_suffix                                
+  table_name_suffix=                               
+  table_name_suffix?                               
+  time_zone_aware_attributes                       
+  time_zone_aware_attributes=                      
+  time_zone_aware_types                            
+  time_zone_aware_types=                           
+  time_zone_aware_types?                           
+  timestamped_migrations                           
+  timestamped_migrations=                          
+  verbose_query_logs                               
+  verbose_query_logs=                              
+  warn_on_records_fetched_greater_than             
+  warn_on_records_fetched_greater_than=            
+  writing_role                                     
+  writing_role=                                    
+[1m[1;34mRolify::Finders#methods[0m[0m: with_all_roles  with_any_role  with_role  without_role
+[1m[1;34mRolify::Dynamic#methods[0m[0m: define_dynamic_method
+[1m[1;34mDevise::Models::Authenticatable::ClassMethods#methods[0m[0m: 
+  authentication_keys               http_authentication_key=
+  authentication_keys=              params_authenticatable  
+  case_insensitive_keys             params_authenticatable= 
+  case_insensitive_keys=            params_authenticatable? 
+  find_first_by_auth_conditions     request_keys            
+  find_for_authentication           request_keys=           
+  find_or_initialize_with_error_by  serialize_from_session  
+  find_or_initialize_with_errors    serialize_into_session  
+  http_authenticatable              skip_session_storage    
+  http_authenticatable=             skip_session_storage=   
+  http_authenticatable?             strip_whitespace_keys   
+  http_authentication_key           strip_whitespace_keys=  
+[1m[1;34mDevise::Models::DatabaseAuthenticatable::ClassMethods#methods[0m[0m: 
+  pepper                            send_password_change_notification 
+  pepper=                           send_password_change_notification=
+  send_email_changed_notification   stretches                         
+  send_email_changed_notification=  stretches=                        
+[1m[1;34mDevise::Models::Rememberable::ClassMethods#methods[0m[0m: 
+  expire_all_remember_me_on_sign_out   remember_token       
+  expire_all_remember_me_on_sign_out=  rememberable_options 
+  extend_remember_period               rememberable_options=
+  extend_remember_period=              serialize_from_cookie
+  remember_for                         serialize_into_cookie
+  remember_for=                      
+[1m[1;34mDevise::Models::Recoverable::ClassMethods#methods[0m[0m: 
+  reset_password_by_token  send_reset_password_instructions
+  reset_password_keys      sign_in_after_reset_password    
+  reset_password_keys=     sign_in_after_reset_password=   
+  reset_password_within    with_reset_password_token       
+  reset_password_within= 
+[1m[1;34mDevise::Models::Registerable::ClassMethods#methods[0m[0m: 
+  new_with_session               sign_in_after_change_password=
+  sign_in_after_change_password
+[1m[1;34mUser.methods[0m[0m: 
+  __callbacks                           before_add_for_donations             
+  _reflections                          before_add_for_donations=            
+  _validators                           before_add_for_opportunities         
+  after_add_for_comments                before_add_for_opportunities=        
+  after_add_for_comments=               before_add_for_photos_attachments    
+  after_add_for_donations               before_add_for_photos_attachments=   
+  after_add_for_donations=              before_add_for_photos_blobs          
+  after_add_for_opportunities           before_add_for_photos_blobs=         
+  after_add_for_opportunities=          before_add_for_posts                 
+  after_add_for_photos_attachments      before_add_for_posts=                
+  after_add_for_photos_attachments=     before_add_for_roles                 
+  after_add_for_photos_blobs            before_add_for_roles=                
+  after_add_for_photos_blobs=           before_add_for_roles_users           
+  after_add_for_posts                   before_add_for_roles_users=          
+  after_add_for_posts=                  before_add_for_story_ideas           
+  after_add_for_roles                   before_add_for_story_ideas=          
+  after_add_for_roles=                  before_add_for_tasks                 
+  after_add_for_roles_users             before_add_for_tasks=                
+  after_add_for_roles_users=            before_add_for_vreports              
+  after_add_for_story_ideas             before_add_for_vreports=             
+  after_add_for_story_ideas=            before_remove_for_comments           
+  after_add_for_tasks                   before_remove_for_comments=          
+  after_add_for_tasks=                  before_remove_for_donations          
+  after_add_for_vreports                before_remove_for_donations=         
+  after_add_for_vreports=               before_remove_for_opportunities      
+  after_remove_for_comments             before_remove_for_opportunities=     
+  after_remove_for_comments=            before_remove_for_photos_attachments 
+  after_remove_for_donations            before_remove_for_photos_attachments=
+  after_remove_for_donations=           before_remove_for_photos_blobs       
+  after_remove_for_opportunities        before_remove_for_photos_blobs=      
+  after_remove_for_opportunities=       before_remove_for_posts              
+  after_remove_for_photos_attachments   before_remove_for_posts=             
+  after_remove_for_photos_attachments=  before_remove_for_roles              
+  after_remove_for_photos_blobs         before_remove_for_roles=             
+  after_remove_for_photos_blobs=        before_remove_for_roles_users        
+  after_remove_for_posts                before_remove_for_roles_users=       
+  after_remove_for_posts=               before_remove_for_story_ideas        
+  after_remove_for_roles                before_remove_for_story_ideas=       
+  after_remove_for_roles=               before_remove_for_tasks              
+  after_remove_for_roles_users          before_remove_for_tasks=             
+  after_remove_for_roles_users=         before_remove_for_vreports           
+  after_remove_for_story_ideas          before_remove_for_vreports=          
+  after_remove_for_story_ideas=         defined_enums                        
+  after_remove_for_tasks                devise_modules                       
+  after_remove_for_tasks=               devise_modules=                      
+  after_remove_for_vreports             devise_modules?                      
+  after_remove_for_vreports=            find_for_database_authentication     
+  assign_from_row                       nested_attributes_options            
+  attachment_reflections                with_attached_avatar                 
+  before_add_for_comments               with_attached_photos                 
+  before_add_for_comments=            
+[1m[1;34mUser#methods[0m[0m: 
+  add_profile                                       
+  assign_default_role                               
+  autosave_associated_records_for_avatar_attachment 
+  autosave_associated_records_for_avatar_blob       
+  autosave_associated_records_for_comments          
+  autosave_associated_records_for_donations         
+  autosave_associated_records_for_opportunities     
+  autosave_associated_records_for_photos_attachments
+  autosave_associated_records_for_photos_blobs      
+  autosave_associated_records_for_pledge            
+  autosave_associated_records_for_posts             
+  autosave_associated_records_for_profile           
+  autosave_associated_records_for_roles             
+  autosave_associated_records_for_roles_users       
+  autosave_associated_records_for_story_ideas       
+  autosave_associated_records_for_tasks             
+  autosave_associated_records_for_vreports          
+  current_password                                  
+  devise_modules                                    
+  devise_modules?                                   
+  formatted_email                                   
+  login                                             
+  login=                                            
+  password                                          
+  password_confirmation                             
+  password_confirmation=                            
+  set_username                                      
+  validate_associated_records_for_comments          
+  validate_associated_records_for_donations         
+  validate_associated_records_for_opportunities     
+  validate_associated_records_for_photos_attachments
+  validate_associated_records_for_photos_blobs      
+  validate_associated_records_for_posts             
+  validate_associated_records_for_profile           
+  validate_associated_records_for_roles             
+  validate_associated_records_for_roles_users       
+  validate_associated_records_for_story_ideas       
+  validate_associated_records_for_tasks             
+  validate_associated_records_for_vreports          
+[1m[1;34minstance variables[0m[0m: 
+  [0;34m@__reflections[0m                  [0;34m@generated_attribute_methods[0m
+  [0;34m@_type_candidates_cache[0m         [0;34m@generated_relation_methods[0m 
+  [0;34m@adapter[0m                        [0;34m@load_schema_monitor[0m        
+  [0;34m@attribute_methods_generated[0m    [0;34m@relation_delegate_cache[0m    
+  [0;34m@authentication_keys[0m            [0;34m@role_cname[0m                 
+  [0;34m@find_by_statement_cache[0m        [0;34m@role_join_table_name[0m       
+  [0;34m@generated_association_methods[0m  [0;34m@role_table_name[0m            
+[1m[1;34mclass variables[0m[0m: 
+  [1;34m@@_deprecated_constants[0m               [1;34m@@primary_key_prefix_type[0m             
+  [1;34m@@action_on_strict_loading_violation[0m  [1;34m@@queues[0m                              
+  [1;34m@@configurations[0m                      [1;34m@@reading_role[0m                        
+  [1;34m@@default_timezone[0m                    [1;34m@@schema_format[0m                       
+  [1;34m@@dump_schema_after_migration[0m         [1;34m@@signed_id_verifier_secret[0m           
+  [1;34m@@dump_schemas[0m                        [1;34m@@suppress_multiple_database_warning[0m  
+  [1;34m@@error_on_ignored_order[0m              [1;34m@@time_zone_aware_attributes[0m          
+  [1;34m@@has_many_inversing[0m                  [1;34m@@timestamped_migrations[0m              
+  [1;34m@@index_nested_attribute_errors[0m       [1;34m@@verbose_query_logs[0m                  
+  [1;34m@@legacy_connection_handling[0m          [1;34m@@warn_on_records_fetched_greater_than[0m
+  [1;34m@@logger[0m                              [1;34m@@writing_role[0m                        
+  [1;34m@@maintain_test_schema[0m              

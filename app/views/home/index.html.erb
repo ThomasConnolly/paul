@@ -79,8 +79,8 @@
         <% else %>
           <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
         <% end %>
-    <p><strong><%= link_to "Wednesday evening bible study will resume July 14, 6:30 p.m.", "#{@evening_bible.url}" %> We're reading and discussing the Letter of James.</strong></p> 
-    <p><strong><%= link_to "Thursday wine time, 5:30 p.m.", "#{@wine.url}" %></strong> Note: as of June 24, the popular and relaxing chat room called Friday wine time is moved to Thursdays.</p>
+    <p><strong><%= link_to "Wednesday evening bible study, 6:30 p.m.", "#{@evening_bible.url}" %> We will begin reading and discussing Hebrews. (In person in the library or on Zoom).</strong></p> 
+    <p><strong><%= link_to "Thursday wine time, 5:30 p.m.", "#{@wine.url}" %></strong> This is a popular and relaxing chat room open to everyone who wishes to join in.</p>
     <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p>
 
     <%= link_to cl_image_tag("#{@pathway.image}", width: "99%"), "#{@pathway.link}" %>

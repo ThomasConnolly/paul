@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :participants
+  
   resources :todo_lists do
     resources :todo_items
   end

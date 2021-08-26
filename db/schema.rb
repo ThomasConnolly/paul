@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_133342) do
+ActiveRecord::Schema.define(version: 2021_08_24_132146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,6 +226,17 @@ ActiveRecord::Schema.define(version: 2021_05_29_133342) do
     t.integer "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "session"
+    t.string "first_preferred_day"
+    t.string "first_preferred_time"
+    t.string "second_preferred_day"
+    t.string "second_preferred_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pathways", force: :cascade do |t|

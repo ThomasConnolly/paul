@@ -18,6 +18,14 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
+  def summer2021_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1620354103/MaySm2021_iljhdh.pdf"
+    mail(
+      subject: "Pathways, your parish newsletter"
+    )
+  end
+
   def may2021_pathway(member)
     @member = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1620354103/MaySm2021_iljhdh.pdf"
@@ -36,7 +44,7 @@ class MemberMailer < ApplicationMailer
 
   def lent2021_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf"
     mail(
       subject: "Pathways, your parish newsletter"
     )

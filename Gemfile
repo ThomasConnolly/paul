@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.7.2'
+ruby '3.0.2'
 
 gem 'actionmailer'
 gem 'activerecord-import'
@@ -18,7 +18,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'feedjira'
 gem 'figaro'
-#gem 'hotwire-rails'
+gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
 gem 'irb', require: false
@@ -28,11 +28,11 @@ gem 'mail'
 gem 'mini_magick'
 gem 'nested_scaffold'
 gem 'nokogiri'
+gem 'pg'
 gem 'premailer-rails'
 gem 'pry'
 gem 'pry-rails'
 gem 'puma'
-gem 'pg'
 gem 'rack'
 gem 'rails'
 gem 'railties'
@@ -46,7 +46,7 @@ gem 'scout_apm'
 gem 'stripe'
 gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
-gem 'webpacker', '~> 5.2', '>= 5.2.1'
+gem 'webpacker'
 gem 'whenever'
 
 group :development do

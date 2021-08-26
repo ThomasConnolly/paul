@@ -1,0 +1,11 @@
+By clicking Submit you are registering to receive information about Sacred Ground in the coming weeks. We hope to begin this series in October.
+<%= bootstrap_form_for(@participant) do |f| %>
+  <div class="form-inputs">
+    
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

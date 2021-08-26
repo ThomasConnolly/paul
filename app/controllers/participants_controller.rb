@@ -1,12 +1,10 @@
 class ParticipantsController < ApplicationController
-  before_action :authenticate_user!, except: [:new]
-  before_action :change_path, only: :new
-  before_action :set_participant, only: %i[ show edit update destroy ]
+  before_action :set_participant, only: [:show, :edit, :update, :destroy]
+
 
   # GET /participants or /participants.json
   def index
     @participants = Participant.all
-    @participant = Participant.find(current_user.participant.id)
   end
 
   # GET /participants/1 or /participants/1.json
@@ -22,11 +20,16 @@ class ParticipantsController < ApplicationController
   def edit
   end
 
-  # POST /participants or /participants.json
   def create
-    @participant = current_user.build_participant(participant_params)
+    @participant = Participant.new(participant_params)
+    respond_to do |format|
       if @participant.save
-        redirect_to @participant, notice: "We'll be in touch as this program takes shape. Thanks for signing up."
+        format.html { redirect_to @participant, notice: "Thanks for signing up. We'll be in touch as this program takes shape in the coming weeks" }
+        format.json { render :show, status: :created, location: @participant }
+      else
+        format.html { render :new }
+        format.json { render json: @participant.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -53,21 +56,14 @@ class ParticipantsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_participant
       @participant = Participant.find(params[:id])
     end
 
-    def change_path
-      if user_signed_in? && current_user.participant.present?
-        redirect_to participant_path(current_user.participant)
-      end
-    end
-  
-
     # Only allow a list of trusted parameters through.
     def participant_params
-      params.require(:participant).permit(:session, :first_preferred_day, :first_preferred_time, 
-      :second_preferred_day, :second_preferred_time)
+      params.require(:participant).permit(:session, :first_name, :last_name, :email, :first_preferred_day, :first_preferred_time, :second_preferred_day, :second_preferred_time)
     end
   end

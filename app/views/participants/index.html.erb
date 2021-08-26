@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Participants</h1>
+<h1>Sacred Ground Participants</h1>
 
 
     <% @participants.each do |participant| %>
-      <%= participant.user.username %>       
+      <%= participant.first_name %> <%= participant.last_name %>, <%= participant.email %>     
       <%= link_to 'Show', participant %>
       <%= link_to 'Edit', edit_participant_path(participant) %>
-      <%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %> 
+      <%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
     <% end %>
 
 <br>
 
-<%= link_to 'New Participant', new_participant_url %>
+<%= link_to "New Participant", new_participant_path %>

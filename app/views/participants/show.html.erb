@@ -3,7 +3,7 @@
 
 <p>
   <strong>Participant:</strong>
-  <%= @participant.user.username %>
+  <%= @participant.first_name %> <%= @participant.last_name %>, <%= @participant.email %>
 </p>
 
 <%= link_to 'Edit', edit_participant_path(@participant) %> |

@@ -229,7 +229,10 @@ ActiveRecord::Schema.define(version: 2021_08_24_132146) do
   end
 
   create_table "participants", force: :cascade do |t|
-    t.integer "user_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "honey"
     t.string "session"
     t.string "first_preferred_day"
     t.string "first_preferred_time"

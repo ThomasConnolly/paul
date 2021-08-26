@@ -2,10 +2,16 @@ By clicking Submit you are registering to receive information about Sacred Groun
 <%= bootstrap_form_for(@participant) do |f| %>
   <div class="form-inputs">
     
-    <%= f.hidden_field :user_id %>
+    <%= f.text_field :first_name, placeholder: "First name" %>
+    <%= f.text_field :last_name, placeholder: "Last name" %>
+    <%= f.text_field :email, placeholder: "Email" %>
+    <div class="honey">
+      <%= f.text_field :honey %>
+    </div>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>

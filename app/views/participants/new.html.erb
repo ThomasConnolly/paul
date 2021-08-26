@@ -1,10 +1,8 @@
-<h1><%= link_to "Click here to learn about Sacred Ground", "https://www.episcopalchurch.org/sacred-ground/" %></h1>
-<h2>Sign up for Sacred Ground series at St. Paul's</h2>
-<% if current_user %>
+
+<h1>Sign up for Sacred Ground series at St. Paul's</h1>
+
 <%= render 'form', participant: @participant %>
-<% else %>
-<h2><%= link_to "Register with name, email and password", new_user_session_path %></h2>
-<% end %>
 
 
-<%= link_to 'Back', participants_path %>
+
+<%= link_to 'Back', root_path %>

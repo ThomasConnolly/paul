@@ -20,9 +20,10 @@ class MemberMailer < ApplicationMailer
   end
   def summer2021_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1620354103/MaySm2021_iljhdh.pdf"
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf"
     mail(
-      subject: "Pathways, your parish newsletter"
+      subject: "Pathways, your parish newsletter",
+      skip_premailer: true
     )
   end
 

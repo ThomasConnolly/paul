@@ -4,7 +4,11 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+import "@hotwired/turbo-rails"
+import * as ActiveStorage from "@rails/activestorage"
+import { Application } from 'stimulus'
+const application = Application.start()
+autoload(controllers, application)
 import "core-js/stable"
 import "regenerator-runtime/runtime"
 import "channels"
@@ -21,23 +25,21 @@ import "data-confirm-modal"
 import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 Rails.start()
-Turbolinks.start()
-import * as ActiveStorage from "@rails/activestorage"
 ActiveStorage.start()
 
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("turbo:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("turbo:load", () => {
   $(function () {
     $("#myModal").modal('show')
     })
   });
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("turbo:load", () => {
   flatpickr("[data-behavior='flatpickr']"
   )
 });
@@ -47,6 +49,3 @@ document.addEventListener("click", () => {
 });
 
 $(".dropdown-toggle").dropdown();
-
-
-console.log('Hello World from Webpacker');

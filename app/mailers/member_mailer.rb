@@ -9,8 +9,17 @@
 class MemberMailer < ApplicationMailer
  
   default from: 'Welcome@saintpaulsnaples.org'
-  default to: 'welcome@saintpaulsnaples.org'
-  default bcc: -> { Member.where.not(email: nil).pluck(:email) }
+  #default to: 'welcome@saintpaulsnaples.org'
+  default to: 'tom.connolly@comcast.net'
+  #default bcc: -> { Member.where.not(email: nil).pluck(:email) }
+  default bcc: ["john_titus33@yahoo.com",
+  "fcthorntonsr193@gmail.com",
+  "Mia.Souvannarath@yahoo.com",
+  "jcaldersmoot@gmail.com",
+  "nbpapp@aol.com",
+  "lehoe95@gmail.com",
+  "bmonk085@yahoo.com",
+  "coconnell205@gmail.com"]
   
   def test(member)
     @member = member
@@ -18,6 +27,7 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
+
   def summer2021_pathway(member)
     @member = member
     @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf"

@@ -4,10 +4,12 @@
 
 
     <% @participants.each do |participant| %>
-      <%= participant.first_name %> <%= participant.last_name %>, <%= participant.email %>     
-      <%= link_to 'Show', participant %>
-      <%= link_to 'Edit', edit_participant_path(participant) %>
-      <%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+      <%= participant.first_name %> <%= participant.last_name %>, <%= participant.email %>
+        <% if current_user && current_user.has_role?(admin ) %>  
+          <%= link_to 'Show', participant %>
+          <%= link_to 'Edit', edit_participant_path(participant) %>
+          <%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+        <% end %>
     <% end %>
 
 <br>

@@ -1,5 +1,5 @@
 
-<%= bootstrap_form_with(model: @story_idea, local: true) do |f| %>
+<%= bootstrap_form_with(model: @story_idea) do |f| %>
   <%= f.text_field :title, autofocus: true %><br>
   <%= f.text_field :url, placeholder: 'Do you wish to link to a website? Enter address here.',
    label: false %>

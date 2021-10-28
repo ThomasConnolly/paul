@@ -1,22 +1,24 @@
 {
-  "application.css": "/packs/css/application-4591307f.css",
-  "application.css.map": "/packs/css/application-4591307f.css.map",
-  "application.js": "/packs/js/application-9bc2f09c1dd0b210e314.js",
-  "application.js.map": "/packs/js/application-9bc2f09c1dd0b210e314.js.map",
+  "application.css": "/packs/css/application-dae92a7e.css",
+  "application.css.map": "/packs/css/application-dae92a7e.css.map",
+  "application.js": "/packs/js/application-9eef435406ed08fea459.js",
+  "application.js.map": "/packs/js/application-9eef435406ed08fea459.js.map",
   "entrypoints": {
     "application": {
       "css": [
-        "/packs/css/application-4591307f.css"
+        "/packs/css/application-dae92a7e.css"
       ],
       "js": [
-        "/packs/js/application-9bc2f09c1dd0b210e314.js"
+        "/packs/js/application-9eef435406ed08fea459.js"
       ],
       "css.map": [
-        "/packs/css/application-4591307f.css.map"
+        "/packs/css/application-dae92a7e.css.map"
       ],
       "js.map": [
-        "/packs/js/application-9bc2f09c1dd0b210e314.js.map"
+        "/packs/js/application-9eef435406ed08fea459.js.map"
       ]
     }
-  }
+  },
+  "vendors~actioncable.js": "/packs/js/vendors~actioncable-a9a439982dea30932847.chunk.js",
+  "vendors~actioncable.js.map": "/packs/js/vendors~actioncable-a9a439982dea30932847.chunk.js.map"
 }

@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
 
-    <%= form_with url: albergue_charges_path, id: "payment-form", local: true, { payment_intent_id: @payment_intent.client_secret } do |form| %>
+    <%= form_with url: albergue_charges_path, id: "payment-form", { payment_intent_id: @payment_intent.client_secret } do |form| %>
     <div class="form-group">
       <label for="card-element">
       <%= form.text_field :name_on_card, placeholder: "Full name", class: "form-control" %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>St. Paul's Groups messages</h1>
+
+    <% @rooms.each do |room| %>
+        <h4><strong><%= room.name %></strong><br>
+        <%= link_to 'Show', room %> <%if current_user && current_user.has_role?(:admin) %> | 
+        <%= link_to 'Edit', edit_room_path(room) %> | 
+        <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %> <% end %></h4>
+        <hr>
+    <% end %>
+<% if current_user && current_user.has_role?(:admin) %>
+<%= link_to 'New Room', new_room_path %>
+<% end %>

@@ -59,8 +59,6 @@ class User < ApplicationRecord
   validates :avatar, content_type: [:png, :jpg,]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy
-  has_one :participant, dependent: :destroy
-
   
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true

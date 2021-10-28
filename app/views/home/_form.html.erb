@@ -1,5 +1,5 @@
 
-<%= bootstrap_form_with(model: @link, local: true) do |f| %>
+<%= bootstrap_form_with(model: @link) do |f| %>
 <%=f.select :event, [["bulletin", 1], ["coffee-hour", 2] ["daytime_bible", 3], ["evening_bible", 4], ["wine-time", 5]] %>
 <%=f.text_field :title %>
 <%=f.text_field :time %>

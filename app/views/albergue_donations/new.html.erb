@@ -16,7 +16,7 @@
 
       </div>
     <div class="mt30"></div>
-      <%= bootstrap_form_with(model: @albergue_donation, local: true) do |f| %>
+      <%= bootstrap_form_with(model: @albergue_donation) do |f| %>
       <%= f.radio_buttons, collection: ["Pay now", "Monthly"] %>
           <%= f.button :submit, "Next: enter card information", class: "btn btn-success btn-lg" %>
       <% end %>

@@ -2,10 +2,15 @@
 
 <div class="container">
   
-  <div class="d-flex justify-content-center mb-5">
+  <div class="d-flex justify-content-center mb-1">
     <%= link_to "Your gifts, of talent and treasure, are appreciated. Click here to donate", 
     new_donation_path, class: "btn btn-primary btn-lg text-white" %>
   </div>
+  <% if current_user && current_user.pledge.present? %>
+    <div class="d-flex justify-content-center mb-2">
+      <%= button_to 'Update your pledge', edit_pledge_path(current_user.pledge), method: "get", class: "btn btn-success btn-lg" %>
+    </div>
+  <% end %>
 </div> <!-- container -->
 <div class=row>
   <div class= "col-md-8 col-sm-12 main-body">
@@ -17,6 +22,7 @@
         <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/Cross.png", width:"200", class: "float-left img-fluid pr-2") %>
           <p>You are welcome to join us Sunday mornings at 9 a.m. Please follow the latest recommendations of the CDC to keep yourself and your neighbors (i.e., every human being) safe.</p>
           <p>Otherwise, please join us at 9 a.m. Sundays on YouTube, using your smart phone, computer or television set, <%= link_to "by clicking here", "#{@worship.url}" %></p> 
+          <p><strong>Beginning Nov. 7,</strong> Masses will be at 8 a.m. (Rite I) and 10 a.m. (Rite II, with choir). The 10 o'clock service will be streamed <%= link_to "here", "#{@worship.url}" %></p>
       <div class="clearall"></div>
       
       <% if @bulletin.url.present? %>    
@@ -50,8 +56,8 @@
 
         <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block", width: "40%") %>
         <h2 class="mt3">Home of the great Farmers' Market</h2>
-        <p>(The market is closed for the summer, and will reopen in November). </p>
-        <!-- <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and introduce yourself to new friends and have a hot dog, on us! The market is open Saturdays from 8 a.m. to noon. Browse and buy books, jewelery and lots of produce. Masks and physical distancing are required. </p>  -->
+        <p>(The market will reopen for the season on Saturday, November 13). </p>
+        <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and introduce yourself to new friends and have a hot dog, on us! The market will be open Saturdays from 8 a.m. to noon. Browse and buy books, jewelery and lots of produce. </p>
         <p>For more information about the market, <%= link_to "click here.",
         markets_index_path %> </p>
         <div class="clearall"></div>      
@@ -85,9 +91,9 @@
         <% else %>
           <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
         <% end %>
-    <p><strong><%= link_to "Wednesday evening bible study, 6:30 p.m.", "#{@evening_bible.url}" %> We will begin reading and discussing Hebrews. (In person in the library or on Zoom).</strong></p> 
-    <p><strong><%= link_to "Thursday wine time, 5:30 p.m.", "#{@wine.url}" %></strong> This is a popular and relaxing chat room open to everyone who wishes to join in.</p>
-    <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for newcomers.</p>
+    <p><strong><%= link_to "Wednesday evening bible study, 6:30 p.m.", "#{@evening_bible.url}" %> </strong> We are reading and discussing the New Testament book of Hebrews. (In person in the library or on Zoom), resuming Wednesday, Nov. 3.</strong></p> 
+    <p><strong><%= link_to "Friday wine time, 5:30 p.m.", "#{@wine.url}" %></strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually called <strong>"Thursday wine time,"</strong> it's on Friday this week because of Thursday evening's vestry meeting.</p>
+    <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for everyone.</p>
 
     <%= link_to cl_image_tag("#{@pathway.image}", width: "99%"), "#{@pathway.link}" %>
     <p><strong>New Pathway available </strong> Click on the image above to read or download the latest edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathway,</em> the parish newsletter.</p>

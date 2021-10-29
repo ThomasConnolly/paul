@@ -511,7 +511,7 @@ DEPENDENCIES
   acts_as_list
   amazing_print
   annotate
-  aws-sdk-s3
+  aws-sdk-s3 (~> 1.104)
   bcrypt
   better_errors
   binding_of_caller

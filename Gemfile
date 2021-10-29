@@ -8,7 +8,7 @@ gem 'activerecord-import'
 gem 'active_storage_validations'
 gem 'acts_as_list'
 gem 'amazing_print'
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false

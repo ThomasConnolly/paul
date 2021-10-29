@@ -1,9 +1,9 @@
 <%= bootstrap_form_with(model: @post) do |f| %>
 <div class="dropzone cropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1"></div>  
-<%= f.file_field :picture, direct_upload: true, data: { target: 'dropzone.input'} %>
+<%= f.file_field :picture, direct_upload: true, data: { target: 'dropzone.input' } %>
 <div class="dropzone-msg dz-message needsclick">
-  <span class="cropzone-msg-desc text-sm">(2 MB files maximum size jpg or png.)</span>
+  <span class="cropzone-msg-desc text-sm">(maximum size 2MB; jpg or png)</span>
 </div>
   <%= f.rich_text_area :content, placeholder: "Type your post here." %>
-  <%= f.submit class: "btn btn-primary" %> &nbsp; <%= link_to "Cancel", :back, class: "btn btn-danger mt-5" %>
+  <%= f.submit class: "btn btn-primary" %> &nbsp; <%= link_to "Cancel", :back, class: "btn btn-danger" %>
 <% end %>

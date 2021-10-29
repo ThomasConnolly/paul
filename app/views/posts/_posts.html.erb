@@ -1,6 +1,6 @@
 <h2>Here are the latest posts</h2>
   <% if !user_signed_in? %>
-    <p>Anyone can read these posts, but to create a post or to make a comment, you must be signed in.  <%= link_to "Click to sign in or register", new_user_registration_path %></p>
+    <p>Anyone can read these posts, but to create a post or to make a comment, you must be registered and signed in.  <%= link_to "Click to sign in or register", new_user_registration_path %></p>
   <% else %> 
   <% @posts.each do |post| %>
     <div>

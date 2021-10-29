@@ -13,7 +13,6 @@
     "@rails/activestorage": "^6.0.2-2",
     "@rails/ujs": "^6.0.3-4",
     "@rails/webpacker": "5.2.1",
-    "activestorage": "^5.2.5",
     "babel-loader": "^8.2.1",
     "bable-loader": "^0.0.1-security",
     "bl": "4.0.3",

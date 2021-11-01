@@ -4,27 +4,22 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import "@hotwired/turbo-rails"
+import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
-import { Application } from 'stimulus'
-const application = Application.start()
-autoload(controllers, application)
-import "core-js/stable"
-import "regenerator-runtime/runtime"
-import "channels"
 require("trix")
 require("@rails/actiontext")
 require("@rails/activestorage").start()
 import jQuery from "jquery"
 window.Rails = Rails
 window.$ = window.jQuery = jQuery
-import "controllers"
 import "bootstrap/dist/js/bootstrap"
-import "../src/application.scss"
+import "../stylesheets/application.scss"
+import "../stylesheets/custom.scss"
 import "data-confirm-modal"
 import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 Rails.start()
+Turbolinks.start*
 ActiveStorage.start()
 
 

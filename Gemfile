@@ -45,7 +45,7 @@ gem 'sendgrid-ruby', '~> 6.4'
 gem 'rss'
 gem 'scout_apm'
 gem 'stripe'
-#gem 'turbolinks'
+gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
 gem 'webpacker'
 gem 'whenever'

@@ -149,7 +149,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    dead_end (2.0.1)
+    dead_end (2.0.2)
     debug_inspector (1.1.0)
     derailed (0.1.0)
       derailed_benchmarks
@@ -379,7 +379,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    reverse_markdown (2.0.0)
+    reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
     rolify (6.0.0)
@@ -467,6 +467,9 @@ GEM
     ttfunk (1.7.0)
     turbo-rails (7.1.1)
       rails (>= 6.0.0)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -570,6 +573,7 @@ DEPENDENCIES
   shoulda-matchers
   solargraph
   stripe
+  turbolinks
   uglifier
   web-console
   webdrivers

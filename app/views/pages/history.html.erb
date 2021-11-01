@@ -1,17 +1,9 @@
-<div class="row">
-  <div class="col col-12-sm">
-<%#= cl_image_tag("ParishProfileWeb_qzrvla.jpg", width: '700') %>
-<div class="mt30"></div>
+
+<div class="col col-12 d-flex justify-content-center">
   <figure>
-  <%= cl_image_tag("history_t7dacr.jpg", width: '600', class: "image-center") %>
-  <div class="mt30"></div>
-  <figcaption>
-  <p class="text-center">
-  <%= link_to "Click to download a pdf of our history, published on the occasion of our Jubilee, January 2018", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1521834023/history_t7dacr.pdf" %>
-  </p>
-  </figcaption>
+    <%= link_to cl_image_tag("history_t7dacr.jpg", width: '600', class: "image-center"),  "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1521834023/history_t7dacr.pdf" %>
+    <figcaption>
+      Click on image to download a pdf of our history, published on the occasion of our Jubilee, celebrated in January 2018"
+    </figcaption>
   </figure>
-  </div>
 </div>
-
-

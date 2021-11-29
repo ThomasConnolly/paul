@@ -1,21 +1,21 @@
-<div class="mt-5"></div>
-  <div class="container row">
-    <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-      <div class="pledge-text">
-        <p><strong> You have elected to donate $<%=@pledge.dollars%>.00 <span id="plan"><em><%= @pledge.plan %></em></span> in your stewardship of St. Paul's. 
-  
-        <p class="mt-2">If these numbers are not correct, click "edit" to make changes. If OK, click "Pay with Card." You will be taken to a secure website that handles credit and debit card payments St. Paul's.</p>
-  
-    
 
-      <div class="text-center" max-width="400px">
-      <%= button_to "Pay with card", payment_create_url, method: "post", remote: true, params: {id: @pledge.id}, class: "btn btn-success btn-lg" %>
+<div class="container row mt-5">
+  <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+    <p><strong> You have elected to donate $<%=@pledge.dollars%>.00 <span id="plan"><em><%= @pledge.plan %></em></span> in your stewardship of St. Paul's.</strong></p>
+
+    <p class="mt-2">If these numbers are not correct, click "edit" to make changes. If OK, click "Pay with Card." You will be taken to a secure website that handles credit and debit card payments St. Paul's.</p>
+
+    <div class="text-center my-5" max-width="400px">
+    <%= button_to "Pay with card", payment_create_url, method: "post", remote: true, params: {id: @pledge.id}, class: "btn btn-success btn-lg" %>
+    </div>
+    
+    <p class="my-5"><strong>
+      If your circumstances change or for any other reason you wish to edit or remove these settings you may do so at any time, by logging in and clicking on the "Update your pledge" button on the home page.</strong></p>
+    
+    <% if current_user == @pledge.user %>
+      <div class="text-center my-5" max-width="800px">
+        <%= button_to("Edit", edit_pledge_path(@pledge), class: "btn btn-lg btn-success") %> &nbsp; <%= button_to("Delete my pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' }, class: "btn btn-lg btn-danger") %>
       </div>
-      <div class="mt-5 mb-5"></div>
-      <p class="mt-2"><strong>
-        If your circumstances change or for any other reason you wish to edit or remove these settings you may do so at any time, by logging in and clicking on the "Edit my pledge" button on the home page.</strong></p>
-      <% if current_user == @pledge.user %>
-      <%= link_to 'Edit or cancel', edit_pledge_path(@pledge) %>
-      <% end %>
-      </div>
+    <% end %>
   </div>
+</div>

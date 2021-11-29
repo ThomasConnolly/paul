@@ -17,6 +17,7 @@ gem 'bootstrap-email'
 gem "bootstrap_form"
 gem 'devise'
 gem 'cloudinary'
+gem 'cssbundling-rails'
 gem 'feedjira'
 gem 'figaro'
 gem 'hotwire-rails'
@@ -24,6 +25,7 @@ gem 'httparty'
 gem 'image_processing'
 gem 'irb', require: false
 gem 'jbuilder'
+gem 'jsbundling-rails'
 gem 'loofah'
 gem 'mail'
 gem 'mini_magick'
@@ -45,9 +47,9 @@ gem 'sendgrid-ruby', '~> 6.4'
 gem 'rss'
 gem 'scout_apm'
 gem 'stripe'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'uglifier' # used by sprockets to minify
-gem 'webpacker'
+# gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'whenever'
 
 group :development do

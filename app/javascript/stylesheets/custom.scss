@@ -10,11 +10,6 @@
   text-align:center;
   margin: 0px auto;
 }
-turbo-frame {
-  display: block;
-  font-size: 1rem;
-  border: 1px solid blue;
-}
 
 a:link {
   text-decoration: none;
@@ -154,45 +149,4 @@ p.tiny {
   border-style: solid;
   border-width: 1px;
   text-align: center;
-}
-
-.newspaper  {
-    ul {
-  display: block;
-  }
-  ul li{
-  list-style-type: none;
-  display:inline-block;
-  width: 33%;
-  }
-}
-.navbar-custom {
-  height: 64px;
-  width: 100%;
-  margin-bottom: 40px;
-  background-color: #0d4884;
-  color: #ffffff
-}
-
-.navbar-custom .nav-item:active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-  color: white;
-}
-.navbar-brand {
-  width: 35%;
-  font-size: .8rem;
-  color: #ffffff;
-}
-.text-white {
-  color: #ffffff;
-}
-
-.navbar-toggler-icon {
-  padding: 20px;
-}
-
-.fa.fa-navicon {
-  color: white;
-  font-size: 35px;
-  margin-right: 40px;
 }

@@ -17,14 +17,13 @@
                
   </div><!-- main_body -->
 
-    <div class="col-md-4 sidebar"> 
+    <div class="col-md-4 py-4" style="background-color: #e1e1e1;"> 
       <h2>Spirituality of Intimacy</h2>
         <p>Transcrips of this series of lectures/discussion are available <%= link_to "here.", formation_talks_path %></p>
         <h2>How we pray</h2>
-          <a href="bcpModal" role="button" data-toggle="modal" data-target="#bcpModal">
             <%= cl_image_tag("books-of-common-prayer_oasoqz.jpg", width: "95%", class: "image-center") %>
           </a>
-            <p>There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer.</b></em>  Click on the picture of the books to see a humorous but informative introduction to the <b>BCP</b></p>
+            <p>There's a prayer for almost every occasion in the Episcopal <em><b>Book of Common Prayer. </b></em> <%= link_to "Click here", "https://www.youtube.com/embed/KCn5edLZ72o" %> to see a humorous but informative introduction to the <b>BCP</b></p>
             <p>Browse or read the <em>Book of Common Prayer</em> on line <%= link_to "here.", "https://www.bcponline.org", target: "blank" %></p>
              <div class="mt30"></div> 
               <h2>Opportunities for spirituality</h2>

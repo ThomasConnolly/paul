@@ -78,8 +78,7 @@ class User < ApplicationRecord
 
   def self.assign_from_row(row)
     user = find_by_username(row['first_name' + 'last_name']) || new
-    user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email,
-                                             :member_id)
+    user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email, :member_id)
     user # =====see member.rb for example ======
   end
 
@@ -99,17 +98,6 @@ class User < ApplicationRecord
   def add_profile
     create_profile if profile.nil?
   end
-
-  # This code is for retrieving Stripe.customer for current_user
-  # def stripe_customer
-  #   if stripe_id? && stripe_pledge? || stripe_id? && albergue_sponsor?
-  #     Stripe::Customer.retrieve(stripe_id)
-  #   else
-  #     stripe_customer = Stripe::Customer.create(email: email)
-  #     update(stripe_id: stripe_customer.id)
-  #     stripe_customer
-  #   end
-  # end
 
   def self.find_for_database_authentication warden_condition
     conditions = warden_condition.dup

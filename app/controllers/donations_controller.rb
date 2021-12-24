@@ -1,6 +1,14 @@
 class DonationsController < ApplicationController
-  before_action :authenticate_user!, only: %i[create show edit destroy]
+  before_action :authenticate_user!
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only: [:index]
+
+  if current_user.stripe_id?
+    @customer = Stripe::Customer.retrieve(current_user.stripe_id)
+  else
+    @customer = Stripe::Customer.create(email: current_user.email, name: current_user.username)
+    current_user.update!(stripe_id: @customer.id)
+  end
 
   def index
     @donations = Donation.all
@@ -9,29 +17,40 @@ class DonationsController < ApplicationController
   def show
   end
 
-  # GET /donations/new
   def new
     @donation = Donation.new
   end
 
-  # GET /donations/1/edit
   def edit
   end
 
-  # POST /donations
-  # POST /donations.json
   def create
     @donation = Donation.new(donation_params)
     @donation.user_id = current_user.id
 
     if @donation.save
-      redirect_to donation_path(@donation)
+      checkout_session = Stripe::Checkout::Session.create(
+        success_url: donation_url(@donation) + "?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: donation_url,
+        payment_method_types: ["card"],
+        submit_type: 'donate',
+        customer: @customer.stripe_id,
+        mode: 'payment',
+        line_items: [{
+          price_data: {
+            unit_amount: @donation.amount,
+            currency: 'usd',
+            product: prod_ETteQ8s9Ho9sNW,
+          },
+          quantity: 1,
+      }])
+      redirect_to checkout_session.url
     else
-      render :new
+      flash[:errors] = @donation.errors.full_messages
+      rendernew
     end
   end
   
-
   def update
     respond_to do |format|
       if @donation.update(donation_params)
@@ -44,8 +63,6 @@ class DonationsController < ApplicationController
     end
   end
 
-  # DELETE /donations/1
-  # DELETE /donations/1.json
   def destroy
     @donation.destroy
     respond_to do |format|
@@ -59,8 +76,12 @@ class DonationsController < ApplicationController
       @donation = Donation.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    def authenticate_admin
+      return unless !current_user.has_role?(:admin)
+      redirect_to root_path
+    end
+
     def donation_params
-      params.require(:donation).permit(:user, :dollars, :amount, :type, :stripe_plan, :memo)
+      params.require(:donation).permit(:amount, :memo)
     end
 end

@@ -2,5 +2,5 @@
   <%= f.number_field :dollars, label: "Dollar amount" %>
   <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, :to_s, bootstrap: {check_inline: true}, label: "Frequency" %>
  
-  <%= f.submit "Proceed", class: "btn btn-lg btn-success mb-2"%>
+  <%= f.submit "Edit pledge", class: "btn btn-lg btn-success mb-2"%> &nbsp; <%= button_to("Delete pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' }, class: "btn btn-lg btn-danger") %>
 <% end %> 

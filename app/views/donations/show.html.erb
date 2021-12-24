@@ -1,8 +1,7 @@
 <h1><%= @donation.user.username.titleize %>'s donation is <%= formatted_amount @donation.amount %></h1>
-<div class="text-center" max-width="400px">
-<%= button_to "Pay now", checkout_create_url, method: "post", remote: true, params: {id: @donation.id}, class: "btn btn-success btn-lg" %>
+<div class="text-center my-5" max-width="400px">
+<%= button_to "Donate now", checkout_create_path, method: :post, params: { id: @donation.id }, remote: true, class: "btn btn-success btn-lg", id: "checkout-button" %>
 </div>
-<div class="mt-5 mb-5"></div>
 
 <% if current_user == @donation.user %>
 <%= link_to 'Edit', edit_donation_path(@donation) %> | 

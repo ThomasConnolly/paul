@@ -14,22 +14,21 @@ Rails.application.routes.draw do
   resources :surveys
   resources :thankfuls
   
-  post '/webhook_events/:source', to: 'webhook_events#create'
+  post '/webhook_events', to: 'webhook_events#create'
+
+  get "checkout", to: "checkout#show"
+  post "create", to: "checkout#create", as: "checkout/create"
+  get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+  get 'success', to: 'checkout#success', as: 'checkout_success'
 
   resources :donations
-    scope '/checkout' do
-      post 'create', to: 'checkout#create', as: 'checkout_create'
-      get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
-      get 'success', to: 'checkout#success', as: 'checkout_success'
-    end
-    
-  resources :pledges
+
+  resources :pledge
     scope '/payment' do
       post 'create', to: 'payment#create', as: 'payment_create'
       get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
       get 'success', to: 'payment#success', as: 'payment_success'
     end
-  
   
   scope '/checkout_tickets' do
     post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'

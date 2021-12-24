@@ -1,7 +1,7 @@
+const stripe = Stripe("<%= Rails.application.credentials[:stripe][:development][:publishable_key]] %>");
 
-const stripe = Stripe('pk_live_SOqAqUmLi3XPCGYk57W3bX4L');
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
 }).then (function (result) {
-    console.log(result.error.message);
+  console.log("With result of ", result);
 });

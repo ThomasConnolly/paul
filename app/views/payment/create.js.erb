@@ -1,5 +1,5 @@
 
-const stripe = Stripe('pk_live_SOqAqUmLi3XPCGYk57W3bX4L');
+const stripe = '<%= Rails.application.credentials.dig(:stripe, :production, :secret_key)%>';
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'

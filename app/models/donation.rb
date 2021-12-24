@@ -22,11 +22,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Donation < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   validates_presence_of :dollars, numericality: { only_integer: true }
   before_save :set_amount
-
-
   
   def set_amount
     self.amount = self.dollars.to_i * 100

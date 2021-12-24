@@ -21,11 +21,16 @@ Bundler.require(*Rails.groups)
 
 module Paul
   class Application < Rails::Application
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    Rails.application.config.default_url_options = { host: 'localhost', port: 5000 }
+    Rails.application.default_url_options= { host: 'localhost', port: 5000 }
     # Configuration for the application, engines, and railties goes here.
-    #
+    ## config/application.rb
+   
+    
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

@@ -29,16 +29,16 @@ class Pledge < ApplicationRecord
     if Rails.env.production?
       self.plan_id = 'plan_HGF5TFwu6CExEc' if plan == "quarterly"
       self.plan_id = 'plan_HGF3HFRRZXQ1vS' if plan == "monthly"
-      self.plan_id = 'plan_HGF4nSEWQx4NPv'  if plan == "weekly"
+      self.plan_id = 'plan_HGF4nSEWQx4NPv' if plan == "weekly"
     elsif Rails.env.development?
-      self.plan_id = 'plan_HCxxRCehGf5Pog' if plan == "quarterly"
-      self.plan_id = 'plan_HCxus7BSYo1eSh' if plan == "monthly"
-      self.plan_id = 'plan_HCxvLz92uVgU3a'  if plan == "weekly"
+      self.plan_id = 'prod_KjCI6kAil750Qe' if plan == "quarterly"
+      self.plan_id = 'prod_KjCHYvpdBzTilz' if plan == "monthly"
+      self.plan_id = 'prod_KjCFArWfGU2HFW' if plan == "weekly"
     end
   end
 
   def cancel_stripe_subscription
     subscription = Stripe::Subscription.retrieve(self.stripe_id).delete
-    self.stripe_id = nil
+    self.stripe_id = "canceled"
   end
 end

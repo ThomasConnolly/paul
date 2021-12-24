@@ -1,17 +1,15 @@
 <div class="clearfix"></div>
-<div class="container">
-  
+  <div class="container">
     <div class="d-flex align-content-center justify-content-center my-5">
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg")%>
-    </div>
-      <div class="d-flex justify-content-center">
-        <p><strong>
-          3901 Davis Blvd., Naples, Florida 34104 &nbsp; 239-643-0197 &nbsp; Office hours 9 a.m. to 1 p.m. Monday-Friday</strong><br>
-          <%= link_to "Need directions? Here is a map", pages_directions_path %> &nbsp;<a href="mailto:welcome@saintpaulsnaples.org">Send us an email</a></p>
-      </div>
-        <div class="d-flex justify-content-center">  
-          <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!", new_donation_path, class: "btn btn-primary btn-lg text-white" %>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/logos/New_StPaul_LogoWeb.jpg")%></div>
+      <p class="text-center"><strong>
+        3901 Davis Blvd., Naples, Florida 34104 &nbsp; 239-643-0197 &nbsp; Office hours 9 a.m. to 1 p.m. Monday-Friday</strong></p>
+        <p class="text-center">
+        <%= link_to "Need directions? Here is a map", pages_directions_path %> &nbsp;<a href="mailto:welcome@saintpaulsnaples.org">Send us an email</a></p>
+        <div class="d-flex justify-content-center">
+        <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!", new_donation_path, class: "btn btn-primary btn-lg text-white" %>
         </div>
-</div>   
+    </div>
+  </div>   
 
   <%= debug(params) if Rails.env.development? %>

@@ -24,6 +24,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Card < ApplicationRecord
-  belongs_to :user
   belongs_to :donation
+  belongs_to :user, optional: true
 end

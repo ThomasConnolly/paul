@@ -3,12 +3,12 @@ class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin, only: [:index]
 
-  if current_user.stripe_id?
-    @customer = Stripe::Customer.retrieve(current_user.stripe_id)
-  else
-    @customer = Stripe::Customer.create(email: current_user.email, name: current_user.username)
-    current_user.update!(stripe_id: @customer.id)
-  end
+  # if current_user.stripe_id?
+  #   @customer = Stripe::Customer.retrieve(current_user.stripe_id)
+  # else
+  #   @customer = Stripe::Customer.create(email: current_user.email, name: current_user.username)
+  #   current_user.update!(stripe_id: @customer.id)
+  # end
 
   def index
     @donations = Donation.all
@@ -29,26 +29,29 @@ class DonationsController < ApplicationController
     @donation.user_id = current_user.id
 
     if @donation.save
-      checkout_session = Stripe::Checkout::Session.create(
-        success_url: donation_url(@donation) + "?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: donation_url,
-        payment_method_types: ["card"],
-        submit_type: 'donate',
-        customer: @customer.stripe_id,
-        mode: 'payment',
-        line_items: [{
-          price_data: {
-            unit_amount: @donation.amount,
-            currency: 'usd',
-            product: prod_ETteQ8s9Ho9sNW,
-          },
-          quantity: 1,
-      }])
-      redirect_to checkout_session.url
-    else
-      flash[:errors] = @donation.errors.full_messages
-      rendernew
+      redirect_to @donation
     end
+
+    #   checkout_session = Stripe::Checkout::Session.create(
+    #     success_url: donation_url(@donation) + "?session_id={CHECKOUT_SESSION_ID}",
+    #     cancel_url: donation_url,
+    #     payment_method_types: ["card"],
+    #     submit_type: 'donate',
+    #     customer: @customer.stripe_id,
+    #     mode: 'payment',
+    #     line_items: [{
+    #       price_data: {
+    #         unit_amount: @donation.amount,
+    #         currency: 'usd',
+    #         product: prod_ETteQ8s9Ho9sNW,
+    #       },
+    #       quantity: 1,
+    #   }])
+    #   redirect_to checkout_session.url
+    # else
+    #   flash[:errors] = @donation.errors.full_messages
+    #   rendernew
+    # end
   end
   
   def update

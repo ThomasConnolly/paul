@@ -2,16 +2,16 @@
 #
 # Table name: stripe_reports
 #
-#  id          :bigint           not null, primary key
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  pledge_id   :integer
+#  donation_id :integer
 #  amount      :integer
-#  date_paid   :date
 #  fee         :integer
 #  net         :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  donation_id :bigint
-#  pledge_id   :bigint
-#  user_id     :bigint           not null
+#  date_paid   :date
 #
 # Indexes
 #
@@ -19,12 +19,7 @@
 #  index_stripe_reports_on_pledge_id    (pledge_id)
 #  index_stripe_reports_on_user_id      (user_id)
 #
-# Foreign Keys
-#
-#  fk_rails_...  (donation_id => donations.id)
-#  fk_rails_...  (pledge_id => pledges.id)
-#  fk_rails_...  (user_id => users.id)
-#
+
 class StripeReport < ApplicationRecord
   belongs_to :user
   belongs_to :pledge, optional: true

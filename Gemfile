@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.0.2'
+ruby '3.1.0'
 
 gem 'actionmailer'
 gem 'activerecord-import'
@@ -23,31 +23,33 @@ gem 'figaro'
 gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
+gem 'importmap-rails'
 gem 'irb', require: false
 gem 'jbuilder'
-gem 'jsbundling-rails'
+#gem 'jsbundling-rails'
 gem 'loofah'
 gem 'mail'
 gem 'mini_magick'
 gem 'nested_scaffold'
+gem 'net-smtp'
 gem 'nokogiri'
 gem 'pg'
 gem 'premailer-rails'
-gem 'pry'
-gem 'pry-rails'
 gem 'puma'
 gem 'rack'
-gem 'rails'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+gem "rails", "~>7.0.1"
 gem 'railties'
 gem 'receipts'
 gem 'redis'
 gem 'rest-client'
 gem 'rolify'
-gem 'sendgrid-ruby', '~> 6.4'
-gem 'rss'
 gem 'scout_apm'
+gem 'sendgrid-ruby', '~> 6.4'
+gem 'sprockets-rails'
+gem 'rss'
 gem 'stripe'
-gem "turbo-rails", "~> 7.1"
+gem 'turbo-rails'
 gem 'uglifier'
 gem 'whenever'
 
@@ -55,9 +57,7 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'break'
   gem 'capistrano'
-  gem 'derailed'
   gem 'letter_opener'
   gem 'letter_opener_web'
   # gem 'meta_request'
@@ -66,18 +66,16 @@ group :development do
 end
 
 group :development, :test do
-  gem 'email_spec'
-  gem 'factory_bot_rails'
-  gem 'guard'
-  gem 'guard-livereload'
-  gem 'listen'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-stack_explorer'
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem 'email_spec'
+  # gem 'factory_bot_rails'
+  # gem 'guard'
+  # gem 'guard-livereload'
+  # gem 'listen'
+  # gem 'pry-byebug'
+  # gem 'pry-doc'
+  # gem 'pry-stack_explorer'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  #gem 'spring'
-  #gem 'spring-watcher-listen'
 end
 
 group :test do

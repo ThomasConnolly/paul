@@ -25,18 +25,14 @@ development:
   host: localhost
   username: postgres
   password: tommycon
-  port: 5432
-
-
-
+  port: 5433
 
 test: &test
   <<: *default
   database: paul_test
-  username: tom
+  username: postgres
   password: tommycon
-  port: 5432
-
+  port: 5433
 
 #
 #   production:

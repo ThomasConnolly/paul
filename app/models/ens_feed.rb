@@ -2,15 +2,16 @@
 #
 # Table name: ens_feeds
 #
-#  id           :bigint           not null, primary key
-#  guid         :string
-#  published_at :datetime
-#  summary      :text
+#  id           :integer          not null, primary key
 #  title        :string
+#  summary      :text
 #  url          :string
+#  published_at :datetime
+#  guid         :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+
 class EnsFeed < ApplicationRecord
 
 feed_url = "https://www.episcopalnewsservice.org/feed/?cat=-6%2C-8"

@@ -23,13 +23,12 @@ Rails.application.routes.draw do
 
   resources :donations
 
-  resources :pledge
-    scope '/payment' do
-      post 'create', to: 'payment#create', as: 'payment_create'
-      get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
-      get 'success', to: 'payment#success', as: 'payment_success'
-    end
-  
+  resources :pledges
+
+  post 'create', to: 'payment#create', as: 'payment_create'
+  get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
+  get 'success', to: 'payment#success', as: 'payment_success'
+
   scope '/checkout_tickets' do
     post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'
     get 'cancel', to: 'checkout_tickets#cancel', as: 'cancel'
@@ -40,7 +39,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :tickets, only: %i[new show create update]
   end
-   resources :tickets, only: %[index]
+
+  resources :tickets, only: %[index]
   resources :albergue_children
   resources :links
   resources :pathways

@@ -1,12 +1,11 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: todo_lists
 #
-#  id          :bigint           not null, primary key
-#  description :text
+#  id          :integer          not null, primary key
 #  title       :string
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

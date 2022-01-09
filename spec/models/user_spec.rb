@@ -3,27 +3,27 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  avatar                 :string
-#  card_brand             :string
-#  card_exp_month         :string
-#  card_exp_year          :string
-#  card_last4             :string
-#  current_sign_in_at     :datetime
-#  current_sign_in_ip     :inet
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
-#  first_name             :string(255)
-#  honey                  :string
-#  last_name              :string(255)
-#  last_sign_in_at        :datetime
-#  last_sign_in_ip        :inet
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
-#  sign_in_count          :integer          default(0), not null
-#  username               :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default("0"), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :inet
+#  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  username               :string(255)
+#  avatar                 :string
+#  honey                  :string
+#  card_brand             :string
+#  card_last4             :string
+#  card_exp_month         :string
+#  card_exp_year          :string
 #  stripe_id              :string
 #
 # Indexes
@@ -31,6 +31,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_username              (username)
 #
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do

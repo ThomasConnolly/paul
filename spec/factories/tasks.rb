@@ -2,14 +2,15 @@
 #
 # Table name: tasks
 #
-#  id          :bigint           not null, primary key
-#  deadline    :string
-#  description :string
-#  position    :integer
+#  id          :integer          not null, primary key
 #  title       :string
+#  description :string
+#  deadline    :string
+#  position    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+
 FactoryBot.define do
   factory :task do
     title { "MyString" }

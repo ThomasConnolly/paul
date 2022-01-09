@@ -1,10 +1,11 @@
 
 class PledgesController < ApplicationController
   before_action :authenticate_user!, except: [:new]
-  before_action :change_path, only: :new
+  before_action :change_path, only: [:new]
   before_action :set_pledge, only: %i[show edit update destroy]
 
-  def show; end
+  def show
+  end
 
   def new
     @pledge = Pledge.new
@@ -21,7 +22,8 @@ class PledgesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @pledge.update(pledge_params)
@@ -42,7 +44,7 @@ class PledgesController < ApplicationController
   private
 
   def set_pledge
-    @pledge = Pledge.find(current_user.pledge.id)
+    @pledge = Pledge.find(params[:id])
   end
 
   def change_path

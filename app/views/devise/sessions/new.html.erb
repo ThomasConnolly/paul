@@ -3,7 +3,7 @@
     <div class="col-sm-4 offset-sm-4">
 
       <h2 class="text-center">Log in</h2>
-      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), html: {data: { turbo: false} } ) do |f| %>
       <%= f.text_field :login, autofocus: true, placeholder: "registered name or email address" %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "password" %>
 

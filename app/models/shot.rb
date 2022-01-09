@@ -2,19 +2,18 @@
 #
 # Table name: shots
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
+#  last_name  :string
+#  first_name :string
 #  dob        :date
 #  email      :string
-#  first_name :string
-#  honey      :string
-#  last_name  :string
 #  phone      :string
 #  shot_time  :string
 #  status     :string
+#  honey      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 
 class Shot < ApplicationRecord
   validates :first_name, presence: true

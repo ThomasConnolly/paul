@@ -1,27 +1,22 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: donations
 #
-#  id         :bigint           not null, primary key
-#  amount     :integer
-#  dollars    :integer
-#  memo       :string
-#  status     :string
-#  type       :string
+#  id         :integer          not null, primary key
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  type       :string
 #  stripe_id  :string
-#  user_id    :bigint
+#  amount     :integer
+#  dollars    :integer
+#  status     :string
+#  memo       :string
 #
 # Indexes
 #
 #  index_donations_on_user_id  (user_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (user_id => users.id)
 #
 
 require 'rails_helper'

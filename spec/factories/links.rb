@@ -2,14 +2,15 @@
 #
 # Table name: links
 #
-#  id         :bigint           not null, primary key
-#  date       :datetime
+#  id         :integer          not null, primary key
 #  event      :string
 #  time       :string
+#  date       :datetime
 #  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 FactoryBot.define do
   factory :link do
     event { "MyString" }

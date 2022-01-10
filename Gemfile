@@ -26,7 +26,7 @@ gem 'image_processing'
 gem 'importmap-rails'
 gem 'irb', require: false
 gem 'jbuilder'
-#gem 'jsbundling-rails'
+gem 'jsbundling-rails'
 gem 'loofah'
 gem 'mail'
 gem 'mini_magick'
@@ -48,6 +48,7 @@ gem 'scout_apm'
 gem 'sendgrid-ruby', '~> 6.4'
 gem 'sprockets-rails'
 gem 'rss'
+gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'uglifier'
@@ -79,9 +80,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  # gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+ 

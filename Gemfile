@@ -23,7 +23,7 @@ gem 'figaro'
 gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
-gem 'importmap-rails'
+# gem 'importmap-rails'
 gem 'irb', require: false
 gem 'jbuilder'
 gem 'jsbundling-rails'

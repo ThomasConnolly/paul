@@ -204,6 +204,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    jsbundling-rails (1.0.0)
+      railties (>= 6.0.0)
     kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -474,6 +476,7 @@ DEPENDENCIES
   importmap-rails
   irb
   jbuilder
+  jsbundling-rails
   letter_opener
   letter_opener_web
   loofah
@@ -500,6 +503,7 @@ DEPENDENCIES
   sendgrid-ruby (~> 6.4)
   solargraph
   sprockets-rails
+  stimulus-rails
   stripe
   turbo-rails
   uglifier

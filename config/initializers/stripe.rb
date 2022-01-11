@@ -1,1 +1,1 @@
-Stripe.api_key=Rails.application.credentials[:stripe][:development][:secret]
+Stripe.api_key=Rails.application.credentials[:stripe][:production][:secret]

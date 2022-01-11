@@ -33,7 +33,7 @@ class Donation < ApplicationRecord
     price = Stripe::Price.create({
       unit_amount: self.amount,
       currency: 'usd',
-      product: 'prod_ETteQ8s9Ho9sNW',
+      product: 'prod_EP0UOHa0sNeorA',
     })
     self.stripe_id = price.id
   end    

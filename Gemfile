@@ -52,6 +52,7 @@ gem 'rss'
 gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
+gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'uglifier'
 gem 'whenever'
 

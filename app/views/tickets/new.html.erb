@@ -1,7 +1,7 @@
-<div class="mt100"></div>
+
 <div class="row">
   <div class="col-md-6 offset-md-3">
-      <%= cl_image_tag("15Mar2021Todds_act7cs.jpg", width: "70%",
+      <%= cl_image_tag("15Feb2022_zvh1zq.jpg", width: "70%",
       class: "image-center") %>
 
     <h1><%= @event.title %></h1>
@@ -13,8 +13,8 @@
         <%= f.hidden_field :event_id, :value => @event.id %>
         <%= f.text_field :first_name %> &nbsp;<%= f.text_field :last_name %> 
         <%= f.text_field :email %> <br>
-        <%= f.number_field :quantity, label: "Number of tickets (1 if streaming)" %>
-      <div class="honey">
+        <%= f.number_field :quantity, label: "Number of tickets" %>
+      <div class="sr-only">
         <%= f.text_field :honey %>
       </div>
         <%= f.submit "Review your order", class: "btn btn-primary btn-lg" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_172559) do
+ActiveRecord::Schema.define(version: 2022_01_19_121615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -439,6 +439,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_172559) do
     t.string "customer_id"
     t.string "checkout"
     t.string "honey"
+    t.string "stripe_id"
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end
 
@@ -477,10 +478,6 @@ ActiveRecord::Schema.define(version: 2022_01_04_172559) do
     t.string "username", limit: 255
     t.string "avatar"
     t.string "honey"
-    t.string "card_brand"
-    t.string "card_last4"
-    t.string "card_exp_month"
-    t.string "card_exp_year"
     t.string "stripe_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"

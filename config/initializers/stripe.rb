@@ -1,3 +1,1 @@
-Stripe.api_key=Rails.application.credentials[:stripe][:production][:secret_key]
-
-#switch production to development keyless for testing
+Stripe.api_key=Rails.application.credentials[:stripe][Rails.env.to_sym][:secret_key]

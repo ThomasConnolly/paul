@@ -9,30 +9,22 @@ class CheckoutTicketsController < ApplicationController
       return
     end
 
-    @customer = Stripe::Customer.create(email: @ticket.email)
-    @session = Stripe::Checkout::Session.create(
+    customer = Stripe::Customer.create(email: @ticket.email)
+    @ticket.update!(customer_id: customer.id)
+    session = Stripe::Checkout::Session.create({
+      success_url: checkout_tickets_success_url + '?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: events_url,
       payment_method_types: ['card'],
+      submit_type: 'pay',
+      customer: customer,
       line_items: [{
-        currency: 'usd',
-        amount: @ticket.amount,
-        name: @ticket.event.title,
+        price: @ticket.stripe_id,
         quantity: 1,
+        description: @ticket.event.title,
       }],
-      client_reference_id: "tic_#{@ticket.id}",
-      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: checkout_cancel_url,
-    )
-      respond_to do |format|
-        format.js
+      client_reference_id: "tic#{@ticket.id.to_s}",
+      mode: 'payment',
+      })
+      redirect_to session.url, allow_other_host: true
     end
   end
-
-  def success
-    @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-    @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
-  end
-
-  def cancel; end
-end
-
-  

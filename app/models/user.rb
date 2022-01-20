@@ -21,10 +21,6 @@
 #  username               :string(255)
 #  avatar                 :string
 #  honey                  :string
-#  card_brand             :string
-#  card_last4             :string
-#  card_exp_month         :string
-#  card_exp_year          :string
 #  stripe_id              :string
 #
 # Indexes

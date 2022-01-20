@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :participants
 
   resources :todo_lists do
     resources :todo_items
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
   scope '/checkout_tickets' do
     post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'
     get 'cancel', to: 'checkout_tickets#cancel', as: 'cancel'
-    get 'success', to: 'checkout_tickets#success', as: 'success'
+    get 'success', to: 'checkout_tickets#success', as: 'checkout_tickets_success'
   end
   resources :vaccinations, only: %i[new create index]
 

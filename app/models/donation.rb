@@ -28,12 +28,14 @@ class Donation < ApplicationRecord
     self.amount = self.dollars.to_i * 100
     amount
   end
-
+# prod_EP... is for production, Ky for test. Silence one or the other!
   def set_stripe_id
     price = Stripe::Price.create({
       unit_amount: self.amount,
       currency: 'usd',
-      product: 'prod_EP0UOHa0sNeorA',
+      # product: 'prod_EP0UOHa0sNeorA',
+      product: 'prod_Kyu7StID0XtS7W',
+      
     })
     self.stripe_id = price.id
   end    

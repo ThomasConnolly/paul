@@ -12,7 +12,7 @@
     <% else %>
     <%= @vestry_minute.body %>
     <% end %>
-  <div class="mt100"></div>
+  <div class="mt-5"></div>
     <% if current_user && current_user.has_role?(:admin) %>
     <%= link_to 'Edit', edit_vestry_minute_path(@vestry_minute) %> |
     <%= link_to 'Back', vestry_minutes_path %>

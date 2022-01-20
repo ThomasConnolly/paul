@@ -19,6 +19,14 @@ def create
       quantity: 1,
       description: "Donation to St. Paul's",
     }],
+    metadata: {
+      donation_id: @donation.id,
+    },
+    payment_intent_data: {
+      metadata: {
+        donation_id: @donation.id,
+      }
+    },
     mode: 'payment',
   })
   redirect_to checkout_session.url, allow_other_host: true

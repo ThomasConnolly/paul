@@ -1,4 +1,4 @@
-<%= bootstrap_form_with model: @pledge do |f| %>
+<%= bootstrap_form_with (model: @pledge, local: true) do |f| %>
   <%= f.number_field :dollars, label: "Dollar amount" %>
   <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, bootstrap: {check_inline: true}, label: "Frequency" %>
  

@@ -9,6 +9,7 @@ module Paul
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.action_view.form_with_generates_remote_forms = false
 
     Rails.application.config.default_url_options = { host: 'localhost', port: 5000 }
     Rails.application.default_url_options= { host: 'localhost', port: 5000 }

@@ -13,7 +13,7 @@
             <small><%= link_to 'Show', vestry_minute %></small>&nbsp; 
           <% if current_user && current_user.has_role?(:admin) %>
             <%= link_to 'Edit', edit_vestry_minute_path(vestry_minute) %> | 
-            <%= link_to 'Destroy', vestry_minute, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <%= link_to 'Destroy', vestry_minute, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>
           <% end %>
         <% end %>
     </div>

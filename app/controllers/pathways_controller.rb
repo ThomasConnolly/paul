@@ -1,43 +1,43 @@
+# frozen_string_literal: true
+
 class PathwaysController < ApplicationController
-before_action :set_pathway, only: [:show, :edit, :update, :destroy]
+  before_action :set_pathway, only: %i[show edit update destroy]
 
-def index
-  @pathways = Pathway.all.order('pubdate DESC')
-end
-
-def edit; end
-
-def show; end
-
-def new
-  @pathway = Pathway.new
-end
-
-
-def create
-  @pathway = Pathway.new(pathway_params)
-  if @pathway.save
-    redirect_to pathways_path
-  else
-    render :new
+  def index
+    @pathways = Pathway.all.order('pubdate DESC')
   end
-end
 
-def update
-  if @pathway.update(pathway_params)
-    redirect_to @pathway
-  else
-    render :edit
+  def edit; end
+
+  def show; end
+
+  def new
+    @pathway = Pathway.new
   end
-end
 
-def destroy
-  @pathway.destroy
-  redirect_to "/"
-end
+  def create
+    @pathway = Pathway.new(pathway_params)
+    if @pathway.save
+      redirect_to pathways_path
+    else
+      render :new
+    end
+  end
 
+  def update
+    if @pathway.update(pathway_params)
+      redirect_to @pathway
+    else
+      render :edit
+    end
+  end
 
-private
+  def destroy
+    @pathway.destroy
+    redirect_to '/'
+  end
+
+  private
 
   def set_pathway
     @pathway = Pathway.find(params[:id])

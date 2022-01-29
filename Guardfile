@@ -33,21 +33,21 @@ guard 'livereload' do
   }
 end
 
-  rails_view_exts = %w[erb haml slim]
+rails_view_exts = %w[erb haml slim]
 
-  # file types LiveReload may optimize refresh for
-  compiled_exts = extensions.values.uniq
-  watch(%r{public/.+\.(#{compiled_exts * '|'})})
+# file types LiveReload may optimize refresh for
+compiled_exts = extensions.values.uniq
+watch(%r{public/.+\.(#{compiled_exts * '|'})})
 
-  extensions.each do |ext, type|
-    watch(%r{
+extensions.each do |ext, type|
+  watch(%r{
           (?:app|vendor)
           (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
            (?<ext>\.#{ext})) # matching extension (must be first encountered)
           (?:\.\w+|$) # other extensions
           }x) do |m|
-      path = m[1]
-      "/assets/#{path}.#{type}"
+    path = m[1]
+    "/assets/#{path}.#{type}"
   end
 
   # file needing a full reload of the page anyway

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: links
@@ -13,9 +15,9 @@
 
 FactoryBot.define do
   factory :link do
-    event { "MyString" }
-    time { "MyString" }
-    date { "2020-05-24 09:36:41" }
-    url { "MyString" }
+    event { 'MyString' }
+    time { 'MyString' }
+    date { '2020-05-24 09:36:41' }
+    url { 'MyString' }
   end
 end

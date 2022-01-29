@@ -30,18 +30,17 @@ class Ticket < ApplicationRecord
   validates :honey, absence: true
   validates :quantity, presence: true
 
-
   def set_amount
-    self.amount = quantity * price 
+    self.amount = quantity * price
   end
 
   def set_stripe_id
     price = Stripe::Price.create({
-      unit_amount: self.amount,
-      currency: 'usd',
-      product: 'prod_L0767zWhIpzB9g'
+                                   unit_amount: amount,
+                                   currency: 'usd',
+                                   product: 'prod_L0767zWhIpzB9g'
 
-    })
+                                 })
     self.stripe_id = price.id
   end
 end

@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "photos/edit", type: :view do
+RSpec.describe 'photos/edit', type: :view do
   before(:each) do
     @photo = assign(:photo, Photo.create!(
-      title: "MyString",
-      image_data: "MyText"
-    ))
+                              title: 'MyString',
+                              image_data: 'MyText'
+                            ))
   end
 
-  it "renders the edit photo form" do
+  it 'renders the edit photo form' do
     render
 
-    assert_select "form[action=?][method=?]", photo_path(@photo), "post" do
+    assert_select 'form[action=?][method=?]', photo_path(@photo), 'post' do
+      assert_select 'input[name=?]', 'photo[title]'
 
-      assert_select "input[name=?]", "photo[title]"
-
-      assert_select "textarea[name=?]", "photo[image_data]"
+      assert_select 'textarea[name=?]', 'photo[image_data]'
     end
   end
 end

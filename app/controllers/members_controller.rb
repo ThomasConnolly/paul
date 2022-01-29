@@ -21,7 +21,6 @@ class MembersController < ApplicationController
     end
   end
 
-
   def update
     @member.update(member_params)
     @member.save
@@ -34,10 +33,8 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to members_path, notice: "Member successfully deleted"
+    redirect_to members_path, notice: 'Member successfully deleted'
   end
-
-
 
   private
 
@@ -50,6 +47,6 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:last_name, :first_name, :membership_id,:birthday, :email, :yday, :away_zip)
+    params.require(:member).permit(:last_name, :first_name, :membership_id, :birthday, :email, :yday, :away_zip)
   end
 end

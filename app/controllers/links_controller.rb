@@ -1,31 +1,31 @@
+# frozen_string_literal: true
+
 class LinksController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only
-
- 
 
   # GET /links/1
   # GET /links/1.json
   def index
     @links = Link.all
-    @worship = Link.find_by(event: "worship")
-    @bulletin = Link.find_by(event: "bulletin")
-    @wine = Link.find_by(event: "wine_time")
-    @coffee = Link.find_by(event: "coffee")
-    @day_bible = Link.find_by(event: "day_bible")
-    @evening_bible = Link.find_by(event: "evening_bible")
-    @annual_meeting = Link.find_by(event: "annual meeting")
+    @worship = Link.find_by(event: 'worship')
+    @bulletin = Link.find_by(event: 'bulletin')
+    @wine = Link.find_by(event: 'wine_time')
+    @coffee = Link.find_by(event: 'coffee')
+    @day_bible = Link.find_by(event: 'day_bible')
+    @evening_bible = Link.find_by(event: 'evening_bible')
+    @annual_meeting = Link.find_by(event: 'annual meeting')
   end
 
   def show
     @link = Link.find(params[:id])
-    @worship = Link.find_by(event: "worship")
-    @bulletin = Link.find_by(event: "bulletin")
-    @wine = Link.find_by(event: "wine_time")
-    @coffee = Link.find_by(event: "coffee")
-    @day_bible = Link.find_by(event: "day_bible")
-    @evening_bible = Link.find_by(event: "evening_bible")
-    @annual_meeting = Link.find_by(event: "annual meeting")
+    @worship = Link.find_by(event: 'worship')
+    @bulletin = Link.find_by(event: 'bulletin')
+    @wine = Link.find_by(event: 'wine_time')
+    @coffee = Link.find_by(event: 'coffee')
+    @day_bible = Link.find_by(event: 'day_bible')
+    @evening_bible = Link.find_by(event: 'evening_bible')
+    @annual_meeting = Link.find_by(event: 'annual meeting')
   end
 
   # GET /links/1/edit
@@ -37,17 +37,12 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
-      if @link.save
-        redirect_to @link, notice: 'Link was successfully created.'
-    end
+    redirect_to @link, notice: 'Link was successfully created.' if @link.save
   end
 
-  
   def update
-      @link = Link.find(params[:id])
-      if @link.update(link_params)
-        redirect_to @link, notice: 'Link was successfully updated.'
-    end
+    @link = Link.find(params[:id])
+    redirect_to @link, notice: 'Link was successfully updated.' if @link.update(link_params)
   end
 
   # DELETE /links/1
@@ -62,14 +57,15 @@ class LinksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
- 
-    def admin_only
-      current_user.has_role? (:admin)
-    end
 
-    # Only allow a list of trusted parameters through.
-    def link_params
-      params.require(:link).permit(:event, :time, :date, :url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+
+  def admin_only
+    current_user.has_role?(:admin)
+  end
+
+  # Only allow a list of trusted parameters through.
+  def link_params
+    params.require(:link).permit(:event, :time, :date, :url)
+  end
 end

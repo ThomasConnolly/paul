@@ -1,22 +1,21 @@
+# frozen_string_literal: true
+
 class DonationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  before_action :set_donation, only: %i[show edit update destroy]
   before_action :authenticate_admin, only: [:index]
-
 
   def index
     @donations = Donation.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @donation = Donation.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @donation = Donation.new(donation_params)
@@ -27,7 +26,7 @@ class DonationsController < ApplicationController
       flash[:errors] = @donation.errors.full_messages
     end
   end
-  
+
   def update
     respond_to do |format|
       if @donation.update(donation_params)
@@ -49,16 +48,18 @@ class DonationsController < ApplicationController
   end
 
   private
-    def set_donation
-      @donation = Donation.find(params[:id])
-    end
 
-    def authenticate_admin
-      return unless !current_user.has_role?(:admin)
-      redirect_to root_path
-    end
+  def set_donation
+    @donation = Donation.find(params[:id])
+  end
 
-    def donation_params
-      params.require(:donation).permit(:amount, :memo, :dollars, :stripe_id)
-    end
+  def authenticate_admin
+    return if current_user.has_role?(:admin)
+
+    redirect_to root_path
+  end
+
+  def donation_params
+    params.require(:donation).permit(:amount, :memo, :dollars, :stripe_id)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: participants
@@ -18,7 +20,7 @@
 
 FactoryBot.define do
   factory :participant do
-    references { "" }
-    session { "MyString" }
+    references { '' }
+    session { 'MyString' }
   end
 end

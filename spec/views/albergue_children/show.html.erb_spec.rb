@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "albergue_children/show", type: :view do
+RSpec.describe 'albergue_children/show', type: :view do
   before(:each) do
     @albergue_child = assign(:albergue_child, AlbergueChild.create!(
-      first_name: "First Name",
-      last_name: "Last Name",
-      user: nil,
-      avatar: "Avatar"
-    ))
+                                                first_name: 'First Name',
+                                                last_name: 'Last Name',
+                                                user: nil,
+                                                avatar: 'Avatar'
+                                              ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/First Name/)
     expect(rendered).to match(/Last Name/)

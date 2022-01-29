@@ -1,1 +1,3 @@
-json.partial! "albergue_children/albergue_child", albergue_child: @albergue_child
+# frozen_string_literal: true
+
+json.partial! 'albergue_children/albergue_child', albergue_child: @albergue_child

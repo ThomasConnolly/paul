@@ -23,5 +23,5 @@ class Anniversary < ApplicationRecord
       :anniversary
     )
     anniversary
-    end
+  end
 end

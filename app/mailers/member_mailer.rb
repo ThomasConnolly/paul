@@ -9,10 +9,10 @@
 class MemberMailer < ApplicationMailer
  
   default from: 'Welcome@saintpaulsnaples.org'
-  #default to: 'welcome@saintpaulsnaples.org'
-  default to: 'tom.connolly@comcast.net'
-  #default bcc: -> { Member.where.not(email: nil).pluck(:email) }
-  default bcc: ["john_titus33@yahoo.com",
+  default to: 'welcome@saintpaulsnaples.org'
+  #default to: 'tom.connolly@comcast.net'
+  default bcc: -> { Member.where.not(email: nil).pluck(:email) }
+  #default bcc: ["john_titus33@yahoo.com",
   "fcthorntonsr193@gmail.com",
   "Mia.Souvannarath@yahoo.com",
   "jcaldersmoot@gmail.com",
@@ -27,6 +27,14 @@ class MemberMailer < ApplicationMailer
       subject: 'testing'
     )
   end
+
+  def january2022_pathway(member)
+    @member = member
+    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1643212624/Jan2022Sm_v8efsy.pdf"
+    mail(
+      subject: "Pathways, your parish newsletter"
+    ) 
+    end
 
   def summer2021_pathway(member)
     @member = member

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: pathways
@@ -12,8 +14,8 @@
 
 FactoryBot.define do
   factory :pathway do
-    image { "MyString" }
-    title { "MyString" }
-    link { "MyString" }
+    image { 'MyString' }
+    title { 'MyString' }
+    link { 'MyString' }
   end
 end

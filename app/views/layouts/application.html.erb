@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>St. Paul's Episcopal Church, Naples FL, Spirituality, Prayer, Worship,
-      Farmers Market, Haitian Episcopal Church</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-      shrink-to-fit=yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <script src="https://js.stripe.com/v3/"></script>
-   
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <style>
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-      }
-    </style>
-  </head>
 
-  <body class="<%= controller_name %>  <%= action_name %>">
+<head>
+  <meta charset="utf-8">
+  <title>St. Paul's Episcopal Church, Naples FL, Spirituality, Prayer, Worship,
+    Farmers Market, Haitian Episcopal Church</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=yes">
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+      <script src="https://js.stripe.com/v3/"></script>
+
+      <%= stylesheet_link_tag "application" %>
+        <%= javascript_include_tag "application" %>
+          <link rel="stylesheet" href="/trix.css" />
+          <style>
+            .sr-only {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              border: 0;
+            }
+          </style>
+</head>
+
+<body class="<%= controller_name %>  <%= action_name %>">
   <div class="page">
     <div class="container">
       <%= render '/layouts/header' %>
-      <%= render '/layouts/navbar' %>
+        <%= render '/layouts/navbar' %>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-success alert-dismissible fade show">
-        <%= flash[:notice] %>
-        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-      </div>  
-    <% elsif flash[:error] %>
-      <div class="alert alert-error alert-dismissible fade show">
-        <%= flash[:error] %>
-        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-      </div>  
-    <% elsif flash[:alert] %>
-      <div class="alert alert-dismissible fade show">
-        <%= flash[:alert] %>
-        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-      </div>
-    <% end %>
+          <% if flash[:notice] %>
+            <div class="alert alert-success alert-dismissible fade show">
+              <%= flash[:notice] %>
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+            </div>
+            <% elsif flash[:error] %>
+              <div class="alert alert-error alert-dismissible fade show">
+                <%= flash[:error] %>
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+              </div>
+              <% elsif flash[:alert] %>
+                <div class="alert alert-dismissible fade show">
+                  <%= flash[:alert] %>
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span></button>
+                </div>
+                <% end %>
 
-    <%= yield %>
+                  <%= yield %>
 
-    <%= render 'layouts/footer' %>
+                    <%= render 'layouts/footer' %>
 
-      </div><!-- container -->
-    </div> <!-- page -->
-  </body>
+    </div><!-- container -->
+  </div> <!-- page -->
+</body>
+
 </html>

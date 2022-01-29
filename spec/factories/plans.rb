@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: plans
@@ -13,10 +15,10 @@
 #
 FactoryBot.define do
   factory :plan do
-    name { "MyString" }
+    name { 'MyString' }
     amount { 1 }
-    interval { "MyString" }
-    interval_count { "MyString" }
-    stripe_id { "MyString" }
+    interval { 'MyString' }
+    interval_count { 'MyString' }
+    stripe_id { 'MyString' }
   end
 end

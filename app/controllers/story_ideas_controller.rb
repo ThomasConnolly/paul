@@ -17,7 +17,6 @@ class StoryIdeasController < ApplicationController
   before_action :set_story_idea, only: %i[show edit update destroy]
   before_action :find_commentable
 
-
   def new
     @story_idea = StoryIdea.new
   end
@@ -37,7 +36,7 @@ class StoryIdeasController < ApplicationController
       StoryIdeaMailer.story_idea_created(@story_idea).deliver_later
       redirect_to story_ideas_path
     else
-      puts "something went wrong"
+      puts 'something went wrong'
       render :new
     end
   end
@@ -59,8 +58,8 @@ class StoryIdeasController < ApplicationController
   end
 
   def story_idea_params
-    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture, 
-       :user_id)
+    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture,
+                                       :user_id)
   end
 
   def find_commentable

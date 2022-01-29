@@ -49,13 +49,13 @@ class ProfilesController < ApplicationController
     else
       render 'new'
     end
- end
+  end
 
   private
 
   def set_profile
     @profile = Profile.find(params[:id])
- end
+  end
 
   def profile_params
     params.require(:profile).permit(:id, :user_id, :cities, :background, :career, :family, :lifestyle, :civic, :church)

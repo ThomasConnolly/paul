@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_post, only: %i[show edit update destroy]
@@ -16,10 +17,10 @@ class PostsController < ApplicationController
 
   def show
     @comments = if params[:comment]
-      @post.comments.where(id: params[:comment])
-    else
-      @post.comments.where(parent_id: nil)
-    end
+                  @post.comments.where(id: params[:comment])
+                else
+                  @post.comments.where(parent_id: nil)
+                end
   end
 
   def create

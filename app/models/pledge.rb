@@ -24,21 +24,20 @@ class Pledge < ApplicationRecord
   before_save :set_plan_id
   before_destroy :cancel_stripe_subscription, if: :stripe_id
 
-  
   def set_plan_id
     if Rails.env.production?
-      self.plan_id = 'plan_HGF5TFwu6CExEc' if plan == "quarterly"
-      self.plan_id = 'plan_HGF3HFRRZXQ1vS' if plan == "monthly"
-      self.plan_id = 'plan_HGF4nSEWQx4NPv' if plan == "weekly"
+      self.plan_id = 'plan_HGF5TFwu6CExEc' if plan == 'quarterly'
+      self.plan_id = 'plan_HGF3HFRRZXQ1vS' if plan == 'monthly'
+      self.plan_id = 'plan_HGF4nSEWQx4NPv' if plan == 'weekly'
     elsif Rails.env.development?
-      self.plan_id = 'prod_KjCI6kAil750Qe' if plan == "quarterly"
-      self.plan_id = 'prod_KjCHYvpdBzTilz' if plan == "monthly"
-      self.plan_id = 'prod_KjCFArWfGU2HFW' if plan == "weekly"
+      self.plan_id = 'prod_KjCI6kAil750Qe' if plan == 'quarterly'
+      self.plan_id = 'prod_KjCHYvpdBzTilz' if plan == 'monthly'
+      self.plan_id = 'prod_KjCFArWfGU2HFW' if plan == 'weekly'
     end
   end
 
   def cancel_stripe_subscription
-    subscription = Stripe::Subscription.retrieve(self.stripe_id).delete
-    self.stripe_id = "canceled"
+    subscription = Stripe::Subscription.retrieve(stripe_id).delete
+    self.stripe_id = 'canceled'
   end
 end

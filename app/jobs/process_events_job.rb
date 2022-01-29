@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProcessEventsJob < ApplicationJob
   queue_as :default
 
@@ -11,7 +13,7 @@ class ProcessEventsJob < ApplicationJob
           Events::StripeHandler.process(event)
         end
         event.update(state: :processed)
-      rescue => e
+      rescue StandardError => e
         event.update(state: :failed, processing_errors: e)
       end
     end

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 class PagesController < ApplicationController
   def directions; end
 
   def stay_safe; end
-  
+
   def sacred_ground; end
 
   def albergue; end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StripeReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only
@@ -19,11 +21,7 @@ class StripeReportsController < ApplicationController
 
   def show; end
 
-    
-
-
   private
-
 
   def set_stripe_report
     @stripe_report = stripe_report.find(params[:id])
@@ -34,7 +32,7 @@ class StripeReportsController < ApplicationController
   end
 
   def admin_only
-    unless current_user.has_role?(:admin)||current_user.has_role?(:controller)
+    unless current_user.has_role?(:admin) || current_user.has_role?(:controller)
       redirect_to root_path, alert: 'This information is private.'
     end
   end

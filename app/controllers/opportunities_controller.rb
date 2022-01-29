@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class OpportunitiesController < ApplicationController
   before_action :set_opportunity, only: %i[show edit update destroy]
 

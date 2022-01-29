@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new edit update create destroy book_admin]
@@ -79,7 +80,7 @@ class BooksController < ApplicationController
 
   def admin_only
     redirect_to '/' unless current_user&.has_role?(:admin)
-    end
+  end
 
   def book_import_params
     params.require(:book_import).permit(:file)

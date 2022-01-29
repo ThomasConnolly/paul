@@ -61,9 +61,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-       WelcomeMailer.welcome_email(@user).deliver_now
-    end
+    WelcomeMailer.welcome_email(@user).deliver_now if @user.save
   end
 
   def update
@@ -73,16 +71,15 @@ class UsersController < ApplicationController
   def edit; end
 
   def delete_avatar
-    avatar = ActiveStorage::Attachment,find(params[:avatar_id])
+    avatar = ActiveStorage::Attachment, find(params[:avatar_id])
     if current_user == avatar.record || current_user.admin?
       avatar.purge
       redirect_back(fallback_location: request.referer)
     else
-      redirect_to root_url, notice: "Not yours to delete!"
+      redirect_to root_url, notice: 'Not yours to delete!'
     end
   end
 
-  
   private
 
   def set_user
@@ -94,7 +91,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, :card, :card_last4, :card_exp_year, :card_exp_month, :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id, photos: [])
+    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, :card, :card_last4,
+                                 :card_exp_year, :card_exp_month, :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id, photos: [])
   end
 
   def admin_only
@@ -105,8 +103,6 @@ class UsersController < ApplicationController
   end
 
   def member_only
-    unless current_user.has_role?(:member)
-      redirect_to root_path, alert: 'Access is restricted.'
-    end
+    redirect_to root_path, alert: 'Access is restricted.' unless current_user.has_role?(:member)
   end
 end

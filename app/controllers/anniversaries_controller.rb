@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AnniversariesController < ApplicationController
   before_action :set_anniversary, only: %i[show destroy]
   before_action :set_admin_only

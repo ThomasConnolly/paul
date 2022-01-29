@@ -8,16 +8,16 @@ gem 'activerecord-import'
 gem 'active_storage_validations'
 gem 'acts_as_list'
 gem 'amazing_print'
-gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'aws-sdk-core', '3.121.5'
+gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
 gem 'bootstrap-email'
-gem "bootstrap_form"
-gem 'devise'
+gem 'bootstrap_form'
 gem 'cloudinary'
 gem 'cssbundling-rails'
+gem 'devise'
 gem 'feedjira'
 gem 'figaro'
 gem 'hotwire-rails'
@@ -39,20 +39,20 @@ gem 'premailer-rails'
 gem 'puma'
 gem 'rack'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
-gem "rails", "~>7.0.1"
+gem 'rails', '~>7.0.1'
 gem 'railties'
 gem 'receipts'
 gem 'redis'
 gem 'rest-client'
 gem 'rolify'
+gem 'rss'
 gem 'scout_apm'
 gem 'sendgrid-ruby', '~> 6.4'
 gem 'sprockets-rails'
-gem 'rss'
 gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
-gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'uglifier'
 gem 'whenever'
 
@@ -64,12 +64,14 @@ group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
   # gem 'meta_request'
-  gem 'solargraph'
   gem 'web-console'
 end
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'debase', '~> 0.2.5.beta2', require: false
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'ruby-debug-ide', require: false
+  gem 'solargraph', require: false
   # gem 'email_spec'
   # gem 'factory_bot_rails'
   # gem 'guard'
@@ -88,4 +90,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
- 

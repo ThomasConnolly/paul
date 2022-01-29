@@ -35,7 +35,6 @@ class VreportsController < ApplicationController
 
   def show; end
 
-  def edit; end
 
   def create
     @vreport = current_user.vreports.build(vreport_params)
@@ -45,7 +44,7 @@ class VreportsController < ApplicationController
         format.html { redirect_to vreports_path(@vreport) }
         format.js
       end
-  end
+    end
   end
 
   def update

@@ -13,7 +13,7 @@
 #
 
 class HomilistsController < ApplicationController
-  before_action :set_Homilist, only: %i[show edit update destroy]
+  before_action :set_homilist, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new create destroy]
   before_action :set_admin_only
 
@@ -57,7 +57,7 @@ class HomilistsController < ApplicationController
     redirect_to '/' unless current_user&.has_role?(:admin)
   end
 
-  def set_Homilist
+  def set_homilist
     @homilist = Homilist.find(params[:id])
   end
 

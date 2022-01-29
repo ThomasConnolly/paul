@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AlbergueChildrenController < ApplicationController
-  before_action :set_albergue_child, only: [:show, :edit, :update, :destroy]
+  before_action :set_albergue_child, only: %i[show edit update destroy]
 
   # GET /albergue_children
   # GET /albergue_children.json
@@ -9,8 +11,7 @@ class AlbergueChildrenController < ApplicationController
 
   # GET /albergue_children/1
   # GET /albergue_children/1.json
-  def show
-  end
+  def show; end
 
   # GET /albergue_children/new
   def new
@@ -18,8 +19,7 @@ class AlbergueChildrenController < ApplicationController
   end
 
   # GET /albergue_children/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /albergue_children
   # POST /albergue_children.json
@@ -62,13 +62,14 @@ class AlbergueChildrenController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_albergue_child
-      @albergue_child = AlbergueChild.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def albergue_child_params
-      params.require(:albergue_child).permit(:first_name, :last_name, :avatar, :birthday)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_albergue_child
+    @albergue_child = AlbergueChild.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def albergue_child_params
+    params.require(:albergue_child).permit(:first_name, :last_name, :avatar, :birthday)
+  end
 end

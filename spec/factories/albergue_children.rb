@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: albergue_children
@@ -12,10 +14,10 @@
 
 FactoryBot.define do
   factory :albergue_child do
-    first_name { "MyString" }
-    last_name { "MyString" }
+    first_name { 'MyString' }
+    last_name { 'MyString' }
     user { nil }
-    avatar { "MyString" }
-    birthday { "2020-04-25" }
+    avatar { 'MyString' }
+    birthday { '2020-04-25' }
   end
 end

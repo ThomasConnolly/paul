@@ -1,6 +1,6 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-
-
   resources :todo_lists do
     resources :todo_items
   end
@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   resources :shots
   resources :surveys
   resources :thankfuls
-  
-  post '/webhook_events', to: 'webhook_events#create'
 
-  get "checkout", to: "checkout#show"
-  post "create", to: "checkout#create", as: "checkout/create"
+  post '/webhook_events/:source', to: 'webhook_events#create'
+
+  get 'checkout', to: 'checkout#show'
+  post 'create', to: 'checkout#create', as: 'checkout/create'
   get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   get 'success', to: 'checkout#success', as: 'checkout_success'
 
@@ -39,21 +39,21 @@ Rails.application.routes.draw do
     resources :tickets, only: %i[new show create update]
   end
 
-  resources :tickets, only: %[index]
+  resources :tickets, only: %(index)
   resources :albergue_children
   resources :links
   resources :pathways
   resources :pray_fors
   resources :photos
-  devise_for :users, 
-    path: '',
-    path_names: {
-      sign_in: 'sign_in',
-      sign_out: 'logout',
-      password: 'secret',
-      registration: 'register',
-      sign_up: 'signup'
-    }  
+  devise_for :users,
+             path: '',
+             path_names: {
+               sign_in: 'sign_in',
+               sign_out: 'logout',
+               password: 'secret',
+               registration: 'register',
+               sign_up: 'signup'
+             }
 
   resources :users do
     collection do
@@ -140,5 +140,5 @@ Rails.application.routes.draw do
     end
   end
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

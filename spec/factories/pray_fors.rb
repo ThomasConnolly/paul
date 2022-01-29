@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: pray_fors
@@ -12,7 +14,7 @@
 
 FactoryBot.define do
   factory :pray_for do
-    first_name { "MyString" }
-    reason { "MyString" }
+    first_name { 'MyString' }
+    reason { 'MyString' }
   end
 end

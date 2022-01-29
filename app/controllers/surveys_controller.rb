@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: %i[show edit update destroy]
 
   # GET /surveys
   # GET /surveys.json
@@ -9,8 +11,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1
   # GET /surveys/1.json
-  def show
-  end
+  def show; end
 
   # GET /surveys/new
   def new
@@ -18,8 +19,7 @@ class SurveysController < ApplicationController
   end
 
   # GET /surveys/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /surveys
   # POST /surveys.json
@@ -62,13 +62,14 @@ class SurveysController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_survey
-      @survey = Survey.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def survey_params
-      params.require(:survey).permit(:q1, :q2, :q3, :a1, :a2, :a3, :added_comments)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_survey
+    @survey = Survey.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def survey_params
+    params.require(:survey).permit(:q1, :q2, :q3, :a1, :a2, :a3, :added_comments)
+  end
 end

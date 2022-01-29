@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: vaccinations
@@ -14,11 +16,11 @@
 #
 FactoryBot.define do
   factory :vaccination do
-    time { "MyString" }
-    status { "MyString" }
-    last_name { "MyString" }
-    first_name { "MyString" }
-    email { "MyString" }
-    phone { "MyString" }
+    time { 'MyString' }
+    status { 'MyString' }
+    last_name { 'MyString' }
+    first_name { 'MyString' }
+    email { 'MyString' }
+    phone { 'MyString' }
   end
 end

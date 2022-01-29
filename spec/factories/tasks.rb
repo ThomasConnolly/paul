@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tasks
@@ -13,9 +15,9 @@
 
 FactoryBot.define do
   factory :task do
-    title { "MyString" }
-    description { "MyString" }
-    deadline { "MyString" }
+    title { 'MyString' }
+    description { 'MyString' }
+    deadline { 'MyString' }
     position { 1 }
   end
 end

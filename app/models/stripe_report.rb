@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: stripe_reports
@@ -27,15 +29,12 @@ class StripeReport < ApplicationRecord
   before_save :calculate_fee
   before_save :calculate_net
 
-  
-
-
   def calculate_fee
-    fee_value = ((self.amount * 0.029)+30).round
+    fee_value = ((amount * 0.029) + 30).round
     self.fee = fee_value
   end
 
   def calculate_net
-    self.net = self.amount - self.fee
+    self.net = amount - fee
   end
 end

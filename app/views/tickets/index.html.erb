@@ -1,16 +1,9 @@
 <h1>Ticket Call List</h1>
 
-<p>Running count of tickets sold: </p>
-<p>Streaming the show:<%= @tickets.where.not("customer_id": nil).where(event_id: 8).sum(:quantity) %></p>
-<p>In-person tickets: <%= @tickets.where.not("customer_id": nil).where(event_id: 9).sum(:quantity) %></p>
-<Script></Script>
+<p>Running count of tickets sold:
+<%= @tickets.where.(["checkout = '%s' and event = '%i'", "paid",  11]).sum(:quantity) %></p>
 
-<h2>Live stream customers</h2>
-  <% @tickets.where.not(customer_id: nil).where(event_id: 8).each do |t| %>
+<h2>customers</h2>
+  <% @tickets.where(["checkout = '%s' and event = '%i'", "paid",  11]).each do |t| %>
     <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= pluralize(t.quantity, 'ticket') %>, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
-    <% end %>
-
-<h2>In-person customers</h2>
-  <% @tickets.where.not(customer_id: nil).where(event_id: 9).each do |t| %>
-    <p><strong><%= t.last_name.titleize %>, <%= t.first_name.titleize %></strong> <%= t.email %>, <%= pluralize(t.quantity, 'ticket') %>, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %> at <%= t.updated_at.strftime('%I:%M %p') %></p>
-  <% end %>
+  <% end %> 

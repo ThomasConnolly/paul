@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ThankfulsController < ApplicationController
-  before_action :set_thankful, only: [:show, :edit, :update, :destroy]
+  before_action :set_thankful, only: %i[show edit update destroy]
 
   # GET /thankfuls
   # GET /thankfuls.json
@@ -9,8 +11,7 @@ class ThankfulsController < ApplicationController
 
   # GET /thankfuls/1
   # GET /thankfuls/1.json
-  def show
-  end
+  def show; end
 
   # GET /thankfuls/new
   def new
@@ -18,8 +19,7 @@ class ThankfulsController < ApplicationController
   end
 
   # GET /thankfuls/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /thankfuls
   # POST /thankfuls.json
@@ -62,13 +62,14 @@ class ThankfulsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_thankful
-      @thankful = Thankful.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def thankful_params
-      params.require(:thankful).permit(:body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_thankful
+    @thankful = Thankful.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def thankful_params
+    params.require(:thankful).permit(:body)
+  end
 end

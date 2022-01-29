@@ -28,4 +28,4 @@ class Role < ApplicationRecord
             allow_nil: true
 
   scopify
- end
+end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateShots < ActiveRecord::Migration[6.1]
   def change
     create_table :shots do |t|

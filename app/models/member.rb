@@ -18,14 +18,13 @@
 #
 
 class Member < ApplicationRecord
-
   acts_as_birthday :birthday
   before_save :set_username
   before_save :set_yday
 
   require 'date'
-  
-  #Importing members from csv file
+
+  # Importing members from csv file
   def self.assign_from_row(row)
     member = Member.where(membership_id: row[:membership_id]).first_or_initialize
     member.assign_attributes row.to_hash.slice(
@@ -35,7 +34,7 @@ class Member < ApplicationRecord
       :email,
       :away_zip
     ).merge(
-      :birthday => DateTime.strptime(row[3], "%m/%d/%Y").strftime("%Y-%m-%d")
+      birthday: DateTime.strptime(row[3], '%m/%d/%Y').strftime('%Y-%m-%d')
     )
     member
   end
@@ -45,10 +44,10 @@ class Member < ApplicationRecord
   end
 
   def set_yday
-    self.yday = self.birthday.yday unless birthday.nil?
+    self.yday = birthday.yday unless birthday.nil?
   end
 
   def formatted_email
-    "#{self.username} <#{self.email}>".strip
+    "#{username} <#{email}>".strip
   end
 end

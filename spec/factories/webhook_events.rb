@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: webhook_events
@@ -20,10 +22,10 @@
 
 FactoryBot.define do
   factory :webhook_event do
-    source { "MyString" }
-    external_id { "MyString" }
-    data { "" }
+    source { 'MyString' }
+    external_id { 'MyString' }
+    data { '' }
     state { 1 }
-    processing_errors { "MyText" }
+    processing_errors { 'MyText' }
   end
 end

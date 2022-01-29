@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: shots
@@ -17,13 +19,13 @@
 
 FactoryBot.define do
   factory :shot do
-    last_name { "MyString" }
-    first_name { "MyString" }
-    dob { "2021-04-18" }
-    email { "MyString" }
-    phone { "MyString" }
-    time { "MyString" }
-    status { "MyString" }
-    honey { "MyString" }
+    last_name { 'MyString' }
+    first_name { 'MyString' }
+    dob { '2021-04-18' }
+    email { 'MyString' }
+    phone { 'MyString' }
+    time { 'MyString' }
+    status { 'MyString' }
+    honey { 'MyString' }
   end
 end

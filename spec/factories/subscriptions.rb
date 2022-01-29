@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: subscriptions
@@ -14,10 +16,10 @@
 #
 FactoryBot.define do
   factory :subscription do
-    plan_id { "MyString" }
-    user_id { "MyString" }
+    plan_id { 'MyString' }
+    user_id { 'MyString' }
     active { false }
-    current_period_ends { "2020-05-22 14:36:17" }
-    stripe_id { "MyString" }
+    current_period_ends { '2020-05-22 14:36:17' }
+    stripe_id { 'MyString' }
   end
 end

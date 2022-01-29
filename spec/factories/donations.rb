@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: donations
@@ -20,10 +22,10 @@
 
 FactoryBot.define do
   factory :donation do
-    user { "" }
+    user { '' }
     amount { 1 }
-    type { "" }
-    stripe_email { "MyString" }
-    stripe_plan { "MyString" }
+    type { '' }
+    stripe_email { 'MyString' }
+    stripe_plan { 'MyString' }
   end
 end

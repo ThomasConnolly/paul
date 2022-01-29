@@ -79,5 +79,5 @@ class VestryMinutesController < ApplicationController
     unless current_user.has_role?(:admin)
       redirect_to root_path, alert: 'You must be an administrator to perform this function.'
     end
-end
+  end
 end

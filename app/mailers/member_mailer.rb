@@ -12,14 +12,7 @@ class MemberMailer < ApplicationMailer
   default to: 'welcome@saintpaulsnaples.org'
   #default to: 'tom.connolly@comcast.net'
   default bcc: -> { Member.where.not(email: nil).pluck(:email) }
-  #default bcc: ["john_titus33@yahoo.com",
-  "fcthorntonsr193@gmail.com",
-  "Mia.Souvannarath@yahoo.com",
-  "jcaldersmoot@gmail.com",
-  "nbpapp@aol.com",
-  "lehoe95@gmail.com",
-  "bmonk085@yahoo.com",
-  "coconnell205@gmail.com"]
+
   
   def test(member)
     @member = member

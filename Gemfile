@@ -68,10 +68,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'debase', '~> 0.2.5.beta2', require: false
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'ruby-debug-ide', require: false
-  gem 'solargraph', require: false
   # gem 'email_spec'
   # gem 'factory_bot_rails'
   # gem 'guard'

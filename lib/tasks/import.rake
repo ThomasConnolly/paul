@@ -10,22 +10,6 @@ namespace :import do
     puts import.errors.full_messages
   end
 
-  desc 'Import users from csv'
-  task users: :environment do
-    import = User::Import.new file: File.open('users.csv')
-    import.process!
-    puts "Imported #{import.imported_count} users"
-    puts import.errors.full_messages
-  end
-
-  desc 'Import letters from csv'
-  task letters: :environment do
-    import = Letter::Import.new file: File.open('letters.csv')
-    import.process!
-    puts "Imported #{import.imported_count} letters"
-    puts import.errors.full_messages
-  end
-
   desc 'Import anniversaries from csv'
   task anniversaries: :environment do
     import = Anniversary::Import.new file: File.open('anniversary.csv')

@@ -12,9 +12,6 @@ class LinksController < ApplicationController
     @bulletin = Link.find_by(event: 'bulletin')
     @wine = Link.find_by(event: 'wine_time')
     @coffee = Link.find_by(event: 'coffee')
-    @day_bible = Link.find_by(event: 'day_bible')
-    @evening_bible = Link.find_by(event: 'evening_bible')
-    @annual_meeting = Link.find_by(event: 'annual meeting')
   end
 
   def show
@@ -23,9 +20,6 @@ class LinksController < ApplicationController
     @bulletin = Link.find_by(event: 'bulletin')
     @wine = Link.find_by(event: 'wine_time')
     @coffee = Link.find_by(event: 'coffee')
-    @day_bible = Link.find_by(event: 'day_bible')
-    @evening_bible = Link.find_by(event: 'evening_bible')
-    @annual_meeting = Link.find_by(event: 'annual meeting')
   end
 
   # GET /links/1/edit
@@ -61,11 +55,13 @@ class LinksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
 
   def admin_only
-    current_user.has_role?(:admin)
+    unless user_signed_in && current_user.admin?
+      redirect '/'
   end
 
   # Only allow a list of trusted parameters through.
   def link_params
     params.require(:link).permit(:event, :time, :date, :url)
   end
+end
 end

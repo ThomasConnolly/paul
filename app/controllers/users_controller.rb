@@ -33,28 +33,11 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @import = User::Import.new
   end
 
   def index
     @users = User.all.order(:last_name)
-    unless current_user.has_role?(:admin)
-      redirect_to '/'
-      @import = User::Import.new
-    end
-  end
-
-  def import
-    @import = User::Import.new user_import_params
-    if @import.save
-      redirect_to users_path, notice:
-      "Imported #{@import.imported_count} users"
-    else
-      @users = User.all
-      flash[:alert] =
-        "There were #{@import.errors.count} errors in your CSV file"
-      render action: :index
-    end
+      redirect_to '/' unless current_user.admin?
   end
 
   def show; end
@@ -70,15 +53,6 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def delete_avatar
-    avatar = ActiveStorage::Attachment, find(params[:avatar_id])
-    if current_user == avatar.record || current_user.admin?
-      avatar.purge
-      redirect_back(fallback_location: request.referer)
-    else
-      redirect_to root_url, notice: 'Not yours to delete!'
-    end
-  end
 
   private
 
@@ -86,23 +60,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_import_params
-    params.require(:user_import).permit(:file)
-  end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, :card, :card_last4,
-                                 :card_exp_year, :card_exp_month, :card_type, :stripe_pledge_id, :stripe_sponsorship_id, :member_id, photos: [])
+    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, 
+                                :stripe_pledge_id, :member_id, photos: [])
   end
 
   def admin_only
-    unless current_user.has_role?(:admin)
-      flash[:alert] = 'Access denied.'
-      redirect_to root_path
-    end
+    redirect_to root_path, alert: 'Access is restricted.' unless current_user.admin?
   end
 
   def member_only
-    redirect_to root_path, alert: 'Access is restricted.' unless current_user.has_role?(:member)
+    redirect_to root_path, alert: 'Access is restricted.' unless current_user.member?
   end
 end

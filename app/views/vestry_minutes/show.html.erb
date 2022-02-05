@@ -3,21 +3,23 @@
     <div class="col-md-8 offset-md-2">
 
 
-<p id="notice"><%= notice %></p>
-<h2>Vestry meeting of 
-            <%= @vestry_minute.date.strftime("%B %d, %Y") %> </h2>
+      <p id="notice">
+        <%= notice %>
+      </p>
+      <h2>Vestry meeting of
+        <%= @vestry_minute.date.strftime("%B %d, %Y") %>
+      </h2>
 
-  <% if @vestry_minute.minutes.present? %>
-    <%= sanitize @vestry_minute.minutes %>
-    <% else %>
-    <%= @vestry_minute.body %>
-    <% end %>
-  <div class="mt-5"></div>
-    <% if current_user && current_user.has_role?(:admin) %>
-    <%= link_to 'Edit', edit_vestry_minute_path(@vestry_minute) %> |
-    <%= link_to 'Back', vestry_minutes_path %>
-    <% end %>
+      <% if @vestry_minute.minutes.present? %>
+        <%= sanitize @vestry_minute.minutes %>
+          <% else %>
+            <%= @vestry_minute.body %>
+              <% end %>
+                <div class="mt-5"></div>
+                <% if user_signed_it? && current_user.admin? %>
+                  <%= link_to 'Edit' , edit_vestry_minute_path(@vestry_minute) %> |
+                    <%= link_to 'Back' , vestry_minutes_path %>
+                      <% end %>
     </div>
   </div>
 </div>
-

@@ -10,8 +10,6 @@ class HomeController < ApplicationController
     @coffee = Link.find_by(event: 'coffee')
     @evening_bible = Link.find_by(event: 'evening_bible')
     @pathway = Pathway.order('created_at ASC').last
-    @birthdays_today = Member.where('EXTRACT(month FROM birthday) = ? AND EXTRACT(day FROM birthday) = ?',
-                                    Date.today.strftime('%m'), Date.today.strftime('%d'))
   end
 
   def show

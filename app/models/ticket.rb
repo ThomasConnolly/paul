@@ -1,27 +1,28 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: tickets
 #
 #  id          :integer          not null, primary key
-#  amount      :integer
-#  checkout    :string
-#  email       :string
-#  first_name  :string
-#  honey       :string
-#  last_name   :string
 #  price       :decimal(, )
-#  quantity    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  customer_id :string
 #  event_id    :integer
+#  quantity    :integer
+#  amount      :integer
+#  first_name  :string
+#  last_name   :string
+#  email       :string
+#  customer_id :string
+#  checkout    :string
+#  honey       :string
+#  stripe_id   :string
 #
 # Indexes
 #
 #  index_tickets_on_event_id  (event_id)
 #
+
 class Ticket < ApplicationRecord
   belongs_to :event
   before_save :set_amount

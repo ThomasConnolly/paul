@@ -1,9 +1,13 @@
 <% @pray_fors.each do |pray_for| %>
-  <p class="list"><strong><%= pray_for.first_name %></strong><br>
-  <%= pray_for.reason %>
-    <% if user_signed_in? && current_user.has_role?(:admin) %>
-    <small><%= link_to 'Edit', edit_pray_for_path(pray_for) %> | 
-    <%= link_to 'Destroy', pray_for, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+  <p class="list"><strong>
+      <%= pray_for.first_name %>
+    </strong><br>
+    <%= pray_for.reason %>
+      <% if user_signed_in? && current_user.admin? %>
+        <small>
+          <%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
+            <%= link_to 'Destroy' , pray_for, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </small>
+  </p>
+  <% end %>
     <% end %>
-<% end %>
-  

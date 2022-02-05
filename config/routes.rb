@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   resources :pathways
   resources :pray_fors
   resources :photos
-  devise_for :users,
+  devise_for :users, controllers: { sessions: "sessions" },
              path: '',
              path_names: {
                sign_in: 'sign_in',

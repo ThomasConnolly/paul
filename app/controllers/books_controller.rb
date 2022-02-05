@@ -79,7 +79,7 @@ class BooksController < ApplicationController
   private
 
   def admin_only
-    redirect_to '/' unless current_user&.has_role?(:admin)
+    redirect_to '/' unless current_user&.admin
   end
 
   def book_import_params

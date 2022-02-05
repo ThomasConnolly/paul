@@ -54,7 +54,7 @@ class HomilistsController < ApplicationController
   private
 
   def set_admin_only
-    redirect_to '/' unless current_user&.has_role?(:admin)
+    redirect_to '/' unless current_user&.admin?
   end
 
   def set_homilist

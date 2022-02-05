@@ -54,9 +54,7 @@ class DonationsController < ApplicationController
   end
 
   def authenticate_admin
-    return if current_user.has_role?(:admin)
-
-    redirect_to root_path
+    redirect_to '/' unless current_user&.admin?
   end
 
   def donation_params

@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -23,6 +22,7 @@
 #  avatar                 :string
 #  honey                  :string
 #  stripe_id              :string
+#  role                   :integer
 #
 # Indexes
 #
@@ -31,14 +31,11 @@
 #
 
 class User < ApplicationRecord
-  extend Rolify
-  rolify
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_save :set_username
   validates :email, presence: true
-  after_create :assign_default_role
   after_create :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]
   has_many :posts, dependent: :destroy
@@ -56,9 +53,18 @@ class User < ApplicationRecord
   validates :avatar, content_type: %i[png jpg]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy
+  
 
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
+
+  enum :role, { member: 0, vestry: 1, communicator: 2, admin: 3 }
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :member
+  end
+
 
   attr_accessor :login
 
@@ -73,11 +79,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          authentication_keys: [:login]
 
-  def self.assign_from_row(row)
-    user = find_by_username(row['first_namelast_name']) || new
-    user.assign_attributes row.to_hash.slice(:last_name, :first_name, :email, :member_id)
-    user # =====see member.rb for example ======
-  end
 
   def set_username
     self.username = "#{first_name} #{last_name}"
@@ -87,9 +88,6 @@ class User < ApplicationRecord
     "#{username} <#{email}>".strip
   end
 
-  def assign_default_role
-    add_role(:member)
-  end
 
   def maybe_add_stripe_id
     return unless stripe_id.blank?

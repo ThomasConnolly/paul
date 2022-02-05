@@ -1,12 +1,16 @@
 <div class="border-left border-top border-bottom p-4 mb-4">
-    <p><em><%= comment.user.username.titleize %>::</em> 
-    <%= simple_format comment.body %></p>
+  <p><em>
+      <%= comment.user.username.titleize %>::
+    </em>
+    <%= simple_format comment.body %>
+  </p>
 
-    <div data-controller="reply">
-    <%= link_to "Reply", "#", data: { action: "click->reply#toggle"} %>
-    <%= link_to " | Delete", [comment.commentable, comment], method: :delete,
-      data: {confirm: "Are you sure?"} if user_signed_in? && comment.user == current_user || user_signed_in? && current_user.has_role?(:admin) %>
-    <%= render partial: "comments/form", locals: { commentable: comment.commentable,  parent_id: comment.id, class: "d-none", target: "reply.form" }%>
-    </div>
-<%= render comment.comments %>
-</div> 
+  <div data-controller="reply">
+    <%= link_to "Reply" , "#" , data: { action: "click->reply#toggle" } %>
+      <%= link_to " | Delete" , [comment.commentable, comment], method: :delete, data: {confirm: "Are you sure?" } if
+        user_signed_in? && comment.user==current_user || user_signed_in? && current_user.admin? %>
+        <%= render partial: "comments/form" , locals: { commentable: comment.commentable, parent_id: comment.id,
+          class: "d-none" , target: "reply.form" }%>
+  </div>
+  <%= render comment.comments %>
+</div>

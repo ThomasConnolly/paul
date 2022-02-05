@@ -34,25 +34,15 @@
     <div class="container">
       <%= render '/layouts/header' %>
         <%= render '/layouts/navbar' %>
-
-          <% if flash[:notice] %>
-            <div class="alert alert-success alert-dismissible fade show">
-              <%= flash[:notice] %>
-                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-            </div>
-            <% elsif flash[:error] %>
-              <div class="alert alert-error alert-dismissible fade show">
-                <%= flash[:error] %>
-                  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-              </div>
-              <% elsif flash[:alert] %>
-                <div class="alert alert-dismissible fade show">
-                  <%= flash[:alert] %>
-                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span></button>
-                </div>
+          <% if notice %>
+            <p class="alert alert-success">
+              <%= notice %>
+            </p>
+            <% end %>
+              <% if alert %>
+                <p class="alert alert-danger">
+                  <%= alert %>
+                </p>
                 <% end %>
 
                   <%= yield %>

@@ -19,7 +19,7 @@ module Events
 
         when 'payment'
           if checkout_session.client_reference_id[0..2] == 'tic'
-            ticket = Ticket.find(checkout_session.client_reference_id[4..].to_i)
+            ticket = Ticket.find(checkout_session.client_reference_id[3..-1].to_i)
             ticket.update!(checkout: checkout_session.payment_status)
           else
             donation = Donation.find(checkout_session.metadata.donation_id)

@@ -8,14 +8,11 @@ class ProcessEventsJob < ApplicationJob
     if event.pending? || event.failed?
       event.update(state: :processing)
       begin
-        case event.source
-        when 'stripe'
           Events::StripeHandler.process(event)
-        end
+      end
         event.update(state: :processed)
+    end
       rescue StandardError => e
         event.update(state: :failed, processing_errors: e)
-      end
     end
-  end
 end

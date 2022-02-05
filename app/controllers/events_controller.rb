@@ -58,10 +58,7 @@ class EventsController < ApplicationController
   end
 
   def admin_only
-    unless current_user.has_role?(:admin)
-      flash[:alert] = 'Access denied.'
-      redirect_to root_path
-    end
+    redirect_to root_path, alert: 'Access is restricted.' unless current_user.admin?
   end
 
   def event_params

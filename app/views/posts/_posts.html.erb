@@ -1,34 +1,41 @@
 <h2>Here are the latest posts</h2>
-  <% if !user_signed_in? %>
-    <p>Anyone can read these posts, but to create a post or to make a comment, you must be registered and signed in.  <%= link_to "Click to sign in or register", new_user_registration_path %></p>
-  <% else %> 
-  <% @posts.each do |post| %>
-    <div>
-      <% if post.user.avatar.attached? %>
-        <%= cl_image_tag post.user.avatar, width:"30%", class: "float-left pr-3" %>
-      <% else %>
-      <% if post.user.signed_in? %>   
-        <h5><%= link_to "Click to add your photo", edit_user_path(post.user) %></h5>
-      <% end %>
-      <!-- <%#= cl_image_tag post.picture if post.picture.present? %>
+<% if !user_signed_in? %>
+  <p>Anyone can read these posts, but to create a post or to make a comment, you must be registered and signed in. <%=
+      link_to "Click to sign in or register" , new_user_registration_path %>
+  </p>
+  <% else %>
+    <% @posts.each do |post| %>
+      <div>
+        <% if post.user.avatar.attached? %>
+          <%= cl_image_tag post.user.avatar, width:"30%", class: "float-left pr-3" %>
+            <% else %>
+              <% if post.user.signed_in? %>
+                <h5>
+                  <%= link_to "Click to add your photo" , edit_user_path(post.user) %>
+                </h5>
+                <% end %>
+                  <!-- <%#= cl_image_tag post.picture if post.picture.present? %>
       <p><em><%#= post.user.username.titleize %>::</em> &nbsp; <%= post.content %></p> -->
-      <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. <%= pluralize(post.comments.count, "comment") %> </small> &nbsp; <span><small>
-        <%= link_to "Show", post_path(post[:id]) %> |
-        <% if current_user == post.user || current_user.has_role?(:admin) %>
-          <%= link_to "Edit", edit_post_path(post[:id]) %> |&nbsp;
-          <%= link_to "Delete", post_path(post), 
-            method: :delete, data: { confirm: "Are you sure you want to delete the post?" }%> </small></span>
-        <% end %></p>
-        <div class="clearfix"></div>
-        <hr>
-    </div>
-  <% end %>
-</div>
-      
+                  <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. <%=
+                          pluralize(post.comments.count, "comment" ) %> </small> &nbsp; <span><small>
+                        <%= link_to "Show" , post_path(post[:id]) %> |
+                          <% if current_user==post.user || current_user.admin? %>
+                            <%= link_to "Edit" , edit_post_path(post[:id]) %> |&nbsp;
+                              <%= link_to "Delete" , post_path(post), method: :delete, data: {
+                                confirm: "Are you sure you want to delete the post?" }%>
+                      </small></span>
+                    <% end %>
+                  </p>
+                  <div class="clearfix"></div>
+                  <hr>
+      </div>
+      <% end %>
+        </div>
 
-<section id="comments-section">
-  <%= render partial: 'comments/comments', locals: {commentable: post} %>
-  <div class="mt30"></div>
-    <%= render partial: 'comments/form', locals: {commentable: post} %>
-</section>
-<% end %>
+
+        <section id="comments-section">
+          <%= render partial: 'comments/comments' , locals: {commentable: post} %>
+            <div class="mt30"></div>
+            <%= render partial: 'comments/form' , locals: {commentable: post} %>
+        </section>
+        <% end %>

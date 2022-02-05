@@ -1,19 +1,20 @@
-
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
 
-  <div class="example">
-    <%= bootstrap_form_for @marriage_talk, html: { multipart: true } do |f| %>  
-      <div class="form-group">
-        <%= f.input :title, class: 'form-control' %> 
-        <%= f.date_select :delivered_on, data: { behavior: "flatpickr" } %><br>
-        <div id="summernote">
-        <%= f.input :body, as: :ckeditor %>
+    <div class="example">
+      <%= bootstrap_form_for @marriage_talk, html: { multipart: true } do |f| %>
+        <div class="form-group">
+          <%= f.input :title, class: 'form-control' %>
+            <%= f.date_select :delivered_on } %><br>
+              <div id="summernote">
+                <%= f.input :body, as: :ckeditor %>
+              </div>
+              <%= f.button :submit %>
+                <% end %>
         </div>
-        <%= f.button :submit %>   
-    <% end %>
-      </div>
-  </div>
-   
+    </div>
+
   </div>
 </div>
+
+<!-- , data: { behavior: "flatpickr" -->

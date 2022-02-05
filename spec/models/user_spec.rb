@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -23,6 +22,7 @@
 #  avatar                 :string
 #  honey                  :string
 #  stripe_id              :string
+#  role                   :integer
 #
 # Indexes
 #

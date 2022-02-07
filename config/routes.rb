@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :surveys
   resources :thankfuls
 
-  post '/webhook_events/:source', to: 'webhook_events#create'
+  post '/webhook_events', to: 'webhook_events#create'
 
   get 'checkout', to: 'checkout#show'
   post 'create', to: 'checkout#create', as: 'checkout/create'

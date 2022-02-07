@@ -24,7 +24,7 @@ class CheckoutTicketsController < ApplicationController
                                                    quantity: 1,
                                                    description: @ticket.event.title
                                                  }],
-                                                 client_reference_id: "tic#{@ticket.id}",
+                                                 client_reference_id: #{@ticket.id.to_s},
                                                  mode: 'payment'
                                                })
     redirect_to session.url, allow_other_host: true

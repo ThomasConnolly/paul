@@ -6150,3 +6150,5 @@ Processing by OpportunitiesController#index as HTML
 Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 4.9ms | Allocations: 19614)
 
 
+  [1m[36mWebhookEvent Load (6.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWebhookEvent Load (19.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]

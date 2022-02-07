@@ -56,7 +56,7 @@ class LinksController < ApplicationController
 
   def admin_only
     unless user_signed_in? && current_user.admin?
-      redirect '/'
+      redirect_to '/'
   end
 
   # Only allow a list of trusted parameters through.

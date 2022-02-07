@@ -31,7 +31,7 @@
     </p>
 
 
-    <% if user_signed_in && current_user.admin? %>
+    <% if user_signed_in? && current_user.admin? %>
       <p><strong>
           <%= link_to "Edit" , edit_book_path %>
         </strong><br></p>

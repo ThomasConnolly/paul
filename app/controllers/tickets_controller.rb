@@ -8,7 +8,8 @@ class TicketsController < ApplicationController
   def show; end
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all.order(:last_name)
+    @pd_tickets = Ticket.where(event: 11, checkout: "paid").order(:last_name)
   end
 
   def new

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="mt30"></div>
-      <% if user_signed_in && current_user.admin? %>
+      <% if user_signed_in? && current_user.admin? %>
         <p><b>
             <%= link_to 'New entry' , new_vestry_minute_path %>
           </b></p>
@@ -16,7 +16,7 @@
               <small>
                 <%= link_to 'Show' , vestry_minute %>
               </small>&nbsp;
-              <% if user_signed_in && current_user.admin? %>
+              <% if user_signed_in? && current_user.admin? %>
                 <%= link_to 'Edit' , edit_vestry_minute_path(vestry_minute) %> |
                   <%= link_to 'Destroy' , vestry_minute, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
                     %>

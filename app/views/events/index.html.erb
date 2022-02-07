@@ -11,7 +11,7 @@
     <%= link_to 'Purchase your tickets' , new_event_ticket_path(event) %>
   </h4>
   <br>
-  <% if user_signed_in && current_user.admin? %>
+  <% if user_signed_in? && current_user.admin? %>
     <p><small>
         <%= link_to 'Edit' , edit_event_path(event) %>&nbsp; |
           <%= link_to 'Destroy' , event, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
@@ -20,6 +20,6 @@
       <% end %>
 
         <br>
-        <% if user_signed_in && current_user.admin? %>
+        <% if user_signed_in? && current_user.admin? %>
           <%= link_to 'Create New Event' , new_event_path %>
             <% end %>

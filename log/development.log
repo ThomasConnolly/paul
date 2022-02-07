@@ -6152,3 +6152,364 @@ Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 4.9ms | Allocations: 196
 
   [1m[36mWebhookEvent Load (6.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mWebhookEvent Load (19.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+Started GET "/" for 127.0.0.1 at 2022-02-07 14:44:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:170
+  Rendered home/index.html.erb within layouts/application (Duration: 21.4ms | Allocations: 15581)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1360)
+  Rendered layouts/_navbar.html.erb (Duration: 12.4ms | Allocations: 2422)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 1861)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 22855)
+Completed 200 OK in 91ms (Views: 37.1ms | ActiveRecord: 17.1ms | Allocations: 64638)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:45:03 -0500
+Processing by TicketsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 576)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-02-07 14:45:03 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 1361)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.5ms | Allocations: 16112)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 910)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 870)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1560)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 19963)
+Completed 200 OK in 56ms (Views: 41.3ms | ActiveRecord: 3.0ms | Allocations: 39970)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-07 14:45:07 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"tom.connolly@comcast.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'tom.connolly@comcast.net' OR lower(email) = 'tom.connolly@comcast.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:111:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 629], ["current_sign_in_at", "2022-02-07 19:45:07.841152"], ["last_sign_in_at", "2022-02-05 15:52:31.619499"], ["updated_at", "2022-02-07 19:45:07.841556"], ["id", 16]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/tickets
+Completed 302 Found in 66ms (ActiveRecord: 6.7ms | Allocations: 11150)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:45:07 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (1.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 43.1ms | Allocations: 7281)
+  Rendered layouts/_header.html.erb (Duration: 8.3ms | Allocations: 938)
+  [1m[36mProfile Load (1.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 69.5ms | Allocations: 19867)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1440)
+  Rendered layout layouts/application.html.erb (Duration: 125.7ms | Allocations: 30136)
+Completed 200 OK in 136ms (Views: 119.4ms | ActiveRecord: 9.4ms | Allocations: 37189)
+
+
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[36mTicket Load (1.9ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = $1 LIMIT $2[0m  [["id", 326], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:49:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 9803)
+  Rendered layouts/_header.html.erb (Duration: 8.3ms | Allocations: 6960)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 30.4ms | Allocations: 21516)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1818)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 41823)
+Completed 200 OK in 95ms (Views: 50.6ms | ActiveRecord: 10.9ms | Allocations: 83887)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:49:11 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.5ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1316)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 892)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 1669)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1552)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5896)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 1.9ms | Allocations: 7902)
+
+
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.3ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 9821)
+  Rendered layouts/_header.html.erb (Duration: 8.7ms | Allocations: 6960)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 21.2ms | Allocations: 21497)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1815)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 41822)
+Completed 200 OK in 94ms (Views: 50.4ms | ActiveRecord: 10.7ms | Allocations: 83900)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:14 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.3ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1316)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 892)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1669)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1552)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5896)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 7893)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:20 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.5ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1273)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 849)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 1634)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1548)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5723)
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 2.0ms | Allocations: 7461)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:21 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1273)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 849)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1634)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1548)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5723)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 7467)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:22 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1273)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 849)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 1634)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1548)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5723)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.6ms | Allocations: 7476)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:22 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.7ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1273)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 849)
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 1633)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1547)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5720)
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 2.9ms | Allocations: 7430)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 14:54:23 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.9ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1273)
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 849)
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 1633)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1545)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 5718)
+Completed 200 OK in 29ms (Views: 18.5ms | ActiveRecord: 2.8ms | Allocations: 7425)
+
+
+  [1m[36mTicket Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  [1m[36mTicket Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets" WHERE "tickets"."event_id" = $1 AND "tickets"."checkout" = $2[0m  [["event_id", 11], ["checkout", "paid"]]
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTicket Load (0.9ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTicket Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets" WHERE "tickets"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[36mTicket Sum (0.3ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets" WHERE "tickets"."event_id" = $1[0m  [["event_id", 11]]
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 15:05:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.4ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 23453)
+  Rendered layouts/_header.html.erb (Duration: 8.9ms | Allocations: 6960)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 21.4ms | Allocations: 21497)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1815)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 55454)
+Completed 200 OK in 106ms (Views: 62.1ms | ActiveRecord: 10.7ms | Allocations: 97521)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 15:08:50 -0500
+
+SyntaxError - syntax error, unexpected ':'
+...t: 11, checkout: "paid").order: :last_name
+...                              ^:
+  app/controllers/tickets_controller.rb:12:in `'
+
+Started POST "/__better_errors/131dc9eb905e221e/variables" for 127.0.0.1 at 2022-02-07 15:08:50 -0500
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 15:13:34 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 17650)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 941)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 10.9ms | Allocations: 11265)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1440)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 31882)
+Completed 200 OK in 52ms (Views: 27.8ms | ActiveRecord: 8.8ms | Allocations: 48817)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 15:13:42 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.6ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (1.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 14993)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 881)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1640)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1548)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 19504)
+Completed 200 OK in 37ms (Views: 26.8ms | ActiveRecord: 2.7ms | Allocations: 21364)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-02-07 15:14:33 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Sum (0.2ms)[0m  [1m[34mSELECT SUM("tickets"."quantity") FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."last_name" ASC[0m
+  ↳ app/views/tickets/index.html.erb:8
+  Rendered tickets/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 17657)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 941)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 10.0ms | Allocations: 11259)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1434)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 31876)
+Completed 200 OK in 50ms (Views: 26.5ms | ActiveRecord: 9.2ms | Allocations: 48813)
+
+

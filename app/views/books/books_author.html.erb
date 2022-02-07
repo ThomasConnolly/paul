@@ -13,7 +13,7 @@
 
                     <%= link_to 'show' , book_path(b) %>
 
-                      <% if user_signed_in && current_user.admin? %>
+                      <% if user_signed_in? && current_user.admin? %>
                         <%= link_to ' | edit' , edit_book_path(b) %>
                           <%= link_to ' | delete' , b, method: :delete, data: { confirm: 'Are you sure?' } %><br>
                             <% end %>

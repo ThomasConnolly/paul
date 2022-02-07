@@ -55,7 +55,7 @@ class LinksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
 
   def admin_only
-    unless user_signed_in && current_user.admin?
+    unless user_signed_in? && current_user.admin?
       redirect '/'
   end
 

@@ -76,7 +76,7 @@ class VestryMinutesController < ApplicationController
   end
 
   def admin_only
-    unless user_signed_in && current_user.admin?
+    unless user_signed_in? && current_user.admin?
       redirect_to root_path, alert: 'You must be an administrator to perform this function.'
     end
   end

@@ -15,6 +15,7 @@
     "esbuild": "^0.14.11",
     "flatpickr": "^4.6.9",
     "sass": "^1.47.0",
+    "stimulus-flatpickr": "^1.4.0",
     "trix": "^2.0.0-alpha.0"
   },
   "scripts": {

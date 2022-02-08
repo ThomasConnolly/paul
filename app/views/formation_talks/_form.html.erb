@@ -5,7 +5,7 @@
       <%= bootstrap_form_for @formation_talk, html: { multipart: true } do |f| %>
         <div class="form-group">
           <%= f.input :title, class: 'form-control' %>
-            <%= f.date_field :delivered_on %><br>
+            <%= f.date_field :delivered_on, data: { controller: "flatpickr" } %>%>
               <%= f.input :body, as: :ckeditor %>
                 <%= f.button :submit %>
                   <% end %>

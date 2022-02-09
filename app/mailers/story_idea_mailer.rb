@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class StoryIdeaMailer < ApplicationMailer
-  default to: proc { User.with_role(:communicator).pluck(:email) }
+  default to: proc { User.where(role: "communicator").pluck(:email) }
 
   def story_idea_created(story_idea)
     @story_idea = story_idea

@@ -24,21 +24,6 @@ class Member < ApplicationRecord
 
   require 'date'
 
-  # Importing members from csv file
-  def self.assign_from_row(row)
-    member = Member.where(membership_id: row[:membership_id]).first_or_initialize
-    member.assign_attributes row.to_hash.slice(
-      :last_name,
-      :first_name,
-      :membership_id,
-      :email,
-      :away_zip
-    ).merge(
-      birthday: DateTime.strptime(row[3], '%m/%d/%Y').strftime('%Y-%m-%d')
-    )
-    member
-  end
-
   def set_username
     self.username = "#{first_name} #{last_name}".strip
   end

@@ -1,26 +1,39 @@
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2"<h3>All Users</h3>
-      <% @users.each do |user| %> 
-        <p><strong>  <%= user.username.titleize %></strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>All Users</h3>
+    <% @users.each do |user| %>
+      <p><strong>
+          <%= user.username.titleize %>
+        </strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %>
+      </p>
       <% end %>
-      <br>
-      <h3> Vestry Members  </h3>
-      <% @users.with_role(:vestry).each do |v| %>
-       <p><strong> <%= v.username %> </strong>&nbsp;
-        <%= v.email %> <br> </p>
-        <% end %>
         <br>
-        <h3>Administrators</h3>
-        <% @users.with_role(:admin).each do |admin| %>
-        <p><strong> <%= admin.username %></strong>&nbsp; <%= admin.email %></p>
-        <% end %>
-        <br>
-        <h3>Communicators</h3>
-        <% @users.with_role(:communicator).each do |comm| %>
-          <p><strong><%= comm.username %></strong>&nbsp; <%= comm.email %></p>
-        <% end %>
-      
-        <!-- <h3>Invite users</h3> 
+        <h3> Vestry Members </h3>
+        <% @users.where(role: "vestry" ).each do |v| %>
+          <p><strong>
+              <%= v.username %>
+            </strong>&nbsp;
+            <%= v.email %> <br>
+          </p>
+          <% end %>
+            <br>
+            <h3>Administrators</h3>
+            <% @users.where(role: "admin" ).each do |admin| %>
+              <p><strong>
+                  <%= admin.username %>
+                </strong>&nbsp; <%= admin.email %>
+              </p>
+              <% end %>
+                <br>
+                <h3>Communicators</h3>
+                <% @users.where(role: "communicator" ).each do |comm| %>
+                  <p><strong>
+                      <%= comm.username %>
+                    </strong>&nbsp; <%= comm.email %>
+                  </p>
+                  <% end %>
+
+                    <!-- <h3>Invite users</h3> 
         <%#= bootstrap_form_for(User.new, url: user_invitation_path, 
                                       # html: { class: 'form-inline'}) do |f| %>
           <%#= f.input :email, placeholder: "Email", label: false %>
@@ -37,5 +50,5 @@
         <%# end %>
 
     </div>-->
- </div>
+  </div>
 </div>

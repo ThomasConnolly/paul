@@ -16,7 +16,7 @@
             <%= @vestry_minute.body %>
               <% end %>
                 <div class="mt-5"></div>
-                <% if user_signed_it? && current_user.admin? %>
+                <% if user_signed_in? && current_user.admin? %>
                   <%= link_to 'Edit' , edit_vestry_minute_path(@vestry_minute) %> |
                     <%= link_to 'Back' , vestry_minutes_path %>
                       <% end %>

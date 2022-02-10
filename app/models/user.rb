@@ -35,6 +35,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_save :set_username
+  validates :username, uniqueness: { case_sensitive: false }
   validates :email, presence: true
   after_create :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]

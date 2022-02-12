@@ -1,32 +1,22 @@
-
-  <% @vreports.each do |vreport| %>
-    <% if vreport.user.avatar? %>
-      <%= image_tag(vreport.user.avatar, width: '160', class: 'floatleft') %>
-    <% else %>
-    <div class="default-avatar"><h5>Your<br>Picture<br>Here</h5>
-    </div>
+<% @vreports.each do |vreport| %>
+  <h3>
+    <%= vreport.title %>
+  </h3>
+  <p>
+    <%= vreport.body %>
+  </p>
+  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vreport.created_at) %> ago by
+      <strong>
+        <%= vreport.user.username.titleize %>
+      </strong> &nbsp; <%= link_to "Show" , vreport_path(vreport) %>
+        <% if current_user==vreport.user %> |
+          <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
+            <%#= link_to vreport, method: :delete, data: { confirm: 'This will delete your report and all its comments.'
+              }, remote: true do %> Delete! </span>
+  <% end %>
     <% end %>
-      <br>
-    <h3><%= vreport.title %></h3>
-      <p><%= bootstrap_format(vreport.body) %>
-
-      <span class="edit-delete-line"> Report made
-      <%= time_ago_in_words(vreport.created_at) %> ago by
-      <strong><%= vreport.user.username.titleize %></strong> &nbsp;
-      <%= link_to "Show", vreport_path(vreport) %>
-      <% if current_user == vreport.user %> |
-      <%= link_to "Edit", edit_vreport_path(vreport) %> |&nbsp;
-      <%=link_to vreport,  method: :delete, data:
-      { confirm: 'This will delete your report and all its comments.'
-        }, remote: true do %> Delete! </span></p>
-
-      <% end %>
-    <% end %>
-    <div class="clearall"></div>
-    <hr>
-<section id="comments-section">
-  <%= render partial: 'comments/comments', locals: {commentable: vreport} %>
-    <div class="mt30"></div>
-  <%= render partial: 'comments/form', locals: {commentable: vreport} %>
-</section>
-<% end %>
+      <hr>
+      <!-- <section id="comments-section">
+        <%#= render partial: 'comments/comments' , locals: {commentable: @vreport} %>
+          <%#= render partial: 'comments/form' , locals: {commentable: @vreport} %>
+      </section> -->

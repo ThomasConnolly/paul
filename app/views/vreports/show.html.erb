@@ -1,23 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-     
-       <h1><%= @vreport.title %></h1>
-        <p><strong> By <%= @vreport.user.username.titleize %></strong></p>
-            <p>
-            <%= raw(@vreport.body) %>
-            </p><hr>
-            <div class="clearall"></div>
-<section id="comments-section">
-  <%= render partial: 'comments/comments', locals: {commentable: @vreport} %>
-    <div class="mt30"></div>
-  <%= render partial: 'comments/form', locals: {commentable: @vreport} %>
-</section>
 
+      <h1>
+        <%= @vreport.title %>
+      </h1>
+      <p><strong> By <%= @vreport.user.username.titleize %></strong></p>
+      <p>
+        <%= raw(@vreport.body) %>
+      </p>
+      <hr>
+      <div class="clearall"></div>
+      <section id="comments-section">
+        <%#= render partial: 'comments/comments' , locals: {commentable: @vreport} %>
           <div class="mt30"></div>
+          <%#= render partial: 'comments/form' , locals: {commentable: @vreport} %>
+      </section>
+
+      <div class="mt30"></div>
 
 
-<p><strong><%= link_to "<< Back to Vestry Reports", vreports_path %> </strong></p>
+      <p><strong>
+          <%= link_to "<< Back to Vestry Reports" , vreports_path %>
+        </strong></p>
     </div>
   </div>
 </div>

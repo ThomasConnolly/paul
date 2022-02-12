@@ -946,3 +946,1676 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 96ms (Views: 63.1ms | ActiveRecord: 9.5ms | Allocations: 18342)
 
 
+Started GET "/" for 127.0.0.1 at 2022-02-11 09:50:46 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4722)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1327)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 16.0ms | Allocations: 3995)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 13291)
+Completed 200 OK in 46ms (Views: 26.3ms | ActiveRecord: 7.4ms | Allocations: 20817)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 09:50:51 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2359)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 844)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 2455)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1547)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 7622)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 3.4ms | Allocations: 11816)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-02-11 11:45:13 -0500
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 2.7ms | Allocations: 1513)
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2036)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 910)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 1839)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1560)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 6855)
+Completed 200 OK in 30ms (Views: 10.9ms | ActiveRecord: 6.6ms | Allocations: 11727)
+
+
+Started GET "/sermons/new" for 127.0.0.1 at 2022-02-11 11:45:27 -0500
+Processing by SermonsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sermons/new.html.erb within layouts/application
+  [1m[36mHomilist Load (0.5ms)[0m  [1m[34mSELECT "homilists".* FROM "homilists"[0m
+  ↳ app/views/sermons/_form.html.erb:6
+  Rendered sermons/_form.html.erb (Duration: 8.6ms | Allocations: 5554)
+  Rendered sermons/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 5972)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 897)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1705)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1560)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 10642)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 1.3ms | Allocations: 13157)
+
+
+Started GET "/story_idea/new" for 127.0.0.1 at 2022-02-11 11:45:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/story_idea/new"):
+  
+Started GET "/story_ideas/new" for 127.0.0.1 at 2022-02-11 11:45:45 -0500
+Processing by StoryIdeasController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/new.html.erb within layouts/application
+  Rendered story_ideas/_form.html.erb (Duration: 3.8ms | Allocations: 2377)
+  Rendered story_ideas/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2825)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 901)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 1828)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1503)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 7575)
+Completed 200 OK in 29ms (Views: 13.0ms | ActiveRecord: 5.7ms | Allocations: 14971)
+
+
+Started POST "/story_ideas" for 127.0.0.1 at 2022-02-11 11:46:04 -0500
+Processing by StoryIdeasController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "story_idea"=>{"title"=>"Now is the tgime", "url"=>"", "body"=>"for all good men"}, "commit"=>"Create Story idea"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/story_ideas_controller.rb:35:in `create'
+  [1m[36mStoryIdea Create (2.6ms)[0m  [1m[32mINSERT INTO "story_ideas" ("title", "body", "user_id", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Now is the tgime"], ["body", "for all good men"], ["user_id", 16], ["created_at", "2022-02-11 16:46:04.524602"], ["updated_at", "2022-02-11 16:46:04.524602"], ["url", ""]]
+  ↳ app/controllers/story_ideas_controller.rb:35:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/story_ideas_controller.rb:35:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: d044772f-7c8a-4973-84e3-5e28f3acfb50) to Async(default) with arguments: "StoryIdeaMailer", "story_idea_created", "deliver_now", {:args=>[#<GlobalID:0x00007fd7a9f307b8 @uri=#<URI::GID gid://paul/StoryIdea/43>>]}
+Redirected to http://localhost:5000/story_ideas
+Completed 302 Found in 27ms (ActiveRecord: 4.4ms | Allocations: 14076)
+
+
+Started GET "/story_ideas" for 127.0.0.1 at 2022-02-11 11:46:04 -0500
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   [1m[36mStoryIdea Load (0.7ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50] Performing ActionMailer::MailDeliveryJob (Job ID: d044772f-7c8a-4973-84e3-5e28f3acfb50) from Async(default) enqueued at 2022-02-11T16:46:04Z with arguments: "StoryIdeaMailer", "story_idea_created", "deliver_now", {:args=>[#<GlobalID:0x00007fd7a9390b88 @uri=#<URI::GID gid://paul/StoryIdea/43>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."email" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   ↳ app/mailers/story_idea_mailer.rb:4:in `block in <class:StoryIdeaMailer>'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendering story_idea_mailer/story_idea_created.html.erb within layouts/mailer
+Processing by StoryIdeasController#index as TURBO_STREAM
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   ↳ app/views/story_idea_mailer/story_idea_created.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendered story_idea_mailer/story_idea_created.html.erb within layouts/mailer (Duration: 5.0ms | Allocations: 3055)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendered layout layouts/mailer.html.erb (Duration: 6.6ms | Allocations: 3349)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendering story_idea_mailer/story_idea_created.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendered story_idea_mailer/story_idea_created.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 204)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50]   Rendered layout layouts/mailer.text.erb (Duration: 1.1ms | Allocations: 436)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50] StoryIdeaMailer#story_idea_created: processed outbound mail in 18.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50] Delivered mail 620692cc90eee_15aa11f0cc97b@tom-G7.mail (6.5ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50] Date: Fri, 11 Feb 2022 11:46:04 -0500
+From: NoResponse@SaintPaulsNaples.org
+Message-ID: <620692cc90eee_15aa11f0cc97b@tom-G7.mail>
+Subject: There's a new posting for the church communications team.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_620692cc8c512_15aa11f0cc965f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_620692cc8c512_15aa11f0cc965f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<a href="http://www.saintpaulsnaples.org">Click here and then sign in to the website</a>
+then click on the red "Action" button and press "Communicators' Corner"
+
+
+----==_mimepart_620692cc8c512_15aa11f0cc965f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <p> Thomas Connolly has created a post in <em><strong>Communicators.</strong></em> 
+
+</p>
+<p> <a href="http://localhost:5000/story_ideas/43">Click here</a> to see it.</p>
+
+
+  </body>
+</html>
+
+----==_mimepart_620692cc8c512_15aa11f0cc965f--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d044772f-7c8a-4973-84e3-5e28f3acfb50] Performed ActionMailer::MailDeliveryJob (Job ID: d044772f-7c8a-4973-84e3-5e28f3acfb50) from Async(default) in 43.91ms
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:8
+  [1m[36mStoryIdea Load (0.9ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" ORDER BY created_at DESC[0m
+  ↳ app/views/story_ideas/index.html.erb:19
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36)[0m  [["commentable_type", "StoryIdea"], ["commentable_id", 43], ["commentable_id", 42], ["commentable_id", 41], ["commentable_id", 40], ["commentable_id", 39], ["commentable_id", 38], ["commentable_id", 37], ["commentable_id", 36], ["commentable_id", 35], ["commentable_id", 34], ["commentable_id", 33], ["commentable_id", 32], ["commentable_id", 31], ["commentable_id", 30], ["commentable_id", 29], ["commentable_id", 28], ["commentable_id", 27], ["commentable_id", 26], ["commentable_id", 25], ["commentable_id", 23], ["commentable_id", 22], ["commentable_id", 21], ["commentable_id", 20], ["commentable_id", 18], ["commentable_id", 17], ["commentable_id", 16], ["commentable_id", 15], ["commentable_id", 14], ["commentable_id", 13], ["commentable_id", 11], ["commentable_id", 10], ["commentable_id", 8], ["commentable_id", 6], ["commentable_id", 5], ["commentable_id", 1]]
+  ↳ app/views/story_ideas/index.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/index.html.erb:21
+  Rendered story_ideas/index.html.erb within layouts/application (Duration: 70.8ms | Allocations: 63929)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 885)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1638)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1439)
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 68381)
+Completed 200 OK in 111ms (Views: 63.9ms | ActiveRecord: 35.1ms | Allocations: 112183)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--818ff30878e15efbf827a951b6ddb6a5ef429df6/T&C.JPG" for 127.0.0.1 at 2022-02-11 11:46:04 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--818ff30878e15efbf827a951b6ddb6a5ef429df6", "filename"=>"T&C"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[36m  Cloudinary Storage (0.1ms) [0m[34mGenerated URL for file at key: u8zh6lq91iqngnejaqxddjcttqyc (https://res-1.cloudinary.com/saintpaulsnaples-org/image/upload/u8zh6lq91iqngnejaqxddjcttqyc.JPG)[0m
+Redirected to https://res-1.cloudinary.com/saintpaulsnaples-org/image/upload/u8zh6lq91iqngnejaqxddjcttqyc.JPG
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 3983)
+
+
+Started GET "/story_ideas/1" for 127.0.0.1 at 2022-02-11 11:46:20 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.4ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 42.9ms | Allocations: 8959)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 9011)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 3.0ms | Allocations: 11676)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd79a99ac18 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/ff71251f839bff76/variables" for 127.0.0.1 at 2022-02-11 11:46:20 -0500
+Started GET "/story_ideas/5" for 127.0.0.1 at 2022-02-11 11:46:38 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.3ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 7913)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 7965)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms | Allocations: 10561)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd79a679b38 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/7cedf095bf34cf32/variables" for 127.0.0.1 at 2022-02-11 11:46:38 -0500
+Started GET "/story_ideas/6" for 127.0.0.1 at 2022-02-11 11:46:47 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.5ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 7912)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7964)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.1ms | Allocations: 10560)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd7a93b9060 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/d50d12bdcfb6455b/variables" for 127.0.0.1 at 2022-02-11 11:46:48 -0500
+Started GET "/story_ideas/17" for 127.0.0.1 at 2022-02-11 11:47:08 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.3ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 120], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1979)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 899)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 1639)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1556)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6510)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 1.4ms | Allocations: 9138)
+
+
+Started GET "/story_ideas/18" for 127.0.0.1 at 2022-02-11 11:48:04 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.5ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 7856)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 7907)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.9ms | Allocations: 10262)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd7a804d558 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/595355f20c073a04/variables" for 127.0.0.1 at 2022-02-11 11:48:04 -0500
+Started GET "/story_ideas/20" for 127.0.0.1 at 2022-02-11 11:48:13 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.4ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 7912)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 7964)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.7ms | Allocations: 10575)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd79ab47ed0 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/b431a19eef359e2d/variables" for 127.0.0.1 at 2022-02-11 11:48:14 -0500
+Started GET "/story_ideas/25" for 127.0.0.1 at 2022-02-11 11:48:26 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.3ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:6
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 10.3ms | Allocations: 7912)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 7964)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.4ms | Allocations: 10575)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd79a8965d8 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/story_ideas/show.html.erb:6
+
+Started POST "/__better_errors/1763371bf0451b32/variables" for 127.0.0.1 at 2022-02-11 11:48:26 -0500
+Started GET "/story_ideas/27" for 127.0.0.1 at 2022-02-11 11:48:32 -0500
+Processing by StoryIdeasController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mStoryIdea Load (0.4ms)[0m  [1m[34mSELECT "story_ideas".* FROM "story_ideas" WHERE "story_ideas"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/story_ideas_controller.rb:57:in `set_story_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering story_ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 178], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/story_ideas/show.html.erb:4
+  Rendered story_ideas/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1922)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 894)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 1636)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1553)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6442)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 1.3ms | Allocations: 9084)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 12:10:56 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2395)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 844)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 2502)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7708)
+Completed 200 OK in 28ms (Views: 9.2ms | ActiveRecord: 7.2ms | Allocations: 14337)
+
+
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:11:03 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 9049)
+
+
+
+NoMethodError - undefined method `vestry' for #<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">
+Did you mean?  vestry!
+               vestry?
+               destroy:
+  app/controllers/vreports_controller.rb:80:in `vestry_only'
+
+Started POST "/__better_errors/5f49d7e036e69034/variables" for 127.0.0.1 at 2022-02-11 12:11:04 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:12:28 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/vreports/index.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/vreports/index.html.erb:5
+  Rendered vreports/index.html.erb within layouts/application (Duration: 36.6ms | Allocations: 29561)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 29621)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 11.2ms | Allocations: 47437)
+
+
+
+NoMethodError - undefined method `path' for #<ActiveStorage::Attached::One:0x00007fd79a5fd4c0 @name="avatar", @record=#<User id: 16, email: "tom.connolly@comcast.net", created_at: "2015-03-02 10:29:13.234347000 -0500", updated_at: "2022-02-08 13:54:16.146606000 -0500", first_name: "Thomas", last_name: "Connolly", username: "Thomas Connolly", avatar: nil, honey: nil, stripe_id: "cus_Kz0x8x7ZUrSVyB", role: "admin">>:
+  app/views/vreports/index.html.erb:6
+
+Started POST "/__better_errors/0ff6864e24c1356c/variables" for 127.0.0.1 at 2022-02-11 12:12:28 -0500
+  [1m[36mVreport Load (3.3ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Vreport Load (0.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:20:57 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2736)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2794)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 10.1ms | Allocations: 8089)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="row">
+  <div class="col-lg-8 main-body">
+    <div class="create-vreport">
+      <h2>
+        <%= link_to "Create a report" , new_vreport_path %>
+      </h2>
+    </div>
+    <div id="vreports" class="mt-3">
+      <%= render partial: 'vreports' %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6 sidebar">
+    <h2>About vestry reports</h2>
+    <p>Vestry members at Saint Paul's take on certain responsibilities and are asked to make periodic reports.</p>
+    <p>Areas of responsibility are:</p>
+    <p><strong>Administration, Jubilee!, fundraising</strong></p>
+    <div class="second-line">
+      <p>Dick Breithaupt</p>
+    </div>
+    <p><strong>Christian formation</strong></p>
+    <div class="second-line">
+      <p>Charlene Connolly</p>
+    </div>
+    <p><strong>Communications, office staff</strong></p>
+    <div class="second-line">
+      <p>Darlene Shoemaker</p>
+    </div>
+    <p><strong>Congregational integration</strong></p>
+    <div class="second-line">
+      <p>Yvon Hive</p>
+    </div>
+    <p><strong>Farmers' Market, yard sale</strong></p>
+    <div class="second-line">
+      <p>Don Anderson</p>
+    </div>
+    <p><strong>Fellowship</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Finance</strong></p>
+    <div class="second-line">
+      <p>Dave Abernethy</p>
+    </div>
+    <p><strong>Internal ministries</strong></p>
+    <div class="second-line">
+      <p>Judy Allen</p>
+    </div>
+    <p><strong>Outreach</strong></p>
+    <div class="second-line">
+      <p>Lynne LaMarca</p>
+    </div>
+    <p><strong>Pastoral Care</strong></p>
+    <div class="second-line">
+      <p>Peter Lund</p>
+    </div>
+    <p><strong>Property</strong></p>
+    <div class="second-line">
+      <p>Alan Cragg</p>
+    </div>
+    <p><strong>Sunday ministries</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Worship</strong></p>
+    <div class="second-line">
+      <p>Bev Whiteman</p>
+    </div>
+    <div class="mt30"></div>
+    <h2>Resources for vestry members</h2>
+    <p>Subscribe to Episcopal Church Foundation's "Vital Practices" for articles, tools, and resources by and for
+      congregational leaders.
+      <%= link_to "Click here" , "http://www.ecfvp.org/account/register" , :target=> '_blank' %>
+    </p>
+    <p><strong>Here's a pdf describing how some other congregations are dealing with change</strong>
+      <%= link_to "Click here"
+        , "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1457116302/something_more_nmd5we.pdf" ,
+        :target=> "_blank" %>
+    </p>
+  </div><!-- sidebar end -->
+</div><!-- row end -->:
+
+Started POST "/__better_errors/deb84334ec16eb8f/variables" for 127.0.0.1 at 2022-02-11 12:20:57 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:22:19 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2732)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2790)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 5737)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="row">
+  <div class="col-lg-8 main-body">
+    <div class="create-vreport">
+      <h2>
+        <%= link_to "Create a report" , new_vreport_path %>
+      </h2>
+    </div>
+    <div id="vreports" class="mt-3">
+      <%= render partial: 'vreports' %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6 sidebar">
+    <h2>About vestry reports</h2>
+    <p>Vestry members at Saint Paul's take on certain responsibilities and are asked to make periodic reports.</p>
+    <p>Areas of responsibility are:</p>
+    <p><strong>Administration, Jubilee!, fundraising</strong></p>
+    <div class="second-line">
+      <p>Dick Breithaupt</p>
+    </div>
+    <p><strong>Christian formation</strong></p>
+    <div class="second-line">
+      <p>Charlene Connolly</p>
+    </div>
+    <p><strong>Communications, office staff</strong></p>
+    <div class="second-line">
+      <p>Darlene Shoemaker</p>
+    </div>
+    <p><strong>Congregational integration</strong></p>
+    <div class="second-line">
+      <p>Yvon Hive</p>
+    </div>
+    <p><strong>Farmers' Market, yard sale</strong></p>
+    <div class="second-line">
+      <p>Don Anderson</p>
+    </div>
+    <p><strong>Fellowship</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Finance</strong></p>
+    <div class="second-line">
+      <p>Dave Abernethy</p>
+    </div>
+    <p><strong>Internal ministries</strong></p>
+    <div class="second-line">
+      <p>Judy Allen</p>
+    </div>
+    <p><strong>Outreach</strong></p>
+    <div class="second-line">
+      <p>Lynne LaMarca</p>
+    </div>
+    <p><strong>Pastoral Care</strong></p>
+    <div class="second-line">
+      <p>Peter Lund</p>
+    </div>
+    <p><strong>Property</strong></p>
+    <div class="second-line">
+      <p>Alan Cragg</p>
+    </div>
+    <p><strong>Sunday ministries</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Worship</strong></p>
+    <div class="second-line">
+      <p>Bev Whiteman</p>
+    </div>
+    <div class="mt30"></div>
+    <h2>Resources for vestry members</h2>
+    <p>Subscribe to Episcopal Church Foundation's "Vital Practices" for articles, tools, and resources by and for
+      congregational leaders.
+      <%= link_to "Click here" , "http://www.ecfvp.org/account/register" , :target=> '_blank' %>
+    </p>
+    <p><strong>Here's a pdf describing how some other congregations are dealing with change</strong>
+      <%= link_to "Click here"
+        , "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1457116302/something_more_nmd5we.pdf" ,
+        target: "_blank" %>
+    </p>
+  </div><!-- sidebar end -->
+</div><!-- row end -->:
+
+Started POST "/__better_errors/368db2a2e30603e1/variables" for 127.0.0.1 at 2022-02-11 12:22:19 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:23:43 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2729)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2787)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 5734)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="row">
+  <div class="col-lg-8 main-body">
+    <div class="create-vreport">
+      <h2>
+        <%= link_to "Create a report" , new_vreport_path %>
+      </h2>
+    </div>
+    <div id="vreports" class="mt-3">
+      <%= render partial: 'vreports' %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6 sidebar">
+    <h2>About vestry reports</h2>
+    <p>Vestry members at Saint Paul's take on certain responsibilities and are asked to make periodic reports.</p>
+    <p>Areas of responsibility are:</p>
+    <p><strong>Administration, Jubilee!, fundraising</strong></p>
+    <div class="second-line">
+      <p>Dick Breithaupt</p>
+    </div>
+    <p><strong>Christian formation</strong></p>
+    <div class="second-line">
+      <p>Charlene Connolly</p>
+    </div>
+    <p><strong>Communications, office staff</strong></p>
+    <div class="second-line">
+      <p>Darlene Shoemaker</p>
+    </div>
+    <p><strong>Congregational integration</strong></p>
+    <div class="second-line">
+      <p>Yvon Hive</p>
+    </div>
+    <p><strong>Farmers' Market, yard sale</strong></p>
+    <div class="second-line">
+      <p>Don Anderson</p>
+    </div>
+    <p><strong>Fellowship</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Finance</strong></p>
+    <div class="second-line">
+      <p>Dave Abernethy</p>
+    </div>
+    <p><strong>Internal ministries</strong></p>
+    <div class="second-line">
+      <p>Judy Allen</p>
+    </div>
+    <p><strong>Outreach</strong></p>
+    <div class="second-line">
+      <p>Lynne LaMarca</p>
+    </div>
+    <p><strong>Pastoral Care</strong></p>
+    <div class="second-line">
+      <p>Peter Lund</p>
+    </div>
+    <p><strong>Property</strong></p>
+    <div class="second-line">
+      <p>Alan Cragg</p>
+    </div>
+    <p><strong>Sunday ministries</strong></p>
+    <div class="second-line">
+      <p>Carol Diehm</p>
+    </div>
+    <p><strong>Worship</strong></p>
+    <div class="second-line">
+      <p>Bev Whiteman</p>
+    </div>
+    <div class="mt30"></div>
+    <h2>Resources for vestry members</h2>
+    <p>Subscribe to Episcopal Church Foundation's "Vital Practices" for articles, tools, and resources by and for
+      congregational leaders.
+      <%= link_to "Click here" , "http://www.ecfvp.org/account/register" , :target=> '_blank' %>
+    </p>
+    <p><strong>Here's a pdf describing how some other congregations are dealing with change</strong>
+      <%= link_to "Click here"
+        , "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1457116302/something_more_nmd5we.pdf" %>
+    </p>
+  </div><!-- sidebar end -->
+</div><!-- row end -->:
+
+Started POST "/__better_errors/2779968b62a7b1ff/variables" for 127.0.0.1 at 2022-02-11 12:23:43 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:24:03 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (1.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:2
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:2
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 178], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:3
+  Rendered vreports/_vreports.html.erb (Duration: 45.4ms | Allocations: 16489)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 56.3ms | Allocations: 17202)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 17259)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 3.5ms | Allocations: 20196)
+
+
+
+NoMethodError - undefined method `bootstrap_format' for #<ActionView::Base:0x000000000582f0>
+Did you mean?  bootstrap_form_tag
+               bootstrap_form_with
+               bootstrap_form_for:
+  app/views/vreports/_vreports.html.erb:11
+  app/views/vreports/_vreports.html.erb:2
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/0f351effc9961367/variables" for 127.0.0.1 at 2022-02-11 12:24:03 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:25:35 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/_vreports.html.erb (Duration: 2.4ms | Allocations: 3197)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3895)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3953)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 6899)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @vreports.each do |vreport| %>
+  <% if vreport.user.avatar? %>
+    <%= image_tag(vreport.user.avatar, width: '160' , class: 'floatleft' ) %>
+      <% else %>
+        <div class="default-avatar">
+          <h5>Your<br>Picture<br>Here</h5>
+        </div>
+        <% end %>
+          <br>
+          <h3>
+            <%= vreport.title %>
+          </h3>
+          <p>
+            <%= vreport.body)%>
+              <span class="edit-delete-line"> Report made
+                <%= time_ago_in_words(vreport.created_at) %> ago by
+                  <strong>
+                    <%= vreport.user.username.titleize %>
+                  </strong> &nbsp;
+                  <%= link_to "Show" , vreport_path(vreport) %>
+                    <% if current_user==vreport.user %> |
+                      <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
+                        <%=link_to vreport, method: :delete, data: {
+                          confirm: 'This will delete your report and all its comments.' }, remote: true do %> Delete!
+              </span>
+          </p>
+          <% end %>
+            <% end %>
+              <div class="clearall"></div>
+              <hr>
+              <section id="comments-section">
+                <%= render partial: 'comments/comments' , locals: {commentable: vreport} %>
+                  <div class="mt30"></div>
+                  <%= render partial: 'comments/form' , locals: {commentable: vreport} %>
+              </section>
+              <% end %>:
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/5d4a56962c6bc743/variables" for 127.0.0.1 at 2022-02-11 12:25:35 -0500
+  [1m[36mVreport Load (0.4ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Vreport Load (0.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:34:18 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/_vreports.html.erb (Duration: 2.8ms | Allocations: 3109)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3808)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3866)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 10.9ms | Allocations: 9157)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @vreports.each do |vreport| %>
+  <h3>
+    <%= vreport.title %>
+  </h3>
+  <p>
+    <%= vreport.body)%>
+  </p>
+  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vreport.created_at) %> ago by
+      <strong>
+        <%= vreport.user.username.titleize %>
+      </strong> &nbsp; <%= link_to "Show" , vreport_path(vreport) %>
+        <% if current_user==vreport.user? %> |
+          <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
+            <%=link_to vreport, method: :delete, data: { confirm: 'This will delete your report and all its comments.'
+              }, remote: true do %> Delete! </span>
+  <% end %>
+    <% end %>
+      <hr>
+      <section id="comments-section">
+        <%= render partial: 'comments/comments' , locals: {commentable: vreport} %>
+          <%= render partial: 'comments/form' , locals: {commentable: vreport} %>
+      </section>:
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/a5ff6fbbe43ace79/variables" for 127.0.0.1 at 2022-02-11 12:34:19 -0500
+  [1m[36mVreport Load (0.5ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Vreport Load (0.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:35:03 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/_vreports.html.erb (Duration: 1.4ms | Allocations: 3108)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3806)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3864)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 6686)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @vreports.each do |vreport| %>
+  <h3>
+    <%= vreport.title %>
+  </h3>
+  <p>
+    <%= vreport.body %>
+  </p>
+  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vreport.created_at) %> ago by
+      <strong>
+        <%= vreport.user.username.titleize %>
+      </strong> &nbsp; <%= link_to "Show" , vreport_path(vreport) %>
+        <% if current_user==vreport.user? %> |
+          <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
+            <%=link_to vreport, method: :delete, data: { confirm: 'This will delete your report and all its comments.'
+              }, remote: true do %> Delete! </span>
+  <% end %>
+    <% end %>
+      <hr>
+      <section id="comments-section">
+        <%= render partial: 'comments/comments' , locals: {commentable: vreport} %>
+          <%= render partial: 'comments/form' , locals: {commentable: vreport} %>
+      </section>:
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/40be030f5145662c/variables" for 127.0.0.1 at 2022-02-11 12:35:03 -0500
+  [1m[36mVreport Load (0.3ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Vreport Load (0.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:35:45 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  Rendered vreports/_vreports.html.erb (Duration: 1.9ms | Allocations: 3108)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 3811)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3869)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms | Allocations: 6694)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @vreports.each do |vreport| %>
+  <h3>
+    <%= vreport.title %>
+  </h3>
+  <p>
+    <%= vreport.body %>
+  </p>
+  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vreport.created_at) %> ago by
+      <strong>
+        <%= vreport.user.username.titleize %>
+      </strong> &nbsp; <%= link_to "Show" , vreport_path(vreport) %>
+        <% if current_user==vreport.user %> |
+          <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
+            <%=link_to vreport, method: :delete, data: { confirm: 'This will delete your report and all its comments.'
+              }, remote: true do %> Delete! </span>
+  <% end %>
+    <% end %>
+      <hr>
+      <section id="comments-section">
+        <%= render partial: 'comments/comments' , locals: {commentable: vreport} %>
+          <%= render partial: 'comments/form' , locals: {commentable: vreport} %>
+      </section>:
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/7892e5c247a6c2fb/variables" for 127.0.0.1 at 2022-02-11 12:35:45 -0500
+  [1m[36mVreport Load (0.4ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Vreport Load (0.0ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ (eval):72:in `block in render'
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:36:31 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (0.4ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  Rendered vreports/_vreports.html.erb (Duration: 19.6ms | Allocations: 15025)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 15722)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 15779)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.5ms | Allocations: 18595)
+
+
+
+NameError - undefined local variable or method `vreport' for #<ActionView::Base:0x00000000058b88>
+Did you mean?  @vreport
+               @vreports:
+  app/views/vreports/_vreports.html.erb:20
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/aacb9ec64ac6ae0b/variables" for 127.0.0.1 at 2022-02-11 12:36:31 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:39:11 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (0.6ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  Rendered vreports/_vreports.html.erb (Duration: 19.9ms | Allocations: 14972)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 15670)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 15727)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.1ms | Allocations: 18661)
+
+
+
+NameError - undefined local variable or method `vreport' for #<ActionView::Base:0x00000000058cf0>
+Did you mean?  @vreport
+               @vreports:
+  app/views/vreports/_vreports.html.erb:20
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/4f79c02ce5a2be29/variables" for 127.0.0.1 at 2022-02-11 12:39:11 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:40:10 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (0.6ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  Rendered vreports/_vreports.html.erb (Duration: 24.5ms | Allocations: 21436)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 26.2ms | Allocations: 22136)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 22193)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.3ms | Allocations: 25130)
+
+
+
+ActionView::MissingTemplate - Missing partial comments/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/tom/paul/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/letter_opener_web-2.0.0/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/bundler/gems/devise-025b1c873491/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/actiontext-7.0.1/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/actionmailbox-7.0.1/app/views"
+Did you mean?  comments/comment
+               comments/form
+               events/form
+               posts/posts
+               sermons/form
+               home/form:
+  app/views/vreports/_vreports.html.erb:20
+  app/views/vreports/index.html.erb:9
+
+Started POST "/__better_errors/6bcf0cc2d4844d2d/variables" for 127.0.0.1 at 2022-02-11 12:40:10 -0500
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 12:41:01 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (0.8ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  Rendered vreports/_vreports.html.erb (Duration: 11.6ms | Allocations: 4191)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4912)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1375)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 17.3ms | Allocations: 12814)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 22297)
+Completed 200 OK in 47ms (Views: 34.6ms | ActiveRecord: 6.4ms | Allocations: 25271)
+
+
+Started GET "/vreports/21" for 127.0.0.1 at 2022-02-11 12:41:46 -0500
+Processing by VreportsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mVreport Load (0.8ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" WHERE "vreports"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/vreports_controller.rb:72:in `set_vreport'
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/show.html.erb:6
+  Rendered vreports/show.html.erb within layouts/application (Duration: 53.8ms | Allocations: 18006)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 18058)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 2.2ms | Allocations: 20580)
+
+
+
+ActionView::MissingTemplate - Missing partial comments/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/tom/paul/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/letter_opener_web-2.0.0/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/bundler/gems/devise-025b1c873491/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/actiontext-7.0.1/app/views"
+  * "/home/tom/.rvm/gems/ruby-3.1.0/gems/actionmailbox-7.0.1/app/views"
+Did you mean?  comments/comment
+               comments/form
+               events/form
+               posts/posts
+               sermons/form
+               home/form:
+  app/views/vreports/show.html.erb:12
+
+Started POST "/__better_errors/06e0e59861f4016d/variables" for 127.0.0.1 at 2022-02-11 12:41:46 -0500
+Started GET "/vreports/21" for 127.0.0.1 at 2022-02-11 13:17:12 -0500
+Processing by VreportsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mVreport Load (1.2ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" WHERE "vreports"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/vreports_controller.rb:72:in `set_vreport'
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/show.html.erb:8
+  Rendered vreports/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1515)
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1375)
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 3051)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 9185)
+Completed 200 OK in 44ms (Views: 18.6ms | ActiveRecord: 8.7ms | Allocations: 15172)
+
+
+Started GET "/vreports" for 127.0.0.1 at 2022-02-11 14:02:15 -0500
+Processing by VreportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering vreports/index.html.erb within layouts/application
+  [1m[36mVreport Load (0.7ms)[0m  [1m[34mSELECT "vreports".* FROM "vreports" ORDER BY created_at DESC[0m
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" IN ($2, $3)[0m  [["commentable_type", "Vreport"], ["commentable_id", 22], ["commentable_id", 21]]
+  ↳ app/views/vreports/_vreports.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  ↳ app/views/vreports/_vreports.html.erb:10
+  Rendered vreports/_vreports.html.erb (Duration: 7.9ms | Allocations: 4073)
+  Rendered vreports/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4721)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 843)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 1626)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1547)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 9151)
+Completed 200 OK in 31ms (Views: 12.6ms | ActiveRecord: 7.0ms | Allocations: 13516)
+
+
+Started GET "/vminutes" for 127.0.0.1 at 2022-02-11 14:02:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vminutes"):
+  
+Started GET "/vestry_minutes" for 127.0.0.1 at 2022-02-11 14:02:44 -0500
+Processing by VestryMinutesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vestry_minutes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/vestry_minutes/index.html.erb:5
+  [1m[36mVestryMinute Load (9.0ms)[0m  [1m[34mSELECT "vestry_minutes".* FROM "vestry_minutes" ORDER BY created_at DESC[0m
+  ↳ app/views/vestry_minutes/index.html.erb:12
+  Rendered vestry_minutes/index.html.erb within layouts/application (Duration: 32.9ms | Allocations: 16267)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 907)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1692)
+  Rendered layouts/_footer.html.erb (Duration: 5.4ms | Allocations: 1503)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 20934)
+Completed 200 OK in 49ms (Views: 30.8ms | ActiveRecord: 13.3ms | Allocations: 24574)
+
+
+Started GET "/vestry_minutes/76" for 127.0.0.1 at 2022-02-11 14:02:50 -0500
+Processing by VestryMinutesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mVestryMinute Load (0.5ms)[0m  [1m[34mSELECT "vestry_minutes".* FROM "vestry_minutes" WHERE "vestry_minutes"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/vestry_minutes_controller.rb:70:in `set_vestry_minute'
+  Rendering layout layouts/application.html.erb
+  Rendering vestry_minutes/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (3.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "VestryMinute"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/vestry_minutes/show.html.erb:16
+  Rendered /home/tom/.rvm/gems/ruby-3.1.0/gems/actiontext-7.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 8.8ms | Allocations: 5986)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/vestry_minutes/show.html.erb:19
+  Rendered vestry_minutes/show.html.erb within layouts/application (Duration: 33.8ms | Allocations: 16658)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 886)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 1652)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1435)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 21061)
+Completed 200 OK in 43ms (Views: 34.3ms | ActiveRecord: 4.6ms | Allocations: 22434)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 20:59:26 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 6756)
+  Rendered layouts/_header.html.erb (Duration: 4.2ms | Allocations: 1327)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 622], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 622], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 17.3ms | Allocations: 3954)
+  Rendered layouts/_footer.html.erb (Duration: 4.0ms | Allocations: 1798)
+  Rendered layout layouts/application.html.erb (Duration: 60.2ms | Allocations: 15231)
+Completed 200 OK in 205ms (Views: 54.4ms | ActiveRecord: 62.1ms | Allocations: 34174)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:02:58 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 4700)
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | Allocations: 1327)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 23.0ms | Allocations: 3948)
+  Rendered layouts/_footer.html.erb (Duration: 5.4ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 66.1ms | Allocations: 13213)
+Completed 200 OK in 101ms (Views: 67.3ms | ActiveRecord: 9.1ms | Allocations: 18318)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:04:26 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (1.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:180
+  Rendered home/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 4700)
+  Rendered layouts/_header.html.erb (Duration: 6.8ms | Allocations: 1327)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 622], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 622], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 20.8ms | Allocations: 3898)
+  Rendered layouts/_footer.html.erb (Duration: 5.6ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 13163)
+Completed 200 OK in 96ms (Views: 64.4ms | ActiveRecord: 10.1ms | Allocations: 18386)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:18:21 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.0ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.7ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 4729)
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 1327)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 22.0ms | Allocations: 3995)
+  Rendered layouts/_footer.html.erb (Duration: 3.9ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 13289)
+Completed 200 OK in 130ms (Views: 57.4ms | ActiveRecord: 28.9ms | Allocations: 20848)
+
+
+Started GET "/pulbic/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:18:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pulbic/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:18:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4712)
+  Rendered layouts/_header.html.erb (Duration: 6.5ms | Allocations: 1327)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 21.0ms | Allocations: 3958)
+  Rendered layouts/_footer.html.erb (Duration: 5.0ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 13251)
+Completed 200 OK in 92ms (Views: 61.1ms | ActiveRecord: 9.2ms | Allocations: 18332)
+
+
+Started GET "/pulbic/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:18:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pulbic/assets/SoldOut.svg"):
+  
+Started GET "/pulbic/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:19:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pulbic/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:20:49 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2359)
+  Rendered layouts/_header.html.erb (Duration: 4.6ms | Allocations: 844)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 14.9ms | Allocations: 2455)
+  Rendered layouts/_footer.html.erb (Duration: 3.8ms | Allocations: 1553)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 7628)
+Completed 200 OK in 68ms (Views: 37.8ms | ActiveRecord: 8.4ms | Allocations: 11788)
+
+
+Started GET "/pulbic/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:20:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pulbic/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:21:18 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2359)
+  Rendered layouts/_header.html.erb (Duration: 4.9ms | Allocations: 844)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 15.3ms | Allocations: 2455)
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 7625)
+Completed 200 OK in 70ms (Views: 38.4ms | ActiveRecord: 8.6ms | Allocations: 11733)
+
+
+Started GET "/pulbic/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:21:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pulbic/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:22:45 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4715)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1327)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 6.7ms | Allocations: 3958)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 13251)
+Completed 200 OK in 46ms (Views: 19.6ms | ActiveRecord: 4.2ms | Allocations: 18259)
+
+
+Started GET "/public/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:22:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/public/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:23:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:181
+  Rendered home/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 4702)
+  Rendered layouts/_header.html.erb (Duration: 4.7ms | Allocations: 1327)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 11.5ms | Allocations: 3948)
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 13215)
+Completed 200 OK in 55ms (Views: 36.9ms | ActiveRecord: 5.9ms | Allocations: 18247)
+
+
+Started GET "/public/assets/SoldOut.svg" for 127.0.0.1 at 2022-02-11 21:23:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/public/assets/SoldOut.svg"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:27:15 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:195
+  Rendered home/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 4757)
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | Allocations: 1327)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 23.6ms | Allocations: 3958)
+  Rendered layouts/_footer.html.erb (Duration: 5.8ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 13296)
+Completed 200 OK in 111ms (Views: 76.3ms | ActiveRecord: 8.2ms | Allocations: 18362)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 21:29:05 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:177
+  Rendered home/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 4676)
+  Rendered layouts/_header.html.erb (Duration: 5.6ms | Allocations: 1327)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 20.2ms | Allocations: 3948)
+  Rendered layouts/_footer.html.erb (Duration: 4.8ms | Allocations: 1873)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 13189)
+Completed 200 OK in 93ms (Views: 61.5ms | ActiveRecord: 8.3ms | Allocations: 18310)
+
+
+  [1m[36mWebhookEvent Load (8.4ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]

@@ -39,6 +39,7 @@ gem 'premailer-rails'
 gem 'puma'
 gem 'rack'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+gem "rack-attack", "~> 6.6"
 gem 'rails', '~>7.0.1'
 gem 'railties'
 gem 'receipts'
@@ -86,3 +87,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+

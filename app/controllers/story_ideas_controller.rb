@@ -16,13 +16,14 @@ class StoryIdeasController < ApplicationController
   before_action :authenticate_user!
   before_action :set_story_idea, only: %i[show edit update destroy]
   before_action :find_commentable
+  before_action :authorize
 
   def new
     @story_idea = StoryIdea.new
   end
 
   def index
-    @story_ideas = StoryIdea.includes(:comments).all
+    @story_ideas = StoryIdea.all
     @story_idea = StoryIdea.new
   end
 
@@ -58,12 +59,15 @@ class StoryIdeasController < ApplicationController
   end
 
   def story_idea_params
-    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture,
-                                       :user_id)
+    params.require(:story_idea).permit(:title, :body, :comments, :url, :story_idea_picture)
   end
 
   def find_commentable
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
     @commentable = StoryIdea.find_by_id(params[:story_idea_id]) if params[:story_idea_id]
+  end
+
+  def authorize
+    redirect_to "/" unless current_user.communicator? || current_user.vestry? || current_user.admin?
   end
 end

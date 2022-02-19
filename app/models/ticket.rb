@@ -39,7 +39,7 @@ class Ticket < ApplicationRecord
     price = Stripe::Price.create({
                                    unit_amount: amount,
                                    currency: 'usd',
-                                   product: 'prod_L0767zWhIpzB9g'
+                                   product: 'prod_LBHbVPOcXJU6lX'
 
                                  })
     self.stripe_id = price.id

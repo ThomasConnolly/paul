@@ -13,3 +13,16 @@
           at <%= t.updated_at.strftime('%I:%M %p') %>
   </p>
   <% end %>
+
+
+    <h2>Names & emails of all who have purchased tickets (all events)</h2>
+    <% @tickets.each do |ticket| %>
+      <div>
+        <p>
+          <%=ticket.first_name %>
+            <%=ticket.last_name %>
+              <%=ticket.email%>
+        </p>
+      </div>
+
+      <% end %>

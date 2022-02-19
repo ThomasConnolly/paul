@@ -2,18 +2,19 @@
 
 class TicketsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :set_event, except: :index
+  before_action :set_event
   before_action :set_ticket, only: %i[show edit update destroy]
 
   def show; end
 
   def index
     @tickets = Ticket.all.order(:last_name)
-    @pd_tickets = Ticket.where(event: 11, checkout: "paid").order(:last_name)
+    @pd_tickets = Ticket.where(event: @event, checkout: "paid").order(:last_name)
   end
 
   def new
     @ticket = @event.tickets.build
+
   end
 
   def create
@@ -34,7 +35,7 @@ class TicketsController < ApplicationController
   private
 
   def set_event
-    @event = Event.find(params[:event_id])
+    @event = Event.last
   end
 
   def set_ticket

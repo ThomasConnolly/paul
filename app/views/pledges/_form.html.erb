@@ -1,6 +1,9 @@
-<%= bootstrap_form_with (model: @pledge, local: true) do |f| %>
+<%= bootstrap_form_with(model: @pledge) do |f| %>
   <%= f.number_field :dollars, label: "Dollar amount" %>
-  <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, bootstrap: {check_inline: true}, label: "Frequency" %>
- 
-  <%= f.submit "Edit pledge", class: "btn btn-lg btn-success mb-2"%> &nbsp; <%= button_to("Delete pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' }, class: "btn btn-lg btn-danger") %>
-<% end %> 
+    <%= f.form_group :plan, label: { text: "Frequency" } do %>
+      <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+        <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+          <%= f.radio_button :plan, 2 , label: "Quarterly" inline: true %>
+            <% end %>
+              <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                <% end %>

@@ -1371,3 +1371,707 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 29ms (Views: 19.1ms | ActiveRecord: 2.9ms | Allocations: 17430)
 
 
+Started GET "/" for 127.0.0.1 at 2022-02-20 19:44:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (6.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:178
+  Rendered home/index.html.erb within layouts/application (Duration: 93.9ms | Allocations: 15743)
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | Allocations: 1360)
+  Rendered layouts/_navbar.html.erb (Duration: 16.7ms | Allocations: 2424)
+  Rendered layouts/_footer.html.erb (Duration: 5.9ms | Allocations: 1866)
+  Rendered layout layouts/application.html.erb (Duration: 132.6ms | Allocations: 23024)
+Completed 200 OK in 282ms (Views: 128.1ms | ActiveRecord: 43.4ms | Allocations: 64129)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-20 19:44:17 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/_form.html.erb (Duration: 11.8ms | Allocations: 3936)
+  Rendered pledges/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 4349)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4408)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 12.6ms | Allocations: 15381)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with (model: @pledge, local: true) do |f| %>
+  <%= f.number_field :dollars, label: "Dollar amount" %>
+  <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, bootstrap: {check_inline: true}, label: "Frequency" %>
+  <%= f.submit "Edit pledge", class: "btn btn-lg btn-success mb-2"%> &nbsp; <%= button_to("Delete pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' }, class: "btn btn-lg btn-danger") %>
+<% end %>:
+  app/views/pledges/new.html.erb:19
+
+Started POST "/__better_errors/38d36c3737a04a59/variables" for 127.0.0.1 at 2022-02-20 19:44:18 -0500
+  [1m[36mWebhookEvent Load (5.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/webhook_events" for 127.0.0.1 at 2022-02-22 20:29:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WebhookEventsController#create as XML
+  Parameters: {"id"=>"evt_1KW9fIHiibShxDkjqZBsmPHd", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1645579752, "data"=>{"object"=>{"id"=>"po_1KW9eAHiibShxDkjYDH0s3KA", "object"=>"payout", "amount"=>14475, "arrival_date"=>1645574400, "automatic"=>true, "balance_transaction"=>"txn_1KW9eAHiibShxDkj0MuugthD", "created"=>1645579682, "currency"=>"usd", "description"=>"STRIPE PAYOUT", "destination"=>"ba_15u280HiibShxDkj5TYYpdyJ", "failure_balance_transaction"=>nil, "failure_code"=>nil, "failure_message"=>nil, "livemode"=>false, "metadata"=>{}, "method"=>"standard", "original_payout"=>nil, "reversed_by"=>nil, "source_type"=>"card", "statement_descriptor"=>nil, "status"=>"in_transit", "type"=>"bank_account"}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>nil, "idempotency_key"=>"[FILTERED]"}, "type"=>"payout.created", "webhook_event"=>{"id"=>"evt_1KW9fIHiibShxDkjqZBsmPHd", "data"=>{"object"=>{"id"=>"po_1KW9eAHiibShxDkjYDH0s3KA", "object"=>"payout", "amount"=>14475, "arrival_date"=>1645574400, "automatic"=>true, "balance_transaction"=>"txn_1KW9eAHiibShxDkj0MuugthD", "created"=>1645579682, "currency"=>"usd", "description"=>"STRIPE PAYOUT", "destination"=>"ba_15u280HiibShxDkj5TYYpdyJ", "failure_balance_transaction"=>nil, "failure_code"=>nil, "failure_message"=>nil, "livemode"=>false, "metadata"=>{}, "method"=>"standard", "original_payout"=>nil, "reversed_by"=>nil, "source_type"=>"card", "statement_descriptor"=>nil, "status"=>"in_transit", "type"=>"bank_account"}}}}
+  [1m[36mWebhookEvent Load (0.8ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "945d89978a3eac78c215160a881f7189"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mWebhookEvent Create (2.6ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "f1a3c19d6d00aa3db357b50fb46258ff"], ["data", "{\"id\":\"evt_1KW9fIHiibShxDkjqZBsmPHd\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1645579752,\"data\":{\"object\":{\"id\":\"po_1KW9eAHiibShxDkjYDH0s3KA\",\"object\":\"payout\",\"amount\":14475,\"arrival_date\":1645574400,\"automatic\":true,\"balance_transaction\":\"txn_1KW9eAHiibShxDkj0MuugthD\",\"created\":1645579682,\"currency\":\"usd\",\"description\":\"STRIPE PAYOUT\",\"destination\":\"ba_15u280HiibShxDkj5TYYpdyJ\",\"failure_balance_transaction\":null,\"failure_code\":null,\"failure_message\":null,\"livemode\":false,\"metadata\":{},\"method\":\"standard\",\"original_payout\":null,\"reversed_by\":null,\"source_type\":\"card\",\"statement_descriptor\":null,\"status\":\"in_transit\",\"type\":\"bank_account\"}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":null,\"idempotency_key\":null},\"type\":\"payout.created\",\"webhook_event\":{\"id\":\"evt_1KW9fIHiibShxDkjqZBsmPHd\",\"data\":{\"object\":{\"id\":\"po_1KW9eAHiibShxDkjYDH0s3KA\",\"object\":\"payout\",\"amount\":14475,\"arrival_date\":1645574400,\"automatic\":true,\"balance_transaction\":\"txn_1KW9eAHiibShxDkj0MuugthD\",\"created\":1645579682,\"currency\":\"usd\",\"description\":\"STRIPE PAYOUT\",\"destination\":\"ba_15u280HiibShxDkj5TYYpdyJ\",\"failure_balance_transaction\":null,\"failure_code\":null,\"failure_message\":null,\"livemode\":false,\"metadata\":{},\"method\":\"standard\",\"original_payout\":null,\"reversed_by\":null,\"source_type\":\"card\",\"statement_descriptor\":null,\"status\":\"in_transit\",\"type\":\"bank_account\"}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-02-23 01:29:13.103844"], ["updated_at", "2022-02-23 01:29:13.103844"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: 07275849-f746-4a95-b0d6-1c530bd7dad4) to Async(default) with arguments: 1051
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 8.1ms | Allocations: 27556)
+
+
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4] Performing ProcessEventsJob (Job ID: 07275849-f746-4a95-b0d6-1c530bd7dad4) from Async(default) enqueued at 2022-02-23T01:29:13Z with arguments: 1051
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mWebhookEvent Load (0.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 1051], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mWebhookEvent Update (0.2ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-02-23 01:29:13.138955"], ["id", 1051]]
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mWebhookEvent Update (0.4ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-02-23 01:29:13.144176"], ["id", 1051]]
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [07275849-f746-4a95-b0d6-1c530bd7dad4] Performed ProcessEventsJob (Job ID: 07275849-f746-4a95-b0d6-1c530bd7dad4) from Async(default) in 20.06ms
+Started POST "/webhook_events" for 127.0.0.1 at 2022-02-22 20:29:13 -0500
+Processing by WebhookEventsController#create as XML
+  Parameters: {"id"=>"evt_1KW9fJHiibShxDkje5KUn51u", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1645579753, "data"=>{"object"=>{"id"=>"po_1KW9eAHiibShxDkjYDH0s3KA", "object"=>"payout", "amount"=>14475, "arrival_date"=>1645574400, "automatic"=>true, "balance_transaction"=>"txn_1KW9eAHiibShxDkj0MuugthD", "created"=>1645579682, "currency"=>"usd", "description"=>"STRIPE PAYOUT", "destination"=>"ba_15u280HiibShxDkj5TYYpdyJ", "failure_balance_transaction"=>nil, "failure_code"=>nil, "failure_message"=>nil, "livemode"=>false, "metadata"=>{}, "method"=>"standard", "original_payout"=>nil, "reversed_by"=>nil, "source_type"=>"card", "statement_descriptor"=>nil, "status"=>"paid", "type"=>"bank_account"}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>nil, "idempotency_key"=>"[FILTERED]"}, "type"=>"payout.paid", "webhook_event"=>{"id"=>"evt_1KW9fJHiibShxDkje5KUn51u", "data"=>{"object"=>{"id"=>"po_1KW9eAHiibShxDkjYDH0s3KA", "object"=>"payout", "amount"=>14475, "arrival_date"=>1645574400, "automatic"=>true, "balance_transaction"=>"txn_1KW9eAHiibShxDkj0MuugthD", "created"=>1645579682, "currency"=>"usd", "description"=>"STRIPE PAYOUT", "destination"=>"ba_15u280HiibShxDkj5TYYpdyJ", "failure_balance_transaction"=>nil, "failure_code"=>nil, "failure_message"=>nil, "livemode"=>false, "metadata"=>{}, "method"=>"standard", "original_payout"=>nil, "reversed_by"=>nil, "source_type"=>"card", "statement_descriptor"=>nil, "status"=>"paid", "type"=>"bank_account"}}}}
+  [1m[36mWebhookEvent Load (1.0ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "c894bce5ed6e0a63018ad977c806a2e3"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mWebhookEvent Create (2.6ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "f93a74a44a6ec2eec6287226990a8b83"], ["data", "{\"id\":\"evt_1KW9fJHiibShxDkje5KUn51u\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1645579753,\"data\":{\"object\":{\"id\":\"po_1KW9eAHiibShxDkjYDH0s3KA\",\"object\":\"payout\",\"amount\":14475,\"arrival_date\":1645574400,\"automatic\":true,\"balance_transaction\":\"txn_1KW9eAHiibShxDkj0MuugthD\",\"created\":1645579682,\"currency\":\"usd\",\"description\":\"STRIPE PAYOUT\",\"destination\":\"ba_15u280HiibShxDkj5TYYpdyJ\",\"failure_balance_transaction\":null,\"failure_code\":null,\"failure_message\":null,\"livemode\":false,\"metadata\":{},\"method\":\"standard\",\"original_payout\":null,\"reversed_by\":null,\"source_type\":\"card\",\"statement_descriptor\":null,\"status\":\"paid\",\"type\":\"bank_account\"}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":null,\"idempotency_key\":null},\"type\":\"payout.paid\",\"webhook_event\":{\"id\":\"evt_1KW9fJHiibShxDkje5KUn51u\",\"data\":{\"object\":{\"id\":\"po_1KW9eAHiibShxDkjYDH0s3KA\",\"object\":\"payout\",\"amount\":14475,\"arrival_date\":1645574400,\"automatic\":true,\"balance_transaction\":\"txn_1KW9eAHiibShxDkj0MuugthD\",\"created\":1645579682,\"currency\":\"usd\",\"description\":\"STRIPE PAYOUT\",\"destination\":\"ba_15u280HiibShxDkj5TYYpdyJ\",\"failure_balance_transaction\":null,\"failure_code\":null,\"failure_message\":null,\"livemode\":false,\"metadata\":{},\"method\":\"standard\",\"original_payout\":null,\"reversed_by\":null,\"source_type\":\"card\",\"statement_descriptor\":null,\"status\":\"paid\",\"type\":\"bank_account\"}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-02-23 01:29:13.395636"], ["updated_at", "2022-02-23 01:29:13.395636"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: f8a80c4e-fa52-424d-8d47-22531bd5e98c) to Async(default) with arguments: 1052
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 5.6ms | Allocations: 5114)
+
+
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c] Performing ProcessEventsJob (Job ID: f8a80c4e-fa52-424d-8d47-22531bd5e98c) from Async(default) enqueued at 2022-02-23T01:29:13Z with arguments: 1052
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mWebhookEvent Load (0.4ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 1052], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mWebhookEvent Update (0.4ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-02-23 01:29:13.420607"], ["id", 1052]]
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mWebhookEvent Update (0.4ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-02-23 01:29:13.427770"], ["id", 1052]]
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8a80c4e-fa52-424d-8d47-22531bd5e98c] Performed ProcessEventsJob (Job ID: f8a80c4e-fa52-424d-8d47-22531bd5e98c) from Async(default) in 14.84ms
+  [1m[36mPledge Load (1.9ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" ORDER BY "pledges"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-02-25 18:25:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:178
+  Rendered home/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 15742)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1360)
+  Rendered layouts/_navbar.html.erb (Duration: 3.3ms | Allocations: 2424)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1866)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 23023)
+Completed 200 OK in 84ms (Views: 29.0ms | ActiveRecord: 15.2ms | Allocations: 64100)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-25 18:25:55 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/_form.html.erb (Duration: 3.9ms | Allocations: 3936)
+  Rendered pledges/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4352)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4411)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.9ms | Allocations: 15432)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with (model: @pledge, local: true) do |f| %>
+  <%= f.number_field :dollars, label: "Dollar amount" %>
+  <%= f.collection_radio_buttons :plan, ["weekly", "monthly", "quarterly"], :to_s, bootstrap: {check_inline: true}, label: "Frequency" %>
+  <%= f.submit "Edit pledge", class: "btn btn-lg btn-success mb-2"%> &nbsp; <%= button_to("Delete pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' }, class: "btn btn-lg btn-danger") %>
+<% end %>:
+  app/views/pledges/new.html.erb:19
+
+Started POST "/__better_errors/279d5e52d71619c1/variables" for 127.0.0.1 at 2022-02-25 18:25:56 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-25 18:53:38 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2741)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2800)
+Completed 500 Internal Server Error in 10ms (Allocations: 4365)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="mt-5"></div>
+<div class="row">
+  <div class="col-md-8 offset-md-2 col-sm-12">
+    <h1>Automate your donations</h1>
+    <p>There are a couple ways for you to simplify making payment to St. Paul's other than the offering plate. The
+      simplest&mdash;and cheapest!&mdash;way is to have your bank send a check to the church on a schedule you set.</p>
+    <p>Most banks offer this service without charge, and it's easy to set up and very safe and secure. Just go on line
+      with your bank and search for "bill pay" or other words to that effect. You could do this in person, too. It would
+      be prudent to call first, especially in this Covid-19 era.</p>
+    <p>Paying on line with a <b>credit card</b> or <b>debit card</b> is easy to set up, too. It also is safe and secure.
+      St. Paul's absorbs the transaction fees.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-3">
+    <%#= render 'form' %>
+      <%= bootstrap_form_with (model: @pledge, local: true) do |f| %>
+        <%= f.number_field :dollars, label: "Dollar amount" %>
+          <%= f.collection_radio_buttons :plan, ["weekly", "monthly" , "quarterly" ], :to_s, bootstrap: {check_inline:
+            true}, label: "Frequency" %>
+            <%= f.submit "Edit pledge" , class: "btn btn-lg btn-success mb-2" %> &nbsp; <%= button_to("Delete pledge",
+                pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.' },
+                class: "btn btn-lg btn-danger" ) %>
+                <% end %>
+  </div>
+</div>:
+
+Started POST "/__better_errors/607f87ffe74d7e8c/variables" for 127.0.0.1 at 2022-02-25 18:53:38 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 08:35:03 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 161.9ms | Allocations: 20526)
+  Rendered layout layouts/application.html.erb (Duration: 162.4ms | Allocations: 20592)
+Completed 500 Internal Server Error in 171ms (Allocations: 22147)
+
+
+
+TypeError - {:bootstrap=>{:check_inline=>true}, :label=>"Frequency"} is not a symbol nor a string:
+  app/views/pledges/new.html.erb:22
+  app/views/pledges/new.html.erb:20
+
+Started POST "/__better_errors/be312a6975a9600e/variables" for 127.0.0.1 at 2022-02-26 08:35:04 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 10:59:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4114)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 4190)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.2ms | Allocations: 28515)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="mt-5"></div>
+<div class="row">
+  <div class="col-md-8 offset-md-2 col-sm-12">
+    <h1>Automate your donations</h1>
+    <p>There are a couple ways for you to simplify making payment to St. Paul's other than the offering plate. The
+      simplest&mdash;and cheapest!&mdash;way is to have your bank send a check to the church on a schedule you set.</p>
+    <p>Most banks offer this service without charge, and it's easy to set up and very safe and secure. Just go on line
+      with your bank and search for "bill pay" or other words to that effect. You could do this in person, too. It would
+      be prudent to call first, especially in this Covid-19 era.</p>
+    <p>Paying on line with a <b>credit card</b> or <b>debit card</b> is easy to set up, too. It also is safe and secure.
+      St. Paul's absorbs the transaction fees.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-3">
+    <%#= render 'form' %>
+      <%= bootstrap_form_with(model: @pledge) do |f| %>
+        <%= f.number_field :dollars, label: "Dollar amount" %>
+          <%= f.form_group :plan, label: { text: "Frequency" } do %>
+            <%= f.radio_button :plan, "weekly" , label: "Weekly" inline: true %>
+              <%= f.radio_button :plan, "monthlyly" , label: "Monthly" inline: true %>
+                <%= f.radio_button :plan, "quarterly" , label: "Quarterly" inline: true %>
+                  <% end %>
+                    <%= f.submit "Edit pledge" , class: "btn btn-lg btn-success mb-2" %> &nbsp; <%= button_to("Delete
+                        pledge", pledge_path(@pledge), method: :delete, data: { confirm: 'This will delete your pledge.'
+                        }, class: "btn btn-lg btn-danger" ) %>
+                        <% end %>
+  </div>
+</div>:
+
+Started POST "/__better_errors/5a1364e7f9de7605/variables" for 127.0.0.1 at 2022-02-26 10:59:11 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 11:01:01 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 36.1ms | Allocations: 21858)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 21925)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 23507)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"pledges", :id=>#<Pledge id: nil, user_id: nil, created_at: nil, updated_at: nil, amount: nil, plan: nil, stripe_id: nil, plan_id: "prod_ETteQ8s9Ho9sNW", status: nil, dollars: nil>}, possible unmatched constraints: [:id]
+Did you mean?  pledge_url:
+  app/views/pledges/new.html.erb:28
+  app/views/pledges/new.html.erb:20
+
+Started POST "/__better_errors/f361f36b31a3d837/variables" for 127.0.0.1 at 2022-02-26 11:01:02 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 11:07:41 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/_form.html.erb (Duration: 1.5ms | Allocations: 3016)
+  Rendered pledges/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3414)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 3473)
+Completed 500 Internal Server Error in 6ms (Allocations: 5040)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with(model: @pledge) do |f| %>
+  <%= f.number_field :dollars, label: "Dollar amount" %>
+    <%= f.form_group :plan, label: { text: "Frequency" } do %>
+      <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+        <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+          <%= f.radio_button :plan, 3 , label: "Quarterly" inline: true %>
+            <% end %>
+              <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                <% end %>:
+  app/views/pledges/new.html.erb:19
+
+Started POST "/__better_errors/43dafa46d081f4d8/variables" for 127.0.0.1 at 2022-02-26 11:07:41 -0500
+Started POST "/__better_errors/43dafa46d081f4d8/eval" for 127.0.0.1 at 2022-02-26 11:14:22 -0500
+Started POST "/__better_errors/43dafa46d081f4d8/eval" for 127.0.0.1 at 2022-02-26 11:14:25 -0500
+Started POST "/__better_errors/43dafa46d081f4d8/eval" for 127.0.0.1 at 2022-02-26 11:14:30 -0500
+Started POST "/__better_errors/43dafa46d081f4d8/eval" for 127.0.0.1 at 2022-02-26 11:14:37 -0500
+Started POST "/__better_errors/43dafa46d081f4d8/eval" for 127.0.0.1 at 2022-02-26 11:14:47 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 11:17:17 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/_form.html.erb (Duration: 1.8ms | Allocations: 3008)
+  Rendered pledges/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3389)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3448)
+Completed 500 Internal Server Error in 6ms (Allocations: 5019)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with(model: @pledge) do |f| %>
+  <%= f.number_field :dollars, label: "Dollar amount" %>
+    <%= f.form_group :plan, label: { text: "Frequency" } do %>
+      <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+        <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+          <%= f.radio_button :plan, 2 , label: "Quarterly" inline: true %>
+            <% end %>
+              <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                <% end %>:
+  app/views/pledges/new.html.erb:19
+
+Started POST "/__better_errors/5b5c429306f9ac38/variables" for 127.0.0.1 at 2022-02-26 11:17:17 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 11:17:19 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/_form.html.erb (Duration: 4.2ms | Allocations: 3019)
+  Rendered pledges/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3090)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3143)
+Completed 500 Internal Server Error in 8ms (Allocations: 3799)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with(model: @pledge) do |f| %>
+  <%= f.number_field :dollars, label: "Dollar amount" %>
+    <%= f.form_group :plan, label: { text: "Frequency" } do %>
+      <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+        <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+          <%= f.radio_button :plan, 2 , label: "Quarterly" inline: true %>
+            <% end %>
+              <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                <% end %>:
+  app/views/pledges/new.html.erb:19
+
+Started POST "/__better_errors/301d8817f6f3e155/variables" for 127.0.0.1 at 2022-02-26 11:17:19 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 11:18:36 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2777)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2836)
+Completed 500 Internal Server Error in 8ms (Allocations: 4396)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="mt-5"></div>
+<div class="row">
+  <div class="col-md-8 offset-md-2 col-sm-12">
+    <h1>Automate your donations</h1>
+    <p>There are a couple ways for you to simplify making payment to St. Paul's other than the offering plate. The
+      simplest&mdash;and cheapest!&mdash;way is to have your bank send a check to the church on a schedule you set.</p>
+    <p>Most banks offer this service without charge, and it's easy to set up and very safe and secure. Just go on line
+      with your bank and search for "bill pay" or other words to that effect. You could do this in person, too. It would
+      be prudent to call first, especially in this Covid-19 era.</p>
+    <p>Paying on line with a <b>credit card</b> or <b>debit card</b> is easy to set up, too. It also is safe and secure.
+      St. Paul's absorbs the transaction fees.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-3">
+    <%#= render 'form' %>
+      <%= bootstrap_form_with(model: @pledge) do |f| %>
+        <%= f.number_field :dollars, label: "Dollar amount" %>
+          <%= f.form_group :plan, label: { text: "Frequency" } do %>
+            <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+              <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+                <%= f.radio_button :plan, 2 , label: "Quarterly" inline: true %>
+                  <% end %>
+                    <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                      <% end %>
+  </div>
+</div>:
+
+Started POST "/__better_errors/672d91e74aee35b7/variables" for 127.0.0.1 at 2022-02-26 11:18:36 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 12:08:01 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2754)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 2807)
+Completed 500 Internal Server Error in 2ms (Allocations: 3462)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="mt-5"></div>
+<div class="row">
+  <div class="col-md-8 offset-md-2 col-sm-12">
+    <h1>Automate your donations</h1>
+    <p>There are a couple ways for you to simplify making payment to St. Paul's other than the offering plate. The
+      simplest&mdash;and cheapest!&mdash;way is to have your bank send a check to the church on a schedule you set.</p>
+    <p>Most banks offer this service without charge, and it's easy to set up and very safe and secure. Just go on line
+      with your bank and search for "bill pay" or other words to that effect. You could do this in person, too. It would
+      be prudent to call first, especially in this Covid-19 era.</p>
+    <p>Paying on line with a <b>credit card</b> or <b>debit card</b> is easy to set up, too. It also is safe and secure.
+      St. Paul's absorbs the transaction fees.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-3">
+    <%#= render 'form' %>
+      <%= bootstrap_form_with(model: @pledge) do |f| %>
+        <%= f.number_field :dollars, label: "Dollar amount" %>
+          <%= f.form_group :plan, label: { text: "Frequency" } do %>
+            <%= f.radio_button :plan, 0 , label: "Weekly" inline: true %>
+              <%= f.radio_button :plan, 1 , label: "Monthly" inline: true %>
+                <%= f.radio_button :plan, 2 , label: "Quarterly" inline: true %>
+                  <% end %>
+                    <%= f.submit "Next" , class: "btn btn-lg btn-success mb-2" %>
+                      <% end %>
+  </div>
+</div>:
+
+Started POST "/__better_errors/df4065618693d1ce/variables" for 127.0.0.1 at 2022-02-26 12:08:01 -0500
+Started POST "/__better_errors/df4065618693d1ce/variables" for 127.0.0.1 at 2022-02-26 12:13:49 -0500
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 12:20:00 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2060)
+  Rendered layouts/_header.html.erb (Duration: 13.7ms | Allocations: 6924)
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 2322)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1918)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 14761)
+Completed 200 OK in 28ms (Views: 26.2ms | Allocations: 16381)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 12:23:00 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2002)
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 1382)
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 2206)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 8831)
+Completed 200 OK in 25ms (Views: 22.6ms | Allocations: 10347)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 12:23:46 -0500
+Processing by PledgesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2000)
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 1382)
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 2206)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8829)
+Completed 200 OK in 18ms (Views: 16.0ms | Allocations: 10354)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 1365)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 6105)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 911)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 870)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1572)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 9961)
+Completed 200 OK in 77ms (Views: 18.8ms | ActiveRecord: 17.4ms | Allocations: 31750)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'pay@stripe.net' OR lower(email) = 'pay@stripe.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 8ms (ActiveRecord: 4.2ms | Allocations: 3185)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 125)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1925)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 885)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 775)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1558)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5567)
+Completed 200 OK in 103ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 6444)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'pay@stripe.net' OR lower(email) = 'pay@stripe.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.4ms | Allocations: 1222)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 98ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5963)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie@coogan' OR lower(email) = 'jackie@coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.8ms | Allocations: 1029)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5376)
+Completed 200 OK in 100ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 5954)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie@coogan' OR lower(email) = 'jackie@coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1027)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5376)
+Completed 200 OK in 99ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie@coogan' OR lower(email) = 'jackie@coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1027)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 98ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:24:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie@coogan' OR lower(email) = 'jackie@coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.6ms | Allocations: 1036)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie@coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 103ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:25:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"cindy@barker.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'cindy@barker.com' OR lower(email) = 'cindy@barker.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.7ms | Allocations: 1024)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"cindy@barker.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 105ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "cindy@barker.com"]]
+  [1m[36mUser Count (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/sign_in" for 127.0.0.1 at 2022-02-26 12:27:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie coogan' OR lower(email) = 'jackie coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:112:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 2], ["current_sign_in_at", "2022-02-26 17:27:15.657347"], ["updated_at", "2022-02-26 17:27:15.657675"], ["id", 625]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/pledges/new
+Completed 302 Found in 107ms (ActiveRecord: 4.0ms | Allocations: 11374)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-02-26 12:27:15 -0500
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/new.html.erb within layouts/application
+  Rendered pledges/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1352)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 888)
+  [1m[36mProfile Load (1.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 15.1ms | Allocations: 16741)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1432)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 20884)
+Completed 200 OK in 30ms (Views: 15.5ms | ActiveRecord: 4.2ms | Allocations: 27578)
+
+
+Started POST "/pledges" for 127.0.0.1 at 2022-02-26 12:27:30 -0500
+Processing by PledgesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pledge"=>{"dollars"=>"22", "plan"=>"0"}, "commit"=>"Next"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pledges_controller.rb:18:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:18:in `create'
+  [1m[36mPledge Create (1.2ms)[0m  [1m[32mINSERT INTO "pledges" ("user_id", "created_at", "updated_at", "amount", "plan", "stripe_id", "plan_id", "status", "dollars") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 625], ["created_at", "2022-02-26 17:27:30.274721"], ["updated_at", "2022-02-26 17:27:30.274721"], ["amount", nil], ["plan", "0"], ["stripe_id", nil], ["plan_id", "prod_ETteQ8s9Ho9sNW"], ["status", nil], ["dollars", 22]]
+  ↳ app/controllers/pledges_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pledges_controller.rb:18:in `create'
+Redirected to http://localhost:5000/pledges/76
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms | Allocations: 8214)
+
+
+Started GET "/pledges/76" for 127.0.0.1 at 2022-02-26 12:27:30 -0500
+Processing by PledgesController#show as TURBO_STREAM
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1711)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 873)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 1578)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1481)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6109)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 1.1ms | Allocations: 9784)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-02-26 12:27:41 -0500
+Processing by CheckoutController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"76"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+Completed 404 Not Found in 18ms (ActiveRecord: 6.3ms | Allocations: 7023)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Donation with 'id'=76:
+  app/controllers/checkout_controller.rb:8:in `create'
+
+Started POST "/__better_errors/64ea502e960af950/variables" for 127.0.0.1 at 2022-02-26 12:27:41 -0500

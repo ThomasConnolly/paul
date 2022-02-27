@@ -21,7 +21,7 @@
 # Indexes
 #
 #  index_tickets_on_event_id  (event_id)
-#
+# Create new stripe product on the stripe dashboard for each new event, and use that id for the line "product" below
 
 class Ticket < ApplicationRecord
   belongs_to :event

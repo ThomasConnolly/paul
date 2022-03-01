@@ -3,15 +3,25 @@
     %>
 </div>
 <div class=row>
-  <div class="col-md-8 col-sm-12 main-body pe-5">
+  <div class="col-md-8 main-body pe-5">
     <div class="clearfix">
       <%=
         image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1638208932/FrTomPentecost2021Scaled_qzwtu5.png",
         alt: "priest at altar" , width: "100%" ) %>
+
+        <div class="text-center">
+          <h1 class="mt-5">Ash Wednesday</h1>
+          <%=
+            image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1491663580/184976_1893445062745_2385047_n_gpum6o.jpg",
+            alt: "ashes in form of cross" , width: "30%" ) %>
+            <h2>Imposition of ashes</h2>
+            <p><strong>Noon and 5:30 p.m. on Wednesday, March 2.</strong></p>
+        </div>
         <h1>Join us in worship</h1>
-        <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
-          <p>Sundays at 8 a.m. and 10 a.m. Please wear your mask and help keep God's people safe (everyone is a child of
+          <p>Sundays at 8 a.m. and 10 a.m. Please wear your mask and help keep God's people safe (everyone is a child
+            of
             God!)</p>
           <p>Our 10 a.m. service is live-streamed to YouTube
           </p>
@@ -27,7 +37,8 @@
               <% end %>
 
                 <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
-                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a short,
+                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                    short,
                     cute introduction to our time-honored <em>Book of Common Prayer.</em>
                 </p>
 
@@ -83,7 +94,7 @@
           </p>
           <div class="clearall"></div>
 
-          <h2 class="mt-3">Supporters of these children</h2>
+          <!-- <h2 class="mt-3">Supporters of these children</h2>
           <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
             <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
               Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
@@ -91,30 +102,30 @@
               shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
               love that may otherwise be missing in their young lives. It is a ministry of love and
               affection, above all.</p>
+            <div class="clearfix"></div> -->
+
+          <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+          <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+            <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+              founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+              the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+              thousands of children who lost their moms and dads to AIDS. In addition to monitary
+              contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+              dresses, as seen here with Dr. Wilson.</p>
+            <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+            </p>
             <div class="clearfix"></div>
 
-            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
-            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
-              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
-                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
-                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
-                thousands of children who lost their moms and dads to AIDS. In addition to monitary
-                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
-                dresses, as seen here with Dr. Wilson.</p>
-              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
-              </p>
+            <h2 class="mt-3">Supporters of 'ERD'</h2>
+            <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal
+              Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+              ), "https://episcopalrelief.org/" %>
+              <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
               <div class="clearfix"></div>
 
-              <h2 class="mt-3">Supporters of 'ERD'</h2>
-              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
-                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
-                ), "https://episcopalrelief.org/" %>
-                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
-                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
-                <div class="clearfix"></div>
-
-                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
-                  width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+              <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
 
   </div>
   <!--main-body -->
@@ -139,8 +150,8 @@
           <% end %>
             <p><strong>
                 <%= link_to "Wednesday evening bible study, 6:30 p.m." , "#{@evening_bible.url}" %>
-              </strong> For the next several weeks we will be examining the meaning and impact of certain words in the
-              Bible. Join us in person in the library or through the internet.</strong></p>
+              </strong> No class on Ash Wednesday. We begin a new series on March 9, examining the culture in the time
+              of Jesus. Join us in person in the library or through the internet.</strong></p>
             <p><strong>
                 <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %>
               </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually

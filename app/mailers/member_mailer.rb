@@ -18,6 +18,14 @@ class MemberMailer < ApplicationMailer
     @member = member
     mail(
       subject: 'testing'
+    )  
+  end
+  
+  def lent2022_pathway(member)
+    @member = member
+    @url ="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1646192145/Lent2022Sm_szy5qs.pdf"
+    mail(
+      subject: "Pathways, your parish newsletter"
     )
   end
 

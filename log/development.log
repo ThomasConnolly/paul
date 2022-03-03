@@ -2729,3 +2729,967 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 35ms (Views: 13.7ms | ActiveRecord: 2.6ms | Allocations: 16899)
 
 
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: ba477b8f-f18b-471b-bc9c-a5d2898841ea) to Async(default) with arguments: "MemberMailer", "lent2022_pathway", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea] Performing ActionMailer::MailDeliveryJob (Job ID: ba477b8f-f18b-471b-bc9c-a5d2898841ea) from Async(default) enqueued at 2022-03-02T14:06:59Z with arguments: "MemberMailer", "lent2022_pathway", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea]   [1m[36mMember Pluck (1.5ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea]   Rendering member_mailer/lent2022_pathway.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea]   Rendered member_mailer/lent2022_pathway.html.erb within layouts/mailer (Duration: 9.5ms | Allocations: 6293)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea]   Rendered layout layouts/mailer.html.erb (Duration: 10.4ms | Allocations: 6647)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea] MemberMailer#lent2022_pathway: processed outbound mail in 83.2ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea] Delivered mail 621f7a0347668_a02e1fe43898443@tom-G7.mail (59.4ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea] Date: Wed, 02 Mar 2022 09:06:59 -0500
+From: Welcome@saintpaulsnaples.org
+To: welcome@saintpaulsnaples.org
+Message-ID: <621f7a0347668_a02e1fe43898443@tom-G7.mail>
+Subject: Pathways, your parish newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_621f7a0345d57_a02e1fe438983c8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_621f7a0345d57_a02e1fe438983c8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Lent 2022 Pathways
+
+
+( https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1646192145/Lent2022Sm_szy5qs.pdf )
+
+
+Click on the image to read (or download and print) your copy
+of the latest edition of the St. Paul newsletter,
+Pathways.
+----==_mimepart_621f7a0345d57_a02e1fe438983c8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    
+
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>Lent 2022 Pathways</title>
+
+
+
+  <a href="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1646192145/Lent2022Sm_szy5qs.pdf"><img width="650" src="https://res-3.cloudinary.com/saintpaulsnaples-org/image/upload/Lent2022Sm_szy5qs.jpg"></a>
+    
+    <p>Click on the image to read (or download and print) your copy of the latest edition of the St. Paul newsletter,
+      <em>Pathways.</em>
+    </p>
+    
+
+
+
+  </body>
+</html>
+
+----==_mimepart_621f7a0345d57_a02e1fe438983c8--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ba477b8f-f18b-471b-bc9c-a5d2898841ea] Performed ActionMailer::MailDeliveryJob (Job ID: ba477b8f-f18b-471b-bc9c-a5d2898841ea) from Async(default) in 162.14ms
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:00:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (2.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (1.0ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (3.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (7.2ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 90.9ms | Allocations: 15893)
+  Rendered layouts/_header.html.erb (Duration: 6.3ms | Allocations: 1360)
+  Rendered layouts/_navbar.html.erb (Duration: 16.2ms | Allocations: 2424)
+  Rendered layouts/_footer.html.erb (Duration: 4.8ms | Allocations: 1866)
+  Rendered layout layouts/application.html.erb (Duration: 128.4ms | Allocations: 23174)
+Completed 200 OK in 400ms (Views: 125.6ms | ActiveRecord: 67.9ms | Allocations: 64263)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:02:58 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.1ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 4935)
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 11.9ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 6.5ms | Allocations: 1884)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 11769)
+Completed 200 OK in 88ms (Views: 56.9ms | ActiveRecord: 7.1ms | Allocations: 17163)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:03:28 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.1ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 4922)
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 10.9ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 4.7ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 11754)
+Completed 200 OK in 85ms (Views: 54.6ms | ActiveRecord: 7.2ms | Allocations: 16986)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:03:54 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4922)
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 9.5ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 4.5ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 11754)
+Completed 200 OK in 83ms (Views: 53.4ms | ActiveRecord: 7.0ms | Allocations: 16977)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:06:37 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 4922)
+  Rendered layouts/_header.html.erb (Duration: 6.1ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 10.4ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 4.5ms | Allocations: 1884)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 11756)
+Completed 200 OK in 85ms (Views: 53.7ms | ActiveRecord: 7.1ms | Allocations: 17012)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:06:40 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2506)
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 844)
+  Rendered layouts/_navbar.html.erb (Duration: 4.7ms | Allocations: 840)
+  Rendered layouts/_footer.html.erb (Duration: 3.1ms | Allocations: 1558)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 6166)
+Completed 200 OK in 57ms (Views: 27.5ms | ActiveRecord: 7.0ms | Allocations: 10508)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:07:10 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.1ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 4921)
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 10.0ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 4.5ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 11753)
+Completed 200 OK in 85ms (Views: 54.9ms | ActiveRecord: 6.9ms | Allocations: 16849)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:08:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 4922)
+  Rendered layouts/_header.html.erb (Duration: 6.1ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 10.7ms | Allocations: 2257)
+  Rendered layouts/_footer.html.erb (Duration: 4.6ms | Allocations: 1884)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 11756)
+Completed 200 OK in 83ms (Views: 54.1ms | ActiveRecord: 6.5ms | Allocations: 17006)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:14:48 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4651)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4718)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 26.0ms | Allocations: 12437)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
+    %>
+</div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%=
+        image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1638208932/FrTomPentecost2021Scaled_qzwtu5.png",
+        alt: "priest at altar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" )%>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+                grace fearlessly to contend against evil and to make no peace
+                with oppression; and, that we may reverently use our freedom,
+                help us to employ it in the maintenance of justice in our
+                communities and among the nations, to the glory of your holy
+                Name; through Jesus Christ our Lord, who lives and reigns with
+                you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <h1>Join us in worship</h1>
+        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+          class: "float-start pe-3" ) %>
+          <%= cl_image_tag("cross-lent_rhj8ln.jpg" width: "140" , class: "float-start pe-4" ) <p>Sundays at 8 a.m. and
+            10 a.m. Please wear your mask and help keep God's people safe (everyone is a child
+            of
+            God!)</p>
+            <p>Our 10 a.m. service is live-streamed to YouTube
+            </p>
+            </p>
+            <% if @bulletin.url.present? %>
+              <p><strong>
+                  <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+                </strong></p>
+              <% else %>
+                <p>Sunday's bulletin will be available here on Thursday.</p>
+                <% end %>
+                  <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                    <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                      short,
+                      cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                  </p>
+                  <p>
+                    <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                      ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                      %>
+                  </p>
+                  <p><strong>
+                      <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                    </strong> </p>
+    </div>
+    <div class="clearfix">
+      <h2 class-mt-3>Concert Feb. 22: 'Jodie DeSalvo in Concert'</h2>
+      <%= cl_image_tag("jodiSm_fle4od.jpg", width: '60%' , class: "float-start img-fluid pe-2 clearfix" ) %>
+        <div class="ms-2 mt-5">
+          <!-- <div class="text-center">
+            <h1 class="text-danger">Sold Out!</h1>
+          </div> -->
+          <p>Because of Covid, tickets are limited and masks will be required. Thank you for helping to keep
+            everyone safe. </p>
+        </div>
+        <div class="" mt-4">
+          <p><strong>
+              <%= link_to "Click here to buy your tickets" , new_event_ticket_path(@event) %>
+            </strong></p>
+        </div>
+    </div>
+    <h2 class="mt-3">Sacred Ground Series</h2>
+    <p>This is a series of videos, readings and small-group discussions about race. This is highly
+      recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+      watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %>
+        <h2 class="mt-3">Five questions of baptism</h2>
+        <p><strong>Fr. Tom </strong> delivered a workshop for the Diocese of Southwest Florida entitled,
+          <em>"Baptismal Covenant: Five Questions."</em> It can be viewed by clicking <%#= link_to "this link"
+            , "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well
+            acquainted with the sacrament
+            of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
+        </p>
+        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "50%" ) %>
+          <h2 class="mt-3">Home of the great Farmers' Market</h2>
+          <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+            introduce yourself to new friends and have a hot dog, on us! The market is now open, through
+            next April, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
+          </p>
+          <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+          </p>
+          <div class="clearall"></div>
+          <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+          <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+          <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+            <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+              founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+              the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+              thousands of children who lost their moms and dads to AIDS. In addition to monitary
+              contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+              dresses, as seen here with Dr. Wilson.</p>
+            <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+            </p>
+            <div class="clearfix"></div>
+            <h2 class="mt-3">Supporters of 'ERD'</h2>
+            <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal
+              Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+              ), "https://episcopalrelief.org/" %>
+              <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+              <div class="clearfix"></div>
+              <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%" ) %>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+          <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                <%= link_to "Wednesday evening bible study, 6:30 p.m." , "#{@evening_bible.url}" %>
+              </strong> No class on Ash Wednesday. We begin a new series on March 9, examining the culture in the time
+              of Jesus. Join us in person in the library or through the internet.</strong></p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %>
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/46e28f9a180d97ad/variables" for 127.0.0.1 at 2022-03-03 16:14:48 -0500
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:17:25 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3643)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3701)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 5.6ms | Allocations: 9048)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
+    %>
+</div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%=
+        image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1638208932/FrTomPentecost2021Scaled_qzwtu5.png",
+        alt: "priest at altar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+                grace fearlessly to contend against evil and to make no peace
+                with oppression; and, that we may reverently use our freedom,
+                help us to employ it in the maintenance of justice in our
+                communities and among the nations, to the glory of your holy
+                Name; through Jesus Christ our Lord, who lives and reigns with
+                you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <h1>Join us in worship</h1>
+        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+          class: "float-start pe-3" ) %>
+          <%= cl_image_tag("cross-lent_rhj8ln.jpg" width: "140" , class: "float-start me-4" ) %>
+            <p>Sundays at 8 a.m. and
+              10 a.m. Please wear your mask and help keep God's people safe (everyone is a child
+              of
+              God!)</p>
+            <p>Our 10 a.m. service is live-streamed to YouTube
+            </p>
+            </p>
+            <% if @bulletin.url.present? %>
+              <p><strong>
+                  <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+                </strong></p>
+              <% else %>
+                <p>Sunday's bulletin will be available here on Thursday.</p>
+                <% end %>
+                  <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                    <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                      short,
+                      cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                  </p>
+                  <p>
+                    <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                      ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                      %>
+                  </p>
+                  <p><strong>
+                      <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                    </strong> </p>
+    </div>
+    <div class="clearfix">
+      <h2 class-mt-3>Concert Feb. 22: 'Jodie DeSalvo in Concert'</h2>
+      <%= cl_image_tag("jodiSm_fle4od.jpg", width: '60%' , class: "float-start img-fluid pe-2 clearfix" ) %>
+        <div class="ms-2 mt-5">
+          <!-- <div class="text-center">
+            <h1 class="text-danger">Sold Out!</h1>
+          </div> -->
+          <p>Because of Covid, tickets are limited and masks will be required. Thank you for helping to keep
+            everyone safe. </p>
+        </div>
+        <div class="" mt-4">
+          <p><strong>
+              <%= link_to "Click here to buy your tickets" , new_event_ticket_path(@event) %>
+            </strong></p>
+        </div>
+    </div>
+    <h2 class="mt-3">Sacred Ground Series</h2>
+    <p>This is a series of videos, readings and small-group discussions about race. This is highly
+      recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+      watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %>
+        <h2 class="mt-3">Five questions of baptism</h2>
+        <p><strong>Fr. Tom </strong> delivered a workshop for the Diocese of Southwest Florida entitled,
+          <em>"Baptismal Covenant: Five Questions."</em> It can be viewed by clicking <%#= link_to "this link"
+            , "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well
+            acquainted with the sacrament
+            of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
+        </p>
+        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "50%" ) %>
+          <h2 class="mt-3">Home of the great Farmers' Market</h2>
+          <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+            introduce yourself to new friends and have a hot dog, on us! The market is now open, through
+            next April, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
+          </p>
+          <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+          </p>
+          <div class="clearall"></div>
+          <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+          <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+          <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+            <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+              founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+              the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+              thousands of children who lost their moms and dads to AIDS. In addition to monitary
+              contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+              dresses, as seen here with Dr. Wilson.</p>
+            <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+            </p>
+            <div class="clearfix"></div>
+            <h2 class="mt-3">Supporters of 'ERD'</h2>
+            <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal
+              Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+              ), "https://episcopalrelief.org/" %>
+              <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+              <div class="clearfix"></div>
+              <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%" ) %>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+          <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                <%= link_to "Wednesday evening bible study, 6:30 p.m." , "#{@evening_bible.url}" %>
+              </strong> No class on Ash Wednesday. We begin a new series on March 9, examining the culture in the time
+              of Jesus. Join us in person in the library or through the internet.</strong></p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %>
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/d62930b7bde22a16/variables" for 127.0.0.1 at 2022-03-03 16:17:25 -0500
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:18:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3643)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3701)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.0ms | Allocations: 9048)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
+    %>
+</div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%=
+        image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1638208932/FrTomPentecost2021Scaled_qzwtu5.png",
+        alt: "priest at altar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+                grace fearlessly to contend against evil and to make no peace
+                with oppression; and, that we may reverently use our freedom,
+                help us to employ it in the maintenance of justice in our
+                communities and among the nations, to the glory of your holy
+                Name; through Jesus Christ our Lord, who lives and reigns with
+                you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <h1>Join us in worship</h1>
+        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+          class: "float-start pe-3" ) %>
+          <%= cl_image_tag("cross-lent_rhj8ln.jpg" width: "140" , class: "float-start me-4" ) %>
+            <p>Sundays at 8 a.m. and
+              10 a.m. Please wear your mask and help keep God's people safe (everyone is a child
+              of
+              God!)</p>
+            <p>Our 10 a.m. service is live-streamed to YouTube
+            </p>
+            </p>
+            <% if @bulletin.url.present? %>
+              <p><strong>
+                  <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+                </strong></p>
+              <% else %>
+                <p>Sunday's bulletin will be available here on Thursday.</p>
+                <% end %>
+                  <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                    <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                      short,
+                      cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                  </p>
+                  <p>
+                    <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                      ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                      %>
+                  </p>
+                  <p><strong>
+                      <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                    </strong> </p>
+    </div>
+    <div class="clearfix">
+      <h2 class-mt-3>Concert Feb. 22: 'Jodie DeSalvo in Concert'</h2>
+      <%= cl_image_tag("jodiSm_fle4od.jpg", width: '60%' , class: "float-start img-fluid pe-2 clearfix" ) %>
+        <div class="ms-2 mt-5">
+          <!-- <div class="text-center">
+            <h1 class="text-danger">Sold Out!</h1>
+          </div> -->
+          <p>Because of Covid, tickets are limited and masks will be required. Thank you for helping to keep
+            everyone safe. </p>
+        </div>
+        <div class="" mt-4">
+          <p><strong>
+              <%= link_to "Click here to buy your tickets" , new_event_ticket_path(@event) %>
+            </strong></p>
+        </div>
+    </div>
+    <h2 class="mt-3">Sacred Ground Series</h2>
+    <p>This is a series of videos, readings and small-group discussions about race. This is highly
+      recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+      watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %>
+        <h2 class="mt-3">Five questions of baptism</h2>
+        <p><strong>Fr. Tom </strong> delivered a workshop for the Diocese of Southwest Florida entitled,
+          <em>"Baptismal Covenant: Five Questions."</em> It can be viewed by clicking <%#= link_to "this link"
+            , "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well
+            acquainted with the sacrament
+            of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
+        </p>
+        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "50%" ) %>
+          <h2 class="mt-3">Home of the great Farmers' Market</h2>
+          <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+            introduce yourself to new friends and have a hot dog, on us! The market is now open, through
+            next April, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
+          </p>
+          <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+          </p>
+          <div class="clearall"></div>
+          <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+          <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+          <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+            <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+              founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+              the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+              thousands of children who lost their moms and dads to AIDS. In addition to monitary
+              contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+              dresses, as seen here with Dr. Wilson.</p>
+            <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+            </p>
+            <div class="clearfix"></div>
+            <h2 class="mt-3">Supporters of 'ERD'</h2>
+            <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal
+              Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+              ), "https://episcopalrelief.org/" %>
+              <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+              <div class="clearfix"></div>
+              <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%" ) %>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+          <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                <%= link_to "Wednesday evening bible study, 6:30 p.m." , "#{@evening_bible.url}" %>
+              </strong> No class on Ash Wednesday. We begin a new series on March 9, examining the culture in the time
+              of Jesus. Join us in person in the library or through the internet.</strong></p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %>
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/a436586587b21e51/variables" for 127.0.0.1 at 2022-03-03 16:18:18 -0500
+Started GET "/" for 127.0.0.1 at 2022-03-03 16:19:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:196
+  Rendered home/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 5137)
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1327)
+  Rendered layouts/_navbar.html.erb (Duration: 10.3ms | Allocations: 2262)
+  Rendered layouts/_footer.html.erb (Duration: 4.6ms | Allocations: 1888)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 11982)
+Completed 200 OK in 86ms (Views: 55.0ms | ActiveRecord: 7.7ms | Allocations: 17350)
+
+

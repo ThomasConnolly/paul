@@ -49,9 +49,13 @@ class StoryIdeasController < ApplicationController
 
   def destroy
     @story_idea.destroy
-    redirect_to story_ideas_path
+      respond_to do |format|
+        format.html { redirect_to story_ideas_url, notice: "Story idea was successfully destroyed." }
+        format.json { head :no_content }
+    end
   end
 
+  
   private
 
   def set_story_idea

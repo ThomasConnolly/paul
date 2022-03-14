@@ -32,9 +32,6 @@
             <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
                 ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
             </p>
-
-
-            </p>
             <% if @bulletin.url.present? %>
               <p><strong>
                   <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
@@ -71,7 +68,7 @@
             to keep
             everyone safe. </p>
         </div>
-        <div class="" mt-4">
+        <div class="mt-4">
           <p><strong>
               <%= link_to "Click here to buy your tickets" , new_event_ticket_path(@event) %>
             </strong></p>
@@ -79,21 +76,15 @@
     </div>
     <h2 class="mt-3">Reflect and Connect </h2>
     <p>This is a new small group that will meet at 10 a.m. Wednesdays in the library to ponder and discuss the lessons
-      delivered the previous Sunday morning (the sermon and scripture readings). It's not too late to join; the
-      inaugural session is Wednesday, March 9. Even if you haven't signed up, you're welcome to sit in and participate
+      delivered the previous Sunday morning. No need to sign up, and sessions are stand-alone, meaning you can come any
+      Wednesday without feeling "behind." All are welcome to sit in and participate
       fully or simply audit.</p>
     <h2 class="mt-3">Sacred Ground Series</h2>
     <p>This is a series of videos, readings and small-group discussions about race. This is highly
       recommended if you have questions about "critical race theory," a topic needlessly politicized. To
       watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %>
 
-        <h2 class="mt-3">Five questions of baptism</h2>
-        <p><strong>Fr. Tom </strong> delivered a workshop for the Diocese of Southwest Florida entitled,
-          <em>"Baptismal Covenant: Five Questions."</em> It can be viewed by clicking <%#= link_to "this link"
-            , "https://www.dioswfl.org/tv.html" %> any time. Fr. Tom is well
-            acquainted with the sacrament
-            of Baptism, as he focused on it in the pursuit of his doctorate from Seabury-Western.
-        </p>
+
 
         <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "50%" ) %>
 
@@ -105,9 +96,21 @@
           </p>
           <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
           </p>
-          <div class="clearall"></div>
-
-          <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <div class="clearfix"></div>
+          <h2 class="mt-3">Meet our new bishop</h2>
+          <%= image_tag("https://image.isu.pub/220312142840-605a6914d9d727628bb7dc3ee48014d7/jpg/page_1.jpg",
+            alt: "diocese booklet" , class: "float-start img-fluid pe-2" , width: "40%" ) %>
+            <p>
+              <%= link_to "Click here" ,
+                ("https://issuu.com/episcopalflorida/docs/2022_special_convention_book_final_to_print_-_sing") %> to
+                learn about four priests, one of whom will be our next bishop.
+            </p>
+            <p>A special convention will be held April 2 for the election of a bishop coadjutor, and three delegates
+              from St. Paul's will be voting. Once ordained later in the year, the new bishop will be under the tutelage
+              of Bishop Dabney Smith until the fifth bishop of our diocese retires and the sixth takes his place.
+            </p>
+            <div class="clearfix"></div>
+            <!-- <h2 class="mt-3">Supporters of these children</h2>
           <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
             <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
               Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
@@ -117,28 +120,28 @@
               affection, above all.</p>
             <div class="clearfix"></div> -->
 
-          <h2 class="mt-3">Supporters of Tumaini Fund</h2>
-          <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
-            <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
-              founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
-              the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
-              thousands of children who lost their moms and dads to AIDS. In addition to monitary
-              contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
-              dresses, as seen here with Dr. Wilson.</p>
-            <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
-            </p>
-            <div class="clearfix"></div>
-
-            <h2 class="mt-3">Supporters of 'ERD'</h2>
-            <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png", alt:"Episcopal
-              Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
-              ), "https://episcopalrelief.org/" %>
-              <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
-                resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+                thousands of children who lost their moms and dads to AIDS. In addition to monitary
+                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+                dresses, as seen here with Dr. Wilson.</p>
+              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+              </p>
               <div class="clearfix"></div>
 
-              <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
-                width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+              <h2 class="mt-3">Supporters of 'ERD'</h2>
+              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+                ), "https://episcopalrelief.org/" %>
+                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+                <div class="clearfix"></div>
+
+                <%#= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                  width:"95%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
 
   </div>
   <!--main-body -->

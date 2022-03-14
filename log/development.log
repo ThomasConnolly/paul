@@ -12191,3 +12191,4 @@ Processing by StoryIdeasController#index as HTML
 Completed 200 OK in 57ms (Views: 46.2ms | ActiveRecord: 7.8ms | Allocations: 50720)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -18,8 +18,10 @@ gem 'bootstrap_form'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'devise', git: "https://github.com/heartcombo/devise", ref: '025b1c8'
+gem "embargoed", "~> 2.5"
 gem 'feedjira'
 gem 'figaro'
+gem "geocoder", "~> 1.7"
 gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
@@ -47,7 +49,7 @@ gem 'redis'
 gem 'rest-client'
 gem 'rss'
 gem 'scout_apm'
-gem 'sendgrid-ruby', '~> 6.4'
+gem 'sendgrid-ruby'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'stripe'
@@ -57,7 +59,7 @@ gem 'uglifier'
 gem 'whenever'
 
 group :development do
-  #gem 'annotate'
+  gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano'
@@ -87,5 +89,9 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+
+
+
 
 

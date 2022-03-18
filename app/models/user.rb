@@ -32,6 +32,8 @@
 
 class User < ApplicationRecord
 
+
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_save :set_username
@@ -61,6 +63,10 @@ class User < ApplicationRecord
 
   enum :role, { member: 0, vestry: 1, communicator: 2, admin: 3 }
   after_initialize :set_default_role, :if => :new_record?
+
+  scope :vestry, -> { where(role: 1)}
+  scope :communicator, -> { where(role: 2)}
+  scope :admin, -> { where(role: 3)}
 
   def set_default_role
     self.role ||= :member
@@ -102,6 +108,8 @@ class User < ApplicationRecord
   def add_profile
     create_profile if profile.nil?
   end
+
+
 
   def self.find_for_database_authentication(warden_condition)
     conditions = warden_condition.dup

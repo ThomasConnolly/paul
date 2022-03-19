@@ -9,9 +9,9 @@
 class MemberMailer < ApplicationMailer
  
   default from: 'Welcome@saintpaulsnaples.org'
-  #default to: 'welcome@saintpaulsnaples.org'
-  default to: 'tom.connolly@comcast.net'
-  #default bcc: -> { Member.where.not(email: nil).pluck(:email) }
+  default to: 'welcome@saintpaulsnaples.org'
+  #default to: 'tom.connolly@comcast.net'
+  default bcc: -> { Member.where.not(email: nil).pluck(:email) }
 
   
   def test(member)

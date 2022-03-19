@@ -18,7 +18,6 @@ gem 'bootstrap_form'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'devise', git: "https://github.com/heartcombo/devise", ref: '025b1c8'
-gem "embargoed", "~> 2.5"
 gem 'feedjira'
 gem 'figaro'
 gem "geocoder", "~> 1.7"

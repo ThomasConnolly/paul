@@ -1,5 +1,7 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_story, only: %i[ show edit update destroy ]
+
 
   # GET /stories or /stories.json
   def index

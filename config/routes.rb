@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :stories
   resources :story_assignments
   resources :todo_lists do
     resources :todo_items

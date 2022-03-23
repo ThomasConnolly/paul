@@ -1,0 +1,21 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<h1>Stories</h1>
+
+<div id="stories">
+  <% @stories.each do |story| %>
+    <p><strong>
+        <%= story.title %>
+      </strong></p>
+    <p><small>
+        <%= story.user.username.titleize %>
+      </small></p>
+    <p>
+      <%= link_to "Show this story" , story %>
+    </p>
+    <% end %>
+</div>
+
+<%= link_to "New submission" , new_story_path %>

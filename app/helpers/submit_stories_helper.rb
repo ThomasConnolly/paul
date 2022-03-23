@@ -1,0 +1,2 @@
+module SubmitStoriesHelper
+end

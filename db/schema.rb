@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_16_113353) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_20_123348) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -345,6 +345,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_16_113353) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stories", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "user_id", null: false
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stories_on_user_id"
+  end
+
   create_table "story_assignments", force: :cascade do |t|
     t.bigint "story_idea_id", null: false
     t.integer "assigned_to"
@@ -528,6 +537,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_16_113353) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
+  add_foreign_key "stories", "users"
   add_foreign_key "story_assignments", "story_ideas"
   add_foreign_key "stripe_reports", "donations"
   add_foreign_key "stripe_reports", "pledges"

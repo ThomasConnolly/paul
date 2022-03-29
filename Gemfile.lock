@@ -97,7 +97,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.568.0)
+    aws-partitions (1.571.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -146,7 +146,7 @@ GEM
       aws_cf_signer
       rest-client (>= 2.0.0)
     coderay (1.1.3)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     css_parser (1.11.0)
       addressable
@@ -370,7 +370,7 @@ GEM
       net-ssh (>= 2.8.0)
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
-    stripe (5.45.0)
+    stripe (5.46.0)
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)

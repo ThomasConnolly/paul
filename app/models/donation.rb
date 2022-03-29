@@ -25,6 +25,7 @@ class Donation < ApplicationRecord
   validates_presence_of :dollars, numericality: { only_integer: true }
   before_save :set_amount
   before_save :set_stripe_id
+  
 
   def set_amount
     self.amount = dollars.to_i * 100

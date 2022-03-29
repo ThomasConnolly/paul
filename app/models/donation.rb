@@ -25,7 +25,7 @@ class Donation < ApplicationRecord
   validates_presence_of :dollars, numericality: { only_integer: true }
   before_save :set_amount
   before_save :set_stripe_id
-  
+
 
   def set_amount
     self.amount = dollars.to_i * 100
@@ -37,7 +37,7 @@ class Donation < ApplicationRecord
     price = Stripe::Price.create({
                                    unit_amount: amount,
                                    currency: 'usd',
-                                   product: 'prod_EP0UOHa0sNeorA',
+                                   product: 'prod_EP0UOHa0sNeorA'
                                    # product: 'prod_Kyu7StID0XtS7W'
 
                                  })

@@ -52,7 +52,7 @@ class StoryAssignmentsController < ApplicationController
     @story_assignment.destroy
 
     respond_to do |format|
-      format.html { redirect_to story_assignments_url, notice: "Story assignment was successfully destroyed." }
+      format.html { redirect_to story_assignments_url, status: :see_other, notice: "Story assignment was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -48,7 +48,7 @@ class HomilistsController < ApplicationController
 
   def destroy
     @homilist.destroy
-    redirect_to @homilists
+    redirect_to @homilists, status: :see_other
   end
 
   private

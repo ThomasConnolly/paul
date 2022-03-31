@@ -60,6 +60,7 @@ class VreportsController < ApplicationController
 
   def destroy
     @vreport.destroy
+    redirect_to '/', status: :see_other
   end
 
   private

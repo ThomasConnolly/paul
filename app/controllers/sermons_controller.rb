@@ -48,7 +48,7 @@ class SermonsController < ApplicationController
 
   def destroy
     @sermon.destroy
-    redirect_to sermons_url
+    redirect_to sermons_url, status: :see_other
   end
 
   private

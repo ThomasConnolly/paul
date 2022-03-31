@@ -35,7 +35,7 @@ class FormationTalksController < ApplicationController
 
   def destroy
     @formation_talk.destroy
-    redirect_to formation_talks_url
+    redirect_to formation_talks_url, status: :see_other
   end
 
   private

@@ -50,7 +50,7 @@ class StoryIdeasController < ApplicationController
   def destroy
     @story_idea.destroy
       respond_to do |format|
-        format.html { redirect_to story_ideas_url, notice: "Story idea was successfully destroyed." }
+        format.html { redirect_to story_ideas_url, status: :see_other, notice: "Story idea was successfully destroyed." }
         format.json { head :no_content }
     end
   end

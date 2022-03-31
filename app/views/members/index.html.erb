@@ -7,7 +7,8 @@
     </strong>,&nbsp;
     <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
             <%= link_to 'Edit' , edit_member_path(m) %>
-              <%= link_to ' | Delete' , member_path(m), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to ' | Delete' , member_path(m), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+                %>
           </small>
   </p>
   <% end %>

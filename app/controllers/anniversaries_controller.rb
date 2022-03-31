@@ -37,7 +37,7 @@ class AnniversariesController < ApplicationController
 
   def destroy
     @anniversary.destroy
-    redirect_to anniversaries_url, notice: 'Anniversary was successfully destroyed.'
+    redirect_to anniversaries_url, status: :see_other, notice: 'Anniversary was successfully destroyed.'
   end
 
   private

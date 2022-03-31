@@ -13,9 +13,7 @@
       <%= pray_for.reason %><br>
         <% if user_signed_in? && current_user.admin? %>
           <%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
-            <%= link_to 'Destroy' , pray_for, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-    <% end %>
-      <% end %>
-
-        <div class="mt-5></mt-5">
+            <%= link_to "Destroy" , pray_for_path(pray_for), data: { turbo_method: :delete,
+              turbo_confirm: "Are you sure?" } %>
+              <%end%>
+                <%end%>

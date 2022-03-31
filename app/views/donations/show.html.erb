@@ -1,10 +1,14 @@
-<h1><%= @donation.user.username.titleize %>'s donation is <%= formatted_amount @donation.amount %></h1>
+<h1>
+  <%= @donation.user.username.titleize %>'s donation is <%= formatted_amount @donation.amount %>
+</h1>
 <div class="text-center my-5" max-width="400px">
-<%= button_to "Next", checkout_create_path, method: :post, params: { id: @donation.id }, data: { turbo: 'false' }, class: "btn btn-success btn-lg", id: "checkout-button" %>
+  <%= button_to "Next" , checkout_create_path, method: :post, params: { id: @donation.id }, data: { turbo: 'false' },
+    class: "btn btn-success btn-lg" , id: "checkout-button" %>
 </div>
 
-<% if current_user == @donation.user %>
-<%= link_to 'Edit', edit_donation_path(@donation) %> | 
+<% if current_user==@donation.user %>
+  <%= link_to 'Edit' , edit_donation_path(@donation) %> |
 
-<%= link_to 'Cancel this donation', new_donation_path %>
-<% end %>
+    <%= link_to 'Delete this donation' , donation_path(@donation), data: { turbo_method: :delete,
+      turbo_confirm: "Are you sure?" } %>
+      <% end %>

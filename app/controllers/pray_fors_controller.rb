@@ -3,6 +3,10 @@
 class PrayForsController < ApplicationController
   before_action :set_pray_for, only: %i[show edit update destroy]
 
+  def index
+    @pray_fors = PrayFor.all
+  end
+  
   # GET /pray_fors/1
   # GET /pray_fors/1.json
   def show; end
@@ -41,7 +45,7 @@ class PrayForsController < ApplicationController
   def destroy
     @pray_for.destroy
     respond_to do |format|
-      format.html { redirect_to pray_fors_url, notice: 'Pray for was successfully destroyed.' }
+      format.html { redirect_to pray_fors_url, status: :see_other, notice: 'Pray for was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

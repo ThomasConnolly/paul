@@ -54,7 +54,7 @@ class StoriesController < ApplicationController
     @story.destroy
 
     respond_to do |format|
-      format.html { redirect_to stories_url, notice: "Story was successfully destroyed." }
+      format.html { redirect_to stories_url, status: :see_other, notice: "Story was successfully destroyed." }
       format.json { head :no_content }
     end
   end

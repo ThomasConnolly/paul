@@ -43,8 +43,7 @@ class TodoItemsController < ApplicationController
   # DELETE todo_lists/1/todo_items/1
   def destroy
     @todo_item.destroy
-
-    redirect_to todo_list_todo_items_url(@todo_list)
+    redirect_to todo_list_todo_items_url(@todo_list), status: :see_other
   end
 
   private

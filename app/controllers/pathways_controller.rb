@@ -34,7 +34,7 @@ class PathwaysController < ApplicationController
 
   def destroy
     @pathway.destroy
-    redirect_to '/'
+    redirect_to '/', status: :see_other
   end
 
   private

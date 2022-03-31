@@ -43,7 +43,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to links_url, notice: 'Link was successfully destroyed.' }
+      format.html { redirect_to links_url, status: :see_other, notice: 'Link was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

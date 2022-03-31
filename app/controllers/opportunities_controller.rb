@@ -35,7 +35,7 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     @opportunity.destroy
-    redirect_to opportunities_path, notice: 'Entry successfully destroyed.'
+    redirect_to opportunities_path, status: :see_other, notice: 'Entry successfully destroyed.'
   end
 
   private

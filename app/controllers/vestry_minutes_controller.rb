@@ -58,7 +58,7 @@ class VestryMinutesController < ApplicationController
   def destroy
     @vestry_minute.destroy
     respond_to do |format|
-      format.html { redirect_to vestry_minutes_url, notice: 'Vestry minutes successfully destroyed.' }
+      format.html { redirect_to vestry_minutes_url, status: :see_other, notice: 'Vestry minutes successfully destroyed.' }
       format.json { head :no_content }
     end
   end

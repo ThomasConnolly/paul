@@ -1,7 +1,0 @@
-<%= bootstrap_form_for(@albergue_child) do |f| %>
-    <%= f.text_field :first_name %>
-        <%= f.text_field :last_name %>
-            <%= f.file_field :avatar, direct_upload: true %>
-                <%= f.date_field :birthday %>
-                    <%= f.submit "Submit" , data: { turbo: false }, class:"btn btn-primary" %>
-                        <% end %>

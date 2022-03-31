@@ -28,7 +28,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only, only: %i[index new create]
-  before_action :member_only, only: [:show]
   before_action :set_user, only: %i[show edit update]
 
   def new
@@ -63,14 +62,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, 
-                                :stripe_pledge_id, :member_id, photos: [])
+                                :stripe_pledge_id, :member_id)
   end
 
   def admin_only
     redirect_to root_path, alert: 'Access is restricted.' unless current_user.admin?
   end
 
-  def member_only
-    redirect_to root_path, alert: 'Access is restricted.' unless current_user.member?
-  end
 end

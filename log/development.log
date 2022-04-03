@@ -4557,3 +4557,4 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 46ms (Views: 16.4ms | ActiveRecord: 9.4ms | Allocations: 17103)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

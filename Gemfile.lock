@@ -10,6 +10,13 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: https://github.com/radar/by_star
+  revision: d7811c0c50f30262b4862b384c50f22f36e54f07
+  specs:
+    by_star (4.0.0)
+      activesupport (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -420,6 +427,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-email
   bootstrap_form
+  by_star!
   capistrano
   cloudinary
   cssbundling-rails

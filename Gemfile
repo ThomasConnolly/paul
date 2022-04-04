@@ -15,6 +15,7 @@ gem 'birthday'
 gem 'bootsnap', require: false
 gem 'bootstrap-email'
 gem 'bootstrap_form'
+gem 'by_star', git: 'https://github.com/radar/by_star'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'devise', git: "https://github.com/heartcombo/devise", ref: '025b1c8'
@@ -64,7 +65,6 @@ group :development do
   gem 'capistrano'
   gem 'letter_opener'
   gem 'letter_opener_web'
-  # gem 'meta_request'
   gem 'web-console'
 end
 
@@ -88,9 +88,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-
-
-
-
-

@@ -4558,3 +4558,7 @@ Completed 200 OK in 46ms (Views: 16.4ms | ActiveRecord: 9.4ms | Allocations: 171
 
 
   [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMember Load (6.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE (to_char("birthday", 'MMDD') = '0403')[0m
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE (birthday LIKE '%-04-%')[0m
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

@@ -95,7 +95,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.573.0)
+    aws-partitions (1.574.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -142,7 +142,7 @@ GEM
       sshkit (>= 1.9.0)
     childprocess (4.1.0)
     chronic (0.10.2)
-    cloudinary (1.22.0)
+    cloudinary (1.23.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
     coderay (1.1.3)
@@ -177,7 +177,7 @@ GEM
       rails (>= 6.0.0)
       stimulus-rails
       turbo-rails
-    htmlbeautifier (1.4.1)
+    htmlbeautifier (1.4.2)
     htmlentities (4.3.4)
     http-accept (1.7.0)
     http-cookie (1.0.4)
@@ -222,7 +222,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
-    msgpack (1.4.5)
+    msgpack (1.5.1)
     multi_xml (0.6.0)
     nested_scaffold (1.1.0)
     net-imap (0.2.3)

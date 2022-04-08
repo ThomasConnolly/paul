@@ -5,33 +5,61 @@
 <div class=row>
   <div class="col-md-8 main-body pe-5">
     <div class="clearfix">
-      <%=
-        image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1638208932/FrTomPentecost2021Scaled_qzwtu5.png",
-        alt: "priest at altar" , width: "100%" ) %>
+      <%= cl_image_tag("HolyWeekGraphic_nw8m4b.jpg", alt: "holy_week" , width: "100%" ) %>
+        <h1>Join us this holy week</h1>
+        <%#= cl_image_tag("cross-lent_rhj8ln.jpg", width: "140" , class: "float-start me-4" ) %>
+          <h3>Palm Sunday: April 10, 8 & 10 a.m.<br> 5 p.m. Creole<br>
 
-        <div class="mt-4">
-          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
+            Maundy Thursday: April 14, 6 p.m.<br>
 
-            <p><strong>Almighty God, who created us in your own image: Grant us
-                grace fearlessly to contend against evil and to make no peace
-                with oppression; and, that we may reverently use our freedom,
-                help us to employ it in the maintenance of justice in our
-                communities and among the nations, to the glory of your holy
-                Name; through Jesus Christ our Lord, who lives and reigns with
-                you and the Holy Spirit, one God, now and for ever. Amen.</strong>
-            </p>
-            <p class="text-end"> &mdash;Book of Common Prayer</p>
-        </div>
-        <h1>Join us in worship</h1>
-        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
-          class: "float-start pe-3" ) %>
-          <%= cl_image_tag("cross-lent_rhj8ln.jpg", width: "140" , class: "float-start me-4" ) %>
-            <p>Sundays at 8 a.m. and
+            Good Friday: April 15, noon.<br></h3>
+          <p>
+
+            (Creole service in Trinity Hall)</p>
+          <h3>
+
+            Stations of the Cross: 5:30 p.m. in church<br>
+
+            Holy Saturday: April 16, 9 a.m.</h3>
+          <p>
+
+            Brief solemn service</p>
+          <h3>
+
+            Easter Vigil: Saturday April 16, 8 p.m.<br>
+
+            Easter Sunday: April 17, Services at 8 & 10 a.m. </h3>
+          <p><small>Livestream at 10 a.m. <%= link_to " on YouTube." ,
+                ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %></small></p>
+
+          <p>Gather for a champagne Easter in Trinity Hall between the services</p>
+          <h3>
+
+            5 p.m. Creole Service.</h3>
+
+          <div class="mt-4">
+            <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
+
+              <p><strong>Almighty God, who created us in your own image: Grant us
+                  grace fearlessly to contend against evil and to make no peace
+                  with oppression; and, that we may reverently use our freedom,
+                  help us to employ it in the maintenance of justice in our
+                  communities and among the nations, to the glory of your holy
+                  Name; through Jesus Christ our Lord, who lives and reigns with
+                  you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+              </p>
+              <p class="text-end"> &mdash;Book of Common Prayer</p>
+          </div>
+          <!-- <h1>Join us in worship</h1> -->
+          <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+            class: "float-start pe-3" ) %>
+
+            <!-- <p>Sundays at 8 a.m. and
               10 a.m. While masks are no longer required, please be considerate and help keep God's people safe
-              (everyone is a child of God!)</p>
-            <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
+              (everyone is a child of God!)</p> -->
+            <!-- <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
                 ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
-            </p>
+            </p> -->
             <% if @bulletin.url.present? %>
               <p><strong>
                   <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>

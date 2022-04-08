@@ -18,7 +18,9 @@ class PathwaysController < ApplicationController
   def create
     @pathway = Pathway.new(pathway_params)
     if @pathway.save
+
       redirect_to pathways_path
+      PathwayMailer.pathway_created(@pathway).deliver_later
     else
       render :new
     end

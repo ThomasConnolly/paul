@@ -1,6 +1,7 @@
-<%= link_to(image_tag @image , @url )%>
-  </div>
-  <p>Click on the image to read (or download and print) your copy of the latest edition of the St. Paul newsletter,
-    <em>Pathways.</em>
-  </p>
-  </div>
+<div class="ax-center">
+  <%= image_tag(@pathways.image, width: "500" ) %> <br>
+    <p>
+      <%= link_to " Click here to read (or download and print) your copy of the latest edition of the St. Paul
+    newsletter, Pathways." , @pathways.link %>
+    </p>
+</div>

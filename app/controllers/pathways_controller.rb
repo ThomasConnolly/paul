@@ -20,7 +20,7 @@ class PathwaysController < ApplicationController
     if @pathway.save
 
       redirect_to pathways_path
-      #PathwaysMailer.pathways_created(@pathway).deliver_later
+      PathwaysMailer.pathways_created(@pathway).deliver_later
     else
       render :new
     end

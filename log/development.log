@@ -1,983 +1,314 @@
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 09:32:47 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 2.4ms | Allocations: 1796)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2130)
-  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1172)
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 14.5ms | Allocations: 5873)
-  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1747)
-  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 11993)
-Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 4.2ms | Allocations: 13182)
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Performing ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) from Async(default) enqueued at 2022-04-14T17:19:29Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   [1m[36mMember Pluck (0.2ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 279)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered layout layouts/mailer.html.erb (Duration: 19.5ms | Allocations: 514)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering pathways_mailer/pathways_created.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered pathways_mailer/pathways_created.text.erb within layouts/mailer (Duration: 1.4ms | Allocations: 96)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered layout layouts/mailer.text.erb (Duration: 3.2ms | Allocations: 292)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] PathwaysMailer#pathways_created: processed outbound mail in 45.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Delivered mail 625857abe72a3_8e9812a2c8387bc@tom-G7.mail (75.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Date: Thu, 14 Apr 2022 13:19:39 -0400
+From: NoResponse@SaintPaulsNaples.org
+To: welcome@saintpaulsnaples.org, 
+ ACK422@hotmail.com, 
+ cbrunkhorst@nycap.rr.com, 
+ NJNora@aol.com, 
+ carnellsteve@gmail.com, 
+ hab318@gmail.com, 
+ jvshea2@gmail.com, 
+ mlcarney@comcast.net, 
+ drrjdaniels@hotmail.com, 
+ drrjdaniels@hotmail.com, 
+ Carolenaples@gmail.com, 
+ mtc1328@gmail.com, 
+ esandkts5@yahoo.com, 
+ dabernet1@aol.com, 
+ wadams59@gmail.com, 
+ rbreith41@gmail.com, 
+ NJRyk@aol.com, 
+ divasal@yahoo.com, 
+ candyacra@hotmail.com, 
+ nanibano@gmail.com, 
+ candyacra@hotmail.com, 
+ ssbsings@aol.com, 
+ maryjanabrams@gmail.com, 
+ kaybradley@yahoo.com, 
+ rochney.avril@gmail.com, 
+ jaghaglee@icloud.com, 
+ acragg8@comcast.net, 
+ jcimaglia0323@gmail.com, 
+ jmccar315@aol.com, 
+ sandrakivett@yahoo.com, 
+ kitttyhawk63@gmail.com, 
+ charlenewconnolly@gmail.com, 
+ connej40@gmail.com, 
+ acragg8@comcast.net, 
+ scoker14@comcast.net, 
+ bmonk085@yahoo.com, 
+ lehoe95@gmail.com, 
+ ModernP@hotmail.com, 
+ richshea2@gmail.com, 
+ nbpapp@aol.com, 
+ jcaldersmoot@gmail.com, 
+ waif3133@gmail.com, 
+ Mia.Souvannarath@yahoo.com, 
+ fcthorntonsr193@gmail.com, 
+ john_titus33@yahoo.com, 
+ dianebreithaupt7@gmail.com, 
+ jodiclair@yahoo.com, 
+ gbarron.nyc@gmail.com, 
+ DVFP05@hotmail.com, 
+ ezl711@optinum.net, 
+ jvshea2@gmail.com, 
+ halehaar@gmail.com, 
+ halehaar@gmail.com, 
+ connellyla4024@hotmail.com, 
+ rogerconant@comcast.net, 
+ rxn_cunningham@yahoo.com, 
+ jimshar3@verizon.net, 
+ tom.connolly@comcast.net, 
+ bamarse@gmail.com, 
+ mganesca@hotmail.com, 
+ charcon68@gmail.com, 
+ DLDICK49@yahoo.com, 
+ Erikabianchi@comcast.net, 
+ Jwilliamlouisjean53@gmail.com, 
+ hsgray@verizon.net, 
+ charcon68@gmail.com, 
+ jmccar315@aol.com, 
+ pjmalik@comcast.net, 
+ Pmguerrier@yahoo.com, 
+ lamarca.lynne@gmail.com, 
+ jd.hall@verizon.net, 
+ wasawasa2@gmail.com, 
+ lizh37@aol.com, 
+ froggyrosa@gmail.com, 
+ jdjsr13@gmail.com, 
+ lah21lah@gmail.com, 
+ jnc456122@gmail.com, 
+ buddyjackson16@gmail.com, 
+ pierrehive@gmail.com, 
+ tvakels@gmail.com, 
+ froggyrosa@gmail.com, 
+ jdjsr13@gmail.com, 
+ bobbiinfla@comcast.net, 
+ natajo@gmail.com, 
+ dianne.kiehl@yahoo.com, 
+ Kathiehive@yahoo.com, 
+ dmkwtrclr@icloud.com, 
+ radicalrosemary1@gmail.com, 
+ eridi@wi.rr.com, 
+ mickking1946@gmail.com, 
+ e.lentz5250@att.net, 
+ wlindsay@rogers.com, 
+ yvonhive10@gmail.com, 
+ ellenhall42@gmail.com, 
+ lippertcl@yahoo.com, 
+ sarahlawrence.1951@gmail.com, 
+ fheise1797@comcast.net, 
+ kanarian@fullchannel.net, 
+ joykhambly@gmail.com, 
+ winchou85@aol.com, 
+ SHW5202@comcast.net, 
+ CPLISLE@gmail.com, 
+ northest@embarqmail.com, 
+ CPLISLE@gmail.com, 
+ brenda@fullchannel.net, 
+ nancyk292@aol.com, 
+ janchuck2@att.net, 
+ aggijohn@cogeco.ca, 
+ ROBTMCKENNA@MSN.COM, 
+ yveleissam@gmail.com, 
+ gmenslage@aol.com, 
+ alpikejr@aol.com, 
+ Nancylmercer@centurylink.net, 
+ Stlouisme@yahoo.com, 
+ karensullivan2121@gmail.com, 
+ cmilien04@gmail.com, 
+ oexmannmj@gmail.com, 
+ bwestrope@hotmail.com, 
+ kathyharvey7987@att.net, 
+ nannacw@aol.com, 
+ MAJORCRIMES261@netscape.net, 
+ MAJORCRIMES261@netscape.net, 
+ jjmlkennedy@comcast.net, 
+ bill.barb.kling@gmail.com, 
+ mmmjmoore@aol.com, 
+ joemeghreblian@gmail.com, 
+ billjoan@gmail.com, 
+ aggijohn@cogeco.ca, 
+ leemarilee@aol.com, 
+ jwmulcahy@att.net, 
+ DLN9351@aol.com, 
+ cdvershure@gwtc.net, 
+ pearcebarba@aol.com, 
+ baraymondi@aol.com, 
+ Jackie.mortman@live.com, 
+ golfinbear@aol.com, 
+ jeffpage@centurylink.net, 
+ 8665rapierre@gmail.com, 
+ robtmckenna@msn.com, 
+ dancertapnona@aol.com, 
+ milce6@aol.com, 
+ shrtstk9@aol.com, 
+ ksnydernp@aol.com, 
+ johnshoe@comcast.net, 
+ jewiggles@yahoo.com, 
+ bfaupel@stmarysbonita.org, 
+ wfb0702@aol.com, 
+ shirleyhirt@aol.com, 
+ ruthatgracelc@yahoo.com, 
+ stevehoby@htva.net, 
+ crakoncay@comcast.net, 
+ revkayrichardson@gmail.com, 
+ crakoncay@comcast.net, 
+ bomoseen7@cs.com, 
+ deshoe@comcast.net, 
+ nancy76737@gmail.com, 
+ jarouse11@aol.com, 
+ astaco239@gmail.com, 
+ jp.stlouis@live.com, 
+ peebs@optimum.net, 
+ renesaulnier76@gmail.com, 
+ judy@microspecialtiescanadainc.com, 
+ bsweet6672@aol.com, 
+ fathertomt@gmail.com, 
+ mwsmd@comcast.net, 
+ bjt.stone@verizon.net, 
+ astaco239@gmail.com, 
+ joeschrow@yahoo.com, 
+ rockind49@aol.com, 
+ dickersonwall@aol.com, 
+ Keastlack.2@gmail.com, 
+ mldogo@me.com, 
+ Erikabianchi@comcast.net, 
+ burtontucker@att.net, 
+ babernet1@aol.com, 
+ bhdefrancis@gmail.com, 
+ divasal@yahoo.com, 
+ kingconnie@embarqmail.com, 
+ pestesfl@aol.com, 
+ LyndaBlundell@yahoo.co.uk, 
+ bevsamwhiteman@aol.com, 
+ jerry.tysiak@gmail.com, 
+ etranchant74@yahoo.com, 
+ ramondavila41@yahoo.com, 
+ dentner@aol.com, 
+ leewieber@hotmail.com, 
+ cmconant@comcast.net, 
+ cdvershure@gwtc.net, 
+ emmo22@gmail.com, 
+ ramondavila41@yahoo.com, 
+ RPVenet@earthlink.net, 
+ joslentracy1@aol.com, 
+ rockind49@aol.com, 
+ htrabilsy@gmail.com, 
+ bellejolie75@yahoo.com, 
+ donnaesimon@icloud.com, 
+ connelly40@aol.com, 
+ nickitrab594@gmail.com, 
+ joslentracy1@aol.com, 
+ lawngylanduh@gmail.com, 
+ bwestrope@hotmail.com, 
+ joeschrow@yahoo.com, 
+ jwilliamlouisjean53@gmail.com, 
+ warren.adams59@gmail.com, 
+ sarahlawrence.1951@gmail.com, 
+ DLN9351@AOL.com, 
+ lizh37@aol.com, 
+ Mmnorthville@aol.com, 
+ pestesfl@aol.com, 
+ mflynn6970@hotmail.com, 
+ dekclk35@gmail.com, 
+ francisferioli@comcast.net, 
+ STEPHANIElGRIFFITH@comcast.net, 
+ unctom2@juno.com, 
+ mgrind3714@outlook.com, 
+ nannysandy@nycap.rr.com, 
+ jd.hall@verizon.net, 
+ johnzinno@verizon.net, 
+ manatee99@comcast.net, 
+ cookielady21@aol.com, 
+ mflynn6970@hotmail.com, 
+ DYFP05@hotmail.com, 
+ leemarilee@aol.com, 
+ cindynebolsine@gmail.com, 
+ dekclk35@gmail.com, 
+ hanson1946@gmail.com, 
+ mgrind3714@outlook.com, 
+ judym@fishingwithrolandmartin.com, 
+ WGRIFF@comcast.net, 
+ hanson1946@gmail.com, 
+ revkayrichardson@gmail.com, 
+ nannacw@aol.com, 
+ marylroy135@gmail.com, 
+ geoffreywemerson@yahoo.com, 
+ joanfarmer@msn.com, 
+ Judymimi2@aol.com, 
+ geolotus2003@nycap.rr.com, 
+ jaghaglee@icloud.com, 
+ ebjazzcap@aol.com, 
+ daalha3147@yahoo.com, 
+ tcilluffo@charter.net, 
+ agedon3280@yahoo.com, 
+ christabenoit5@gmail.com, 
+ scilluffo@gmail.com, 
+ MLHMH@aol.com, 
+ ferber.tracy@gmail.com, 
+ carol.tracy1@gmail.com, 
+ BettyJaneReeves@msn.com, 
+ josephgthermidor@yahoo.com, 
+ mariemichellealousjan@yahoo.com, 
+ vstegmaier@aol.com, 
+ gail.falmouth@yahoo.com, 
+ cintys2@aol.com, 
+ vstegmaier@aol.com, 
+ njroy16@gmail.com, 
+ Nancyp57@yahoo.com, 
+ mewieber@hotmail.com
+Message-ID: <625857abe72a3_8e9812a2c8387bc@tom-G7.mail>
+Subject: There's a new Pathways
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_625857abde79e_8e9812a2c8386e8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
 
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 09:33:32 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.7ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 13:33:32.673204"], ["updated_at", "2022-04-12 13:33:32.673204"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 1ef700dd-8ead-4be5-a522-7a0995a04849) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f936d813a78 @uri=#<URI::GID gid://paul/Pathway/31>>]}
-Completed 302 Found in 10ms (ActiveRecord: 2.2ms | Allocations: 2916)
+----==_mimepart_625857abde79e_8e9812a2c8386e8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
+There's a new Pathways, the St. Paul's parish newsletter. Get it at https://www.saintpaulsnaples.org/pathways
 
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849] Performing ActionMailer::MailDeliveryJob (Job ID: 1ef700dd-8ead-4be5-a522-7a0995a04849) from Async(default) enqueued at 2022-04-12T13:33:32Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f936d776980 @uri=#<URI::GID gid://paul/Pathway/31>>]}
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   ↳ app/mailers/pathways_mailer.rb:5:in `pathways_created'
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 09:33:32 -0400
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   [1m[36mMember Pluck (1.5ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   ↳ app/mailers/pathways_mailer.rb:6:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 8.9ms | Allocations: 7922)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849]   Rendered layout layouts/mailer.html.erb (Duration: 9.2ms | Allocations: 8003)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849] PathwaysMailer#pathways_created: processed outbound mail in 18.7ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [1ef700dd-8ead-4be5-a522-7a0995a04849] Error performing ActionMailer::MailDeliveryJob (Job ID: 1ef700dd-8ead-4be5-a522-7a0995a04849) from Async(default) in 23.16ms: ActionView::Template::Error (undefined method `symbolize_keys' for "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf":String
+----==_mimepart_625857abde79e_8e9812a2c8386e8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
-        options = options.symbolize_keys
-                         ^^^^^^^^^^^^^^^):
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/helpers/asset_tag_helper.rb:395:in `image_tag'
-/home/tom/paul/app/views/pathways_mailer/pathways_created.html.erb:1:in `_app_views_pathways_mailer_pathways_created_html_erb__759419639757953230_453900'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `public_send'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `_run'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:157:in `block in render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:361:in `instrument_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:155:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:117:in `block in _render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:270:in `in_rendering_context'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:116:in `_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:103:in `render_to_body'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/rendering.rb:25:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:968:in `block in collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `map'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
-/home/tom/paul/app/mailers/pathways_mailer.rb:6:in `pathways_created'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
-<internal:kernel>:90:in `tap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
-Processing by PathwaysController#index as TURBO_STREAM
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 5706)
-  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 849)
-  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1657)
-  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1559)
-  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 10268)
-Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 11113)
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="ax-center">
+  <img width="500" src="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22sm_kwylam.jpg"> <br>
+    <p>
+      <a href="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22sm_kwylam.pdf"> Click here to read (or download and print) your copy of the latest edition of the St. Paul
+    newsletter, Pathways.</a>
+    </p>
+</div>
+  </body>
+</html>
 
+----==_mimepart_625857abde79e_8e9812a2c8386e8--
 
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 09:38:47 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 2.1ms | Allocations: 1851)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2189)
-  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1174)
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 19.4ms | Allocations: 17240)
-  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1640)
-  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 23355)
-Completed 200 OK in 36ms (Views: 22.4ms | ActiveRecord: 8.0ms | Allocations: 29511)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 09:39:21 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.5ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 13:39:21.880786"], ["updated_at", "2022-04-12 13:39:21.880786"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 6135375a-4357-4748-8838-66bdc31d7ddc) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f542160 @uri=#<URI::GID gid://paul/Pathway/32>>]}
-Completed 302 Found in 13ms (ActiveRecord: 2.2ms | Allocations: 6418)
-
-
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc] Performing ActionMailer::MailDeliveryJob (Job ID: 6135375a-4357-4748-8838-66bdc31d7ddc) from Async(default) enqueued at 2022-04-12T13:39:21Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f50c718 @uri=#<URI::GID gid://paul/Pathway/32>>]}
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 09:39:21 -0400
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   ↳ app/mailers/pathways_mailer.rb:5:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   [1m[36mMember Pluck (0.3ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   ↳ app/mailers/pathways_mailer.rb:7:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-Processing by PathwaysController#index as TURBO_STREAM
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 7.1ms | Allocations: 9341)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc]   Rendered layout layouts/mailer.html.erb (Duration: 7.3ms | Allocations: 9411)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc] PathwaysMailer#pathways_created: processed outbound mail in 16.4ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [6135375a-4357-4748-8838-66bdc31d7ddc] Error performing ActionMailer::MailDeliveryJob (Job ID: 6135375a-4357-4748-8838-66bdc31d7ddc) from Async(default) in 19.16ms: ActionView::Template::Error (undefined method `symbolize_keys' for "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf":String
-
-        options = options.symbolize_keys
-                         ^^^^^^^^^^^^^^^):
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/helpers/asset_tag_helper.rb:395:in `image_tag'
-/home/tom/paul/app/views/pathways_mailer/pathways_created.html.erb:1:in `_app_views_pathways_mailer_pathways_created_html_erb__759419639757953230_508280'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `public_send'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `_run'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:157:in `block in render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:361:in `instrument_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:155:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:117:in `block in _render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:270:in `in_rendering_context'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:116:in `_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:103:in `render_to_body'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/rendering.rb:25:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:968:in `block in collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `map'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
-/home/tom/paul/app/mailers/pathways_mailer.rb:7:in `pathways_created'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
-<internal:kernel>:90:in `tap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 6023)
-  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 849)
-  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 1683)
-  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1557)
-  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 10608)
-Completed 200 OK in 27ms (Views: 11.2ms | ActiveRecord: 5.7ms | Allocations: 21757)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-12 09:43:44 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:232
-  Rendered home/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 6040)
-  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 859)
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 2590)
-  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1510)
-  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 11554)
-Completed 200 OK in 37ms (Views: 13.2ms | ActiveRecord: 10.8ms | Allocations: 23516)
-
-
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 09:43:55 -0400
-Processing by PathwaysController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5379)
-  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 844)
-  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1624)
-  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1557)
-  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 9821)
-Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 1.3ms | Allocations: 10523)
-
-
-  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 09:51:11 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 3.1ms | Allocations: 1851)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2194)
-  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1174)
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 16.6ms | Allocations: 16182)
-  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1646)
-  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 22308)
-Completed 200 OK in 39ms (Views: 24.0ms | ActiveRecord: 4.7ms | Allocations: 30320)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 09:51:37 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.5ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 13:51:37.348809"], ["updated_at", "2022-04-12 13:51:37.348809"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 88cbc33a-229f-42c5-9a89-b5147855ce08) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f8512e8 @uri=#<URI::GID gid://paul/Pathway/33>>]}
-Completed 302 Found in 11ms (ActiveRecord: 1.9ms | Allocations: 6459)
-
-
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08] Performing ActionMailer::MailDeliveryJob (Job ID: 88cbc33a-229f-42c5-9a89-b5147855ce08) from Async(default) enqueued at 2022-04-12T13:51:37Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f7ec4b0 @uri=#<URI::GID gid://paul/Pathway/33>>]}
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 09:51:37 -0400
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   ↳ app/mailers/pathways_mailer.rb:5:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   [1m[36mMember Pluck (0.5ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   ↳ app/mailers/pathways_mailer.rb:8:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 4.7ms | Allocations: 7937)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08]   Rendered layout layouts/mailer.html.erb (Duration: 4.9ms | Allocations: 8018)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08] PathwaysMailer#pathways_created: processed outbound mail in 11.4ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [88cbc33a-229f-42c5-9a89-b5147855ce08] Error performing ActionMailer::MailDeliveryJob (Job ID: 88cbc33a-229f-42c5-9a89-b5147855ce08) from Async(default) in 14.13ms: ActionView::Template::Error (undefined method `symbolize_keys' for "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf":String
-
-        options = options.symbolize_keys
-                         ^^^^^^^^^^^^^^^):
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/helpers/asset_tag_helper.rb:395:in `image_tag'
-/home/tom/paul/app/views/pathways_mailer/pathways_created.html.erb:1:in `_app_views_pathways_mailer_pathways_created_html_erb__759419639757953230_562880'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `public_send'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `_run'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:157:in `block in render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:361:in `instrument_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:155:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:117:in `block in _render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:270:in `in_rendering_context'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:116:in `_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:103:in `render_to_body'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/rendering.rb:25:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:968:in `block in collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `map'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
-/home/tom/paul/app/mailers/pathways_mailer.rb:8:in `pathways_created'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
-<internal:kernel>:90:in `tap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
-Processing by PathwaysController#index as TURBO_STREAM
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 5965)
-  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 849)
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 1659)
-  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1557)
-  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 10526)
-Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 11409)
-
-
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 09:56:50 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 1.9ms | Allocations: 1661)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1779)
-  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 904)
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 20.2ms | Allocations: 16467)
-  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1446)
-  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 21131)
-Completed 200 OK in 36ms (Views: 20.2ms | ActiveRecord: 9.7ms | Allocations: 26816)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 09:57:14 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.3ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 13:57:14.183672"], ["updated_at", "2022-04-12 13:57:14.183672"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: b7356b0d-e880-4b85-a44f-5a32f9026b2a) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f936d7bca98 @uri=#<URI::GID gid://paul/Pathway/34>>]}
-Completed 302 Found in 12ms (ActiveRecord: 1.8ms | Allocations: 6431)
-
-
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a] Performing ActionMailer::MailDeliveryJob (Job ID: b7356b0d-e880-4b85-a44f-5a32f9026b2a) from Async(default) enqueued at 2022-04-12T13:57:14Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f936d72c768 @uri=#<URI::GID gid://paul/Pathway/34>>]}
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   ↳ app/mailers/pathways_mailer.rb:5:in `pathways_created'
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 09:57:14 -0400
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   [1m[36mMember Pluck (0.2ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   ↳ app/mailers/pathways_mailer.rb:8:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 5.5ms | Allocations: 7810)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a]   Rendered layout layouts/mailer.html.erb (Duration: 5.7ms | Allocations: 7881)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a] PathwaysMailer#pathways_created: processed outbound mail in 13.9ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [b7356b0d-e880-4b85-a44f-5a32f9026b2a] Error performing ActionMailer::MailDeliveryJob (Job ID: b7356b0d-e880-4b85-a44f-5a32f9026b2a) from Async(default) in 16.83ms: ActionView::Template::Error (undefined method `symbolize_keys' for "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf":String
-
-        options = options.symbolize_keys
-                         ^^^^^^^^^^^^^^^):
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/helpers/asset_tag_helper.rb:395:in `image_tag'
-/home/tom/paul/app/views/pathways_mailer/pathways_created.html.erb:1:in `_app_views_pathways_mailer_pathways_created_html_erb__759419639757953230_562880'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `public_send'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `_run'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:157:in `block in render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:361:in `instrument_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:155:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:117:in `block in _render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:270:in `in_rendering_context'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:116:in `_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:103:in `render_to_body'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/rendering.rb:25:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:968:in `block in collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `map'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
-/home/tom/paul/app/mailers/pathways_mailer.rb:8:in `pathways_created'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
-<internal:kernel>:90:in `tap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
-Processing by PathwaysController#index as TURBO_STREAM
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5831)
-  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 849)
-  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1659)
-  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1557)
-  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 10349)
-Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.9ms | Allocations: 11111)
-
-
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 10:05:04 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 1.8ms | Allocations: 1661)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1779)
-  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 904)
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 15.0ms | Allocations: 15497)
-  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1443)
-  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 20158)
-Completed 200 OK in 35ms (Views: 20.1ms | ActiveRecord: 4.1ms | Allocations: 27785)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 10:05:20 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (1.1ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 14:05:20.369924"], ["updated_at", "2022-04-12 14:05:20.369924"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.8ms | Allocations: 10182)
-
-
-
-NameError - undefined local variable or method `data' for ApplicationMailer:Class:
-  app/mailers/application_mailer.rb:12:in `<class:ApplicationMailer>'
-  app/mailers/application_mailer.rb:9:in `<top (required)>'
-  app/mailers/pathways_mailer.rb:1:in `<top (required)>'
-  app/controllers/pathways_controller.rb:23:in `create'
-
-Started POST "/__better_errors/7ef1bad4bb683a94/variables" for 127.0.0.1 at 2022-04-12 10:05:20 -0400
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 10:06:13 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 2.3ms | Allocations: 1661)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1779)
-  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 904)
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 19.8ms | Allocations: 16469)
-  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1449)
-  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 21136)
-Completed 200 OK in 35ms (Views: 20.4ms | ActiveRecord: 8.7ms | Allocations: 26868)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 10:06:55 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.7ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"], ["created_at", "2022-04-12 14:06:55.506102"], ["updated_at", "2022-04-12 14:06:55.506102"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.9ms | Allocations: 3834)
-
-
-
-SyntaxError - syntax error, unexpected ':', expecting `end'
-  data-turbo: false
-            ^:
-  app/mailers/application_mailer.rb:12:in `'
-  app/mailers/pathways_mailer.rb:1:in `<top (required)>'
-  app/controllers/pathways_controller.rb:23:in `create'
-
-Started POST "/__better_errors/e70ca5e058f28f13/variables" for 127.0.0.1 at 2022-04-12 10:06:55 -0400
-Started GET "/pathways/new" for 127.0.0.1 at 2022-04-12 10:10:16 -0400
-Processing by PathwaysController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/new.html.erb within layouts/application
-  Rendered pathways/_form.html.erb (Duration: 1.8ms | Allocations: 1661)
-  Rendered pathways/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1779)
-  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 904)
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:4
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 19.4ms | Allocations: 16467)
-  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1446)
-  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 21131)
-Completed 200 OK in 33ms (Views: 20.4ms | ActiveRecord: 7.4ms | Allocations: 26821)
-
-
-Started POST "/pathways" for 127.0.0.1 at 2022-04-12 10:10:53 -0400
-Processing by PathwaysController#create as TURBO_STREAM
-  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf", "pubdate"=>"2022-04-12"}, "commit"=>"Add a pathway"}
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mPathway Create (0.5ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.jpg"], ["pubdate", "2022-04-12"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf"], ["created_at", "2022-04-12 14:10:53.838412"], ["updated_at", "2022-04-12 14:10:53.838412"]]
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/pathways_controller.rb:20:in `create'
-Redirected to http://localhost:5000/pathways
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 311f5a6d-482f-4dad-ad3b-2f88b3078ebb) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f95dee8 @uri=#<URI::GID gid://paul/Pathway/37>>]}
-Completed 302 Found in 15ms (ActiveRecord: 2.2ms | Allocations: 6418)
-
-
-Started GET "/pathways" for 127.0.0.1 at 2022-04-12 10:10:53 -0400
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb] Performing ActionMailer::MailDeliveryJob (Job ID: 311f5a6d-482f-4dad-ad3b-2f88b3078ebb) from Async(default) enqueued at 2022-04-12T14:10:53Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007f933f8e91b0 @uri=#<URI::GID gid://paul/Pathway/37>>]}
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   ↳ app/mailers/pathways_mailer.rb:5:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   [1m[36mMember Pluck (0.4ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   ↳ app/mailers/pathways_mailer.rb:8:in `pathways_created'
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 5.1ms | Allocations: 7784)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb]   Rendered layout layouts/mailer.html.erb (Duration: 5.5ms | Allocations: 7886)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb] PathwaysMailer#pathways_created: processed outbound mail in 14.2ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [311f5a6d-482f-4dad-ad3b-2f88b3078ebb] Error performing ActionMailer::MailDeliveryJob (Job ID: 311f5a6d-482f-4dad-ad3b-2f88b3078ebb) from Async(default) in 17.82ms: ActionView::Template::Error (undefined method `symbolize_keys' for "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1649765040/Easter22Sm_kwylam.pdf":String
-
-        options = options.symbolize_keys
-                         ^^^^^^^^^^^^^^^):
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/helpers/asset_tag_helper.rb:395:in `image_tag'
-/home/tom/paul/app/views/pathways_mailer/pathways_created.html.erb:1:in `_app_views_pathways_mailer_pathways_created_html_erb__759419639757953230_562880'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `public_send'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:244:in `_run'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:157:in `block in render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:361:in `instrument_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/template.rb:155:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:117:in `block in _render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/base.rb:270:in `in_rendering_context'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:116:in `_render_template'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:103:in `render_to_body'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/rendering.rb:25:in `render'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:968:in `block in collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `each'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `map'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
-/home/tom/paul/app/mailers/pathways_mailer.rb:8:in `pathways_created'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
-<internal:kernel>:90:in `tap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
-/home/tom/.rvm/gems/ruby-3.1.1/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
-Processing by PathwaysController#index as TURBO_STREAM
-  Rendering layout layouts/application.html.erb
-  Rendering pathways/index.html.erb within layouts/application
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
-  ↳ app/views/pathways/index.html.erb:2
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
-  ↳ app/views/pathways/index.html.erb:7
-  Rendered pathways/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 6214)
-  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 849)
-  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
-  ↳ app/views/layouts/_navbar.html.erb:11
-  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1659)
-  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1557)
-  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 10732)
-Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.9ms | Allocations: 11477)
-
-
+[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Performed ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) from Async(default) in 143.6ms

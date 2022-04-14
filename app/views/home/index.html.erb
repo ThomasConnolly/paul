@@ -8,9 +8,10 @@
       <%= cl_image_tag("HolyWeekGraphic_nw8m4b.jpg", alt: "holy_week" , width: "100%" ) %>
         <h1>Join us this holy week</h1>
         <%#= cl_image_tag("cross-lent_rhj8ln.jpg", width: "140" , class: "float-start me-4" ) %>
-          <h3>Palm Sunday: April 10, 8 & 10 a.m.<br> 5 p.m. Creole<br>
+          <h3>Palm Sunday: April 10, 8 & 10 a.m.<br> </h3>
+          <p> (5 p.m. in Creole)</p><br>
 
-            Maundy Thursday: April 14, 6 p.m.<br>
+          <h3>Maundy Thursday: April 14, 6 p.m.<br><br>
 
             Good Friday: April 15, noon.<br></h3>
           <p>
@@ -18,7 +19,7 @@
             (Creole service in Trinity Hall)</p>
           <h3>
 
-            Stations of the Cross: 5:30 p.m. in church<br>
+            Stations of the Cross: 5:30 p.m. in church<br><br>
 
             Holy Saturday: April 16, 9 a.m.</h3>
           <p>
@@ -26,16 +27,16 @@
             Brief solemn service</p>
           <h3>
 
-            Easter Vigil: Saturday April 16, 8 p.m.<br>
+            Easter Vigil: Saturday April 16, 8 p.m.<br><br>
 
             Easter Sunday: April 17, Services at 8 & 10 a.m. </h3>
           <p><small>Livestream at 10 a.m. <%= link_to " on YouTube." ,
                 ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %></small></p>
 
-          <p>Gather for a champagne Easter in Trinity Hall between the services</p>
-          <h3>
+          <p>Gather for a champagne Easter in Trinity Hall between the services<br><br>
 
-            5 p.m. Creole Service.</h3>
+
+            (5 p.m. Service in Creole)</p>
 
           <div class="mt-4">
             <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
@@ -193,13 +194,15 @@
           <% end %>
             <p><strong>
                 <%= link_to "Wednesday evening bible study, 6:30 p.m." , "#{@evening_bible.url}" %>
-              </strong> No class on Ash Wednesday. We begin a new series on March 9, examining the culture in the time
+              </strong> In this series we are examining the culture in the time
               of Jesus. Join us in person in the library or through the internet.</strong></p>
             <p><strong>
-                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %>
-              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %> No wine time this week. We'll see you in
+                  church!
+              </strong></p>
+            <!-- </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
               called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
-              third Thursday of the month.</p>
+              third Thursday of the month.</p> -->
             <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
               fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
               everyone.</p>

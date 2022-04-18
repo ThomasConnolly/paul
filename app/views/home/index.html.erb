@@ -5,86 +5,56 @@
 <div class=row>
   <div class="col-md-8 main-body pe-5">
     <div class="clearfix">
-      <%= cl_image_tag("HolyWeekGraphic_nw8m4b.jpg", alt: "holy_week" , width: "100%" ) %>
-        <h1>Join us this holy week</h1>
-        <%#= cl_image_tag("cross-lent_rhj8ln.jpg", width: "140" , class: "float-start me-4" ) %>
-          <h3>Palm Sunday: April 10, 8 & 10 a.m.<br> </h3>
-          <p> (5 p.m. in Creole)</p><br>
-
-          <h3>Maundy Thursday: April 14, 6 p.m.<br><br>
-
-            Good Friday: April 15, noon.<br></h3>
-          <p>
-
-            (Creole service in Trinity Hall)</p>
-          <h3>
-
-            Stations of the Cross: 5:30 p.m. in church<br><br>
-
-            Holy Saturday: April 16, 9 a.m.</h3>
-          <p>
-
-            Brief solemn service</p>
-          <h3>
-
-            Easter Vigil: Saturday April 16, 8 p.m.<br><br>
-
-            Easter Sunday: April 17, Services at 8 & 10 a.m. </h3>
-          <p><small>Livestream at 10 a.m. <%= link_to " on YouTube." ,
-                ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %></small></p>
-
-          <p>Gather for a champagne Easter in Trinity Hall between the services<br><br>
+      <%= cl_image_tag("flower_cross_t7ebth.jpg", alt: "flower_cross" , width: "100%" ) %>
 
 
-            (5 p.m. Service in Creole)</p>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
 
-          <div class="mt-4">
-            <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" ) %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+                grace fearlessly to contend against evil and to make no peace
+                with oppression; and, that we may reverently use our freedom,
+                help us to employ it in the maintenance of justice in our
+                communities and among the nations, to the glory of your holy
+                Name; through Jesus Christ our Lord, who lives and reigns with
+                you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <h1>Join us in worship</h1>
+        <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
+          class: "float-start pe-3" ) %>
 
-              <p><strong>Almighty God, who created us in your own image: Grant us
-                  grace fearlessly to contend against evil and to make no peace
-                  with oppression; and, that we may reverently use our freedom,
-                  help us to employ it in the maintenance of justice in our
-                  communities and among the nations, to the glory of your holy
-                  Name; through Jesus Christ our Lord, who lives and reigns with
-                  you and the Holy Spirit, one God, now and for ever. Amen.</strong>
-              </p>
-              <p class="text-end"> &mdash;Book of Common Prayer</p>
-          </div>
-          <!-- <h1>Join us in worship</h1> -->
-          <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
-            class: "float-start pe-3" ) %>
+          <p>Sundays at 8 a.m. and
+            10 a.m. While masks are no longer required, please be considerate and help keep God's people safe
+            (everyone is a child of God!)</p>
+          <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
+          </p>
+          <% if @bulletin.url.present? %>
+            <p><strong>
+                <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+              </strong></p>
+            <% else %>
+              <p>Sunday's bulletin will be available here on Thursday.</p>
+              <% end %>
 
-            <!-- <p>Sundays at 8 a.m. and
-              10 a.m. While masks are no longer required, please be considerate and help keep God's people safe
-              (everyone is a child of God!)</p> -->
-            <!-- <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
-                ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
-            </p> -->
-            <% if @bulletin.url.present? %>
-              <p><strong>
-                  <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
-                </strong></p>
-              <% else %>
-                <p>Sunday's bulletin will be available here on Thursday.</p>
-                <% end %>
+                <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                    short,
+                    cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                </p>
 
-                  <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
-                    <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
-                      short,
-                      cute introduction to our time-honored <em>Book of Common Prayer.</em>
-                  </p>
-
-                  <p>
-                    <%= link_to "Click here for the on-line Book of Common Prayer" ,
-                      ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
-                      %>
-                  </p>
+                <p>
+                  <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                    ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                    %>
+                </p>
 
 
-                  <p><strong>
-                      <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
-                    </strong> </p>
+                <p><strong>
+                    <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                  </strong> </p>
     </div>
     <%= image_tag("https://s3.amazonaws.com/dfc_attachments/images/3624319/Rev._Scharf.jpeg", alt: "DougScharf" ,
       class: "float-start img-fluid pe-2" , width: "40%" ) %>
@@ -233,7 +203,7 @@
                     <div class="mt-3">
                       <h2>Episcopal News Service</h2>
                       <% @ens_feed.each do |feed| %>
-                        <h5>
+                        cl_image_tag("flower_cross_t7ebth.jpg") <h5>
                           <%= link_to "#{feed.title}" , feed.url %>
                         </h5>
                         <p>

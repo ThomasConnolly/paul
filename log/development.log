@@ -1,18 +1,155 @@
-[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Performing ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) from Async(default) enqueued at 2022-04-14T17:19:29Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   [1m[36mMember Pluck (0.2ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering layout layouts/mailer.html.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 279)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered layout layouts/mailer.html.erb (Duration: 19.5ms | Allocations: 514)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering layout layouts/mailer.text.erb
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendering pathways_mailer/pathways_created.text.erb within layouts/mailer
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered pathways_mailer/pathways_created.text.erb within layouts/mailer (Duration: 1.4ms | Allocations: 96)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98]   Rendered layout layouts/mailer.text.erb (Duration: 3.2ms | Allocations: 292)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] PathwaysMailer#pathways_created: processed outbound mail in 45.6ms
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Delivered mail 625857abe72a3_8e9812a2c8387bc@tom-G7.mail (75.7ms)
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Date: Thu, 14 Apr 2022 13:19:39 -0400
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 49fd89b7-ee05-46a8-9e3b-31f8e1998c7b) to Async(default) with arguments: "MemberMailer", "test", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b] Performing ActionMailer::MailDeliveryJob (Job ID: 49fd89b7-ee05-46a8-9e3b-31f8e1998c7b) from Async(default) enqueued at 2022-04-15T04:19:13Z with arguments: "MemberMailer", "test", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b]   Rendering member_mailer/test.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b]   Rendered member_mailer/test.html.erb within layouts/mailer (Duration: 2.0ms | Allocations: 400)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b]   Rendered layout layouts/mailer.html.erb (Duration: 2.4ms | Allocations: 674)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b] MemberMailer#test: processed outbound mail in 13.7ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b] Delivered mail 6258f241f0ce8_185a11c61a011f5@tom-G7.mail (31.6ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b] Date: Fri, 15 Apr 2022 00:19:13 -0400
+From: Welcome@saintpaulsnaples.org
+To: tom.connolly@comcast.net
+Message-ID: <6258f241f0ce8_185a11c61a011f5@tom-G7.mail>
+Subject: testing
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6258f241f0473_185a11c61a01033";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6258f241f0473_185a11c61a01033
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+test
+
+A test from saint pauls developer.
+----==_mimepart_6258f241f0473_185a11c61a01033
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    
+
+
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>test</title>
+
+
+
+
+
+  <p>A test from saint pauls developer.</p>
+
+
+
+
+  </body>
+</html>
+
+----==_mimepart_6258f241f0473_185a11c61a01033--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [49fd89b7-ee05-46a8-9e3b-31f8e1998c7b] Performed ActionMailer::MailDeliveryJob (Job ID: 49fd89b7-ee05-46a8-9e3b-31f8e1998c7b) from Async(default) in 56.32ms
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 0dcf3347-0157-4529-898d-527d3fe44317) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0dcf3347-0157-4529-898d-527d3fe44317] Performing ActionMailer::MailDeliveryJob (Job ID: 0dcf3347-0157-4529-898d-527d3fe44317) from Async(default) enqueued at 2022-04-15T04:20:12Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0dcf3347-0157-4529-898d-527d3fe44317] PathwaysMailer#pathways_created: processed outbound mail in 0.2ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0dcf3347-0157-4529-898d-527d3fe44317] Error performing ActionMailer::MailDeliveryJob (Job ID: 0dcf3347-0157-4529-898d-527d3fe44317) from Async(default) in 0.83ms: ArgumentError (wrong number of arguments (given 1, expected 0)):
+/home/tom/paul/app/mailers/pathways_mailer.rb:4:in `pathways_created'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
+<internal:kernel>:90:in `tap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 8aeaca84-f0db-4604-9f68-bc0c30e6e692) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692] Performing ActionMailer::MailDeliveryJob (Job ID: 8aeaca84-f0db-4604-9f68-bc0c30e6e692) from Async(default) enqueued at 2022-04-15T04:21:20Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY "pathways"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   [1m[36mMember Pluck (0.3ms)[0m  [1m[34mSELECT "members"."email" FROM "members" WHERE "members"."email" IS NOT NULL[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendering pathways_mailer/pathways_created.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendered pathways_mailer/pathways_created.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 278)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendered layout layouts/mailer.html.erb (Duration: 0.6ms | Allocations: 380)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendering pathways_mailer/pathways_created.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendered pathways_mailer/pathways_created.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 99)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692]   Rendered layout layouts/mailer.text.erb (Duration: 0.6ms | Allocations: 298)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692] PathwaysMailer#pathways_created: processed outbound mail in 43.1ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692] Delivered mail 6258f2c0e3857_185a11c61a013cd@tom-G7.mail (55.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692] Date: Fri, 15 Apr 2022 00:21:20 -0400
 From: NoResponse@SaintPaulsNaples.org
 To: welcome@saintpaulsnaples.org, 
  ACK422@hotmail.com, 
@@ -271,23 +408,23 @@ To: welcome@saintpaulsnaples.org,
  njroy16@gmail.com, 
  Nancyp57@yahoo.com, 
  mewieber@hotmail.com
-Message-ID: <625857abe72a3_8e9812a2c8387bc@tom-G7.mail>
+Message-ID: <6258f2c0e3857_185a11c61a013cd@tom-G7.mail>
 Subject: There's a new Pathways
 Mime-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="--==_mimepart_625857abde79e_8e9812a2c8386e8";
+ boundary="--==_mimepart_6258f2c0deb52_185a11c61a0125";
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
 
-----==_mimepart_625857abde79e_8e9812a2c8386e8
+----==_mimepart_6258f2c0deb52_185a11c61a0125
 Content-Type: text/plain;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
 There's a new Pathways, the St. Paul's parish newsletter. Get it at https://www.saintpaulsnaples.org/pathways
 
-----==_mimepart_625857abde79e_8e9812a2c8386e8
+----==_mimepart_6258f2c0deb52_185a11c61a0125
 Content-Type: text/html;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
@@ -309,174 +446,39 @@ Content-Transfer-Encoding: 7bit
   </body>
 </html>
 
-----==_mimepart_625857abde79e_8e9812a2c8386e8--
+----==_mimepart_6258f2c0deb52_185a11c61a0125--
 
-[ActiveJob] [ActionMailer::MailDeliveryJob] [15b911a0-0ff2-4759-9a29-550007a64c98] Performed ActionMailer::MailDeliveryJob (Job ID: 15b911a0-0ff2-4759-9a29-550007a64c98) from Async(default) in 143.6ms
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:26:39 -0400
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8aeaca84-f0db-4604-9f68-bc0c30e6e692] Performed ActionMailer::MailDeliveryJob (Job ID: 8aeaca84-f0db-4604-9f68-bc0c30e6e692) from Async(default) in 104.7ms
+Started GET "/" for 127.0.0.1 at 2022-04-18 00:20:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  [1m[36mLink Load (1.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:232
-  Rendered home/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 5722)
-  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1131)
-  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 1613)
-  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1670)
-  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 11249)
-Completed 200 OK in 41ms (Views: 12.6ms | ActiveRecord: 5.7ms | Allocations: 29236)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:27:42 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.7ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:233
-  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4028)
-  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1129)
-  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1582)
-  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 1746)
-  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 9573)
-Completed 200 OK in 46ms (Views: 23.7ms | ActiveRecord: 4.9ms | Allocations: 14525)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:28:55 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:8:in `index'
   [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:9:in `index'
   [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPathway Load (1.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:12:in `index'
   Rendering layout layouts/application.html.erb
   Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:233
-  Rendered home/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4028)
-  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1129)
-  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 1582)
-  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 1745)
-  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 9570)
-Completed 200 OK in 34ms (Views: 20.2ms | ActiveRecord: 3.4ms | Allocations: 14483)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:31:26 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:233
-  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4029)
-  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1129)
-  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 1582)
-  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 1745)
-  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 9571)
-Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 2.6ms | Allocations: 14493)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:32:56 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:233
-  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4031)
-  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1129)
-  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 1582)
-  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1749)
-  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9578)
-Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 1.8ms | Allocations: 14517)
-
-
-Started GET "/" for 127.0.0.1 at 2022-04-14 13:37:06 -0400
-Processing by HomeController#index as HTML
-  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:5:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:7:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:9:in `index'
-  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:10:in `index'
-  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:11:in `index'
-  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:12:in `index'
-  Rendering layout layouts/application.html.erb
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
-  ↳ app/views/home/index.html.erb:235
-  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4031)
-  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1129)
-  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 1582)
-  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1745)
-  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 9573)
-Completed 200 OK in 38ms (Views: 18.1ms | ActiveRecord: 4.3ms | Allocations: 14468)
+  [1m[36mEnsFeed Load (10.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:205
+  Rendered home/index.html.erb within layouts/application (Duration: 54.3ms | Allocations: 11442)
+  Rendered layouts/_header.html.erb (Duration: 3.5ms | Allocations: 1162)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (2.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 104.8ms | Allocations: 26155)
+  Rendered layouts/_footer.html.erb (Duration: 3.9ms | Allocations: 1670)
+  Rendered layout layouts/application.html.erb (Duration: 171.2ms | Allocations: 41810)
+Completed 200 OK in 293ms (Views: 143.9ms | ActiveRecord: 66.9ms | Allocations: 69842)
 
 

@@ -11,24 +11,22 @@ Rails.application.routes.draw do
   end
   root to: 'home#index'
 
-  resources :shots
-  resources :surveys
-  resources :thankfuls
-
   post '/webhook_events', to: 'webhook_events#create'
+
+  resources :donations
 
   get 'checkout', to: 'checkout#show'
   post 'create', to: 'checkout#create', as: 'checkout/create'
   get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   get 'success', to: 'checkout#success', as: 'checkout_success'
 
-  resources :donations
+ 
 
   resources :pledges
 
-  post 'create', to: 'payment#create', as: 'payment_create'
-  get 'cancel', to: 'payment#cancel', as: 'payment_cancel'
-  get 'success', to: 'payment#success', as: 'payment_success'
+  post 'create', to: 'pledge_checkout#create', as: 'payment_create'
+  get 'cancel', to: 'pledge_checkout#cancel', as: 'payment_cancel'
+  get 'success', to: 'pledge_checkout#success', as: 'payment_success'
 
   scope '/checkout_tickets' do
     post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'

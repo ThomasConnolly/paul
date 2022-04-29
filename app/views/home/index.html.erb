@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
-  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
+  <%#= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
     %>
 </div>
 <div class=row>
@@ -25,10 +25,7 @@
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
 
-          <p>Sundays at 8 a.m. and
-            10 a.m. While masks are no longer required, please be considerate and help keep God's people safe
-            (everyone is a child of God!)</p>
-          <p>Our 10 a.m. service is live-streamed to <%= link_to "YouTube." ,
+          <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
               ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
           </p>
           <% if @bulletin.url.present? %>
@@ -82,12 +79,9 @@
 
 
       <h2 class="mt-3">Reflect and Connect </h2>
-      <p>This is a new small group that will meet at 10 a.m. Wednesdays in the library to ponder and discuss the
-        lessons
-        delivered the previous Sunday morning. No need to sign up, and sessions are stand-alone, meaning you can
-        come any
-        Wednesday without feeling "behind." All are welcome to sit in and participate
-        fully or simply audit.</p>
+      <p>This group meets at 10 a.m. Wednesdays in the library to watch and discuss the
+        series, <em> Chosen. </em> We're just now starting the series, so newcomers won't feel lost. All are welcome to
+        sit in and participate fully or to simply audit.</p>
       <h2 class="mt-3">Sacred Ground Series</h2>
       <p>This is a series of videos, readings and small-group discussions about race. This is highly
         recommended if you have questions about "critical race theory," a topic needlessly politicized. To
@@ -98,10 +92,12 @@
           <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%" ) %>
 
             <h2 class="mt-3">Home of the great Farmers' Market</h2>
+            <p>Now closed until November. If you are a prospective vendor, please call the office, as we are looking for
+              certain vendors for the 2022-23 market year.</p>
 
             <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
-              introduce yourself to new friends and have a hot dog, on us! The market is now open, through
-              April 9, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
+              introduce yourself to new friends and have a hot dog, on us! The market is open November through
+              April, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
             </p>
             <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
             </p>
@@ -152,7 +148,7 @@
 
       <h2 class="mt-3">All the links</h2>
       <p><strong>
-          <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+          <%= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
         </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
         link.</p>
       <% if @bulletin.url.present? %>

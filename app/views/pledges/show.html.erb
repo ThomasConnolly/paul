@@ -1,6 +1,6 @@
 <div class="container row mt-5">
   <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-    <p><strong> You have elected to donate $<%=@pledge.dollars%>.00 <span id="plan"><em>
+    <p><strong> You have elected to donate $<%= @pledge.dollars %><span id="plan"><em>
               <%= @pledge.plan %>
             </em></span> in your stewardship of St. Paul's.</strong></p>
 
@@ -13,10 +13,11 @@
     </div>
 
     <% if current_user==@pledge.user %>
+      button_to "Delete my pledge" , pledge_path(@pledge), class: "btn btn-lg btn-danger" , data: { turbo_method:
+      :delete, turbo_confirm: 'Are y
       <div class="text-center my-5" max-width="800px">
-        <%= button_to("Edit", edit_pledge_path(@pledge), class: "btn btn-lg btn-success" ) %> &nbsp; <%=
-            button_to "Delete my pledge" , pledge_path(@pledge), class: "btn btn-lg btn-danger" , data: { turbo_method:
-            :delete, turbo_confirm: 'Are you sure? This will delete your pledge.' } %>
+        <%= button_to("Edit", edit_pledge_path(@pledge), class: "btn btn-lg btn-success" ) %> &nbsp; <%=ou sure? This
+            will delete your pledge.' } %>
       </div>
       <% end %>
 

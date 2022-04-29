@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CheckoutController < ApplicationController
+class DonationCheckoutController < ApplicationController
   protect_from_forgery except: :webhook
   before_action :authenticate_user!
 
@@ -11,7 +11,7 @@ class CheckoutController < ApplicationController
       return
     end
     checkout_session = Stripe::Checkout::Session.create({
-                                                          success_url: "#{payment_success_url}?session_id={CHECKOUT_SESSION_ID}",
+                                                          success_url: "#{donation_checkout_success_url}?session_id={CHECKOUT_SESSION_ID}",
                                                           cancel_url: donations_url,
                                                           payment_method_types: ['card'],
                                                           submit_type: 'donate',

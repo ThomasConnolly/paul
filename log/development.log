@@ -539,3 +539,1631 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 34ms (Views: 17.8ms | ActiveRecord: 3.4ms | Allocations: 14603)
 
 
+Started GET "/" for 127.0.0.1 at 2022-04-18 14:18:32 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:205
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2527)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 844)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 840)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1561)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6190)
+Completed 200 OK in 23ms (Views: 6.5ms | ActiveRecord: 5.3ms | Allocations: 13009)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:21:01 -0400
+Processing by DonationsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 547)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-04-18 14:21:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 708)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 12584)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 911)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 870)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1569)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 16445)
+Completed 200 OK in 51ms (Views: 36.4ms | ActiveRecord: 3.7ms | Allocations: 28261)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:21:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"tom.connolly@comcast.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'tom.connolly@comcast.net' OR lower(email) = 'tom.connolly@comcast.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 645], ["current_sign_in_at", "2022-04-18 18:21:06.909550"], ["last_sign_in_at", "2022-04-12 03:48:46.920423"], ["updated_at", "2022-04-18 18:21:06.910097"], ["id", 16]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/donations/new
+Completed 302 Found in 70ms (ActiveRecord: 4.6ms | Allocations: 10720)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:21:06 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 2.7ms | Allocations: 1819)
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2231)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 919)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 18.3ms | Allocations: 14354)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1443)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 19513)
+Completed 200 OK in 39ms (Views: 22.7ms | ActiveRecord: 5.1ms | Allocations: 26932)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-18 14:21:16 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"150", "memo"=>""}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Completed 500 Internal Server Error in 527ms (ActiveRecord: 1.7ms | Allocations: 10456)
+
+
+
+Stripe::InvalidRequestError - No such product: 'prod_EP0UOHa0sNeorA'; a similar object exists in live mode, but a test mode key was used to make this request.:
+  app/models/donation.rb:37:in `set_stripe_id'
+  app/controllers/donations_controller.rb:23:in `create'
+
+Started POST "/__better_errors/bf688b9e86b73c82/variables" for 127.0.0.1 at 2022-04-18 14:21:16 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ (eval):72:in `block in render'
+Started GET "/" for 127.0.0.1 at 2022-04-18 14:24:28 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:205
+  Rendered home/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 4788)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 861)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 19.9ms | Allocations: 16292)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1445)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 23953)
+Completed 200 OK in 57ms (Views: 23.9ms | ActiveRecord: 15.5ms | Allocations: 40357)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:24:35 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 1.6ms | Allocations: 1297)
+  Rendered donations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1386)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 913)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1814)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1512)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 6148)
+Completed 200 OK in 17ms (Views: 6.7ms | ActiveRecord: 3.3ms | Allocations: 11780)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-18 14:24:41 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"175", "memo"=>""}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mDonation Create (7.5ms)[0m  [1m[32mINSERT INTO "donations" ("user_id", "created_at", "updated_at", "type", "stripe_id", "amount", "dollars", "status", "memo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 16], ["created_at", "2022-04-18 18:24:42.156648"], ["updated_at", "2022-04-18 18:24:42.156648"], ["type", nil], ["stripe_id", "price_1KpzFdHiibShxDkjqic4Vi2A"], ["amount", 17500], ["dollars", 175], ["status", nil], ["memo", ""]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Redirected to http://localhost:5000/donations/201
+Completed 302 Found in 589ms (ActiveRecord: 10.1ms | Allocations: 11550)
+
+
+Started GET "/donations/201" for 127.0.0.1 at 2022-04-18 14:24:42 -0400
+Processing by DonationsController#show as HTML
+  Parameters: {"id"=>"201"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:53:in `set_donation'
+  Rendering layout layouts/application.html.erb
+  Rendering donations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/donations/show.html.erb:2
+  Rendered donations/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2926)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 886)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 1764)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 7528)
+Completed 200 OK in 30ms (Views: 18.0ms | ActiveRecord: 3.3ms | Allocations: 11256)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-04-18 14:24:45 -0400
+Processing by CheckoutController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"201"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:18:in `create'
+Redirected to https://checkout.stripe.com/pay/cs_test_a155sJcjRXt1wYQaMj2XfTh50mLBCpMn7dDpmic0MhBQrjr94nBO4EuydZ#fidkdWxOYHwnPyd1blpxYHZxWmw2V3w3bEJCdFRMXV9sU3JPN2BsaEtKSCcpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 810ms (ActiveRecord: 0.7ms | Allocations: 6009)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:25:09 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 2.5ms | Allocations: 1144)
+  Rendered donations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1222)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 875)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.0ms | Allocations: 1635)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5725)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.8ms | Allocations: 7433)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-18 14:25:12 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:205
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2536)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 844)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 2457)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7811)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 2.4ms | Allocations: 12063)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:25:18 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 1.2ms | Allocations: 1037)
+  Rendered donations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1109)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 843)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1625)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5547)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 7212)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-04-18 14:27:29 -0400
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.9ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+Redirected to http://localhost:5000/pledges/66
+Filter chain halted as :change_path rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms | Allocations: 10226)
+
+
+Started GET "/pledges/66" for 127.0.0.1 at 2022-04-18 14:27:29 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 3532)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 903)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1677)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 8085)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 12165)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-04-18 14:27:48 -0400
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+Redirected to http://localhost:5000/pledges/66
+Filter chain halted as :change_path rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1912)
+
+
+Started GET "/pledges/66" for 127.0.0.1 at 2022-04-18 14:27:48 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1168)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 844)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1625)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 5605)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 1.0ms | Allocations: 7829)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-04-18 14:27:55 -0400
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:5000/pledges/66
+Completed 303 See Other in 23ms (ActiveRecord: 0.2ms | Allocations: 3464)
+
+
+Started GET "/pledges/66" for 127.0.0.1 at 2022-04-18 14:27:55 -0400
+Processing by PledgesController#show as TURBO_STREAM
+  Parameters: {"id"=>"66"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-04-18 14:27:55 -0400
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2131)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 905)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 870)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1621)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6034)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 7132)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'frank pierce' OR lower(email) = 'frank pierce') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.8ms | Allocations: 1276)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1767)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1605)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5386)
+Completed 200 OK in 103ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6038)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'frank pierce' OR lower(email) = 'frank pierce') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms | Allocations: 1024)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5376)
+Completed 200 OK in 97ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'frank pierce' OR lower(email) = 'frank pierce') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.4ms | Allocations: 1018)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5376)
+Completed 200 OK in 98ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5954)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'frank pierce' OR lower(email) = 'frank pierce') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1021)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"frank pierce", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5376)
+Completed 200 OK in 100ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'pay@stripe.net' OR lower(email) = 'pay@stripe.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms | Allocations: 1033)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5376)
+Completed 200 OK in 97ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:28:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'pay@stripe.net' OR lower(email) = 'pay@stripe.net') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms | Allocations: 1045)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"pay@stripe.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 98ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:29:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"john@stripe.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'john@stripe.com' OR lower(email) = 'john@stripe.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.6ms | Allocations: 1045)
+
+
+Processing by SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"john@stripe.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1764)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 843)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 772)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5376)
+Completed 200 OK in 101ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-18 14:30:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"jackie coogan", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'jackie coogan' OR lower(email) = 'jackie coogan') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 3], ["current_sign_in_at", "2022-04-18 18:30:30.026350"], ["last_sign_in_at", "2022-02-26 17:27:15.657347"], ["updated_at", "2022-04-18 18:30:30.026569"], ["id", 625]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/pledges/66
+Completed 302 Found in 101ms (ActiveRecord: 3.1ms | Allocations: 6302)
+
+
+Started GET "/pledges/66" for 127.0.0.1 at 2022-04-18 14:30:30 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 945)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 844)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 1582)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5341)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.9ms | Allocations: 7524)
+
+
+Started GET "/pledges" for 127.0.0.1 at 2022-04-18 14:30:45 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for PledgesController:
+
+Started POST "/__better_errors/1f5ddf523bbb7953/variables" for 127.0.0.1 at 2022-04-18 14:30:45 -0400
+Started GET "/donations" for 127.0.0.1 at 2022-04-18 14:31:02 -0400
+Processing by DonationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+Redirected to http://localhost:5000/
+Filter chain halted as :authenticate_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1793)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-18 14:31:02 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:205
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2592)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 849)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 2436)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1565)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 7893)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 2.0ms | Allocations: 12206)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-18 14:31:06 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 1.8ms | Allocations: 1125)
+  Rendered donations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1197)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 843)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5586)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 7303)
+
+
+Started GET "/pledgess/new" for 127.0.0.1 at 2022-04-18 14:31:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledgess/new"):
+  
+Started GET "/pledges/new" for 127.0.0.1 at 2022-04-18 14:31:28 -0400
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+Redirected to http://localhost:5000/pledges/76
+Filter chain halted as :change_path rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 2085)
+
+
+Started GET "/pledges/76" for 127.0.0.1 at 2022-04-18 14:31:28 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1198)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 875)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 1578)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1569)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5649)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 7850)
+
+
+Started GET "/pledges/76" for 127.0.0.1 at 2022-04-18 14:33:52 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.5ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1704)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 1173)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 7.1ms | Allocations: 2309)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 8002)
+Completed 200 OK in 31ms (Views: 23.1ms | ActiveRecord: 1.8ms | Allocations: 10750)
+
+
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+Started GET "/pledges/76" for 127.0.0.1 at 2022-04-18 14:45:36 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (1.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1706)
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 1173)
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 7.6ms | Allocations: 2337)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 8032)
+Completed 200 OK in 95ms (Views: 32.9ms | ActiveRecord: 22.3ms | Allocations: 13396)
+
+
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Update (1.1ms)[0m  [1m[33mUPDATE "pledges" SET "updated_at" = $1, "plan" = $2, "plan_id" = $3 WHERE "pledges"."id" = $4[0m  [["updated_at", "2022-04-18 18:47:15.447428"], ["plan", "weekly"], ["plan_id", "prod_KjCFArWfGU2HFW"], ["id", 76]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/pledges/76" for 127.0.0.1 at 2022-04-18 14:47:26 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1165)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 844)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 5553)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 1.0ms | Allocations: 7837)
+
+
+Started GET "/pledges/75" for 127.0.0.1 at 2022-04-18 14:48:11 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"75"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 2910)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Pledge with 'id'=75:
+  app/controllers/pledges_controller.rb:44:in `set_pledge'
+
+Started POST "/__better_errors/9a37eef1fde17af7/variables" for 127.0.0.1 at 2022-04-18 14:48:11 -0400
+Started GET "/pledges/74" for 127.0.0.1 at 2022-04-18 14:48:18 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"74"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 373], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 974)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 876)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1589)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1566)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5442)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 1.3ms | Allocations: 7913)
+
+
+Started GET "/pledges/73" for 127.0.0.1 at 2022-04-18 14:48:29 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 610], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 913)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 844)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5301)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.9ms | Allocations: 7466)
+
+
+Started GET "/pledges/72" for 127.0.0.1 at 2022-04-18 14:48:40 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 608], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 913)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 844)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5301)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 1.2ms | Allocations: 7470)
+
+
+Started GET "/pledges/71" for 127.0.0.1 at 2022-04-18 14:48:51 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 607], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 913)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 844)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5301)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.9ms | Allocations: 7481)
+
+
+Started GET "/pledges/70" for 127.0.0.1 at 2022-04-18 14:49:12 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.1ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 543], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 913)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 844)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 1576)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5301)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 7461)
+
+
+Started GET "/pledges/69" for 127.0.0.1 at 2022-04-18 14:49:25 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 2856)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Pledge with 'id'=69:
+  app/controllers/pledges_controller.rb:44:in `set_pledge'
+
+Started POST "/__better_errors/a5f9ddf9405bfe5c/variables" for 127.0.0.1 at 2022-04-18 14:49:26 -0400
+Started GET "/pledges/68" for 127.0.0.1 at 2022-04-18 14:49:38 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"68"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 379], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 974)
+  Rendered layouts/_header.html.erb (Duration: 9.9ms | Allocations: 876)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 14.6ms | Allocations: 1589)
+  Rendered layouts/_footer.html.erb (Duration: 15.8ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 5439)
+Completed 200 OK in 74ms (Views: 54.7ms | ActiveRecord: 1.0ms | Allocations: 7875)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-04-18 15:06:40 -0400
+Processing by CheckoutController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"68"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 567ms (ActiveRecord: 5.1ms | Allocations: 7852)
+
+
+
+Stripe::InvalidRequestError - No such price: 'pi_1HobrWHiibShxDkjQR1AbPPi':
+  app/controllers/checkout_controller.rb:13:in `create'
+
+Started POST "/__better_errors/7adc7d5b2c848d74/variables" for 127.0.0.1 at 2022-04-18 15:06:40 -0400
+Started POST "/__better_errors/a5f9ddf9405bfe5c/variables" for 127.0.0.1 at 2022-04-18 15:06:48 -0400
+Started POST "/create" for 127.0.0.1 at 2022-04-18 15:07:09 -0400
+Processing by CheckoutController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"70"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 304], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 532ms (ActiveRecord: 1.2ms | Allocations: 5563)
+
+
+
+Stripe::InvalidRequestError - No such price: 'pi_1IDX3uHiibShxDkjnPgd6qGD':
+  app/controllers/checkout_controller.rb:13:in `create'
+
+Started POST "/__better_errors/09908e1585a0a889/variables" for 127.0.0.1 at 2022-04-18 15:07:10 -0400
+Started POST "/__better_errors/09908e1585a0a889/eval" for 127.0.0.1 at 2022-04-18 18:03:26 -0400
+Started GET "/" for 127.0.0.1 at 2022-04-25 21:11:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (6.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:202
+  Rendered home/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 11436)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1162)
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 1739)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1722)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 17407)
+Completed 200 OK in 90ms (Views: 29.2ms | ActiveRecord: 23.9ms | Allocations: 45144)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-25 21:21:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DonationsController#new as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 4808)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-04-25 21:21:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 720)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.1ms | Allocations: 12924)
+  Rendered layouts/_header.html.erb (Duration: 8.5ms | Allocations: 5171)
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 1665)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1811)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 22777)
+Completed 200 OK in 67ms (Views: 50.7ms | ActiveRecord: 4.6ms | Allocations: 37713)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-04-25 21:21:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Thomas Connolly", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'thomas connolly' OR lower(email) = 'thomas connolly') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 646], ["current_sign_in_at", "2022-04-26 01:21:22.947601"], ["last_sign_in_at", "2022-04-18 18:21:06.909550"], ["updated_at", "2022-04-26 01:21:22.947975"], ["id", 16]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/donations/new
+Completed 302 Found in 75ms (ActiveRecord: 8.2ms | Allocations: 14018)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-25 21:21:22 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 2.8ms | Allocations: 1823)
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2236)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 919)
+  [1m[36mProfile Load (2.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 37.7ms | Allocations: 14450)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 19618)
+Completed 200 OK in 57ms (Views: 39.6ms | ActiveRecord: 7.7ms | Allocations: 27377)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-25 21:21:33 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"12", "memo"=>""}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mDonation Create (7.5ms)[0m  [1m[32mINSERT INTO "donations" ("user_id", "created_at", "updated_at", "type", "stripe_id", "amount", "dollars", "status", "memo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 16], ["created_at", "2022-04-26 01:21:34.792598"], ["updated_at", "2022-04-26 01:21:34.792598"], ["type", nil], ["stripe_id", "price_1Ksd5uHiibShxDkjGl4gSGYx"], ["amount", 1200], ["dollars", 12], ["status", nil], ["memo", ""]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Redirected to http://localhost:5000/donations/202
+Completed 302 Found in 832ms (ActiveRecord: 10.1ms | Allocations: 12211)
+
+
+Started GET "/donations/202" for 127.0.0.1 at 2022-04-25 21:21:34 -0400
+Processing by DonationsController#show as HTML
+  Parameters: {"id"=>"202"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:53:in `set_donation'
+  Rendering layout layouts/application.html.erb
+  Rendering donations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/donations/show.html.erb:2
+  Rendered donations/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 2934)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 886)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 1764)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1485)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 7535)
+Completed 200 OK in 35ms (Views: 22.3ms | ActiveRecord: 3.1ms | Allocations: 11265)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-04-25 21:21:37 -0400
+Processing by CheckoutController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"202"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:18:in `create'
+Redirected to https://checkout.stripe.com/pay/cs_test_a1HwxgV8f1Wr1SVedcctCQm9GoHMPHQwLMTmUB0AYhockToLwDLbUyaENZ#fidkdWxOYHwnPyd1blpxYHZxWmw2V3w3bEJCdFRMXV9sU3JPN2BsaEtKSCcpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 1090ms (ActiveRecord: 2.7ms | Allocations: 5996)
+
+
+Started GET "/success?session_id=cs_test_a1HwxgV8f1Wr1SVedcctCQm9GoHMPHQwLMTmUB0AYhockToLwDLbUyaENZ" for 127.0.0.1 at 2022-04-25 21:22:41 -0400
+Processing by CheckoutController#success as HTML
+  Parameters: {"session_id"=>"cs_test_a1HwxgV8f1Wr1SVedcctCQm9GoHMPHQwLMTmUB0AYhockToLwDLbUyaENZ"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering checkout/success.html.erb within layouts/application
+  Rendered checkout/success.html.erb within layouts/application (Duration: 2.5ms | Allocations: 264)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 905)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1826)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1552)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5102)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.8ms | Allocations: 7149)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-04-25 21:23:02 -0400
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.9ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+Redirected to http://localhost:5000/pledges/66
+Filter chain halted as :change_path rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 3.6ms | Allocations: 10198)
+
+
+Started GET "/pledges/66" for 127.0.0.1 at 2022-04-25 21:23:02 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.2ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3532)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 903)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1677)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 8085)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 0.9ms | Allocations: 12152)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-04-25 21:23:48 -0400
+Processing by CheckoutController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"66"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 465], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 525ms (ActiveRecord: 1.3ms | Allocations: 5436)
+
+
+
+Stripe::InvalidRequestError - No such price: 'pi_1Hl2HnHiibShxDkjAhdx2m0k':
+  app/controllers/checkout_controller.rb:13:in `create'
+
+Started POST "/__better_errors/3d00fcc420168b48/variables" for 127.0.0.1 at 2022-04-25 21:23:49 -0400
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NOT NULL[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 222], ["LIMIT", 1]]
+  [1m[36mPledge Load (1.0ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 222], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-04-27 06:55:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (12.1ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 11441)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1162)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 34.0ms | Allocations: 26067)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1670)
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 41721)
+Completed 200 OK in 120ms (Views: 52.2ms | ActiveRecord: 32.7ms | Allocations: 69646)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-27 06:55:22 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 35.6ms | Allocations: 15369)
+  Rendered donations/new.html.erb within layouts/application (Duration: 36.5ms | Allocations: 15783)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 919)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1765)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1512)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 20518)
+Completed 200 OK in 52ms (Views: 42.0ms | ActiveRecord: 2.7ms | Allocations: 27478)
+
+
+Started GET "/pledges/new" for 127.0.0.1 at 2022-04-27 06:55:47 -0400
+Processing by PledgesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:48:in `change_path'
+Redirected to http://localhost:5000/pledges/76
+Filter chain halted as :change_path rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 3.3ms | Allocations: 10265)
+
+
+Started GET "/pledges/76" for 127.0.0.1 at 2022-04-27 06:55:47 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.3ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:44:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/pledges/show.html.erb:15
+  Rendered pledges/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3667)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 903)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 1626)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 8170)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 12256)
+
+
+  [1m[36mPledge Load (0.4ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."stripe_id" IS NOT NULL[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 465], ["LIMIT", 1]]
+Started GET "/users/edit" for 127.0.0.1 at 2022-04-27 09:15:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 404 Not Found in 21ms (ActiveRecord: 4.6ms | Allocations: 13612)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=edit:
+  app/controllers/users_controller.rb:59:in `set_user'
+
+Started POST "/__better_errors/84be34fee9442934/variables" for 127.0.0.1 at 2022-04-27 09:15:58 -0400
+Started GET "/" for 127.0.0.1 at 2022-04-28 11:29:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (5.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 12078)
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1363)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 38.6ms | Allocations: 26406)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1722)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 43021)
+Completed 200 OK in 122ms (Views: 55.0ms | ActiveRecord: 31.6ms | Allocations: 70938)
+
+
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-28 11:29:26 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 39.4ms | Allocations: 15623)
+  Rendered donations/new.html.erb within layouts/application (Duration: 40.4ms | Allocations: 16040)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1120)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 2098)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1566)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 21434)
+Completed 200 OK in 61ms (Views: 46.9ms | ActiveRecord: 3.9ms | Allocations: 28412)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-28 11:29:40 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"15", "memo"=>"No memo"}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Completed 500 Internal Server Error in 522ms (ActiveRecord: 1.6ms | Allocations: 10657)
+
+
+
+Stripe::InvalidRequestError - No such product: 'prod_EP0UOHa0sNeorA'; a similar object exists in live mode, but a test mode key was used to make this request.:
+  app/models/donation.rb:37:in `set_stripe_id'
+  app/controllers/donations_controller.rb:23:in `create'
+
+Started POST "/__better_errors/4180b3ffeb601c88/variables" for 127.0.0.1 at 2022-04-28 11:29:41 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ (eval):72:in `block in render'
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-28 11:30:06 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 3.7ms | Allocations: 1413)
+  Rendered donations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1491)
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 1081)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 1938)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 6633)
+Completed 200 OK in 21ms (Views: 13.4ms | ActiveRecord: 1.2ms | Allocations: 8488)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-28 11:32:36 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"15", "memo"=>"No memo"}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mDonation Create (6.9ms)[0m  [1m[32mINSERT INTO "donations" ("user_id", "created_at", "updated_at", "type", "stripe_id", "amount", "dollars", "status", "memo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 625], ["created_at", "2022-04-28 15:32:37.645150"], ["updated_at", "2022-04-28 15:32:37.645150"], ["type", nil], ["stripe_id", "price_1KtZKbHiibShxDkjqJEabnAu"], ["amount", 1500], ["dollars", 15], ["status", nil], ["memo", "No memo"]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Redirected to http://localhost:5000/donations/203
+Completed 302 Found in 623ms (ActiveRecord: 14.1ms | Allocations: 24063)
+
+
+Started GET "/donations/203" for 127.0.0.1 at 2022-04-28 11:32:37 -0400
+Processing by DonationsController#show as HTML
+  Parameters: {"id"=>"203"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:53:in `set_donation'
+  Rendering layout layouts/application.html.erb
+  Rendering donations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/donations/show.html.erb:2
+  Rendered donations/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3271)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1108)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 11.4ms | Allocations: 10849)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1503)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 17361)
+Completed 200 OK in 36ms (Views: 24.8ms | ActiveRecord: 4.4ms | Allocations: 21433)
+
+
+Started POST "/create" for 127.0.0.1 at 2022-04-28 11:32:41 -0400
+Processing by DonationCheckoutController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"203"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/donation_checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/donation_checkout_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 937ms (ActiveRecord: 0.9ms | Allocations: 11659)
+
+
+
+NameError - undefined local variable or method `donation_checkout_session' for #<DonationCheckoutController:0x00000000056180>
+    redirect_to donation_checkout_session.url, allow_other_host: true
+                ^^^^^^^^^^^^^^^^^^^^^^^^^:
+  app/controllers/donation_checkout_controller.rb:34:in `create'
+
+Started POST "/__better_errors/c4725cc29e71c86b/variables" for 127.0.0.1 at 2022-04-28 11:32:42 -0400
+Started POST "/create" for 127.0.0.1 at 2022-04-28 11:34:21 -0400
+Processing by DonationCheckoutController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"203"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/donation_checkout_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/donation_checkout_controller.rb:18:in `create'
+Redirected to https://checkout.stripe.com/pay/cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3#fidkdWxOYHwnPyd1blpxYHZxWmw2V3w3bEJCdFRMXV9sU3JPN2BsaEtKSCcpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 911ms (ActiveRecord: 5.3ms | Allocations: 20436)
+
+
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 11:35:11 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/d4224f05ab221b4c/variables" for 127.0.0.1 at 2022-04-28 11:35:12 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 11:37:30 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/f2b13eebe595183e/variables" for 127.0.0.1 at 2022-04-28 11:37:31 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 11:40:39 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/8f061b1df1b15997/variables" for 127.0.0.1 at 2022-04-28 11:40:40 -0400
+Started POST "/__better_errors/8f061b1df1b15997/variables" for 127.0.0.1 at 2022-04-28 11:42:47 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 11:42:51 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/11056137858a909b/variables" for 127.0.0.1 at 2022-04-28 11:42:51 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 11:43:40 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/eb5908a355a53129/variables" for 127.0.0.1 at 2022-04-28 11:43:40 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 12:57:33 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/e1c70c751ca31c95/variables" for 127.0.0.1 at 2022-04-28 12:57:33 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 12:57:38 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/4966cfa7ebbc4ae7/variables" for 127.0.0.1 at 2022-04-28 12:57:38 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 14:00:30 -0400
+
+ActionController::RoutingError - uninitialized constant DonationController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  DonationsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/3eb54b6ade2b2a74/variables" for 127.0.0.1 at 2022-04-28 14:00:31 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 14:03:51 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/6b8a8dfe9ab60e5b/variables" for 127.0.0.1 at 2022-04-28 14:03:51 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 15:23:03 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/e74f81c70258bb14/variables" for 127.0.0.1 at 2022-04-28 15:23:03 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 15:23:42 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/457c998c404d7293/variables" for 127.0.0.1 at 2022-04-28 15:23:42 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 15:24:24 -0400
+
+AbstractController::ActionNotFound - The action 'success' could not be found for DonationCheckoutController:
+
+Started POST "/__better_errors/9adcb6f98efb5b83/variables" for 127.0.0.1 at 2022-04-28 15:24:24 -0400
+Started GET "/success?session_id=cs_test_a1IQrkeTs17bm1JBK6M24BNObVCSO5TDk73mx2gr8E2qfarHKcQLeGHtD3" for 127.0.0.1 at 2022-04-28 15:25:11 -0400
+
+ActionController::RoutingError - uninitialized constant CheckoutController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CheckoutTicketsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/1da084d9d07d7482/variables" for 127.0.0.1 at 2022-04-28 15:25:11 -0400
+  [1m[36mWebhookEvent Load (6.5ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" ORDER BY "webhook_events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (6.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-04-29 11:14:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (5.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 12079)
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1363)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 40.0ms | Allocations: 26406)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1722)
+  Rendered layout layouts/application.html.erb (Duration: 68.8ms | Allocations: 43022)
+Completed 200 OK in 125ms (Views: 55.6ms | ActiveRecord: 31.5ms | Allocations: 70953)
+
+
+Started GET "/pledge/checkout/success" for 127.0.0.1 at 2022-04-29 11:14:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge/checkout/success"):
+  
+Started GET "/pledge/checkout" for 127.0.0.1 at 2022-04-29 11:15:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge/checkout"):
+  
+Started GET "/pledge/checkout.success" for 127.0.0.1 at 2022-04-29 11:15:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge/checkout.success"):
+  
+Started GET "/pledge/checkout" for 127.0.0.1 at 2022-04-29 11:15:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge/checkout"):
+  
+Started GET "/pledge_checkout" for 127.0.0.1 at 2022-04-29 11:16:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge_checkout"):
+  
+Started POST "/webhook_events" for 127.0.0.1 at 2022-04-29 11:32:42 -0400
+Started POST "/webhook_events" for 127.0.0.1 at 2022-04-29 11:32:42 -0400
+Processing by WebhookEventsController#create as XML
+Processing by WebhookEventsController#create as XML
+  Parameters: {"id"=>"evt_3KtZKfHiibShxDkj1mrgJEIn", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1651246362, "data"=>{"object"=>{"id"=>"pi_3KtZKfHiibShxDkj1rRQRj7C", "object"=>"payment_intent", "amount"=>1500, "amount_capturable"=>0, "amount_details"=>{"tip"=>{"amount"=>nil}}, "amount_received"=>0, "application"=>nil, "application_fee_amount"=>nil, "automatic_payment_methods"=>nil, "canceled_at"=>1651246362, "cancellation_reason"=>"automatic", "capture_method"=>"automatic", "charges"=>{"object"=>"list", "data"=>[], "has_more"=>false, "total_count"=>0, "url"=>"/v1/charges?payment_intent=pi_3KtZKfHiibShxDkj1rRQRj7C"}, "client_secret"=>"[FILTERED]", "confirmation_method"=>"automatic", "created"=>1651159961, "currency"=>"usd", "customer"=>"cus_LBKeYGhffqGorI", "description"=>nil, "invoice"=>nil, "last_payment_error"=>nil, "livemode"=>false, "metadata"=>{"donation_id"=>"203"}, "next_action"=>nil, "on_behalf_of"=>nil, "payment_method"=>nil, "payment_method_options"=>{"card"=>{"installments"=>nil, "mandate_options"=>nil, "network"=>nil, "request_three_d_secure"=>"automatic"}}, "payment_method_types"=>["card"], "processing"=>nil, "receipt_email"=>"jackie@coogan.net", "review"=>nil, "setup_future_usage"=>nil, "shipping"=>nil, "source"=>nil, "statement_descriptor"=>nil, "statement_descriptor_suffix"=>nil, "status"=>"canceled", "transfer_data"=>nil, "transfer_group"=>nil}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>nil, "idempotency_key"=>"[FILTERED]"}, "type"=>"payment_intent.canceled", "webhook_event"=>{"id"=>"evt_3KtZKfHiibShxDkj1mrgJEIn", "data"=>{"object"=>{"id"=>"pi_3KtZKfHiibShxDkj1rRQRj7C", "object"=>"payment_intent", "amount"=>1500, "amount_capturable"=>0, "amount_details"=>{"tip"=>{"amount"=>nil}}, "amount_received"=>0, "application"=>nil, "application_fee_amount"=>nil, "automatic_payment_methods"=>nil, "canceled_at"=>1651246362, "cancellation_reason"=>"automatic", "capture_method"=>"automatic", "charges"=>{"object"=>"list", "data"=>[], "has_more"=>false, "total_count"=>0, "url"=>"/v1/charges?payment_intent=pi_3KtZKfHiibShxDkj1rRQRj7C"}, "client_secret"=>"[FILTERED]", "confirmation_method"=>"automatic", "created"=>1651159961, "currency"=>"usd", "customer"=>"cus_LBKeYGhffqGorI", "description"=>nil, "invoice"=>nil, "last_payment_error"=>nil, "livemode"=>false, "metadata"=>{"donation_id"=>"203"}, "next_action"=>nil, "on_behalf_of"=>nil, "payment_method"=>nil, "payment_method_options"=>{"card"=>{"installments"=>nil, "mandate_options"=>nil, "network"=>nil, "request_three_d_secure"=>"automatic"}}, "payment_method_types"=>["card"], "processing"=>nil, "receipt_email"=>"jackie@coogan.net", "review"=>nil, "setup_future_usage"=>nil, "shipping"=>nil, "source"=>nil, "statement_descriptor"=>nil, "statement_descriptor_suffix"=>nil, "status"=>"canceled", "transfer_data"=>nil, "transfer_group"=>nil}}}}
+  Parameters: {"id"=>"evt_1KtvoEHiibShxDkjCnJp9p8w", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1651246362, "data"=>{"object"=>{"id"=>"cs_test_a1xjo3cH7z3452L3mheS4qakcwQyUrsUXQorPUaoZurzCzaVPDJmGRD4rQ", "object"=>"checkout.session", "after_expiration"=>nil, "allow_promotion_codes"=>nil, "amount_subtotal"=>1500, "amount_total"=>1500, "automatic_tax"=>{"enabled"=>false, "status"=>nil}, "billing_address_collection"=>nil, "cancel_url"=>"http://localhost:5000/donations", "client_reference_id"=>nil, "consent"=>nil, "consent_collection"=>nil, "currency"=>"usd", "customer"=>"cus_LBKeYGhffqGorI", "customer_creation"=>nil, "customer_details"=>{"address"=>nil, "email"=>"jackie@coogan.net", "name"=>nil, "phone"=>nil, "tax_exempt"=>"none", "tax_ids"=>nil}, "customer_email"=>nil, "expires_at"=>1651246361, "livemode"=>false, "locale"=>nil, "metadata"=>{"donation_id"=>"203"}, "mode"=>"payment", "payment_intent"=>"pi_3KtZKfHiibShxDkj1rRQRj7C", "payment_link"=>nil, "payment_method_options"=>{}, "payment_method_types"=>["card"], "payment_status"=>"unpaid", "phone_number_collection"=>{"enabled"=>false}, "recovered_from"=>nil, "setup_intent"=>nil, "shipping"=>nil, "shipping_address_collection"=>nil, "shipping_options"=>[], "shipping_rate"=>nil, "status"=>"expired", "submit_type"=>"donate", "subscription"=>nil, "success_url"=>"http://localhost:5000/success?session_id={CHECKOUT_SESSION_ID}", "total_details"=>{"amount_discount"=>0, "amount_shipping"=>0, "amount_tax"=>0}, "url"=>nil}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>nil, "idempotency_key"=>"[FILTERED]"}, "type"=>"checkout.session.expired", "webhook_event"=>{"id"=>"evt_1KtvoEHiibShxDkjCnJp9p8w", "data"=>{"object"=>{"id"=>"cs_test_a1xjo3cH7z3452L3mheS4qakcwQyUrsUXQorPUaoZurzCzaVPDJmGRD4rQ", "object"=>"checkout.session", "after_expiration"=>nil, "allow_promotion_codes"=>nil, "amount_subtotal"=>1500, "amount_total"=>1500, "automatic_tax"=>{"enabled"=>false, "status"=>nil}, "billing_address_collection"=>nil, "cancel_url"=>"http://localhost:5000/donations", "client_reference_id"=>nil, "consent"=>nil, "consent_collection"=>nil, "currency"=>"usd", "customer"=>"cus_LBKeYGhffqGorI", "customer_creation"=>nil, "customer_details"=>{"address"=>nil, "email"=>"jackie@coogan.net", "name"=>nil, "phone"=>nil, "tax_exempt"=>"none", "tax_ids"=>nil}, "customer_email"=>nil, "expires_at"=>1651246361, "livemode"=>false, "locale"=>nil, "metadata"=>{"donation_id"=>"203"}, "mode"=>"payment", "payment_intent"=>"pi_3KtZKfHiibShxDkj1rRQRj7C", "payment_link"=>nil, "payment_method_options"=>{}, "payment_method_types"=>["card"], "payment_status"=>"unpaid", "phone_number_collection"=>{"enabled"=>false}, "recovered_from"=>nil, "setup_intent"=>nil, "shipping"=>nil, "shipping_address_collection"=>nil, "shipping_options"=>[], "shipping_rate"=>nil, "status"=>"expired", "submit_type"=>"donate", "subscription"=>nil, "success_url"=>"http://localhost:5000/success?session_id={CHECKOUT_SESSION_ID}", "total_details"=>{"amount_discount"=>0, "amount_shipping"=>0, "amount_tax"=>0}, "url"=>nil}}}}
+  [1m[36mWebhookEvent Load (3.1ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "79eb6fab436a18d6a6ab4884227c23c2"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mWebhookEvent Create (3.6ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "aa7fae5dd6122671829f53c992f9a219"], ["data", "{\"id\":\"evt_1KtvoEHiibShxDkjCnJp9p8w\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1651246362,\"data\":{\"object\":{\"id\":\"cs_test_a1xjo3cH7z3452L3mheS4qakcwQyUrsUXQorPUaoZurzCzaVPDJmGRD4rQ\",\"object\":\"checkout.session\",\"after_expiration\":null,\"allow_promotion_codes\":null,\"amount_subtotal\":1500,\"amount_total\":1500,\"automatic_tax\":{\"enabled\":false,\"status\":null},\"billing_address_collection\":null,\"cancel_url\":\"http://localhost:5000/donations\",\"client_reference_id\":null,\"consent\":null,\"consent_collection\":null,\"currency\":\"usd\",\"customer\":\"cus_LBKeYGhffqGorI\",\"customer_creation\":null,\"customer_details\":{\"address\":null,\"email\":\"jackie@coogan.net\",\"name\":null,\"phone\":null,\"tax_exempt\":\"none\",\"tax_ids\":null},\"customer_email\":null,\"expires_at\":1651246361,\"livemode\":false,\"locale\":null,\"metadata\":{\"donation_id\":\"203\"},\"mode\":\"payment\",\"payment_intent\":\"pi_3KtZKfHiibShxDkj1rRQRj7C\",\"payment_link\":null,\"payment_method_options\":{},\"payment_method_types\":[\"card\"],\"payment_status\":\"unpaid\",\"phone_number_collection\":{\"enabled\":false},\"recovered_from\":null,\"setup_intent\":null,\"shipping\":null,\"shipping_address_collection\":null,\"shipping_options\":[],\"shipping_rate\":null,\"status\":\"expired\",\"submit_type\":\"donate\",\"subscription\":null,\"success_url\":\"http://localhost:5000/success?session_id={CHECKOUT_SESSION_ID}\",\"total_details\":{\"amount_discount\":0,\"amount_shipping\":0,\"amount_tax\":0},\"url\":null}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":null,\"idempotency_key\":null},\"type\":\"checkout.session.expired\",\"webhook_event\":{\"id\":\"evt_1KtvoEHiibShxDkjCnJp9p8w\",\"data\":{\"object\":{\"id\":\"cs_test_a1xjo3cH7z3452L3mheS4qakcwQyUrsUXQorPUaoZurzCzaVPDJmGRD4rQ\",\"object\":\"checkout.session\",\"after_expiration\":null,\"allow_promotion_codes\":null,\"amount_subtotal\":1500,\"amount_total\":1500,\"automatic_tax\":{\"enabled\":false,\"status\":null},\"billing_address_collection\":null,\"cancel_url\":\"http://localhost:5000/donations\",\"client_reference_id\":null,\"consent\":null,\"consent_collection\":null,\"currency\":\"usd\",\"customer\":\"cus_LBKeYGhffqGorI\",\"customer_creation\":null,\"customer_details\":{\"address\":null,\"email\":\"jackie@coogan.net\",\"name\":null,\"phone\":null,\"tax_exempt\":\"none\",\"tax_ids\":null},\"customer_email\":null,\"expires_at\":1651246361,\"livemode\":false,\"locale\":null,\"metadata\":{\"donation_id\":\"203\"},\"mode\":\"payment\",\"payment_intent\":\"pi_3KtZKfHiibShxDkj1rRQRj7C\",\"payment_link\":null,\"payment_method_options\":{},\"payment_method_types\":[\"card\"],\"payment_status\":\"unpaid\",\"phone_number_collection\":{\"enabled\":false},\"recovered_from\":null,\"setup_intent\":null,\"shipping\":null,\"shipping_address_collection\":null,\"shipping_options\":[],\"shipping_rate\":null,\"status\":\"expired\",\"submit_type\":\"donate\",\"subscription\":null,\"success_url\":\"http://localhost:5000/success?session_id={CHECKOUT_SESSION_ID}\",\"total_details\":{\"amount_discount\":0,\"amount_shipping\":0,\"amount_tax\":0},\"url\":null}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-04-29 15:32:42.949442"], ["updated_at", "2022-04-29 15:32:42.949442"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mWebhookEvent Load (0.4ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "90b1512cb56fec4df7b21a06cdab51a3"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: 75375b1d-9617-4daa-8bf8-7e6ead2f939a) to Async(default) with arguments: 1053
+  [1m[36mWebhookEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "c4447b9c1c037faa63b7b3369078e42e"], ["data", "{\"id\":\"evt_3KtZKfHiibShxDkj1mrgJEIn\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1651246362,\"data\":{\"object\":{\"id\":\"pi_3KtZKfHiibShxDkj1rRQRj7C\",\"object\":\"payment_intent\",\"amount\":1500,\"amount_capturable\":0,\"amount_details\":{\"tip\":{\"amount\":null}},\"amount_received\":0,\"application\":null,\"application_fee_amount\":null,\"automatic_payment_methods\":null,\"canceled_at\":1651246362,\"cancellation_reason\":\"automatic\",\"capture_method\":\"automatic\",\"charges\":{\"object\":\"list\",\"data\":[],\"has_more\":false,\"total_count\":0,\"url\":\"/v1/charges?payment_intent=pi_3KtZKfHiibShxDkj1rRQRj7C\"},\"client_secret\":\"pi_3KtZKfHiibShxDkj1rRQRj7C_secret_2RuEH9l4BVjtGNA7pazORnPNI\",\"confirmation_method\":\"automatic\",\"created\":1651159961,\"currency\":\"usd\",\"customer\":\"cus_LBKeYGhffqGorI\",\"description\":null,\"invoice\":null,\"last_payment_error\":null,\"livemode\":false,\"metadata\":{\"donation_id\":\"203\"},\"next_action\":null,\"on_behalf_of\":null,\"payment_method\":null,\"payment_method_options\":{\"card\":{\"installments\":null,\"mandate_options\":null,\"network\":null,\"request_three_d_secure\":\"automatic\"}},\"payment_method_types\":[\"card\"],\"processing\":null,\"receipt_email\":\"jackie@coogan.net\",\"review\":null,\"setup_future_usage\":null,\"shipping\":null,\"source\":null,\"statement_descriptor\":null,\"statement_descriptor_suffix\":null,\"status\":\"canceled\",\"transfer_data\":null,\"transfer_group\":null}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":null,\"idempotency_key\":\"1e9e1cdf-6ba1-4396-9bd3-3e7f33e3dda6\"},\"type\":\"payment_intent.canceled\",\"webhook_event\":{\"id\":\"evt_3KtZKfHiibShxDkj1mrgJEIn\",\"data\":{\"object\":{\"id\":\"pi_3KtZKfHiibShxDkj1rRQRj7C\",\"object\":\"payment_intent\",\"amount\":1500,\"amount_capturable\":0,\"amount_details\":{\"tip\":{\"amount\":null}},\"amount_received\":0,\"application\":null,\"application_fee_amount\":null,\"automatic_payment_methods\":null,\"canceled_at\":1651246362,\"cancellation_reason\":\"automatic\",\"capture_method\":\"automatic\",\"charges\":{\"object\":\"list\",\"data\":[],\"has_more\":false,\"total_count\":0,\"url\":\"/v1/charges?payment_intent=pi_3KtZKfHiibShxDkj1rRQRj7C\"},\"client_secret\":\"pi_3KtZKfHiibShxDkj1rRQRj7C_secret_2RuEH9l4BVjtGNA7pazORnPNI\",\"confirmation_method\":\"automatic\",\"created\":1651159961,\"currency\":\"usd\",\"customer\":\"cus_LBKeYGhffqGorI\",\"description\":null,\"invoice\":null,\"last_payment_error\":null,\"livemode\":false,\"metadata\":{\"donation_id\":\"203\"},\"next_action\":null,\"on_behalf_of\":null,\"payment_method\":null,\"payment_method_options\":{\"card\":{\"installments\":null,\"mandate_options\":null,\"network\":null,\"request_three_d_secure\":\"automatic\"}},\"payment_method_types\":[\"card\"],\"processing\":null,\"receipt_email\":\"jackie@coogan.net\",\"review\":null,\"setup_future_usage\":null,\"shipping\":null,\"source\":null,\"statement_descriptor\":null,\"statement_descriptor_suffix\":null,\"status\":\"canceled\",\"transfer_data\":null,\"transfer_group\":null}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-04-29 15:32:42.958614"], ["updated_at", "2022-04-29 15:32:42.958614"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 15.9ms | Allocations: 20788)
+
+
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: 958c25ec-1172-41f1-9e6a-2cc2a391a127) to Async(default) with arguments: 1054
+Completed 200 OK in 28ms (Views: 1.1ms | ActiveRecord: 10.9ms | Allocations: 23767)
+
+
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a] Performing ProcessEventsJob (Job ID: 75375b1d-9617-4daa-8bf8-7e6ead2f939a) from Async(default) enqueued at 2022-04-29T15:32:42Z with arguments: 1053
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127] Performing ProcessEventsJob (Job ID: 958c25ec-1172-41f1-9e6a-2cc2a391a127) from Async(default) enqueued at 2022-04-29T15:32:42Z with arguments: 1054
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mWebhookEvent Load (0.7ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 1053], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mWebhookEvent Update (0.2ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-04-29 15:32:42.990939"], ["id", 1053]]
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mWebhookEvent Load (0.2ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 1054], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mWebhookEvent Update (0.2ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-04-29 15:32:42.995016"], ["id", 1054]]
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mWebhookEvent Update (0.9ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-04-29 15:32:42.999961"], ["id", 1053]]
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mWebhookEvent Update (1.4ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-04-29 15:32:43.002789"], ["id", 1054]]
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [75375b1d-9617-4daa-8bf8-7e6ead2f939a] Performed ProcessEventsJob (Job ID: 75375b1d-9617-4daa-8bf8-7e6ead2f939a) from Async(default) in 32.86ms
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [958c25ec-1172-41f1-9e6a-2cc2a391a127] Performed ProcessEventsJob (Job ID: 958c25ec-1172-41f1-9e6a-2cc2a391a127) from Async(default) in 28.05ms
+Started GET "/pledge" for 127.0.0.1 at 2022-04-29 15:06:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pledge"):
+  
+Started GET "/donations/new" for 127.0.0.1 at 2022-04-29 15:06:24 -0400
+Processing by DonationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (Duration: 27.3ms | Allocations: 10543)
+  Rendered donations/new.html.erb within layouts/application (Duration: 28.1ms | Allocations: 10956)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1120)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 2128)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1569)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 16382)
+Completed 200 OK in 56ms (Views: 34.4ms | ActiveRecord: 7.4ms | Allocations: 25926)
+
+
+Started POST "/donations" for 127.0.0.1 at 2022-04-29 15:06:36 -0400
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "donation"=>{"dollars"=>"12", "memo"=>"memohere"}, "commit"=>"Set up donation"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mDonation Create (7.1ms)[0m  [1m[32mINSERT INTO "donations" ("user_id", "created_at", "updated_at", "type", "stripe_id", "amount", "dollars", "status", "memo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 625], ["created_at", "2022-04-29 19:06:36.828270"], ["updated_at", "2022-04-29 19:06:36.828270"], ["type", nil], ["stripe_id", "price_1Ktz9EHiibShxDkjnpVFh4Lq"], ["amount", 1200], ["dollars", 12], ["status", nil], ["memo", "memohere"]]
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/donations_controller.rb:23:in `create'
+Redirected to http://localhost:5000/donations/204
+Completed 302 Found in 657ms (ActiveRecord: 10.1ms | Allocations: 10696)
+
+
+Started POST "/webhook_events" for 127.0.0.1 at 2022-04-29 15:06:36 -0400
+Processing by WebhookEventsController#create as XML
+  Parameters: {"id"=>"evt_1Ktz9EHiibShxDkjQ9qgwHZB", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1651259196, "data"=>{"object"=>{"id"=>"price_1Ktz9EHiibShxDkjnpVFh4Lq", "object"=>"price", "active"=>true, "billing_scheme"=>"per_unit", "created"=>1651259196, "currency"=>"usd", "livemode"=>false, "lookup_key"=>"[FILTERED]", "metadata"=>{}, "nickname"=>nil, "product"=>"prod_Kyu7StID0XtS7W", "recurring"=>nil, "tax_behavior"=>"unspecified", "tiers_mode"=>nil, "transform_quantity"=>nil, "type"=>"one_time", "unit_amount"=>1200, "unit_amount_decimal"=>"1200"}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>"req_iGoZTQyTupMPNX", "idempotency_key"=>"[FILTERED]"}, "type"=>"price.created", "webhook_event"=>{"id"=>"evt_1Ktz9EHiibShxDkjQ9qgwHZB", "data"=>{"object"=>{"id"=>"price_1Ktz9EHiibShxDkjnpVFh4Lq", "object"=>"price", "active"=>true, "billing_scheme"=>"per_unit", "created"=>1651259196, "currency"=>"usd", "livemode"=>false, "lookup_key"=>"[FILTERED]", "metadata"=>{}, "nickname"=>nil, "product"=>"prod_Kyu7StID0XtS7W", "recurring"=>nil, "tax_behavior"=>"unspecified", "tiers_mode"=>nil, "transform_quantity"=>nil, "type"=>"one_time", "unit_amount"=>1200, "unit_amount_decimal"=>"1200"}}}}
+  [1m[36mWebhookEvent Load (1.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "a3ee00775d2662c2d5a71eeb09a13e61"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+Started GET "/donations/204" for 127.0.0.1 at 2022-04-29 15:06:36 -0400
+  [1m[36mWebhookEvent Create (2.7ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "21263303ee2536114198bef76cc10ed3"], ["data", "{\"id\":\"evt_1Ktz9EHiibShxDkjQ9qgwHZB\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1651259196,\"data\":{\"object\":{\"id\":\"price_1Ktz9EHiibShxDkjnpVFh4Lq\",\"object\":\"price\",\"active\":true,\"billing_scheme\":\"per_unit\",\"created\":1651259196,\"currency\":\"usd\",\"livemode\":false,\"lookup_key\":null,\"metadata\":{},\"nickname\":null,\"product\":\"prod_Kyu7StID0XtS7W\",\"recurring\":null,\"tax_behavior\":\"unspecified\",\"tiers_mode\":null,\"transform_quantity\":null,\"type\":\"one_time\",\"unit_amount\":1200,\"unit_amount_decimal\":\"1200\"}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":\"req_iGoZTQyTupMPNX\",\"idempotency_key\":\"8aa8e8cb-b696-489b-a22f-6ba46d78f23b\"},\"type\":\"price.created\",\"webhook_event\":{\"id\":\"evt_1Ktz9EHiibShxDkjQ9qgwHZB\",\"data\":{\"object\":{\"id\":\"price_1Ktz9EHiibShxDkjnpVFh4Lq\",\"object\":\"price\",\"active\":true,\"billing_scheme\":\"per_unit\",\"created\":1651259196,\"currency\":\"usd\",\"livemode\":false,\"lookup_key\":null,\"metadata\":{},\"nickname\":null,\"product\":\"prod_Kyu7StID0XtS7W\",\"recurring\":null,\"tax_behavior\":\"unspecified\",\"tiers_mode\":null,\"transform_quantity\":null,\"type\":\"one_time\",\"unit_amount\":1200,\"unit_amount_decimal\":\"1200\"}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-04-29 19:06:36.888376"], ["updated_at", "2022-04-29 19:06:36.888376"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: f8ab6fbe-853f-4b4a-a96d-9d1db4b91170) to Async(default) with arguments: 1055
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 5.8ms | Allocations: 6471)
+
+
+Processing by DonationsController#show as HTML
+  Parameters: {"id"=>"204"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 204], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:53:in `set_donation'
+  Rendering layout layouts/application.html.erb
+  Rendering donations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/donations/show.html.erb:2
+  Rendered donations/show.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3308)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1087)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 4.5ms | Allocations: 2071)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1536)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 8544)
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 2.2ms | Allocations: 12906)
+
+
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170] Performing ProcessEventsJob (Job ID: f8ab6fbe-853f-4b4a-a96d-9d1db4b91170) from Async(default) enqueued at 2022-04-29T19:06:36Z with arguments: 1055
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mWebhookEvent Load (0.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 1055], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mWebhookEvent Update (0.3ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-04-29 19:06:36.948968"], ["id", 1055]]
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mWebhookEvent Update (0.3ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-04-29 19:06:36.954365"], ["id", 1055]]
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [f8ab6fbe-853f-4b4a-a96d-9d1db4b91170] Performed ProcessEventsJob (Job ID: f8ab6fbe-853f-4b4a-a96d-9d1db4b91170) from Async(default) in 11.41ms
+Started POST "/create" for 127.0.0.1 at 2022-04-29 15:06:39 -0400
+
+ActionController::RoutingError - uninitialized constant CheckoutController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CheckoutTicketsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started POST "/__better_errors/e2dd856faf5cc75c/variables" for 127.0.0.1 at 2022-04-29 15:06:39 -0400
+Started GET "/" for 127.0.0.1 at 2022-04-29 15:08:13 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4550)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1330)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 625], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 3554)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1801)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 12393)
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 3.1ms | Allocations: 17497)
+
+

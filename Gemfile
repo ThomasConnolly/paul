@@ -42,7 +42,7 @@ gem 'puma'
 gem 'rack'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem "rack-attack", "~> 6.6"
-gem 'rails', '~>7.0.2.2'
+gem 'rails'
 gem 'railties'
 gem 'receipts'
 gem 'redis'

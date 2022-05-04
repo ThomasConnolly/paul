@@ -1,32 +1,9 @@
-<div class="container row mt-5">
-  <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-    <p><strong> You have elected to donate $<%= @pledge.dollars %><span id="plan"><em>
-              <%= @pledge.plan %>
-            </em></span> in your stewardship of St. Paul's.</strong></p>
 
-    <p class="mt-2">If these numbers are not correct, click "edit" to make changes. If OK, click "Pay with Card." You
-      will be taken to a secure website that handles credit and debit card payments St. Paul's.</p>
 
-    <div class="text-center my-5" max-width="400px">
-      <%= button_to "Pay with card" , payment_create_url, method: "post" , remote: true, params: {id: @pledge.id},
-        class: "btn btn-success btn-lg" %>
-    </div>
-
-    <% if current_user==@pledge.user %>
-      button_to "Delete my pledge" , pledge_path(@pledge), class: "btn btn-lg btn-danger" , data: { turbo_method:
-      :delete, turbo_confirm: 'Are y
-      <div class="text-center my-5" max-width="800px">
-        <%= button_to("Edit", edit_pledge_path(@pledge), class: "btn btn-lg btn-success" ) %> &nbsp; <%=ou sure? This
-            will delete your pledge.' } %>
-      </div>
-      <% end %>
-
-        <h3>Did you know?</h3>
-        <p>Your pledge is not a promissory note, contract or any other kind of legal document that binds you. It's
-          merely a good-faith estimate of what you plan to donate to St. Paul's. It is enormously helpful for your
-          church leaders in planning the church budget. If your circumstances change or for any other reason you wish to
-          amend or remove your pledge you may do so at any time, by logging in and clicking on the "Update your pledge"
-          button on the home page. </p>
-        <p><strong>Thank you!</strong></p>
-  </div>
-</div>
+   
+   <h3>You have elected to contribute
+    <%= number_to_currency@pledge.dollars %>
+              
+   <%= @pledge.plan %>.
+   </h3>      
+<p>If this is correct, select the "Pay" button. If not, return to the previous page</p>

@@ -15,10 +15,10 @@ Rails.application.routes.draw do
 
   resources :donations
 
-  get 'checkout', to: 'checkout#show'
-  post 'create', to: 'checkout#create', as: 'checkout/create'
-  get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
-  get 'success', to: 'checkout#success', as: 'checkout_success'
+  get 'checkout_donations', to: 'checkout_donations#show'
+  post 'create', to: 'checkout_donations#create', as: 'checkout_donations/create'
+  get 'cancel', to: 'checkout_donations#cancel', as: 'checkout_donations_cancel'
+  get 'success', to: 'checkout_donations#success', as: 'checkout_donations_success'
 
  
 

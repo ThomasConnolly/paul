@@ -5,6 +5,8 @@ class PledgesController < ApplicationController
   before_action :change_path, only: [:new]
   before_action :set_pledge, only: %i[show edit update destroy]
 
+ 
+
   def show; end
 
   def new

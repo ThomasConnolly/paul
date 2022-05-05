@@ -382,3 +382,21 @@ Processing by PledgesController#show as TURBO_STREAM
 Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 7684)
 
 
+Started GET "/pledges/82" for 127.0.0.1 at 2022-05-04 23:34:57 -0400
+Processing by PledgesController#show as HTML
+  Parameters: {"id"=>"82"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 628], ["LIMIT", 1]]
+  [1m[36mPledge Load (0.4ms)[0m  [1m[34mSELECT "pledges".* FROM "pledges" WHERE "pledges"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/controllers/pledges_controller.rb:46:in `set_pledge'
+  Rendering layout layouts/application.html.erb
+  Rendering pledges/show.html.erb within layouts/application
+  Rendered pledges/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 335)
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1413)
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 628], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 12.7ms | Allocations: 11138)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1700)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 15823)
+Completed 200 OK in 60ms (Views: 20.7ms | ActiveRecord: 6.1ms | Allocations: 32584)
+
+

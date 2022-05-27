@@ -10,6 +10,7 @@ class CheckoutDonationsController < ApplicationController
       redirect_to root_path
       return
     end
+    
     checkout_session = Stripe::Checkout::Session.create({
       success_url: "#{checkout_donations_success_url}?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: donations_url,

@@ -14,26 +14,23 @@ Rails.application.routes.draw do
   post '/webhook_events', to: 'webhook_events#create'
 
   resources :donations
-
-  get 'checkout_donations', to: 'checkout_donations#show'
-  post 'create', to: 'checkout_donations#create', as: 'checkout_donations/create'
-  get 'cancel', to: 'checkout_donations#cancel', as: 'checkout_donations_cancel'
-  get 'success', to: 'checkout_donations#success', as: 'checkout_donations_success'
-
- 
+  
+  scope '/checkout_donations' do
+    post 'create', to: 'checkout_donations#create', as: 'checkout_donations/create'
+    get 'success', to: 'checkout_donations#success', as: 'checkout_donations_success'
+  end
 
   resources :pledges
-
-  post 'create', to: 'pledge_checkout#create', as: 'payment_create'
-  get 'cancel', to: 'pledge_checkout#cancel', as: 'payment_cancel'
-  get 'success', to: 'pledge_checkout#success', as: 'payment_success'
+  
+  scope 'checkout_pledges' do
+    post 'create', to: 'checkout_pledges#create', as: 'checkout_pledges/create'
+    get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
+  end
 
   scope '/checkout_tickets' do
-    post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets_create'
-    get 'cancel', to: 'checkout_tickets#cancel', as: 'cancel'
+    post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets/create'
     get 'success', to: 'checkout_tickets#success', as: 'checkout_tickets_success'
   end
-  resources :vaccinations, only: %i[new create index]
 
   resources :events do
     resources :tickets, only: %i[new show create update]
@@ -125,16 +122,7 @@ Rails.application.routes.draw do
     resources :comments, module: :story_ideas
   end
   resources :tasks
-  resources :syllabuses do
-    collection do
-      get 'preschool'
-      get 'primary'
-      get 'intermediate'
-    end
-  end
-  resources :syllabuses do
-    collection { post :import }
-  end
+  
   resources :anniversaries do
     collection do
       post :import

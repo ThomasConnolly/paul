@@ -10,15 +10,18 @@ class CheckoutPledgesController < ApplicationController
       redirect_to root_path
       return
     end
+
     checkout_session = Stripe::Checkout::Session.create({
-      success_url: "#{pledge_payment_success_url}?session_id={CHECKOUT_SESSION_ID}",
+      success_url: "#{checkout_pledges_success_url}?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: pledges_url,
+      
       payment_method_types: ['card'],
       customer: @pledge.user.stripe_id,
         line_items: [{
-          price: @pledge.stripe_id
-          quantity: 1,
-          description: "Pledge payment to St. Paul's"
+          price: @pledge.stripe_id,
+          currency: 'usd',
+          amount: (@pledge.dollars.to_i * 100)
+          
         }],
           metadata: {
             pledge_id: @pledge.id

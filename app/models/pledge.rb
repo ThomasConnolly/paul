@@ -18,8 +18,7 @@
 
 class Pledge < ApplicationRecord
   belongs_to :user
-  validates :dollars, presence: true
-  validates_presence_of :user_id
+  validates_presence_of :dollars, numericality: { only_integer: true }
   validates_presence_of :plan_id
   before_save :set_plan_id
   before_destroy :cancel_stripe_subscription, if: :stripe_id

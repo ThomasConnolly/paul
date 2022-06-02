@@ -20,13 +20,14 @@
             </p>
             <p class="text-end"> &mdash;Book of Common Prayer</p>
         </div>
-        <h1>Join us in worship</h1>
+        <div class="mt-4">
+        <h1>Join us in worship, 9 a.m. Sundays</h1>
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
 
-          <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
-              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
-          </p>
+          <!-- <p>Sundays at 9 a.m., in church and live streamed on <%#= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %> -->
+          </div>
           <% if @bulletin.url.present? %>
             <p><strong>
                 <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
@@ -59,7 +60,7 @@
         The Very Rev. Dr. Doug Scharf will return to the diocese where he was born and raised and is well known. He was
         elected at a special convention April 2 as our bishop coadjuter and will be ordained as bishop September 24 in
         Sarasota. He
-        will become the sixth bishop of the diocese when Bishop Dabney Smith retires, within three years.
+        will become the sixth bishop of the diocese when Bishop Dabney Smith retires, later this year.
       </p>
 
       <p>Four final candidates introduced themselves at
@@ -146,9 +147,10 @@
 
       <h2 class="mt-3">All the links</h2>
       <p><strong>
-          <%= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        Sunday worship livestream will resume Sunday, July 12. 
+          <!-- <%#= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
         </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
-        link.</p>
+        link.</p> -->
       <% if @bulletin.url.present? %>
         <p><strong>
             <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>

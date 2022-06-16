@@ -25,8 +25,8 @@
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
 
-          <!-- <p>Sundays at 9 a.m., in church and live streamed on <%#= link_to "YouTube." ,
-              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %> -->
+          <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
           </div>
           <% if @bulletin.url.present? %>
             <p><strong>
@@ -147,10 +147,9 @@
 
       <h2 class="mt-3">All the links</h2>
       <p><strong>
-        Sunday worship livestream will resume Sunday, July 12. 
-          <!-- <%#= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        <%= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
         </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
-        link.</p> -->
+        link.</p>
       <% if @bulletin.url.present? %>
         <p><strong>
             <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>

@@ -1160,3 +1160,283 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 109ms (Views: 43.6ms | ActiveRecord: 29.8ms | Allocations: 46300)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-24 19:32:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 12003)
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1364)
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 2025)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 18590)
+Completed 200 OK in 87ms (Views: 29.3ms | ActiveRecord: 19.7ms | Allocations: 46493)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 19:45:19 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4637)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1333)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1870)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1799)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 10800)
+Completed 200 OK in 38ms (Views: 12.0ms | ActiveRecord: 7.6ms | Allocations: 19031)
+
+
+Started GET "/pathway" for 127.0.0.1 at 2022-07-24 19:46:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pathway"):
+  
+Started GET "/rails/info/routes?path=s" for 127.0.0.1 at 2022-07-24 19:46:23 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"s"}
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 16897)
+
+
+Started GET "/pathways" for 127.0.0.1 at 2022-07-24 19:46:33 -0400
+Processing by PathwaysController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mPathway Load (0.7ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 7407)
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1358)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1806)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 13501)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.7ms | Allocations: 14917)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-24 19:46:44 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 736)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 48.0ms | Allocations: 18127)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1112)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 1155)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1620)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 22589)
+Completed 200 OK in 86ms (Views: 54.2ms | ActiveRecord: 8.8ms | Allocations: 34490)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-07-24 19:47:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Thomas Connolly", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(username) = 'thomas connolly' OR lower(email) = 'thomas connolly') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:119:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 647], ["current_sign_in_at", "2022-07-24 23:47:01.915135"], ["last_sign_in_at", "2022-04-26 01:21:22.947601"], ["updated_at", "2022-07-24 23:47:01.915471"], ["id", 16]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/pathways
+Completed 302 Found in 69ms (ActiveRecord: 9.3ms | Allocations: 9997)
+
+
+Started GET "/pathways" for 127.0.0.1 at 2022-07-24 19:47:01 -0400
+Processing by PathwaysController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 7850)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1050)
+  [1m[36mProfile Load (1.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 24.5ms | Allocations: 15360)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1489)
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 26307)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 4.8ms | Allocations: 26878)
+
+
+Started GET "/pathways/new" for 127.0.0.1 at 2022-07-24 19:47:06 -0400
+Processing by PathwaysController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/new.html.erb within layouts/application
+  Rendered pathways/_form.html.erb (Duration: 8.2ms | Allocations: 2344)
+  Rendered pathways/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2697)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1085)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 9.8ms | Allocations: 3019)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 8945)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.9ms | Allocations: 9606)
+
+
+Started POST "/pathways" for 127.0.0.1 at 2022-07-24 19:51:01 -0400
+Processing by PathwaysController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pathway"=>{"image"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1658704410/SummerSm_jsfyim.jpg", "link"=>"https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1658704410/SummerSm_jsfyim.pdf", "pubdate"=>"2022-07-24"}, "commit"=>"Add a pathway"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pathways_controller.rb:20:in `create'
+  [1m[36mPathway Create (2.1ms)[0m  [1m[32mINSERT INTO "pathways" ("image", "pubdate", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1658704410/SummerSm_jsfyim.jpg"], ["pubdate", "2022-07-24"], ["link", "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1658704410/SummerSm_jsfyim.pdf"], ["created_at", "2022-07-24 23:51:01.173450"], ["updated_at", "2022-07-24 23:51:01.173450"]]
+  ↳ app/controllers/pathways_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pathways_controller.rb:20:in `create'
+Redirected to http://localhost:5000/pathways
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 3d1b41a1-0056-4bee-b59b-4cf71a6b4574) to Async(default) with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007fe0e1574c88 @uri=#<URI::GID gid://paul/Pathway/42>>]}
+Completed 302 Found in 19ms (ActiveRecord: 3.5ms | Allocations: 6850)
+
+
+Started GET "/pathways" for 127.0.0.1 at 2022-07-24 19:51:01 -0400
+[ActiveJob] [ActionMailer::MailDeliveryJob] [3d1b41a1-0056-4bee-b59b-4cf71a6b4574]   [1m[36mPathway Load (0.9ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" WHERE "pathways"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [3d1b41a1-0056-4bee-b59b-4cf71a6b4574] Performing ActionMailer::MailDeliveryJob (Job ID: 3d1b41a1-0056-4bee-b59b-4cf71a6b4574) from Async(default) enqueued at 2022-07-24T23:51:01Z with arguments: "PathwaysMailer", "pathways_created", "deliver_now", {:args=>[#<GlobalID:0x00007fe0e151c5b0 @uri=#<URI::GID gid://paul/Pathway/42>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [3d1b41a1-0056-4bee-b59b-4cf71a6b4574] PathwaysMailer#pathways_created: processed outbound mail in 0.2ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [3d1b41a1-0056-4bee-b59b-4cf71a6b4574] Error performing ActionMailer::MailDeliveryJob (Job ID: 3d1b41a1-0056-4bee-b59b-4cf71a6b4574) from Async(default) in 6.12ms: ArgumentError (wrong number of arguments (given 1, expected 0)):
+/home/tom/paul/app/mailers/pathways_mailer.rb:4:in `pathways_created'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.3.1/lib/abstract_controller/base.rb:215:in `process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.3.1/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.3.1/lib/action_text/rendering.rb:20:in `with_renderer'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.3.1/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.3.1/lib/abstract_controller/callbacks.rb:233:in `process_action'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.3.1/lib/abstract_controller/base.rb:151:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/rescuable.rb:24:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionview-7.0.3.1/lib/action_view/rendering.rb:39:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/base.rb:646:in `block in process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications.rb:206:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/base.rb:645:in `process'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
+<internal:kernel>:90:in `tap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/actionmailer-7.0.3.1/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/execution.rb:59:in `block in _perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/i18n-1.12.0/lib/i18n.rb:322:in `with_locale'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/execution.rb:58:in `_perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/execution.rb:46:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/notifications.rb:206:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/instrumentation.rb:35:in `instrument'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/instrumentation.rb:14:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/tagged_logging.rb:114:in `block in tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/tagged_logging.rb:38:in `tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/tagged_logging.rb:114:in `tagged'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/logging.rb:25:in `tag_logger'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/logging.rb:18:in `perform_now'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/execution.rb:24:in `block in execute'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/reloader.rb:71:in `wrap'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.3.1/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/execution.rb:22:in `execute'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/activejob-7.0.3.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/home/tom/.rvm/gems/ruby-3.1.2/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Processing by PathwaysController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pathways/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/pathways/index.html.erb:2
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY pubdate DESC[0m
+  ↳ app/views/pathways/index.html.erb:7
+  Rendered pathways/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 7922)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1050)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 2007)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1607)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 13156)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.8ms | Allocations: 13795)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 19:51:22 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4605)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1060)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 2938)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1618)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 10820)
+Completed 200 OK in 20ms (Views: 11.8ms | ActiveRecord: 2.4ms | Allocations: 15503)
+
+

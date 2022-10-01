@@ -38,7 +38,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   before_save :set_username
   validates :username, uniqueness: { case_sensitive: false }
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   after_create :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]
   has_many :posts, dependent: :destroy
@@ -81,7 +81,7 @@ class User < ApplicationRecord
   # Include default devise modules
   # Others available are:
   # :lockable, :confirmable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable, 
          :recoverable, :rememberable, :trackable,
          authentication_keys: [:login]
 

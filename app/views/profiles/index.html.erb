@@ -3,8 +3,7 @@
   Get to know your fellow parishioners. Please urge your friends to post their profiles.
 </p>
 <p>
-  <strong>*
-  </strong> denotes current member of the vestry.
+  <strong>*</strong> denotes current member of the vestry.
 </p>
 <% if current_user && user_signed_in? %>
   <p>
@@ -12,30 +11,24 @@
       <%= link_to "Create or edit your profile" , edit_profile_path(@profile) %>
     </strong><br>
   </p>
+<% end %>
+<div class="mt-4">
+  <% @users.each do |user| %>
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar, width: "120" , class: "float-left" %>
+    <% end %>
+    <h2>
+      <% if user.vestry? %>
+              *
+      <% end %>
+    <%= user.username %>
+    </h2>
+  <div class="clearall"></div>
   <% end %>
-    <div class="mt-4">
-      <% @users.each do |user| %>
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, width: "120" , class: "float-left" %>
-            <% end %>
-              <h2>
-                <% if user.vestry? %>
-                  *
-                  <% end %>
-                    <%= user.username %>
-              </h2>
-              <div class="clearall"></div>
-              <%# end %>
-                <%if user.profile.cities.present? %>
-                  <p>
-                    <small>
-                      <%=link_to "Show this profile" , profile_path(user.profile) %>
-                    </small>
-                  </p>
-                  <% else %>
-                    <p>Invite
-                      <%= user.first_name %>
-                        to create a profile.
-                    </p>
-                    <% end %>
-                      <% end %>
+  <%if user.profile.cities.present? %>
+    <p><small><%=link_to "Show this profile" , profile_path(user.profile) %>
+    </small></p>
+  <% else %>
+    <p>Invite <%= user.first_name %> to create a profile.</p>
+  <% end %>
+<% end %>

@@ -11,8 +11,6 @@ class PagesController < ApplicationController
 
   def annnual_report; end
 
-  def parish_profile; end
-
   def history; end
 
   def calendar; end

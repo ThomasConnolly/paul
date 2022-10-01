@@ -22,6 +22,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   config.secret_key = 'c993cbeae938eaef9e19cc391a26fcd9edf2ae7bbe7ab94ed4adfeaa2d0d76926372bb14cce0bf71efca59bd2ac2b5c572c610f7333c6b6d14b7d2f0734b16cb'
 
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   config.parent_controller = 'TurboDeviseController'
@@ -142,7 +143,7 @@ Devise.setup do |config|
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
+  config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -239,7 +240,7 @@ Devise.setup do |config|
   # :clearance_sha1, :authlogic_sha512 (then you should set stretches above to 20
   # for default behavior) and :restful_authentication_sha1 (then you should set
   # stretches to 10, and copy REST_AUTH_SITE_KEY to pepper).
-  #
+  
   # Require the `devise-encryptable` gem when using anything other than bcrypt
   # config.encryptor = :sha512
 

@@ -85,7 +85,6 @@ Rails.application.routes.draw do
   get 'pages/albergue'
   get 'pages/calendar'
   get 'pages/directions'
-  get 'pages/parish_profile'
   get 'comments/new'
   get 'pages/python_tutor'
   get 'pages/how_to_use'

@@ -100,7 +100,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.636.0)
+    aws-partitions (1.640.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -113,7 +113,7 @@ GEM
       aws-sdk-core (~> 3, >= 3.121.2)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
-    aws-sigv4 (1.5.1)
+    aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.18)
@@ -165,7 +165,6 @@ GEM
       reline (>= 0.3.1)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
-    digest (3.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.11.0)
@@ -231,25 +230,19 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
-    msgpack (1.5.6)
+    msgpack (1.6.0)
     multi_xml (0.6.0)
     nested_scaffold (1.1.0)
-    net-imap (0.2.3)
-      digest
+    net-imap (0.3.1)
       net-protocol
-      strscan
-    net-pop (0.1.1)
-      digest
+    net-pop (0.1.2)
       net-protocol
-      timeout
     net-protocol (0.1.3)
       timeout
     net-scp (4.0.0.rc1)
       net-ssh (>= 2.6.5, < 8.0.0)
-    net-smtp (0.3.1)
-      digest
+    net-smtp (0.3.2)
       net-protocol
-      timeout
     net-ssh (7.0.1)
     netrc (0.11.0)
     nio4r (2.5.8)
@@ -356,7 +349,7 @@ GEM
     sax-machine (1.3.2)
     scout_apm (5.3.1)
       parser
-    selenium-webdriver (4.4.0)
+    selenium-webdriver (4.5.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -376,7 +369,6 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     stripe (7.1.0)
-    strscan (3.0.4)
     thor (1.2.1)
     timeout (0.3.0)
     ttfunk (1.7.0)
@@ -398,7 +390,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (5.1.0)
+    webdrivers (5.2.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (~> 4.0)
@@ -408,7 +400,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    zeitwerk (2.6.0)
+    zeitwerk (2.6.1)
 
 PLATFORMS
   x86_64-linux

@@ -50,7 +50,7 @@ class User < ApplicationRecord
   has_many :story_ideas, dependent: :destroy
   has_many :tasks
   has_many :vreports
-  validates_confirmation_of :password
+  validates :password, presence: true
   has_one_attached :avatar, dependent: :destroy
   validates :avatar, content_type: %i[png jpg]
   has_one :pledge, dependent: :destroy
@@ -81,7 +81,7 @@ class User < ApplicationRecord
   # Include default devise modules
   # Others available are:
   # :lockable, :confirmable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable, 
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          authentication_keys: [:login]
 
@@ -107,8 +107,6 @@ class User < ApplicationRecord
   def add_profile
     create_profile if profile.nil?
   end
-
-
 
   def self.find_for_database_authentication(warden_condition)
     conditions = warden_condition.dup

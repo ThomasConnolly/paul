@@ -459,7 +459,6 @@ DEPENDENCIES
   rest-client
   rspec-rails
   rss
-  ruby-vips
   scout_apm
   selenium-webdriver
   sendgrid-ruby

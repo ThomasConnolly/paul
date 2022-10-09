@@ -3355,3 +3355,35 @@ Processing by PagesController#music as HTML
 Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 6.3ms | Allocations: 12538)
 
 
+Started POST "/webhook_events" for 127.0.0.1 at 2022-10-09 05:34:18 -0400
+Processing by WebhookEventsController#create as XML
+  Parameters: {"id"=>"evt_1LqvtnHiibShxDkjdQorEnoN", "object"=>"event", "api_version"=>"2020-08-27", "created"=>1665308059, "data"=>{"object"=>{"id"=>"price_1LqvtnHiibShxDkjhaSACMUU", "object"=>"price", "active"=>true, "billing_scheme"=>"per_unit", "created"=>1665308059, "currency"=>"usd", "custom_unit_amount"=>nil, "livemode"=>false, "lookup_key"=>"[FILTERED]", "metadata"=>{}, "nickname"=>nil, "product"=>"prod_Kyu7StID0XtS7W", "recurring"=>nil, "tax_behavior"=>"unspecified", "tiers_mode"=>nil, "transform_quantity"=>nil, "type"=>"one_time", "unit_amount"=>1500, "unit_amount_decimal"=>"1500"}}, "livemode"=>false, "pending_webhooks"=>2, "request"=>{"id"=>"req_EhtUBSeaGYna0u", "idempotency_key"=>"[FILTERED]"}, "type"=>"price.created", "webhook_event"=>{"id"=>"evt_1LqvtnHiibShxDkjdQorEnoN", "data"=>{"object"=>{"id"=>"price_1LqvtnHiibShxDkjhaSACMUU", "object"=>"price", "active"=>true, "billing_scheme"=>"per_unit", "created"=>1665308059, "currency"=>"usd", "custom_unit_amount"=>nil, "livemode"=>false, "lookup_key"=>"[FILTERED]", "metadata"=>{}, "nickname"=>nil, "product"=>"prod_Kyu7StID0XtS7W", "recurring"=>nil, "tax_behavior"=>"unspecified", "tiers_mode"=>nil, "transform_quantity"=>nil, "type"=>"one_time", "unit_amount"=>1500, "unit_amount_decimal"=>"1500"}}}}
+  [1m[36mWebhookEvent Load (0.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."source" IS NULL AND "webhook_events"."external_id" = $1 LIMIT $2[0m  [["external_id", "cea6aa0798c1cc51b52f29ae030f4867"], ["LIMIT", 1]]
+  ↳ app/controllers/webhook_events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mWebhookEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "webhook_events" ("source", "external_id", "data", "state", "processing_errors", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source", nil], ["external_id", "c4fc8ba592c28d3ddaa79493f6fd20eb"], ["data", "{\"id\":\"evt_1LqvtnHiibShxDkjdQorEnoN\",\"object\":\"event\",\"api_version\":\"2020-08-27\",\"created\":1665308059,\"data\":{\"object\":{\"id\":\"price_1LqvtnHiibShxDkjhaSACMUU\",\"object\":\"price\",\"active\":true,\"billing_scheme\":\"per_unit\",\"created\":1665308059,\"currency\":\"usd\",\"custom_unit_amount\":null,\"livemode\":false,\"lookup_key\":null,\"metadata\":{},\"nickname\":null,\"product\":\"prod_Kyu7StID0XtS7W\",\"recurring\":null,\"tax_behavior\":\"unspecified\",\"tiers_mode\":null,\"transform_quantity\":null,\"type\":\"one_time\",\"unit_amount\":1500,\"unit_amount_decimal\":\"1500\"}},\"livemode\":false,\"pending_webhooks\":2,\"request\":{\"id\":\"req_EhtUBSeaGYna0u\",\"idempotency_key\":\"656b9731-10ec-405f-8e51-08cf6b58f04a\"},\"type\":\"price.created\",\"webhook_event\":{\"id\":\"evt_1LqvtnHiibShxDkjdQorEnoN\",\"data\":{\"object\":{\"id\":\"price_1LqvtnHiibShxDkjhaSACMUU\",\"object\":\"price\",\"active\":true,\"billing_scheme\":\"per_unit\",\"created\":1665308059,\"currency\":\"usd\",\"custom_unit_amount\":null,\"livemode\":false,\"lookup_key\":null,\"metadata\":{},\"nickname\":null,\"product\":\"prod_Kyu7StID0XtS7W\",\"recurring\":null,\"tax_behavior\":\"unspecified\",\"tiers_mode\":null,\"transform_quantity\":null,\"type\":\"one_time\",\"unit_amount\":1500,\"unit_amount_decimal\":\"1500\"}}}}"], ["state", 0], ["processing_errors", nil], ["created_at", "2022-10-09 09:34:18.967323"], ["updated_at", "2022-10-09 09:34:18.967323"]]
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/webhook_events_controller.rb:18:in `create'
+[ActiveJob] Enqueued ProcessEventsJob (Job ID: 7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4) to Async(default) with arguments: 495
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActionController::Parameters (0.42ms)
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 7.0ms | Allocations: 20311)
+
+
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4] Performing ProcessEventsJob (Job ID: 7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4) from Async(default) enqueued at 2022-10-09T09:34:18Z with arguments: 495
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mWebhookEvent Load (0.3ms)[0m  [1m[34mSELECT "webhook_events".* FROM "webhook_events" WHERE "webhook_events"."id" = $1 LIMIT $2[0m  [["id", 495], ["LIMIT", 1]]
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:7:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mWebhookEvent Update (0.2ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 1], ["updated_at", "2022-10-09 09:34:18.992071"], ["id", 495]]
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:9:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mWebhookEvent Update (0.2ms)[0m  [1m[33mUPDATE "webhook_events" SET "state" = $1, "updated_at" = $2 WHERE "webhook_events"."id" = $3[0m  [["state", 2], ["updated_at", "2022-10-09 09:34:18.997333"], ["id", 495]]
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
+[ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4] Performed ProcessEventsJob (Job ID: 7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4) from Async(default) in 17.47ms

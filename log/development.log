@@ -3387,3 +3387,35 @@ Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 7.0ms | Allocations: 2031
 [ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
 [ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4]   ↳ app/jobs/process_events_job.rb:13:in `perform'
 [ActiveJob] [ProcessEventsJob] [7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4] Performed ProcessEventsJob (Job ID: 7e8cf4aa-80ff-43eb-9123-1e24d8eb7ad4) from Async(default) in 17.47ms
+Started GET "/" for 127.0.0.1 at 2022-10-09 07:42:00 -0400
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:195
+  Rendered home/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6625)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1332)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 721], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 14.1ms | Allocations: 16769)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 27570)
+Completed 200 OK in 51ms (Views: 23.3ms | ActiveRecord: 5.8ms | Allocations: 46890)
+
+

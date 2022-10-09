@@ -1,7 +1,11 @@
 <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
-  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, class: "btn btn-primary btn-lg text-white"
-    %>
-</div>
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" , new_donation_path, 
+  class: "btn btn-primary btn-lg text-white" %>
+  </div>
+  <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+    <%= link_to "Donate to the rector's discretionary fund to help those whose belongings and homes were damaged by Hurricane
+     Ian" , "https://buy.stripe.com/test_00g9AV3ZlfAgays28a", class: "btn btn-lg btn-danger" %>
+  </div>
 <div class=row>
   <div class="col-md-8 main-body pe-5">
     <div class="clearfix">
@@ -21,13 +25,11 @@
             <p class="text-end"> &mdash;Book of Common Prayer</p>
         </div>
         <div class="mt-4">
-        <h1>Ian advisory: We will worship at 9 a.m. Sunday</h1>
+        <h1>Please join us in worship</h1>
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
-          <p>Please be mindful that heavy equipment and storm responders are still on the roads. As of this writing
-          the church is without power, meaning live streaming will not be possible. Be safe, everyone!</p>   
-          <!-- <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
-              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %> %> -->
+          <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
           </div>
           <% if @bulletin.url.present? %>
             <p><strong>
@@ -54,24 +56,25 @@
                     <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
                   </strong> </p>
     </div>
-    <%= image_tag("https://s3.amazonaws.com/dfc_attachments/images/3624319/Rev._Scharf.jpeg", alt: "DougScharf" ,
+    <%= cl_image_tag("BpScharf_kzbvzt.jpg", alt: "Bishop Scharf" ,
       class: "float-start img-fluid pe-2" , width: "40%" ) %>
       <h2 class="mt-3">Meet our new bishop</h2>
       <p>
         The Right Rev. Dr. Doug Scharf has returned to the diocese where he was born and raised 
-        and is well known. He was
-        elected at a special convention April 2 as our bishop coadjuter and was ordained as bishop September 24 in
-        Sarasota. He
-        will become the sixth bishop of the diocese when Bishop Dabney Smith retires, later this year.
+        and is well known. He was elected at a special convention April 2 as our bishop coadjuter and was ordained as bishop September 24 in
+        Sarasota. He will become the sixth bishop of the Diocese of Southwest Florida when Bishop Dabney Smith retires, later this year.
       </p>
-      <p>Fr. Scharf was born and raised in Ft. Myers, where his father was an Episcopal priest. He served several
+      <p>The newest&mdash;and at age 43 probably the youngest&mdash;bishop in the Episcopal Church in America was born and raised in Ft. Myers, where his father was an Episcopal priest. He served several
         parishes in the Diocese of Southwest Florida before moving to Palm Beach County to become rector of Good
         Shepherd in Tequesta.</p>
       <p>"There are few moments when a priest is speechless, but this is one of them. I have been so humbled and honored
         to have been a part of this journey with you all and to be elected, I am truly overwhelmed. I feel the presence
-        of God’s grace in this moment,” Fr. Doug said when he received the news of his election via a phone call from
+        of God’s grace in this moment,” he said when he received the news of his election via a phone call from
         Bishop Smith. The assembly reacted with a joyful applause.</p>
       <div class="clearfix"></div>
+      <h2>Help Wanted: We're seeking a music director</h2>
+      <p>If you are an experienced organist and choir director looking for a part-time position, we
+      would like to talk with you!. More information can be found <%= link_to "here.", "https://www.saintpaulsnaples.org/pages/music" %>
 
 
       <h2 class="mt-3">Reflect and Connect </h2>
@@ -84,13 +87,13 @@
           Nora Broszeit or Tom Connolly. </p>
           <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%" ) %>
 
-            <h2 class="mt-3">Home of the great Farmers' Market</h2>
-            <p>Now closed until November. If you are a prospective vendor, please call the office, as we are looking for
+            <h2 class="mt-3">Farmers' Market reopens Nov. 5</h2>
+            <p>If you are a prospective vendor, please call the office, as we are looking for
               certain vendors for the 2022-23 market year.</p>
 
             <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
-              introduce yourself to new friends and have a hot dog, on us! The market is open November through
-              April, Saturdays from 8 a.m.to noon. Browse and buy books, jewelery and lots of produce.
+              introduce yourself to new friend! The market is open November through
+              April, Saturdays from 8 a.m.to 1 p.m. Lots of fresh produce and select items of interest for sale.
             </p>
             <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
             </p>

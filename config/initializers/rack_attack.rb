@@ -1,5 +1,4 @@
 class Rack::Attack
-
   ### Configure Cache ###
 
   # If you don't want to use Rails.cache (Rack::Attack's default), then
@@ -9,7 +8,7 @@ class Rack::Attack
   # safelisting). It must implement .increment and .write like
   # ActiveSupport::Cache::Store
 
-  # Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new 
+  # Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
 
   ### Throttle Spammy Clients ###
 
@@ -41,9 +40,7 @@ class Rack::Attack
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/ip:#{req.ip}"
   throttle('logins/ip', limit: 5, period: 20.seconds) do |req|
-    if req.path == '/login' && req.post?
-      req.ip
-    end
+    req.ip if req.path == '/login' && req.post?
   end
 
   # Throttle POST requests to /login by email param
@@ -58,7 +55,7 @@ class Rack::Attack
     if req.path == '/login' && req.post?
       # Normalize the email, using the same logic as your authentication process, to
       # protect against rate limit bypasses. Return the normalized email if present, nil otherwise.
-      req.params['email'].to_s.downcase.gsub(/\s+/, "").presence
+      req.params['email'].to_s.downcase.gsub(/\s+/, '').presence
     end
   end
 
@@ -76,5 +73,5 @@ class Rack::Attack
   #    ['']] # body
   # end
 
-  Rack::Attack.blocklist_ip("176.48.0.0/16")
+  Rack::Attack.blocklist_ip('176.48.0.0/16')
 end

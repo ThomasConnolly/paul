@@ -56,7 +56,9 @@ class MarriageTalksController < ApplicationController
   def destroy
     @marriage_talk.destroy
     respond_to do |format|
-      format.html { redirect_to marriage_talks_url, status: :see_other, notice: 'Marriage talk was successfully destroyed.' }
+      format.html do
+        redirect_to marriage_talks_url, status: :see_other, notice: 'Marriage talk was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end

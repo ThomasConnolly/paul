@@ -4,6 +4,6 @@ class PathwaysMailer < ApplicationMailer
   def pathways_created
     @pathways = Pathway.last
     mail(to: Member.where.not(email: nil).pluck(:email),
-      subject: "There's a new Pathways")
+         subject: "There's a new Pathways")
   end
 end

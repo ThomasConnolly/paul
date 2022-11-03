@@ -6,7 +6,7 @@ class PrayForsController < ApplicationController
   def index
     @pray_fors = PrayFor.all
   end
-  
+
   # GET /pray_fors/1
   # GET /pray_fors/1.json
   def show; end

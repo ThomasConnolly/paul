@@ -7,56 +7,54 @@
 # That's it!
 
 class MemberMailer < ApplicationMailer
- 
   default from: 'Welcome@saintpaulsnaples.org'
-  #default to: 'welcome@saintpaulsnaples.org'
+  # default to: 'welcome@saintpaulsnaples.org'
   default to: 'tom.connolly@comcast.net'
-  #default bcc: -> { Member.where.not(email: nil).pluck(:email) }
+  # default bcc: -> { Member.where.not(email: nil).pluck(:email) }
 
-  
   def test(member)
     @member = member
     mail(
       subject: 'testing'
-    )  
+    )
   end
-  
+
   def lent2022_pathway(member)
     @member = member
-    @url ="https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1646192145/Lent2022Sm_szy5qs.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1646192145/Lent2022Sm_szy5qs.pdf'
     mail(
-      subject: "Pathways, your parish newsletter"
+      subject: 'Pathways, your parish newsletter'
     )
   end
 
   def january2022_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1643212624/Jan2022Sm_v8efsy.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1643212624/Jan2022Sm_v8efsy.pdf'
     mail(
-      subject: "Pathways, your parish newsletter"
-    ) 
-    end
+      subject: 'Pathways, your parish newsletter'
+    )
+  end
 
   def summer2021_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf'
     mail(
-      subject: "Pathways, your parish newsletter",
+      subject: 'Pathways, your parish newsletter',
       skip_premailer: true
     )
   end
 
   def may2021_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1620354103/MaySm2021_iljhdh.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1620354103/MaySm2021_iljhdh.pdf'
     mail(
-      subject: "Pathways, your parish newsletter"
+      subject: 'Pathways, your parish newsletter'
     )
   end
-    
+
   def pathways_link(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1615645774/lentSm2021_ska6qh.pdf'
     mail(
       subject: 'Trouble getting Pathways?'
     )
@@ -64,33 +62,33 @@ class MemberMailer < ApplicationMailer
 
   def lent2021_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1629836538/august2021_mlgfxt.pdf'
     mail(
-      subject: "Pathways, your parish newsletter"
+      subject: 'Pathways, your parish newsletter'
     )
   end
 
   def winter2020_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1608566037/December2020_ubsxck.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1608566037/December2020_ubsxck.pdf'
     mail(
-      subject: "The latest Pathway, the St. Paul parish newsletter, for you"
+      subject: 'The latest Pathway, the St. Paul parish newsletter, for you'
     )
   end
 
   def thankfuls(member)
     @member = member
-    @url = "https://www.saintpaulsnaples.org"
+    @url = 'https://www.saintpaulsnaples.org'
     mail(
       subject: "We want your note of thanks for Thursday's liturgy"
     )
   end
-  
+
   def fall2020_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1602860222/OctSm_vdmje5.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1602860222/OctSm_vdmje5.pdf'
     mail(
-      subject: "The latest Pathway, the St. Paul parish newsletter, for you"
+      subject: 'The latest Pathway, the St. Paul parish newsletter, for you'
     )
   end
 
@@ -103,59 +101,59 @@ class MemberMailer < ApplicationMailer
 
   def midSummer2020_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1596816752/Aug2020Sm_ofmerc.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1596816752/Aug2020Sm_ofmerc.pdf'
     mail(
-      subject: "The latest Pathway, the St. Paul parish newsletter, for you"
+      subject: 'The latest Pathway, the St. Paul parish newsletter, for you'
     )
   end
 
   def summer2020_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1591980296/summer_r8otjd.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1591980296/summer_r8otjd.pdf'
     mail(
-      subject: "A new Pathway, the St. Paul parish newsletter, for you"
+      subject: 'A new Pathway, the St. Paul parish newsletter, for you'
     )
   end
+
   def holy_week_2020_pathway(member)
     @member = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/q_100/v1586024909/HolyWeek20_mihkbp.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/q_100/v1586024909/HolyWeek20_mihkbp.pdf'
     mail(
-      subject: "A new Pathway, the St. Paul parish newsletter, for you"
+      subject: 'A new Pathway, the St. Paul parish newsletter, for you'
     )
   end
 
   def mar2020_pathway(member)
     @meber = member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1583598830/March2020S_uwawdz.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1583598830/March2020S_uwawdz.pdf'
     mail(
-      subject: "A new Pathway, the parish newsletter, for you"
+      subject: 'A new Pathway, the parish newsletter, for you'
     )
   end
 
-  def Feb2020_pathway(member)
+  def Feb2020_pathway(_member)
     @member = Member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1581604526/Feb2020Web_iyezxj.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1581604526/Feb2020Web_iyezxj.pdf'
     mail(
       subject: "St. Paul's parish newsletter, Pathway"
     )
   end
-  
-  def Jan2020_pathway(member)
-    @member = Member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1579145131/Jan2020_tkbja1.pdf"
-    mail(
-      subject: "New Pathway, the parish newsletter"
-    )
-  end
 
-  def december2019(member)
+  def Jan2020_pathway(_member)
     @member = Member
-    @url = "https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1576342342/Xmas_cvml0v.pdf"
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1579145131/Jan2020_tkbja1.pdf'
     mail(
       subject: 'New Pathway, the parish newsletter'
     )
   end
 
+  def december2019(_member)
+    @member = Member
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1576342342/Xmas_cvml0v.pdf'
+    mail(
+      subject: 'New Pathway, the parish newsletter'
+    )
+  end
 
   def november2019(member)
     @member = member
@@ -165,13 +163,13 @@ class MemberMailer < ApplicationMailer
     )
   end
 
-   def october2019(member)
-     @member = member
-     @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1570583126/Oct2019_h7ingj.pdf'
-     mail(
-       subject: 'New Pathway, the parish newsletter'
-     )
-   end
+  def october2019(member)
+    @member = member
+    @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1570583126/Oct2019_h7ingj.pdf'
+    mail(
+      subject: 'New Pathway, the parish newsletter'
+    )
+  end
 
   def holyWeek2019_pathway(member)
     @member = member
@@ -180,7 +178,7 @@ class MemberMailer < ApplicationMailer
       subject: 'New Pathway, the parish newsletter'
     )
   end
-  
+
   def lent2019_pathway(member)
     @member = member
     @url = 'https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1551804571/LentSmall2019_imqi3p.pdf'

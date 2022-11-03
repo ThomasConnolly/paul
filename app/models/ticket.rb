@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tickets
@@ -37,10 +38,10 @@ class Ticket < ApplicationRecord
 
   def set_stripe_id
     price = Stripe::Price.create({
-      unit_amount: amount,
-      currency: 'usd',
-      product: 'prod_LBHbVPOcXJU6lX'
-    })
+                                   unit_amount: amount,
+                                   currency: 'usd',
+                                   product: 'prod_LBHbVPOcXJU6lX'
+                                 })
     self.stripe_id = price.id
   end
 end

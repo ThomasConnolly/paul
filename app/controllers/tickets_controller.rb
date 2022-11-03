@@ -9,12 +9,11 @@ class TicketsController < ApplicationController
 
   def index
     @tickets = Ticket.all.order(:last_name)
-    @pd_tickets = Ticket.where(event: @event, checkout: "paid").order(:last_name)
+    @pd_tickets = Ticket.where(event: @event, checkout: 'paid').order(:last_name)
   end
 
   def new
     @ticket = @event.tickets.build
-
   end
 
   def create

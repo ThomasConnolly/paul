@@ -26,7 +26,6 @@ class Donation < ApplicationRecord
   before_save :set_amount
   before_save :set_stripe_id
 
-
   def set_amount
     self.amount = dollars.to_i * 100
     amount

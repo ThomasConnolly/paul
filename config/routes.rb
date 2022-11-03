@@ -14,14 +14,14 @@ Rails.application.routes.draw do
   post '/webhook_events', to: 'webhook_events#create'
 
   resources :donations
-  
+
   scope '/checkout_donations' do
     post 'create', to: 'checkout_donations#create', as: 'checkout_donations/create'
     get 'success', to: 'checkout_donations#success', as: 'checkout_donations_success'
   end
 
   resources :pledges
-  
+
   scope 'checkout_pledges' do
     post 'create', to: 'checkout_pledges#create', as: 'checkout_pledges/create'
     get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
@@ -42,15 +42,15 @@ Rails.application.routes.draw do
   resources :pathways
   resources :pray_fors
   resources :photos
-  devise_for :users, controllers: { sessions: "sessions" },
-             path: '',
-             path_names: {
-               sign_in: 'sign_in',
-               sign_out: 'logout',
-               password: 'secret',
-               registration: 'register',
-               sign_up: 'signup'
-             }
+  devise_for :users, controllers: { sessions: 'sessions' },
+                     path: '',
+                     path_names: {
+                       sign_in: 'sign_in',
+                       sign_out: 'logout',
+                       password: 'secret',
+                       registration: 'register',
+                       sign_up: 'signup'
+                     }
 
   resources :users do
     collection do
@@ -122,7 +122,7 @@ Rails.application.routes.draw do
     resources :comments, module: :story_ideas
   end
   resources :tasks
-  
+
   resources :anniversaries do
     collection do
       post :import

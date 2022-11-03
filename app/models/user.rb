@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -31,9 +32,6 @@
 #
 
 class User < ApplicationRecord
-
-
-
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_save :set_username
@@ -55,22 +53,20 @@ class User < ApplicationRecord
   validates :avatar, content_type: %i[png jpg]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy
-  
 
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
   enum :role, { member: 0, vestry: 1, communicator: 2, admin: 3 }
-  after_initialize :set_default_role, :if => :new_record?
+  after_initialize :set_default_role, if: :new_record?
 
-  scope :vestry, -> { where(role: 1)}
-  scope :communicator, -> { where(role: 2)}
-  scope :admin, -> { where(role: 3)}
+  scope :vestry, -> { where(role: 1) }
+  scope :communicator, -> { where(role: 2) }
+  scope :admin, -> { where(role: 3) }
 
   def set_default_role
     self.role ||= :member
   end
-
 
   attr_accessor :login
 
@@ -85,7 +81,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          authentication_keys: [:login]
 
-
   def set_username
     self.username = "#{first_name} #{last_name}"
   end
@@ -93,7 +88,6 @@ class User < ApplicationRecord
   def formatted_email
     "#{username} <#{email}>".strip
   end
-
 
   def maybe_add_stripe_id
     return unless stripe_id.blank?

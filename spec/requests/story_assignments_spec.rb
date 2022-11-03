@@ -12,69 +12,68 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/story_assignments", type: :request do
-  
+RSpec.describe '/story_assignments', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # StoryAssignment. As you add validations to StoryAssignment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       StoryAssignment.create! valid_attributes
       get story_assignments_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       story_assignment = StoryAssignment.create! valid_attributes
       get story_assignment_url(story_assignment)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_story_assignment_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       story_assignment = StoryAssignment.create! valid_attributes
       get edit_story_assignment_url(story_assignment)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new StoryAssignment" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new StoryAssignment' do
+        expect do
           post story_assignments_url, params: { story_assignment: valid_attributes }
-        }.to change(StoryAssignment, :count).by(1)
+        end.to change(StoryAssignment, :count).by(1)
       end
 
-      it "redirects to the created story_assignment" do
+      it 'redirects to the created story_assignment' do
         post story_assignments_url, params: { story_assignment: valid_attributes }
         expect(response).to redirect_to(story_assignment_url(StoryAssignment.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new StoryAssignment" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new StoryAssignment' do
+        expect do
           post story_assignments_url, params: { story_assignment: invalid_attributes }
-        }.to change(StoryAssignment, :count).by(0)
+        end.to change(StoryAssignment, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
@@ -84,20 +83,20 @@ RSpec.describe "/story_assignments", type: :request do
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested story_assignment" do
+      it 'updates the requested story_assignment' do
         story_assignment = StoryAssignment.create! valid_attributes
         patch story_assignment_url(story_assignment), params: { story_assignment: new_attributes }
         story_assignment.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the story_assignment" do
+      it 'redirects to the story_assignment' do
         story_assignment = StoryAssignment.create! valid_attributes
         patch story_assignment_url(story_assignment), params: { story_assignment: new_attributes }
         story_assignment.reload
@@ -105,7 +104,7 @@ RSpec.describe "/story_assignments", type: :request do
       end
     end
 
-    context "with invalid parameters" do
+    context 'with invalid parameters' do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         story_assignment = StoryAssignment.create! valid_attributes
         patch story_assignment_url(story_assignment), params: { story_assignment: invalid_attributes }
@@ -114,15 +113,15 @@ RSpec.describe "/story_assignments", type: :request do
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested story_assignment" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested story_assignment' do
       story_assignment = StoryAssignment.create! valid_attributes
-      expect {
+      expect do
         delete story_assignment_url(story_assignment)
-      }.to change(StoryAssignment, :count).by(-1)
+      end.to change(StoryAssignment, :count).by(-1)
     end
 
-    it "redirects to the story_assignments list" do
+    it 'redirects to the story_assignments list' do
       story_assignment = StoryAssignment.create! valid_attributes
       delete story_assignment_url(story_assignment)
       expect(response).to redirect_to(story_assignments_url)

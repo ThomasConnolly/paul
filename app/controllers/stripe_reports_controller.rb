@@ -32,8 +32,6 @@ class StripeReportsController < ApplicationController
   end
 
   def admin_only
-    unless user_signed_in? && current_user.admin?
-      redirect_to root_path, alert: 'This information is private.'
-    end
+    redirect_to root_path, alert: 'This information is private.' unless user_signed_in? && current_user.admin?
   end
 end

@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(:last_name)
-      redirect_to '/' unless current_user.admin?
+    redirect_to '/' unless current_user.admin?
   end
 
   def show; end
@@ -52,21 +52,18 @@ class UsersController < ApplicationController
 
   def edit; end
 
-
   private
 
   def set_user
     @user = User.find(params[:id])
   end
 
-
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id, 
-                                :stripe_pledge_id, :member_id)
+    params.require(:user).permit(:first_name, :last_name, :username, :role, :avatar, :stripe_id,
+                                 :stripe_pledge_id, :member_id)
   end
 
   def admin_only
     redirect_to root_path, alert: 'Access is restricted.' unless current_user.admin?
   end
-
 end

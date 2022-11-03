@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_story, only: %i[ show edit update destroy ]
-
+  before_action :set_story, only: %i[show edit update destroy]
 
   # GET /stories or /stories.json
   def index
@@ -9,8 +8,7 @@ class StoriesController < ApplicationController
   end
 
   # GET /stories/1 or /stories/1.json
-  def show
-  end
+  def show; end
 
   # GET /stories/new
   def new
@@ -18,8 +16,7 @@ class StoriesController < ApplicationController
   end
 
   # GET /stories/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /stories or /stories.json
   def create
@@ -27,7 +24,7 @@ class StoriesController < ApplicationController
     @story.user_id = current_user.id
     respond_to do |format|
       if @story.save
-        format.html { redirect_to story_url(@story), notice: "Story was successfully created." }
+        format.html { redirect_to story_url(@story), notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +37,7 @@ class StoriesController < ApplicationController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        format.html { redirect_to story_url(@story), notice: "Story was successfully updated." }
+        format.html { redirect_to story_url(@story), notice: 'Story was successfully updated.' }
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,19 +51,18 @@ class StoriesController < ApplicationController
     @story.destroy
 
     respond_to do |format|
-      format.html { redirect_to stories_url, status: :see_other, notice: "Story was successfully destroyed." }
+      format.html { redirect_to stories_url, status: :see_other, notice: 'Story was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-  
-    # Use callbacks to share common setup or constraints between actions.
-    def set_story
-      @story = Story.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_story
+    @story = Story.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def story_params
-      params.require(:story).permit(:title, :user_id, :status, :body)
-    end
+  # Only allow a list of trusted parameters through.
+  def story_params
+    params.require(:story).permit(:title, :user_id, :status, :body)
+  end
 end

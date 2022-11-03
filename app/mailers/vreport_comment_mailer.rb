@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class VreportCommentMailer < ApplicationMailer
-  default to: proc { User.where(role: "vestry").pluck(:email) },
-          bcc: proc { User.where(role: "admin").pluck(:email) }
+  default to: proc { User.where(role: 'vestry').pluck(:email) },
+          bcc: proc { User.where(role: 'admin').pluck(:email) }
 
   def comment_created(comment)
     @comment = comment

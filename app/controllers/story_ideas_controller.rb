@@ -49,13 +49,14 @@ class StoryIdeasController < ApplicationController
 
   def destroy
     @story_idea.destroy
-      respond_to do |format|
-        format.html { redirect_to story_ideas_url, status: :see_other, notice: "Story idea was successfully destroyed." }
-        format.json { head :no_content }
+    respond_to do |format|
+      format.html do
+        redirect_to story_ideas_url, status: :see_other, notice: 'Story idea was successfully destroyed.'
+      end
+      format.json { head :no_content }
     end
   end
 
-  
   private
 
   def set_story_idea
@@ -72,6 +73,6 @@ class StoryIdeasController < ApplicationController
   end
 
   def authorize
-    redirect_to "/" unless current_user.communicator? || current_user.vestry? || current_user.admin?
+    redirect_to '/' unless current_user.communicator? || current_user.vestry? || current_user.admin?
   end
 end

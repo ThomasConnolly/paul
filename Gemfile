@@ -19,10 +19,10 @@ gem 'bootstrap_form'
 gem 'by_star'
 gem 'cloudinary'
 gem 'cssbundling-rails'
-gem 'devise', git: "https://github.com/heartcombo/devise", branch: 'main'
+gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
 gem 'feedjira'
 gem 'figaro'
-gem "geocoder", "~> 1.7"
+gem 'geocoder', '~> 1.7'
 gem 'hotwire-rails'
 gem 'httparty'
 gem 'image_processing'
@@ -41,14 +41,17 @@ gem 'pg', '~> 1.4.3'
 gem 'premailer-rails'
 gem 'puma'
 gem 'rack'
+gem 'rack-attack', '~> 6.6'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
-gem "rack-attack", "~> 6.6"
 gem 'rails'
 gem 'railties'
 gem 'receipts'
 gem 'redis'
 gem 'rest-client'
-#gem 'ruby-vips'
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
+# gem 'ruby-vips'
 gem 'rss'
 gem 'scout_apm'
 gem 'sendgrid-ruby'
@@ -72,6 +75,7 @@ end
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'syntax_suggest'
   # gem 'email_spec'
   # gem 'factory_bot_rails'
   # gem 'guard'

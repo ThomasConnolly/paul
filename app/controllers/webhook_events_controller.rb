@@ -47,7 +47,7 @@ class WebhookEventsController < ApplicationController
     {
       source: params[:source],
       data: params.except(:source, :controller, :action).permit!,
-      external_id: external_id
+      external_id:
     }
   end
 end

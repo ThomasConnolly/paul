@@ -35,7 +35,6 @@ class VreportsController < ApplicationController
 
   def show; end
 
-
   def create
     @vreport = current_user.vreports.build(vreport_params)
     if @vreport.save

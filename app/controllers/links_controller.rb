@@ -53,13 +53,11 @@ class LinksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
 
   def admin_only
-    unless user_signed_in? && current_user.admin?
-      redirect_to '/'
-  end
+    redirect_to '/' unless user_signed_in? && current_user.admin?
 
-  # Only allow a list of trusted parameters through.
-  def link_params
-    params.require(:link).permit(:event, :time, :date, :url)
+    # Only allow a list of trusted parameters through.
+    def link_params
+      params.require(:link).permit(:event, :time, :date, :url)
+    end
   end
-end
 end

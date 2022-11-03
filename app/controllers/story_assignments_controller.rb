@@ -1,5 +1,5 @@
 class StoryAssignmentsController < ApplicationController
-  before_action :set_story_assignment, only: %i[ show edit update destroy ]
+  before_action :set_story_assignment, only: %i[show edit update destroy]
 
   # GET /story_assignments or /story_assignments.json
   def index
@@ -7,8 +7,7 @@ class StoryAssignmentsController < ApplicationController
   end
 
   # GET /story_assignments/1 or /story_assignments/1.json
-  def show
-  end
+  def show; end
 
   # GET /story_assignments/new
   def new
@@ -16,8 +15,7 @@ class StoryAssignmentsController < ApplicationController
   end
 
   # GET /story_assignments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /story_assignments or /story_assignments.json
   def create
@@ -25,7 +23,9 @@ class StoryAssignmentsController < ApplicationController
 
     respond_to do |format|
       if @story_assignment.save
-        format.html { redirect_to story_assignment_url(@story_assignment), notice: "Story assignment was successfully created." }
+        format.html do
+          redirect_to story_assignment_url(@story_assignment), notice: 'Story assignment was successfully created.'
+        end
         format.json { render :show, status: :created, location: @story_assignment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,9 @@ class StoryAssignmentsController < ApplicationController
   def update
     respond_to do |format|
       if @story_assignment.update(story_assignment_params)
-        format.html { redirect_to story_assignment_url(@story_assignment), notice: "Story assignment was successfully updated." }
+        format.html do
+          redirect_to story_assignment_url(@story_assignment), notice: 'Story assignment was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @story_assignment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +54,22 @@ class StoryAssignmentsController < ApplicationController
     @story_assignment.destroy
 
     respond_to do |format|
-      format.html { redirect_to story_assignments_url, status: :see_other, notice: "Story assignment was successfully destroyed." }
+      format.html do
+        redirect_to story_assignments_url, status: :see_other, notice: 'Story assignment was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_story_assignment
-      @story_assignment = StoryAssignment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def story_assignment_params
-      params.require(:story_assignment).permit(:story_idea_id, :assigned_to, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_story_assignment
+    @story_assignment = StoryAssignment.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def story_assignment_params
+    params.require(:story_assignment).permit(:story_idea_id, :assigned_to, :status)
+  end
 end

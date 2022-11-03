@@ -9,7 +9,6 @@ class MembersController < ApplicationController
     @diaspora = Member.where.not(away_zip: nil).where.not(email: nil)
   end
 
-
   def update
     @member.update(member_params)
     @member.save
@@ -27,7 +26,6 @@ class MembersController < ApplicationController
 
   private
 
- 
   def set_member
     @member = Member.find(params[:id])
   end

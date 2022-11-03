@@ -29,7 +29,7 @@
         <h1>Please join us in worship</h1>
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%" ,
           class: "float-start pe-3" ) %>
-          <p>Sundays at 9 a.m., in church and live streamed on <%= link_to "YouTube." ,
+          <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
               ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
           </div>
           <% if @bulletin.url.present? %>
@@ -88,7 +88,7 @@
           Nora Broszeit or Tom Connolly. </p>
           <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%" ) %>
 
-            <h2 class="mt-3">Farmers' Market reopens Nov. 5</h2>
+            <h2 class="mt-3">Farmers' Market reopens this Saturday</h2>
             <p>If you are a prospective vendor, please call the office, as we are looking for
               certain vendors for the 2022-23 market year.</p>
 
@@ -145,7 +145,7 @@
 
       <h2 class="mt-3">All the links</h2>
       <p><strong>
-        <%= link_to "Sunday worship service, 9 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
         </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
         link. We have a new setup, with three cameras and good audio for home viewers.</p>
       <% if @bulletin.url.present? %>
@@ -159,7 +159,7 @@
                 <%= link_to "Wednesday evening adult education, 6:30 p.m." , "#{@evening_bible.url}" %> 
               </strong> Where did the ideas of Heaven and Hell come from? Well, in this series we are reading <em>Heaven and Hell</em> by Prof. Bart Ehrman, so we're learning and discussing our findings and reactions. Buy the book on Amazon and join us live or on Zoom. We are on Chapter 6 this Wednesday.</strong></p>
             <p><strong>
-                <%= link_to "Thursday wine time, 5:30 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
+                <%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
               </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
               called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
               third Thursday of the month.</p>

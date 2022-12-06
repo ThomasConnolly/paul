@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.1.2'
+ruby '3.1.3'
 
 gem 'actionmailer'
 gem 'active_model_serializers'
@@ -62,6 +62,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'uglifier'
 gem 'whenever'
+
 
 group :development do
   gem 'annotate'

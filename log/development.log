@@ -3646,3 +3646,1787 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 133ms (Views: 65.3ms | ActiveRecord: 29.2ms | Allocations: 72907)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-15 08:23:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 12376)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 12449)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 11.1ms | Allocations: 41177)
+
+
+
+NoMethodError - undefined method `youtube_id' for nil:NilClass
+    <iframe src=\'https://www.youtube.com/embed/'.freeze;@output_buffer.append=( @episode.youtube_id );@output_buffer.safe_append='?rel=0&autoplay='.freeze;@output_buffer.append=( params[:autoplay] || 0 );@output_buffer.safe_append='\' frameborder=\'0\' allowfullscreen></iframe>
+                                                                                         ^^^^^^^^^^^:
+  app/views/home/index.html.erb:143
+
+Started POST "/__better_errors/38999da0b975961b/variables" for 127.0.0.1 at 2022-12-15 08:23:31 -0500
+  [1m[36mEnsFeed Load (2.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" /* loading for inspect */ ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE EnsFeed Load (0.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" /* loading for inspect */ ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ (eval):72:in `block in render'
+Started GET "/" for 127.0.0.1 at 2022-12-15 08:27:35 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:194
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4637)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1347)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 39.5ms | Allocations: 27376)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1687)
+  Rendered layout layouts/application.html.erb (Duration: 53.9ms | Allocations: 36378)
+Completed 200 OK in 63ms (Views: 47.0ms | ActiveRecord: 9.9ms | Allocations: 41435)
+
+
+Started GET "/worship" for 127.0.0.1 at 2022-12-15 08:28:29 -0500
+Processing by WorshipController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering worship/index.html.erb within layouts/application
+  Rendered worship/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 819)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1065)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 2951)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6974)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 8095)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 08:38:47 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:196
+  Rendered home/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4642)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1314)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 4.7ms | Allocations: 3529)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1772)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 12356)
+Completed 200 OK in 45ms (Views: 13.3ms | ActiveRecord: 5.5ms | Allocations: 20423)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 08:38:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:196
+  Rendered home/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3185)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1050)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 2690)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1599)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 8973)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 2.8ms | Allocations: 13336)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 20:20:57 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:196
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3206)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1050)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 2737)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1599)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 9041)
+Completed 200 OK in 23ms (Views: 7.4ms | ActiveRecord: 5.3ms | Allocations: 16442)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 20:33:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:196
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4638)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1314)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 3527)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 12344)
+Completed 200 OK in 35ms (Views: 17.2ms | ActiveRecord: 5.8ms | Allocations: 20117)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 20:44:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4638)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 3526)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 12343)
+Completed 200 OK in 29ms (Views: 12.5ms | ActiveRecord: 5.1ms | Allocations: 20359)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 20:56:18 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4638)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 4.1ms | Allocations: 3529)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 12348)
+Completed 200 OK in 30ms (Views: 11.4ms | ActiveRecord: 5.4ms | Allocations: 20376)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-15 20:57:30 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3185)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 1050)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 2690)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 8976)
+Completed 200 OK in 17ms (Views: 9.8ms | ActiveRecord: 1.7ms | Allocations: 13362)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 22:54:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.3ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:197
+  Rendered home/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 12438)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1347)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 31.8ms | Allocations: 27271)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 44144)
+Completed 200 OK in 97ms (Views: 46.6ms | ActiveRecord: 21.5ms | Allocations: 72936)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:04:30 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:214
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4656)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 4.5ms | Allocations: 3528)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 12363)
+Completed 200 OK in 29ms (Views: 12.3ms | ActiveRecord: 5.6ms | Allocations: 20524)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:31:10 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:214
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3206)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1050)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 2738)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 9044)
+Completed 200 OK in 24ms (Views: 8.1ms | ActiveRecord: 5.2ms | Allocations: 16490)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:31:29 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4633)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 3480)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 12294)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 1.7ms | Allocations: 17168)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:33:16 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4666)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1314)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 4.2ms | Allocations: 3479)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1771)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 12328)
+Completed 200 OK in 32ms (Views: 12.8ms | ActiveRecord: 2.3ms | Allocations: 17268)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:36:12 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3185)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1050)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 2690)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1599)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 8973)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 1.9ms | Allocations: 13362)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:46:10 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4384)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4446)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.2ms | Allocations: 12452)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" ,
+   "https://buy.stripe.com/4gw5o32ih7tn4004gh", 
+  class: "btn btn-primary btn-lg text-white" %>
+  </div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3" alt: "PrayLogo") %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+              grace fearlessly to contend against evil and to make no peace
+              with oppression; and, that we may reverently use our freedom,
+              help us to employ it in the maintenance of justice in our
+              communities and among the nations, to the glory of your holy
+              Name; through Jesus Christ our Lord, who lives and reigns with
+              you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <div class="mt-4">
+        <h1>Please join us in worship</h1>
+        <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", alt: "SP Cross" ,
+          class: "float-start pe-3" ) %>
+          <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
+          </div>
+          <% if @bulletin.url.present? %>
+            <p><strong>
+                <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+              </strong></p>
+            <% else %>
+              <p>Sunday's bulletin will be available here on Thursday.</p>
+              <% end %>
+                <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                    short,
+                    cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                </p>
+                <p>
+                  <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                    ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                    %>
+                </p>
+                <p><strong>
+                    <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                  </strong> </p>
+    </div>
+    <%= cl_image_tag("BpScharf_kzbvzt.jpg", alt: "Bishop Scharf" ,
+      class: "float-start img-fluid pe-2" , width: "40%" ) %>
+      <h2 class="mt-3">Meet our new bishop</h2>
+      <p>
+        The Right Rev. Dr. Doug Scharf has returned to the diocese where he was born and raised 
+        and is well known. He was elected at a special convention April 2 as our bishop coadjuter and was ordained as bishop September 24 in
+        Sarasota. He will become the sixth bishop of the Diocese of Southwest Florida on Dec. 10, when Bishop Dabney Smith retires.
+      </p>
+      <p>The newest&mdash;and at age 43 probably the youngest&mdash;bishop in the Episcopal Church in America was born and raised in Ft. Myers, where his father was an Episcopal priest. He served several
+        parishes in the Diocese of Southwest Florida before moving to Palm Beach County to become rector of Good
+        Shepherd in Tequesta.</p>
+      <p>"There are few moments when a priest is speechless, but this is one of them. I have been so humbled and honored
+        to have been a part of this journey with you all and to be elected, I am truly overwhelmed. I feel the presence
+        of God’s grace in this moment,” he said when he received the news of his election via a phone call from
+        Bishop Smith. The assembly reacted with a joyful applause.</p>
+      <div class="clearfix"></div>
+      <h2>Help Wanted: We're seeking a music director</h2>
+      <p>If you are an experienced organist and choir director looking for a part-time position, we
+      would like to talk with you!. More information can be found <%= link_to "here.", "https://www.saintpaulsnaples.org/pages/music" %>
+      <h2 class="mt-3">Reflect and Connect </h2>
+      <p>This group meets at 9:30 a.m. Wednesdays in the library to discuss the previous Sunday's sermon. All are welcome.</p>
+      <h2 class="mt-3">Sacred Ground Series</h2>
+      <p>This is a series of videos, readings and small-group discussions about race. This is highly
+        recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+        watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %></p>
+        <p>Interested in pursuing <em>Sacred Ground</em> further? As in participating in a small-group study? Contact 
+          Nora Broszeit or Tom Connolly. </p>
+          <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%" ) %>
+            <h2 class="mt-3">Farmers' Market open Saturdays, 8 a.m. to noon</h2>
+            <p>If you are a prospective vendor, please call the office, as we are looking for
+              certain vendors for the 2022-23 market year.</p>
+            <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+              introduce yourself to new friend! The market is open November through
+              April, Saturdays from 8 a.m.to noon. Lots of fresh produce and select items of interest for sale.
+            </p>
+            <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+            </p>
+            <div class="clearfix"></div>
+            <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3" ) %>
+              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+                thousands of children who lost their moms and dads to AIDS. In addition to monitary
+                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+                dresses, as seen here with Dr. Wilson.</p>
+              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+              </p>
+              <div class="clearfix"></div>
+              <h2 class="mt-3">Supporters of 'ERD'</h2>
+              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+                ), "https://episcopalrelief.org/" %>
+                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+                <div class="clearfix"></div>
+                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                  width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%" ) %>
+    <%
+=begin%>
+ <iframe width="560" height="315" 
+     src="https://www.youtube.com/embed/gc7IrllDDmo" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+     allowfullscreen></iframe> 
+<%
+=end%>
+      <div class="container mt-3">
+        <h3>Modal Example</h3>
+        <p>Click on the button to open the modal.</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+    </div>
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <!-- Modal body -->
+            <div class="modal-body">
+                 <iframe width="560" height="315" 
+     src="https://www.youtube.com/embed/gc7IrllDDmo" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+     allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+        <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link. We have a new setup, with three cameras and good audio for home viewers.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                Wednesday evening adult education, 6:30 p.m. 
+              </strong> We are reading the Gospel of John and discussing our findings under the tutelage of Fr. Tom. Approximately one hour, class is held in the library, Serson Hall.</p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/ff0b14c1db9c2422/variables" for 127.0.0.1 at 2022-12-19 08:46:10 -0500
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:49:39 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4713)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 3526)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 12418)
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 2.7ms | Allocations: 17538)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:53:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 12526)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1347)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 31.8ms | Allocations: 27271)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 44232)
+Completed 200 OK in 99ms (Views: 46.5ms | ActiveRecord: 18.8ms | Allocations: 73003)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 08:56:21 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4699)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1314)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 3482)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 12362)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 1.8ms | Allocations: 17471)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 09:00:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 12539)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1347)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 31.0ms | Allocations: 27271)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 44245)
+Completed 200 OK in 94ms (Views: 47.3ms | ActiveRecord: 16.6ms | Allocations: 73026)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 09:03:57 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4723)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1314)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 3482)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 12386)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 1.9ms | Allocations: 17519)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 09:06:26 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:221
+  Rendered home/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4735)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1314)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 3480)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 12396)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 1.9ms | Allocations: 17359)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 09:15:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:220
+  Rendered home/index.html.erb within layouts/application (Duration: 28.0ms | Allocations: 12565)
+  Rendered layouts/_header.html.erb (Duration: 10.2ms | Allocations: 1347)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 81.1ms | Allocations: 27291)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 132.2ms | Allocations: 44294)
+Completed 200 OK in 174ms (Views: 119.1ms | ActiveRecord: 25.2ms | Allocations: 73081)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 09:58:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 4536)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4610)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 11.7ms | Allocations: 33328)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" ,
+   "https://buy.stripe.com/4gw5o32ih7tn4004gh", 
+  class: "btn btn-primary btn-lg text-white" %>
+  </div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+              grace fearlessly to contend against evil and to make no peace
+              with oppression; and, that we may reverently use our freedom,
+              help us to employ it in the maintenance of justice in our
+              communities and among the nations, to the glory of your holy
+              Name; through Jesus Christ our Lord, who lives and reigns with
+              you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <div class="mt-4">
+        <h1>Please join us in worship</h1>
+        <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", alt: "SP Cross" ,
+          class: "float-start pe-3" ) %>
+          <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
+          </div>
+          <% if @bulletin.url.present? %>
+            <p><strong>
+                <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+              </strong></p>
+            <% else %>
+              <p>Sunday's bulletin will be available here on Thursday.</p>
+              <% end %>
+                <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                    short,
+                    cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                </p>
+                <p>
+                  <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                    ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                    %>
+                </p>
+                <p><strong>
+                    <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                  </strong> </p>
+    </div>
+    <%= cl_image_tag("BpScharf_kzbvzt.jpg", alt: "Bishop Scharf" ,
+      class: "float-start img-fluid pe-2" , width: "40%" ) %>
+      <h2 class="mt-3">Meet our new bishop</h2>
+      <p>
+        The Right Rev. Dr. Doug Scharf has returned to the diocese where he was born and raised 
+        and is well known. He was elected at a special convention April 2 as our bishop coadjuter and was ordained as bishop September 24 in
+        Sarasota. He will become the sixth bishop of the Diocese of Southwest Florida on Dec. 10, when Bishop Dabney Smith retires.
+      </p>
+      <p>The newest&mdash;and at age 43 probably the youngest&mdash;bishop in the Episcopal Church in America was born and raised in Ft. Myers, where his father was an Episcopal priest. He served several
+        parishes in the Diocese of Southwest Florida before moving to Palm Beach County to become rector of Good
+        Shepherd in Tequesta.</p>
+      <p>"There are few moments when a priest is speechless, but this is one of them. I have been so humbled and honored
+        to have been a part of this journey with you all and to be elected, I am truly overwhelmed. I feel the presence
+        of God’s grace in this moment,” he said when he received the news of his election via a phone call from
+        Bishop Smith. The assembly reacted with a joyful applause.</p>
+      <div class="clearfix"></div>
+      <h2>Help Wanted: We're seeking a music director</h2>
+      <p>If you are an experienced organist and choir director looking for a part-time position, we
+      would like to talk with you!. More information can be found <%= link_to "here.", "https://www.saintpaulsnaples.org/pages/music" %>
+      <h2 class="mt-3">Reflect and Connect </h2>
+      <p>This group meets at 9:30 a.m. Wednesdays in the library to discuss the previous Sunday's sermon. All are welcome.</p>
+      <h2 class="mt-3">Sacred Ground Series</h2>
+      <p>This is a series of videos, readings and small-group discussions about race. This is highly
+        recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+        watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %></p>
+        <p>Interested in pursuing <em>Sacred Ground</em> further? As in participating in a small-group study? Contact 
+          Nora Broszeit or Tom Connolly. </p>
+          <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%", alt: "FM_Logo" ) %>
+            <h2 class="mt-3">Farmers' Market open Saturdays, 8 a.m. to noon</h2>
+            <p>If you are a prospective vendor, please call the office, as we are looking for
+              certain vendors for the 2022-23 market year.</p>
+            <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+              introduce yourself to new friend! The market is open November through
+              April, Saturdays from 8 a.m.to noon. Lots of fresh produce and select items of interest for sale.
+            </p>
+            <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+            </p>
+            <div class="clearfix"></div>
+            <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3", alt: "Susan Wilson picture" ) %>
+              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+                thousands of children who lost their moms and dads to AIDS. In addition to monitary
+                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+                dresses, as seen here with Dr. Wilson.</p>
+              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+              </p>
+              <div class="clearfix"></div>
+              <h2 class="mt-3">Supporters of 'ERD'</h2>
+              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+                ), "https://episcopalrelief.org/" %>
+                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+                <div class="clearfix"></div>
+                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                  width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto", alt: "God Loves, No Exception signboard" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%", alt: "Update logo" ) %>
+    <%
+ <iframe width="560" height="315" 
+     src="https://www.youtube.com/embed/gc7IrllDDmo" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+     allowfullscreen></iframe> 
+  #     <div class="container mt-3">
+  #       <h3>Modal Example</h3>
+  #       <p>Click on the button to open the modal.</p>
+  #   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  #   Open modal
+  # </button>
+  #   </div>
+  #   <!-- The Modal -->
+  #   <div class="modal" id="myModal">
+  #       <div class="modal-dialog">
+  #           <!-- Modal body -->
+  #           <div class="modal-body">
+  #                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gc7IrllDDmo" title="YouTube video player" 
+  #                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  #                allowfullscreen></iframe>
+  #           </div>
+  #       </div>
+  #   </div>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+        <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link. We have a new setup, with three cameras and good audio for home viewers.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                Wednesday evening adult education, 6:30 p.m. 
+              </strong> We are reading the Gospel of John and discussing our findings under the tutelage of Fr. Tom. Approximately one hour, class is held in the library, Serson Hall.</p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/e64b0d67f15d6298/variables" for 127.0.0.1 at 2022-12-19 09:58:51 -0500
+Started GET "/" for 127.0.0.1 at 2022-12-19 10:00:24 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3594)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 3647)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.8ms | Allocations: 8727)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" ,
+   "https://buy.stripe.com/4gw5o32ih7tn4004gh", 
+  class: "btn btn-primary btn-lg text-white" %>
+  </div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+              grace fearlessly to contend against evil and to make no peace
+              with oppression; and, that we may reverently use our freedom,
+              help us to employ it in the maintenance of justice in our
+              communities and among the nations, to the glory of your holy
+              Name; through Jesus Christ our Lord, who lives and reigns with
+              you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+        <div class="mt-4">
+        <h1>Please join us in worship</h1>
+        <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", alt: "SP Cross" ,
+          class: "float-start pe-3" ) %>
+          <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A") %>
+          </div>
+          <% if @bulletin.url.present? %>
+            <p><strong>
+                <%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+              </strong></p>
+            <% else %>
+              <p>Sunday's bulletin will be available here on Thursday.</p>
+              <% end %>
+                <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+                  <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+                    short,
+                    cute introduction to our time-honored <em>Book of Common Prayer.</em>
+                </p>
+                <p>
+                  <%= link_to "Click here for the on-line Book of Common Prayer" ,
+                    ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf")
+                    %>
+                </p>
+                <p><strong>
+                    <%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
+                  </strong> </p>
+    </div>
+    <%= cl_image_tag("BpScharf_kzbvzt.jpg", alt: "Bishop Scharf" ,
+      class: "float-start img-fluid pe-2" , width: "40%" ) %>
+      <h2 class="mt-3">Meet our new bishop</h2>
+      <p>
+        The Right Rev. Dr. Doug Scharf has returned to the diocese where he was born and raised 
+        and is well known. He was elected at a special convention April 2 as our bishop coadjuter and was ordained as bishop September 24 in
+        Sarasota. He will become the sixth bishop of the Diocese of Southwest Florida on Dec. 10, when Bishop Dabney Smith retires.
+      </p>
+      <p>The newest&mdash;and at age 43 probably the youngest&mdash;bishop in the Episcopal Church in America was born and raised in Ft. Myers, where his father was an Episcopal priest. He served several
+        parishes in the Diocese of Southwest Florida before moving to Palm Beach County to become rector of Good
+        Shepherd in Tequesta.</p>
+      <p>"There are few moments when a priest is speechless, but this is one of them. I have been so humbled and honored
+        to have been a part of this journey with you all and to be elected, I am truly overwhelmed. I feel the presence
+        of God’s grace in this moment,” he said when he received the news of his election via a phone call from
+        Bishop Smith. The assembly reacted with a joyful applause.</p>
+      <div class="clearfix"></div>
+      <h2>Help Wanted: We're seeking a music director</h2>
+      <p>If you are an experienced organist and choir director looking for a part-time position, we
+      would like to talk with you!. More information can be found <%= link_to "here.", "https://www.saintpaulsnaples.org/pages/music" %>
+      <h2 class="mt-3">Reflect and Connect </h2>
+      <p>This group meets at 9:30 a.m. Wednesdays in the library to discuss the previous Sunday's sermon. All are welcome.</p>
+      <h2 class="mt-3">Sacred Ground Series</h2>
+      <p>This is a series of videos, readings and small-group discussions about race. This is highly
+        recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+        watch an introduction, <%= link_to "click here. " , "https://www.episcopalchurch.org/sacred-ground/" %></p>
+        <p>Interested in pursuing <em>Sacred Ground</em> further? As in participating in a small-group study? Contact 
+          Nora Broszeit or Tom Connolly. </p>
+          <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , width: "40%", alt: "FM_Logo" ) %>
+            <h2 class="mt-3">Farmers' Market open Saturdays, 8 a.m. to noon</h2>
+            <p>If you are a prospective vendor, please call the office, as we are looking for
+              certain vendors for the 2022-23 market year.</p>
+            <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit and
+              introduce yourself to new friend! The market is open November through
+              April, Saturdays from 8 a.m.to noon. Lots of fresh produce and select items of interest for sale.
+            </p>
+            <p>For more information about the market, <%= link_to "click here." , markets_index_path %>
+            </p>
+            <div class="clearfix"></div>
+            <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3", alt: "Susan Wilson picture" ) %>
+              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+                thousands of children who lost their moms and dads to AIDS. In addition to monitary
+                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+                dresses, as seen here with Dr. Wilson.</p>
+              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+              </p>
+              <div class="clearfix"></div>
+              <h2 class="mt-3">Supporters of 'ERD'</h2>
+              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+                ), "https://episcopalrelief.org/" %>
+                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+                <div class="clearfix"></div>
+                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                  width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto", alt: "God Loves, No Exception signboard" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%", alt: "Update logo" ) %>
+    <%
+ <iframe> width="560" height="315" 
+     src="https://www.youtube.com/embed/gc7IrllDDmo" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+     allowfullscreen></iframe> 
+  #     <div class="container mt-3">
+  #       <h3>Modal Example</h3>
+  #       <p>Click on the button to open the modal.</p>
+  #   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  #   Open modal
+  # </button>
+  #   </div>
+  #   <!-- The Modal -->
+  #   <div class="modal" id="myModal">
+  #       <div class="modal-dialog">
+  #           <!-- Modal body -->
+  #           <div class="modal-body">
+  #                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gc7IrllDDmo" title="YouTube video player" 
+  #                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  #                allowfullscreen></iframe>
+  #           </div>
+  #       </div>
+  #   </div>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+        <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/channel/UCdc6lx-U_N1X26tkZ7TQ8-A" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link. We have a new setup, with three cameras and good audio for home viewers.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                Wednesday evening adult education, 6:30 p.m. 
+              </strong> We are reading the Gospel of John and discussing our findings under the tutelage of Fr. Tom. Approximately one hour, class is held in the library, Serson Hall.</p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/1fcbae77c942d07c/variables" for 127.0.0.1 at 2022-12-19 10:00:24 -0500
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:23:25 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 12398)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1347)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 37.1ms | Allocations: 27388)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1687)
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 44206)
+Completed 200 OK in 87ms (Views: 53.4ms | ActiveRecord: 18.4ms | Allocations: 52424)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:25:45 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4721)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1314)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 3482)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1771)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 12385)
+Completed 200 OK in 33ms (Views: 20.0ms | ActiveRecord: 3.4ms | Allocations: 17457)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:31:07 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4742)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 7.6ms | Allocations: 3527)
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 12450)
+Completed 200 OK in 46ms (Views: 20.1ms | ActiveRecord: 9.6ms | Allocations: 20544)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:41:41 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4743)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1314)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 10.2ms | Allocations: 3526)
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 12448)
+Completed 200 OK in 57ms (Views: 25.8ms | ActiveRecord: 11.4ms | Allocations: 20455)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:43:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 12549)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1347)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 42.2ms | Allocations: 27271)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 69.5ms | Allocations: 44255)
+Completed 200 OK in 120ms (Views: 63.2ms | ActiveRecord: 20.6ms | Allocations: 73039)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:44:41 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3352)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1055)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 2755)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1601)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 9245)
+Completed 200 OK in 24ms (Views: 13.2ms | ActiveRecord: 3.6ms | Allocations: 13764)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 15:52:05 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (1.0ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:217
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4742)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 6.7ms | Allocations: 3526)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 12447)
+Completed 200 OK in 43ms (Views: 17.4ms | ActiveRecord: 10.3ms | Allocations: 20403)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 16:20:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.6ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:204
+  Rendered home/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4734)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 7.6ms | Allocations: 3527)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 12442)
+Completed 200 OK in 45ms (Views: 19.6ms | ActiveRecord: 9.4ms | Allocations: 20467)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 16:22:05 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4710)
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 1314)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 6.2ms | Allocations: 3480)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1772)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 12375)
+Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 3.8ms | Allocations: 17355)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 16:33:24 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4731)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 6.9ms | Allocations: 3527)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 12439)
+Completed 200 OK in 47ms (Views: 19.4ms | ActiveRecord: 10.1ms | Allocations: 20521)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-19 16:38:38 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:201
+  Rendered home/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 4706)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 3480)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 1770)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 12368)
+Completed 200 OK in 34ms (Views: 20.7ms | ActiveRecord: 4.0ms | Allocations: 17313)
+
+

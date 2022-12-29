@@ -21,6 +21,6 @@ module Paul
     # in config/environments, which are processed later.
     #
     config.time_zone = 'Eastern Time (US & Canada)'
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.eager_load_paths += %W(#{config.root}/lib)
   end
 end

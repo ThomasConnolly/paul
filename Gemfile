@@ -76,7 +76,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'debug'
+  # gem 'debug'
   gem 'syntax_suggest'
   # gem 'email_spec'
   # gem 'factory_bot_rails'

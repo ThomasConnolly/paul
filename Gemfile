@@ -76,7 +76,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'debug'
   gem 'syntax_suggest'
   # gem 'email_spec'
   # gem 'factory_bot_rails'

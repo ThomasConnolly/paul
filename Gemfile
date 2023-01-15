@@ -52,7 +52,7 @@ gem 'rest-client'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
-# gem 'ruby-vips'
+gem 'ruby-vips'
 gem 'rss'
 gem 'scout_apm'
 gem 'sendgrid-ruby'
@@ -62,7 +62,6 @@ gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'uglifier'
-gem 'whenever'
 
 
 group :development do

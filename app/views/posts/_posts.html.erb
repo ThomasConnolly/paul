@@ -1,14 +1,20 @@
+
 <% @posts.each do |post| %>
   
-    <p><em> <%= post.user.username.titleize %>::
-    </em> &nbsp; <%= post.content %>
-    </p>
-    <p> <small> Posted <%= time_ago_in_words(post.created_at) %> ago. 
-    <%#=  pluralize(post.comments.count, "comment" ) %> &nbsp; 
-    <%= link_to "Show" , post_path(post[:id]) %> |
-    <%# if current_user == post.user || current_user.admin? %>
-    <%= link_to "Edit" , edit_post_path(post[:id]) %> |&nbsp;
-    <%#= button_to "Delete" , post_path(post), method: :delete, data: {
-      confirm: "Are you sure you want to delete the post?" }%></small></span> </p>
-    <% end %>
-    <div class="clearfix"></div>
+  <p><em> <strong><%= post.user.username.titleize %> </strong> </em>:: 
+   <%= post.content %>
+  
+   <small> Posted <%= time_ago_in_words(post.created_at) %> ago. 
+    <%=  pluralize(post.comments.count, "comment" ) %> 
+    <%= link_to "Show" , post_path(post[:id]) %> 
+
+ <% if current_user == post.user || current_user.admin? %>
+    <%= link_to " | Edit" , edit_post_path(post[:id]) %> </small> </p>
+
+    <%= button_to "Delete" , post_path(post), method: :delete, data: {
+      confirm: "Are you sure you want to delete the post?", class: "btn btn-danger" }%> 
+      <hr>
+  <% end %>
+<% end %>
+
+

@@ -19,13 +19,11 @@
   <p>Anyone can read these posts, but to create a post or to make a comment, you must be registered and signed in. 
   <%= link_to "Click to sign in or register" , new_user_registration_path %> </p>
 <% end %>
-<div id="posts">
-  <%= render partial: "posts" %>
-</div>
-<div class="clearfix"></div>
-<hr>
+
+  <%= render "posts" %>
+
+<div class="clearfix"></div>div
 </section>
-</div>
 </div>
 <!--main-body -->
 <div class="col-md-4 col-sm-6 sidebar">

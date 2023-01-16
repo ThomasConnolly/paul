@@ -15846,3 +15846,1122 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 27ms (Views: 12.1ms | ActiveRecord: 4.5ms | Allocations: 19978)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-15 19:22:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.5ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:223
+  Rendered home/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 13446)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1342)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 29.1ms | Allocations: 26876)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 44677)
+Completed 200 OK in 102ms (Views: 44.1ms | ActiveRecord: 19.0ms | Allocations: 72768)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-15 19:30:02 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:223
+  Rendered home/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 4557)
+  Rendered layouts/_header.html.erb (Duration: 7.5ms | Allocations: 1304)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 19.3ms | Allocations: 3423)
+  Rendered layouts/_footer.html.erb (Duration: 8.2ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 66.1ms | Allocations: 12169)
+Completed 200 OK in 82ms (Views: 66.6ms | ActiveRecord: 5.4ms | Allocations: 20001)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:30:50 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 656)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 81.6ms | Allocations: 74801)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:39
+  [1m[36mPrayFor Load (0.3ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 5.3ms | Allocations: 3773)
+  Rendered posts/index.html.erb within layouts/application (Duration: 89.8ms | Allocations: 80869)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 1061)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 1178)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1492)
+  Rendered layout layouts/application.html.erb (Duration: 92.7ms | Allocations: 85137)
+Completed 200 OK in 102ms (Views: 81.6ms | ActiveRecord: 14.5ms | Allocations: 90934)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:48:21 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.1ms | Allocations: 531)
+  [1m[36mComment Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 58.6ms | Allocations: 54283)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:38
+  [1m[36mPrayFor Load (0.2ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 1.1ms | Allocations: 1529)
+  Rendered posts/index.html.erb within layouts/application (Duration: 63.8ms | Allocations: 58211)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1311)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 1859)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1775)
+  Rendered layout layouts/application.html.erb (Duration: 68.5ms | Allocations: 64268)
+Completed 200 OK in 80ms (Views: 63.0ms | ActiveRecord: 9.0ms | Allocations: 68255)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2023-01-15 19:49:57 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 19.9ms | Allocations: 11803)
+  Rendered posts/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 11990)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1312)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 2630)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 18813)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.6ms | Allocations: 21111)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2023-01-15 19:51:45 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.2ms | Allocations: 2044)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2229)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1312)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 2625)
+  Rendered layouts/_footer.html.erb (Duration: 3.4ms | Allocations: 1771)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 9047)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 11338)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2023-01-15 19:52:53 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.9ms | Allocations: 3817)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 4007)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 4055)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 6317)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= bootstrap_form_with(model: @post) do |f| %>
+  <%= f.file_field :picture, direct_upload: true. title: "Add a picture" %>
+  <%#= f.file_field :photos, direct_upload: true, multiple: true %>
+  <%= f.rich_text_area :content, placeholder: "Type your post here." %>
+  <%= f.submit %> &nbsp; <%= link_to "Cancel" , :back, class: "btn btn-danger" %>
+<% end %>:
+  app/views/posts/new.html.erb:1
+
+Started POST "/__better_errors/82c2f1510e9258d6/variables" for 127.0.0.1 at 2023-01-15 19:52:53 -0500
+Started GET "/posts/new" for 127.0.0.1 at 2023-01-15 19:53:54 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | Allocations: 2063)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2250)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1312)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 2625)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 9065)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 11332)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2023-01-15 19:54:38 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.2ms | Allocations: 2041)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2226)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1312)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 2625)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 9041)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.5ms | Allocations: 11323)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:54:55 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.0ms | Allocations: 533)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 97.1ms | Allocations: 54213)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:38
+  [1m[36mPrayFor Load (0.2ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 1.6ms | Allocations: 1529)
+  Rendered posts/index.html.erb within layouts/application (Duration: 102.7ms | Allocations: 57968)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 1194)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1606)
+  Rendered layout layouts/application.html.erb (Duration: 106.2ms | Allocations: 62273)
+Completed 200 OK in 108ms (Views: 96.6ms | ActiveRecord: 9.9ms | Allocations: 63002)
+
+
+Started GET "/posts/152" for 127.0.0.1 at 2023-01-15 19:55:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"152"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:56:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:6
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 330)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  Rendered comments/_form.html.erb (Duration: 9.9ms | Allocations: 4166)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 AND "comments"."parent_id" IS NULL[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/show.html.erb:17
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 30)
+  Rendered posts/show.html.erb within layouts/application (Duration: 26.7ms | Allocations: 13257)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1043)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 1894)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 1479)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 18127)
+Completed 200 OK in 36ms (Views: 27.6ms | ActiveRecord: 6.1ms | Allocations: 19640)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:55:06 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 329)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | Allocations: 281)
+  [1m[36mComment Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.8ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 117.8ms | Allocations: 53482)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:38
+  [1m[36mPrayFor Load (0.2ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 1.1ms | Allocations: 1309)
+  Rendered posts/index.html.erb within layouts/application (Duration: 122.3ms | Allocations: 56522)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 1194)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 1606)
+  Rendered layout layouts/application.html.erb (Duration: 126.2ms | Allocations: 60827)
+Completed 200 OK in 128ms (Views: 114.5ms | ActiveRecord: 12.1ms | Allocations: 61480)
+
+
+Started GET "/posts/150" for 127.0.0.1 at 2023-01-15 19:55:10 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"150"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:56:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:6
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  Rendered comments/_form.html.erb (Duration: 1.3ms | Allocations: 918)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 AND "comments"."parent_id" IS NULL[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/show.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered comments/_form.html.erb (Duration: 1.9ms | Allocations: 1139)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" = $2 AND "comments"."parent_id" = $3[0m  [["commentable_type", "Post"], ["commentable_id", 150], ["parent_id", 9]]
+  ↳ app/views/comments/_comment.html.erb:15
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 6.8ms | Allocations: 7012)
+  Rendered posts/show.html.erb within layouts/application (Duration: 42.7ms | Allocations: 34318)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1043)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 1894)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1479)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 39188)
+Completed 200 OK in 51ms (Views: 43.2ms | ActiveRecord: 5.2ms | Allocations: 40576)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBMUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4040b8ba0c6521d2dbac36d6c8db8ddc11943ee9/Screenshot%20from%202022-12-06%2017-53-46.png" for 127.0.0.1 at 2023-01-15 19:55:10 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBMUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4040b8ba0c6521d2dbac36d6c8db8ddc11943ee9", "filename"=>"Screenshot from 2022-12-06 17-53-46"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: zt5umg5jm9g2t3rcvopxucxp0u7d (http://localhost:5000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlblExZFcxbk5XcHRPV2N5ZEROeVkzWnZjSGgxWTNod01IVTNaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJeUxURXlMVEEySURFM0xUVXpMVFEyTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJeUxURXlMVEEySlRJd01UY3ROVE10TkRZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wMS0xNlQwMTowMDoxMC4yOTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f776bc471e2a13140e5687bb978d435c027ba0e/Screenshot%20from%202022-12-06%2017-53-46.png)[0m
+Redirected to http://localhost:5000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlblExZFcxbk5XcHRPV2N5ZEROeVkzWnZjSGgxWTNod01IVTNaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJeUxURXlMVEEySURFM0xUVXpMVFEyTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJeUxURXlMVEEySlRJd01UY3ROVE10TkRZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wMS0xNlQwMTowMDoxMC4yOTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f776bc471e2a13140e5687bb978d435c027ba0e/Screenshot%20from%202022-12-06%2017-53-46.png
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 3308)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlblExZFcxbk5XcHRPV2N5ZEROeVkzWnZjSGgxWTNod01IVTNaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJeUxURXlMVEEySURFM0xUVXpMVFEyTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJeUxURXlMVEEySlRJd01UY3ROVE10TkRZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wMS0xNlQwMTowMDoxMC4yOTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f776bc471e2a13140e5687bb978d435c027ba0e/Screenshot%20from%202022-12-06%2017-53-46.png" for 127.0.0.1 at 2023-01-15 19:55:10 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot from 2022-12-06 17-53-46"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 212)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:55:17 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 329)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.5ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 117.5ms | Allocations: 53486)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:38
+  [1m[36mPrayFor Load (0.2ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 1.4ms | Allocations: 1309)
+  Rendered posts/index.html.erb within layouts/application (Duration: 122.5ms | Allocations: 56526)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 1194)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1606)
+  Rendered layout layouts/application.html.erb (Duration: 125.7ms | Allocations: 60831)
+Completed 200 OK in 127ms (Views: 113.8ms | ActiveRecord: 12.4ms | Allocations: 61498)
+
+
+Started GET "/posts/140" for 127.0.0.1 at 2023-01-15 19:55:38 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"140"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:56:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:6
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  Rendered comments/_form.html.erb (Duration: 1.4ms | Allocations: 921)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 AND "comments"."parent_id" IS NULL[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/show.html.erb:17
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 5789)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1043)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 1892)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 10780)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 1.6ms | Allocations: 12183)
+
+
+Started POST "/posts/140/comments" for 127.0.0.1 at 2023-01-15 19:55:53 -0500
+Processing by Posts::CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"body"=>"Here's a comment\n\n", "parent_id"=>""}, "commit"=>"Create Comment", "post_id"=>"140"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/posts/comments_controller.rb:10:in `set_commentable'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "commentable_type", "commentable_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 718], ["commentable_type", "Post"], ["commentable_id", 140], ["parent_id", nil], ["body", "Here's a comment\n\n"], ["created_at", "2023-01-16 00:55:53.365263"], ["updated_at", "2023-01-16 00:55:53.365263"]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Redirected to http://localhost:5000/posts/140
+Completed 302 Found in 13ms (ActiveRecord: 4.7ms | Allocations: 6734)
+
+
+Started GET "/posts/140" for 127.0.0.1 at 2023-01-15 19:55:53 -0500
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"140"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:56:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:6
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  Rendered comments/_form.html.erb (Duration: 2.2ms | Allocations: 920)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 AND "comments"."parent_id" IS NULL[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/show.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered comments/_form.html.erb (Duration: 1.4ms | Allocations: 941)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_type" = $1 AND "comments"."commentable_id" = $2 AND "comments"."parent_id" = $3[0m  [["commentable_type", "Post"], ["commentable_id", 140], ["parent_id", 12]]
+  ↳ app/views/comments/_comment.html.erb:15
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 5.0ms | Allocations: 2857)
+  Rendered posts/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 8732)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1043)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 1892)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1603)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 13724)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 1.6ms | Allocations: 15159)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-01-15 19:56:05 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/_posts.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 329)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.6ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 138], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 281)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 138], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 720], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:4
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 137], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/_posts.html.erb:5
+  Rendered /home/tom/.rvm/gems/ruby-3.2.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 137], ["commentable_type", "Post"]]
+  ↳ app/views/posts/_posts.html.erb:8
+  Rendered posts/_posts.html.erb (Duration: 87.0ms | Allocations: 53469)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:38
+  [1m[36mPrayFor Load (0.3ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/pray_fors/_praying.html.erb:1
+  Rendered pray_fors/_praying.html.erb (Duration: 1.9ms | Allocations: 1308)
+  Rendered posts/index.html.erb within layouts/application (Duration: 92.7ms | Allocations: 56508)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 1194)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 1606)
+  Rendered layout layouts/application.html.erb (Duration: 95.7ms | Allocations: 60813)
+Completed 200 OK in 98ms (Views: 87.9ms | ActiveRecord: 8.2ms | Allocations: 61465)
+
+

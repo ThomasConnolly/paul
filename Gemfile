@@ -52,7 +52,7 @@ gem 'rest-client'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
-gem 'ruby-vips'
+#gem 'ruby-vips'
 gem 'rss'
 gem 'scout_apm'
 gem 'sendgrid-ruby'

@@ -503,7 +503,6 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
-  ruby-vips
   scout_apm
   selenium-webdriver
   sendgrid-ruby

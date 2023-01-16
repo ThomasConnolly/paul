@@ -14,7 +14,7 @@ module Paul
 
     Rails.application.config.default_url_options = { host: 'localhost', port: 5000 }
     Rails.application.default_url_options = { host: 'localhost', port: 5000 }
-    Rails.application.config.active_storage.variant_processor = :vips
+    Rails.application.config.active_storage.variant_processor = :mini_magick
 
     # Configuration for the application, engines, and railties goes here.
     # config/application.rb

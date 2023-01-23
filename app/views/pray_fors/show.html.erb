@@ -2,12 +2,9 @@
 
 <p>
   <strong>First name:</strong>
-  <%= @pray_for.first_name %>
-</p>
-
-<p>
+  <%= @pray_for.first_name %>. 
   <strong>Reason:</strong>
-  <%= @pray_for.reason %>
+  <%= @pray_for.reason if reason?%>
 </p>
 
 <%= link_to 'Edit', edit_pray_for_path(@pray_for) %> |

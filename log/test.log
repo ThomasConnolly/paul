@@ -172,3 +172,190 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (13.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "paul_test"[0m
+  [1m[35m (146.7ms)[0m  [1m[35mCREATE DATABASE "paul_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp NOT NULL, "service_name" character varying NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "albergue_children" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "albergue_children" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "birthday" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "albergue_donations" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "albergue_donations" ("id" bigserial primary key, "user_id" bigint, "plan" character varying DEFAULT 'plan_EU0tm2nqfqXFYj', "anonymous" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "child_name" character varying, "child_id" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_albergue_donations_on_user_id" ON "albergue_donations" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "anniversaries" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "anniversaries" ("id" serial NOT NULL PRIMARY KEY, "salutation" character varying, "last_name" character varying, "anniversary" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attachinary_files" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "attachinary_files" ("id" serial NOT NULL PRIMARY KEY, "attachinariable_id" integer, "attachinariable_type" character varying, "scope" character varying, "public_id" character varying, "version" character varying, "width" integer, "height" integer, "format" character varying, "resource_type" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "by_scoped_parent" ON "attachinary_files" ("attachinariable_type", "attachinariable_id", "scope")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" serial NOT NULL PRIMARY KEY, "author" character varying(255), "title" character varying(255), "subject" character varying(255), "isbn" character varying(255), "dewey" character varying(255), "created_at" timestamp, "updated_at" timestamp, "description" text, "cutter" character varying, "url" character varying)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_books_on_author_and_title" ON "books" ("author", "title")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "cards" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "user_id" bigint NOT NULL, "donation_id" bigint NOT NULL, "card_brand" character varying, "card_last4" character varying, "card_exp_month" character varying, "card_exp_year" character varying, "stripe_id" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_cards_on_donation_id" ON "cards" ("donation_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_cards_on_user_id" ON "cards" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint NOT NULL, "commentable_type" character varying NOT NULL, "commentable_id" bigint NOT NULL, "parent_id" integer, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_comments_on_commentable_type_and_commentable_id" ON "comments" ("commentable_type", "commentable_id")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "type" character varying, "stripe_id" character varying, "amount" integer, "dollars" integer, "status" character varying, "memo" character varying)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_donations_on_user_id" ON "donations" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "ens_feeds" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ens_feeds" ("id" bigserial primary key, "title" character varying, "summary" text, "url" character varying, "published_at" timestamp, "guid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" serial NOT NULL PRIMARY KEY, "title" character varying, "price" integer, "date" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "quantity" integer, "amount" integer, "url" character varying, "time" character varying, "photo" character varying)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "formation_talks" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "formation_talks" ("id" serial NOT NULL PRIMARY KEY, "title" character varying, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "delivered_on" date)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "homilists" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "homilists" ("id" serial NOT NULL PRIMARY KEY, "name" character varying(255), "title" character varying(255), "photo" character varying(255), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "links" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "links" ("id" bigserial primary key, "event" character varying, "time" character varying, "date" timestamp, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "marriage_talks" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "marriage_talks" ("id" bigserial primary key, "title" character varying, "body" text, "delivered_on" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "members" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "members" ("id" serial NOT NULL PRIMARY KEY, "last_name" character varying, "first_name" character varying, "email" character varying, "birthday" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "membership_id" character varying, "username" character varying, "away_zip" character varying, "yday" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "opportunities" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "opportunities" ("id" serial NOT NULL PRIMARY KEY, "ministry" character varying(255), "who" character varying(255), "what" character varying(255), "when" character varying(255), "where" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "participants" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "participants" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "honey" character varying, "session" character varying, "first_preferred_day" character varying, "first_preferred_time" character varying, "second_preferred_day" character varying, "second_preferred_time" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pathways" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "pathways" ("id" bigserial primary key, "image" character varying, "pubdate" date, "link" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "title" character varying, "image_data" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pledges" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "pledges" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer, "created_at" timestamp, "updated_at" timestamp, "amount" integer, "plan" character varying, "stripe_id" character varying, "plan_id" character varying DEFAULT 'prod_ETteQ8s9Ho9sNW', "status" character varying, "dollars" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial NOT NULL PRIMARY KEY, "created_at" timestamp, "updated_at" timestamp, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pray_fors" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "pray_fors" ("id" bigserial primary key, "first_name" character varying, "reason" character varying, "honey" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer, "cities" text, "background" text, "career" text, "family" text, "lifestyle" text, "civic" text, "church" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "roles" ("id" serial NOT NULL PRIMARY KEY, "name" character varying, "resource_id" integer, "resource_type" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" ("name", "resource_type", "resource_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_roles_on_name" ON "roles" ("name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "sermons" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "sermons" ("id" serial NOT NULL PRIMARY KEY, "title" character varying(255), "cites" character varying(255), "sermon_body" text, "created_at" timestamp, "updated_at" timestamp, "homilist_id" integer, "delivered_on" date, "audio" character varying)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "shots" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "shots" ("id" bigserial primary key, "last_name" character varying, "first_name" character varying, "dob" date, "email" character varying, "phone" character varying, "shot_time" character varying, "status" character varying, "honey" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint NOT NULL, "status" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_stories_on_user_id" ON "stories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "story_assignments" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "story_assignments" ("id" bigserial primary key, "story_idea_id" bigint NOT NULL, "assigned_to" integer, "status" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_story_assignments_on_story_idea_id" ON "story_assignments" ("story_idea_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "story_ideas" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "story_ideas" ("id" serial NOT NULL PRIMARY KEY, "title" character varying, "body" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "url" character varying, "assigned_to" integer, "status" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "stripe_reports" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "stripe_reports" ("id" bigserial primary key, "user_id" bigint NOT NULL, "pledge_id" bigint, "donation_id" bigint, "amount" integer, "fee" integer, "net" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "date_paid" date)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_stripe_reports_on_donation_id" ON "stripe_reports" ("donation_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_stripe_reports_on_pledge_id" ON "stripe_reports" ("pledge_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_stripe_reports_on_user_id" ON "stripe_reports" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "surveys" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "surveys" ("id" bigserial primary key, "user_id" integer, "q1" character varying, "q2" character varying, "q3" character varying, "a1" text, "a2" text, "a3" text, "added_comments" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "syllabuses" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "syllabuses" ("id" serial NOT NULL PRIMARY KEY, "year" character varying, "grade" character varying, "title1" character varying, "title2" character varying, "title3" character varying, "title4" character varying, "title5" character varying, "title6" character varying, "title7" character varying, "title8" character varying, "title9" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "theme" character varying, "quarter" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "description" character varying, "deadline" character varying, "position" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "thankfuls" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "thankfuls" ("id" bigserial primary key, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tickets" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" serial NOT NULL PRIMARY KEY, "price" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "event_id" integer, "quantity" integer, "amount" integer, "first_name" character varying, "last_name" character varying, "email" character varying, "customer_id" character varying, "checkout" character varying, "honey" character varying, "stripe_id" character varying)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_tickets_on_event_id" ON "tickets" ("event_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "todo_items" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "todo_items" ("id" bigserial primary key, "description" text, "completed" boolean, "completed_at" timestamp, "todo_list_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_todo_items_on_todo_list_id" ON "todo_items" ("todo_list_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "todo_lists" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "todo_lists" ("id" bigserial primary key, "title" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial NOT NULL PRIMARY KEY, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp, "updated_at" timestamp, "first_name" character varying(255), "last_name" character varying(255), "username" character varying(255), "avatar" character varying, "honey" character varying, "stripe_id" character varying, "role" integer, "confirmation_token" character varying, "confirmed_at" timestamp(6), "confirmation_sent_at" timestamp(6), "unconfirmed_email" character varying)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "vestry_minutes" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "vestry_minutes" ("id" serial NOT NULL PRIMARY KEY, "date" date, "minutes" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "vreports" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "vreports" ("id" serial NOT NULL PRIMARY KEY, "title" character varying, "user_id" integer, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "webhook_events" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "webhook_events" ("id" bigserial primary key, "source" character varying, "external_id" character varying, "data" json, "state" integer DEFAULT 0, "processing_errors" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_webhook_events_on_external_id" ON "webhook_events" ("external_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_webhook_events_on_source_and_external_id" ON "webhook_events" ("source", "external_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_webhook_events_on_source" ON "webhook_events" ("source")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "albergue_donations" ADD CONSTRAINT "fk_rails_d58f804c7e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "cards" ADD CONSTRAINT "fk_rails_7e72448e2d"
+FOREIGN KEY ("donation_id")
+  REFERENCES "donations" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "cards" ADD CONSTRAINT "fk_rails_8ef7749967"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "donations" ADD CONSTRAINT "fk_rails_5470822a00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "stories" ADD CONSTRAINT "fk_rails_c53f5feaac"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "story_assignments" ADD CONSTRAINT "fk_rails_4a2503ae3a"
+FOREIGN KEY ("story_idea_id")
+  REFERENCES "story_ideas" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "stripe_reports" ADD CONSTRAINT "fk_rails_faa6486da2"
+FOREIGN KEY ("donation_id")
+  REFERENCES "donations" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "stripe_reports" ADD CONSTRAINT "fk_rails_404e859ad4"
+FOREIGN KEY ("pledge_id")
+  REFERENCES "pledges" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "stripe_reports" ADD CONSTRAINT "fk_rails_1e8057a630"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "todo_items" ADD CONSTRAINT "fk_rails_d913ce1c56"
+FOREIGN KEY ("todo_list_id")
+  REFERENCES "todo_lists" ("id")
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220919235010)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-01-23 03:32:47.294301"], ["updated_at", "2023-01-23 03:32:47.294301"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b135e6e27162a787d06b50dbf640e764ee0274e7"], ["created_at", "2023-01-23 03:32:47.298288"], ["updated_at", "2023-01-23 03:32:47.298288"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

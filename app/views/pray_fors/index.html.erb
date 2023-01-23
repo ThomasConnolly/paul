@@ -8,12 +8,12 @@
 
   <% @pray_fors.each do |pray_for| %>
     <p class="list"><strong>
-        <%= pray_for.first_name %>
-      </strong><br>
-      <%= pray_for.reason %><br>
-        <% if user_signed_in? && current_user.admin? %>
-          <%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
-            <%= link_to "Destroy" , pray_for_path(pray_for), data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?" } %>
-              <%end%>
-                <%end%>
+    <%= pray_for.first_name %>. </strong>
+    <%= pray_for.reason %><br>
+      
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
+        <%= link_to "Destroy" , pray_for_path(pray_for), data: { turbo_method: :delete,
+          turbo_confirm: "Are you sure?" } %>
+      <%end%>
+  <%end%>

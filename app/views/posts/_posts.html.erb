@@ -8,13 +8,12 @@
     <%=  pluralize(post.comments.count, "comment" ) %> 
     <%= link_to "Show" , post_path(post[:id]) %> </small> 
 
- <% if current_user == post.user || current_user.admin? %>
+ <% if current_user == post.user %>
     <small><%= link_to " | Edit" , edit_post_path(post[:id]) %> </small> </p>
 
     <%= button_to "Delete" , post_path(post), method: :delete, data: {
       confirm: "Are you sure you want to delete the post?", class: "btn btn-danger" }%> 
-      <hr>
+      
   <% end %>
+  <hr>
 <% end %>
-
-

@@ -8,14 +8,18 @@
   <div class="col-md-8 main-body pe-5">
     <div class="clearfix">
       <%#= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
-      <%= cl_image_tag("Christmas_ol2irx.jpg", alt: "Nativity scene", width: "100%") %>
+      <%#= cl_image_tag("Christmas_ol2irx.jpg", alt: "Nativity scene", width: "100%") %>
      
-        <div class="mt-4">
+        
+        <%= cl_image_tag("TomGreenAltar_zdf3jy.jpg", alt: "Ordinary time green", width: "100%" ) %>
+          <div class="mt-4">
       <h1>Please join us in worship</h1>
         <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", alt: "SP Cross" ,
           class: "float-start pe-3" ) %>
-          <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
-              ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
+          <h2 class="text-center">Please Note: One service today,<br>9 a.m. Jan. 29, 2023</h2>
+          <p>Today we are "relaunching" St. Paul's and holding our annual meeting. All are welcome! </p>
+          <p>Usual times: Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed on <%= link_to "YouTube." ,
+              ("https://www.youtube.com/@stpaulsnaples6762/streams") %> Today's service will be streamed live.
           </div>
           <% if @bulletin.url.present? %>
             <p><strong>

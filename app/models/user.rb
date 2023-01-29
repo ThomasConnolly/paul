@@ -78,7 +78,7 @@ class User < ApplicationRecord
   # Others available are:
   # :lockable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,
+         :recoverable, :rememberable, :confirmable, :trackable,
          authentication_keys: [:login]
 
   def set_username

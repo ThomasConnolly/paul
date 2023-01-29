@@ -54,18 +54,16 @@
         <%= render '/layouts/navbar' %>
           <% if notice %>
             <p class="alert alert-success">
-              <%= notice %>
-            </p>
-            <% end %>
-              <% if alert %>
-                <p class="alert alert-danger">
-                  <%= alert %>
-                </p>
-                <% end %>
+            <%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger">
+            <%= alert %></p>
+          <% end %>
 
-                  <%= yield %>
+    <%= yield %>
 
-                    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
 
     </div><!-- container -->
   </div> <!-- page -->

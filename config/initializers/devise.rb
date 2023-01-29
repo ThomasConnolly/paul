@@ -3,16 +3,19 @@
 class TurboFailureApp < Devise::FailureApp
   def respond
     if request_format == :turbo_stream
-      redirect
+      :redirect
     else
       super
     end
   end
 
-  def skip_format?
-    %w[html turbo_stream */*].include? request_format.to_s
+    def skip_format? 
+      %w[html turbo_stream].include? request_format.to_s
+    end
   end
-end
+
+
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -268,7 +271,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = %i[delete get]
@@ -284,8 +287,6 @@ Devise.setup do |config|
   #
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
-    #   manager.intercept_401 = false
-    #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   end
 
   # ==> Mountable engine configurations
@@ -294,7 +295,7 @@ Devise.setup do |config|
   # The following options are available, assuming the engine is mounted as:
   #
   #     mount MyEngine, at: '/my_engine'
-  #
+  #j
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #

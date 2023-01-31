@@ -19693,3 +19693,451 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 1.5ms | Allocations: 15358)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-29 07:13:47 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:231
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3269)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1044)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 1123)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7498)
+Completed 200 OK in 28ms (Views: 7.4ms | ActiveRecord: 8.2ms | Allocations: 14747)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-01-29 07:13:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 611)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2999)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1067)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 1135)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1658)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 7374)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 8807)
+
+
+Started GET "/register/signup" for 127.0.0.1 at 2023-01-29 07:13:53 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 206)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3527)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1067)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 1135)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1658)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 7902)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 8926)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-01-29 07:14:33 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Luke", "last_name"=>"Kelly", "email"=>"luke@kelly.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luke@kelly.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "first_name", "last_name", "username", "avatar", "honey", "stripe_id", "role", "confirmation_token", "confirmed_at", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) RETURNING "id"[0m  [["email", "luke@kelly.com"], ["encrypted_password", "$2a$11$aI/0G97AcpIuxd/BptNuUuRqa8H20ZfG4UmiK2nqfLRm847KhLhzG"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["created_at", "2023-01-29 12:14:33.780807"], ["updated_at", "2023-01-29 12:14:33.780807"], ["first_name", "Luke"], ["last_name", "Kelly"], ["username", "Luke Kelly"], ["avatar", nil], ["honey", nil], ["stripe_id", nil], ["role", 0], ["confirmation_token", "eAQMNnKfkiRgeW_VPzYJ"], ["confirmed_at", nil], ["confirmation_sent_at", "2023-01-29 12:14:33.780853"]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 725], ["LIMIT", 1]]
+  ↳ app/models/user.rb:102:in `add_profile'
+  [1m[36mProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "cities", "background", "career", "family", "lifestyle", "civic", "church", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 725], ["cities", nil], ["background", nil], ["career", nil], ["family", nil], ["lifestyle", nil], ["civic", nil], ["church", nil], ["created_at", "2023-01-29 12:14:33.786483"], ["updated_at", "2023-01-29 12:14:33.786483"]]
+  ↳ app/models/user.rb:102:in `add_profile'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 3.3ms | Allocations: 9437)
+
+
+
+NameError - undefined local variable or method `unconfirmed_email' for #<User id: 725, email: "luke@kelly.com", created_at: "2023-01-29 07:14:33.780807204 -0500", updated_at: "2023-01-29 07:14:33.780807204 -0500", first_name: "Luke", last_name: "Kelly", username: "Luke Kelly", avatar: nil, honey: nil, stripe_id: nil, role: "member">:
+
+Started POST "/__better_errors/e3c3b698253609d8/variables" for 127.0.0.1 at 2023-01-29 07:14:33 -0500
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 725], ["LIMIT", 1]]
+  ↳ (eval):72:in `block in render'
+Started GET "/openletter" for 127.0.0.1 at 2023-01-29 07:15:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/openletter"):
+  
+Started GET "/letteropener" for 127.0.0.1 at 2023-01-29 07:16:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/letteropener"):
+  
+Started GET "/letteropener" for 127.0.0.1 at 2023-01-29 21:58:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/letteropener"):
+  
+Started GET "/" for 127.0.0.1 at 2023-01-29 22:29:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.7ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.5ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:231
+  Rendered home/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 13497)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1342)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 2005)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 19933)
+Completed 200 OK in 67ms (Views: 28.8ms | ActiveRecord: 14.3ms | Allocations: 47922)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-29 22:50:41 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.6ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:239
+  Rendered home/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4593)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1304)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 1834)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 10609)
+Completed 200 OK in 26ms (Views: 9.4ms | ActiveRecord: 4.5ms | Allocations: 18339)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-29 23:18:54 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 4749)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4798)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.4ms | Allocations: 12499)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <div class="d-flex justify-content-center col-md-6 mx-auto mb-3">
+  <%= link_to "PLEASE SUPPORT YOUR CHURCH; DONATE NOW!" ,
+   "https://buy.stripe.com/4gw5o32ih7tn4004gh", 
+  class: "btn btn-primary btn-lg text-white" %>
+  </div>
+<div class=row>
+  <div class="col-md-8 main-body pe-5">
+    <div class="clearfix">
+      <%#= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
+      <%#= cl_image_tag("Christmas_ol2irx.jpg", alt: "Nativity scene", width: "100%") %>
+      <%= cl_image_tag("TomGreenAltar_zdf3jy.jpg", alt: "Ordinary time green", width: "100%" ) %>
+      <h1 class="mt-4">Please join us in worship</h1>
+      <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", 
+        alt: "SP Cross" , class: "float-start pe-3" ) %>
+      <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed 
+        on <%= link_to "YouTube." ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> </p>
+      <% if @bulletin.url.present? %>
+        <p><strong><%= link_to "Here is the bulletin for #{@bulletin.date.strftime(" %A, %b %d")}", "#{@bulletin.url}" %>
+        </strong></p>
+      <% else %> 
+        <p>Sunday's bulletin will be available here on Thursday.</p>
+      <% end %>
+      <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
+        <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a
+        short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
+      <p><%= link_to "Click here for the on-line Book of Common Prayer" ,
+        ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf") % </p>
+      <p><strong><%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %></strong> </p>
+    </div>
+      <h2>Help Wanted: We're seeking a music director</h2>
+      <p>If you are an experienced organist and choir director looking for a part-time position, we
+      would like to talk with you!. More information can be found <%= link_to "here.", "https://www.saintpaulsnaples.org/pages/music" %>
+      <h2 class="mt-3">Reflect and Connect </h2>
+      <p>This group meets at 9:30 a.m. Wednesdays in the library to discuss the previous Sunday's sermon. All are welcome.</p>
+      <h2 class="mt-3">Sacred Ground Series</h2>
+      <p>This is a series of videos, readings and small-group discussions about race. This is highly
+        recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+        watch an introduction, <%= link_to "click here. " , 
+        "https://www.episcopalchurch.org/sacred-ground/" %></p>
+        <p>Interested in pursuing <em>Sacred Ground</em> further? As in participating in a small-group 
+        study? Contact Nora Broszeit or Tom Connolly. </p>
+        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , 
+        width: "40%", alt: "FM_Logo" ) %>
+        <h2 class="mt-3">Farmers' Market open Saturdays, 8 a.m. to noon</h2>
+          <div class="border border-3 m-5">
+           <h3 class="text-center"> Books are back!</h3>
+           <p class="p-3">"The Bookman" retired last year, but volunteers at St. Paul's picked up 
+             the ball and we are once again selling used books at the Farmers' Market. They're inside 
+             our parish hall, so weather won't interfere.</p>
+          <h3 class="text-center">Have books to spare?</h3>
+          <p>We welcome donations; proceeds of the book store go to worthy causes. Drive up to the 
+              office Monday to Friday and someone will unload your books  </p>
+          </div>  
+            <p>Welcome to the easy in-and-out St. Paul's Farmer's Market! Stop by the hospitality pit, 
+            have a hotdog and introduce yourself to new friend! The market is open November through
+            April, Saturdays from 8 a.m.to noon. Lots of fresh produce and select items of interest for sale.
+            </p>
+             <p>If you are a prospective vendor, please call the office, as we have room for more vendors.</p>
+            <p>For more information about the market, <%= link_to "click here." , markets_index_path %></p>
+            <div class="clearfix"></div>
+  <%= cl_image_tag("SeatedBishop_nhcalp.jpg", alt: "Bishop Scharf",class: "float-start img-fluid pe-2", width: "40%" ) %>
+      <h2 class="mt-3">Meet our new bishop</h2>
+      <p>Following a centuries-old tradition of announcing his presence by banging on the cathedral door, 
+      our new bishop was formally invested and seated Saturday, Jan. 7. The Right Rev. Dr. Douglas Scharf has 
+      returned to the diocese where he was raised and is well known. He was elected at a special convention 
+      April 2 as our bishop coadjuter and was ordained as bishop September 24 in Sarasota. He became the sixth 
+      bishop of the Diocese of Southwest Florida on Dec. 10, when Bishop Dabney Smith retired. Although 
+      all the official steps were already taken (i.e., the paperwork done), Hurricane Ian and Covid interfered 
+      with the ceremonial seating. That took place at the Cathedral Church of St. Peter, in St. Petersburg  
+      </p>
+      <p>The newest&mdash;and at age 43 probably the youngest&mdash;bishop in the Episcopal Church in America was born 
+      in New York and from age 2 raised in Ft. Myers, where his father was an Episcopal priest. He served several
+      parishes in the Diocese of Southwest Florida before moving to Palm Beach County to become rector of Good
+      Shepherd in Tequesta.</p>
+      <p>"There are few moments when a priest is speechless, but this is one of them. I have been so humbled and honored
+        to have been a part of this journey with you all and to be elected, I am truly overwhelmed. I feel the presence
+        of God’s grace in this moment,” he said when he received the news of his election via a phone call from
+        Bishop Smith. The assembly reacted with a joyful applause.</p>
+      <div class="clearfix"></div>
+        <div class="mt-4">
+          <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
+            <p><strong>Almighty God, who created us in your own image: Grant us
+              grace fearlessly to contend against evil and to make no peace
+              with oppression; and, that we may reverently use our freedom,
+              help us to employ it in the maintenance of justice in our
+              communities and among the nations, to the glory of your holy
+              Name; through Jesus Christ our Lord, who lives and reigns with
+              you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+            </p>
+            <p class="text-end"> &mdash;Book of Common Prayer</p>
+        </div>
+            <!-- <h2 class="mt-3">Supporters of these children</h2>
+          <%=cl_image_tag("25_aeyuf2.jpg", width: "420" , height: "315" , class:"float-start pe-3") %>
+            <p>Episcopalians of the Naples Deanery have been supporting the children at a shelter in the
+              Dominican Republic for the last 18 years. The <em>Albergue el Buen Samaritano</em> in San
+              Francisco de Macoris, serves a hundred children who would be on the street were it not for the
+              shelter. The kids arrive for breakfast, learn their abcs and social skills and get lots of
+              love that may otherwise be missing in their young lives. It is a ministry of love and
+              affection, above all.</p>
+            <div class="clearfix"></div> -->
+            <h2 class="mt-3">Supporters of Tumaini Fund</h2>
+            <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3", alt: "Susan Wilson picture" ) %>
+              <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
+                founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+                the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+                thousands of children who lost their moms and dads to AIDS. In addition to monitary
+                contributions, the ladies of our church, the ECW (Episcopal Church Women) have sewn numerous
+                dresses, as seen here with Dr. Wilson.</p>
+              <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
+              </p>
+              <div class="clearfix"></div>
+              <h2 class="mt-3">Supporters of 'ERD'</h2>
+              <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+                alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+                ), "https://episcopalrelief.org/" %>
+                <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+                  resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+                <div class="clearfix"></div>
+                <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png",
+                  width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto", alt: "God Loves, No Exception signboard" ) %>
+  </div>
+  <!--main-body -->
+  <div class="col col-md-4 col-sm-8 px-4" style="background-color: #e2e2e2;">
+    <p class="text-center">
+      <%= Date.current.strftime("%A, %B %e, %Y") %>
+    </p>
+    <%= cl_image_tag("logos/update.png", width: "100%", alt: "Update logo" ) %>
+  <div>
+  <h2 class="mt=3" id="Relaunch">Relaunch 2023</h2>
+  <p>Take a look at these six videos, all about the "Relaunch 2023," at the annual 
+  meeting on Jan. 29. The short clips show various activities our church members 
+  are engaged in, and how youcan participate more fully in the life of St. Paul's.  
+  Click the box on lower right to see the video in full screen mode.</p>
+   <iframe width="100%" 
+     src="https://www.youtube.com/embed/gg83c7Jq__8" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+     picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="100%" 
+     src="https://www.youtube.com/embed/yvL6lH5zTIE" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+     picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="100%" 
+    src="https://www.youtube.com/embed/4wwiaR8oWX0" title="YouTube video player" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+    picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="100%" 
+     src="https://www.youtube.com/embed/0v1h2OcSW6M" title="YouTube video player" 
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+     picture-in-picture; web-share" allowfullscreen></iframe>
+ <iframe  width="100%"
+     src="https://youtube.com/embed/eZApGKY55iU" title="YouTube video player" 
+     frameborder="0" title="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+     gyroscope; picture-in-picture" 
+     allowfullscreen></iframe> 
+    <iframe  width="100%"
+    src="https://www.youtube.com/embed/gc7IrllDDmo" title="YouTube video player" 
+     frameborder="0" title="video" allow="accelerometer; autoplay; clipboard-write; 
+     encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+   </div>
+      <h2 class="mt-3">All the links</h2>
+      <p><strong>
+        <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/@stpaulsnaples6762/streams" %>
+        </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this
+        link. We have a new setup, with three cameras and good audio for home viewers.</p>
+      <% if @bulletin.url.present? %>
+        <p><strong>
+            <%= link_to "Sunday bulletin" , "#{@bulletin.url}" %>
+          </strong></p>
+        <% else %>
+          <p><strong> Sunday's bulletin will be linked here on Thursday</strong></p>
+          <% end %>
+            <p><strong>
+                Wednesday evening adult education, 4 p.m. 
+              </strong> We are reading the Gospel of John and discussing our findings under the tutelage of Fr. Tom. Approximately one hour, class is held in the library, Serson Hall.</p>
+            <p><strong>
+                <%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> Join us with your favorite libation for an hour or so of conversation on Zoom
+              </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. Usually
+              called "Thursday wine time," <strong>it's on Friday </strong> when the vestry meets, usually on the
+              third Thursday of the month.</p>
+            <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for
+              fellowship and to meet new friends. Parishioners bring snacks to share, and there's always plenty for
+              everyone.</p>
+            <%= link_to cl_image_tag("#{@pathway.image}", width: "99%", alt: "Pathway image" ), "#{@pathway.link}" %>
+              <p><strong>New Pathways available </strong> Click on the image above to read or download the latest
+                edition (<%= @pathway.pubdate.strftime("%B %Y") %>) of <em>Pathways,</em> the parish newsletter.</p>
+              <p><strong>Previous editions of <em>Pathways</em>
+                  <%= link_to "can be found here" , pathways_path %>
+                </strong></p><br>
+              <%= cl_image_tag('togetherLogo_grjbrm.png', width: '95%' , class: 'image-center' ) %>
+                <p><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+                  hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+                  are <%= link_to "listed here." , opportunities_path %>
+                </p>
+                <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+                  and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call
+                  the office during the week to get one.</p>
+                <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 image-center" ) %>
+                  <p class="mt-3"><strong>Get the Weekly Update in your email box </strong>
+                    <%#= link_to "by signing up here."
+                      , "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2"
+                      %>
+                  </p>
+                  <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
+                    :fetch_format=> :auto), pages_calendar_path %>
+                    <h3>Click calendar to see our activities</h3>
+                    <div class="mt-3">
+                      <h2>Episcopal News Service</h2>
+                      <% @ens_feed.each do |feed| %>
+                        <h5>
+                          <%= link_to "#{feed.title}" , feed.url %>
+                        </h5>
+                        <p>
+                          <%= feed.summary.gsub(/[&#8230;]/, '...' ) %>
+                        </p>
+                        <% end %>
+                    </div><!-- newsfeed -->
+  </div>
+  <!--sidebar -->
+</div><!-- row -->
+</div><!-- container -->:
+
+Started POST "/__better_errors/f99835e4634b641c/variables" for 127.0.0.1 at 2023-01-29 23:18:54 -0500
+Started GET "/" for 127.0.0.1 at 2023-01-29 23:20:39 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4581)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1304)
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1834)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1775)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 10605)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 2.1ms | Allocations: 15361)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-29 23:22:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.3ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4539)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 1304)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 1834)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 10553)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 1.4ms | Allocations: 15286)
+
+

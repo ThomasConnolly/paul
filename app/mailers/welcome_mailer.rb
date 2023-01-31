@@ -5,6 +5,6 @@ class WelcomeMailer < ApplicationMailer
     @user = user
     mail(to: @user.email,
          bcc: 'tom.connolly@comcast.net',
-         subject: 'Welcome to Saint Paul\'s website')
+         subject: "Welcome to Saint Paul's website")
   end
 end

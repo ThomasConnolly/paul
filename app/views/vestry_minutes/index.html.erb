@@ -18,7 +18,7 @@
               </small>&nbsp;
               <% if user_signed_in? && current_user.admin? %>
                 <%= link_to 'Edit' , edit_vestry_minute_path(vestry_minute) %> |
-                  <%= link_to 'Destroy' , vestry_minute, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+                  <%= link_to 'Destroy' , vestry_minute, data: { turbo_confirm: "Are you sure?" } method: :delete
                     %>
             </p>
             <% end %>

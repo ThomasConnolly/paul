@@ -23,7 +23,7 @@
 #
 
 class StripeReport < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   belongs_to :pledge, optional: true
   belongs_to :donation, optional: true
   before_save :calculate_fee
@@ -37,4 +37,5 @@ class StripeReport < ApplicationRecord
   def calculate_net
     self.net = amount - fee
   end
+
 end

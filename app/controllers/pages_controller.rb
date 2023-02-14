@@ -25,6 +25,8 @@ class PagesController < ApplicationController
 
   def python_tutor; end
 
+  def roberts_rules; end
+
   def how_to_use; end
 
   def way_of_love; end

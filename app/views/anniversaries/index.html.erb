@@ -6,7 +6,8 @@
     &nbsp; <%= a.anniversary %>
       < <% if user_signed_in? && current_user.admin? %>
         <small>
-          <%= link_to "delete" , anniversary_path(a), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "delete" , anniversary_path(a), data: { turbo_confirm: "Are you sure?" } 
+          method: :delete %>
         </small></p>
   <% end %>
     <% end %>

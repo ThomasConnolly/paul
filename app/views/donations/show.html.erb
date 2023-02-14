@@ -9,7 +9,6 @@
 
 <% if current_user==@donation.user %>
   <%= link_to 'Edit' , edit_donation_path(@donation) %> |
-
-    <%= link_to 'Delete this donation' , donation_path(@donation), data: { turbo_method: :delete,
-      turbo_confirm: "Are you sure?" } %>
-      <% end %>
+  <%= link_to 'Delete this donation' , donation_path(@donation), data: { turbo_confirm: "Are you sure?" } 
+          method: :delete %>
+<% end %>

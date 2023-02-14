@@ -41,6 +41,7 @@ gem 'nokogiri'
 gem 'pg', '~> 1.4.3'
 gem 'premailer-rails'
 gem 'puma'
+gem 'pundit'
 gem 'rack'
 gem 'rack-attack', '~> 6.6'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
@@ -48,6 +49,7 @@ gem 'rails'
 gem 'railties'
 gem 'receipts'
 gem 'redis'
+gem "responders", "~> 3.1"
 gem 'rest-client'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
@@ -95,3 +97,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+

@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+
+  include Pundit::Authorization
+  
   protect_from_forgery with: :exception
   before_action :store_current_location, unless: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   # def store_location
   # session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/

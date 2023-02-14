@@ -1,5 +1,5 @@
-<div class="mt-5"></div>
-  <div class="row">
+
+  <div class="row mt-4">
     <div class="col-md-4 offset-md-4">
       <% if @user.avatar.attached? %>
         <%= image_tag(@user.avatar, width: "100%") %>
@@ -8,14 +8,16 @@
           <h4>Your<br>Photo<br>Here</h4>
         </div>
       <% end %>
-      <h5 class="text-center mt-2 mb-3"><strong>To add or change your profile photo,  <em>"Choose file"</em> from your computer, then upload to our server.</strong>
-      </h5>
-   
+    </div>  
+      <div class="col-md-6 offset-md-3 text-center mt-2 mb-3">
+      <h5>To add or change your profile photo, 
+       <em>"Choose file"</em> from your computer, then upload to our server.</strong>
+      </h5>   
       <%= bootstrap_form_for(@user) do |f| %>
         <%= f.file_field :avatar, direct_upload: true %>
         <%= f.submit "upload", class: "btn btn-primary"%> &nbsp;
           <%= link_to "cancel", :back, class: "btn btn-danger" %><br>
       <% end %>
     </div>
-  </div>
+  
   

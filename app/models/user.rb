@@ -39,30 +39,30 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   after_create :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]
+  before_destroy :cancel_stripe_customer
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
-  has_many :opportunities
+  has_many :opportunities, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
-  has_many :tasks
-  has_many :vreports
-  validates :password, presence: true
+  has_many :tasks, dependent: :destroy
+  has_many :vreports, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
   validates :avatar, content_type: %i[png jpg]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy
 
+
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
 
-  enum :role, { member: 0, vestry: 1, communicator: 2, admin: 3 }
+  enum :role, { member: 0, vestry: 1, communicator: 2 }
   after_initialize :set_default_role, if: :new_record?
 
   scope :vestry, -> { where(role: 1) }
   scope :communicator, -> { where(role: 2) }
-  scope :admin, -> { where(role: 3) }
 
   def set_default_role
     self.role ||= :member
@@ -97,6 +97,12 @@ class User < ApplicationRecord
     )
     update(stripe_id: customer.id)
   end
+
+  def cancel_stripe_customer
+        Stripe::Customer.delete(self.stripe_id)
+  end
+
+
 
   def add_profile
     create_profile if profile.nil?

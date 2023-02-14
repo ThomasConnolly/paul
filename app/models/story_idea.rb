@@ -14,7 +14,7 @@
 #
 
 class StoryIdea < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   # has_attachment :story_idea_picture, accept: [:jpg, :png, :gif]
   default_scope -> { order('created_at DESC') }

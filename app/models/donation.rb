@@ -21,7 +21,7 @@
 #
 
 class Donation < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   validates_presence_of :dollars, numericality: { only_integer: true }
   before_save :set_amount
   before_save :set_stripe_id

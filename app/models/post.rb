@@ -12,7 +12,7 @@
 #
 
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   validates_presence_of :content
   validates_presence_of :user_id

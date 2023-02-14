@@ -2,36 +2,25 @@
   <div class="col-md-8 col-md-offset-2">
     <h3>All Users</h3>
     <% @users.each do |user| %>
-      <p><strong>
-          <%= user.username.titleize %>
-        </strong> &nbsp; <%= user.email %> &nbsp; <%=user.id %>
-      </p>
+      <p><strong><%= user.username.titleize %></strong> &nbsp; 
+      <%= user.email %> &nbsp; <%=user.id %> &nbsp; 
+      <%= link_to "Delete" , user,  data: { turbo_method: :delete } %></p>
+    <% end %><br>
+    <h3> Vestry Members </h3>
+      <% @users.where(role: "vestry" ).each do |v| %>
+        <p><strong><%= v.username.titleize %></strong>&nbsp;
+        <%= v.email %> <br></p>
+      <% end %><br>
+    <h3>Administrators</h3>
+      <% @users.where(admin: true).each do |admin| %>
+         <p><strong><%= admin.username.titleize %></strong>&nbsp; 
+         <%= admin.email %></p>
+      <% end %><br>
+    <h3>Communicators</h3>
+      <% @users.where(role: "communicator" ).each do |comm| %>
+        <p><strong><%= comm.username.titleize %></strong>&nbsp; 
+        <%= comm.email %></p>
       <% end %>
-        <br>
-        <h3> Vestry Members </h3>
-        <% @users.where(role: "vestry" ).each do |v| %>
-          <p><strong>
-              <%= v.username %>
-            </strong>&nbsp;
-            <%= v.email %> <br>
-          </p>
-          <% end %>
-            <br>
-            <h3>Administrators</h3>
-            <% @users.where(role: "admin" ).each do |admin| %>
-              <p><strong>
-                  <%= admin.username %>
-                </strong>&nbsp; <%= admin.email %>
-              </p>
-              <% end %>
-                <br>
-                <h3>Communicators</h3>
-                <% @users.where(role: "communicator" ).each do |comm| %>
-                  <p><strong>
-                      <%= comm.username %>
-                    </strong>&nbsp; <%= comm.email %>
-                  </p>
-                  <% end %>
 
                     <!-- <h3>Invite users</h3> 
         <%#= bootstrap_form_for(User.new, url: user_invitation_path, 

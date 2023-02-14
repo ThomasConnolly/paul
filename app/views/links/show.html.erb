@@ -18,6 +18,7 @@
   <%= @link.url %>
 </p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> | <%= link_to 'Delete', link_path(@link), method: :delete, data: { confirm: 'Confirm deletion of this link' } %>
+<%= link_to 'Edit', edit_link_path(@link) %> | <%= link_to 'Delete', link_path(@link), data: 
+  { turbo_confirm: "Are you sure?" } method: :delete %>
 <%= link_to 'Back', links_path %>
     

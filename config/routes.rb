@@ -71,6 +71,7 @@ Rails.application.routes.draw do
 
   get 'members/import'
   get 'series/index'
+  get 'pages/roberts_rules'
   get 'pages/way_of_love'
   get 'pages/sacred_ground'
   get 'activities/index'

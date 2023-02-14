@@ -9,8 +9,8 @@
           <% if current_user==@profile.user %>
             <%= link_to 'Add or change your profile picture' , edit_user_path(current_user) %>
               <%= link_to ' | Edit your profile' , edit_profile_path(@profile) %> |
-                <%= link_to 'Delete' , profile_path(@profile), data: { turbo_method: :delete,
-                  turbo_confirm: "Are you sure?" } %>
+                <%= link_to 'Delete' , profile_path(@profile), data: { turbo_confirm: "Are you sure?" } 
+                method: :delete %>
                   <% end %>
         </p>
 </div>

@@ -1,27 +1,24 @@
 <h1>Sermons from St. Paul's pulpit </h1>
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to "Add a sermon" , new_sermon_path, class: "btn btn-primary" %>
-    <% end %>
+<% end %>
 
-      <table class="table table-striped">
-        <tbody>
-          <% @sermons.each do |sermon| %>
-            <tr>
-              <td>
-                <%= sermon.delivered_on.strftime("%b %d, %Y") %>
-              </td>
-              <td>
-                <%= sermon.homilist.name %>
-              </td>
-              <td>
-                <%= link_to sermon.title, sermon %>
-                  <% if user_signed_in? && current_user.admin? %>
-                    <%= link_to sermon, method: :delete, data: { confirm: 'This will delete this sermon.' } do %>
-                      Delete!
-                      <% end %>
-                        <% end %>
-              </td>
-            </tr>
-            <% end %>
-        </tbody>
-      </table>
+<table class="table table-striped">
+  <tbody>
+  <% @sermons.each do |sermon| %>
+    <tr><td>
+      <%= sermon.delivered_on.strftime("%b %d, %Y") %>
+    </td>
+    <td>
+      <%= sermon.homilist.name %>
+    </td>
+    <td>
+      <%= link_to sermon.title, sermon %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "Delete", sermon, data: { turbo_confirm: "Are you sure?" } method: :delete %>
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

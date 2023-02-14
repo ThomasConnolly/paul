@@ -28017,3 +28017,182 @@ Started GET "/bootstrap.min.css.map" for 127.0.0.1 at 2023-02-13 13:00:46 -0500
 ActionController::RoutingError (No route matches [GET] "/bootstrap.min.css.map"):
   
   [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-14 07:43:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.6ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 13450)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1342)
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 2005)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 19883)
+Completed 200 OK in 68ms (Views: 20.1ms | ActiveRecord: 15.1ms | Allocations: 47938)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-02-14 07:43:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 759)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.7ms | Allocations: 17744)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 1069)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 1136)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1607)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 22076)
+Completed 200 OK in 53ms (Views: 37.4ms | ActiveRecord: 3.2ms | Allocations: 35936)
+
+
+Started GET "/register/signup" for 127.0.0.1 at 2023-02-14 07:43:10 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 216)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 186)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3890)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 1069)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 1135)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1597)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 8211)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 9435)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-02-14 07:44:24 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"George", "last_name"=>"Santos", "email"=>"george@gmail.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "george@gmail.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "first_name", "last_name", "username", "avatar", "honey", "stripe_id", "role", "confirmation_token", "confirmed_at", "confirmation_sent_at", "admin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23) RETURNING "id"[0m  [["email", "george@gmail.net"], ["encrypted_password", "$2a$11$LVSY84scWNpEW8aTXHW9u.Y1d5WIIRNsZBC52D20p4kSUI52tuEBe"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["created_at", "2023-02-14 12:44:24.172550"], ["updated_at", "2023-02-14 12:44:24.172550"], ["first_name", "George"], ["last_name", "Santos"], ["username", "George Santos"], ["avatar", nil], ["honey", nil], ["stripe_id", nil], ["role", 0], ["confirmation_token", "DGzwcpsoyJZif1zb2yoy"], ["confirmed_at", nil], ["confirmation_sent_at", "2023-02-14 12:44:24.172796"], ["admin", false]]
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 774], ["LIMIT", 1]]
+  ↳ app/models/user.rb:108:in `add_profile'
+  [1m[36mProfile Create (0.7ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "cities", "background", "career", "family", "lifestyle", "civic", "church", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 774], ["cities", nil], ["background", nil], ["career", nil], ["family", nil], ["lifestyle", nil], ["civic", nil], ["church", nil], ["created_at", "2023-02-14 12:44:24.189392"], ["updated_at", "2023-02-14 12:44:24.189392"]]
+  ↳ app/models/user.rb:108:in `add_profile'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 0.4ms | Allocations: 318)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 7.9ms
+Delivered mail 63eb822832be4_c56d1d858990f@g15.mail (44.3ms)
+Date: Tue, 14 Feb 2023 07:44:24 -0500
+From: no_reply@saintpaulsnaples.org
+Reply-To: no_reply@saintpaulsnaples.org
+To: george@gmail.net
+Message-ID: <63eb822832be4_c56d1d858990f@g15.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63eb8228322c3_c56d1d85898936"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_63eb8228322c3_c56d1d85898936
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome George Santos!
+
+You can confirm your account through the link below:
+
+Confirm my account 
+( http://localhost:5000/confirmation?confirmation_token=DGzwcpsoyJZif1zb2yoy )
+----==_mimepart_63eb8228322c3_c56d1d85898936
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>Welcome George Santos!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:5000/confirmation?confirmation_token=DGzwcpsoyJZif1zb2yoy">Confirm my account</a></p>
+</body></html>
+
+----==_mimepart_63eb8228322c3_c56d1d85898936--
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:98:in `maybe_add_stripe_id'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "george santos"], ["id", 774], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `maybe_add_stripe_id'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "george@gmail.net"], ["id", 774], ["LIMIT", 1]]
+  ↳ app/models/user.rb:98:in `maybe_add_stripe_id'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "stripe_id" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-02-14 12:44:24.743821"], ["stripe_id", "cus_NM64FIDUJXKYoS"], ["id", 774]]
+  ↳ app/models/user.rb:98:in `maybe_add_stripe_id'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:98:in `maybe_add_stripe_id'
+Redirected to http://localhost:5000/
+Completed 303 See Other in 677ms (ActiveRecord: 16.2ms | Allocations: 134525)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-14 07:44:24 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.2ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (0.4ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 3249)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 1044)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 1124)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 1604)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7489)
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 1.4ms | Allocations: 11768)
+
+
+Started GET "/confirmation?confirmation_token=[FILTERED]" for 127.0.0.1 at 2023-02-14 07:44:33 -0500
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "DGzwcpsoyJZif1zb2yoy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "confirmed_at" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-02-14 12:44:33.585568"], ["confirmed_at", "2023-02-14 12:44:33.585304"], ["id", 774]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms | Allocations: 5669)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-02-14 07:44:33 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2115)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 1099)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 1650)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6366)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 7154)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "thomaseconnolly@outlook.com"]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7673], ["LIMIT", 1]]

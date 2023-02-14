@@ -99,7 +99,7 @@ class User < ApplicationRecord
   end
 
   def cancel_stripe_customer
-        Stripe::Customer.delete(self.stripe_id)
+        Stripe::Customer.delete(self.stripe_id) if self.stripe_id
   end
 
 

@@ -28016,3 +28016,4 @@ Started GET "/bootstrap.min.css.map" for 127.0.0.1 at 2023-02-13 13:00:46 -0500
   
 ActionController::RoutingError (No route matches [GET] "/bootstrap.min.css.map"):
   
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

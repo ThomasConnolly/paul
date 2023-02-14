@@ -100,7 +100,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.710.0)
+    aws-partitions (1.711.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -265,7 +265,7 @@ GEM
     net-ssh (7.0.1)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.1-x86_64-linux)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
@@ -524,7 +524,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.1p31
 
 BUNDLED WITH
-   2.3.26
+   2.4.6

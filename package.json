@@ -14,6 +14,7 @@
     "bootstrap-icons": "^1.7.2",
     "check-files": "^0.0.2",
     "esbuild": "^0.14.11",
+    "extend": "^3.0.2",
     "flatpickr": "^4.6.13",
     "sass": "^1.54.8",
     "stimulus": "^3.1.0",

@@ -4,8 +4,7 @@
     <%= homilist.title %><br>
     <%= homilist.photo %>
     <%= link_to 'Edit', edit_homilist_path(homilist) %> <small>
-    <%= link_to ' | Destroy', homilist, data: { turbo_confirm: "Are you sure?" } 
-          method: :delete %></small></p>
+    <%= link_to ' | Destroy', homilist, data: { turbo_confirm: "Are you sure?", turbo_vnote } %></small></p>
   <% end %>
 <br>
 

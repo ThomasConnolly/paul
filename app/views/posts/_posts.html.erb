@@ -2,16 +2,16 @@
 <% @posts.each do |post| %>
   
   <p><em> <strong><%= post.user.username.titleize %> </strong> </em>:: 
-   <%= post.content %>
-  
-   <small> Posted <%= time_ago_in_words(post.created_at) %> ago. 
-    <%=  pluralize(post.comments.count, "comment" ) %> 
+   <%=post.content %>
+ <small> Posted <%= time_ago_in_words(post.created_at) %> ago.  
+ <%=pluralize(post.comments.count, "comment" ) %> 
     <%= link_to "Show" , post_path(post[:id]) %> </small> 
 
  <% if current_user == post.user %>
-    <small><%= link_to " | Edit" , edit_post_path(post[:id]) %> </small> </p>
+    <small><%=link_to " | Edit" , edit_post_path(post[:id]) %> </small> </p>
 
-    <%= link_to "Delete" , post_path(post), data: { turbo_confirm: "Are you sure?" } method: :delete %> 
+    <%=link_to "Delete" , post_path(post), data: {
+        turbo_method: :delete, turbo_confirm: "Are you sure?" }  %> %> 
       
   <% end %>
   <hr>

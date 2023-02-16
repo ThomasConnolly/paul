@@ -6,11 +6,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    if @comment.save
-      redirect_to @commentable
-    else
-      redirect_to @commentable, alert: 'Something went wrong'
-    end
+    @comment.save
+      redirect_to @commentable, notice: "Your comment was posted."
   end
 
   def destroy
@@ -22,6 +19,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :parent_id)
+    params.require(:comment).permit(:body)
   end
 end

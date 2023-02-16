@@ -5,7 +5,7 @@
   <p><strong> <%= m.username.titleize %> </strong>,&nbsp;
   <%= m.membership_id %>, &nbsp;<%= m.email %>, &nbsp;<%= m.birthday %> <small>
     <%= link_to 'Edit' , edit_member_path(m) %>
-    <%= link_to ' | Delete' , member_path(m), data: { turbo_confirm: "Are you sure?" } method: :delete %>
+    <%= link_to ' | Delete' , member_path(d), data: { turbo_confirm: "Are you sure?"  turbo_method: :delete } %>
     </small>
   </p>
 <% end %>
@@ -15,6 +15,6 @@
       <p><%=d.username.titleize %>
       <%= d.email %></p>
       <small> <%= link_to 'Edit' , edit_member_path(d) %>
-      <%= link_to ' | Delete' , member_path(d), data: { turbo_confirm: "Are you sure?" } method: :delete %>
+      <%= link_to ' | Delete' , member_path(d), data: { turbo_confirm: "Are you sure?"  turbo_method: :delete } %>
       </small>
     <% end %>

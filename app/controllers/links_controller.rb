@@ -2,7 +2,6 @@
 
 class LinksController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only
 
   # GET /links/1
   # GET /links/1.json
@@ -52,12 +51,9 @@ class LinksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
 
-  def admin_only
-    redirect_to '/' unless user_signed_in? && current_user.admin?
 
     # Only allow a list of trusted parameters through.
     def link_params
       params.require(:link).permit(:event, :time, :date, :url)
     end
-  end
 end

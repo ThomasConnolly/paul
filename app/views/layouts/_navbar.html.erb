@@ -45,7 +45,7 @@
                 <%= link_to "Vestry minutes" , vestry_minutes_path, {class: "dropdown-item" } %><br>
                   <%= link_to "On-line giving" , new_pledge_path, {class: "dropdown-item" } %> <br>
                     <% if current_user && current_user.vestry? || current_user && current_user.admin? %>
-                      <%= link_to "Vestry Report" , vreports_path, {class: "dropdown-item" } %>
+                      <%= link_to "Vestry Report" , vnotes_path, {class: "dropdown-item" } %>
                         <% end %>
                           <%= link_to "Parish profile" ,
                             ("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1522935596/ParishProfile_vs6vjv.pdf.jpg.pdf"),

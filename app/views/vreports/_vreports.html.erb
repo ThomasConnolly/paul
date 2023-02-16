@@ -1,16 +1,16 @@
-<% @vreports.each do |vreport| %>
-  <h3><%= vreport.title %></h3>
-  <p><%= vreport.body %></p>
-  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vreport.created_at) %> ago by
-    <strong> <%= vreport.user.username.titleize %></strong> &nbsp; 
-    <%= link_to "Show" , vreport_path(vreport) %>
-    <% if current_user==vreport.user %> |
-      <%= link_to "Edit" , edit_vreport_path(vreport) %> |&nbsp;
-      <%= link_to "Delete", vreport, data: { turbo_confirm: "Are you sure?" } method: :delete %> </span>
+<% @vnotes.each do |vnote| %>
+  <h3><%= vnote.title %></h3>
+  <p><%= vnote.body %></p>
+  <span class="edit-delete-line"> Report made <%= time_ago_in_words(vnote.created_at) %> ago by
+    <strong> <%= vnote.user.username.titleize %></strong> &nbsp; 
+    <%= link_to "Show" , vnote_path(vnote) %>
+    <% if current_user==vnote.user %> |
+      <%= link_to "Edit" , edit_vnote_path(vnote) %> |&nbsp;
+      <%= link_to "Delete", vnote, data: { turbo_confirm: vnote } method: :delete %> </span>
     <% end %>
 <% end %>
       <hr>
 <section id="comments-section">
-  <%= render partial: 'comments/comments' , locals: {commentable: @vreport} %>
-  <%= render partial: 'comments/form' , locals: {commentable: @vreport} %>
+  <%= render partial: 'comments/comments' , locals: {commentable: @vnote} %>
+  <%= render partial: 'comments/form' , locals: {commentable: @vnote} %>
 </section> 

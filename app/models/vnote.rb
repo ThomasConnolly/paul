@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: vreports
+# Table name: vnotes
 #
 #  id         :integer          not null, primary key
 #  title      :string
@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 
-class Vreport < ApplicationRecord
+class Vnote < ApplicationRecord
   belongs_to :user, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   validates :title, presence: true

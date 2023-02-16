@@ -14,8 +14,7 @@
   <% if user_signed_in? && current_user.admin? %>
     <p><small>
         <%= link_to 'Edit' , edit_event_path(event) %>&nbsp; |
-          <%= link_to 'Destroy' , event, data: { turbo_confirm: "Are you sure?" } 
-          method: :delete %>
+          <%= link_to 'Destroy' , event, data: { turbo_confirm: "Are you sure?", turbo_method: :delete } %>
       </small></p>
     <% end %>
       <% end %>

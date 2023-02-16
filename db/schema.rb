@@ -489,7 +489,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_141918) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "vreports", id: :serial, force: :cascade do |t|
+  create_table "vnotes", id: :serial, force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
     t.text "body"

@@ -10,11 +10,11 @@
         
     <%= @post.content %>
     <% if user_signed_in? && current_user == @post.user %>
-      <p><small><%= link_to "Edit", edit_post_path(@post) %> </small></p>>
+      <p><small><%= link_to "Edit", edit_post_path(@post) %> </small></p>
       <% end %>
       <h3>Comments</h3>
         <%= render partial: "comments/form", locals: { commentable: @post } %>
-        <%= render @post.comments.where(parent_id: nil) %>
+        <%= render @post.comments.where(parent_id: @post) %>
         <div class="mt-5"></div>
 
 

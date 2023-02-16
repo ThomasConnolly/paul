@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: vreports
+# Table name: vnotes
 #
 #  id         :integer          not null, primary key
 #  title      :string
@@ -12,16 +12,16 @@
 #  updated_at :datetime         not null
 #
 
-class VreportsController < ApplicationController
+class VnotesController < ApplicationController
   before_action :authenticate_user!
   before_action :vestry_only
-  before_action :set_vreport, only: %i[show edit update destroy]
-  before_action :all_vreports, only: %i[index create update destroy]
+  before_action :set_vnote, only: %i[show edit update destroy]
+  before_action :all_vnotes, only: %i[index create update destroy]
 
   respond_to :html, :js
 
   def new
-    @vreport = Vreport.new
+    @vnote = vnote.new
     respond_to do |format|
       format.html
       format.js
@@ -29,28 +29,28 @@ class VreportsController < ApplicationController
   end
 
   def index
-    @vreports = Vreport.includes(:comments).all
-    @vreport = Vreport.new
+    @vnotes = vnote.includes(:comments).all
+    @vnote = vnote.new
   end
 
   def show; end
 
   def create
-    @vreport = current_user.vreports.build(vreport_params)
-    if @vreport.save
-      VestryMailer.vreport_created(@vreport).deliver_later
+    @vnote = current_user.vnotes.build(vnote_params)
+    if @vnote.save
+      VestryMailer.vnote_created(@vnote).deliver_later
       respond_to do |format|
-        format.html { redirect_to vreports_path(@vreport) }
+        format.html { redirect_to vnotes_path(@vnote) }
         format.js
       end
     end
   end
 
   def update
-    @vreport.update(vreport_params)
-    @vreport.save
+    @vnote.update(vnote_params)
+    @vnote.save
     respond_to do |format|
-      format.html { redirect_to vreports_path }
+      format.html { redirect_to vnotes_path }
       format.js
     end
   end
@@ -58,22 +58,22 @@ class VreportsController < ApplicationController
   def edit; end
 
   def destroy
-    @vreport.destroy
+    @vnote.destroy
     redirect_to '/', status: :see_other
   end
 
   private
 
-  def all_vreports
-    @vreports = Vreport.all
+  def all_vnotes
+    @vnotes = vnote.all
   end
 
-  def set_vreport
-    @vreport = Vreport.find(params[:id])
+  def set_vnote
+    @vnote = vnote.find(params[:id])
   end
 
-  def vreport_params
-    params.require(:vreport).permit(:body, :title, :comments)
+  def vnote_params
+    params.require(:vnote).permit(:body, :title, :comments)
   end
 
   def vestry_only

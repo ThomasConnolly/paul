@@ -3,25 +3,25 @@
     <div class="col-md-8 offset-md-2">
 
       <h1>
-        <%= @vreport.title %>
+        <%= @vnote.title %>
       </h1>
-      <p><strong> By <%= @vreport.user.username.titleize %></strong></p>
+      <p><strong> By <%= @vnote.user.username.titleize %></strong></p>
       <p>
-        <%= raw(@vreport.body) %>
+        <%= raw(@vnote.body) %>
       </p>
       <hr>
       <div class="clearall"></div>
       <section id="comments-section">
-        <%#= render partial: 'comments/comments' , locals: {commentable: @vreport} %>
+        <%#= render partial: 'comments/comments' , locals: {commentable: @vnote} %>
           <div class="mt30"></div>
-          <%#= render partial: 'comments/form' , locals: {commentable: @vreport} %>
+          <%#= render partial: 'comments/form' , locals: {commentable: @vnote} %>
       </section>
 
       <div class="mt30"></div>
 
 
       <p><strong>
-          <%= link_to "<< Back to Vestry Reports" , vreports_path %>
+          <%= link_to "<< Back to Vestry Reports" , vnotes_path %>
         </strong></p>
     </div>
   </div>

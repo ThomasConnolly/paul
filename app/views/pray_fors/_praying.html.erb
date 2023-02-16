@@ -1,13 +1,11 @@
 <% @pray_fors.each do |pray_for| %>
   <p class="list"><strong>
-      <%= pray_for.first_name %>. 
-    </strong>
-    <%= pray_for.reason if pray_for.reason?%>
-      <% if user_signed_in? && current_user.admin? %>
-        <small>
-          <%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
-            <%= link_to 'Destroy' , pray_for, data: { turbo_confirm: "Are you sure?" } method: :delete %>
-        </small>
-  </p>
-  <% end %>
+    <%= pray_for.first_name %>. </strong>
+    <%= pray_for.reason if pray_for.reason %>
+    <% if user_signed_in? && current_user.admin? %>
+      <small><%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
+      <%= link_to 'Destroy' , pray_for, data: {
+        turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
+      </small></p>
     <% end %>
+<% end %>

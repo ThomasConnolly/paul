@@ -37,7 +37,7 @@ namespace :madmin do
   resources :roles
   resources :todo_lists
   resources :vestry_minutes
-  resources :vreports
+  resources :vnotes
   resources :donations
   resources :users
   resources :links

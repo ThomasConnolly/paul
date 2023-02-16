@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class VreportCommentMailer < ApplicationMailer
+class vnoteCommentMailer < ApplicationMailer
   default to: proc { User.where(role: 'vestry').pluck(:email) },
           bcc: proc { User.where(role: 'admin').pluck(:email) }
 

@@ -115,8 +115,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, module: :posts
   end
-  resources :vreports do
-    resources :comments, module: :vreports
+  resources :vnotes do
+    resources :comments, module: :vnotes
   end
   resources :story_ideas
   resources :story_ideas do

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/devise
-  revision: 2d655ea46e0267c05fd6a389fa3156f33fcc9856
+  revision: 44f0fd741f51bb71e2dd4219200acc5c91aef449
   branch: main
   specs:
     devise (4.9.0.alpha)
@@ -100,7 +100,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.711.0)
+    aws-partitions (1.712.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -377,7 +377,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.26.0)
       parser (>= 3.2.1.0)
-    rubocop-capybara (2.17.0)
+    rubocop-capybara (2.17.1)
       rubocop (~> 1.41)
     rubocop-rails (2.17.4)
       activesupport (>= 4.2.0)
@@ -417,7 +417,7 @@ GEM
     stripe (8.2.0)
     syntax_suggest (1.0.2)
     thor (1.2.1)
-    timeout (0.3.1)
+    timeout (0.3.2)
     ttfunk (1.7.0)
     turbo-rails (1.3.3)
       actionpack (>= 6.0.0)

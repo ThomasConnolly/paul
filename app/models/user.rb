@@ -48,7 +48,7 @@ class User < ApplicationRecord
   has_many :opportunities, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
   has_many :tasks, dependent: :destroy
-  has_many :vreports, dependent: :destroy
+  has_many :vnotes, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
   validates :avatar, content_type: %i[png jpg]
   has_one :pledge, dependent: :destroy

@@ -443,13 +443,13 @@
   after_add_for_roles                   before_add_for_story_ideas=          
   after_add_for_roles=                  before_add_for_tasks                 
   after_add_for_roles_users             before_add_for_tasks=                
-  after_add_for_roles_users=            before_add_for_vreports              
-  after_add_for_story_ideas             before_add_for_vreports=             
+  after_add_for_roles_users=            before_add_for_vnotes              
+  after_add_for_story_ideas             before_add_for_vnotes=             
   after_add_for_story_ideas=            before_remove_for_comments           
   after_add_for_tasks                   before_remove_for_comments=          
   after_add_for_tasks=                  before_remove_for_donations          
-  after_add_for_vreports                before_remove_for_donations=         
-  after_add_for_vreports=               before_remove_for_opportunities      
+  after_add_for_vnotes                before_remove_for_donations=         
+  after_add_for_vnotes=               before_remove_for_opportunities      
   after_remove_for_comments             before_remove_for_opportunities=     
   after_remove_for_comments=            before_remove_for_photos_attachments 
   after_remove_for_donations            before_remove_for_photos_attachments=
@@ -465,13 +465,13 @@
   after_remove_for_roles                before_remove_for_story_ideas=       
   after_remove_for_roles=               before_remove_for_tasks              
   after_remove_for_roles_users          before_remove_for_tasks=             
-  after_remove_for_roles_users=         before_remove_for_vreports           
-  after_remove_for_story_ideas          before_remove_for_vreports=          
+  after_remove_for_roles_users=         before_remove_for_vnotes           
+  after_remove_for_story_ideas          before_remove_for_vnotes=          
   after_remove_for_story_ideas=         defined_enums                        
   after_remove_for_tasks                devise_modules                       
   after_remove_for_tasks=               devise_modules=                      
-  after_remove_for_vreports             devise_modules?                      
-  after_remove_for_vreports=            find_for_database_authentication     
+  after_remove_for_vnotes             devise_modules?                      
+  after_remove_for_vnotes=            find_for_database_authentication     
   assign_from_row                       nested_attributes_options            
   attachment_reflections                with_attached_avatar                 
   before_add_for_comments               with_attached_photos                 
@@ -493,7 +493,7 @@
   autosave_associated_records_for_roles_users       
   autosave_associated_records_for_story_ideas       
   autosave_associated_records_for_tasks             
-  autosave_associated_records_for_vreports          
+  autosave_associated_records_for_vnotes          
   current_password                                  
   devise_modules                                    
   devise_modules?                                   
@@ -515,7 +515,7 @@
   validate_associated_records_for_roles_users       
   validate_associated_records_for_story_ideas       
   validate_associated_records_for_tasks             
-  validate_associated_records_for_vreports          
+  validate_associated_records_for_vnotes          
 [1m[1;34minstance variables[0m[0m: 
   [0;34m@__reflections[0m                  [0;34m@generated_attribute_methods[0m
   [0;34m@_type_candidates_cache[0m         [0;34m@generated_relation_methods[0m 

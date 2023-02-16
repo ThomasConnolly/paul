@@ -8,7 +8,7 @@
   <div data-controller="reply">
     <%= link_to "Reply" , "#" , data: { action: "click->reply#toggle" } %>
     <% if user_signed_in? && comment.user==current_user || user_signed_in? && current_user.admin? %>
-    <%= link_to " | Delete" , [comment.commentable, comment], data: { turbo_confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to " | Delete" , [comment.commentable, comment], data: { turbo_confirm: "Are you sure?" , turbo_method: :delete  } %>
     <%= render partial: "comments/form" , locals: { commentable: comment.commentable, parent_id: comment.id,
           class: "d-none" , target: "reply.form" }%>
   </div>

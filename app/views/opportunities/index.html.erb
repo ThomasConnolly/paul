@@ -19,7 +19,7 @@
         <% if user_signed_in? && current_user.admin? %>
           <p><small>
               <%= link_to "Edit" , edit_opportunity_path(opportunity[:id]) %> | <%= link_to 'Destroy' , opportunity,
-                  method: :delete, data: { turbo_confirm: "Are you sure?" } method: :delete %>
+                  data: { turbo_confirm: "Are you sure?", turbo_method: :delete } %>
             </small></p>
           <% end %>
             <% end %>

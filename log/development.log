@@ -35978,3 +35978,10 @@ Processing by VestryMinutesController#index as HTML
 Completed 200 OK in 26ms (Views: 14.9ms | ActiveRecord: 10.2ms | Allocations: 17686)
 
 
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVnote Load (5.0ms)[0m  [1m[34mSELECT "vnotes".* FROM "vnotes" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVnote Load (0.4ms)[0m  [1m[34mSELECT "vnotes".* FROM "vnotes" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 22], ["commentable_type", "Vnote"]]
+  [1m[36mVnote Load (4.8ms)[0m  [1m[34mSELECT "vnotes".* FROM "vnotes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVnote Load (0.9ms)[0m  [1m[34mSELECT "vnotes".* FROM "vnotes" WHERE "vnotes"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mVnote Load (0.9ms)[0m  [1m[34mSELECT "vnotes".* FROM "vnotes" WHERE "vnotes"."id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]

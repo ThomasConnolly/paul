@@ -37076,3 +37076,37 @@ Started POST "/__better_errors/89b1d58f8e0400e1/variables" for 127.0.0.1 at 2023
   ↳ (eval):72:in `block in render'
   [1m[36mCACHE PrayFor Load (0.0ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
   ↳ (eval):72:in `block in render'
+Started GET "/" for 127.0.0.1 at 2023-02-17 23:27:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.1ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.9ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:228
+  Rendered home/index.html.erb within layouts/application (Duration: 44.8ms | Allocations: 13477)
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 1342)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 41.5ms | Allocations: 29005)
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 92.8ms | Allocations: 46829)
+Completed 200 OK in 157ms (Views: 83.9ms | ActiveRecord: 26.2ms | Allocations: 74993)
+
+
+Started POST "/__better_errors/89b1d58f8e0400e1/variables" for 127.0.0.1 at 2023-02-17 23:28:01 -0500

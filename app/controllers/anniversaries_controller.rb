@@ -52,7 +52,7 @@ class AnniversariesController < ApplicationController
   end
 
   def set_admin_only
-    redirect_to '/' unless current_user&.admin?
+    redirect_to '/' unless current_user && user.admin?
   end
 
   def anniversary_params

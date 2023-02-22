@@ -37110,3 +37110,547 @@ Completed 200 OK in 157ms (Views: 83.9ms | ActiveRecord: 26.2ms | Allocations: 7
 
 
 Started POST "/__better_errors/89b1d58f8e0400e1/variables" for 127.0.0.1 at 2023-02-17 23:28:01 -0500
+Started GET "/posts" for 127.0.0.1 at 2023-02-18 11:08:16 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:17
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 157], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.1ms | Allocations: 679)
+  [1m[36mComment Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 157], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 777], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 156], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 156], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 155], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 155], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 154], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 154], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 153], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 153], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 329)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:47
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE (to_char("birthday", 'MMDD') BETWEEN '0212' AND '0218') ORDER BY "members"."yday" ASC[0m
+  ↳ app/views/members/_birthdays.html.erb:2
+  Rendered members/_birthdays.html.erb (Duration: 12.8ms | Allocations: 6492)
+  Rendered anniversaries/_anniversaries.html.erb (Duration: 2.7ms | Allocations: 3668)
+  Rendered posts/index.html.erb within layouts/application (Duration: 126.6ms | Allocations: 107190)
+  Rendered layout layouts/application.html.erb (Duration: 126.7ms | Allocations: 107238)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 21.2ms | Allocations: 118223)
+
+
+
+NoMethodError - undefined method `find_anniversaries_for' for Anniversary:Module:
+  app/helpers/anniversaries_helper.rb:6:in `anniversaries_this_month'
+  app/views/anniversaries/_anniversaries.html.erb:2
+  app/views/posts/index.html.erb:54
+
+Started POST "/__better_errors/3f51bde0c04b4132/variables" for 127.0.0.1 at 2023-02-18 11:08:16 -0500
+  [1m[36mPrayFor Load (0.7ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+  [1m[36mCACHE PrayFor Load (0.0ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/posts" for 127.0.0.1 at 2023-02-18 11:08:53 -0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:17
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 157], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 558)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 157], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 777], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 156], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 156], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 155], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 155], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 154], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 154], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 775], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 153], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 153], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 152], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 329)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 152], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 151], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 150], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 150], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 149], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 149], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 148], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 148], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 147], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 147], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 146], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 146], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 145], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 144], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 143], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 143], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 721], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 142], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 142], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 141], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 140], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 140], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 718], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered /home/tom/.rvm/gems/ruby-3.2.1/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 139], ["commentable_type", "Post"]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 776], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:47
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE (to_char("birthday", 'MMDD') BETWEEN '0212' AND '0218') ORDER BY "members"."yday" ASC[0m
+  ↳ app/views/members/_birthdays.html.erb:2
+  Rendered members/_birthdays.html.erb (Duration: 1.6ms | Allocations: 1377)
+  [1m[36mPrayFor Load (0.1ms)[0m  [1m[34mSELECT "pray_fors".* FROM "pray_fors"[0m
+  ↳ app/views/posts/index.html.erb:58
+  Rendered posts/index.html.erb within layouts/application (Duration: 71.1ms | Allocations: 65925)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1312)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 1936)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 1776)
+  Rendered layout layouts/application.html.erb (Duration: 77.0ms | Allocations: 72082)
+Completed 200 OK in 79ms (Views: 71.3ms | ActiveRecord: 6.5ms | Allocations: 73266)
+
+
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."yday" BETWEEN $1 AND $2[0m  [["yday", nil], ["yday", nil]]
+  [1m[36mMember Load (5.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."birthday" BETWEEN $1 AND $2[0m  [["birthday", "2023-02-11"], ["birthday", "2023-02-25"]]
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE (to_char("birthday", 'MMDD') = '0218')[0m
+  [1m[36mAnniversary Load (5.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."anniversary" BETWEEN $1 AND $2[0m  [["anniversary", "2023-02-11"], ["anniversary", "2023-02-25"]]
+  [1m[36mAnniversary Load (1.1ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') = '0218')[0m
+  [1m[36mAnniversary Load (0.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."anniversary" BETWEEN $1 AND $2[0m  [["anniversary", "2023-02-11"], ["anniversary", "2023-02-25"]]
+Started GET "/" for 127.0.0.1 at 2023-02-18 14:57:22 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (0.8ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.1ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:228
+  Rendered home/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 13457)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1342)
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 2005)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 19885)
+Completed 200 OK in 79ms (Views: 24.8ms | ActiveRecord: 15.7ms | Allocations: 50624)
+
+
+  [1m[36mAnniversary Load (5.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') = '0212')[0m
+  [1m[36mAnniversary Load (1.1ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') = '0212')[0m
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') = '0120')[0m
+  [1m[36mAnniversary Load (1.3ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') BETWEEN '0212' AND '0226')[0m
+  [1m[36mAnniversary Load (1.2ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') BETWEEN '0212' AND '0226')[0m
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE (to_char("anniversary", 'MMDD') BETWEEN '0212' AND '0226')[0m
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mMember Load (13.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7411833289957498605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddYdayToAnniversary (20230219131053)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "anniversaries" ADD "yday" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230219131053"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7411833289957498605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAnniversary Load (0.2ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Load (0.2ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnniversary Load (0.6ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Load (0.3ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Load (0.1ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnniversary Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (1.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."anniversary" IS NULL[0m
+  [1m[36mAnniversary Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries" WHERE "anniversaries"."anniversary" IS NULL[0m
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Update All (13.6ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (0.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mAnniversary Update All (5.3ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (1.2ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."id" = $1 LIMIT $2[0m  [["id", 112], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2023-02-20 17:41:36 -0500
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.0ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (2.7ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 21.4ms | Allocations: 13448)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1342)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 36.1ms | Allocations: 29005)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 62.2ms | Allocations: 46781)
+Completed 200 OK in 123ms (Views: 54.5ms | ActiveRecord: 23.5ms | Allocations: 74970)
+
+
+  [1m[36mAnniversary Count (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (1.0ms)[0m  [1m[33mUPDATE "anniversaries" SET "anniversary" = $1, "updated_at" = $2 WHERE "anniversaries"."id" = $3[0m  [["anniversary", nil], ["updated_at", "2023-02-20 22:52:28.982160"], ["id", 1]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAnniversary Load (0.7ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.8ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-20 22:59:56.763043"], ["yday", 0], ["id", 2]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mAnniversary Load (1.1ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Update All (14.4ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mAnniversary Update All (5.1ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (1.2ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mAnniversary Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries" WHERE "anniversaries"."anniversary" = $1[0m  [["anniversary", true]]
+  [1m[36mAnniversary Count (15.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries" WHERE "anniversaries"."anniversary" IS NOT NULL[0m
+  [1m[36mAnniversary Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "anniversaries"[0m
+Started GET "/" for 127.0.0.1 at 2023-02-20 21:48:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[36mLink Load (1.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "worship"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "bulletin"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "wine_time"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "coffee"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."event" = $1 LIMIT $2[0m  [["event", "evening_bible"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:11:in `index'
+  [1m[36mPathway Load (1.4ms)[0m  [1m[34mSELECT "pathways".* FROM "pathways" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEnsFeed Load (4.8ms)[0m  [1m[34mSELECT "ens_feeds".* FROM "ens_feeds" ORDER BY published_at DESC LIMIT $1[0m  [["LIMIT", 6]]
+  ↳ app/views/home/index.html.erb:226
+  Rendered home/index.html.erb within layouts/application (Duration: 49.1ms | Allocations: 13469)
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 1342)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:4
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 776], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:10
+  Rendered layouts/_navbar.html.erb (Duration: 73.6ms | Allocations: 29005)
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 136.8ms | Allocations: 46818)
+Completed 200 OK in 271ms (Views: 118.9ms | ActiveRecord: 49.0ms | Allocations: 74943)
+
+
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."anniversary" = $1[0m  [["anniversary", true]]
+  [1m[36mAnniversary Load (1.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."anniversary" = $1[0m  [["anniversary", true]]
+  [1m[36mAnniversary Load (0.8ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mAnniversary Load (0.7ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (4.2ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:34:18.305719"], ["yday", 0], ["id", 3]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAnniversary Update All (5.0ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (0.8ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7411833289957498605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColNameInAnniversary (20230221124150)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "anniversaries" RENAME COLUMN "anniversary" TO "marriage"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230221124150"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7411833289957498605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAnniversary Update All (13.1ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (0.7ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnniversary Load (1.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mAnniversary Load (0.7ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.9ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:51:56.515657"], ["yday", 0], ["id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.9ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:51:56.515657"], ["yday", 0], ["id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.8ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:51:56.515657"], ["yday", 0], ["id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.9ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:51:56.515657"], ["yday", 0], ["id", 2]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.8ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 12:51:56.515657"], ["yday", 178], ["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2023-02-21 09:27:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+SyntaxError - syntax error, unexpected constant, expecting ')'
+...                           Date.today+7).order(:marriage)
+...                           ^~~~:
+  app/helpers/anniversaries_helper.rb:7:in `'
+  app/controllers/application_controller.rb:3:in `<top (required)>'
+  app/controllers/home_controller.rb:3:in `<top (required)>'
+
+Started POST "/__better_errors/bd9a82dba8315747/variables" for 127.0.0.1 at 2023-02-21 09:27:46 -0500
+  [1m[36mAnniversary Load (0.8ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mAnniversary Load (0.8ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.5ms)[0m  [1m[33mUPDATE "anniversaries" SET "updated_at" = $1, "yday" = $2 WHERE "anniversaries"."id" = $3[0m  [["updated_at", "2023-02-21 16:40:12.796797"], ["yday", 287], ["id", 3]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAnniversary Update All (12.3ms)[0m  [1m[33mUPDATE "anniversaries" SET "yday" = $1[0m  [["yday", 0]]
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mAnniversary Load (0.3ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mAnniversary Load (1.0ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Create (5.7ms)[0m  [1m[32mINSERT INTO "anniversaries" ("salutation", "last_name", "marriage", "created_at", "updated_at", "yday") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["salutation", "Bob and Hellen"], ["last_name", "Johnston"], ["marriage", 1980], ["created_at", "2023-02-22 02:39:21.507913"], ["updated_at", "2023-02-22 02:39:21.507913"], ["yday", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Create (4.3ms)[0m  [1m[32mINSERT INTO "anniversaries" ("salutation", "last_name", "marriage", "created_at", "updated_at", "yday") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["salutation", "Bob and Hellen"], ["last_name", "Johnston"], ["marriage", "1980-06-30"], ["created_at", "2023-02-22 02:39:21.507913"], ["updated_at", "2023-02-22 02:39:21.507913"], ["yday", nil]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnniversary Update (0.8ms)[0m  [1m[33mUPDATE "anniversaries" SET "marriage" = $1, "updated_at" = $2, "yday" = $3 WHERE "anniversaries"."id" = $4[0m  [["marriage", "1942-06-30"], ["updated_at", "2023-02-22 02:41:34.714362"], ["yday", 182], ["id", 162]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAnniversary Load (0.5ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" ORDER BY "anniversaries"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[36mAnniversary Load (0.9ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries" WHERE "anniversaries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAnniversary Load (0.4ms)[0m  [1m[34mSELECT "anniversaries".* FROM "anniversaries"[0m

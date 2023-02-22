@@ -56,6 +56,6 @@ class AnniversariesController < ApplicationController
   end
 
   def anniversary_params
-    params.require(:anniversary).permit(:salutation, :last_name, :anniversary)
+    params.require(:anniversary).permit(:salutation, :last_name, :marriage, :yday)
   end
 end

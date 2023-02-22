@@ -1,6 +1,6 @@
-<h3>Anniversaries this month</h3>
-<% anniversaries_this_month.each do |anniversary| %>
-  <p><%= anniversary.salutation %> <%= anniversary.last_name %>, 
-  <%= anniversary.anniversary.strftime("%B %-d") %></p> 
+<h3>Recent & upcoming anniversaries</h3>
+<% recent_anniversaries.each do |ann| %>
+  <p><%= ann.salutation %> <%= ann.last_name %>, 
+  <%= ann.marriage.strftime("%B %-d") %></p> 
   <% end %>
   

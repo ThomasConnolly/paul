@@ -37,7 +37,7 @@ class User < ApplicationRecord
   before_save :set_username
   validates :username, uniqueness: { case_sensitive: false }
   validates :email, presence: true, uniqueness: true
-  after_create :add_profile
+  after_validation :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]
   before_destroy :cancel_stripe_customer
   has_many :posts, dependent: :destroy

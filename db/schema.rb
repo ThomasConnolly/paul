@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_03_141918) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_124150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,9 +74,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_141918) do
   create_table "anniversaries", id: :serial, force: :cascade do |t|
     t.string "salutation"
     t.string "last_name"
-    t.date "anniversary"
+    t.date "marriage"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.integer "yday"
   end
 
   create_table "attachinary_files", id: :serial, force: :cascade do |t|
@@ -489,7 +490,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_141918) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "vnotes", id: :serial, force: :cascade do |t|
+  create_table "vnotes", id: :integer, default: -> { "nextval('vreports_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
     t.text "body"

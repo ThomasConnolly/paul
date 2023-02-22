@@ -13,15 +13,23 @@
 #
 
 class Anniversary < ApplicationRecord
-  acts_as_birthday :anniversary
+  require 'date'
+  around_update :set_yday
+
+
+  def set_yday
+    self.yday = marriage.yday unless marriage.nil?
+  end
 
   def self.assign_from_row(row)
     anniversary = find_by_salutation(row[:salutation]) || new
     anniversary.assign_attributes row.to_hash.slice(
       :salutation,
       :last_name,
-      :anniversary
+      :marriage
     )
     anniversary
   end
 end
+
+

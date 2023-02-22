@@ -2,8 +2,8 @@
 
 module AnniversariesHelper
  
-  def anniversaries_this_month
-    Anniversary.find_anniversaries_for(Date.today.beginning_of_month,
-                                       Date.today.end_of_month).order(:anniversary)
+  def recent_anniversaries
+    Anniversary.find_anniversaries_for(Date.today-7
+                                       Date.today+7).order(:marriage)
   end
 end

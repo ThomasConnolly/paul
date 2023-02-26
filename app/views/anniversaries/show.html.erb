@@ -12,7 +12,7 @@
 
 <p>
   <strong>Anniversary:</strong>
-  <%= @anniversary.anniversary %>
+  <%= @anniversary.marriage.strftime('%m%-d') %>
 </p>
 
 <%= link_to 'Edit', edit_anniversary_path(@anniversary) %> |

@@ -9,11 +9,15 @@
     <div class="clearfix">
       <%#= cl_image_tag("v1670373016/AdvdntAltar_pqlux6.jpg", alt: "FrTomAtAltar" , width: "100%" ) %>
       <%#= cl_image_tag("Christmas_ol2irx.jpg", alt: "Nativity scene", width: "100%") %>
-      <%= cl_image_tag("TomGreenAltar_zdf3jy.jpg", alt: "Ordinary time green", width: "100%" ) %>
-      <h1 class="mt-4">Ash Wednesday</h1>
-      <p>Services at noon and 5:30 p.m. All are welcome.</p>    
+      <%=cl_image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1677373661/TominPurple_wjul01.jpg", 
+        alt: "Lenten vestments", width: "100%") %>
+      <%#= cl_image_tag("TomGreenAltar_zdf3jy.jpg", alt: "Ordinary time green", width: "100%" ) %>
+       
       <h1 class="mt-4">Please join us in worship</h1>
-      <%= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", 
+     
+      <%= image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1491663116/cross-lent_rhj8ln.jpg", width: "20%", 
+        alt: "Lenten Cross" , class: "float-start pe-3" ) %>
+        <%#= image_tag("https://saintpaulsnaplesorg.s3.us-west-2.amazonaws.com/logos/Cross.jpg", width: "20%", 
         alt: "SP Cross" , class: "float-start pe-3" ) %>
       <p>Sundays at 8 a.m., Rite I; and 10 a.m. Rite II with organ & choir. The later mass is live streamed 
         on <%= link_to "YouTube." ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> </p>

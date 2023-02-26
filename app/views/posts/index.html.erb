@@ -51,23 +51,16 @@
     <% end %>
       <h2>Life's Events</h2>
       <%= render partial: "members/birthdays" %>
-      <%#= render partial: "anniversaries/anniversaries" %>
+      <%= render partial: "anniversaries/anniversaries" %>
 
-    <h2 id="prayer-list">Your prayers are needed</h2>
+    <h2>Your prayers are needed</h2>
     <h4> We pray for... </h4>
       <% @pray_fors.each do |pray_for| %>
-      <p class="list"><strong>
-      <%= pray_for.first_name %>. </strong>
-      <%= pray_for.reason if pray_for.reason %>
-        <% if user_signed_in? && current_user.admin? %>
-          <small><%= link_to 'Edit' , edit_pray_for_path(pray_for) %> |
-          <%= link_to 'Destroy' , pray_for, data: {
-        turbo_method: :delete, turbo_confirm: "Are you sure?" }  %> %>
-          </small></p>
-        <% end %>
-      <% end %>
+        <p><strong><%= pray_for.first_name %>. </strong>
+        <%= pray_for.reason if pray_for.reason %>
+      <% end %></p>
     <hr>
-    <%= link_to "Let's pray for... (Click to add a new name)" , new_pray_for_path %>
+    <%= link_to "Let's pray for... (Click to add a name)" , new_pray_for_path %>
 
 </div> -->
 <!--sidebar-->

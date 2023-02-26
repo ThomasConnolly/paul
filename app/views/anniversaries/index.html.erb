@@ -1,17 +1,6 @@
 <h1>Anniversaries </h1>
 <% @anniversaries.each do |a| %>
   <p><strong><%= a.salutation %>&nbsp;<%= a.last_name %></strong>,
-    &nbsp; <%= a.anniversary %>
+    &nbsp; <%= a.marriage.strftime('%m%-d') %>
 <% end %>
-<div class="mt-3"></div>
 
-<% if user_signed_in? && current_user.admin? %>
-<h4>Import data</h4>
-  <%= form_for @import, url: import_anniversaries_path, multipart: true do |f|%>
-    <% if @import.errors.any? %><p class="alert alert-error">
-      <% @import.errors.full_messages.each do |msg| %>
-        <%= msg %></p>
-    <% end %>
-  <%= f.file_field :file %>
-  <%= f.submit "Upload anniversaries" %>
-<% end %>

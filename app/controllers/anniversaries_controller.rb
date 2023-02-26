@@ -6,19 +6,19 @@ class AnniversariesController < ApplicationController
 
   def index
     @anniversaries = Anniversary.all
-    @import = Anniversary::Import.new
+   # @import = Anniversary::Import.new
   end
 
-  def import
-    @import = Anniversary::Import.new anniversary_import_params
-    if @import.save
-      redirect_to anniversaries_path, notice: "Imported #{@import.imported_count} anniversaries"
-    else
-      @anniversaries = Anniversary.all
-      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
-      render action: :index
-    end
-  end
+  # def import
+  #   @import = Anniversary::Import.new anniversary_import_params
+  #   if @import.save
+  #     redirect_to anniversaries_path, notice: "Imported #{@import.imported_count} anniversaries"
+  #   else
+  #     @anniversaries = Anniversary.all
+  #     flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+  #     render action: :index
+  #   end
+  # end
 
   def show; end
 
@@ -47,12 +47,12 @@ class AnniversariesController < ApplicationController
     @anniversary = Anniversary.find(params[:id])
   end
 
-  def anniversary_import_params
-    params.require(:anniversary_import).permit(:file)
-  end
+  # def anniversary_import_params
+  #   params.require(:anniversary_import).permit(:file)
+  # end
 
   def set_admin_only
-    redirect_to '/' unless current_user && user.admin?
+    redirect_to '/' unless current_user.admin?
   end
 
   def anniversary_params

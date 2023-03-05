@@ -1,8 +1,9 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+// Entry point for build script in package.json
 import "@hotwired/turbo-rails"
 import "trix"
 import "@rails/actiontext"
 import * as bootstrap from "bootstrap"
+import "./controllers"
 
 document.addEventListener("turbo:load", () => {
 

@@ -12,7 +12,7 @@
 #
 
 class Post < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   validates_presence_of :content
   validates_presence_of :user_id
@@ -21,4 +21,8 @@ class Post < ApplicationRecord
   has_many_attached :photos
 
   default_scope -> { order('created_at DESC') }
+
+  def image_as_thumbnail
+    image.variant(resize_to_limit: [350, 350]).processed
+  end
 end

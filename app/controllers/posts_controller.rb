@@ -17,10 +17,10 @@ class PostsController < ApplicationController
 
   def show
     @comments = if params[:comment]
-                  @post.comments.where(id: params[:comment])
-                else
-                  @post.comments.where(parent_id: nil)
-                end
+      @post.comments.where(id: params[:comment])
+    else
+      @post.comments.where(parent_id: nil)
+    end
   end
 
   def create
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, notice: 'Post successfully destroyed.'
+    redirect_to posts_url, status: :see_other, notice: "Post was successfully destroyed."
   end
 
   private

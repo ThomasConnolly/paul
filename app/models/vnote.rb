@@ -13,7 +13,7 @@
 #
 
 class Vnote < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   validates :title, presence: true
   default_scope -> { order('created_at DESC') }

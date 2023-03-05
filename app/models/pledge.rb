@@ -17,7 +17,7 @@
 #
 
 class Pledge < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   validates_presence_of :dollars, numericality: { only_integer: true }
   validates_presence_of :plan_id
   before_save :set_plan_id

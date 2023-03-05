@@ -39,7 +39,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   after_validation :add_profile
   after_commit :maybe_add_stripe_id, on: %i[create update]
-  before_destroy :cancel_stripe_customer
+  after_destroy :cancel_stripe_customer
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy

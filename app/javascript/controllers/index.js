@@ -2,7 +2,15 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { Application } from "@hotwired/stimulus"
+import ChatChannel from "channels/chat_channel"
+
+const application = Application.start()
+
+// Connect ChatChannel to the application
+ChatChannel.connect()
+
+export default application  
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

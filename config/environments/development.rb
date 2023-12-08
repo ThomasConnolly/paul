@@ -1,4 +1,6 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 # frozen_string_literal: true
 
@@ -50,7 +52,7 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
- 
+  config.log_level = :debug
   config.action_controller.action_on_unpermitted_parameters = :raise
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -59,6 +61,6 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   # Uncomment if you wish to allow Action Cable access from any origin.
-  # config.action_cable.disable_request_forgery_protection = true
+  # config.action_cable.
+  # disable_request_forgery_protection = true
 end
-

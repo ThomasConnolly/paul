@@ -52,31 +52,29 @@ class User < ApplicationRecord
   has_many :vnotes, dependent: :destroy
   has_many :agendas
   has_one_attached :avatar, dependent: :destroy
-  validates :avatar, content_type: %i[png jpg jpeg gif] 
+  validates :avatar, content_type: %i[png jpg jpeg gif]
   has_one :pledge, dependent: :destroy
   has_many :donations, dependent: :destroy
 
   ROLES = %w[member vestry communicator admin].freeze
 
   def add_role(role)
-    self.roles << role.to_s unless has_role?(role)
+    roles << role.to_s unless has_role?(role)
   end
 
   def remove_role(role)
-    self.roles.delete(role.to_s) if has_role?(role)
+    roles.delete(role.to_s) if has_role?(role)
   end
 
   def role?(role)
-    return false if self.roles.nil?
+    return false if roles.nil?
 
-    self.roles.include?(role.to_s)
+    roles.include?(role.to_s)
   end
 
   def set_default_role
     self.roles ||= ['member']
   end
-
-  
 
   # honey used to prevent bots-filled forms from being saved to db
   validates :honey, absence: true
@@ -94,7 +92,7 @@ class User < ApplicationRecord
   def maybe_add_stripe_id
     return if stripe_id.present?
 
-    customer = Stripe::Customer.create(email: email)
+    customer = Stripe::Customer.create(email:)
     update(stripe_id: customer.id)
   end
 

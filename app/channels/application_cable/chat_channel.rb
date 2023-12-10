@@ -9,7 +9,10 @@ class ChatChannel < ApplicationCable::Channel
 
   def send_message(data)
     message = Message.create!(content: data['message'])
-    ActionCable.server.broadcast('chat_channel', message: render_message(message))
+  
+    broadcast_to('chat_channel', {
+      message: render_message(message)  
+    })
   end
 
   private
@@ -21,4 +24,3 @@ class ChatChannel < ApplicationCable::Channel
     )
   end
 end
-```

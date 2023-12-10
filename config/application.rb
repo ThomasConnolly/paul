@@ -3,7 +3,7 @@
 require_relative 'boot'
 
 require 'rails'
-# require 'action_cable/railtie'
+require 'action_cable/engine'
 require 'active_model/railtie'
 require 'active_job/railtie'
 require 'active_record/railtie'

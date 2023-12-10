@@ -92,7 +92,7 @@ class User < ApplicationRecord
   def maybe_add_stripe_id
     return if stripe_id.present?
 
-    customer = Stripe::Customer.create(email:)
+    customer = Stripe::Customer.create(email: email)
     update(stripe_id: customer.id)
   end
 

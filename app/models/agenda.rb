@@ -17,5 +17,4 @@ class Agenda < ApplicationRecord
                                                reject_if: :all_blank
   belongs_to :user
   validates :meeting_date, presence: true
-  validates :draft, inclusion: { in: [true, false] }
 end

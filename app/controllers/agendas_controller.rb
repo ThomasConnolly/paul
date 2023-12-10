@@ -67,7 +67,6 @@ class AgendasController < ApplicationController
     params.require(:agenda).permit(
       :meeting_date,
       :user_id,
-      :draft,
       agenda_items_attributes: %i[id title details position _destroy]
     )
   end

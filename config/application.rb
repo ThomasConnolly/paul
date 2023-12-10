@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
+
 require 'rails'
-require 'action_cable/railtie'
+# require 'action_cable/railtie'
 require 'active_model/railtie'
 require 'active_job/railtie'
 require 'active_record/railtie'

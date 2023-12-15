@@ -16,6 +16,7 @@ gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
+# gem 'bootstrap'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'devise'

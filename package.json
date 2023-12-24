@@ -10,10 +10,10 @@
     "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.2",
+    "cssnano": "^6.0.2",
     "esbuild": "^0.19.9",
+    "esbuild-plugin-sass": "^1.0.1",
     "flatpickr": "^4.6.13",
-    "jQuery": "^1.7.4",
-    "jquery": "^3.7.1",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
@@ -22,9 +22,10 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
-    "build:css:compile": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --load-path=node_modules",
     "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
-    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "build:css": "yarn build:css:compile && yarn build:css:bundle && yarn build:css:prefix",
+    "build:css:bundle": "postcss ./app/assets/builds/application.css -o ./app/assets/builds/application.css",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
   "browserslist": [

@@ -4,11 +4,11 @@
 
 import { application } from "./application"
 
-import DatepickerController from "./datepicker_controller"
-application.register("datepicker", DatepickerController)
+import DropdownController from "./dropdown_controller"
+application.register("dropdown", DropdownController)
+
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import ModalController from "./modal_controller"
-application.register("modal", ModalController)

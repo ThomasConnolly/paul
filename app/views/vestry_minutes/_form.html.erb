@@ -1,13 +1,15 @@
-<%= simple_form_for @vestry_minute do |f| %>
 
-  <p>Date of the meeting:
-    <%= f.date_field :date, data: { controller: "datepicker" } %>
-  <div class="my-3">
-    <p><strong>DRAFT</strong>
-    <%= f.input_field :draft, as: :boolean %></p>
-    <%= f.rich_text_area :body %>
-  </div>
-  <%= f.submit "Submit" , class: "btn btn-primary" %>
-  </p>
-<% end %>
+  <%= simple_form_for @vestry_minute do |f| %>
+    <p>Date of the meeting</p>
+    <%= f.input :date, as: :string, input_html: { data: 
+        { controller: 'flatpickr' } }%> 
+    
+    <div class="my-3">
+      <p><strong>D R A F T</strong>
+      <%= f.input :draft, as: :boolean %></p>
+      <%= f.input :body, as: :rich_text_area %>
+    </div>
+    <%= f.submit "Submit" , class: "btn btn-primary" %>
+    </p>
+  <% end %>
 

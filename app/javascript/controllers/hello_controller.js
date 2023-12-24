@@ -1,8 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 
+// Connects to data-controller="hello"
 export default class extends Controller {
   connect() {
-    console.log("Stimulus connected the Hello Controller")
-    this.element.textContent = "Hello World!"
+    this.element,textContent = "Hello World from Stimulus!"
   }
-}
+}    

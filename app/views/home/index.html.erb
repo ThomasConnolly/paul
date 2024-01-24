@@ -18,19 +18,21 @@
 <div class="row">
   
   <div class="col-md-8 main-body pe-5">
-    <%= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
-    <h1 class="mt-4">Join us in worship</h1>
-  <p><strong>Sundays at 8 and 10 a.m. 
-   </strong></p>
+    <%= cl_image_tag("v1673149730/SeatedBishop_nhcalp.jpg", width: "99%", alt: "Bishop Doug Scharff") %>
+    <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
+    <h1 class="mt-4">Join us in worship <br>With our bishop
+    Sunday at 9 <a href="" class="m"></a></h1>
+  <p><strong>On this special day we will have only one morning Mass, celebrated by Bishop Douglas Scharf, 
+    sixth bishop of the Diocese of Southwest Florida. </strong>(Other Sundays of the year, in season, 
+    we have two worship services, at 8 and 10 a.m.) 
+  </p>
   <p><strong>All are welcome at St. Paul's!</strong> If you can't be with us in person, join us 
     on <%= link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> where we 
-    live-stream the 10 a.m. mass.</p>
+    live-stream the Mass; this week at 9 a.m. but usually at 10 a.m.</p>
   <% if @bulletin.url.present? %>
     <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>
     </strong></p>
   <% end %>
-  
-        <!-- <%= cl_image_tag("https://res.cloudinary.com/saintpaulsnaples-org/image/upload/v1674960629/TomGreenAltar_zdf3jy.jpg", alt: "Ordinary time vestments", width: "99%") %> -->
       <p>To learn about our worship service and about the<strong> <em>Episcopal Church,</em></strong>
         <%=link_to "click here" , worship_index_path %>. And click on that shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em></p>
       <p><%= link_to "Click here for the on-line Book of Common Prayer" ,

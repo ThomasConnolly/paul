@@ -69,6 +69,15 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.office365.com',
+    port:                 587,
+    domain:               'saintpaulsnaples.org',
+    user_name:            'webmaster@saintpaulsnaples.org',
+    password:             ENV['MAILER_PASSWORD'],
+    authentication:       'login',
+    enable_starttls_auto: true
+  }
   Rails.application.routes.default_url_options[:host] = 'www.saintpaulsnaples.org'
 
   # Ignore bad email addresses and do not raise email delivery errors.

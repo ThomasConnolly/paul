@@ -29,12 +29,24 @@ Rails.application.configure do
 
   ## DEVISE SECTION
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = false
+# config.action_mailer.default_url_options = { host: 'localhost:3000' }
+#  config.action_mailer.delivery_method = :letter_opener
+#  config.action_mailer.perform_deliveries = true
+#  config.action_mailer.perform_caching = false
+#  config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'live.smtp.mailtrap.io',
+    port:                 587,
+    domain:               'saintpaulsnaples.org',
+    user_name:            'webmaster@saintpaulsnaples.org',
+    password:              '2f8497d0feb23a0598017b2a2b0598aa',
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+0
   # config.sass.inline_source_maps = true
 
   ####

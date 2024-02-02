@@ -31,6 +31,8 @@ gem 'irb'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'loofah'
+
+gem 'mailtrap'
 gem 'mini_magick'
 gem 'net-smtp'
 gem 'nokogiri'

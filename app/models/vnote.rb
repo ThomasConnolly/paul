@@ -17,4 +17,5 @@ class Vnote < ApplicationRecord
   validates :title, presence: true
   default_scope -> { order('created_at DESC') }
   has_rich_text :content
+  validates :content, presence: true
 end

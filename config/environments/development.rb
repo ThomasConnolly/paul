@@ -42,7 +42,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'saintpaulsnaples.org',
     user_name:            'webmaster@saintpaulsnaples.org',
-    password:              '2f8497d0feb23a0598017b2a2b0598aa',
+    password:              'password',
     authentication:       'plain',
     enable_starttls_auto: true
   }

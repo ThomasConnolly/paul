@@ -87,7 +87,7 @@ Rails.application.configure do
     port:                 587,
     host:                 'bulk.smtp.mailtrap.io',
     user_name:            'api',
-    password:              '********c6dc',
+    password:              Rails.application.credentials.dig(:mailtrap, :password),
     authentication:       :login,
     enable_starttls_auto: true
   }

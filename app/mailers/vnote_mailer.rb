@@ -5,9 +5,8 @@ class VnoteMailer < ApplicationMailer
     @vnote = vnote
     @url = url_for(@vnote)
     mail(
-      to: 'tom.connolly@comcast.net',
-      subject: "There's a new topic on the vestry forum.")
+      to: User.where('? = ANY(roles)', 'vestry').pluck(:email),
+      subject: "There's a new topic on the vestry forum."
+    )
   end
 end
-
-# to: User.where('? = ANY(roles)', 'vestry').pluck(:email),

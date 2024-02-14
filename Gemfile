@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.2.3'
-
+ruby file: '.ruby-version'
 gem 'actioncable'
 gem 'actionmailer'
 gem 'active_model_serializers'

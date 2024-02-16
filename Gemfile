@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby file: '.ruby-version'
+ruby '3.2.3'
+
 gem 'actioncable'
 gem 'actionmailer'
 gem 'active_model_serializers'
@@ -57,7 +58,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
-  gem 'byebug'  
+  gem 'byebug'
   gem 'dead_end'
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails'

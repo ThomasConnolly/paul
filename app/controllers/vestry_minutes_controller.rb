@@ -29,6 +29,7 @@ class VestryMinutesController < ApplicationController
     @vestry_minute = VestryMinute.new(vestry_minute_params)
     if @vestry_minute.save
       redirect_to(@vestry_minute, notice: 'Vestry minutes successfully created.')
+      MinutesMailer.new_minutes_email(@vestry_minute).deliver_now
     else
       render(:new)
     end
@@ -61,7 +62,7 @@ class VestryMinutesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the "permit" through.
   def vestry_minute_params
-    params.require(:vestry_minute).permit(:date, :minutes, :body, :submit, :draft)
+    params.require(:vestry_minute).permit(:date, :body, :submit, :draft)
   end
 
   def admin_only

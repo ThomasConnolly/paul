@@ -36,6 +36,7 @@ class User < ApplicationRecord
   validates :last_name, format: { with: /[a-zA-Z]+/ }
   before_save :set_username
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, email: { strict_mode: true }
   validates :roles, presence: true
   after_save :add_profile
   before_create :set_default_role
@@ -77,7 +78,7 @@ class User < ApplicationRecord
   end
 
   # honey used to prevent bots-filled forms from being saved to db
-  validates :honey, absence: true
+  validates :personal, absence: true
 
   # Include default devise modules
   # Others available are:
@@ -92,7 +93,7 @@ class User < ApplicationRecord
   def maybe_add_stripe_id
     return if stripe_id.present?
 
-    customer = Stripe::Customer.create(email: email)
+    customer = Stripe::Customer.create(email:)
     update(stripe_id: customer.id)
   end
 

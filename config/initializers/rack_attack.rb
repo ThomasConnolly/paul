@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Rack
-  class Attack
+  class Rack::Attack
     ### Configure Cache ###
 
     # If you don't want to use Rails.cache (Rack::Attack's default), then
@@ -26,7 +26,9 @@ module Rack
     # Throttle all requests by IP (60rpm)
     #
     # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
-    throttle('req/ip', limit: 300, period: 5.minutes, &:ip)
+      throttle('registrations/ip', limit: 2, period: 8.hours) do |req|
+        req.ip if req.path == '/users' && req.post?
+      end
 
     ### Prevent Brute-Force Login Attacks ###
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MinutesMailer < ApplicationMailer
   def new_minutes_email(vestry_minute)
     @vestry_minute = vestry_minute

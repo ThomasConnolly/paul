@@ -69,7 +69,6 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
   #   address:              'smtp.office365.com',
@@ -83,15 +82,14 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'bulk.smtp.mailtrap.io',
-    port:                 587,
-    host:                 'bulk.smtp.mailtrap.io',
-    user_name:            'api',
-    password:              Rails.application.credentials.dig(:mailtrap, :password),
-    authentication:       :login,
+    address: 'smtp.office365.com',
+    port: 587,
+    domain: 'saintpaulsnaples.org',
+    user_name: 'webmaster@saintpaulsnaples.org',
+    password: Rails.application.credentials.dig(:smtp, :password),
+    authentication: :login,
     enable_starttls_auto: true
   }
-
 
   Rails.application.routes.default_url_options[:host] = 'www.saintpaulsnaples.org'
 

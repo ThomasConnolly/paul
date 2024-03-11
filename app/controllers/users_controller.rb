@@ -43,7 +43,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    WelcomeMailer.welcome_email(@user).deliver_now if @user.save
+    if verify_recaptcha(model: @user) && @user.save
+      WelcomeMailer.welcome_email(@user).deliver_now
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def update
@@ -70,6 +75,7 @@ class UsersController < ApplicationController
       :last_name,
       :username,
       :avatar,
+      :personal,
       :stripe_id,
       :stripe_pledge_id,
       :submit,

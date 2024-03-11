@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 equire 'test_helper'
 
 class ChatChannelTest < ActionCable::Channel::TestCase
@@ -13,12 +15,12 @@ class ChatChannelTest < ActionCable::Channel::TestCase
   end
 
   def test_speak
-    subscribe(room: "room1")
+    subscribe(room: 'room1')
 
     # Simulate a speak action on the incoming WebSocket
-    perform :speak, message: "Hello, Rails!"
+    perform :speak, message: 'Hello, Rails!'
 
     # Assert that the message was broadcast to the stream
-    assert_broadcast_on("chat_room1", message: "Hello, Rails!")
+    assert_broadcast_on('chat_room1', message: 'Hello, Rails!')
   end
 end

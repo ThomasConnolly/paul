@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.2.3'
+ruby '3.3.0'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -16,11 +16,11 @@ gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
-# gem 'bootstrap'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
+gem 'email_validator', require: 'email_validator/strict'
 gem 'feedjira'
 gem 'flatpickr'
 gem 'fog-aws'
@@ -46,9 +46,9 @@ gem 'rack-cors'
 gem 'rails'
 gem 'rails-i18n'
 gem 'railties'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis', '>= 5.0.8'
 gem 'ruby-vips'
-gem 'sendgrid-ruby'
 gem 'sidekiq'
 gem 'simple_form'
 gem 'solargraph'
@@ -56,6 +56,7 @@ gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug'

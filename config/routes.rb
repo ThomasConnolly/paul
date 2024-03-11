@@ -58,8 +58,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :formation_talks, only: %i[show index edit new]
-  resources :marriage_talks, only: %i[new show index edit]
+  resources :formation_talks, only: %i[show index]
+  resources :marriage_talks, only: %i[show index]
 
   resources :members do
     collection do

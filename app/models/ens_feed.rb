@@ -16,7 +16,7 @@
 
 class EnsFeed < ApplicationRecord
   class << self
-    def self.update_from_feed(feed_url)
+    def update_from_feed(feed_url)
       xml = HTTParty.get(feed_url).body
       feed = Feedjira.parse(xml)
       feed.entries.each do |entry|

@@ -5,7 +5,7 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
-every 1.week do
+every 1.day do
   rake 'cleanup:unconfirmed_users'
 end
 

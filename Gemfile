@@ -55,6 +55,7 @@ gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem 'verifalia'
 gem 'whenever', require: false
 
 group :development, :test do
@@ -63,7 +64,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails'
   gem 'email_spec'
-  gem 'faker'
+  gem 'factory_bot_rails'
   gem 'guard'
   gem 'listen'
   gem 'pry'

@@ -37,6 +37,7 @@ class User < ApplicationRecord
   before_save :set_username
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :email, email: { strict_mode: true }
+  validate :email_must_be_real
   validates :roles, presence: true
   after_save :add_profile
   before_create :set_default_role
@@ -124,5 +125,28 @@ class User < ApplicationRecord
   def set_username
     self.username = "#{first_name.titleize} #{last_name.titleize.gsub(/'\w/,
                                                                       &:upcase)}"
+  end
+
+  private
+
+  def email_must_be_real
+    validation = submit_email_for_validation(email)
+
+    puts "Verifalia validation result: #{validation.entries.first.classification}"
+
+    return if validation.entries.first.classification == 'Deliverable'
+
+    errors.add(:email, 'must be a real email address')
+  end
+
+  def verifalia_client
+    @verifalia_client ||= Verifalia::Client.new(
+      username: Rails.application.credentials.dig(:verifalia, :username),
+      password: Rails.application.credentials.dig(:verifalia, :password)
+    )
+  end
+
+  def submit_email_for_validation(email)
+    verifalia_client.email_validations.submit(email)
   end
 end

@@ -7,7 +7,7 @@
         <%= link_to " | Edit account" , edit_user_registration_path, class: "text-white" %>
         <%= link_to " | Update profile" , edit_profile_path(current_user.profile), class: "text-white" %>
       <% else %>
-        <%= link_to "Sign in or register" , new_user_session_path, class: "text-white" %>
+        <%= link_to "Sign in or register" , new_user_registration_path, class: "text-white" %>
             </h6></span>
       <% end %>
     </div><!--  navbar brand & login -->

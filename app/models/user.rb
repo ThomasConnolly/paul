@@ -37,11 +37,9 @@ class User < ApplicationRecord
   before_save :set_username
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :email, email: { strict_mode: true }
-  validate :email_must_be_real
   validates :roles, presence: true
   after_save :add_profile
   before_create :set_default_role
-  after_save :maybe_add_stripe_id
   after_destroy :cancel_stripe_customer
   has_many :posts, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
@@ -91,13 +89,6 @@ class User < ApplicationRecord
          :confirmable,
          :trackable
 
-  def maybe_add_stripe_id
-    return if stripe_id.present?
-
-    customer = Stripe::Customer.create(email:)
-    update(stripe_id: customer.id)
-  end
-
   def cancel_stripe_customer
     Stripe::Customer.delete(stripe_id) if stripe_id
   end
@@ -127,26 +118,29 @@ class User < ApplicationRecord
                                                                       &:upcase)}"
   end
 
-  private
+  # private
 
-  def email_must_be_real
-    validation = submit_email_for_validation(email)
+  # def email_must_be_real
+  #   Rails.logger.debug "Validating email #{email}"
+  #   validation = submit_email_for_validation(email)
 
-    puts "Verifalia validation result: #{validation.entries.first.classification}"
+  #   if validation.entries.first.classification == 'Deliverable'
+  #     Rails.logger.debug 'Email is valid'
+  #   else
+  #     Rails.logger.debug 'Email is invalid'
+  #     errors.add(:email, 'must be a real email address')
+  #   end
+  # end
 
-    return if validation.entries.first.classification == 'Deliverable'
+  # def verifalia_client
+  #   @verifalia_client ||= Verifalia::Client.new(
+  #     username: Rails.application.credentials.dig(:verifalia, :username),
+  #     password: Rails.application.credentials.dig(:verifalia, :password)
+  #   )
+  # end
 
-    errors.add(:email, 'must be a real email address')
-  end
-
-  def verifalia_client
-    @verifalia_client ||= Verifalia::Client.new(
-      username: Rails.application.credentials.dig(:verifalia, :username),
-      password: Rails.application.credentials.dig(:verifalia, :password)
-    )
-  end
-
-  def submit_email_for_validation(email)
-    verifalia_client.email_validations.submit(email)
-  end
+  # def submit_email_for_validation(email)
+  #   Rails.logger.debug "Submitting email #{email} for validation"
+  #   verifalia_client.email_validations.submit(email)
+  # end
 end

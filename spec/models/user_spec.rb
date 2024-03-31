@@ -9,8 +9,8 @@ RSpec.describe User, type: :model do
   let(:invalid_email) { 'fake@example.com' } # replace with an email that Verifalia considers invalid
 
   it 'validates real emails' do
-    user = User.new(email: valid_email, password: 'password', password_confirmation: 'password', 
-      first_name: 'Joseph', last_name: 'Joyce')
+    user = User.new(email: valid_email, password: 'password', password_confirmation: 'password',
+                    first_name: 'Joseph', last_name: 'Joyce')
     expect(user).to be_valid
   end
 

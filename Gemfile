@@ -40,7 +40,7 @@ gem 'propshaft'
 gem 'puma', '>= 5.0'
 gem 'pundit'
 gem 'rack'
-gem 'rack-attack'
+# gem 'rack-attack'
 gem 'rack-cors'
 gem 'rails'
 gem 'rails-i18n'
@@ -85,10 +85,12 @@ group :development do
   gem 'capistrano-rails', '~> 1.6'
   gem 'letter_opener'
   gem 'letter_opener_web'
+  gem 'ruby-lsp-rails'
   gem 'web-console'
 end
 
 group :test do
   gem 'capybara'
+  gem 'mocktail', require: 'mocktail'
   gem 'selenium-webdriver'
 end

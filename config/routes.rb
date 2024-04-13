@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :photos
 
   devise_for :users,
-             controllers: { sessions: 'sessions', registrations: 'registrations' },
+             controllers: { registrations: 'registrations', sessions: 'sessions' },
              path: '',
              path_names: {
                sign_in: 'sign_in',

@@ -42,9 +42,11 @@
 	</div>
       </div>  
 	  <div class="mb-3">
-	    <%= recaptcha_tags site_key: Rails.application.credentials.dig(:recaptcha, :site_key) %>
+		<%= turbo_frame_tag 'recaptcha' do %>
+	    <%= recaptcha_v3 action: 'signup', site_key: 
+		Rails.application.credentials.dig(:recaptcha, :site_key), turbolinks: true %>
+		<% end %>
      </div>
-    	    
     <div class="mb-3">
 	<%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
       </div>

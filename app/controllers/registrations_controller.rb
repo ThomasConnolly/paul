@@ -6,14 +6,15 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
     if verify_email
+      byebug
       super
     else
       flash[:alert] = 'Please enter a working email address.'
-      render :new
+      redirect_to new_user_registration_path
     end
   rescue => e
     logger.error "Error creating user: #{e.message}"
-    resource.errors.add(:base, 'There was an error creating your account. Please check your email address and try again.')
+    resource.errors.add(:base, 'There was an error creating your account.')
     render :new
   end
 
@@ -23,14 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
     job = verifalia_client.email_validations.submit(params[:user][:email])
     entry = job.entries[0]
     puts "Classification: #{entry.classification} (status: #{entry.status})"
-    if entry.status == 'Completed'
-      # Email validation succeeded; proceed with user creation
-      true
-    else
-      # Email validation failed; handle the error appropriately
-      resource.errors.add(:email, 'must be a real email address')
-      false
-    end
+    entry.status == 'Completed'
   end
 
   def verifalia_client

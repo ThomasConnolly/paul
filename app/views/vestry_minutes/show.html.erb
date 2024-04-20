@@ -6,7 +6,7 @@
     <%= notice %></p>
   <h2>Vestry meeting of <%= @vestry_minute.date.strftime("%B %-d, %Y") %><br>
     <% if @vestry_minute.draft? %>
-      D R A F T
+     <h2> D R A F T </h2>
     <% end %>
   </h2>
 

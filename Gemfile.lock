@@ -92,7 +92,7 @@ GEM
       activerecord (>= 4.2)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    airbrussh (1.5.1)
+    airbrussh (1.5.2)
       sshkit (>= 1.6.1, != 1.7.0)
     amazing_print (1.6.0)
     annotate (3.2.0)
@@ -100,7 +100,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.3.0)
-    aws-partitions (1.909.0)
+    aws-partitions (1.916.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -115,7 +115,6 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.8.0)
       aws-eventstream (~> 1, >= 1.0.2)
-    aws_cf_signer (0.1.3)
     backport (1.2.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -157,9 +156,10 @@ GEM
     case_transform (0.2)
       activesupport
     chronic (0.10.2)
-    cloudinary (1.29.0)
-      aws_cf_signer
-      rest-client (>= 2.0.0)
+    cloudinary (2.0.2)
+      faraday (>= 2.0.1, < 3.0.0)
+      faraday-follow_redirects (~> 0.3.0)
+      faraday-multipart (~> 1.0, >= 1.0.4)
     coderay (1.1.3)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
@@ -172,7 +172,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     debug_inspector (1.2.0)
-    devise (4.9.3)
+    devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -181,7 +181,6 @@ GEM
     devise-i18n (1.12.0)
       devise (>= 4.9.0)
     diff-lcs (1.5.1)
-    domain_name (0.6.20240107)
     dotenv (3.1.0)
     dotenv-rails (3.1.0)
       dotenv (= 3.1.0)
@@ -203,6 +202,10 @@ GEM
       railties (>= 5.0.0)
     faraday (2.9.0)
       faraday-net_http (>= 2.0, < 3.2)
+    faraday-follow_redirects (0.3.0)
+      faraday (>= 1, < 3)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
     feedjira (3.2.3)
@@ -243,9 +246,6 @@ GEM
       stimulus-rails
       turbo-rails
     htmlentities (4.3.4)
-    http-accept (1.7.0)
-    http-cookie (1.0.5)
-      domain_name (~> 0.5)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -295,7 +295,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    method_source (1.0.0)
+    method_source (1.1.0)
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0305)
@@ -308,6 +308,7 @@ GEM
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
+    multipart-post (2.4.0)
     mutex_m (0.2.0)
     nenv (0.3.0)
     net-http (0.4.1)
@@ -326,9 +327,8 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     net-ssh (7.2.3)
-    netrc (0.11.0)
     nio4r (2.7.1)
-    nokogiri (1.16.3-x86_64-linux)
+    nokogiri (1.16.4-x86_64-linux)
       racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
@@ -365,8 +365,6 @@ GEM
       activesupport (>= 3.0.0)
     racc (1.7.3)
     rack (3.0.10)
-    rack-attack (6.7.0)
-      rack (>= 1.0, < 4)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
     rack-session (2.0.0)
@@ -417,21 +415,16 @@ GEM
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     recaptcha (5.16.0)
-    redis (5.1.0)
-      redis-client (>= 0.17.0)
-    redis-client (0.21.1)
+    redis (5.2.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.22.1)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.5.0)
+    reline (0.5.2)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rest-client (2.1.0)
-      http-accept (>= 1.7.0, < 2.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.6)
@@ -453,7 +446,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.62.1)
+    rubocop (1.63.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -471,7 +464,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    ruby-lsp (0.16.2)
+    ruby-lsp (0.16.4)
       language_server-protocol (~> 3.17.0)
       prism (>= 0.22.0, < 0.25)
       sorbet-runtime (>= 0.5.10782)
@@ -514,7 +507,7 @@ GEM
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.11332)
+    sorbet-runtime (0.5.11351)
     sshkit (1.22.1)
       base64
       mutex_m
@@ -524,7 +517,7 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
-    stripe (10.14.0)
+    stripe (11.2.0)
     thor (1.3.1)
     tilt (2.3.0)
     timeout (0.4.1)
@@ -620,13 +613,13 @@ DEPENDENCIES
   puma (>= 5.0)
   pundit
   rack
-  rack-attack
   rack-cors
   rails
   rails-i18n
   railties
   recaptcha
   redis (>= 5.0.8)
+  responders
   rspec-rails
   rubocop
   rubocop-rails

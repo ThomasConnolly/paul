@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 class RenameHoneyToPersonalInUsers < ActiveRecord::Migration[7.1]

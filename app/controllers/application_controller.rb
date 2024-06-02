@@ -1,7 +1,8 @@
+# typed: false
+
 require "application_responder"
 
 # frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: added_attrs)
     devise_parameter_sanitizer.permit(:sign_in, keys: %i[login password])
     devise_parameter_sanitizer.permit(:account_update, keys: added_attrs)
+  end
+
+  def verified_request?
+    super || valid_authenticity_token?(session, request.headers['X-CSRF-Token']) || request.headers['X-Requested-With'] == 'Turbo-Frame'
   end
 
   private

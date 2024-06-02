@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.0'
+ruby '3.3.1'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -40,7 +40,7 @@ gem 'propshaft'
 gem 'puma', '>= 5.0'
 gem 'pundit'
 gem 'rack'
-# gem 'rack-attack'
+gem 'rack-attack'
 gem 'rack-cors'
 gem 'rails'
 gem 'rails-i18n'
@@ -56,7 +56,7 @@ gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
-gem 'verifalia'
+#  gem 'verifalia'
 gem 'whenever', require: false
 
 group :development, :test do
@@ -87,6 +87,9 @@ group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
   gem 'ruby-lsp-rails'
+  gem 'sorbet'
+  gem 'sorbet-runtime'
+  gem 'tapioca'
   gem 'web-console'
 end
 

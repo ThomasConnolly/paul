@@ -7,8 +7,12 @@
           </div>
           <div class="p-2">
             <%= link_to "DONATE NOW", "https://buy.stripe.com/4gw5o32ih7tn4004gh", class: "btn btn-primary" %> 
+            OR <%= link_to "RECURRING DONATION", new_pledge_path , class: "btn btn-primary" %>
           </div> 
         </div>
+      </div>
+      <div class="col-md-10 offset-md-1">
+        <%= cl_image_tag("communion_kbmjxt", width: "99%", alt: "Communion" ) %>
       </div>
     </div>
   </div>
@@ -20,11 +24,11 @@
   <div class="col-md-8 main-body pe-5">
     <%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
     <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
-    <%= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
-    <h1 class="mt-4">Happy Easter to All </h1>
-    <h3> Easter season is from April 4 to May 23 (Pentecost)</h3>
-  <p><strong>Sunday Masses are at 8 and 10 a.m. </strong><br>
-  (Beginning May 5 there will be only one Mass, at 9 a.m., until next season)</p>
+    <%#= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
+    <h1 class="mt-4">Worship God with us </h1>
+    
+  <p><strong>Sunday Mass, 9 a.m. </strong><br>
+  (8 and 10 a.m. during season)</p>
   <p>All are welcome at St. Paul's! If you can't be with us in person, join us 
     on <%= link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> where we 
     live-stream the 10 a.m. Mass</p>
@@ -105,7 +109,7 @@
           </div> 
       </div>
   
-    <div class="col-md-4 px-4", style="background-color: #e2e2e2;">
+    <div class="col-md-4 px-4 mt-4", style="background-color: #e2e2e2;">
 
     <p class="text-center">
       <%= Date.current.strftime("%A, %B %e, %Y") %>

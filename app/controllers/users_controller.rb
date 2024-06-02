@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # == Schema Information
@@ -43,12 +44,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if verify_recaptcha(model: @user) && @user.save
-      WelcomeMailer.welcome_email(@user).deliver_now
-      redirect_to @user
-    else
-      render :new
-    end
   end
 
   def update
@@ -69,22 +64,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_params
-    params.require(:user).permit(
-      :first_name,
-      :last_name,
-      :username,
-      :avatar,
-      :personal,
-      :stripe_id,
-      :stripe_pledge_id,
-      :submit,
-      roles: []
-    )
-  end
-
   def admin_only
     redirect_to(root_path, alert: 'Access is restricted.') unless
     current_user.roles.include?('admin')
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :avatar, :personal, :stripe_id, :stripe_pledge_id, :submit, roles: [])
   end
 end

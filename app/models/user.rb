@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # == Schema Information
@@ -21,22 +22,19 @@
 #  last_name              :string(255)
 #  username               :string(255)
 #  avatar                 :string
-#  honey                  :string
 #  stripe_id              :string
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  roles                  :string           default(["\"member\""]), is an Array
+#  personal               :string
 #
 
 class User < ApplicationRecord
-  validates :first_name, presence: true
-  validates :first_name, format: { with: /[a-zA-Z]+/ }
-  validates :last_name, presence: true
-  validates :last_name, format: { with: /[a-zA-Z]+/ }
+  validates :first_name, presence: true, format: { with: /[a-zA-Z]+/ }
+  validates :last_name, presence: true, format: { with: /[a-zA-Z]+/ }
   before_save :set_username
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-  validates :email, email: { strict_mode: true }
   validates :roles, presence: true
   after_save :add_profile
   before_create :set_default_role
@@ -117,30 +115,4 @@ class User < ApplicationRecord
     self.username = "#{first_name.titleize} #{last_name.titleize.gsub(/'\w/,
                                                                       &:upcase)}"
   end
-
-  # private
-
-  # def email_must_be_real
-  #   Rails.logger.debug "Validating email #{email}"
-  #   validation = submit_email_for_validation(email)
-
-  #   if validation.entries.first.classification == 'Deliverable'
-  #     Rails.logger.debug 'Email is valid'
-  #   else
-  #     Rails.logger.debug 'Email is invalid'
-  #     errors.add(:email, 'must be a real email address')
-  #   end
-  # end
-
-  # def verifalia_client
-  #   @verifalia_client ||= Verifalia::Client.new(
-  #     username: Rails.application.credentials.dig(:verifalia, :username),
-  #     password: Rails.application.credentials.dig(:verifalia, :password)
-  #   )
-  # end
-
-  # def submit_email_for_validation(email)
-  #   Rails.logger.debug "Submitting email #{email} for validation"
-  #   verifalia_client.email_validations.submit(email)
-  # end
 end

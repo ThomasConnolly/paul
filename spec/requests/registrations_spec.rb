@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # spec/requests/registrations_spec.rb

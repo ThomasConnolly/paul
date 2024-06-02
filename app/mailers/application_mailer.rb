@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # example send email to all members from cli:

@@ -1,4 +1,4 @@
-<%= simple_form_with model: @donation do |f| %>
+<%= simple_form_for @donation do |f| %>
   <%= f.number_field :dollars, placeholder: "whole dollars" , hide_label: true, width: '200px' %>
   <%= f.text_field :memo, placeholder: "memo line (optional)" %>
   <%= f.submit "Submit"  "Set up donation" , class: "btn btn-success btn-lg mb-5" %>

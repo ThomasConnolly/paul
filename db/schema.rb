@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_09_184203) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_21_201630) do
   create_schema "heroku_ext"
 
   # These are extensions that must be enabled in order to support this database
@@ -500,17 +500,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_184203) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "webhook_events", force: :cascade do |t|
-    t.string "source"
+  create_table "webhooks", force: :cascade do |t|
     t.string "external_id"
     t.json "data"
-    t.integer "state", default: 0
-    t.text "processing_errors"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["external_id"], name: "index_webhook_events_on_external_id"
-    t.index ["source", "external_id"], name: "index_webhook_events_on_source_and_external_id"
-    t.index ["source"], name: "index_webhook_events_on_source"
+    t.index ["external_id"], name: "index_webhooks_on_external_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

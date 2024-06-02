@@ -8,3 +8,6 @@
     <%= link_to "SET UP RECURRING DONATION", new_pledge_path, class: "btn btn-primary" %></div>
 </div>
 </div>
+<script>
+  var stripe = Stripe('<%= Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :publishable_key) %>');
+</script>

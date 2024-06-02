@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -9,7 +10,6 @@
 #  user_id      :bigint           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  draft        :boolean
 #
 class Agenda < ApplicationRecord
   has_many :agenda_items, inverse_of: :agenda, dependent: :destroy

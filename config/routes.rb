@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/webhook_events', to: 'webhook_events#create'
+  resources :webhooks, only: :create
 
   resources :donations
   scope '/checkout_donations' do
@@ -35,28 +36,12 @@ Rails.application.routes.draw do
   end
 
   resources :tickets, only: [:index]
-  resources :albergue_children
   resources :links
   resources :pathways
   resources :pray_fors
   resources :photos
 
-  devise_for :users,
-             controllers: { registrations: 'registrations', sessions: 'sessions' },
-             path: '',
-             path_names: {
-               sign_in: 'sign_in',
-               sign_out: 'log_out',
-               password: 'secret',
-               registration: 'register',
-               sign_up: 'sign_up'
-             }
-
-  resources :users do
-    collection do
-      post :import
-    end
-  end
+  devise_for :users
 
   resources :formation_talks, only: %i[show index]
   resources :marriage_talks, only: %i[show index]
@@ -86,7 +71,6 @@ Rails.application.routes.draw do
   get 'pages/bulletin'
   get 'pages/calendar'
   get 'pages/directions'
-  get 'pages/python_tutor'
   get 'pages/how_to_use'
   get 'pages/stay_safe'
   get 'pages/music'

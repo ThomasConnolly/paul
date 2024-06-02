@@ -1,7 +1,29 @@
-require: rubocop-rails
+require: 
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec 
+  - rubocop-rspec_rails
 
 Style/Documentation:
   Enabled: false
 
 AllCops:
   TargetRubyVersion: 3.3
+  Exclude:
+    - Gemfile.lock
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'config/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'vendor/*'
+    - 'node_modules/*'
+    - 'tmp/*'
+    - 'log/*'
+    - 'coverage/*'
+    - 'public/*'
+    - 'storage/*'
+    - 'app/assets/*'
+    - 'app/javascript/*'
+    - 'app/channels/*'
+    - 'app/jobs/*'

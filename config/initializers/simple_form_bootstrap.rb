@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # These defaults are defined and maintained by the community at

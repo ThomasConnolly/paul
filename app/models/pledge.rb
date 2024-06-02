@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # == Schema Information
@@ -18,10 +19,10 @@
 
 class Pledge < ApplicationRecord
   belongs_to :user
-  validates :dollars, presence: { numericality: { only_integer: true } }
+  validates :dollars, presence: true, numericality: { only_integer: true }
   validates :plan_id, presence: true
   before_save :set_plan_id
-  before_destroy :cancel_stripe_subscription, if: :stripe_id
+  before_destroy :cancel_stripe_subscription, if: :subscription_id
 
   def set_plan_id
     if Rails.env.production?
@@ -36,7 +37,7 @@ class Pledge < ApplicationRecord
   end
 
   def cancel_stripe_subscription
-    Stripe::Subscription.retrieve(stripe_id).delete
-    self.stripe_id = 'canceled'
+    Stripe::Subscription.retrieve(subscription_id).delete
+    update(status: 'canceled')
   end
 end

@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 class CheckoutPledgesController < ApplicationController
@@ -19,14 +20,23 @@ class CheckoutPledgesController < ApplicationController
     current_user.update(stripe_id: @customer.id)
 
     checkout_session = Stripe::Checkout::Session.create(
-      mode: 'payment',
+      mode: 'subscription',
       success_url: "#{checkout_pledges_success_url}?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: pledges_url,
       line_items: [{
-        price: (@pledge.dollars.to_i * 100),
+        price_data: {
+          unit_amount: (@pledge.dollars.to_i * 100),
+          currency: 'usd',
+          product_data: {
+            name: 'Pledge donation'
+          },
+          recurring: {
+            interval: @pledge.plan.to_s
+          }
+        },
         quantity: 1
       }],
-      stripe_customer: @pledge.user.stripe_id,
+      customer: @customer.id,
       metadata: {
         pledge_id: @pledge.id
       }

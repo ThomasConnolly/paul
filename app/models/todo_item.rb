@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -11,7 +12,6 @@
 #  todo_list_id :bigint           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  position     :integer
 #
 
 class TodoItem < ApplicationRecord

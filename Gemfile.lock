@@ -561,8 +561,6 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
-    verifalia (2.1.0)
-      faraday (~> 2.7)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -672,7 +670,6 @@ DEPENDENCIES
   tapioca
   turbo-rails
   tzinfo-data
-  verifalia
   web-console
   whenever
 

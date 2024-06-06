@@ -31,7 +31,7 @@
   (8 and 10 a.m. during season)</p>
   <p>All are welcome at St. Paul's! If you can't be with us in person, join us 
     on <%= link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> where we 
-    live-stream the 10 a.m. Mass. PLEASE NOTE: With both of our volunteer live streamers out of town today (June 2), there will be no live stream today. But we'll be back next week!</p>
+    live-stream the 10 a.m. Mass.
   <% if @bulletin.url.present? %>
     <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>
     </strong></p>
@@ -114,7 +114,11 @@
     <p class="text-center">
       <%= Date.current.strftime("%A, %B %e, %Y") %>
     </p>
-    <%= cl_image_tag("logos/update.png", width: "99%", alt: "Update logo" ) %>    
+    <%= cl_image_tag("logos/update.png", width: "99%", alt: "Update logo" ) %>
+    <h2>Special Meeting this Sunday</h2>
+    <p>We will explore the potential for income-producing use of the largely unused portion of land we have. 
+      Leading the discussion will be Fr. Lang Lowrey, who, in addition to being a priest, is an expert on development. If you can't be here
+      in person, we will be streaming on Zoom, where you can fully participate in the meeting. ID: 874 5563 9496 Passcode: 300776.  </p>  
     <h2>We pray for you</h2>
       <p>We pray for those who request prayers for themselves or for others in any kind of distress. We are also
         happy to pray prayers of thanksgiving and to ask God's blessings upon your endeavors.
@@ -129,9 +133,8 @@
     <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/@stpaulsnaples6762/streams" %>
     </strong> Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this link. We have a new setup, with three cameras and good audio for home viewers. Use this link for other streamed events from St. Paul's.</p>
 
-    <p><strong>Wednesday evening adult education, 6:30 p.m. Resumes in the new year.
-    </strong> Approximately one hour, class is held in the library, Serson Hall. Come learn about the Episcopal Church in this class designed for confirmands, but is open to everyone. 
-    Later in January we will pick up reading and discussing the book, <em> Here All Along</em> by Sarah Hurwitz.</p>
+    <p><strong>Wednesday evening adult education, 6:30 p.m.
+    </strong> Approximately one hour, class is held in the library, Serson Hall. Come learn and share your thoughts.</p>
   <p><strong><%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong> 
 Join us with your favorite libation for an hour or so of conversation on Zoom
 </strong> This is a popular and relaxing chat room open to everyone who wishes to join in. </p>

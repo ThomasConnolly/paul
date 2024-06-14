@@ -62,7 +62,7 @@ gem 'whenever', require: false
 group :development, :test do
   gem 'byebug'
   gem 'dead_end'
-  gem 'debug', platforms: %i[mri windows]
+  gem 'debug', '>= 1.0.0'
   gem 'dotenv-rails'
   gem 'email_spec'
   gem 'factory_bot_rails'

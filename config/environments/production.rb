@@ -69,34 +69,27 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "paul_production"
 
   config.action_mailer.perform_caching = false
-
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address:              'smtp.office365.com',
-  #   port:                 587,
-  #   domain:               'saintpaulsnaples.org',
-  #   user_name:            'webmaster@saintpaulsnaples.org',
-  #   password:             ENV['MAILER_PASSWORD'],
-  #   authentication:       'plain',
-  #   enable_starttls_auto: true
-  # }
-
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'www.saintpaulsnaples.org' }
+  Rails.application.routes.default_url_options[:host] = 'www.saintpaulsnaples.org'
+
+  # Configure the mailer to use the SMTP server provided by Office 365.
   config.action_mailer.smtp_settings = {
     address: 'smtp.office365.com',
     port: 587,
     domain: 'saintpaulsnaples.org',
-    user_name: 'webmaster@saintpaulsnaples.org',
+    user_name: Rails.application.credentials.dig(:smtp, :username),
     password: Rails.application.credentials.dig(:smtp, :password),
     authentication: :login,
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    openssl_verify_mode: 'none',
+    open_timeout: 10,
+    read_timeout: 10
   }
-
-  Rails.application.routes.default_url_options[:host] = 'www.saintpaulsnaples.org'
-
+  
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

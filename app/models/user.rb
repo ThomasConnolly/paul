@@ -84,6 +84,7 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
+         :validatable,
          :confirmable,
          :trackable
 

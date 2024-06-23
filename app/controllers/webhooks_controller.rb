@@ -13,12 +13,12 @@ class WebhooksController < ApplicationController
     data = params.except(:controller, :action, :webhook).permit!
 
     # idempotent
-    if Webhook.find_by(external_id: external_id)
+    if Webhook.find_by(external_id:)
       render(json: { message: 'Webhook already processed' }, status: 200)
       return
     end
 
-    webhook = Webhook.create!(external_id: external_id, data: data, status: 'pending')
+    webhook = Webhook.create!(external_id:, data:, status: 'pending')
     render json: webhook, status: :created
     HandleWebhooksJob.perform_later(webhook)
   end

@@ -636,7 +636,6 @@ DEPENDENCIES
   loofah
   mini_magick
   mocktail
-  net-pop
   net-smtp
   nokogiri
   pg (~> 1.1)

@@ -56,7 +56,7 @@ gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
-#  gem 'verifalia'
+gem 'verifalia'
 gem 'whenever', require: false
 
 group :development, :test do

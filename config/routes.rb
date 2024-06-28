@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   resources :pray_fors
   resources :photos
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :formation_talks, only: %i[show index]
   resources :marriage_talks, only: %i[show index]

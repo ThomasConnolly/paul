@@ -101,7 +101,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.3.0)
-    aws-partitions (1.946.0)
+    aws-partitions (1.947.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -451,7 +451,7 @@ GEM
       railties (>= 5.2)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.3.0)
+    rexml (3.3.1)
       strscan
     rouge (4.3.0)
     rspec-core (3.13.0)
@@ -531,16 +531,16 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    sorbet (0.5.11444)
-      sorbet-static (= 0.5.11444)
+    sorbet (0.5.11450)
+      sorbet-static (= 0.5.11450)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.11444)
-    sorbet-static (0.5.11444-aarch64-linux)
-    sorbet-static (0.5.11444-universal-darwin)
-    sorbet-static (0.5.11444-x86_64-linux)
-    sorbet-static-and-runtime (0.5.11444)
-      sorbet (= 0.5.11444)
-      sorbet-runtime (= 0.5.11444)
+    sorbet-runtime (0.5.11450)
+    sorbet-static (0.5.11450-aarch64-linux)
+    sorbet-static (0.5.11450-universal-darwin)
+    sorbet-static (0.5.11450-x86_64-linux)
+    sorbet-static-and-runtime (0.5.11450)
+      sorbet (= 0.5.11450)
+      sorbet-runtime (= 0.5.11450)
     spoom (1.3.2)
       erubi (>= 1.10.0)
       prism (>= 0.19.0)
@@ -554,9 +554,9 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.1)
-    stripe (11.7.0)
+    stripe (12.0.0)
     strscan (3.1.0)
-    tapioca (0.14.4)
+    tapioca (0.15.0)
       bundler (>= 2.2.25)
       netrc (>= 0.11.0)
       parallel (>= 1.21.0)
@@ -576,6 +576,8 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
+    verifalia (2.1.0)
+      faraday (~> 2.7)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -692,6 +694,7 @@ DEPENDENCIES
   tapioca
   turbo-rails
   tzinfo-data
+  verifalia
   web-console
   whenever
 

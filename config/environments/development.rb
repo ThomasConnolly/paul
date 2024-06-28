@@ -29,30 +29,12 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   ## DEVISE SECTION
-
-  # Configure the mailer to use the SMTP server provided by Office 365.
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.office365.com',
-    port: 587,
-    domain: 'saintpaulsnaples.org',
-    user_name: Rails.application.credentials.dig(:smtp, :username),
-    password: Rails.application.credentials.dig(:smtp, :password),
-    authentication: :login,
-    enable_starttls_auto: true,
-    openssl_verify_mode: 'none',
-    open_timeout: 30,
-    read_timeout: 30
-  }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'www.saintpaulsnaples.org' }
-  Rails.application.routes.default_url_options[:host] = 'www.saintpaulsnaples.org'
-
-  # config.action_mailer.perform_caching = false
-  # config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  # config.action_mailer.delivery_method = :letter_opener
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = false
 
   # config.sass.inline_source_maps = true
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.3'
+ruby '3.3.4'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -35,7 +35,7 @@ gem 'loofah'
 gem 'mini_magick'
 gem 'net-smtp'
 gem 'nokogiri'
-gem 'pg', '~> 1.1'
+gem 'pg'
 gem 'propshaft'
 gem 'puma', '>= 5.0'
 gem 'pundit'

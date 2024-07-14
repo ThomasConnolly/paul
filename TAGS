@@ -1,0 +1,950 @@
+
+lib/application_responder.rb,82
+class ApplicationResponder < ActionController::ResponderApplicationResponder3,0
+
+config/application.rb,144
+module PaulPaul23,0
+  class Application < Rails::ApplicationApplication24,0
+  class Application < Rails::ApplicationPaul::Application24,0
+
+config/initializers/verifalia.rb,72
+module VerifaliaConfigVerifaliaConfig5,0
+  def self.clientclient6,0
+
+config/initializers/rack_attack.rb,79
+module RackRack3,0
+  class AttackAttack4,0
+  class AttackRack::Attack4,0
+
+app/models/room.rb,189
+class Room < ApplicationRecordRoom18,0
+  has_many :messagesmessages19,0
+  has_many :messagesmessages=19,0
+  has_many :messagesmessage_ids19,0
+  has_many :messagesmessage_ids=19,0
+
+app/models/vestry_minute.rb,57
+class VestryMinute < ApplicationRecordVestryMinute16,0
+
+app/models/survey.rb,212
+class Survey < ApplicationRecordSurvey21,0
+  belongs_to :useruser22,0
+  belongs_to :useruser=22,0
+  belongs_to :userbuild_user22,0
+  belongs_to :usercreate_user22,0
+  belongs_to :usercreate_user!22,0
+
+app/models/ens_feed.rb,104
+class EnsFeed < ApplicationRecordEnsFeed18,0
+    def update_from_feed(feed_url)update_from_feed20,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord4,0
+
+app/models/donation.rb,288
+class Donation < ApplicationRecordDonation20,0
+  belongs_to :useruser21,0
+  belongs_to :useruser=21,0
+  belongs_to :userbuild_user21,0
+  belongs_to :usercreate_user21,0
+  belongs_to :usercreate_user!21,0
+  def set_amountset_amount26,0
+  def set_stripe_idset_stripe_id32,0
+
+app/models/sermon.rb,252
+class Sermon < ApplicationRecordSermon19,0
+  belongs_to :homilisthomilist21,0
+  belongs_to :homilisthomilist=21,0
+  belongs_to :homilistbuild_homilist21,0
+  belongs_to :homilistcreate_homilist21,0
+  belongs_to :homilistcreate_homilist!21,0
+
+app/models/pathway.rb,47
+class Pathway < ApplicationRecordPathway16,0
+
+app/models/opportunity.rb,222
+class Opportunity < ApplicationRecordOpportunity19,0
+  belongs_to :useruser20,0
+  belongs_to :useruser=20,0
+  belongs_to :userbuild_user20,0
+  belongs_to :usercreate_user20,0
+  belongs_to :usercreate_user!20,0
+
+app/models/story_assignment.rb,395
+class StoryAssignment < ApplicationRecordStoryAssignment15,0
+  belongs_to :story_idea, dependent: :destroystory_idea16,0
+  belongs_to :story_idea, dependent: :destroystory_idea=16,0
+  belongs_to :story_idea, dependent: :destroybuild_story_idea16,0
+  belongs_to :story_idea, dependent: :destroycreate_story_idea16,0
+  belongs_to :story_idea, dependent: :destroycreate_story_idea!16,0
+
+app/models/profile.rb,214
+class Profile < ApplicationRecordProfile21,0
+  belongs_to :useruser22,0
+  belongs_to :useruser=22,0
+  belongs_to :userbuild_user22,0
+  belongs_to :usercreate_user22,0
+  belongs_to :usercreate_user!22,0
+
+app/models/story_idea.rb,522
+class StoryIdea < ApplicationRecordStoryIdea19,0
+  belongs_to :useruser20,0
+  belongs_to :useruser=20,0
+  belongs_to :userbuild_user20,0
+  belongs_to :usercreate_user20,0
+  belongs_to :usercreate_user!20,0
+  has_many :comments, as: :commentable, dependent: :destroycomments21,0
+  has_many :comments, as: :commentable, dependent: :destroycomments=21,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids21,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids=21,0
+
+app/models/role.rb,220
+class Role < ApplicationRecordRole4,0
+  has_and_belongs_to_many :usersusers5,0
+  has_and_belongs_to_many :usersusers=5,0
+  has_and_belongs_to_many :usersuser_ids5,0
+  has_and_belongs_to_many :usersuser_ids=5,0
+
+app/models/task.rb,41
+class Task < ApplicationRecordTask17,0
+
+app/models/user.rb,2985
+class User < ApplicationRecordUser33,0
+  has_many :posts, dependent: :destroyposts42,0
+  has_many :posts, dependent: :destroyposts=42,0
+  has_many :posts, dependent: :destroypost_ids42,0
+  has_many :posts, dependent: :destroypost_ids=42,0
+  has_many :comments, as: :commentable, dependent: :destroycomments43,0
+  has_many :comments, as: :commentable, dependent: :destroycomments=43,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids43,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids=43,0
+  has_one  :profile, dependent: :destroyprofile44,0
+  has_one  :profile, dependent: :destroyprofile=44,0
+  has_one  :profile, dependent: :destroybuild_profile44,0
+  has_one  :profile, dependent: :destroycreate_profile44,0
+  has_one  :profile, dependent: :destroycreate_profile!44,0
+  has_many :opportunities, dependent: :destroyopportunities46,0
+  has_many :opportunities, dependent: :destroyopportunities=46,0
+  has_many :opportunities, dependent: :destroyopportunitie_ids46,0
+  has_many :opportunities, dependent: :destroyopportunitie_ids=46,0
+  has_many :story_ideas, dependent: :destroystory_ideas47,0
+  has_many :story_ideas, dependent: :destroystory_ideas=47,0
+  has_many :story_ideas, dependent: :destroystory_idea_ids47,0
+  has_many :story_ideas, dependent: :destroystory_idea_ids=47,0
+  has_many :todo_liststodo_lists48,0
+  has_many :todo_liststodo_lists=48,0
+  has_many :todo_liststodo_list_ids48,0
+  has_many :todo_liststodo_list_ids=48,0
+  has_many :vnotes, dependent: :destroyvnotes50,0
+  has_many :vnotes, dependent: :destroyvnotes=50,0
+  has_many :vnotes, dependent: :destroyvnote_ids50,0
+  has_many :vnotes, dependent: :destroyvnote_ids=50,0
+  has_many :agendasagendas51,0
+  has_many :agendasagendas=51,0
+  has_many :agendasagenda_ids51,0
+  has_many :agendasagenda_ids=51,0
+  has_one :pledge, dependent: :destroypledge54,0
+  has_one :pledge, dependent: :destroypledge=54,0
+  has_one :pledge, dependent: :destroybuild_pledge54,0
+  has_one :pledge, dependent: :destroycreate_pledge54,0
+  has_one :pledge, dependent: :destroycreate_pledge!54,0
+  has_many :donations, dependent: :destroydonations55,0
+  has_many :donations, dependent: :destroydonations=55,0
+  has_many :donations, dependent: :destroydonation_ids55,0
+  has_many :donations, dependent: :destroydonation_ids=55,0
+  ROLES = %w[member vestry communicator admin].freezeROLES57,0
+  ROLES = %w[member vestry communicator admin].freezeUser::ROLES57,0
+  def add_role(role)add_role59,0
+  def remove_role(role)remove_role63,0
+  def role?(role)role?67,0
+  def set_default_roleset_default_role73,0
+  def cancel_stripe_customercancel_stripe_customer91,0
+  def add_profileadd_profile95,0
+  attr_writer :loginlogin=99,0
+  def loginlogin101,0
+  def self.find_for_database_authentication(warden_conditions)find_for_database_authentication105,0
+  def set_usernameset_username115,0
+
+app/models/meditation.rb,53
+class Meditation < ApplicationRecordMeditation20,0
+
+app/models/pray_for.rb,47
+class PrayFor < ApplicationRecordPrayFor16,0
+
+app/models/member.rb,154
+class Member < ApplicationRecordMember21,0
+  def set_usernameset_username28,0
+  def set_ydayset_yday32,0
+  def formatted_emailformatted_email36,0
+
+app/models/story.rb,210
+class Story < ApplicationRecordStory15,0
+  belongs_to :useruser16,0
+  belongs_to :useruser=16,0
+  belongs_to :userbuild_user16,0
+  belongs_to :usercreate_user16,0
+  belongs_to :usercreate_user!16,0
+
+app/models/plan.rb,41
+class Plan < ApplicationRecordPlan17,0
+
+app/models/agenda_item.rb,240
+class AgendaItem < ApplicationRecordAgendaItem15,0
+  belongs_to :agendaagenda16,0
+  belongs_to :agendaagenda=16,0
+  belongs_to :agendabuild_agenda16,0
+  belongs_to :agendacreate_agenda16,0
+  belongs_to :agendacreate_agenda!16,0
+
+app/models/comment.rb,1177
+class Comment < ApplicationRecordComment18,0
+  belongs_to :useruser19,0
+  belongs_to :useruser=19,0
+  belongs_to :userbuild_user19,0
+  belongs_to :usercreate_user19,0
+  belongs_to :usercreate_user!19,0
+  belongs_to :commentable, polymorphic: truecommentable20,0
+  belongs_to :commentable, polymorphic: truecommentable=20,0
+  belongs_to :commentable, polymorphic: truebuild_commentable20,0
+  belongs_to :commentable, polymorphic: truecreate_commentable20,0
+  belongs_to :commentable, polymorphic: truecreate_commentable!20,0
+  belongs_to :parent, optional: true, class_name: 'Comment'parent21,0
+  belongs_to :parent, optional: true, class_name: 'Comment'parent=21,0
+  belongs_to :parent, optional: true, class_name: 'Comment'build_parent21,0
+  belongs_to :parent, optional: true, class_name: 'Comment'create_parent21,0
+  belongs_to :parent, optional: true, class_name: 'Comment'create_parent!21,0
+  has_many :comments, as: :commentablecomments22,0
+  has_many :comments, as: :commentablecomments=22,0
+  has_many :comments, as: :commentablecomment_ids22,0
+  has_many :comments, as: :commentablecomment_ids=22,0
+  def commentscomments25,0
+
+app/models/letter/import.rb,360
+module LetterLetter4,0
+  class ImportImport5,0
+  class ImportLetter::Import5,0
+    attr_accessor :file, :imported_countfile7,0
+    attr_accessor :file, :imported_countfile=7,0
+    attr_accessor :file, :imported_countimported_count7,0
+    attr_accessor :file, :imported_countimported_count=7,0
+    def process!process!9,0
+    def savesave23,0
+
+app/models/webhook.rb,47
+class Webhook < ApplicationRecordWebhook16,0
+
+app/models/book.rb,41
+class Book < ApplicationRecordBook21,0
+
+app/models/todo_list.rb,380
+class TodoList < ApplicationRecordTodoList15,0
+  belongs_to :useruser16,0
+  belongs_to :useruser=16,0
+  belongs_to :userbuild_user16,0
+  belongs_to :usercreate_user16,0
+  belongs_to :usercreate_user!16,0
+  has_many :todo_itemstodo_items17,0
+  has_many :todo_itemstodo_items=17,0
+  has_many :todo_itemstodo_item_ids17,0
+  has_many :todo_itemstodo_item_ids=17,0
+
+app/models/pledge.rb,312
+class Pledge < ApplicationRecordPledge20,0
+  belongs_to :useruser21,0
+  belongs_to :useruser=21,0
+  belongs_to :userbuild_user21,0
+  belongs_to :usercreate_user21,0
+  belongs_to :usercreate_user!21,0
+  def set_plan_idset_plan_id27,0
+  def cancel_stripe_subscriptioncancel_stripe_subscription39,0
+
+app/models/vnote.rb,514
+class Vnote < ApplicationRecordVnote15,0
+  belongs_to :useruser16,0
+  belongs_to :useruser=16,0
+  belongs_to :userbuild_user16,0
+  belongs_to :usercreate_user16,0
+  belongs_to :usercreate_user!16,0
+  has_many :comments, as: :commentable, dependent: :destroycomments17,0
+  has_many :comments, as: :commentable, dependent: :destroycomments=17,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids17,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids=17,0
+
+app/models/event.rb,183
+class Event < ApplicationRecordEvent21,0
+  has_many :ticketstickets22,0
+  has_many :ticketstickets=22,0
+  has_many :ticketsticket_ids22,0
+  has_many :ticketsticket_ids=22,0
+
+app/models/todo_item.rb,371
+class TodoItem < ApplicationRecordTodoItem17,0
+  belongs_to :todo_list, dependent: :destroytodo_list18,0
+  belongs_to :todo_list, dependent: :destroytodo_list=18,0
+  belongs_to :todo_list, dependent: :destroybuild_todo_list18,0
+  belongs_to :todo_list, dependent: :destroycreate_todo_list18,0
+  belongs_to :todo_list, dependent: :destroycreate_todo_list!18,0
+
+app/models/marriage_talk.rb,57
+class MarriageTalk < ApplicationRecordMarriageTalk16,0
+
+app/models/formation_talk.rb,59
+class FormationTalk < ApplicationRecordFormationTalk16,0
+
+app/models/homilist.rb,189
+class Homilist < ApplicationRecordHomilist16,0
+  has_many :sermonssermons17,0
+  has_many :sermonssermons=17,0
+  has_many :sermonssermon_ids17,0
+  has_many :sermonssermon_ids=17,0
+
+app/models/post.rb,561
+class Post < ApplicationRecordPost14,0
+  belongs_to :useruser15,0
+  belongs_to :useruser=15,0
+  belongs_to :userbuild_user15,0
+  belongs_to :usercreate_user15,0
+  belongs_to :usercreate_user!15,0
+  has_many :comments, as: :commentable, dependent: :destroycomments16,0
+  has_many :comments, as: :commentable, dependent: :destroycomments=16,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids16,0
+  has_many :comments, as: :commentable, dependent: :destroycomment_ids=16,0
+  def image_as_thumbnailimage_as_thumbnail25,0
+
+app/models/stripe_report.rb,856
+class StripeReport < ApplicationRecordStripeReport20,0
+  belongs_to :useruser21,0
+  belongs_to :useruser=21,0
+  belongs_to :userbuild_user21,0
+  belongs_to :usercreate_user21,0
+  belongs_to :usercreate_user!21,0
+  belongs_to :pledge, optional: truepledge22,0
+  belongs_to :pledge, optional: truepledge=22,0
+  belongs_to :pledge, optional: truebuild_pledge22,0
+  belongs_to :pledge, optional: truecreate_pledge22,0
+  belongs_to :pledge, optional: truecreate_pledge!22,0
+  belongs_to :donation, optional: truedonation23,0
+  belongs_to :donation, optional: truedonation=23,0
+  belongs_to :donation, optional: truebuild_donation23,0
+  belongs_to :donation, optional: truecreate_donation23,0
+  belongs_to :donation, optional: truecreate_donation!23,0
+  def calculate_feecalculate_fee27,0
+  def calculate_netcalculate_net32,0
+
+app/models/link.rb,41
+class Link < ApplicationRecordLink17,0
+
+app/models/ticket.rb,294
+class Ticket < ApplicationRecordTicket24,0
+  belongs_to :eventevent25,0
+  belongs_to :eventevent=25,0
+  belongs_to :eventbuild_event25,0
+  belongs_to :eventcreate_event25,0
+  belongs_to :eventcreate_event!25,0
+  def set_amountset_amount32,0
+  def set_stripe_idset_stripe_id36,0
+
+app/models/anniversary.rb,55
+class Anniversary < ApplicationRecordAnniversary17,0
+
+app/models/agenda.rb,560
+class Agenda < ApplicationRecordAgenda14,0
+  has_many :agenda_items, inverse_of: :agenda, dependent: :destroyagenda_items15,0
+  has_many :agenda_items, inverse_of: :agenda, dependent: :destroyagenda_items=15,0
+  has_many :agenda_items, inverse_of: :agenda, dependent: :destroyagenda_item_ids15,0
+  has_many :agenda_items, inverse_of: :agenda, dependent: :destroyagenda_item_ids=15,0
+  belongs_to :useruser18,0
+  belongs_to :useruser=18,0
+  belongs_to :userbuild_user18,0
+  belongs_to :usercreate_user18,0
+  belongs_to :usercreate_user!18,0
+
+app/mailers/vnote_mailer.rb,99
+class VnoteMailer < ApplicationMailerVnoteMailer4,0
+  def vnote_created(vnote)vnote_created5,0
+
+app/mailers/story_idea_mailer.rb,122
+class StoryIdeaMailer < ApplicationMailerStoryIdeaMailer4,0
+  def story_idea_created(story_idea)story_idea_created7,0
+
+app/mailers/post_mailer.rb,94
+class PostMailer < ApplicationMailerPostMailer4,0
+  def post_created(post)post_created7,0
+
+app/mailers/ticket_mailer.rb,88
+class TicketMailer < ApplicationMailerTicketMailer4,0
+  def thanks(ticket)thanks5,0
+
+app/mailers/comment_mailer.rb,151
+class CommentMailer < ApplicationMailerCommentMailer4,0
+  def new_comment(comment)new_comment5,0
+  def get_recipients(comment)get_recipients16,0
+
+app/mailers/member_mailer.rb,57
+class MemberMailer < ApplicationMailerMemberMailer10,0
+
+app/mailers/invite_mailer.rb,111
+class InviteMailer < Devise::MailerInviteMailer4,0
+  def invitation_instructionsinvitation_instructions7,0
+
+app/mailers/application_mailer.rb,68
+class ApplicationMailer < ActionMailer::BaseApplicationMailer10,0
+
+app/mailers/welcome_mailer.rb,102
+class WelcomeMailer < ApplicationMailerWelcomeMailer4,0
+  def welcome_email(user)welcome_email5,0
+
+app/mailers/minutes_mailer.rb,119
+class MinutesMailer < ApplicationMailerMinutesMailer4,0
+  def new_minutes_email(vestry_minute)new_minutes_email5,0
+
+app/mailers/stripe_mailer.rb,111
+class StripeMailer < ApplicationMailerStripeMailer4,0
+  def report_created(stripe_report)report_created5,0
+
+app/mailers/test_mailer.rb,78
+class TestMailer < ApplicationMailerTestMailer4,0
+  def testingtesting5,0
+
+app/channels/chat_channel.rb,122
+class ChatChannel < ApplicationCable::ChannelChatChannel4,0
+  def subscribedsubscribed5,0
+  def speak(data)speak9,0
+
+app/channels/application_cable/connection.rb,195
+module ApplicationCableApplicationCable4,0
+  class Connection < ActionCable::Connection::BaseConnection5,0
+  class Connection < ActionCable::Connection::BaseApplicationCable::Connection5,0
+
+app/channels/application_cable/channel.rb,177
+module ApplicationCableApplicationCable4,0
+  class Channel < ActionCable::Channel::BaseChannel5,0
+  class Channel < ActionCable::Channel::BaseApplicationCable::Channel5,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob4,0
+
+app/jobs/handle_webhooks_job.rb,98
+class HandleWebhooksJob < ApplicationJobHandleWebhooksJob4,0
+  def perform(webhook)perform7,0
+
+app/controllers/works_controller.rb,300
+class WorksController < ApplicationControllerWorksController4,0
+  def indexindex7,0
+  def show; endshow12,0
+  def newnew14,0
+  def edit; endedit18,0
+  def createcreate20,0
+  def updateupdate30,0
+  def destroydestroy40,0
+  def set_workset_work48,0
+  def work_paramswork_params53,0
+
+app/controllers/webhooks_controller.rb,182
+class WebhooksController < ApplicationControllerWebhooksController3,0
+  def createcreate6,0
+  def valid_signature?valid_signature?28,0
+  def webhook_paramswebhook_params41,0
+
+app/controllers/books_controller.rb,514
+class BooksController < ApplicationControllerBooksController4,0
+  def indexindex9,0
+  def books_adminbooks_admin13,0
+  def books_authorbooks_author26,0
+  def books_titlebooks_title30,0
+  def newnew34,0
+  def edit; endedit38,0
+  def createcreate40,0
+  def show; endshow49,0
+  def updateupdate51,0
+  def destroydestroy59,0
+  def importimport69,0
+  def set_bookset_book80,0
+  def admin_onlyadmin_only86,0
+  def book_import_paramsbook_import_params90,0
+  def book_paramsbook_params94,0
+
+app/controllers/sermons_controller.rb,314
+class SermonsController < ApplicationControllerSermonsController18,0
+  def indexindex22,0
+  def show; endshow26,0
+  def newnew28,0
+  def edit; endedit32,0
+  def createcreate34,0
+  def updateupdate46,0
+  def destroydestroy50,0
+  def set_sermonset_sermon57,0
+  def sermon_paramssermon_params61,0
+
+app/controllers/comments_controller.rb,209
+class CommentsController < ApplicationControllerCommentsController4,0
+  def createcreate7,0
+  def destroydestroy19,0
+  def find_commentablefind_commentable27,0
+  def comment_paramscomment_params34,0
+
+app/controllers/series_controller.rb,95
+class SeriesController < ApplicationControllerSeriesController4,0
+  def index; endindex5,0
+
+app/controllers/posts_controller.rb,326
+class PostsController < ApplicationControllerPostsController4,0
+  def newnew9,0
+  def indexindex13,0
+  def showshow19,0
+  def createcreate23,0
+  def edit; endedit31,0
+  def updateupdate33,0
+  def destroydestroy41,0
+  def all_postsall_posts48,0
+  def set_postset_post52,0
+  def post_paramspost_params56,0
+
+app/controllers/vnotes_controller.rb,338
+class VnotesController < ApplicationControllerVnotesController16,0
+  def newnew21,0
+  def indexindex25,0
+  def showshow30,0
+  def createcreate34,0
+  def updateupdate41,0
+  def edit; endedit46,0
+  def destroydestroy48,0
+  def set_vnoteset_vnote55,0
+  def vnote_paramsvnote_params59,0
+  def vestry_onlyvestry_only63,0
+
+app/controllers/pathways_controller.rb,318
+class PathwaysController < ApplicationControllerPathwaysController4,0
+  def indexindex7,0
+  def edit; endedit11,0
+  def show; endshow13,0
+  def newnew15,0
+  def createcreate19,0
+  def updateupdate30,0
+  def destroydestroy38,0
+  def set_pathwayset_pathway45,0
+  def pathway_paramspathway_params49,0
+
+app/controllers/turbo_devise_controller.rb,269
+class TurboDeviseController < ApplicationControllerTurboDeviseController4,0
+  class Responder < ActionController::ResponderResponder5,0
+  class Responder < ActionController::ResponderTurboDeviseController::Responder5,0
+    def to_turbo_streamto_turbo_stream6,0
+
+app/controllers/pages_controller.rb,658
+class PagesController < ApplicationControllerPagesController4,0
+  def directions; enddirections5,0
+  def stay_safe; endstay_safe7,0
+  def sacred_ground; endsacred_ground9,0
+  def albergue; endalbergue11,0
+  def annnual_report; endannnual_report13,0
+  def history; endhistory15,0
+  def calendar; endcalendar17,0
+  def haitian; endhaitian19,0
+  def tumaini; endtumaini21,0
+  def music; endmusic23,0
+  def how_to_pray; endhow_to_pray25,0
+  def python_tutor; endpython_tutor27,0
+  def roberts_rules; endroberts_rules29,0
+  def how_to_use; endhow_to_use31,0
+  def way_of_love; endway_of_love33,0
+  def letsencryptletsencrypt35,0
+
+app/controllers/tickets_controller.rb,320
+class TicketsController < ApplicationControllerTicketsController4,0
+  def show; endshow9,0
+  def indexindex11,0
+  def newnew16,0
+  def createcreate20,0
+  def update; endupdate29,0
+  def thanksthanks31,0
+  def set_eventset_event37,0
+  def set_ticketset_ticket41,0
+  def ticket_paramsticket_params45,0
+
+app/controllers/activities_controller.rb,103
+class ActivitiesController < ApplicationControllerActivitiesController4,0
+  def index; endindex5,0
+
+app/controllers/agendas_controller.rb,335
+class AgendasController < ApplicationControllerAgendasController4,0
+  def showshow9,0
+  def indexindex14,0
+  def newnew18,0
+  def editedit24,0
+  def createcreate29,0
+  def updateupdate39,0
+  def destroydestroy48,0
+  def set_agendaset_agenda56,0
+  def admin_onlyadmin_only60,0
+  def agenda_paramsagenda_params67,0
+
+app/controllers/todo_lists_controller.rb,329
+class TodoListsController < ApplicationControllerTodoListsController4,0
+  def indexindex10,0
+  def show; endshow16,0
+  def newnew19,0
+  def edit; endedit25,0
+  def createcreate29,0
+  def updateupdate40,0
+  def destroydestroy50,0
+  def set_todo_listset_todo_list58,0
+  def todo_list_paramstodo_list_params63,0
+
+app/controllers/formation_talks_controller.rb,358
+class FormationTalksController < ApplicationControllerFormationTalksController4,0
+  def indexindex8,0
+  def show; endshow12,0
+  def newnew14,0
+  def edit; endedit18,0
+  def createcreate20,0
+  def updateupdate29,0
+  def destroydestroy37,0
+  def set_formation_talkset_formation_talk44,0
+  def formation_talk_paramsformation_talk_params48,0
+
+app/controllers/tasks_controller.rb,300
+class TasksController < ApplicationControllerTasksController4,0
+  def indexindex9,0
+  def show; endshow15,0
+  def newnew18,0
+  def edit; endedit23,0
+  def createcreate27,0
+  def updateupdate43,0
+  def destroydestroy57,0
+  def set_taskset_task71,0
+  def task_paramstask_params76,0
+
+app/controllers/checkout_donations_controller.rb,114
+class CheckoutDonationsController < ApplicationControllerCheckoutDonationsController4,0
+  def createcreate8,0
+
+app/controllers/agenda_items_controller.rb,311
+class AgendaItemsController < ApplicationControllerAgendaItemsController4,0
+  def indexindex5,0
+  def show; endshow9,0
+  def newnew11,0
+  def createcreate15,0
+  def editedit26,0
+  def update_positionupdate_position30,0
+  def destroydestroy36,0
+  def agenda_items_paramsagenda_items_params45,0
+
+app/controllers/story_ideas_controller.rb,412
+class StoryIdeasController < ApplicationControllerStoryIdeasController16,0
+  def newnew22,0
+  def indexindex26,0
+  def show; endshow31,0
+  def edit; endedit33,0
+  def createcreate35,0
+  def updateupdate46,0
+  def destroydestroy51,0
+  def set_story_ideaset_story_idea59,0
+  def story_idea_paramsstory_idea_params63,0
+  def find_commentablefind_commentable68,0
+  def authorizeauthorize73,0
+
+app/controllers/todo_items_controller.rb,410
+class TodoItemsController < ApplicationControllerTodoItemsController4,0
+  def indexindex9,0
+  def show; endshow14,0
+  def newnew17,0
+  def edit; endedit22,0
+  def createcreate25,0
+  def updateupdate37,0
+  def destroydestroy47,0
+  def update_positionupdate_position52,0
+  def set_todo_listset_todo_list61,0
+  def set_todo_itemset_todo_item65,0
+  def todo_item_paramstodo_item_params70,0
+
+app/controllers/story_assignments_controller.rb,370
+class StoryAssignmentsController < ApplicationControllerStoryAssignmentsController4,0
+  def indexindex8,0
+  def show; endshow13,0
+  def newnew16,0
+  def edit; endedit21,0
+  def createcreate24,0
+  def updateupdate35,0
+  def destroydestroy45,0
+  def set_story_assignmentset_story_assignment53,0
+  def story_assignment_paramsstory_assignment_params58,0
+
+app/controllers/markets_controller.rb,97
+class MarketsController < ApplicationControllerMarketsController4,0
+  def index; endindex5,0
+
+app/controllers/stories_controller.rb,308
+class StoriesController < ApplicationControllerStoriesController4,0
+  def indexindex9,0
+  def show; endshow14,0
+  def newnew17,0
+  def edit; endedit22,0
+  def createcreate25,0
+  def updateupdate36,0
+  def destroydestroy51,0
+  def set_storyset_story64,0
+  def story_paramsstory_params69,0
+
+app/controllers/opportunities_controller.rb,295
+class OpportunitiesController < ApplicationControllerOpportunitiesController4,0
+  def indexindex5,0
+  def show; endshow9,0
+  def editedit11,0
+  def newnew16,0
+  def createcreate21,0
+  def updateupdate29,0
+  def destroydestroy38,0
+  def opportunity_paramsopportunity_params47,0
+
+app/controllers/members_controller.rb,268
+class MembersController < ApplicationControllerMembersController4,0
+  def indexindex8,0
+  def updateupdate13,0
+  def edit; endedit19,0
+  def show; endshow21,0
+  def destroydestroy23,0
+  def set_memberset_member30,0
+  def member_paramsmember_params34,0
+
+app/controllers/users_controller.rb,335
+class UsersController < ApplicationControllerUsersController29,0
+  def newnew34,0
+  def indexindex38,0
+  def show; endshow43,0
+  def createcreate45,0
+  def updateupdate49,0
+  def edit; endedit53,0
+  def destroydestroy56,0
+  def set_userset_user63,0
+  def admin_onlyadmin_only67,0
+  def user_paramsuser_params72,0
+
+app/controllers/checkout_tickets_controller.rb,110
+class CheckoutTicketsController < ApplicationControllerCheckoutTicketsController4,0
+  def createcreate7,0
+
+app/controllers/charges_controller.rb,117
+class ChargesController < ApplicationControllerChargesController4,0
+  def new; endnew7,0
+  def createcreate9,0
+
+app/controllers/marriage_talks_controller.rb,352
+class MarriageTalksController < ApplicationControllerMarriageTalksController4,0
+  def indexindex9,0
+  def show; endshow15,0
+  def newnew18,0
+  def edit; endedit23,0
+  def createcreate27,0
+  def updateupdate38,0
+  def destroydestroy48,0
+  def set_marriage_talkset_marriage_talk56,0
+  def marriage_talk_paramsmarriage_talk_params60,0
+
+app/controllers/registrations_controller.rb,233
+class RegistrationsController < Devise::RegistrationsControllerRegistrationsController3,0
+  def createcreate4,0
+  def email_deliverable?(email)email_deliverable?15,0
+  def configure_sign_up_paramsconfigure_sign_up_params26,0
+
+app/controllers/pray_fors_controller.rb,322
+class PrayForsController < ApplicationControllerPrayForsController4,0
+  def indexindex7,0
+  def show; endshow13,0
+  def newnew16,0
+  def edit; endedit21,0
+  def createcreate25,0
+  def updateupdate36,0
+  def destroydestroy46,0
+  def set_pray_forset_pray_for60,0
+  def pray_for_paramspray_for_params65,0
+
+app/controllers/homilists_controller.rb,359
+class HomilistsController < ApplicationControllerHomilistsController16,0
+  def indexindex21,0
+  def show; endshow25,0
+  def newnew27,0
+  def edit; endedit31,0
+  def createcreate33,0
+  def updateupdate42,0
+  def destroydestroy50,0
+  def admin_onlyadmin_only57,0
+  def set_homilistset_homilist61,0
+  def homilist_paramshomilist_params65,0
+
+app/controllers/events_controller.rb,339
+class EventsController < ApplicationControllerEventsController4,0
+  def indexindex9,0
+  def newnew13,0
+  def show; endshow17,0
+  def edit; endedit19,0
+  def createcreate21,0
+  def updateupdate35,0
+  def destroydestroy47,0
+  def set_eventset_event57,0
+  def admin_onlyadmin_only61,0
+  def event_paramsevent_params65,0
+
+app/controllers/checkout_pledges_controller.rb,110
+class CheckoutPledgesController < ApplicationControllerCheckoutPledgesController4,0
+  def createcreate8,0
+
+app/controllers/home_controller.rb,107
+class HomeController < ApplicationControllerHomeController4,0
+  def indexindex5,0
+  def showshow17,0
+
+app/controllers/pledges_controller.rb,371
+class PledgesController < ApplicationControllerPledgesController4,0
+  def show; endshow9,0
+  def newnew11,0
+  def createcreate15,0
+  def edit; endedit26,0
+  def updateupdate28,0
+  def destroydestroy37,0
+  def set_pledgeset_pledge44,0
+  def change_pathchange_path48,0
+  def redirect_to_loginredirect_to_login54,0
+  def pledge_paramspledge_params61,0
+
+app/controllers/stripe_reports_controller.rb,308
+class StripeReportsController < ApplicationControllerStripeReportsController4,0
+  def newnew11,0
+  def createcreate15,0
+  def indexindex19,0
+  def show; endshow23,0
+  def set_stripe_reportset_stripe_report27,0
+  def stripe_report_paramsstripe_report_params31,0
+  def admin_onlyadmin_only36,0
+
+app/controllers/donations_controller.rb,373
+class DonationsController < ApplicationControllerDonationsController4,0
+  def indexindex9,0
+  def show; endshow13,0
+  def newnew15,0
+  def edit; endedit19,0
+  def createcreate21,0
+  def updateupdate31,0
+  def destroydestroy45,0
+  def set_donationset_donation57,0
+  def authenticate_adminauthenticate_admin61,0
+  def donation_paramsdonation_params65,0
+
+app/controllers/application_controller.rb,326
+class ApplicationController < ActionController::BaseApplicationController6,0
+  def configure_permitted_parametersconfigure_permitted_parameters18,0
+  def verified_request?verified_request?26,0
+  def store_current_locationstore_current_location32,0
+  def after_sign_out_path_for(_resource)after_sign_out_path_for36,0
+
+app/controllers/surveys_controller.rb,312
+class SurveysController < ApplicationControllerSurveysController4,0
+  def indexindex9,0
+  def show; endshow15,0
+  def newnew18,0
+  def edit; endedit23,0
+  def createcreate27,0
+  def updateupdate43,0
+  def destroydestroy57,0
+  def set_surveyset_survey71,0
+  def survey_paramssurvey_params76,0
+
+app/controllers/profiles_controller.rb,298
+class ProfilesController < ApplicationControllerProfilesController21,0
+  def edit; endedit25,0
+  def show; endshow27,0
+  def updateupdate29,0
+  def indexindex38,0
+  def new; endnew44,0
+  def createcreate46,0
+  def set_profileset_profile57,0
+  def profile_paramsprofile_params61,0
+
+app/controllers/links_controller.rb,242
+class LinksController < ApplicationControllerLinksController4,0
+  def indexindex9,0
+  def showshow17,0
+  def editedit26,0
+  def createcreate32,0
+  def updateupdate37,0
+  def destroydestroy47,0
+  def link_paramslink_params64,0
+
+app/controllers/vestry_minutes_controller.rb,386
+class VestryMinutesController < ApplicationControllerVestryMinutesController4,0
+  def indexindex11,0
+  def show; endshow17,0
+  def newnew20,0
+  def edit; endedit25,0
+  def createcreate29,0
+  def updateupdate41,0
+  def destroydestroy51,0
+  def set_vestry_minuteset_vestry_minute60,0
+  def vestry_minute_paramsvestry_minute_params65,0
+  def admin_onlyadmin_only69,0
+
+app/controllers/anniversaries_controller.rb,307
+class AnniversariesController < ApplicationControllerAnniversariesController4,0
+  def indexindex8,0
+  def show; endshow24,0
+  def createcreate26,0
+  def destroydestroy35,0
+  def set_anniversaryset_anniversary44,0
+  def admin_onlyadmin_only52,0
+  def anniversary_paramsanniversary_params56,0
+
+app/controllers/leadership_controller.rb,103
+class LeadershipController < ApplicationControllerLeadershipController4,0
+  def index; endindex5,0
+
+app/controllers/worship_controller.rb,97
+class WorshipController < ApplicationControllerWorshipController4,0
+  def index; endindex5,0
+
+app/helpers/participants_helper.rb,49
+module ParticipantsHelperParticipantsHelper4,0
+
+app/helpers/rooms_helper.rb,35
+module RoomsHelperRoomsHelper4,0
+
+app/helpers/todo_items_helper.rb,43
+module TodoItemsHelperTodoItemsHelper4,0
+
+app/helpers/application_helper.rb,215
+module ApplicationHelperApplicationHelper4,0
+  def bootstrap_class_for(flash_type)bootstrap_class_for5,0
+  def flash_messages(_opts = {})flash_messages14,0
+  def formatted_amount(amount)formatted_amount26,0
+
+app/helpers/checkout_helper.rb,41
+module CheckoutHelperCheckoutHelper4,0
+
+app/helpers/anniversaries_helper.rb,103
+module AnniversariesHelperAnniversariesHelper4,0
+  def recent_anniversariesrecent_anniversaries5,0
+
+app/helpers/birthdays_helper.rb,93
+module BirthdaysHelperBirthdaysHelper4,0
+  def birthdays_this_weekbirthdays_this_week5,0
+
+app/helpers/members_helper.rb,89
+module MembersHelperMembersHelper4,0
+  def birthdays_this_weekbirthdays_this_week5,0
+
+app/helpers/submit_stories_helper.rb,51
+module SubmitStoriesHelperSubmitStoriesHelper4,0
+
+db/migrate/20240705213943_add_service_name_to_active_storage_blobs.active_storage.rb,148
+class AddServiceNameToActiveStorageBlobs < ActiveRecord::Migration[6.0]AddServiceNameToActiveStorageBlobs2,0
+  def upup3,0
+  def downdown17,0
+
+db/migrate/20240705213944_create_active_storage_variant_records.active_storage.rb,239
+class CreateActiveStorageVariantRecords < ActiveRecord::Migration[6.0]CreateActiveStorageVariantRecords2,0
+  def changechange3,0
+    def primary_key_typeprimary_key_type17,0
+    def blobs_primary_key_typeblobs_primary_key_type22,0
+
+db/migrate/20240705213945_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb,149
+class RemoveNotNullOnActiveStorageBlobsChecksum < ActiveRecord::Migration[6.0]RemoveNotNullOnActiveStorageBlobsChecksum2,0
+  def changechange3,0

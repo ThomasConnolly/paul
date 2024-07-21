@@ -74,9 +74,6 @@ class User < ApplicationRecord
     self.roles ||= ['member']
   end
 
-  # honey used to prevent bots-filled forms from being saved to db
-  validates :personal, absence: true
-
   # Include default devise modules
   # Others available are:
   # :lockable, :confirmable, :timeoutable and :omniauthable

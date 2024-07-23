@@ -93,12 +93,6 @@ class User < ApplicationRecord
     create_profile if profile.nil?
   end
 
-  attr_writer :login
-
-  def login
-    @login || username || email
-  end
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (login = conditions.delete(:login))

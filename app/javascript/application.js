@@ -2,7 +2,8 @@
 import { Application } from "@hotwired/stimulus"
 import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
-import "trix"
+import Trix from "trix"
+import 'trix/dist/trix.css'
 import "@rails/actiontext"
 import "@rails/actioncable"
 

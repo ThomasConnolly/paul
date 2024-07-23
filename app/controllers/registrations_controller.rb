@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, only: [:create]
+
   def create
     if email_deliverable?(sign_up_params[:email])
       super # Proceed with Devise's original create method
@@ -13,6 +15,8 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def email_deliverable?(email)
+    return false if email.blank?
+
     client = VerifaliaConfig.client
     job = client.email_validations.submit(email)
     entry = job.entries[0]

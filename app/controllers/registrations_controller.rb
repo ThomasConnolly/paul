@@ -26,8 +26,4 @@ class RegistrationsController < Devise::RegistrationsController
     Rails.logger.error "Verifalia email validation failed: #{e.message}"
     false
   end
-
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
-  end
 end

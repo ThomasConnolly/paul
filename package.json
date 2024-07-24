@@ -1,5 +1,8 @@
 {
-  "name": "app",
+  "name": "paul",
+  "engines": {
+    "node": "18.19.1"
+  },
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",

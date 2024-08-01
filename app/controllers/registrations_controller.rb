@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
-
   def create
     if email_deliverable?(sign_up_params[:email])
       super # Proceed with Devise's original create method

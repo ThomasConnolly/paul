@@ -7,11 +7,17 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/aws-sigv4/all/aws-sigv4.rbi
 #
-# aws-sigv4-1.8.0
+# aws-sigv4-1.9.1
 
 module Aws
 end
 module Aws::Sigv4
+end
+module Aws::Sigv4::AsymmetricCredentials
+  def self.be_bytes_to_num(bytes); end
+  def self.check_openssl_support!; end
+  def self.derive_asymmetric_key(access_key_id, secret_access_key); end
+  def self.generate_ec(public_key, d); end
 end
 class Aws::Sigv4::Credentials
   def access_key_id; end
@@ -43,11 +49,14 @@ class Aws::Sigv4::Signature
   def headers; end
   def headers=(arg0); end
   def initialize(options); end
+  def signature; end
+  def signature=(arg0); end
   def string_to_sign; end
   def string_to_sign=(arg0); end
 end
 class Aws::Sigv4::Signer
   def apply_checksum_header; end
+  def asymmetric_signature(creds, string_to_sign); end
   def canonical_header_value(value); end
   def canonical_headers(headers); end
   def canonical_request(http_method, url, headers, content_sha256); end
@@ -77,6 +86,7 @@ class Aws::Sigv4::Signer
   def presign_url(options); end
   def presigned_url_expiration(options, expiration, datetime); end
   def region; end
+  def self.normalize_path(uri); end
   def self.uri_escape(string); end
   def self.uri_escape_path(path); end
   def self.use_crt?; end
@@ -86,7 +96,8 @@ class Aws::Sigv4::Signer
   def sign_request(request); end
   def signature(secret_access_key, date, string_to_sign); end
   def signed_headers(headers); end
-  def string_to_sign(datetime, canonical_request); end
+  def string_to_sign(datetime, canonical_request, algorithm); end
+  def sts_algorithm; end
   def unsigned_headers; end
   def uri_escape(string); end
   def uri_escape_path(string); end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actioncable/all/actioncable.rbi
 #
-# actioncable-7.1.3.2
+# actioncable-7.1.3.4
 
 module ActionCable
   def self.deprecator; end

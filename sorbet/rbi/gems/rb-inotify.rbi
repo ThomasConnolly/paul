@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rb-inotify/all/rb-inotify.rbi
 #
-# rb-inotify-0.10.1
+# rb-inotify-0.11.1
 
 module INotify
 end

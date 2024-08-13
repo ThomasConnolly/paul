@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rexml/all/rexml.rbi
 #
-# rexml-3.2.6
+# rexml-3.3.4
 
 module REXML
 end
@@ -40,6 +40,8 @@ class REXML::SourceFactory
 end
 class REXML::Source
   include REXML::Encoding
+end
+module REXML::Source::Private
 end
 class REXML::IOSource < REXML::Source
 end
@@ -112,6 +114,8 @@ end
 class REXML::UndefinedNamespaceException < REXML::ParseException
 end
 class REXML::Parsers::BaseParser
+end
+module REXML::Parsers::BaseParser::Private
 end
 class REXML::Parsers::StreamParser
 end

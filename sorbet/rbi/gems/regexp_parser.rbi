@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/regexp_parser/all/regexp_parser.rbi
 #
-# regexp_parser-2.9.0
+# regexp_parser-2.9.2
 
 class Regexp
 end

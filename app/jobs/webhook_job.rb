@@ -1,7 +1,7 @@
-# typed: false
+# typed: true
 # frozen_string_literal: true
 
-class HandleWebhooksJob < ApplicationJob
+class WebhookJob < ApplicationJob
   queue_as :default
 
   def perform(webhook)

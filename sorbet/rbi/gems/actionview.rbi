@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actionview/all/actionview.rbi
 #
-# actionview-7.1.3.2
+# actionview-7.1.3.4
 
 module ActionView
   def self.deprecator; end

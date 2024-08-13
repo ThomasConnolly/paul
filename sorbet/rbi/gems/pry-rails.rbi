@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/pry-rails/all/pry-rails.rbi
 #
-# pry-rails-0.3.9
+# pry-rails-0.3.11
 
 module PryRails
 end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rspec-expectations/all/rspec-expectations.rbi
 #
-# rspec-expectations-3.13.0
+# rspec-expectations-3.13.1
 
 module RSpec
 end
@@ -82,7 +82,7 @@ class RSpec::Expectations::Configuration
 end
 module RSpec::Expectations::Configuration::NullBacktraceFormatter
 end
-class InvalidName___Class_0x00___Differ_115
+class InvalidName___Class_0x00___Differ_111
 end
 module RSpec::Expectations::ExpectationHelper
 end
@@ -189,7 +189,7 @@ class RSpec::Matchers::BuiltIn::Equal < RSpec::Matchers::BuiltIn::BaseMatcher
 end
 class RSpec::Matchers::BuiltIn::Exist < RSpec::Matchers::BuiltIn::BaseMatcher
 end
-class RSpec::Matchers::BuiltIn::Exist::ExistenceTest < Anonymous_Struct_116
+class RSpec::Matchers::BuiltIn::Exist::ExistenceTest < Anonymous_Struct_112
 end
 class RSpec::Matchers::BuiltIn::HaveAttributes < RSpec::Matchers::BuiltIn::BaseMatcher
 end
@@ -218,7 +218,7 @@ module RSpec::Matchers::BuiltIn::CaptureStdout
 end
 module RSpec::Matchers::BuiltIn::CaptureStderr
 end
-class RSpec::Matchers::BuiltIn::CaptureStreamToTempfile < Anonymous_Struct_117
+class RSpec::Matchers::BuiltIn::CaptureStreamToTempfile < Anonymous_Struct_113
 end
 class RSpec::Matchers::BuiltIn::RaiseError
   include RSpec::Matchers::Composable

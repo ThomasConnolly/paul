@@ -7,33 +7,40 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/propshaft/all/propshaft.rbi
 #
-# propshaft-0.8.0
+# propshaft-0.9.0
 
 class Propshaft::Asset
   def ==(other_asset); end
   def already_digested?; end
   def content; end
   def content_type; end
+  def content_with_compile_references; end
   def digest; end
   def digested_path; end
   def fresh?(digest); end
-  def initialize(path, logical_path:, version: nil); end
+  def initialize(path, logical_path:, load_path:); end
   def length; end
+  def load_path; end
   def logical_path; end
   def path; end
-  def version; end
 end
 class Propshaft::LoadPath
   def all_files_from_tree(path); end
-  def assets(content_types: nil); end
+  def asset_paths_by_glob(glob); end
+  def asset_paths_by_type(content_type); end
+  def assets; end
   def assets_by_path; end
   def cache_sweeper; end
   def clear_cache; end
+  def compilers; end
   def dedup(paths); end
+  def extract_logical_paths_from(assets); end
   def find(asset_name); end
-  def initialize(paths = nil, version: nil); end
+  def find_referenced_by(asset); end
+  def initialize(paths = nil, compilers:, version: nil); end
   def manifest; end
   def paths; end
+  def seed_cache; end
   def version; end
   def without_dotfiles(files); end
 end
@@ -72,7 +79,7 @@ class Propshaft::OutputPath
   def remove(path); end
 end
 class Propshaft::Processor
-  def clean; end
+  def clean(count); end
   def clobber; end
   def compile_asset(asset); end
   def compilers; end
@@ -92,24 +99,29 @@ class Propshaft::Compilers
   def compilable?(asset); end
   def compile(asset); end
   def initialize(assembly); end
+  def referenced_by(asset); end
   def register(mime_type, klass); end
   def registrations; end
 end
 class Propshaft::Compiler
   def assembly; end
-  def compile(logical_path, input); end
+  def compile(asset, input); end
+  def config(*, **, &); end
   def initialize(assembly); end
+  def load_path(*, **, &); end
+  def referenced_by(asset); end
   def url_prefix; end
 end
 class Propshaft::Compiler::CssAssetUrls < Propshaft::Compiler
   def asset_url(resolved_path, logical_path, fingerprint, pattern); end
-  def compile(logical_path, input); end
+  def compile(asset, input); end
+  def referenced_by(asset, references: nil); end
   def resolve_path(directory, filename); end
 end
 class Propshaft::Compiler::SourceMappingUrls < Propshaft::Compiler
   def asset_path(source_mapping_url, logical_path); end
-  def compile(logical_path, input); end
-  def source_mapping_url(resolved_path, comment_start, comment_end); end
+  def compile(asset, input); end
+  def source_mapping_url(logical_path, resolved_path, comment_start, comment_end); end
 end
 class Propshaft::Assembly
   def compilers; end
@@ -136,8 +148,9 @@ class Propshaft::MissingAssetError < Propshaft::Error
 end
 module Propshaft::Helper
   def all_stylesheets_paths; end
+  def app_stylesheets_paths; end
   def compute_asset_path(path, options = nil); end
-  def stylesheet_link_tag(*sources); end
+  def stylesheet_link_tag(*sources, **options); end
 end
 class Propshaft::QuietAssets
   def call(env); end

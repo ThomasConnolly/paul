@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/acts_as_list/all/acts_as_list.rbi
 #
-# acts_as_list-1.1.0
+# acts_as_list-1.2.2
 
 module ActiveRecord
 end
@@ -60,6 +60,7 @@ module ActiveRecord::Acts::List::InstanceMethods
   def not_in_list?; end
   def position_before_save; end
   def position_before_save_changed?; end
+  def primary_key_condition(id = nil); end
   def quoted_position_column; end
   def quoted_position_column_with_table_name; end
   def quoted_table_name; end
@@ -80,7 +81,6 @@ end
 module ActiveRecord::Acts::List::ScopeMethodDefiner
   def self.call(caller_class, scope); end
   def self.idify(caller_class, name); end
-  extend ActiveSupport::Inflector
 end
 module ActiveRecord::Acts::List::TopOfListMethodDefiner
   def self.call(caller_class, top_of_list); end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rspec-rails/all/rspec-rails.rbi
 #
-# rspec-rails-6.1.2
+# rspec-rails-6.1.3
 
 module RSpec
 end

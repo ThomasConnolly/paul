@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/stripe/all/stripe.rbi
 #
-# stripe-11.2.0
+# stripe-12.4.0
 
 module Stripe
   def self.api_base(*args, **, &block); end
@@ -26,6 +26,7 @@ module Stripe
   def self.config; end
   def self.connect_base(*args, **, &block); end
   def self.connect_base=(*args, **, &block); end
+  def self.deserialize(data); end
   def self.enable_telemetry=(*args, **, &block); end
   def self.enable_telemetry?(*args, **, &block); end
   def self.initial_network_retry_delay(*args, **, &block); end
@@ -40,6 +41,7 @@ module Stripe
   def self.open_timeout=(*args, **, &block); end
   def self.proxy(*args, **, &block); end
   def self.proxy=(*args, **, &block); end
+  def self.raw_request(method, url, params = nil, opts = nil); end
   def self.read_timeout(*args, **, &block); end
   def self.read_timeout=(*args, **, &block); end
   def self.set_app_info(name, partner_id: nil, url: nil, version: nil); end
@@ -74,21 +76,25 @@ module Stripe::APIOperations::NestedResource
   def nested_resource_class_methods(resource, path: nil, operations: nil, resource_plural: nil); end
 end
 module Stripe::APIOperations::Request
+  def _deprecated_request(method, url, params = nil, opts = nil, usage = nil); end
   def execute_resource_request(method, url, params = nil, opts = nil, usage = nil); end
   def execute_resource_request_stream(method, url, params = nil, opts = nil, &read_body_chunk_block); end
-  def request(method, url, params = nil, opts = nil, usage = nil); end
+  def request(*args, **, &block); end
   def request_stripe_object(method:, path:, params:, opts: nil, usage: nil); end
   def self.included(base); end
+  extend Gem::Deprecate
 end
 module Stripe::APIOperations::Request::ClassMethods
+  def _deprecated_request(method, url, params = nil, opts = nil, usage = nil); end
   def error_on_invalid_params(params); end
   def error_on_non_string_user_opts(opts); end
   def execute_resource_request(method, url, params = nil, opts = nil, usage = nil); end
   def execute_resource_request_internal(client_request_method_sym, method, url, params, opts, usage, &read_body_chunk_block); end
   def execute_resource_request_stream(method, url, params = nil, opts = nil, usage = nil, &read_body_chunk_block); end
-  def request(method, url, params = nil, opts = nil, usage = nil); end
+  def request(*args, **, &block); end
   def request_stripe_object(method:, path:, params:, opts: nil, usage: nil); end
   def warn_on_opts_in_params(params); end
+  extend Gem::Deprecate
 end
 module Stripe::APIOperations::Save
   def _deprecated_save(params = nil, opts = nil); end
@@ -275,6 +281,7 @@ class Stripe::Instrumentation::ResponseContext
 end
 class Stripe::StripeClient
   def _deprecated_connection_manager; end
+  def _deprecated_request; end
   def api_url(url = nil, api_base = nil); end
   def check_api_key!(api_key); end
   def config; end
@@ -297,7 +304,7 @@ class Stripe::StripeClient
   def notify_request_begin(context); end
   def notify_request_end(context, duration, http_status, num_retries, user_data, resp, headers); end
   def options; end
-  def request; end
+  def request(*args, **, &block); end
   def request_headers(api_key, method); end
   def self.active_client; end
   def self.clear_all_connection_managers(config: nil); end
@@ -593,9 +600,9 @@ class Stripe::Account < Stripe::APIResource
   def self.protected_fields; end
   def self.reject(account, params = nil, opts = nil); end
   def self.retrieve(id = nil, opts = nil); end
-  def self.retrieve_capability(id, nested_id, opts = nil); end
-  def self.retrieve_external_account(id, nested_id, opts = nil); end
-  def self.retrieve_person(id, nested_id, opts = nil); end
+  def self.retrieve_capability(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
+  def self.retrieve_external_account(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
+  def self.retrieve_person(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.update(id, params = nil, opts = nil); end
   def self.update_capability(id, nested_id, params = nil, opts = nil); end
   def self.update_external_account(id, nested_id, params = nil, opts = nil); end
@@ -639,7 +646,7 @@ class Stripe::ApplicationFee < Stripe::APIResource
   def self.list_refunds(id, params = nil, opts = nil); end
   def self.object_name; end
   def self.refunds_url(id, nested_id = nil); end
-  def self.retrieve_refund(id, nested_id, opts = nil); end
+  def self.retrieve_refund(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.update_refund(id, nested_id, params = nil, opts = nil); end
   extend Stripe::APIOperations::List
   extend Stripe::APIOperations::NestedResource
@@ -679,6 +686,7 @@ class Stripe::BankAccount < Stripe::APIResource
   def self.object_name; end
   def self.retrieve(_id, _opts = nil); end
   def self.update(_id, _params = nil, _opts = nil); end
+  def self.verify(customer, id, params = nil, opts = nil); end
   def verify(params = nil, opts = nil); end
   extend Stripe::APIOperations::Delete::ClassMethods
   extend Stripe::APIOperations::List
@@ -770,7 +778,7 @@ class Stripe::Charge < Stripe::APIResource
   def self.list_refunds(id, params = nil, opts = nil); end
   def self.object_name; end
   def self.refunds_url(id, nested_id = nil); end
-  def self.retrieve_refund(id, nested_id, opts = nil); end
+  def self.retrieve_refund(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.search(params = nil, opts = nil); end
   def self.search_auto_paging_each(params = nil, opts = nil, &blk); end
   def self.update(id, params = nil, opts = nil); end
@@ -791,8 +799,11 @@ class Stripe::Checkout::Session < Stripe::APIResource
   def self.list(filters = nil, opts = nil); end
   def self.list_line_items(session, params = nil, opts = nil); end
   def self.object_name; end
+  def self.update(id, params = nil, opts = nil); end
   extend Stripe::APIOperations::Create
   extend Stripe::APIOperations::List
+  extend Stripe::APIOperations::Save::ClassMethods
+  include Stripe::APIOperations::Save
 end
 module Stripe::Climate
 end
@@ -887,12 +898,12 @@ class Stripe::Customer < Stripe::APIResource
   def self.list_sources(id, params = nil, opts = nil); end
   def self.list_tax_ids(id, params = nil, opts = nil); end
   def self.object_name; end
-  def self.retrieve_balance_transaction(id, nested_id, opts = nil); end
+  def self.retrieve_balance_transaction(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.retrieve_cash_balance(customer, params = nil, opts = nil); end
-  def self.retrieve_cash_balance_transaction(id, nested_id, opts = nil); end
+  def self.retrieve_cash_balance_transaction(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.retrieve_payment_method(customer, payment_method, params = nil, opts = nil); end
-  def self.retrieve_source(id, nested_id, opts = nil); end
-  def self.retrieve_tax_id(id, nested_id, opts = nil); end
+  def self.retrieve_source(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
+  def self.retrieve_tax_id(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.search(params = nil, opts = nil); end
   def self.search_auto_paging_each(params = nil, opts = nil, &blk); end
   def self.sources_url(id, nested_id = nil); end
@@ -1069,30 +1080,39 @@ class Stripe::Identity::VerificationSession < Stripe::APIResource
   include Stripe::APIOperations::Save
 end
 class Stripe::Invoice < Stripe::APIResource
+  def add_lines(params = nil, opts = nil); end
   def delete(params = nil, opts = nil); end
   def finalize_invoice(params = nil, opts = nil); end
   def mark_uncollectible(params = nil, opts = nil); end
   def pay(params = nil, opts = nil); end
+  def remove_lines(params = nil, opts = nil); end
+  def self.add_lines(invoice, params = nil, opts = nil); end
   def self.create(params = nil, opts = nil); end
   def self.create_preview(params = nil, opts = nil); end
   def self.delete(id, params = nil, opts = nil); end
   def self.finalize_invoice(invoice, params = nil, opts = nil); end
+  def self.lines_url(id, nested_id = nil); end
   def self.list(filters = nil, opts = nil); end
+  def self.list_lines(id, params = nil, opts = nil); end
   def self.list_upcoming_line_items(params = nil, opts = nil); end
   def self.mark_uncollectible(invoice, params = nil, opts = nil); end
   def self.object_name; end
   def self.pay(invoice, params = nil, opts = nil); end
+  def self.remove_lines(invoice, params = nil, opts = nil); end
   def self.search(params = nil, opts = nil); end
   def self.search_auto_paging_each(params = nil, opts = nil, &blk); end
   def self.send_invoice(invoice, params = nil, opts = nil); end
   def self.upcoming(params = nil, opts = nil); end
   def self.update(id, params = nil, opts = nil); end
+  def self.update_lines(invoice, params = nil, opts = nil); end
   def self.void_invoice(invoice, params = nil, opts = nil); end
   def send_invoice(params = nil, opts = nil); end
+  def update_lines(params = nil, opts = nil); end
   def void_invoice(params = nil, opts = nil); end
   extend Stripe::APIOperations::Create
   extend Stripe::APIOperations::Delete::ClassMethods
   extend Stripe::APIOperations::List
+  extend Stripe::APIOperations::NestedResource
   extend Stripe::APIOperations::Save::ClassMethods
   extend Stripe::APIOperations::Search
   include Stripe::APIOperations::Delete
@@ -1121,14 +1141,19 @@ end
 module Stripe::Issuing
 end
 class Stripe::Issuing::Authorization < Stripe::APIResource
-  def approve(params = nil, opts = nil); end
-  def decline(params = nil, opts = nil); end
-  def self.approve(authorization, params = nil, opts = nil); end
-  def self.decline(authorization, params = nil, opts = nil); end
+  def _deprecated_approve(params = nil, opts = nil); end
+  def _deprecated_decline(params = nil, opts = nil); end
+  def approve(*args, **, &block); end
+  def decline(*args, **, &block); end
+  def self._deprecated_approve(authorization, params = nil, opts = nil); end
+  def self._deprecated_decline(authorization, params = nil, opts = nil); end
+  def self.approve(*args, **, &block); end
+  def self.decline(*args, **, &block); end
   def self.list(filters = nil, opts = nil); end
   def self.object_name; end
   def self.update(id, params = nil, opts = nil); end
   def test_helpers; end
+  extend Gem::Deprecate
   extend Stripe::APIOperations::List
   extend Stripe::APIOperations::Save::ClassMethods
   include Stripe::APIOperations::Save
@@ -1136,11 +1161,13 @@ end
 class Stripe::Issuing::Authorization::TestHelpers < Stripe::APIResourceTestHelpers
   def capture(params = nil, opts = nil); end
   def expire(params = nil, opts = nil); end
+  def finalize_amount(params = nil, opts = nil); end
   def increment(params = nil, opts = nil); end
   def reverse(params = nil, opts = nil); end
   def self.capture(authorization, params = nil, opts = nil); end
   def self.create(params = nil, opts = nil); end
   def self.expire(authorization, params = nil, opts = nil); end
+  def self.finalize_amount(authorization, params = nil, opts = nil); end
   def self.increment(authorization, params = nil, opts = nil); end
   def self.resource_class; end
   def self.reverse(authorization, params = nil, opts = nil); end
@@ -1380,7 +1407,7 @@ class Stripe::Product < Stripe::APIResource
   def self.list(filters = nil, opts = nil); end
   def self.list_features(id, params = nil, opts = nil); end
   def self.object_name; end
-  def self.retrieve_feature(id, nested_id, opts = nil); end
+  def self.retrieve_feature(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.search(params = nil, opts = nil); end
   def self.search_auto_paging_each(params = nil, opts = nil, &blk); end
   def self.update(id, params = nil, opts = nil); end
@@ -1552,7 +1579,7 @@ class Stripe::Source < Stripe::APIResource
   def self.create(params = nil, opts = nil); end
   def self.list_source_transactions(id, params = nil, opts = nil); end
   def self.object_name; end
-  def self.retrieve_source_transaction(id, nested_id, opts = nil); end
+  def self.retrieve_source_transaction(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.source_transactions_url(id, nested_id = nil); end
   def self.update(id, params = nil, opts = nil); end
   def self.verify(source, params = nil, opts = nil); end
@@ -1786,7 +1813,7 @@ class Stripe::Transfer < Stripe::APIResource
   def self.list(filters = nil, opts = nil); end
   def self.list_reversals(id, params = nil, opts = nil); end
   def self.object_name; end
-  def self.retrieve_reversal(id, nested_id, opts = nil); end
+  def self.retrieve_reversal(id, nested_id, params_or_opts = nil, definitely_opts = nil); end
   def self.reversals_url(id, nested_id = nil); end
   def self.update(id, params = nil, opts = nil); end
   def self.update_reversal(id, nested_id, params = nil, opts = nil); end
@@ -1866,6 +1893,8 @@ class Stripe::Treasury::OutboundPayment::TestHelpers < Stripe::APIResourceTestHe
   def self.post(id, params = nil, opts = nil); end
   def self.resource_class; end
   def self.return_outbound_payment(id, params = nil, opts = nil); end
+  def self.update(id, params = nil, opts = nil); end
+  def update(params = nil, opts = nil); end
 end
 class Stripe::Treasury::OutboundTransfer < Stripe::APIResource
   def cancel(params = nil, opts = nil); end
@@ -1885,6 +1914,8 @@ class Stripe::Treasury::OutboundTransfer::TestHelpers < Stripe::APIResourceTestH
   def self.post(outbound_transfer, params = nil, opts = nil); end
   def self.resource_class; end
   def self.return_outbound_transfer(outbound_transfer, params = nil, opts = nil); end
+  def self.update(outbound_transfer, params = nil, opts = nil); end
+  def update(params = nil, opts = nil); end
 end
 class Stripe::Treasury::ReceivedCredit < Stripe::APIResource
   def self.list(filters = nil, opts = nil); end
@@ -1940,4 +1971,10 @@ end
 module Stripe::OAuth::OAuthOperations
   def self.execute_resource_request(method, url, params, opts); end
   extend Stripe::APIOperations::Request::ClassMethods
+end
+class Stripe::RawRequest
+  def execute(method, url, params = nil, opts = nil, usage = nil); end
+  def initialize; end
+  extend Stripe::APIOperations::Request::ClassMethods
+  include Stripe::APIOperations::Request
 end

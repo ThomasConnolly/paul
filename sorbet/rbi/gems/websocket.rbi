@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/websocket/all/websocket.rbi
 #
-# websocket-1.2.10
+# websocket-1.2.11
 
 module WebSocket
 end

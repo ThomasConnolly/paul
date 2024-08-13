@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/tilt/all/tilt.rbi
 #
-# tilt-2.3.0
+# tilt-2.4.0
 
 module Tilt
 end

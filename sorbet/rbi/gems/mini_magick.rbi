@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/mini_magick/all/mini_magick.rbi
 #
-# mini_magick-4.12.0
+# mini_magick-4.13.2
 
 module MiniMagick
   def self.cli_version; end
@@ -45,7 +45,7 @@ module MiniMagick::Configuration
   def reload_tools; end
   def self.extended(base); end
   def shell_api; end
-  def shell_api=(arg0); end
+  def shell_api=(value); end
   def timeout; end
   def timeout=(arg0); end
   def tmpdir; end
@@ -54,6 +54,8 @@ module MiniMagick::Configuration
   def validate_on_create=(arg0); end
   def validate_on_write; end
   def validate_on_write=(arg0); end
+  def warnings; end
+  def warnings=(arg0); end
   def whiny; end
   def whiny=(arg0); end
 end

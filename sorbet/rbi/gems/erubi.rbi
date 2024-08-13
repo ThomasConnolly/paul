@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/erubi/all/erubi.rbi
 #
-# erubi-1.12.0
+# erubi-1.13.0
 
 module Erubi
 end

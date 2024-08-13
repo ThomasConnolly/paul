@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activerecord/all/activerecord.rbi
 #
-# activerecord-7.1.3.2
+# activerecord-7.1.3.4
 
 module Arel
   def self.arel_node?(value); end

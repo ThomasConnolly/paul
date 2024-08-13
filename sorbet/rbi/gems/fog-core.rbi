@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/fog-core/all/fog-core.rbi
 #
-# fog-core-2.4.0
+# fog-core-2.5.0
 
 module Fog
   def self.credential; end

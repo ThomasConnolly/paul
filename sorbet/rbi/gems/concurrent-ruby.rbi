@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/concurrent-ruby/all/concurrent-ruby.rbi
 #
-# concurrent-ruby-1.2.3
+# concurrent-ruby-1.3.3
 
 module Concurrent
   def abort_transaction; end
@@ -21,7 +21,9 @@ module Concurrent
   def monotonic_time(unit = nil); end
   def self.abort_transaction; end
   def self.atomically; end
+  def self.available_processor_count; end
   def self.call_dataflow(method, executor, *inputs, &block); end
+  def self.cpu_quota; end
   def self.create_simple_logger(level = nil, output = nil); end
   def self.create_stdlib_logger(level = nil, output = nil); end
   def self.dataflow!(*inputs, &block); end
@@ -469,11 +471,15 @@ class Concurrent::CachedThreadPool < Concurrent::ThreadPoolExecutor
   def ns_initialize(opts); end
 end
 class Concurrent::Utility::ProcessorCounter
+  def available_processor_count; end
+  def compute_cpu_quota; end
   def compute_physical_processor_count; end
   def compute_processor_count; end
+  def cpu_quota; end
   def initialize; end
   def physical_processor_count; end
   def processor_count; end
+  def run(command); end
 end
 class Concurrent::MutexAtomicBoolean
   def false?; end

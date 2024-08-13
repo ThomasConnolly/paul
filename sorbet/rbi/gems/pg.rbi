@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/pg/all/pg.rbi
 #
-# pg-1.5.6
+# pg-1.5.7
 
 module PG
   def self.connect(*args, &block); end
@@ -17,6 +17,7 @@ module PG
   def self.isthreadsafe; end
   def self.library_version; end
   def self.make_shareable(obj); end
+  def self.require_bigdecimal_without_warning; end
   def self.threadsafe?; end
   def self.version_string(include_buildnum = nil); end
 end
@@ -524,6 +525,8 @@ end
 class PG::LostCopyState < PG::Error
 end
 class PG::NotInBlockingMode < PG::Error
+end
+class PG::RollbackTransaction < StandardError
 end
 module PG::Coder::BinaryFormatting
   def initialize(hash = nil, **kwargs); end

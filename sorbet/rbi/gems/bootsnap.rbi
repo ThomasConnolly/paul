@@ -7,14 +7,16 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/bootsnap/all/bootsnap.rbi
 #
-# bootsnap-1.18.3
+# bootsnap-1.18.4
 
 module Bootsnap
   def bundler?; end
   def instrumentation_enabled=(arg0); end
   def self._instrument(event, path); end
   def self.absolute_path?(path); end
+  def self.bool_env(key, default: nil); end
   def self.default_setup; end
+  def self.enabled?(key); end
   def self.instrumentation=(callback); end
   def self.instrumentation_enabled=(arg0); end
   def self.log!; end
@@ -158,13 +160,11 @@ module Kernel
 end
 module Bootsnap::CompileCache::Native
   def compile_option_crc32=(arg0); end
-  def coverage_running?; end
   def fetch(arg0, arg1, arg2, arg3); end
   def precompile(arg0, arg1, arg2); end
   def readonly=(arg0); end
   def revalidation=(arg0); end
   def self.compile_option_crc32=(arg0); end
-  def self.coverage_running?; end
   def self.fetch(arg0, arg1, arg2, arg3); end
   def self.precompile(arg0, arg1, arg2); end
   def self.readonly=(arg0); end

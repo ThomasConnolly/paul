@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/email_spec/all/email_spec.rbi
 #
-# email_spec-2.2.2
+# email_spec-2.3.0
 
 module EmailSpec
 end
@@ -22,6 +22,16 @@ class EmailSpec::EmailViewer
 end
 module EmailSpec::Helpers
   include EmailSpec::Deliveries
+end
+module EmailSpec::Extractors
+end
+class EmailSpec::Extractors::Base
+end
+class EmailSpec::Extractors::DefaultPartBody < EmailSpec::Extractors::Base
+end
+class EmailSpec::Extractors::HtmlPartBody < EmailSpec::Extractors::Base
+end
+class EmailSpec::Extractors::TextPartBody < EmailSpec::Extractors::Base
 end
 module EmailSpec::Matchers
 end

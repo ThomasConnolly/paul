@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/minitest/all/minitest.rbi
 #
-# minitest-5.22.3
+# minitest-5.24.1
 
 module Minitest
 end
@@ -57,6 +57,8 @@ class Minitest::Skip < Minitest::Assertion
 end
 class Minitest::UnexpectedError < Minitest::Assertion
   include Minitest::Compress
+end
+class Minitest::UnexpectedWarning < Minitest::Assertion
 end
 module Minitest::Guard
 end

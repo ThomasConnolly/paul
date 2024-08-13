@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/launchy/all/launchy.rbi
 #
-# launchy-2.5.2
+# launchy-3.0.1
 
 module Launchy
 end
@@ -49,19 +49,6 @@ class Launchy::Detect::HostOsFamily::Nix < Launchy::Detect::HostOsFamily
 end
 class Launchy::Detect::HostOsFamily::Cygwin < Launchy::Detect::HostOsFamily
 end
-class Launchy::Detect::RubyEngine
-  extend Launchy::DescendantTracker
-end
-class Launchy::Detect::RubyEngine::NotFoundError < Launchy::Error
-end
-class Launchy::Detect::RubyEngine::Mri < Launchy::Detect::RubyEngine
-end
-class Launchy::Detect::RubyEngine::Jruby < Launchy::Detect::RubyEngine
-end
-class Launchy::Detect::RubyEngine::Rbx < Launchy::Detect::RubyEngine
-end
-class Launchy::Detect::RubyEngine::MacRuby < Launchy::Detect::RubyEngine
-end
 class Launchy::Detect::NixDesktopEnvironment
   extend Launchy::DescendantTracker
 end
@@ -77,16 +64,5 @@ class Launchy::Detect::NixDesktopEnvironment::Xdg < Launchy::Detect::NixDesktopE
 end
 class Launchy::Detect::NixDesktopEnvironment::NotFound < Launchy::Detect::NixDesktopEnvironment
 end
-class Launchy::Detect::Runner
-  extend Launchy::DescendantTracker
-end
-class Launchy::Detect::Runner::NotFoundError < Launchy::Error
-end
-class Launchy::Detect::Runner::Windows < Launchy::Detect::Runner
-end
-class Launchy::Detect::Runner::Jruby < Launchy::Detect::Runner
-end
-class Launchy::Detect::Runner::Forkable < Launchy::Detect::Runner
-end
-class Launchy::Browser
+class Launchy::Runner
 end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rbi/all/rbi.rbi
 #
-# rbi-0.1.12
+# rbi-0.1.14
 
 module RBI
 end
@@ -15,6 +15,8 @@ class RBI::Loc
   extend T::Private::Methods::MethodHooks
   extend T::Private::Methods::SingletonMethodHooks
   extend T::Sig
+end
+class RBI::ReplaceNodeError < RBI::Error
 end
 class RBI::Node
   extend T::Helpers
@@ -291,6 +293,8 @@ class RBI::RequiresAncestor < RBI::NodeWithComments
   extend T::Sig
   include RBI::Indexable
 end
+class RBI::VisitorError < RBI::Error
+end
 class RBI::Visitor
   extend T::Helpers
   extend T::Private::Methods::MethodHooks
@@ -346,5 +350,8 @@ class RBI::Rewriters::Merge::Conflict < T::Struct
   extend T::Props::Plugin::ClassMethods
   extend T::Props::Plugin::ClassMethods
   extend T::Props::Serializable::ClassMethods
+  extend T::Sig
+end
+class RBI::Error < StandardError
   extend T::Sig
 end

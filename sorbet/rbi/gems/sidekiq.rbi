@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/sidekiq/all/sidekiq.rbi
 #
-# sidekiq-7.2.4
+# sidekiq-7.3.0
 
 module Sidekiq
   def self.configure_client; end
@@ -96,6 +96,7 @@ class Sidekiq::RedisClientAdapter::CompatClient::Pipeline < RedisClient::Decorat
 end
 module Sidekiq::RedisConnection
   def self.create(options = nil); end
+  def self.deep_symbolize_keys(object); end
   def self.determine_redis_provider; end
   def self.scrub(options); end
 end
@@ -110,6 +111,7 @@ class Sidekiq::Config
   def concurrency=(val); end
   def death_handlers; end
   def default_capsule(&block); end
+  def dig(*args, **, &block); end
   def error_handlers; end
   def fetch(*args, **, &block); end
   def handle_exception(ex, ctx = nil); end
@@ -236,6 +238,9 @@ class Sidekiq::TransactionAwareClient
   def push_bulk(items); end
 end
 module Sidekiq::Job
+  def _context; end
+  def _context=(arg0); end
+  def interrupted?; end
   def jid; end
   def jid=(arg0); end
   def logger; end
@@ -278,6 +283,56 @@ module Sidekiq::Job::ClassMethods
   def queue_as(q); end
   def set(options); end
   def sidekiq_options(opts = nil); end
+end
+module Sidekiq::Job::Iterable
+  def around_iteration; end
+  def assert_enumerator!(enum); end
+  def build_enumerator(*); end
+  def cleanup; end
+  def each_iteration(*); end
+  def fetch_previous_iteration_state; end
+  def flush_state; end
+  def handle_completed(completed); end
+  def initialize; end
+  def iterate_with_enumerator(enumerator, arguments); end
+  def iteration_key; end
+  def on_complete; end
+  def on_resume; end
+  def on_start; end
+  def on_stop; end
+  def perform(*arguments); end
+  def reenqueue_iteration_job; end
+  def self.included(base); end
+  include Sidekiq::Job::Iterable::Enumerators
+end
+class Sidekiq::Job::Iterable::ActiveRecordEnumerator
+  def batches; end
+  def initialize(relation, cursor: nil, **options); end
+  def records; end
+  def relations; end
+  def relations_size; end
+end
+class Sidekiq::Job::Iterable::CsvEnumerator
+  def batches(cursor:, batch_size: nil); end
+  def count_of_rows_in_file; end
+  def initialize(csv); end
+  def rows(cursor:); end
+end
+module Sidekiq::Job::Iterable::Enumerators
+  def active_record_batches_enumerator(relation, cursor:, **options); end
+  def active_record_records_enumerator(relation, cursor:, **options); end
+  def active_record_relations_enumerator(relation, cursor:, **options); end
+  def array_enumerator(array, cursor:); end
+  def csv_batches_enumerator(csv, cursor:, **options); end
+  def csv_enumerator(csv, cursor:); end
+end
+class Sidekiq::Job::Interrupted < RuntimeError
+end
+module Sidekiq::Job::Iterable::ClassMethods
+  def method_added(method_name); end
+end
+module Sidekiq::IterableJob
+  def self.included(base); end
 end
 class Sidekiq::Rails < Rails::Engine
 end

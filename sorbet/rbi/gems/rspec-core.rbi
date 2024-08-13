@@ -306,9 +306,3 @@ class RSpec::Core::Formatters::BisectDRbFormatter < RSpec::Core::Formatters::Bas
 end
 class RSpec::Core::Formatters::FailureListFormatter < RSpec::Core::Formatters::BaseFormatter
 end
-module RSpec::Core::MockingAdapters
-end
-module RSpec::Core::MockingAdapters::RSpec
-  include RSpec::Mocks::ExampleMethods
-  include RSpec::Mocks::ExampleMethods::ExpectHost
-end

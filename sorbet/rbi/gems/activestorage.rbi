@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activestorage/all/activestorage.rbi
 #
-# activestorage-7.1.3.2
+# activestorage-7.1.3.4
 
 module ActiveStorage
   def analyzers; end
@@ -359,6 +359,8 @@ end
 module ActiveStorage::Blob::Servable
 end
 class ActiveStorage::Service::Configurator
+end
+class ActiveStorage::Service::DiskService < ActiveStorage::Service
 end
 class ActiveStorage::Blob::ActiveRecord_Relation < ActiveRecord::Relation
   extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods

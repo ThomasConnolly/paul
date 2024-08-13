@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/redis-client/all/redis-client.rbi
 #
-# redis-client-0.22.1
+# redis-client-0.22.2
 
 class RedisClient
   def blocking_call(timeout, *command, **kwargs); end
@@ -194,6 +194,7 @@ module RedisClient::ConnectionMixin
   def call(command, timeout); end
   def call_pipelined(commands, timeouts, exception: nil); end
   def close; end
+  def connection_timeout(timeout); end
   def initialize; end
   def reconnect; end
   def revalidate; end

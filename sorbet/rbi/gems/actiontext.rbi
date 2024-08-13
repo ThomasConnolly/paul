@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actiontext/all/actiontext.rbi
 #
-# actiontext-7.1.3.2
+# actiontext-7.1.3.4
 
 module ActionText
   def self.deprecator; end

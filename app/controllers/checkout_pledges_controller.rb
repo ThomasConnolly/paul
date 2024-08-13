@@ -12,14 +12,24 @@ class CheckoutPledgesController < ApplicationController
       return
     end
 
-    @customer = if current_user.stripe_id?
-                  Stripe::Customer.retrieve(current_user.stripe_id)
-                else
-                  Stripe::Customer.create(email: current_user.email)
-                end
+    @customer = find_or_create_stripe_customer
     current_user.update(stripe_id: @customer.id)
 
-    checkout_session = Stripe::Checkout::Session.create(
+    create_stripe_checkout_session(@pledge, @customer)
+  end
+
+  private
+
+  def find_or_create_stripe_customer
+    if current_user.stripe_id?
+      Stripe::Customer.retrieve(current_user.stripe_id)
+    else
+      Stripe::Customer.create(email: current_user.email)
+    end
+  end
+
+  def create_stripe_checkout_session(_pledge, _customer)
+    Stripe::Checkout::Session.create(
       mode: 'subscription',
       success_url: "#{checkout_pledges_success_url}?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: pledges_url,
@@ -41,6 +51,5 @@ class CheckoutPledgesController < ApplicationController
         pledge_id: @pledge.id
       }
     )
-    redirect_to(checkout_session.url, allow_other_host: true)
   end
 end

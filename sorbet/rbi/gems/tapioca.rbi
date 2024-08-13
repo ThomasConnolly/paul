@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/tapioca/all/tapioca.rbi
 #
-# tapioca-0.13.3
+# tapioca-0.16.0
 
 module Tapioca
   extend T::Sig

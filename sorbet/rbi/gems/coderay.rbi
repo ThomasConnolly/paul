@@ -56,7 +56,7 @@ class CodeRay::Scanners::Ruby < CodeRay::Scanners::Scanner
 end
 module CodeRay::Scanners::Ruby::Patterns
 end
-class CodeRay::Scanners::Ruby::StringState < Anonymous_Struct_104
+class CodeRay::Scanners::Ruby::StringState < Anonymous_Struct_100
 end
 class CodeRay::Encoders::HTML < CodeRay::Encoders::Encoder
 end

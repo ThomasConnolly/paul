@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/ruby-vips/all/ruby-vips.rbi
 #
-# ruby-vips-2.2.1
+# ruby-vips-2.2.2
 
 module GObject
   def g_object_get_property(*arg0); end
@@ -107,6 +107,7 @@ class GObject::GValue < FFI::ManagedStruct
   def unset; end
 end
 module Vips
+  def g_malloc(*arg0); end
   def nickname_find(*arg0); end
   def self.at_least_libvips?(x, y); end
   def self.block(operation_name, enabled); end
@@ -122,6 +123,7 @@ module Vips
   def self.concurrency; end
   def self.concurrency_default; end
   def self.concurrency_set(n); end
+  def self.g_malloc(*arg0); end
   def self.get_suffixes; end
   def self.leak_set(leak); end
   def self.nickname_find(*arg0); end
@@ -132,6 +134,7 @@ module Vips
   def self.tracked_mem; end
   def self.tracked_mem_highwater; end
   def self.type_find(*arg0); end
+  def self.unified?; end
   def self.vector?; end
   def self.vector_set(enabled); end
   def self.version(*arg0); end

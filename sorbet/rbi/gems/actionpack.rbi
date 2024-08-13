@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actionpack/all/actionpack.rbi
 #
-# actionpack-7.1.3.2
+# actionpack-7.1.3.4
 
 module ActionPack
   def self.gem_version; end
@@ -1502,7 +1502,6 @@ class ActionDispatch::PermissionsPolicy
 end
 class ActionDispatch::PermissionsPolicy::Middleware
   def call(env); end
-  def html_response?(headers); end
   def initialize(app); end
   def policy_empty?(policy); end
   def policy_present?(headers); end
@@ -1636,7 +1635,7 @@ class ActionDispatch::Request::Utils::CustomParamEncoder
 end
 class ActionDispatch::ExceptionWrapper
 end
-class ActionDispatch::ExceptionWrapper::SourceMapLocation < Anonymous_Delegator_8
+class ActionDispatch::ExceptionWrapper::SourceMapLocation < Anonymous_Delegator_10
 end
 module ActionDispatch::RequestCookieMethods
 end
@@ -1767,7 +1766,7 @@ class ActionDispatch::Session::AbstractSecureStore < Rack::Session::Abstract::Pe
 end
 class ActionDispatch::Session::CookieStore < ActionDispatch::Session::AbstractSecureStore
 end
-class ActionDispatch::Session::CookieStore::SessionId < Anonymous_Delegator_9
+class ActionDispatch::Session::CookieStore::SessionId < Anonymous_Delegator_11
 end
 class ActionDispatch::Flash
 end
@@ -1828,7 +1827,7 @@ end
 module ActionController::ParamsWrapper
   extend ActiveSupport::Concern
 end
-class ActionController::ParamsWrapper::Options < Anonymous_Struct_10
+class ActionController::ParamsWrapper::Options < Anonymous_Struct_12
   include Mutex_m
 end
 module ActionController::ParamsWrapper::ClassMethods
@@ -2036,7 +2035,7 @@ class ActionController::Base < ActionController::Metal
   extend ActiveSupport::Callbacks::ClassMethods
   extend ActiveSupport::DescendantsTracker
   extend ActiveSupport::Rescuable::ClassMethods
-  extend Anonymous_Module_11
+  extend Anonymous_Module_13
   extend Devise::Controllers::Helpers::ClassMethods
   extend Responders::ControllerMethod
   include AbstractController::AssetPaths
@@ -2109,8 +2108,8 @@ class ActionController::Base < ActionController::Metal
   include Turbo::Streams::TurboStreamsTagBuilder
 end
 module ActionController::Base::HelperMethods
-  include Anonymous_Module_12
-  include Anonymous_Module_13
+  include Anonymous_Module_14
+  include Anonymous_Module_15
   include DeviseI18n::ViewHelpers
 end
 module Turbo::Streams
@@ -2119,18 +2118,18 @@ module Turbo::Frames
 end
 module Turbo::Native
 end
-module Anonymous_Module_12
+module Anonymous_Module_14
   include Turbo::DriveHelper
   include Turbo::FramesHelper
   include Turbo::IncludesHelper
   include Turbo::Streams::ActionHelper
   include Turbo::StreamsHelper
 end
-module Anonymous_Module_13
+module Anonymous_Module_15
   include ActionText::ContentHelper
   include ActionText::TagHelper
 end
-module Anonymous_Module_11
+module Anonymous_Module_13
 end
 module ActionView::RoutingUrlFor
   include ActionDispatch::Routing::UrlFor
@@ -2187,7 +2186,7 @@ class ActionController::API < ActionController::Metal
   extend ActiveSupport::Callbacks::ClassMethods
   extend ActiveSupport::DescendantsTracker
   extend ActiveSupport::Rescuable::ClassMethods
-  extend Anonymous_Module_14
+  extend Anonymous_Module_16
   extend Devise::Controllers::Helpers::ClassMethods
   include AbstractController::Callbacks
   include AbstractController::Helpers
@@ -2232,7 +2231,7 @@ class ActionController::API < ActionController::Metal
   include Recaptcha::Adapters::ControllerMethods
   include Turbo::RequestIdTracking
 end
-module Anonymous_Module_14
+module Anonymous_Module_16
 end
 module ActionController::API::HelperMethods
   include DeviseI18n::ViewHelpers

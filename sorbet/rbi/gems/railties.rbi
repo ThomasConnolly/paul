@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/railties/all/railties.rbi
 #
-# railties-7.1.3.2
+# railties-7.1.3.4
 
 module Rails
   def self.app_class; end
@@ -438,12 +438,12 @@ class Rails::Application::Finisher::MonitorHook
 end
 module Rails::Application::Finisher::InterlockHook
 end
+class Rails::Rack::Logger < ActiveSupport::LogSubscriber
+end
 class Rails::Application::RoutesReloader
   extend ActiveSupport::Callbacks::ClassMethods
   extend ActiveSupport::DescendantsTracker
   include ActiveSupport::Callbacks
 end
 class Rails::Application::DefaultMiddlewareStack
-end
-class Rails::Rack::Logger < ActiveSupport::LogSubscriber
 end

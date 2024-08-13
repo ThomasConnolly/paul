@@ -68,7 +68,7 @@ class Lumberjack::TagFormatter
 end
 module Lumberjack::TaggedLoggerSupport
 end
-class Lumberjack::TaggedLoggerSupport::Formatter < Anonymous_Delegator_103
+class Lumberjack::TaggedLoggerSupport::Formatter < Anonymous_Delegator_99
   extend Forwardable
 end
 module Lumberjack::TaggedLogging

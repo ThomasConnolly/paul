@@ -268,7 +268,7 @@ class ActionDispatch::IntegrationTest
   def status_message; end
 
   # @method_missing: delegated to ActionDispatch::TestResponse
-  sig { returns(Net::DNS::Header) }
+  sig { returns(ActionDispatch::Response::Header) }
   def headers; end
 
   # @method_missing: delegated to ActionDispatch::TestResponse

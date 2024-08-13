@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/addressable/all/addressable.rbi
 #
-# addressable-2.8.6
+# addressable-2.8.7
 
 module Addressable
 end

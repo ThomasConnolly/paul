@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/letter_opener_web/all/letter_opener_web.rbi
 #
-# letter_opener_web-2.0.0
+# letter_opener_web-3.0.0
 
 module LetterOpenerWeb
 end
@@ -19,10 +19,10 @@ class LetterOpenerWeb::Config
 end
 class LetterOpenerWeb::ApplicationController < ActionController::Base
   include ActionDispatch::Routing::UrlFor
-  include Anonymous_Module_105
+  include Anonymous_Module_101
 end
 class LetterOpenerWeb::LettersController < LetterOpenerWeb::ApplicationController
-  include Anonymous_Module_105
+  include Anonymous_Module_101
 end
 class LetterOpenerWeb::Letter
 end

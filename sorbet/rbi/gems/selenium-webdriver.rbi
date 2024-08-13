@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/selenium-webdriver/all/selenium-webdriver.rbi
 #
-# selenium-webdriver-4.20.1
+# selenium-webdriver-4.23.0
 
 module Selenium
 end
@@ -236,6 +236,8 @@ module Selenium::WebDriver::DriverExtensions::HasCasting
 end
 module Selenium::WebDriver::DriverExtensions::HasLaunching
 end
+module Selenium::WebDriver::DriverExtensions::HasFedCmDialog
+end
 module Selenium::WebDriver::Keys
 end
 module Selenium::WebDriver::ProfileHelper
@@ -262,6 +264,14 @@ end
 class Selenium::WebDriver::ChildProcess
 end
 class Selenium::WebDriver::ChildProcess::TimeoutError < StandardError
+end
+class Selenium::WebDriver::Script
+end
+module Selenium::WebDriver::FedCM
+end
+class Selenium::WebDriver::FedCM::Account
+end
+class Selenium::WebDriver::FedCM::Dialog
 end
 module Selenium::WebDriver::Chrome
 end

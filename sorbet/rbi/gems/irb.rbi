@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/irb/all/irb.rbi
 #
-# irb-1.13.0
+# irb-1.14.0
 
 module IRB
   def self.CurrentContext; end
@@ -25,6 +25,7 @@ module IRB
   def self.load_modules; end
   def self.parse_opts(argv: nil); end
   def self.prepare_irbrc_name_generators; end
+  def self.raise_validation_error(msg); end
   def self.rc_file(ext); end
   def self.rc_file_generators; end
   def self.run_config; end
@@ -33,6 +34,7 @@ module IRB
   def self.setup(ap_path, argv: nil); end
   def self.start(ap_path = nil); end
   def self.unset_measure_callback(type = nil); end
+  def self.validate_config; end
   def self.version; end
 end
 module IRB::HelperMethod
@@ -98,7 +100,7 @@ class IRB::RubyLex::TerminateLineInput < StandardError
   def initialize; end
 end
 class IRB::BaseCompletor
-  def command_completions(preposing, target); end
+  def command_candidates(target); end
   def completion_candidates(preposing, target, postposing, bind:); end
   def doc_namespace(preposing, matched, postposing, bind:); end
   def retrieve_files_to_require_from_load_path; end
@@ -225,6 +227,7 @@ class IRB::Context
   def extra_doc_dirs; end
   def extra_doc_dirs=(arg0); end
   def file_input?; end
+  def from_binding?; end
   def history_file; end
   def history_file=(hist); end
   def home_workspace; end
@@ -278,6 +281,7 @@ class IRB::Context
   def save_history; end
   def save_history=(val); end
   def set_last_value(value); end
+  def term_interactive?; end
   def thread; end
   def to_s; end
   def use_autocomplete; end
@@ -327,14 +331,34 @@ module IRB::Command::RubyArgsExtractor
   def ruby_args(arg); end
   def unwrap_string_literal(str); end
 end
-class IRB::Command::Context < IRB::Command::Base
-  def execute(_arg); end
+module IRB::Debug
+  def self.configure_irb_for_debugger(irb); end
+  def self.insert_debug_break(pre_cmds: nil, do_cmds: nil); end
+  def self.load_bundled_debug_gem; end
+  def self.setup(irb); end
 end
-class IRB::Command::Exit < IRB::Command::Base
-  def execute(_arg); end
+module InvalidName___Class_0x00___SkipPathHelperForIRB_92
+  def skip_internal_path?(path); end
 end
-class IRB::Command::ForceExit < IRB::Command::Base
+class IRB::Command::Debug < IRB::Command::Base
   def execute(_arg); end
+  def execute_debug_command(pre_cmds: nil, do_cmds: nil); end
+end
+class IRB::Command::DebugCommand < IRB::Command::Debug
+  def self.category; end
+  def self.description; end
+end
+class IRB::Command::Backtrace < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::Break < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::Catch < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::CD < IRB::Command::Base
+  def execute(arg); end
 end
 class IRB::Command::CurrentWorkingWorkspace < IRB::Command::Base
   def execute(_arg); end
@@ -342,82 +366,17 @@ end
 class IRB::Command::ChangeWorkspace < IRB::Command::Base
   def execute(arg); end
 end
-class IRB::Command::Workspaces < IRB::Command::Base
-  def execute(_arg); end
-  def truncated_inspect(obj); end
-end
-class IRB::Command::PushWorkspace < IRB::Command::Workspaces
-  def execute(arg); end
-end
-class IRB::Command::PopWorkspace < IRB::Command::Workspaces
+class IRB::Command::Context < IRB::Command::Base
   def execute(_arg); end
 end
-class IRB::Command::MultiIRBCommand < IRB::Command::Base
-  def extend_irb_context; end
-  def print_debugger_warning; end
-  def print_deprecated_warning; end
-  include IRB::Command::RubyArgsExtractor
-end
-class IRB::Command::IrbCommand < IRB::Command::MultiIRBCommand
+class IRB::Command::Continue < IRB::Command::DebugCommand
   def execute(arg); end
-  def execute_internal(*obj); end
 end
-class IRB::Command::Jobs < IRB::Command::MultiIRBCommand
-  def execute(_arg); end
-end
-class IRB::Command::Foreground < IRB::Command::MultiIRBCommand
+class IRB::Command::Delete < IRB::Command::DebugCommand
   def execute(arg); end
-  def execute_internal(key = nil); end
 end
-class IRB::Command::Kill < IRB::Command::MultiIRBCommand
-  def execute(arg); end
-  def execute_internal(*keys); end
-end
-class IRB::LoadAbort < Exception
-end
-module IRB::IrbLoader
-  def irb_load(fn, priv = nil); end
-  def load_file(path, priv = nil); end
-  def old; end
-  def ruby_load(*arg0); end
-  def ruby_require(path); end
-  def search_file_from_ruby_path(fn); end
-  def source_file(path); end
-end
-class IRB::Command::LoaderCommand < IRB::Command::Base
-  def raise_cmd_argument_error; end
-  include IRB::Command::RubyArgsExtractor
-  include IRB::IrbLoader
-end
-class IRB::Command::Load < IRB::Command::LoaderCommand
-  def execute(arg); end
-  def execute_internal(file_name = nil, priv = nil); end
-end
-class IRB::Command::Require < IRB::Command::LoaderCommand
-  def execute(arg); end
-  def execute_internal(file_name = nil); end
-end
-class IRB::Command::Source < IRB::Command::LoaderCommand
-  def execute(arg); end
-  def execute_internal(file_name = nil); end
-end
-module IRB::Debug
-  def self.configure_irb_for_debugger(irb); end
-  def self.insert_debug_break(pre_cmds: nil, do_cmds: nil); end
-  def self.load_bundled_debug_gem; end
-  def self.setup(irb); end
-end
-module InvalidName___Class_0x00___SkipPathHelperForIRB_97
-  def skip_internal_path?(path); end
-end
-class IRB::Command::Debug < IRB::Command::Base
-  def binding_irb?; end
-  def execute(_arg); end
-  def execute_debug_command(pre_cmds: nil, do_cmds: nil); end
-end
-class IRB::Command::DebugCommand < IRB::Command::Debug
-  def self.category; end
-  def self.description; end
+class IRB::Command::DisableIrb < IRB::Command::Base
+  def execute(*); end
 end
 module IRB::Color
   def self.clear(colorable: nil); end
@@ -456,44 +415,19 @@ class IRB::Command::Edit < IRB::Command::Base
   def execute(arg); end
   include IRB::Command::RubyArgsExtractor
 end
-class IRB::Command::Break < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Catch < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Next < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Delete < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Step < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Continue < IRB::Command::DebugCommand
-  def execute(arg); end
+class IRB::Command::Exit < IRB::Command::Base
+  def execute(_arg); end
 end
 class IRB::Command::Finish < IRB::Command::DebugCommand
   def execute(arg); end
 end
-class IRB::Command::Backtrace < IRB::Command::DebugCommand
-  def execute(arg); end
-end
-class IRB::Command::Info < IRB::Command::DebugCommand
-  def execute(arg); end
+class IRB::Command::ForceExit < IRB::Command::Base
+  def execute(_arg); end
 end
 class IRB::Command::Help < IRB::Command::Base
   def add_category_to_output(category, cmds, output, longest_cmd_name_length); end
   def execute(command_name); end
   def help_message; end
-end
-class IRB::Command::ShowDoc < IRB::Command::Base
-  def execute(arg); end
-  include IRB::Command::RubyArgsExtractor
-end
-class IRB::Command::IrbInfo < IRB::Command::Base
-  def execute(_arg); end
 end
 class IRB::Pager
   def self.content_exceeds_screen_height?(content); end
@@ -501,6 +435,43 @@ class IRB::Pager
   def self.page_content(content, **options); end
   def self.setup_pager(retain_content:); end
   def self.should_page?; end
+end
+class IRB::Command::History < IRB::Command::Base
+  def execute(arg); end
+end
+class IRB::Command::Info < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::IrbInfo < IRB::Command::Base
+  def execute(_arg); end
+end
+class IRB::LoadAbort < Exception
+end
+module IRB::IrbLoader
+  def irb_load(fn, priv = nil); end
+  def load_file(path, priv = nil); end
+  def old; end
+  def ruby_load(*arg0); end
+  def ruby_require(path); end
+  def search_file_from_ruby_path(fn); end
+  def source_file(path); end
+end
+class IRB::Command::LoaderCommand < IRB::Command::Base
+  def raise_cmd_argument_error; end
+  include IRB::Command::RubyArgsExtractor
+  include IRB::IrbLoader
+end
+class IRB::Command::Load < IRB::Command::LoaderCommand
+  def execute(arg); end
+  def execute_internal(file_name = nil, priv = nil); end
+end
+class IRB::Command::Require < IRB::Command::LoaderCommand
+  def execute(arg); end
+  def execute_internal(file_name = nil); end
+end
+class IRB::Command::Source < IRB::Command::LoaderCommand
+  def execute(arg); end
+  def execute_internal(file_name = nil); end
 end
 class IRB::Command::Ls < IRB::Command::Base
   def class_method_map(classes, dumped_mods); end
@@ -522,17 +493,55 @@ class IRB::Command::Measure < IRB::Command::Base
   def initialize(*args); end
   include IRB::Command::RubyArgsExtractor
 end
+class IRB::Command::Next < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::Workspaces < IRB::Command::Base
+  def execute(_arg); end
+  def truncated_inspect(obj); end
+end
+class IRB::Command::PushWorkspace < IRB::Command::Workspaces
+  def execute(arg); end
+end
+class IRB::Command::PopWorkspace < IRB::Command::Workspaces
+  def execute(_arg); end
+end
+class IRB::Command::ShowDoc < IRB::Command::Base
+  def execute(arg); end
+  include IRB::Command::RubyArgsExtractor
+end
 class IRB::Command::ShowSource < IRB::Command::Base
   def bold(str); end
   def execute(arg); end
   def show_source(source); end
   include IRB::Command::RubyArgsExtractor
 end
-class IRB::Command::Whereami < IRB::Command::Base
+class IRB::Command::Step < IRB::Command::DebugCommand
+  def execute(arg); end
+end
+class IRB::Command::MultiIRBCommand < IRB::Command::Base
+  def extend_irb_context; end
+  def print_debugger_warning; end
+  def print_deprecated_warning; end
+  include IRB::Command::RubyArgsExtractor
+end
+class IRB::Command::IrbCommand < IRB::Command::MultiIRBCommand
+  def execute(arg); end
+  def execute_internal(*obj); end
+end
+class IRB::Command::Jobs < IRB::Command::MultiIRBCommand
   def execute(_arg); end
 end
-class IRB::Command::History < IRB::Command::Base
+class IRB::Command::Foreground < IRB::Command::MultiIRBCommand
   def execute(arg); end
+  def execute_internal(key = nil); end
+end
+class IRB::Command::Kill < IRB::Command::MultiIRBCommand
+  def execute(arg); end
+  def execute_internal(*keys); end
+end
+class IRB::Command::Whereami < IRB::Command::Base
+  def execute(_arg); end
 end
 module IRB::ExtendCommandBundle
   def self.def_extend_command(cmd_name, cmd_class, _, *aliases); end
@@ -582,7 +591,7 @@ class IRB::Locale
   def search_file(lib_paths, dir, file); end
   def territory; end
 end
-class InvalidName___Class_0x00___Vec_98
+class InvalidName___Class_0x00___Vec_93
   def cross(other); end
   def dot(other); end
   def initialize(x, y, z); end
@@ -592,13 +601,13 @@ class InvalidName___Class_0x00___Vec_98
   def y; end
   def z; end
 end
-class InvalidName___Class_0x00___Canvas_99
+class InvalidName___Class_0x00___Canvas_94
   def draw; end
   def initialize(arg0); end
   def line(arg0, arg1); end
   def line0(p1, p2); end
 end
-class InvalidName___Class_0x00___RubyModel_100
+class InvalidName___Class_0x00___RubyModel_95
   def init_ruby_model; end
   def initialize; end
   def render_frame(i); end
@@ -617,9 +626,10 @@ class IRB::Irb
   def encode_with_invalid_byte_sequence(str, enc); end
   def eval_input; end
   def format_prompt(format, ltype, indent, line_no); end
+  def from_binding; end
   def generate_prompt(opens, continue, line_offset); end
   def handle_exception(exc); end
-  def initialize(workspace = nil, input_method = nil); end
+  def initialize(workspace = nil, input_method = nil, from_binding: nil); end
   def inspect; end
   def output_value(omit = nil); end
   def parse_command(code); end

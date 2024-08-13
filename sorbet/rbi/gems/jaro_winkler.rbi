@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/jaro_winkler/all/jaro_winkler.rbi
 #
-# jaro_winkler-1.5.6
+# jaro_winkler-1.6.0
 
 module JaroWinkler
 end

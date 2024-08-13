@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/sshkit/all/sshkit.rbi
 #
-# sshkit-1.22.2
+# sshkit-1.23.0
 
 class Array
 end
@@ -20,6 +20,8 @@ end
 class SSHKit::Host
 end
 class SSHKit::SimpleHostParser
+end
+class SSHKit::IPv6HostParser < SSHKit::SimpleHostParser
 end
 class SSHKit::HostWithPortParser < SSHKit::SimpleHostParser
 end
@@ -108,10 +110,8 @@ end
 class SSHKit::Backend::Netssh::Configuration
 end
 class SSHKit::Backend::Netssh::KnownHostsKeys
-  include Mutex_m
 end
 class SSHKit::Backend::Netssh::KnownHosts
-  include Mutex_m
 end
 class SSHKit::Backend::Local < SSHKit::Backend::Abstract
 end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/jsbundling-rails/all/jsbundling-rails.rbi
 #
-# jsbundling-rails-1.3.0
+# jsbundling-rails-1.3.1
 
 module Jsbundling
 end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activejob/all/activejob.rbi
 #
-# activejob-7.1.3.2
+# activejob-7.1.3.4
 
 module ActiveJob
   def self.deprecator; end
@@ -123,6 +123,14 @@ end
 class ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper
 end
 class ActiveJob::QueueAdapters::AsyncAdapter::Scheduler
+end
+class ActiveJob::QueueAdapters::SidekiqAdapter
+end
+class ActiveJob::QueueAdapters::SidekiqAdapter::JobWrapper
+  extend Sidekiq::Job::ClassMethods
+  extend Sidekiq::Job::Options::ClassMethods
+  include Sidekiq::Job
+  include Sidekiq::Job::Options
 end
 class ActiveJob::Base
   extend ActiveJob::Callbacks::ClassMethods

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activesupport/all/activesupport.rbi
 #
-# activesupport-7.1.3.2
+# activesupport-7.1.3.4
 
 module ActiveSupport
   def parse_json_times; end
@@ -73,7 +73,7 @@ class Hash
   def reverse_merge!(other_hash); end
   def reverse_merge(other_hash); end
   def reverse_update(other_hash); end
-  def self.from_xml(xml, disallowed_types = nil); end
+  def self.from_trusted_xml(xml); end
   def self.ruby2_keywords_hash?(arg0); end
   def slice!(*keys); end
   def stringify_keys!; end
@@ -343,7 +343,7 @@ class Array
   def inquiry; end
   def second; end
   def second_to_last; end
-  def self.wrap(object); end
+  def self.[](*arg0); end
   def split(value = nil, &block); end
   def third; end
   def third_to_last; end

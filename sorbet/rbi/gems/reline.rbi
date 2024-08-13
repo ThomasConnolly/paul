@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/reline/all/reline.rbi
 #
-# reline-0.5.4
+# reline-0.5.9
 
 module Reline
   def eof?(*args, **, &block); end
@@ -67,7 +67,6 @@ module Reline
   def self.special_prefixes(*args, **, &block); end
   def self.special_prefixes=(*args, **, &block); end
   def self.ungetc(c); end
-  def self.update_iogate; end
   def self.vi_editing_mode(*args, **, &block); end
   def self.vi_editing_mode?(*args, **, &block); end
   extend Forwardable
@@ -80,13 +79,7 @@ class Reline::Config
   def autocompletion; end
   def autocompletion=(arg0); end
   def bind_key(key, func_name); end
-  def bind_tty_special_chars; end
-  def bind_tty_special_chars=(arg0); end
-  def bind_variable(name, value); end
-  def blink_matching_paren; end
-  def blink_matching_paren=(arg0); end
-  def byte_oriented; end
-  def byte_oriented=(arg0); end
+  def bind_variable(name, value, raw_value); end
   def completion_ignore_case; end
   def completion_ignore_case=(arg0); end
   def convert_meta; end
@@ -101,20 +94,10 @@ class Reline::Config
   def emacs_mode_string=(arg0); end
   def enable_bracketed_paste; end
   def enable_bracketed_paste=(arg0); end
-  def enable_keypad; end
-  def enable_keypad=(arg0); end
-  def expand_tilde; end
-  def expand_tilde=(arg0); end
   def handle_directive(directive, file, no, if_stack); end
-  def history_preserve_point; end
-  def history_preserve_point=(arg0); end
   def history_size; end
   def history_size=(arg0); end
-  def horizontal_scroll_mode; end
-  def horizontal_scroll_mode=(arg0); end
   def initialize; end
-  def input_meta; end
-  def input_meta=(arg0); end
   def inputrc_path; end
   def isearch_terminators; end
   def isearch_terminators=(arg0); end
@@ -123,36 +106,16 @@ class Reline::Config
   def keymap; end
   def keyseq_timeout; end
   def keyseq_timeout=(arg0); end
-  def mark_directories; end
-  def mark_directories=(arg0); end
-  def mark_modified_lines; end
-  def mark_modified_lines=(arg0); end
-  def mark_symlinked_directories; end
-  def mark_symlinked_directories=(arg0); end
-  def match_hidden_files; end
-  def match_hidden_files=(arg0); end
-  def meta_flag; end
-  def meta_flag=(arg0); end
-  def output_meta; end
-  def output_meta=(arg0); end
-  def page_completions; end
-  def page_completions=(arg0); end
+  def loaded?; end
   def parse_keyseq(str); end
-  def prefer_visible_bell; end
-  def prefer_visible_bell=(arg0); end
-  def print_completions_horizontally; end
-  def print_completions_horizontally=(arg0); end
   def read(file = nil); end
   def read_lines(lines, file = nil); end
   def reset; end
-  def reset_default_key_bindings; end
   def reset_oneshot_key_bindings; end
   def retrieve_string(str); end
   def seven_bit_encoding?(encoding); end
   def show_all_if_ambiguous; end
   def show_all_if_ambiguous=(arg0); end
-  def show_all_if_unmodified; end
-  def show_all_if_unmodified=(arg0); end
   def show_mode_in_prompt; end
   def show_mode_in_prompt=(arg0); end
   def test_mode; end
@@ -160,8 +123,6 @@ class Reline::Config
   def vi_cmd_mode_string=(arg0); end
   def vi_ins_mode_string; end
   def vi_ins_mode_string=(arg0); end
-  def visible_stats; end
-  def visible_stats=(arg0); end
 end
 class Reline::Config::InvalidInputrc < RuntimeError
   def file; end
@@ -170,28 +131,26 @@ class Reline::Config::InvalidInputrc < RuntimeError
   def lineno=(arg0); end
 end
 class Reline::KeyActor::Base
-  def default_key_bindings; end
+  def add(key, func); end
+  def clear; end
+  def get(key); end
   def get_method(key); end
-  def initialize; end
-  def reset_default_key_bindings; end
+  def initialize(mapping = nil); end
+  def matching?(key); end
 end
-class Reline::KeyActor::Emacs < Reline::KeyActor::Base
-end
-class Reline::KeyActor::ViCommand < Reline::KeyActor::Base
-end
-class Reline::KeyActor::ViInsert < Reline::KeyActor::Base
+class Reline::KeyActor::Composite
+  def get(key); end
+  def initialize(key_actors); end
+  def matching?(key); end
 end
 module Reline::KeyActor
 end
 class Reline::KeyStroke
-  def compress_meta_key(ary); end
-  def equal?(me, other); end
   def expand(input); end
   def initialize(config); end
   def key_mapping; end
   def match_status(input); end
-  def match_unknown_escape_sequence(input); end
-  def start_with?(me, other); end
+  def match_unknown_escape_sequence(input, vi_mode: nil); end
 end
 class Reline::KillRing
   def append(string, before_p = nil); end
@@ -260,6 +219,7 @@ class Reline::LineEditor
   def backward_kill_word(key); end
   def backward_word(key); end
   def beginning_of_line(key); end
+  def buffer_empty?; end
   def byte_pointer; end
   def byte_pointer=(val); end
   def byteinsert(str, byte_pointer, other); end
@@ -276,11 +236,12 @@ class Reline::LineEditor
   def clear_dialogs; end
   def clear_rendered_lines; end
   def clear_screen(key); end
-  def complete(list, just_show_list); end
+  def complete(_key); end
   def complete_internal_proc(list, is_menu); end
   def completion_append_character; end
   def completion_append_character=(arg0); end
-  def completion_journey_up(key); end
+  def completion_journey_move(direction); end
+  def completion_journey_up(_key); end
   def completion_proc; end
   def completion_proc=(arg0); end
   def confirm_multiline_termination; end
@@ -355,6 +316,7 @@ class Reline::LineEditor
   def initialize(config, encoding); end
   def input_key(key); end
   def insert_new_line(cursor_line, next_line); end
+  def insert_pasted_text(text); end
   def insert_text(text); end
   def io_gate; end
   def key_delete(key); end
@@ -364,7 +326,8 @@ class Reline::LineEditor
   def kill_word(key); end
   def line; end
   def menu(_target, list); end
-  def menu_complete_backward(key); end
+  def menu_complete(_key); end
+  def menu_complete_backward(_key); end
   def modified_lines; end
   def modify_lines(before, complete); end
   def move_completed_list(direction); end
@@ -376,6 +339,8 @@ class Reline::LineEditor
   def output=(arg0); end
   def output_modifier_proc; end
   def output_modifier_proc=(arg0); end
+  def perform_completion(list, just_show_list); end
+  def prev_action_state_value(type); end
   def previous_history(key, arg: nil); end
   def print_nomultiline_prompt(prompt); end
   def process_auto_indent(line_index = nil, cursor_dependent: nil, add_newline: nil); end
@@ -384,7 +349,9 @@ class Reline::LineEditor
   def prompt_list; end
   def prompt_proc; end
   def prompt_proc=(arg0); end
+  def push_input_lines; end
   def quoted_insert(str, arg: nil); end
+  def redo(_key); end
   def render_differential; end
   def render_finished; end
   def render_full_content; end
@@ -398,6 +365,7 @@ class Reline::LineEditor
   def retrieve_completion_journey_state; end
   def reverse_search_history(key); end
   def run_for_operators(key, method_symbol, &block); end
+  def save_old_buffer; end
   def screen_height; end
   def screen_scroll_top; end
   def screen_width; end
@@ -407,12 +375,16 @@ class Reline::LineEditor
   def search_prev_char(key, arg, need_next_char = nil); end
   def self_insert(key); end
   def set_current_line(line, byte_pointer = nil); end
+  def set_current_lines(lines, byte_pointer = nil, line_index = nil); end
   def set_mark(key); end
+  def set_next_action_state(type, value); end
   def set_pasting_state(in_pasting); end
   def set_signal_handlers; end
   def split_by_width(str, max_width, offset: nil); end
   def transpose_chars(key); end
   def transpose_words(key); end
+  def trim_input_lines; end
+  def undo(_key); end
   def unix_line_discard(key); end
   def unix_word_rubout(key); end
   def upcase_word(key); end
@@ -581,6 +553,37 @@ module Reline::Terminfo
 end
 class Reline::Terminfo::TerminfoError < StandardError
 end
+class Reline::Dumb < Reline::IO
+  def clear_screen; end
+  def cursor_pos; end
+  def deprep(otio); end
+  def dumb?; end
+  def encoding; end
+  def erase_after_cursor; end
+  def get_screen_size; end
+  def getc(_timeout_second); end
+  def hide_cursor; end
+  def in_pasting?; end
+  def initialize(encoding: nil); end
+  def input=(val); end
+  def move_cursor_column(val); end
+  def move_cursor_down(val); end
+  def move_cursor_up(val); end
+  def prep; end
+  def scroll_down(val); end
+  def set_default_key_bindings(_); end
+  def set_screen_size(rows, columns); end
+  def set_winch_handler(&handler); end
+  def show_cursor; end
+  def ungetc(c); end
+  def with_raw_input; end
+end
+class Reline::IO
+  def dumb?; end
+  def reset_color_sequence; end
+  def self.decide_io_gate; end
+  def win?; end
+end
 class Reline::Face
   def self.[](name); end
   def self.config(name, &block); end
@@ -602,72 +605,48 @@ class Reline::Face::Config
   def sgr_rgb_256color(key, value); end
   def sgr_rgb_truecolor(key, value); end
 end
-class Reline::GeneralIO
-  def self.clear_screen; end
-  def self.cursor_pos; end
-  def self.deprep(otio); end
-  def self.encoding; end
-  def self.erase_after_cursor; end
-  def self.get_screen_size; end
-  def self.getc(_timeout_second); end
-  def self.hide_cursor; end
-  def self.in_pasting?; end
-  def self.input=(val); end
-  def self.move_cursor_column(val); end
-  def self.move_cursor_down(val); end
-  def self.move_cursor_up(val); end
-  def self.prep; end
-  def self.reset(encoding: nil); end
-  def self.scroll_down(val); end
-  def self.set_default_key_bindings(_); end
-  def self.set_screen_size(rows, columns); end
-  def self.set_winch_handler(&handler); end
-  def self.show_cursor; end
-  def self.ungetc(c); end
-  def self.win?; end
-  def self.with_raw_input; end
-end
-class Reline::ANSI
-  def self.clear_screen; end
-  def self.cursor_pos; end
-  def self.deprep(otio); end
-  def self.empty_buffer?; end
-  def self.encoding; end
-  def self.erase_after_cursor; end
-  def self.get_screen_size; end
-  def self.getc(timeout_second); end
-  def self.getc_with_bracketed_paste(timeout_second); end
-  def self.hide_cursor; end
-  def self.in_pasting?; end
-  def self.inner_getc(timeout_second); end
-  def self.input=(val); end
-  def self.move_cursor_column(x); end
-  def self.move_cursor_down(x); end
-  def self.move_cursor_up(x); end
-  def self.output=(val); end
-  def self.prep; end
-  def self.retrieve_keybuffer; end
-  def self.scroll_down(x); end
-  def self.set_default_key_bindings(config, allow_terminfo: nil); end
-  def self.set_default_key_bindings_ansi_cursor(config); end
-  def self.set_default_key_bindings_comprehensive_list(config); end
-  def self.set_default_key_bindings_terminfo(config); end
-  def self.set_screen_size(rows, columns); end
-  def self.set_winch_handler(&handler); end
-  def self.show_cursor; end
-  def self.ungetc(c); end
-  def self.win?; end
-  def self.with_raw_input; end
+class Reline::ANSI < Reline::IO
+  def both_tty?; end
+  def clear_screen; end
+  def cursor_pos; end
+  def deprep(otio); end
+  def empty_buffer?; end
+  def encoding; end
+  def erase_after_cursor; end
+  def get_screen_size; end
+  def getc(timeout_second); end
+  def hide_cursor; end
+  def in_pasting?; end
+  def initialize; end
+  def inner_getc(timeout_second); end
+  def input=(val); end
+  def move_cursor_column(x); end
+  def move_cursor_down(x); end
+  def move_cursor_up(x); end
+  def output=(val); end
+  def prep; end
+  def read_bracketed_paste; end
+  def retrieve_keybuffer; end
+  def scroll_down(x); end
+  def set_bracketed_paste_key_bindings(config); end
+  def set_default_key_bindings(config, allow_terminfo: nil); end
+  def set_default_key_bindings_ansi_cursor(config); end
+  def set_default_key_bindings_comprehensive_list(config); end
+  def set_default_key_bindings_terminfo(config); end
+  def set_screen_size(rows, columns); end
+  def set_winch_handler(&handler); end
+  def show_cursor; end
+  def ungetc(c); end
+  def with_raw_input; end
 end
 class Reline::ConfigEncodingConversionError < StandardError
 end
 class Reline::Key < Struct
-  def ==(other); end
   def char; end
   def char=(_); end
   def combined_char; end
   def combined_char=(_); end
-  def match?(other); end
+  def match?(sym); end
   def self.[](*arg0); end
   def self.inspect; end
   def self.keyword_init?; end
@@ -760,8 +739,6 @@ class Reline::Core
   def pre_input_hook=(p); end
   def prompt_proc; end
   def prompt_proc=(p); end
-  def read_2nd_character_of_key_sequence(keyseq_timeout, buffer, c, block); end
-  def read_escaped_key(keyseq_timeout, c, block); end
   def read_io(keyseq_timeout, &block); end
   def readline(prompt = nil, add_hist = nil); end
   def readmultiline(prompt = nil, add_hist = nil, &confirm_multiline_termination); end

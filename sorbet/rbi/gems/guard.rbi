@@ -12,9 +12,9 @@
 module Guard
   extend Guard::Deprecated::Guard::ClassMethods
 end
-class Anonymous_Nenv_Environment_101 < Nenv::Environment
+class Anonymous_Nenv_Environment_97 < Nenv::Environment
 end
-class Guard::Config < Anonymous_Nenv_Environment_101
+class Guard::Config < Anonymous_Nenv_Environment_97
 end
 module Guard::UI
   include Guard::UI::Colors

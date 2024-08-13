@@ -13,8 +13,6 @@ module Rackup
 end
 module Rackup::Handler
 end
-module Rack
-end
 class Rackup::Server
 end
 class Rackup::Server::Options

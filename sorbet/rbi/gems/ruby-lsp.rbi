@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/ruby-lsp/all/ruby-lsp.rbi
 #
-# ruby-lsp-0.16.6
+# ruby-lsp-0.17.2
 
 module RubyLsp
 end

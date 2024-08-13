@@ -17,5 +17,5 @@ class MultiXml::NoParserError < StandardError
 end
 class MultiXml::DisallowedTypeError < StandardError
 end
-module InvalidName___Class_0x00___FileLike_114
+module InvalidName___Class_0x00___FileLike_110
 end

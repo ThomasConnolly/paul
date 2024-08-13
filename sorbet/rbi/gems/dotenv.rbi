@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/dotenv/all/dotenv.rbi
 #
-# dotenv-3.1.1
+# dotenv-3.1.2
 
 module Dotenv
   extend Dotenv

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activerecord-import/all/activerecord-import.rbi
 #
-# activerecord-import-1.6.0
+# activerecord-import-1.7.0
 
 module ActiveRecord::Import::ConnectionAdapters
 end

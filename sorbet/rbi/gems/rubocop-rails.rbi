@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rubocop-rails/all/rubocop-rails.rbi
 #
-# rubocop-rails-2.24.1
+# rubocop-rails-2.25.1
 
 module RuboCop
 end
@@ -515,4 +515,10 @@ class RuboCop::Cop::Rails::WhereNot < RuboCop::Cop::Base
   include RuboCop::Cop::RangeHelp
 end
 class RuboCop::Cop::Rails::WhereNotWithMultipleConditions < RuboCop::Cop::Base
+end
+class RuboCop::Cop::Rails::WhereRange < RuboCop::Cop::Base
+  extend RuboCop::Cop::AutoCorrector
+  extend RuboCop::Cop::TargetRailsVersion
+  extend RuboCop::Cop::TargetRubyVersion
+  include RuboCop::Cop::RangeHelp
 end

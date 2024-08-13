@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/turbo-rails/all/turbo-rails.rbi
 #
-# turbo-rails-2.0.5
+# turbo-rails-2.0.6
 
 module Turbo
   def current_request_id; end
@@ -31,9 +31,9 @@ module Turbo
 end
 class Turbo::Engine < Rails::Engine
 end
-module Anonymous_Module_93
+module Anonymous_Module_88
 end
-module Anonymous_Module_94
+module Anonymous_Module_89
 end
 module Turbo::Broadcastable
   extend ActiveSupport::Concern
@@ -73,17 +73,17 @@ class Turbo::StreamsChannel < ActionCable::Channel::Base
   extend Turbo::Streams::Broadcasts
   include Turbo::Streams::StreamName::ClassMethods
 end
-module Anonymous_Module_95
+module Anonymous_Module_90
   extend ActiveSupport::Concern
-  extend Anonymous_Module_93
-  extend Anonymous_Module_94
+  extend Anonymous_Module_88
+  extend Anonymous_Module_89
   include ActionDispatch::Routing::UrlFor
-  include Anonymous_Module_93
-  include Anonymous_Module_94
+  include Anonymous_Module_88
+  include Anonymous_Module_89
 end
 class Turbo::Native::NavigationController < ActionController::Base
   include ActionDispatch::Routing::UrlFor
-  include Anonymous_Module_95
+  include Anonymous_Module_90
 end
 class Turbo::Debouncer
 end

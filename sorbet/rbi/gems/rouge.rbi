@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rouge/all/rouge.rbi
 #
-# rouge-4.2.1
+# rouge-4.3.0
 
 module Rouge
 end
@@ -168,11 +168,15 @@ class Rouge::Token::Tokens::Generic::Deleted < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic::Emph < Rouge::Token::Tokens::Generic
 end
+class Rouge::Token::Tokens::Generic::EmphStrong < Rouge::Token::Tokens::Generic
+end
 class Rouge::Token::Tokens::Generic::Error < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic::Heading < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic::Inserted < Rouge::Token::Tokens::Generic
+end
+class Rouge::Token::Tokens::Generic::Lineno < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic::Output < Rouge::Token::Tokens::Generic
 end
@@ -183,8 +187,6 @@ end
 class Rouge::Token::Tokens::Generic::Subheading < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic::Traceback < Rouge::Token::Tokens::Generic
-end
-class Rouge::Token::Tokens::Generic::Lineno < Rouge::Token::Tokens::Generic
 end
 class Rouge::Token::Tokens::Generic < Rouge::Token
 end
@@ -395,6 +397,8 @@ end
 class Rouge::Lexers::IDLang < Rouge::RegexLexer
 end
 class Rouge::Lexers::Idris < Rouge::RegexLexer
+end
+class Rouge::Lexers::IecST < Rouge::RegexLexer
 end
 class Rouge::Lexers::IgorPro < Rouge::RegexLexer
 end

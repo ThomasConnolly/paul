@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rubocop/all/rubocop.rbi
 #
-# rubocop-1.63.4
+# rubocop-1.65.1
 
 module RuboCop
 end
@@ -124,6 +124,8 @@ end
 class RuboCop::Cop::Corrector < Parser::Source::TreeRewriter
 end
 class RuboCop::Cop::Force
+end
+class RuboCop::Cop::Force::HookError < StandardError
 end
 class RuboCop::Cop::Severity
   include Comparable
@@ -503,6 +505,9 @@ class RuboCop::Cop::Bundler::OrderedGems < RuboCop::Cop::Base
   include RuboCop::Cop::OrderedGemNode
 end
 module RuboCop::Cop::Gemspec
+end
+class RuboCop::Cop::Gemspec::AddRuntimeDependency < RuboCop::Cop::Base
+  extend RuboCop::Cop::AutoCorrector
 end
 class RuboCop::Cop::Gemspec::DependencyVersion < RuboCop::Cop::Base
   include RuboCop::Cop::ConfigurableEnforcedStyle
@@ -1144,6 +1149,7 @@ class RuboCop::Cop::Lint::IdentityComparison < RuboCop::Cop::Base
   extend RuboCop::Cop::AutoCorrector
 end
 class RuboCop::Cop::Lint::ImplicitStringConcatenation < RuboCop::Cop::Base
+  extend RuboCop::Cop::AutoCorrector
 end
 class RuboCop::Cop::Lint::IncompatibleIoSelectWithFiberScheduler < RuboCop::Cop::Base
   extend RuboCop::Cop::AutoCorrector
@@ -2444,6 +2450,9 @@ class RuboCop::Cop::Style::Semicolon < RuboCop::Cop::Base
 end
 class RuboCop::Cop::Style::Send < RuboCop::Cop::Base
 end
+class RuboCop::Cop::Style::SendWithLiteralMethodName < RuboCop::Cop::Base
+  extend RuboCop::Cop::AutoCorrector
+end
 class RuboCop::Cop::Style::SignalException < RuboCop::Cop::Base
   extend RuboCop::Cop::AutoCorrector
   include RuboCop::Cop::ConfigurableEnforcedStyle
@@ -2511,6 +2520,9 @@ end
 class RuboCop::Cop::Style::StructInheritance < RuboCop::Cop::Base
   extend RuboCop::Cop::AutoCorrector
   include RuboCop::Cop::RangeHelp
+end
+class RuboCop::Cop::Style::SuperArguments < RuboCop::Cop::Base
+  extend RuboCop::Cop::AutoCorrector
 end
 class RuboCop::Cop::Style::SuperWithArgsParentheses < RuboCop::Cop::Base
   extend RuboCop::Cop::AutoCorrector

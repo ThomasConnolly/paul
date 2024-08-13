@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actionmailer/all/actionmailer.rbi
 #
-# actionmailer-7.1.3.2
+# actionmailer-7.1.3.4
 
 module ActionMailer
   def self.deprecator; end
@@ -125,7 +125,7 @@ class ActionMailer::Base < AbstractController::Base
 end
 module ActionMailer::Base::HelperMethods
   include ActionMailer::MailHelper
-  include Anonymous_Module_13
+  include Anonymous_Module_15
 end
 class ActionMailer::Base::NullMail
 end

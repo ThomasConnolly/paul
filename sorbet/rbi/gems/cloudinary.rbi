@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/cloudinary/all/cloudinary.rbi
 #
-# cloudinary-2.0.2
+# cloudinary-2.1.1
 
 module Cloudinary
   def self.USER_AGENT; end
@@ -111,14 +111,4 @@ module Cloudinary::BaseConfig
 end
 module Cloudinary::Config
   include Cloudinary::BaseConfig
-end
-module ActiveStorage
-end
-class ActiveStorage::BlobKey < String
-end
-class ActiveStorage::Blob < ActiveStorage::Record
-end
-class ActiveStorage::Service::CloudinaryService < ActiveStorage::Service
-end
-module ActiveStorage::Service::CloudinaryService::Headers
 end

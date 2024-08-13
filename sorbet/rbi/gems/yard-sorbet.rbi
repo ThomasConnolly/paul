@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/yard-sorbet/all/yard-sorbet.rbi
 #
-# yard-sorbet-0.8.1
+# yard-sorbet-0.9.0
 
 module YARDSorbet
 end

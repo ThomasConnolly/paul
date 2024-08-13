@@ -5,9 +5,9 @@
 #
 # If you would like to make changes to this file, great! Please create the gem's shim here:
 #
-#   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/ffi/all/ffi.rbi
+#   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/ffi-1.17.0-x86_64-linux/all/ffi-1.17.0-x86_64-linux.rbi
 #
-# ffi-1.16.3
+# ffi-1.17.0-x86_64-linux-gnu
 
 module FFI
   def custom_typedefs; end
@@ -158,6 +158,7 @@ class FFI::AbstractMemory
   def read_array_of_long_long(arg0); end
   def read_array_of_pointer(arg0); end
   def read_array_of_short(arg0); end
+  def read_array_of_string(*arg0); end
   def read_array_of_uchar(arg0); end
   def read_array_of_uint(arg0); end
   def read_array_of_uint16(arg0); end
@@ -539,7 +540,7 @@ class FFI::AutoPointer < FFI::Pointer
   def autorelease=(autorelease); end
   def autorelease?; end
   def free; end
-  def initialize(ptr, proc = nil, &block); end
+  def initialize(ptr, proc = nil); end
   def self.from_native(val, ctx); end
   def self.native_type; end
   extend FFI::DataConverter

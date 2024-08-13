@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/recaptcha/all/recaptcha.rbi
 #
-# recaptcha-5.16.0
+# recaptcha-5.17.0
 
 module Recaptcha
   def self.action_valid?(action, expected_action); end

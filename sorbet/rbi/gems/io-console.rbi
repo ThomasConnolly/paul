@@ -44,7 +44,7 @@ class IO
   def winsize; end
   def winsize=(arg0); end
 end
-module InvalidName_IO__generic_readable_96
+module InvalidName_IO__generic_readable_91
   def getch(*arg0); end
   def getpass(*arg0); end
 end

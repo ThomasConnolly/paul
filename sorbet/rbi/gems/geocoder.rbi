@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/geocoder/all/geocoder.rbi
 #
-# geocoder-1.8.2
+# geocoder-1.8.3
 
 module Geocoder
   def self.address(query, options = nil); end

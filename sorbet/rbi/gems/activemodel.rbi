@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/activemodel/all/activemodel.rbi
 #
-# activemodel-7.1.3.2
+# activemodel-7.1.3.4
 
 module ActiveModel
   def self.deprecator; end

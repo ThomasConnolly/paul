@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rubocop-ast/all/rubocop-ast.rbi
 #
-# rubocop-ast-1.31.3
+# rubocop-ast-1.32.0
 
 module RuboCop
 end
@@ -20,8 +20,6 @@ module RuboCop::AST::Ext::Range
 end
 class Parser::Source::Range
   include RuboCop::AST::Ext::Range
-end
-module RuboCop::AST::Ext::RangeMinMax
 end
 class RuboCop::AST::NodePattern
   extend Forwardable
@@ -231,6 +229,10 @@ end
 class RuboCop::AST::Procarg0Node < RuboCop::AST::ArgNode
 end
 class RuboCop::AST::RangeNode < RuboCop::AST::Node
+end
+class RuboCop::AST::RationalNode < RuboCop::AST::Node
+  include RuboCop::AST::BasicLiteralNode
+  include RuboCop::AST::NumericNode
 end
 class RuboCop::AST::RegexpNode < RuboCop::AST::Node
 end

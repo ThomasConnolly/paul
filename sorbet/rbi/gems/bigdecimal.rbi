@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/bigdecimal/all/bigdecimal.rbi
 #
-# bigdecimal-3.1.7
+# bigdecimal-3.1.8
 
 module Kernel
   def BigDecimal(*arg0); end

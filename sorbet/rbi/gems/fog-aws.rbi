@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/fog-aws/all/fog-aws.rbi
 #
-# fog-aws-3.22.0
+# fog-aws-3.24.0
 
 module Fog
 end

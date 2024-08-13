@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/faraday/all/faraday.rbi
 #
-# faraday-2.9.0
+# faraday-2.10.1
 
 module Faraday
   def self.default_adapter; end
@@ -74,6 +74,8 @@ class Faraday::SSLError < Faraday::Error
 end
 class Faraday::ParsingError < Faraday::Error
 end
+class Faraday::InitializationError < Faraday::Error
+end
 module Faraday::MiddlewareRegistry
   def load_middleware(key); end
   def lookup_middleware(key); end
@@ -123,7 +125,8 @@ class Faraday::Utils::Headers < Hash
   def []=(key, val); end
   def add_parsed(key, value); end
   def delete(key); end
-  def fetch(key, *args, &block); end
+  def dig(key, *rest); end
+  def fetch(key, *, **, &); end
   def has_key?(key); end
   def include?(key); end
   def initialize(hash = nil); end
@@ -496,6 +499,9 @@ class Faraday::Middleware
   def close; end
   def initialize(app = nil, options = nil); end
   def options; end
+  def self.default_options; end
+  def self.default_options=(options = nil); end
+  def self.validate_default_options(options); end
   extend Faraday::MiddlewareRegistry
 end
 class Faraday::Adapter

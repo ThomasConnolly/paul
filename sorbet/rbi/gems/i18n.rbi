@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/i18n/all/i18n.rbi
 #
-# i18n-1.14.4
+# i18n-1.14.5
 
 module I18n
   def self.fallbacks; end
@@ -110,6 +110,8 @@ module I18n::Base
   def exception_handler=(value); end
   def exists?(key, _locale = nil, locale: nil, **options); end
   def handle_exception(handling, exception, locale, key, options); end
+  def interpolation_keys(key, **options); end
+  def interpolation_keys_from_translation(translation); end
   def l(object, locale: nil, format: nil, **options); end
   def load_path; end
   def load_path=(value); end

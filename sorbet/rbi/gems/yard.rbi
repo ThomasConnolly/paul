@@ -185,8 +185,8 @@ module YARD::Handlers::Ruby::StructHandlerMethods
   include YARD::CodeObjects
 end
 class YARD::Handlers::Ruby::ClassHandler < YARD::Handlers::Ruby::Base
-  include Anonymous_Module_119
+  include Anonymous_Module_115
   include YARD::Handlers::Ruby::StructHandlerMethods
 end
-module Anonymous_Module_119
+module Anonymous_Module_115
 end

@@ -1,44 +1,49 @@
+# typed: false
 # frozen_string_literal: true
 
 class WebhooksController < ApplicationController
   skip_forgery_protection
-
   def create
-    unless valid_signature?
-      render(json: { message: 'Invalid signature' }, status: 400)
+    @
+    payload = request.body.read
+    sig_header = request.env['HTTP_STRIPE_SIGNATURE']
+    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+
+    begin
+      event = Stripe::Webhook.construct_event(
+        payload, sig_header, endpoint_secret
+      )
+    rescue JSON::ParserError => e
+      # Invalid payload
+      render json: { error: e.message }, status: 400
+      return
+    rescue Stripe::SignatureVerificationError => e
+      # Invalid signature
+      render json: { error: e.message }, status: 400
       return
     end
 
-    external_id = params[:id]
-    data = params.except(:controller, :action, :webhook).permit!
-
-    # idempotent
-    if Webhook.find_by(external_id:)
-      render(json: { message: 'Webhook already processed' }, status: 200)
-      return
+    # Handle the event
+    case event.type
+    when 'payment_intent.succeeded'
+      payment_intent = event.data.object
+      # Handle successful payment
+    when 'payment_intent.payment_failed'
+      payment_intent = event.data.object
+      # Handle failed payment
+    else
+      puts "Unhandled event type: #{event.type}"
     end
 
-    webhook = Webhook.create!(external_id:, data:, status: 'pending')
-    render json: webhook, status: :created
-    HandleWebhooksJob.perform_later(webhook)
+    render json: { received: true }
   end
 
   private
 
-  def valid_signature?
-    wh_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
-    Stripe::Webhook.construct_event(
-      request.body.read,
-      request.env['HTTP_STRIPE_SIGNATURE'],
-      wh_secret
-    )
-    true
-  rescue Stripe::SignatureVerificationError => e
-    Rails.logger.error "signature verification failed: #{e.message}"
-    false
-  end
+  # idempotent
+  render(json: { message: 'Webhook already processed' }, status: 200) if Webhook.find_by(external_id:)
 
   def webhook_params
-    params.require(:webhook).permit(:external_id, :data, :status)
+    params.require(:webhook).permit(:external_id, :type, :data, :status)
   end
 end

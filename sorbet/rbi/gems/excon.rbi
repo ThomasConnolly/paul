@@ -7,12 +7,12 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/excon/all/excon.rbi
 #
-# excon-0.110.0
+# excon-0.111.0
 
 module Excon
   def self.connect(url, params = nil, &block); end
   def self.defaults; end
-  def self.defaults=(new_defaults); end
+  def self.defaults=(arg0); end
   def self.delete(url, params = nil, &block); end
   def self.display_warning(warning); end
   def self.get(url, params = nil, &block); end

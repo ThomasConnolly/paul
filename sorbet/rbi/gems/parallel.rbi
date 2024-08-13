@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/parallel/all/parallel.rbi
 #
-# parallel-1.24.0
+# parallel-1.25.1
 
 module Parallel
 end

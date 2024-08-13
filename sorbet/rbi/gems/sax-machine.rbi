@@ -127,7 +127,7 @@ module SAXMachine::SAXAbstractHandler
   def set_attributes_on(object, attributes); end
   def stack; end
 end
-class Anonymous_Struct_92 < Struct
+class Anonymous_Struct_87 < Struct
   def buffer; end
   def buffer=(_); end
   def config; end
@@ -140,7 +140,7 @@ class Anonymous_Struct_92 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class SAXMachine::SAXAbstractHandler::StackNode < Anonymous_Struct_92
+class SAXMachine::SAXAbstractHandler::StackNode < Anonymous_Struct_87
   def initialize(object, config = nil, buffer = nil); end
 end
 class SAXMachine::SAXNokogiriHandler < Nokogiri::XML::SAX::Document

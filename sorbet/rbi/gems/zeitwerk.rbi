@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/zeitwerk/all/zeitwerk.rbi
 #
-# zeitwerk-2.6.13
+# zeitwerk-2.6.17
 
 module Zeitwerk::RealModName
   def real_mod_name(mod); end
@@ -15,19 +15,26 @@ end
 module Zeitwerk::Internal
   def internal(method_name); end
 end
+class Zeitwerk::Cref
+  def autoload(abspath); end
+  def autoload?; end
+  def cname; end
+  def defined?; end
+  def get; end
+  def initialize(mod, cname); end
+  def path; end
+  def remove; end
+  def set(value); end
+  include Zeitwerk::RealModName
+end
 module Zeitwerk::Loader::Helpers
-  def cdef?(parent, cname); end
-  def cget(parent, cname); end
   def cname_for(basename, abspath); end
-  def cpath(parent, cname); end
-  def crem(parent, cname); end
   def dir?(path); end
   def has_at_least_one_ruby_file?(dir); end
   def hidden?(basename); end
   def log(message); end
   def ls(dir); end
   def ruby?(path); end
-  def strict_autoload_path(parent, cname); end
   def walk_up(abspath); end
 end
 module Zeitwerk::Loader::Helpers::CNAME_VALIDATOR
@@ -103,19 +110,20 @@ class Zeitwerk::Loader
   def __shadowed_file?(file); end
   def __shadowed_files; end
   def __to_unload; end
-  def autoload_file(parent, cname, file); end
-  def autoload_path_set_by_me_for?(parent, cname); end
-  def autoload_subdir(parent, cname, subdir); end
+  def all_expected_cpaths; end
+  def autoload_file(cref, file); end
+  def autoload_path_set_by_me_for?(cref); end
+  def autoload_subdir(cref, subdir); end
   def autoloaded_dirs; end
   def autoloads; end
   def cpath_expected_at(path); end
-  def define_autoload(parent, cname, abspath); end
+  def define_autoload(cref, abspath); end
   def define_autoloads_for_dir(dir, parent); end
   def dirs_autoload_monitor; end
   def initialize; end
   def mutex; end
   def namespace_dirs; end
-  def promote_namespace_from_implicit_to_explicit(dir:, file:, parent:, cname:); end
+  def promote_namespace_from_implicit_to_explicit(dir:, file:, cref:); end
   def raise_if_conflicting_directory(dir); end
   def register_explicit_namespace(cpath); end
   def reload; end
@@ -132,8 +140,8 @@ class Zeitwerk::Loader
   def shadowed_files; end
   def to_unload; end
   def unload; end
-  def unload_autoload(parent, cname); end
-  def unload_cref(parent, cname); end
+  def unload_autoload(cref); end
+  def unload_cref(cref); end
   def unloadable_cpath?(cpath); end
   def unloadable_cpaths; end
   def unregister; end

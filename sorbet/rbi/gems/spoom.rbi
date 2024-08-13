@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/spoom/all/spoom.rbi
 #
-# spoom-1.3.1
+# spoom-1.4.2
 
 module Spoom
   extend T::Sig

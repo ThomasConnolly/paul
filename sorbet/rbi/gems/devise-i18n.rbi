@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/devise-i18n/all/devise-i18n.rbi
 #
-# devise-i18n-1.12.0
+# devise-i18n-1.12.1
 
 module DeviseI18n
   def self.railtie_helpers_paths; end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/ruby-lsp-rails/all/ruby-lsp-rails.rbi
 #
-# ruby-lsp-rails-0.3.5
+# ruby-lsp-rails-0.3.11
 
 module RubyLsp
 end

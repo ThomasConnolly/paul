@@ -494,6 +494,10 @@ module Devise::Models::Registerable
 end
 module Devise::Models::Registerable::ClassMethods
 end
+module Devise::Models::Validatable
+end
+module Devise::Models::Validatable::ClassMethods
+end
 module Devise::Models::Confirmable
   extend ActiveSupport::Concern
 end
@@ -523,16 +527,13 @@ end
 class Devise::RegistrationsController < DeviseController
   include Anonymous_Module_30
 end
-class Devise::SessionsController < DeviseController
-  include Anonymous_Module_30
-end
 module Devise::Mailers::Helpers
   extend ActiveSupport::Concern
 end
 class Devise::Mailer < ActionMailer::Base
   extend Devise::Controllers::ScopedViews::ClassMethods
   include ActionDispatch::Routing::UrlFor
-  include Anonymous_Module_91
+  include Anonymous_Module_86
   include Devise::Controllers::ScopedViews
   include Devise::Mailers::Helpers
 end
@@ -543,6 +544,9 @@ class Devise::OmniauthCallbacksController < DeviseController
   include Anonymous_Module_30
 end
 class Devise::PasswordsController < DeviseController
+  include Anonymous_Module_30
+end
+class Devise::SessionsController < DeviseController
   include Anonymous_Module_30
 end
 class Devise::UnlocksController < DeviseController

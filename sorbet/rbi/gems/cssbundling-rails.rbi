@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/cssbundling-rails/all/cssbundling-rails.rbi
 #
-# cssbundling-rails-1.4.0
+# cssbundling-rails-1.4.1
 
 module Cssbundling
 end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/public_suffix/all/public_suffix.rbi
 #
-# public_suffix-5.0.5
+# public_suffix-6.0.1
 
 module PublicSuffix
 end

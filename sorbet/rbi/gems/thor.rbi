@@ -20,7 +20,7 @@ module Thor::CoreExt
 end
 class Thor::CoreExt::HashWithIndifferentAccess < Hash
 end
-class Thor::Command < Anonymous_Struct_102
+class Thor::Command < Anonymous_Struct_98
 end
 class Thor::HiddenCommand < Thor::Command
 end

@@ -7,16 +7,15 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/pundit/all/pundit.rbi
 #
-# pundit-2.3.1
+# pundit-2.3.2
 
 module Pundit
-  def self.authorize(user, possibly_namespaced_record, query, policy_class: nil, cache: nil); end
+  def self.authorize(user, record, query, policy_class: nil, cache: nil); end
   def self.included(base); end
-  def self.policy!(user, record); end
-  def self.policy(user, record); end
-  def self.policy_scope!(user, scope); end
-  def self.policy_scope(user, scope); end
-  def self.pundit_model(record); end
+  def self.policy!(user, *args, **kwargs, &block); end
+  def self.policy(user, *args, **kwargs, &block); end
+  def self.policy_scope!(user, *args, **kwargs, &block); end
+  def self.policy_scope(user, *args, **kwargs, &block); end
 end
 class Pundit::PolicyFinder
   def find(subject); end
@@ -36,6 +35,7 @@ module Pundit::Authorization
   def policy(record); end
   def policy_scope(scope, policy_scope_class: nil); end
   def policy_scopes; end
+  def pundit; end
   def pundit_params_for(record); end
   def pundit_policy_authorized?; end
   def pundit_policy_scope(scope); end
@@ -46,6 +46,29 @@ module Pundit::Authorization
   def verify_authorized; end
   def verify_policy_scoped; end
   extend ActiveSupport::Concern
+end
+class Pundit::Context
+  def authorize(possibly_namespaced_record, query:, policy_class:); end
+  def cached_find(record); end
+  def initialize(user:, policy_cache: nil); end
+  def policy!(record); end
+  def policy(record); end
+  def policy_cache; end
+  def policy_finder(record); end
+  def policy_scope!(scope); end
+  def policy_scope(scope); end
+  def pundit_model(record); end
+  def user; end
+end
+module Pundit::CacheStore
+end
+class Pundit::CacheStore::NullStore
+  def fetch(*, **); end
+  def self.instance; end
+end
+class Pundit::CacheStore::LegacyStore
+  def fetch(user:, record:); end
+  def initialize(hash = nil); end
 end
 class Pundit::Error < StandardError
 end

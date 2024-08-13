@@ -50,5 +50,5 @@ class Rack::Session::Cookie::Identity
 end
 class Rack::Session::Cookie::Marshal
 end
-class Rack::Session::Cookie::SessionId < Anonymous_Delegator_106
+class Rack::Session::Cookie::SessionId < Anonymous_Delegator_102
 end

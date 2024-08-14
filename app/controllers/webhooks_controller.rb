@@ -4,8 +4,7 @@
 class WebhooksController < ApplicationController
   skip_forgery_protection
   def create
-    @
-    payload = request.body.read
+    @payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
     endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
 

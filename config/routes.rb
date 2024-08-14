@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/webhooks' to: 'webhooks#create'
+  resources :webhooks, only: :create
 
   resources :donations
   scope '/checkout_donations' do

@@ -14,5 +14,7 @@
 #
 
 class Webhook < ApplicationRecord
+  validates :event_id, presence: true, uniqueness: true
+  validates :data, presence: true
   enum :status, { pending: 0, processing: 1, processed: 2, failed: 3 }
 end

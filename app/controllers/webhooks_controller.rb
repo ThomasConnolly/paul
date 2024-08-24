@@ -34,7 +34,16 @@ class WebhooksController < ApplicationController
     case event.type
     when 'payment_intent.succeeded'
       payment_intent = event.data.object
-      # Handle successful payment
+      begin
+        payment_method = Stripe::PaymentMethod.retrieve(payment_intent.payment_method)
+        cardholder_name = payment_method.billing_details.name
+        Rails.logger.info("Payment succeeded for #{cardholder_name}")
+        # Process the payment and use the cardholder_name as needed
+      rescue Stripe::StripeError => e
+        Rails.logger.error("Stripe error: #{e.message}")
+        render json: { error: e.message }, status: 500
+        return
+      end
     when 'payment_intent.payment_failed'
       payment_intent = event.data.object
       # Handle failed payment

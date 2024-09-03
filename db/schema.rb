@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_17_220732) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_03_133527) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -353,18 +353,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_17_220732) do
   end
 
   create_table "stripe_reports", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "pledge_id"
-    t.bigint "donation_id"
     t.integer "amount"
     t.integer "fee"
     t.integer "net"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date_paid"
-    t.index ["donation_id"], name: "index_stripe_reports_on_donation_id"
-    t.index ["pledge_id"], name: "index_stripe_reports_on_pledge_id"
-    t.index ["user_id"], name: "index_stripe_reports_on_user_id"
+    t.string "donor_name"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -518,8 +513,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_17_220732) do
   add_foreign_key "donations", "users"
   add_foreign_key "stories", "users"
   add_foreign_key "story_assignments", "story_ideas"
-  add_foreign_key "stripe_reports", "donations"
-  add_foreign_key "stripe_reports", "pledges"
-  add_foreign_key "stripe_reports", "users"
   add_foreign_key "todo_items", "todo_lists"
 end

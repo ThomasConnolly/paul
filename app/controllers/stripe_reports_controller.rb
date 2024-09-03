@@ -35,7 +35,7 @@ class StripeReportsController < ApplicationController
   end
 
   def stripe_report_params
-    params.require(:stripe_report).permit(:user_id, :amount, :fee, :net, :donation_id, :pledge_id, :submit)
+    params.require(:stripe_report).permit(:amount, :fee, :net, :donation_id, :submit)
   end
 
   def admin_only

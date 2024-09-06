@@ -3,7 +3,6 @@ class WebhooksController < ApplicationController
   def create
     data = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-
     webhook_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
 
     begin
@@ -19,6 +18,18 @@ class WebhooksController < ApplicationController
       render json: { error: e.message }, status: 400
       return
     end
+
+    # Extract necessary data from the event
+    event_data = JSON.parse(data)
+    event_id = event_data['id']
+    status = 'pending'
+
+    # Save the webhook data to the database
+    Webhook.create!(
+      event_id:,
+      data: event_data,
+      status:
+    )
 
     WebhookJob.perform_later(event.to_json)
 

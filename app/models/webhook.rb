@@ -5,12 +5,12 @@
 #
 # Table name: webhooks
 #
-#  id          :bigint           not null, primary key
-#  external_id :string
-#  data        :json
-#  status      :integer          default("pending")
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id         :bigint           not null, primary key
+#  event_id   :string
+#  data       :json
+#  status     :integer          default("pending")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 class Webhook < ApplicationRecord

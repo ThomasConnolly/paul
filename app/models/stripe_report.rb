@@ -5,22 +5,20 @@
 #
 # Table name: stripe_reports
 #
-#  id          :bigint           not null, primary key
-#  user_id     :bigint           not null
-#  pledge_id   :bigint
-#  donation_id :bigint
-#  amount      :integer
-#  fee         :integer
-#  net         :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  date_paid   :date
+#  id                :bigint           not null, primary key
+#  amount            :integer
+#  fee               :integer
+#  net               :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  date_paid         :date
+#  donor_name        :string
+#  payment_intent_id :string
 #
 
 class StripeReport < ApplicationRecord
-  validates :donor_name, presence: true
   validates :amount, presence: true
-  validates :payment_intent_id, presence: true
+  validates :payment_intent_id, presence: true, uniqueness: true
   before_save :calculate_fee
   before_save :calculate_net
 

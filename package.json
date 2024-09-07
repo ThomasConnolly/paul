@@ -8,9 +8,7 @@
     "@hotwired/turbo-rails": "^8.0.4",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^7.1.2",
-    "@rails/actiontext": "^7.1.3-2",
     "@rails/request.js": "^0.0.9",
-    "actiontext": "rails/actiontext",
     "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.2",
@@ -23,7 +21,6 @@
     "postcss-cli": "^10.1.0",
     "sass": "^1.75.0",
     "sortablejs": "^1.15.2",
-    "stimulus-sortable": "^4.1.1",
     "trix": "^2.1.5"
   },
   "scripts": {
@@ -37,5 +34,22 @@
   "browserslist": [
     "defaults"
   ],
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasConnolly/paul.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasConnolly/paul/issues"
+  },
+  "homepage": "https://github.com/ThomasConnolly/paul#readme"
 }

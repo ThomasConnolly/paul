@@ -8,3 +8,6 @@ import "@rails/actioncable"
 
 //Import controllers
 import "./controllers"
+
+import "trix"
+import "@rails/actiontext"

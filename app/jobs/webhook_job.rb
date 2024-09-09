@@ -6,7 +6,7 @@ class WebhookJob < ApplicationJob
 
   def perform(webhook_id)
     webhook = Webhook.find(webhook_id)
-    webhook.update!(status: processing)
+    webhook.update!(status: 'processing')
 
     begin
       event_data = webhook.data

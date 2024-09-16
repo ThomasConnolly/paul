@@ -1,66 +1,65 @@
+# frozen_string_literal: true
+
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
-
-  def receive
+  def create
+    request.format = :json # Force the request format to JSON
     payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-    endpoint_secret = Rails.application.credentials.dig(:stripe, :webhook_secret)
+    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+    event = nil
+
+    if endpoint_secret.nil? || !endpoint_secret.is_a?(String)
+      Rails.logger.error('Webhook error: Missing or invalid endpoint secret')
+      render json: { error: 'Missing or invalid endpoint secret' }, status: 500
+      return
+    end
 
     begin
-      event = Stripe::Webhook.construct_event(payload, sig_header, endpoint_secret)
+      event = Stripe::Webhook.construct_event(
+        payload, sig_header, endpoint_secret
+      )
     rescue JSON::ParserError => e
       Rails.logger.error("Webhook error: Invalid payload - #{e.message}")
-      render json: { error: 'Invalid payload' }, status: 400
+      render json: { error: "Invalid payload: #{e.message}" }, status: 400
       return
     rescue Stripe::SignatureVerificationError => e
       Rails.logger.error("Webhook error: Invalid signature - #{e.message}")
-      render json: { error: e.message }, status: 400
+      render json: { error: "Signature verification failed: #{e.message}" }, status: 400
       return
     end
 
+    webhook = Webhook.create(
+      event_id: event.id,
+      data: event.data,
+      status: :pending
+    )
+
     Rails.logger.info("Webhook received: #{event.id}")
 
-    if event['type'] == 'payment_intent.succeeded'
-      payment_intent = event['data']['object']
-      Rails.logger.info("Payment Intent: #{payment_intent}")
-
-      charges = begin
-        payment_intent['charges']['data']
-      rescue StandardError
-        nil
-      end
-      if charges.nil? || charges.empty?
-        Rails.logger.error('No charges found in payment intent')
-        render json: { error: 'No charges found in payment intent' }, status: 400
-        return
-      end
-
-      donor_name = begin
-        charges[0]['billing_details']['name']
-      rescue StandardError
-        'Anonymous Donor'
-      end
-      Rails.logger.info("Donor Name: #{donor_name}")
-
-      begin
-        Webhook.create!(
-          event_id: event.id,
-          data: event.to_hash,
-          status: 'processing'
-        )
-        Rails.logger.info("Webhook saved successfully: #{event.id}")
-      rescue StandardError => e
-        Rails.logger.error("Failed to save webhook: #{e.message}")
-        render json: { error: 'Failed to save webhook' }, status: 500
-        return
-      end
-
-      WebhookJob.perform_later(event.to_hash.to_json)
-
-      render json: { received: true }, status: 200
-    else
-      Rails.logger.error("Unhandled event type: #{event['type']}")
-      render json: { error: 'Invalid event type' }, status: 400
+    case event.type
+    when 'payment_intent.succeeded'
+      handle_payment_intent_succeeded(event.data.object, webhook)
     end
+
+    head :ok
+  end
+
+  private
+
+  def handle_payment_intent_succeeded(payment_intent, webhook)
+    expanded_payment_intent = Stripe::PaymentIntent.retrieve({
+                                                               id: payment_intent.id,
+                                                               expand: ['payment_method']
+                                                             })
+
+    donor_name = expanded_payment_intent.payment_method&.billing_details&.name
+
+    WebhookJob.perform_later(
+      webhook.id,
+      'payment_intent.succeeded',
+      expanded_payment_intent.to_h,
+      donor_name
+    )
   end
 end

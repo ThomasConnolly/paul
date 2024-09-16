@@ -16,7 +16,7 @@ class StripeReportsController < ApplicationController
     @stripe_report = StripeReport.new(params[:stripe_report])
     if @stripe_report.save
       AccountantMailer.send_report(@stripe_report).deliver_now
-      redirect_to @stripe_report, notice: 'Stripe report was successfully created.'
+      redirect_to '/'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class StripeReportsController < ApplicationController
   end
 
   def stripe_report_params
-    params.require(:stripe_report).permit(:amount, :fee, :net, :donation_id, :submit)
+    params.require(:stripe_report).permit(:amount, :fee, :net, :donor_name, :payment_intent_id)
   end
 
   def admin_only

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_04_030115) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_12_185858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -358,7 +358,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_04_030115) do
     t.integer "net"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "date_paid"
     t.string "donor_name"
     t.string "payment_intent_id"
     t.index ["payment_intent_id"], name: "index_stripe_reports_on_payment_intent_id", unique: true

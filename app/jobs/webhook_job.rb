@@ -4,27 +4,24 @@
 class WebhookJob < ApplicationJob
   queue_as :default
 
-  def perform(webhook_id)
+  def perform(webhook_id, event_type, payment_intent_data, donor_name)
     webhook = Webhook.find(webhook_id)
-    webhook.update!(status: 'processing')
 
     begin
-      event_data = webhook.data
-      payment_intent = event_data['data']['object']
-      payment_method_id = payment_intent['payment_method']
+      event_data = JSON.parse(webhook.data)
+      donor_name_value = event_data.dig('data', 'object', 'customer_details', 'name') || donor_name || 'Anonymous Donor'
+      amount = event_data.dig('data', 'object', 'amount')
 
-      # Retrieve the payment method to get the donor's name
-      payment_method = Stripe::PaymentMethod.retrieve(payment_method_id)
-      billing_details = payment_method['billing_details']
-      donor_name = billing_details['name'] || 'Anonymous Donor'
+      date_value = webhook.created_at.to_date
 
-      amount = payment_intent['amount']
+      Rails.logger.info("Donor Name: #{donor_name_value}")
+      Rails.logger.info("Amount: #{amount}")
 
-      # Save the StripeReport
       StripeReport.create!(
-        donor_name:,
-        amount:,
-        payment_intent_id: payment_intent['id']
+        donor_name: donor_name_value,
+        amount: amount / 100.0, # Assuming amount is in cents
+        webhook_id: webhook.id,
+        date: date_value
       )
 
       webhook.update!(status: :processed)

@@ -17,6 +17,7 @@
 #
 
 class StripeReport < ApplicationRecord
+  validates :donor_name, presence: true
   validates :amount, presence: true
   validates :payment_intent_id, presence: true, uniqueness: true
   before_save :calculate_fee

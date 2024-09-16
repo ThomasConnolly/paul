@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/tasks/test_webhook_job.rake
 namespace :test do
   desc 'Test WebhookJob with a sample payment_intent.succeeded event'

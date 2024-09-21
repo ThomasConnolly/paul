@@ -4,30 +4,32 @@
 class WebhookJob < ApplicationJob
   queue_as :default
 
-  def perform(webhook_id, event_type, payment_intent_data, donor_name)
-    webhook = Webhook.find(webhook_id)
+  def perform(webhook_id, payment_intent_id)
+    payment_intent = Stripe::PaymentIntent.retrieve(payment_intent_id)
+    handle_payment_intent_succeeded(webhook_id, payment_intent)
+  end
 
-    begin
-      event_data = JSON.parse(webhook.data)
-      donor_name_value = event_data.dig('data', 'object', 'customer_details', 'name') || donor_name || 'Anonymous Donor'
-      amount = event_data.dig('data', 'object', 'amount')
+  private
 
-      date_value = webhook.created_at.to_date
+  def handle_payment_intent_succeeded(webhook_id, payment_intent)
+    expanded_payment_intent = Stripe::PaymentIntent.retrieve(
+      id: payment_intent.id,
+      expand: ['payment_method']
+    )
 
-      Rails.logger.info("Donor Name: #{donor_name_value}")
-      Rails.logger.info("Amount: #{amount}")
+    donor_name = expanded_payment_intent.payment_method&.billing_details&.name
+    donor_name = expanded_payment_intent.shipping.name if donor_name.blank? && expanded_payment_intent.shipping
 
-      StripeReport.create!(
-        donor_name: donor_name_value,
-        amount: amount / 100.0, # Assuming amount is in cents
-        webhook_id: webhook.id,
-        date: date_value
-      )
+    amount_value = expanded_payment_intent.amount
 
-      webhook.update!(status: :processed)
-    rescue StandardError => e
-      Rails.logger.error("Webhook job error: #{e.message}")
-      webhook.update!(status: :failed)
-    end
+    StripeReport.create!(
+      webhook_id:,
+      donor_name: donor_name || 'Anonymous Donor',
+      amount: amount_value,
+      payment_intent_id: payment_intent.id
+    )
+  rescue StandardError => e
+    Rails.logger.error("Failed to process webhook #{webhook_id}: #{e.message}")
+    # You might want to implement a retry mechanism here
   end
 end

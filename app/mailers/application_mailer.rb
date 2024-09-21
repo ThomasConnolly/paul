@@ -10,4 +10,6 @@
 class ApplicationMailer < ActionMailer::Base
   default from: 'webmaster@saintpaulsnaples.org'
   layout 'mailer'
+
+  include Rails.application.routes.url_helpers
 end

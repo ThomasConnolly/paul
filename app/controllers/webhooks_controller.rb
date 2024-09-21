@@ -2,64 +2,51 @@
 
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :parse_json_payload
+
   def create
-    request.format = :json # Force the request format to JSON
-    payload = request.body.read
-    sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
-    event = nil
-
-    if endpoint_secret.nil? || !endpoint_secret.is_a?(String)
-      Rails.logger.error('Webhook error: Missing or invalid endpoint secret')
-      render json: { error: 'Missing or invalid endpoint secret' }, status: 500
-      return
-    end
-
     begin
       event = Stripe::Webhook.construct_event(
-        payload, sig_header, endpoint_secret
+        @payload, request.env['HTTP_STRIPE_SIGNATURE'], endpoint_secret
       )
     rescue JSON::ParserError => e
-      Rails.logger.error("Webhook error: Invalid payload - #{e.message}")
+      Rails.logger.error "Invalid payload: #{e.message}"
       render json: { error: "Invalid payload: #{e.message}" }, status: 400
       return
     rescue Stripe::SignatureVerificationError => e
-      Rails.logger.error("Webhook error: Invalid signature - #{e.message}")
-      render json: { error: "Signature verification failed: #{e.message}" }, status: 400
+      Rails.logger.error "Invalid signature: #{e.message}"
+      render json: { error: "Invalid signature: #{e.message}" }, status: 400
       return
     end
 
-    webhook = Webhook.create(
-      event_id: event.id,
-      data: event.data,
-      status: :pending
-    )
-
-    Rails.logger.info("Webhook received: #{event.id}")
-
-    case event.type
-    when 'payment_intent.succeeded'
-      handle_payment_intent_succeeded(event.data.object, webhook)
+    if event.type == 'payment_intent.succeeded'
+      webhook = save_webhook_to_database(event)
+      WebhookJob.perform_later(webhook.id, event.data.object.id)
     end
 
-    head :ok
+    render json: { received: true }, status: 200
   end
 
   private
 
-  def handle_payment_intent_succeeded(payment_intent, webhook)
-    expanded_payment_intent = Stripe::PaymentIntent.retrieve({
-                                                               id: payment_intent.id,
-                                                               expand: ['payment_method']
-                                                             })
+  def parse_json_payload
+    @payload = request.body.read
+    Rails.logger.info "Payload: #{@payload}"
+    @parsed_payload = JSON.parse(@payload)
+  rescue JSON::ParserError
+    Rails.logger.error 'Invalid JSON'
+    render json: { error: 'Invalid JSON' }, status: 400
+  end
 
-    donor_name = expanded_payment_intent.payment_method&.billing_details&.name
+  def endpoint_secret
+    Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+  end
 
-    WebhookJob.perform_later(
-      webhook.id,
-      'payment_intent.succeeded',
-      expanded_payment_intent.to_h,
-      donor_name
+  def save_webhook_to_database(event)
+    Webhook.create!(
+      data: @payload,
+      event_id: event.id,
+      status: 'processing'
     )
   end
 end

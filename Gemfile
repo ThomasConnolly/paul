@@ -53,7 +53,6 @@ gem 'ruby-vips'
 gem 'sidekiq'
 gem 'simple_form'
 gem 'solargraph'
-gem 'sorbet-runtime'
 gem 'stimulus-rails'
 gem 'stripe'
 gem 'turbo-rails'
@@ -77,7 +76,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-rails'
-  gem 'tapioca'
+  gem 'rubocop-rspec'
 end
 
 group :development do
@@ -90,7 +89,6 @@ group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
   gem 'ruby-lsp-rails'
-  gem 'sorbet', require: false
   gem 'web-console'
 end
 

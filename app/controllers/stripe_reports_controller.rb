@@ -13,9 +13,8 @@ class StripeReportsController < ApplicationController
   end
 
   def create
-    @stripe_report = StripeReport.new(params[:stripe_report])
+    @stripe_report = StripeReport.new(stripe_report_params)
     if @stripe_report.save
-      AccountantMailer.send_report(@stripe_report).deliver_now
       redirect_to '/'
     else
       render :new
@@ -31,7 +30,7 @@ class StripeReportsController < ApplicationController
   private
 
   def set_stripe_report
-    @stripe_report = stripe_report.find(params[:id])
+    @stripe_report = StripeReport.find(params[:id])
   end
 
   def stripe_report_params

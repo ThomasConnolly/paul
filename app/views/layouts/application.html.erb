@@ -12,7 +12,9 @@
   <script src="https://js.stripe.com/v3/"></script>
   <link rel="icon" type="image/x-icon" href="<%= asset_path('favicon.ico') %>">
   <%= stylesheet_link_tag "application.css", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "trix" %>
   <%= javascript_include_tag "application", type: "module", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "trix" %>
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">

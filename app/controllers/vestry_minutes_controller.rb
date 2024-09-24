@@ -28,11 +28,16 @@ class VestryMinutesController < ApplicationController
   # POST /vestry_minutes.json
   def create
     @vestry_minute = VestryMinute.new(vestry_minute_params)
-    if @vestry_minute.save
-      redirect_to(@vestry_minute, notice: 'Vestry minutes successfully created.')
-      MinutesMailer.new_minutes_email(@vestry_minute).deliver_now
-    else
-      render(:new)
+
+    respond_to do |format|
+      if @vestry_minute.save
+        format.html { redirect_to @vestry_minute, notice: 'Vestry minutes successfully created.' }
+        format.json { render :show, status: :created, location: @vestry_minute }
+        MinutesMailer.new_minutes_email(@vestry_minute).deliver_now
+      else
+        format.html { render :new }
+        format.json { render json: @vestry_minute.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -42,7 +47,7 @@ class VestryMinutesController < ApplicationController
     if @vestry_minute.update(vestry_minute_params)
       redirect_to(@vestry_minute, notice: 'Vestry minutes successfully updated.')
     else
-      render(:edit)
+      render :edit
     end
   end
 
@@ -50,8 +55,7 @@ class VestryMinutesController < ApplicationController
   # DELETE /vestry_minutes/1.json
   def destroy
     @vestry_minute.destroy
-    redirect_to(vestry_minutes_url, status: :see_other,
-                                    notice: 'Vestry minutes successfully destroyed.')
+    redirect_to vestry_minutes_url, status: :see_other, notice: 'Vestry minutes successfully destroyed.'
   end
 
   private

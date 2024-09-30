@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_18_151221) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_29_152412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -354,14 +354,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_18_151221) do
 
   create_table "stripe_reports", force: :cascade do |t|
     t.integer "amount"
-    t.integer "fee"
+    t.integer "stripe_fee"
     t.integer "net"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "donor_name"
-    t.string "payment_intent_id"
     t.integer "webhook_id"
-    t.index ["payment_intent_id"], name: "index_stripe_reports_on_payment_intent_id", unique: true
     t.index ["webhook_id"], name: "index_stripe_reports_on_webhook_id"
   end
 
@@ -497,12 +495,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_18_151221) do
   end
 
   create_table "webhooks", force: :cascade do |t|
-    t.string "event_id"
     t.json "data"
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_webhooks_on_event_id"
+    t.string "event_type"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

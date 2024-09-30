@@ -1,48 +1,38 @@
 # typed: false
 # frozen_string_literal: true
 
-class AgendaItemsController < ApplicationController
-  def index
-    @agenda_items = AgendaItem.order(:position)
-  end
-
-  def show; end
-
-  def new
-    @agenda_item = AgendaItem.new
-  end
+class WebhooksController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create
-    @agenda = Agenda.find(params[:agenda_id])
-    @agenda_item = @agenda.agenda_items.create(agenda_items_params)
-    @agenda_item.position = (@agenda.agenda_items.maximum(:position) || 0) + 1
-    if @agenda_item.save
-      redirect_to(@agenda)
-    else
-      render(:new)
+    unless request.content_type == 'application/json'
+      render json: { error: 'Invalid Content-Type' }, status: 400
+      return
     end
-  end
 
-  def edit
-    render(_form)
-  end
+    payload = request.body.read
+    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+    sig_header = request.env['HTTP_STRIPE_SIGNATURE']
 
-  def update_position
-    @agenda_item = AgendaItem.find(params[:id])
-    @agenda_item.insert_at(agenda_item_params[:position].to_i)
-    head(:ok)
-  end
+    begin
+      event = Stripe::Webhook.construct_event(
+        payload, sig_header, endpoint_secret
+      )
+    rescue JSON::ParserError => e
+      render json: { error: e.message }, status: 400
+      return
+    rescue Stripe::SignatureVerificationError => e
+      render json: { error: e.message }, status: 400
+      return
+    end
 
-  def destroy
-    @agenda = Agenda.find(params[:agenda_id])
-    @agenda_item = @agenda.agenda_items.find(params[:id])
-    @agenda_item.destroy
-    redirect_to(@agenda)
-  end
+    @webhook = Webhook.create!(
+      data: payload,
+      event_type: event['type'],
+      status: 'pending'
+    )
 
-  private
-
-  def agenda_items_params
-    params.require(:agenda_item).permit(:title, :position, :details)
+    WebhookJob.perform_later(@webhook.id)
+    render json: { status: :ok }
   end
 end

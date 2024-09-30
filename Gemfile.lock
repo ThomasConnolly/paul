@@ -101,7 +101,7 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.3.0)
-    aws-partitions (1.977.0)
+    aws-partitions (1.981.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -273,6 +273,7 @@ GEM
       rails (>= 6.0.0)
       stimulus-rails
       turbo-rails
+    htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     http-accept (1.7.0)
     http-cookie (1.0.7)
@@ -290,7 +291,7 @@ GEM
     ipinfo-rails (1.0.1)
       IPinfo (~> 1.0.1)
       rack (~> 2.0)
-    irb (1.14.0)
+    irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jaro_winkler (1.6.0)
@@ -384,7 +385,7 @@ GEM
       racc
     pg (1.5.8)
     prism (0.29.0)
-    propshaft (1.0.0)
+    propshaft (1.0.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
       rack
@@ -478,7 +479,7 @@ GEM
       netrc (~> 0.8)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.3.7)
+    rexml (3.3.8)
     rouge (4.4.0)
     rspec-core (3.13.1)
       rspec-support (~> 3.13.0)
@@ -563,7 +564,7 @@ GEM
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.11577)
+    sorbet-runtime (0.5.11589)
     sshkit (1.23.1)
       base64
       net-scp (>= 1.1.2)
@@ -594,7 +595,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
     websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -654,6 +655,7 @@ DEPENDENCIES
   geocoder
   guard
   hotwire-rails
+  htmlbeautifier
   httparty
   image_processing (~> 1.2)
   ipinfo-rails
@@ -704,7 +706,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 3.3.4p94
+   ruby 3.3.5p100
 
 BUNDLED WITH
    2.5.15

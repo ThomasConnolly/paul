@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.4'
+ruby '3.3.5'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -26,6 +26,7 @@ gem 'flatpickr'
 gem 'fog-aws'
 gem 'geocoder'
 gem 'hotwire-rails'
+gem 'htmlbeautifier'
 gem 'httparty'
 gem 'image_processing', '~> 1.2'
 gem 'ipinfo-rails'

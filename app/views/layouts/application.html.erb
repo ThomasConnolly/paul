@@ -18,25 +18,20 @@
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">
-
   <div class="container">
     <div class="page">
-    <%= render '/layouts/header' %>
-    <%= render '/layouts/navbar' %>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  
-  <%= yield %>
-
-    <%= render 'layouts/footer' %>
-    <%#= render 'layouts/donate' %>
-
-    </div><!-- container -->
-  </div> <!-- page -->
+      <%= render '/layouts/header' %>
+      <%= render '/layouts/navbar' %>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div><!-- page -->
+  </div> <!-- container -->
 </body>
 
 </html>

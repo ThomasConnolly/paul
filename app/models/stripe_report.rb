@@ -5,15 +5,14 @@
 #
 # Table name: stripe_reports
 #
-#  id                :bigint           not null, primary key
-#  amount            :integer
-#  fee               :integer
-#  net               :integer
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  date_paid         :date
-#  donor_name        :string
-#  payment_intent_id :string
+#  id         :bigint           not null, primary key
+#  amount     :integer
+#  stripe_fee :integer
+#  net        :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  donor_name :string
+#  webhook_id :integer
 #
 
 class StripeReport < ApplicationRecord

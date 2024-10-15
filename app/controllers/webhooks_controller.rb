@@ -13,18 +13,17 @@ class WebhooksController < ApplicationController
         payload, sig_header, endpoint_secret
       )
     rescue JSON::ParserError => e
-      render json: { error: e.message }, status: 400 and return
+      render json: { error: e.message }, status: :bad_request and return
     rescue Stripe::SignatureVerificationError => e
-      render json: { error: e.message }, status: 400 and return
+      render json: { error: e.message }, status: :bad_request and return
     end
 
-    @webhook = Webhook.create!(
-      data: payload,
-      event_type: event['type'],
-      status: 'pending'
+    webhook = Webhook.create!(
+      data: payload
     )
+    Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}"
 
-    WebhookJob.perform_later(@webhook.id)
+    WebhookJob.perform_later(webhook.id)
     render json: { status: :ok }
   end
 end

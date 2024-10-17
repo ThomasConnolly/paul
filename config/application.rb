@@ -26,7 +26,7 @@ module Paul
     config.app_generators.scaffold_controller :responders_controller
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
     config.assets.enabled = false
     config.middleware.insert_before 0, Rack::Attack
 
@@ -34,7 +34,7 @@ module Paul
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
-    config.active_job.queue_adapter = :sidekiq
+    config.active_job.queue_adapter = :delayed_job
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -1,3 +1,3 @@
 web: bundle exec puma -C config/puma.rb
 release: bundle exec rake db:migrate
-# cable: bundle exec bin/cable
+worker: bin/delayed_job start

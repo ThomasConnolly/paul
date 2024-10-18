@@ -1,2 +1,2 @@
-web: RUBY_DEBUG_OPEN=true bin/rails server -p 3000
-worker: bin/delayed_job start
+web: bundle exec puma -C config/puma.rb -p 3000
+worker: bin/delayed_job start -n 1 -m

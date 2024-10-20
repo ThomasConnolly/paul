@@ -1,5 +1,5 @@
 
-const stripe = '<%= Rails.application.credentials.dig(:stripe, Rails.evn.to_sym,
+const stripe = '<%= Rails.application.credentials.dig(:stripe, Rails.env.to_sym,
  :secret_key)%>';
 
 stripe.redirectToCheckout({

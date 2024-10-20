@@ -17,11 +17,8 @@
 class Webhook < ApplicationRecord
   enum :status, { pending: 0, processed: 1, failed: 2 }
 
-  after_create_commit :enqueue_webhook_job
-
-  private
-
-  def enqueue_webhook_job
-    WebhookJob.perform_later(id)
+  after_create do
+    WebhookJob.perform_later(self)
+    sleep 1
   end
 end

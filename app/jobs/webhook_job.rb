@@ -26,8 +26,8 @@ class WebhookJob < ApplicationJob
     begin
       date_created = webhook.created_at
       data_object = json_data.dig('data', 'object')
-      name = data_object.dig('billing_details', 'name') if data_object
-      amount_value = data_object['amount'] if data_object
+      name = data_object.dig('customer_details', 'name') if data_object
+      amount_value = data_object['amount_total'] if data_object
       stripe_fee_value = calculate_stripe_fee(amount_value) if amount_value
       net_amount = amount_value - stripe_fee_value if amount_value && stripe_fee_value
 

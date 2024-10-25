@@ -45,18 +45,16 @@ class WebhookJob < ApplicationJob
         stripe_fee: stripe_fee_value,
         net: net_amount
       )
+
       webhook.update(status: 'processed')
-      Rails.logger.info "StripeReport created successfully for webhook_id: #{webhook.id}"
-    rescue ActiveRecord::RecordInvalid => e
-      Rails.logger.error "Failed to create StripeReport: #{e.message}"
-      webhook.update(status: 'failed')
     rescue StandardError => e
-      Rails.logger.error "Unexpected error: #{e.message}"
+      Rails.logger.error "Error in handle_webhook: #{e.message}"
       webhook.update(status: 'failed')
     end
   end
 
   def calculate_stripe_fee(amount)
-    (amount * 0.029 + 30).to_i
+    # Implement your logic to calculate the Stripe fee
+    (amount * 0.029 + 30).round
   end
 end

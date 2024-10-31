@@ -13,7 +13,7 @@ AllCops:
     - Gemfile.lock
     - 'db/schema.rb'
     - 'bin/*'
-    - 'config/*'
+    #  - 'config/*'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
     - 'vendor/*'

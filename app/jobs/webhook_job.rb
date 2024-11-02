@@ -24,7 +24,7 @@ class WebhookJob < ApplicationJob
     Rails.logger.info "Handling webhook event for webhook_id: #{webhook.id}"
 
     begin
-      date_created = webhook.created_at
+      # date_created = webhook.created_at
       data_object = json_data.dig('data', 'object')
       name = data_object.dig('customer_details', 'name') if data_object
       amount_value = data_object['amount_total'] if data_object
@@ -39,7 +39,7 @@ class WebhookJob < ApplicationJob
 
       StripeReport.create!(
         webhook_id: webhook.id,
-        date: date_created,
+        # date: date_created,
         donor_name: name,
         amount: amount_value,
         stripe_fee: stripe_fee_value,
@@ -54,7 +54,7 @@ class WebhookJob < ApplicationJob
   end
 
   def calculate_stripe_fee(amount)
-    # Implement your logic to calculate the Stripe fee
+    # Implement your logic to calculate the Stripe fee based on the amount
     (amount * 0.029 + 30).round
   end
 end

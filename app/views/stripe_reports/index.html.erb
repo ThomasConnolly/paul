@@ -15,7 +15,11 @@
       <tr>
         <td><%= sr.donor_name %></td>
         <td><%= number_to_currency(sr.amount/100.0) %></td>
-        <td><%= sr.created_at.strftime("%b %-d, %Y") %></td>
+        <% if sr.date != nil %>
+          <td><%= sr.date.strftime("%b %-d, %Y") %></td>
+        <% else %>
+          <td><%= sr.created_at.strftime("%b %-d, %Y")%></td>
+        <% end %>
         <td><%= number_to_currency(sr.stripe_fee/100.0) %></td>
         <td><%= number_to_currency(sr.net/100.0) %></td>
       </tr>

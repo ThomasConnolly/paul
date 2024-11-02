@@ -22,7 +22,7 @@ class StripeReportsController < ApplicationController
   end
 
   def index
-    @stripe_reports = StripeReport.all.order('date DESC')
+    @stripe_reports = StripeReport.all
   end
 
   def show; end

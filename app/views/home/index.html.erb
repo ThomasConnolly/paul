@@ -27,11 +27,11 @@
     <%#= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
     <h1 class="mt-4">Worship God with us </h1>
     
-  <p><strong>Sunday Mass, 9 a.m. </strong><br>
-  (8 and 10 a.m. during season)</p>
-  <p>All are welcome at St. Paul's! If you can't be with us in person, join us 
+  <h3>Sunday Masses, 8 and 10 a.m. </h3>
+  <p>(9 a.m. during off-season, April through October)</p>
+  <p>All are welcome here at St. Paul's! If you can't be with us in person, join us 
     on <%= link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> where we 
-    live-stream the 10 a.m. Mass.
+    live-stream the 10 a.m. service.
   <% if @bulletin.url.present? %>
     <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>
     </strong></p>

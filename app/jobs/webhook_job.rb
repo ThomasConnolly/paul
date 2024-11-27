@@ -39,7 +39,6 @@ class WebhookJob < ApplicationJob
 
       StripeReport.create!(
         webhook_id: webhook.id,
-        # date: date_created,
         donor_name: name,
         amount: amount_value,
         stripe_fee: stripe_fee_value,

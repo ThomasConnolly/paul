@@ -172,6 +172,7 @@ GEM
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
     csv (3.3.0)
+    daemons (1.4.1)
     date (3.4.1)
     dead_end (4.0.0)
     debug (1.9.2)
@@ -643,6 +644,7 @@ DEPENDENCIES
   capybara
   cloudinary
   cssbundling-rails
+  daemons
   dead_end
   debug (>= 1.0.0)
   delayed_job_active_record

@@ -3,9 +3,14 @@
 require 'json'
 
 class WebhookJob < ApplicationJob
-  def perform(webhook_id)
-    Rails.logger.info "Starting WebhookJob for webhook_id: #{webhook_id}"
-    webhook = Webhook.find(webhook_id)
+  def perform(webhook_or_id)
+    Rails.logger.info "Starting WebhookJob for webhook: #{webhook_or_id}"
+
+    webhook = if webhook_or_id.is_a?(Webhook)
+                webhook_or_id
+              else
+                Webhook.find(webhook_or_id)
+              end
 
     begin
       json_data = JSON.parse(webhook.data)
@@ -29,8 +34,9 @@ class WebhookJob < ApplicationJob
       data_object = json_data.dig('data', 'object')
       puts "Data object:\n#{JSON.pretty_generate(data_object)}"
 
-      # Check for name in multiple locations
-      name = data_object.dig('billing_details', 'name') || data_object.dig('customer_details', 'name') || 'Unknown'
+      # Try multiple paths to find the name
+      name = extract_name(data_object)
+
       amount_value = data_object['amount']
       stripe_fee_value = calculate_stripe_fee(amount_value) if amount_value
       net_amount = amount_value - stripe_fee_value if amount_value && stripe_fee_value
@@ -56,6 +62,17 @@ class WebhookJob < ApplicationJob
       Rails.logger.error "Error in handle_webhook: #{e.message}"
       webhook.update(status: 'failed')
     end
+  end
+
+  def extract_name(data_object)
+    name = data_object.dig('charges', 'data', 0, 'billing_details', 'name') ||
+           data_object.dig('payment_method_details', 'card', 'name') ||
+           data_object.dig('billing_details', 'name') ||
+           data_object.dig('shipping', 'name') || # Include this for CLI testing
+           'Unknown'
+
+    Rails.logger.info "Extracted name: #{name}"
+    name
   end
 
   def calculate_stripe_fee(amount)

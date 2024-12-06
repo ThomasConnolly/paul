@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @stripe_report.date.strftime("%b %-d, %Y") %></td>
+          <td><%= @stripe_report.created_at.strftime("%b %-d, %Y") %></td>
           <td><%= @stripe_report.donor_name %></td>
           <td><%= number_to_currency(@stripe_report.amount / 100.0) %></td>
           <td><%= number_to_currency(@stripe_report.stripe_fee / 100.0) %></td>

@@ -1,46 +1,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
+  timeout: 5000
 
 development:
-  <<: *default
-  username: postgres
-  password: tommycon
-  host: localhost
-  database: paul_development
-
-  # The specified database role being used to connect to PostgreSQL.
-  # To create additional roles in PostgreSQL see `$ createuser --help`.
-  # When left blank, PostgreSQL will use the default role. This is
-  # the same name as the operating system user running Rails.
-  # username: paul
-
-  # The password associated with the PostgreSQL role (username).
-  # password:
-
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
-  # host: localhost
-
-  # The TCP port the server listens on. Defaults to 5432.
-  # If your server runs on a different port number, change accordingly.
-  # port: 5432
+  primary:
+    <<: *default
+    database: paul_development
+    username: postgres
+    password: tommycon
+    host: localhost
 
 test:
   <<: *default
+  database: paul_test
   username: postgres
   password: tommycon
   host: localhost
-  database: paul_test
-
-production:
-  primary: &primary_production
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-  cache:
-    <<: *primary_production
-    database: app_production_cache
-    migrations_paths: db/cache_migrate
-    

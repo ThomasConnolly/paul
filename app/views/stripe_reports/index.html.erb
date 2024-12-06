@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Stripe Reports</h1>
+<h1>Stripe Reports</h1>
   <table class="table">
     <thead>
       <tr>
@@ -11,19 +11,15 @@
       </tr>
     </thead>
     <tbody>
-      <% @stripe_reports.each do |sr| %>
+    <% @stripe_reports.each do |sr| %>
       <tr>
         <td><%= sr.donor_name %></td>
         <td><%= number_to_currency(sr.amount/100.0) %></td>
-        <% if sr.date != nil %>
-          <td><%= sr.date.strftime("%b %-d, %Y") %></td>
-        <% else %>
-          <td><%= sr.created_at.strftime("%b %-d, %Y")%></td>
-        <% end %>
+        <td><%= sr.created_at.strftime("%b %-d, %Y")%></td>
         <td><%= number_to_currency(sr.stripe_fee/100.0) %></td>
         <td><%= number_to_currency(sr.net/100.0) %></td>
       </tr>
-      <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>

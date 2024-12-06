@@ -19,6 +19,5 @@ class Webhook < ApplicationRecord
 
   after_create do
     WebhookJob.perform_later(self)
-    sleep 1
   end
 end

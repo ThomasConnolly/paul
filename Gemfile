@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.5'
+ruby '3.3.6'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -18,6 +18,7 @@ gem 'birthday'
 gem 'bootsnap', require: false
 gem 'cloudinary'
 gem 'cssbundling-rails'
+gem 'delayed_job_active_record'
 gem 'devise'
 gem 'devise-i18n'
 gem 'email_validator', require: 'email_validator/strict'
@@ -52,8 +53,8 @@ gem 'responders'
 gem 'ruby-vips'
 gem 'simple_form'
 gem 'solargraph'
-gem 'solid_queue'
 gem 'stimulus-rails'
+gem 'stringio', '~> 3.1', '>= 3.1.2'
 gem 'stripe'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
@@ -67,6 +68,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'email_spec'
   gem 'factory_bot_rails'
+  gem 'foreman'
   gem 'guard'
   gem 'listen'
   gem 'pry'

@@ -14,7 +14,6 @@ class CheckoutPledgesController < ApplicationController
 
     @customer = find_or_create_stripe_customer
     current_user.update(stripe_id: @customer.id)
-
     create_stripe_checkout_session(@pledge, @customer)
   end
 

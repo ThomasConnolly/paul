@@ -9,7 +9,7 @@ class StripeMailer < ApplicationMailer
     mail(
       to: 'accountant@SaintPaulsNaples.org',
       bcc: 'tom.connolly@comcast.net',
-      subject: 'A donation has been received'
+      subject: 'A new Stripe report for you'
     )
   end
 end

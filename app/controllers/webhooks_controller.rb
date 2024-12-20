@@ -4,6 +4,8 @@ class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
+    Rails.logger.debug "Received webhook: #{request.body.read}"
+
     payload = request.body.read
     endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']

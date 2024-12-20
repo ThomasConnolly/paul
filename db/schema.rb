@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_05_133002) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_14_025942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -375,6 +375,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_133002) do
     t.datetime "updated_at", null: false
     t.string "donor_name"
     t.integer "webhook_id"
+    t.string "payment_method_type"
     t.index ["webhook_id"], name: "index_stripe_reports_on_webhook_id"
   end
 

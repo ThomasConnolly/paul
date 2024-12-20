@@ -21,11 +21,10 @@ class StripeReport < ApplicationRecord
   validates :webhook_id, presence: true
   validates :stripe_fee, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :net, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  after_create :send_stripe_mail
+  validates :payment_method_type, presence: true
+  # private
 
-  private
-
-  def send_stripe_mail
-    StripeMailer.stripe_report(self).deliver_now
-  end
+  # def send_stripe_mail
+  #   StripeMailer.stripe_report(self).deliver_now
+  # end
 end

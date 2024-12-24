@@ -63,7 +63,6 @@ gem 'verifalia'
 gem 'whenever', require: false
 
 group :development, :test do
-  gem 'byebug'
   gem 'dead_end'
   gem 'debug', '>= 1.0.0'
   gem 'dotenv-rails'
@@ -72,10 +71,6 @@ group :development, :test do
   gem 'foreman'
   gem 'guard'
   gem 'listen'
-  gem 'pry'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-rails'

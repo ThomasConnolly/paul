@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.6'
+ruby '3.4.1'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -46,7 +46,7 @@ gem 'pundit'
 gem 'rack'
 gem 'rack-attack'
 gem 'rack-cors'
-gem 'rails'
+gem 'rails', '8.0.1'
 gem 'rails-i18n'
 gem 'railties'
 gem 'recaptcha', require: 'recaptcha/rails'

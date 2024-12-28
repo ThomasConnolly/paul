@@ -3,7 +3,7 @@
 
 class CheckoutPledgesController < ApplicationController
   protect_from_forgery except: :webhook
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :webhook
 
   def create
     @pledge = Pledge.find(params[:id])

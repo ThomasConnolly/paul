@@ -1,8 +1,7 @@
 {
   "name": "paul",
   "engines": {
-    "node": "18.19.1",
-    "npm": "10.8.3"
+    "node": "18.19.1"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",

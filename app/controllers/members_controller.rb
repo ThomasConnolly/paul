@@ -32,7 +32,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:last_name, :first_name, :membership_id, :birthday,
-                                   :email, :yday, :away_zip, :submit)
+    params.expect(member: %i[last_name first_name membership_id birthday
+                             email yday away_zip])
   end
 end

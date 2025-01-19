@@ -57,7 +57,7 @@ class VnotesController < ApplicationController
   end
 
   def vnote_params
-    params.require(:vnote).permit(:title, :content, :submit, :image)
+    params.expect(vnote: %i[title content image])
   end
 
   def vestry_only

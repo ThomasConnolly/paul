@@ -59,7 +59,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:cities, :background, :career, :family, :lifestyle,
-                                    :civic, :church, :submit)
+    params.expect(profile: %i[cities background career family lifestyle
+                              civic church])
   end
 end

@@ -65,10 +65,6 @@ class AgendasController < ApplicationController
   end
 
   def agenda_params
-    params.require(:agenda).permit(
-      :meeting_date,
-      :user_id,
-      agenda_items_attributes: %i[id title details position _destroy]
-    )
+    params.expect(agenda: [:meeting_date, :user_id, { agenda_items: [%i[id title details position]] }])
   end
 end

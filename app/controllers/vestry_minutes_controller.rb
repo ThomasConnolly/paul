@@ -67,7 +67,7 @@ class VestryMinutesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the "permit" through.
   def vestry_minute_params
-    params.require(:vestry_minute).permit(:date, :body, :submit, :draft)
+    params.expect(vestry_minute: %i[date body draft])
   end
 
   def admin_only

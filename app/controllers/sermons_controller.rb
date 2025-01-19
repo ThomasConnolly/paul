@@ -59,15 +59,12 @@ class SermonsController < ApplicationController
   end
 
   def sermon_params
-    params.require(:sermon).permit(
-      :title,
-      :cites,
-      :delivered_on,
-      :sermon_body,
-      :content,
-      :homilist_id,
-      :audio,
-      :submit
-    )
+    params.expect(sermon: %i[title
+                             cites
+                             delivered_on
+                             sermon_body
+                             content
+                             homilist_id
+                             audio])
   end
 end

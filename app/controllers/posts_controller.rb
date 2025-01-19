@@ -54,6 +54,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :submit, :picture, photos: [])
+    params.expect(post: [:content, :picture, { photos: [] }])
   end
 end

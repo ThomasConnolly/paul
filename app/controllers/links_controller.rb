@@ -62,6 +62,6 @@ class LinksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def link_params
-    params.require(:link).permit(:event, :time, :date, :url, :submit)
+    params.expect(link: %i[event time date url])
   end
 end

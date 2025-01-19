@@ -63,6 +63,6 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(:amount, :memo, :dollars, :stripe_id, :submit)
+    params.expect(donation: %i[amount memo dollars stripe_id])
   end
 end

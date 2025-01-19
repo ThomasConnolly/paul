@@ -45,7 +45,7 @@ class OpportunitiesController < ApplicationController
   private
 
   def opportunity_params
-    params.require(:opportunity).permit(:ministry, :who, :what, :when, :where, :user_id,
-                                        :submit)
+    params.require(opportunity: %i[ministry who what when where user_id
+                                   submit])
   end
 end

@@ -2,7 +2,7 @@
   "name": "paul",
   "engines": {
     "node": "18.19.1",
-    "npm": "9.2.0"
+    "npm": "10.8.3"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",

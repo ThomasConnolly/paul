@@ -59,7 +59,6 @@ class PledgesController < ApplicationController
   end
 
   def pledge_params
-    params.require(:pledge).permit(%i[amount dollars stripe_id plan_id plan status
-                                      submit])
+    params.expect(pledge: %i[amount dollars stripe_id plan_id plan status])
   end
 end

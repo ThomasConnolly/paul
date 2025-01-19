@@ -61,6 +61,6 @@ class TodoListsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the "permit" through.
   def todo_list_params
-    params.require(:todo_list).permit(:title, :user_id, :description, :submit)
+    params.expect(todo_list: %i[title user_id description])
   end
 end

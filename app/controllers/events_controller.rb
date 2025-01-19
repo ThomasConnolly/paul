@@ -58,11 +58,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  # def admin_only
+  #   redirect_to('/') unless user_signed_in && current_user.roles.include?('admin')
+  # end
+
   def admin_only
-    redirect_to('/') unless user_signed_in && current_user.roles.include?('admin')
+    redirect_to('/') unless current_user&.admin?
   end
 
   def event_params
-    params.require(:event).permit(:title, :price, :quantity, :amount, :time, :date, :event_picture, :submit)
+    params.expect(event: %i[title price quantity amount time date event_picture])
   end
 end

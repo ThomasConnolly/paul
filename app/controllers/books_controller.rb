@@ -92,8 +92,8 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:author, :title, :subject, :isbn, :dewey, :description,
-                                 :cutter, :url, :submit)
+    params.expect(book: %i[author title subject isbn dewey description
+                           cutter url])
   end
 end
 # http://books.google.com/books/content?id=fDZ6N8BACJkC&printsec=frontcover&img=1&zoom=2&edge=none&source=gbs_api

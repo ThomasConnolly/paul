@@ -43,9 +43,6 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  resources :formation_talks, only: %i[show index]
-  resources :marriage_talks, only: %i[show index]
-
   resources :members do
     collection do
       post :import
@@ -92,7 +89,6 @@ Rails.application.routes.draw do
   end
 
   resources :sermons
-  resources :formation_talks
   resources :profiles
   resources :posts do
     resources :comments, only: %i[create edit]

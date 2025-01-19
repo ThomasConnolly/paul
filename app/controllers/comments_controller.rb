@@ -32,6 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :submit)
+    params.expect(:comment[:body, :submit])
   end
 end

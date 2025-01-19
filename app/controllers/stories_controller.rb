@@ -67,6 +67,6 @@ class StoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def story_params
-    params.require(:story).permit(:title, :user_id, :status, :body, :submit)
+    params.expect(story: %i[title user_id status body])
   end
 end

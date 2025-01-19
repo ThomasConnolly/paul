@@ -56,6 +56,6 @@ class StoryAssignmentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def story_assignment_params
-    params.require(:story_assignment).permit(:story_idea_id, :assigned_to, :status, :submit)
+    params.expect(story_assignment: %i[story_idea_id assigned_to status])
   end
 end

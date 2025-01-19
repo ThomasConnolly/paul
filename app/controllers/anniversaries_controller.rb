@@ -54,6 +54,6 @@ class AnniversariesController < ApplicationController
   end
 
   def anniversary_params
-    params.require(:anniversary).permit(:salutation, :last_name, :marriage, :yday, :submit)
+    params.expect(anniversary: %i[salutation last_name marriage yday])
   end
 end

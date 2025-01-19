@@ -47,6 +47,6 @@ class PathwaysController < ApplicationController
   end
 
   def pathway_params
-    params.require(:pathway).permit(:image, :link, :pubdate, :submit)
+    params.expect(pathway: %i[image link pubdate submit])
   end
 end

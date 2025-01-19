@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 class CheckoutPledgesController < ApplicationController
-  protect_from_forgery except: :webhook
-  before_action :authenticate_user!, except: :webhook
+  protect_from_forgery
+  before_action :authenticate_user!
 
   def create
     @pledge = Pledge.find(params[:id])

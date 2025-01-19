@@ -63,6 +63,6 @@ class PrayForsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def pray_for_params
-    params.require(:pray_for).permit(:first_name, :reason, :honey, :submit)
+    params.expect(pray_for: %i[first_name reason honey])
   end
 end

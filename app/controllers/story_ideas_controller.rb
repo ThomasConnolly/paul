@@ -61,8 +61,8 @@ class StoryIdeasController < ApplicationController
   end
 
   def story_idea_params
-    params.require(:story_idea).permit(:title, :body, :comments, :url,
-                                       :story_idea_picture, :submit)
+    params.expect(story_idea: %i[title body comments url
+                                 story_idea_picture])
   end
 
   def find_commentable

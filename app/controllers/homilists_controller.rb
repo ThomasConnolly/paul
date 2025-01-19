@@ -63,6 +63,6 @@ class HomilistsController < ApplicationController
   end
 
   def homilist_params
-    params.require(:homilist).permit(:name, :title, :photo, :submit)
+    params.expect(homilist: %i[name title photo submit])
   end
 end

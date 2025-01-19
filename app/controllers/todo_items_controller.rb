@@ -68,7 +68,7 @@ class TodoItemsController < ApplicationController
 
   # Only allow a trusted parameter ""permit"" through.
   def todo_item_params
-    params.require(:todo_item).permit(:description, :completed, :completed_at,
-                                      :todo_list_id, :submit, :position)
+    params.expect(todo_item: %i[description completed completed_at
+                                todo_list_id position])
   end
 end

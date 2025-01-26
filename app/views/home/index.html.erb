@@ -25,17 +25,14 @@
     <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
     <%#= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
     <h1 class="mt-4">Worship God with us</h1>
-    <h3>Sundays at 8 and 10 a.m.</h3>
     <h2>Annual meeting January 26</h2>
-    <p><strong>One Mass, 9 a.m.; breakfast and meeting to follow.</strong></p>
+    <p><strong>One Mass today, 9 a.m.; breakfast and meeting to follow.</strong></p>
     <%# <p>(9 a.m. during off-season, April through October)</p> %>
     <p>All are welcome here at St. Paul's! </p>
-  <%#
+  
    <p>If you can't be with us in person, join us 
-    on < link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") > 
-    where we live-stream the 10 a.m. Sunday service.</p> 
-  %>
-      <p> <strong> Because of network issues, we are not able to live-stream our services. We are working on it... </strong></p>
+    on <%= link_to "YouTube" ,("https://www.youtube.com/@stpaulsnaples6762/streams") %> 
+    where we live-stream the 9 a.m. Sunday service (usually 10 a.m.).</p> 
       <% if @bulletin.url.present? %>
         <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>
           </strong></p>
@@ -118,12 +115,12 @@
       <div id="links">
         <h2 class="mt-3">All the links</h2>
         <p><strong>
-            <%= link_to "Sunday worship service, 10 a.m." , "https://www.youtube.com/@stpaulsnaples6762/streams" %>
+            <%= link_to "Sunday worship service, 9 a.m. " , "https://www.youtube.com/@stpaulsnaples6762/streams" %>
             <p> <strong> Our network to the church is temporarily down. When it's fixed, this feature will resume
               for those inable to attend in person. </strong> </p>
-      <%# </strong> Stream on your smart phone, computer or television. 
+      </strong> Stream on your smart phone, computer or television. 
         Subscribe to our YouTube channel using this link.</p>
-      %>
+    
         <p><strong>Wednesday evening adult education, 6:30 p.m.
           </strong> Approximately one hour, class is held in the library, Serson Hall. Come learn and share your thoughts.</p>
         <p><strong><%= link_to "Thursday wine time, 6 p.m." , "#{@wine.url}" %> </strong>

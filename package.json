@@ -13,7 +13,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.2",
     "cssnano": "^6.0.2",
-    "esbuild": "^0.19.9",
+    "esbuild": "^0.24.2",
     "esbuild-plugin-sass": "^1.0.1",
     "flatpickr": "^4.6.13",
     "micromatch": "^4.0.8",

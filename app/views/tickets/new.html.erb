@@ -1,25 +1,26 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <%= cl_image_tag("jodiSm_fle4od.jpg", width: "70%" , class: "image-center" ) %>
+    <%= cl_image_tag("2025ToddForWebsite_dcxloq.png", width: "100%", alt: "Todd Poster") %>
 
-      <h1>
-        <%= @event.title %>
-      </h1>
-      <p>
-        <%= @event.date.strftime('%A, %B %e, %Y') %>,
-          <%= number_to_currency @event.price*0.01 %> per ticket.
-      </p>
+    <h1>
+      <%= @event.title %>
+    </h1>
+    <p>
+      <%= @event.date.strftime('%A, %B %e, %Y') %>,
+      <%= number_to_currency @event.price*0.01 %> per ticket.
+    </p>
 
-      <%= simple_form_for([@event, @ticket]) do |f| %>
-        <%= f.hidden_field :price, :value=> @event.price %>
-          <%= f.hidden_field :event_id, :value=> @event.id %>
-            <%= f.text_field :first_name %> &nbsp;<%= f.text_field :last_name %>
-                <%= f.text_field :email %> <br>
-                  <%= f.number_field :quantity, label: "Number of tickets" %>
-                    <div class="sr-only">
-                      <%= f.text_field :honey %>
-                    </div>
-                    <%= f.submit "Review your order" , class: "btn btn-primary btn-lg" %>
-                      <% end %>
+    <%= simple_form_for([@event, @ticket]) do |f| %>
+      <%= f.hidden_field :price, value: @event.price %>
+      <%= f.hidden_field :event_id, value: @event.id %>
+      <%= f.input :first_name, label: "First Name" %> 
+      <%= f.input :last_name, label: "Last Name" %>
+      <%= f.input :email, label: "Email" %> <br>
+      <%= f.input :quantity, label: "Number of tickets" %>
+      <div aria-hidden="false" style="position: absolute; left: -9999px;">
+        <%= f.input :honey %>
+      </div>
+      <%= f.submit "Review your order", class: "btn btn-primary btn-lg" %>
+    <% end %>
   </div>
 </div>

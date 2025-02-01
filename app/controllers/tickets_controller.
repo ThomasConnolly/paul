@@ -4,7 +4,7 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :set_event
-  before_action :set_ticket, only: %i[show edit update destroy]
+  before_action :set_ticket, only: %i[show update destroy]
 
   def show; end
 
@@ -24,6 +24,11 @@ class TicketsController < ApplicationController
     else
       render('new')
     end
+  end
+
+  def destroy
+    @ticket.destroy
+    redirect_to '/', notice: 'ticket deleted'
   end
 
   def update; end

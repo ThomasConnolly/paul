@@ -19,7 +19,7 @@ class CheckoutTicketsController < ApplicationController
                                                  cancel_url: events_url,
                                                  payment_method_types: ['card'],
                                                  submit_type: 'pay',
-                                                 customer:,
+                                                 customer: customer.id,
                                                  line_items: [{
                                                    price: @ticket.stripe_id,
                                                    quantity: 1,

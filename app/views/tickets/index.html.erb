@@ -7,7 +7,7 @@
 <h2>customers</h2>
 <% @pd_tickets.each do |t| %>
   <p><strong>
-      <%= t.last_name.titleize %>, <%= t.first_name.titleize %>
+      <%= t.name.titleize %>
     </strong>
     <%= t.email %>, <%= pluralize(t.quantity, 'ticket' ) %>, purchased on <%= t.updated_at.strftime('%A, %B %e, %Y') %>
           at <%= t.updated_at.strftime('%I:%M %p') %>
@@ -19,9 +19,8 @@
     <% @tickets.each do |ticket| %>
       <div>
         <p>
-          <%=ticket.first_name %>
-            <%=ticket.last_name %> &nbsp; &nbsp;
-              <%=ticket.email%>
+          <%=ticket.name %> &nbsp; &nbsp;
+          <%=ticket.email%>
         </p>
       </div>
 

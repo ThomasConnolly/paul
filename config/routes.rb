@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
   end
 
+  resources :tickets
   scope '/checkout_tickets' do
     post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets/create'
     get 'success', to: 'checkout_tickets#success', as: 'checkout_tickets_success'

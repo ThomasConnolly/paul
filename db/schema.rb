@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_14_025942) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_01_121303) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
-  enable_extension "plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -432,13 +432,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_14_025942) do
     t.integer "event_id"
     t.integer "quantity"
     t.integer "amount"
-    t.string "first_name"
-    t.string "last_name"
     t.string "email"
     t.string "customer_id"
     t.string "checkout"
     t.string "honey"
     t.string "stripe_id"
+    t.string "name"
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end
 

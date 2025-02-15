@@ -33,14 +33,28 @@ class WebhookJob < ApplicationJob
     data_object = json_data['data']['object']
     Rails.logger.info "Data object: #{data_object}"
 
-    case json_data['type']
+  case event.type
+  when 'checkout.session.completed'
+    session = event.data.object
+    plink_id = session.payment_link
+
+  case plink_id
+  when 'plink_dR64jZ5ut9Bv4004gi'
+    process_ticket_sale(session)
+  when 'plink_4gw5o32ih7tn4004gh'
+    process_donation(session)
+  end
+
     when 'payment_intent.succeeded'
       handle_payment_intent(data_object, webhook)
     when 'invoice.payment_succeeded'
       handle_invoice_payment(data_object, webhook)
     when 'charge.succeeded'
       handle_charge(data_object, webhook)
-    else
+      else
+        Rails.logger.warn "Unhandled event type: #{json_data['type']}"
+      end
+      endelse
       Rails.logger.warn "Unhandled event type: #{json_data['type']}"
     end
   end

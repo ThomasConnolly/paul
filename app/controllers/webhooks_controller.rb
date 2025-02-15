@@ -2,7 +2,7 @@
 
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
-
+  before_action :verify_stripe_webhook
   def create
     Rails.logger.debug "Received webhook: #{request.body.read}"
 

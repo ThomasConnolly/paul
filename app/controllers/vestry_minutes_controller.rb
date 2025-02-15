@@ -12,47 +12,32 @@ class VestryMinutesController < ApplicationController
     @vestry_minutes = VestryMinute.all
   end
 
-  # GET /vestry_minutes/1
-  # GET /vestry_minutes/1.json
   def show; end
 
-  # GET /vestry_minutes/new
   def new
     @vestry_minute = VestryMinute.new
   end
 
-  # GET /vestry_minutes/1/edit
   def edit; end
 
-  # POST /vestry_minutes
-  # POST /vestry_minutes.json
   def create
     @vestry_minute = VestryMinute.new(vestry_minute_params)
-
-    respond_to do |format|
-      if @vestry_minute.save
-        format.html { redirect_to @vestry_minute, notice: 'Vestry minutes successfully created.' }
-        format.json { render :show, status: :created, location: @vestry_minute }
-        MinutesMailer.new_minutes_email(@vestry_minute).deliver_now
-      else
-        format.html { render :new }
-        format.json { render json: @vestry_minute.errors, status: :unprocessable_entity }
-      end
+    if @vestry_minute.save
+      MinutesMailer.send_minutes_emails(@vestry_minute)
+      redirect_to @vestry_minute, notice: 'Vestry minutes successfully created.'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /vestry_minutes/1
-  # PATCH/PUT /vestry_minutes/1.json
   def update
     if @vestry_minute.update(vestry_minute_params)
       redirect_to(@vestry_minute, notice: 'Vestry minutes successfully updated.')
     else
-      render :edit
+      render :new
     end
   end
 
-  # DELETE /vestry_minutes/1
-  # DELETE /vestry_minutes/1.json
   def destroy
     @vestry_minute.destroy
     redirect_to vestry_minutes_url, status: :see_other, notice: 'Vestry minutes successfully destroyed.'

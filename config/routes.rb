@@ -14,10 +14,11 @@ Rails.application.routes.draw do
 
   post '/webhooks', to: 'webhooks#create'
 
-  resources :donations
-  scope '/checkout_donations' do
-    post 'create', to: 'checkout_donations#create', as: 'checkout_donations/create'
-    get 'success', to: 'checkout_donations#success', as: 'checkout_donations_success'
+  resources :stripe_reports, only: %i[index show]
+  resources :tickets, only: :index
+
+  resources :events do
+    resources :tickets, only: :index
   end
 
   resources :pledges
@@ -26,17 +27,6 @@ Rails.application.routes.draw do
     get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
   end
 
-  resources :tickets
-  scope '/checkout_tickets' do
-    post 'create', to: 'checkout_tickets#create', as: 'checkout_tickets/create'
-    get 'success', to: 'checkout_tickets#success', as: 'checkout_tickets_success'
-  end
-
-  resources :events do
-    resources :tickets, only: %i[new show create update]
-  end
-
-  resources :tickets, only: [:index]
   resources :links
   resources :pathways
   resources :pray_fors
@@ -75,7 +65,6 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
   get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
 
-  resources :stripe_reports, only: %i[index show]
   resources :worship, only: :index
   resources :opportunities
   resources :homilists

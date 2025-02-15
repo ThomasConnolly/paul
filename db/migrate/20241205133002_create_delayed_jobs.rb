@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateDelayedJobs < ActiveRecord::Migration[6.0]
   def change
     return if table_exists?(:delayed_jobs)

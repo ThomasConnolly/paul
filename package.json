@@ -26,7 +26,8 @@
     "build:css:compile": "postcss ./app/assets/stylesheets/application.css --use=autoprefixer --output=./app/assets/stylesheets/application.css",
     "build:css:bundle": "postcss ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css",
     "build:css": "yarn build:css:compile && yarn build:css:bundle",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext css --exec \"yarn build:css\""
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext css --exec \"yarn build:css\"",
+    "build": "yarn build:css"
   },
   "browserslist": [
     "defaults"

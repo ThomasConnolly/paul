@@ -1,7 +1,7 @@
 {
   "name": "paul",
   "engines": {
-    "node": "18.19.1"
+    "node": "23.9.0"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
@@ -11,26 +11,22 @@
     "@rails/request.js": "^0.0.9",
     "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.2",
+    "css": "^3.0.0",
     "cssnano": "^6.0.2",
-    "esbuild": "^0.24.2",
-    "esbuild-plugin-sass": "^1.0.1",
+    "esbuild": "^0.25.0",
     "flatpickr": "^4.6.13",
     "micromatch": "^4.0.8",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.75.0",
     "sortablejs": "^1.15.2",
-    "trix": "^2.1.5"
+    "trix": "^2.1.12"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
-    "build:css:compile": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --load-path=node_modules",
-    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
-    "build:css": "yarn build:css:compile && yarn build:css:bundle && yarn build:css:prefix",
-    "build:css:bundle": "postcss ./app/assets/builds/application.css -o ./app/assets/builds/application.css",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
+    "build:css:compile": "postcss ./app/assets/stylesheets/application.css --use=autoprefixer --output=./app/assets/stylesheets/application.css",
+    "build:css:bundle": "postcss ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css",
+    "build:css": "yarn build:css:compile && yarn build:css:bundle",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext css --exec \"yarn build:css\""
   },
   "browserslist": [
     "defaults"
@@ -51,5 +47,9 @@
   "bugs": {
     "url": "https://github.com/ThomasConnolly/paul/issues"
   },
-  "homepage": "https://github.com/ThomasConnolly/paul#readme"
+  "homepage": "https://github.com/ThomasConnolly/paul#readme",
+  "packageManager": "yarn@4.7.0",
+  "devDependencies": {
+    "postcss-import": "^16.1.0"
+  }
 }

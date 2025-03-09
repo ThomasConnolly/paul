@@ -20,8 +20,6 @@ class MinutesMailer < ApplicationMailer
     end
   end
 
-  private
-
   def self.load_email_list
     YAML.load_file(Rails.root.join('config', 'vestry_members.yml'))['email_list']
   end

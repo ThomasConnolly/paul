@@ -21,7 +21,7 @@ class RegistrationsController < Devise::RegistrationsController
     entry = job.entries[0]
 
     entry.classification == 'Deliverable'
-  rescue => e
+  rescue StandardError => e
     Rails.logger.error "Verifalia email validation failed: #{e.message}"
     false
   end

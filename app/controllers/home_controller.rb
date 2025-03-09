@@ -4,7 +4,7 @@
 class HomeController < ApplicationController
   def index
     @event = Event.last
-    @ens_feed = EnsFeed.all.order('published_at DESC').limit(6)
+    @ens_feed = EnsFeed.all.order('published_at DESC').limit(5)
     @worship = Link.find_by(event: 'worship')
     @bulletin = Link.find_by(event: 'bulletin')
     @wine = Link.find_by(event: 'wine_time')

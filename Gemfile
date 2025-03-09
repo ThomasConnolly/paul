@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.4.1'
+ruby '3.4.2'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -16,6 +16,8 @@ gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
+# gem 'bootstrap'
+# gem 'bootstrap-icons'
 gem 'cloudinary'
 gem 'cssbundling-rails'
 gem 'daemons'
@@ -37,6 +39,7 @@ gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'loofah'
 gem 'mini_magick'
+# gem 'mission_control-jobs'
 gem 'net-smtp'
 gem 'nokogiri'
 gem 'pg'
@@ -61,6 +64,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'verifalia'
 gem 'whenever', require: false
+gem 'yui-compressor'
 
 group :development, :test do
   gem 'dead_end'
@@ -72,9 +76,11 @@ group :development, :test do
   gem 'guard'
   gem 'listen'
   gem 'rspec-rails'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'trix'
 end
 
 group :development do

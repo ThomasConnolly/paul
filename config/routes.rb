@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   resources :pledges
   scope 'checkout_pledges' do
     post 'create', to: 'checkout_pledges#create', as: 'checkout_pledges/create'
-    get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
+    get 'success', to: 'checkout_pledges#success',
+                   as: 'checkout_pledges_success'
   end
 
   resources :links
@@ -63,7 +64,8 @@ Rails.application.routes.draw do
   get 'pages/stay_safe'
   get 'pages/music'
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
-  get '/.well-known/apple-developer-merchantid-domain-association' => 'public/apple_pay_merchants#domain_association'
+  get '/.well-known/apple-developer-merchantid-domain-association' =>
+    'public/apple_pay_merchants#domain_association'
 
   resources :worship, only: :index
   resources :opportunities
@@ -103,4 +105,6 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   mount ActionCable.server => '/cable'
+
+  # mount MissionControl::Jobs::Engine => '/jobs'
 end

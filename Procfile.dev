@@ -1,3 +1,2 @@
-web: unset PORT && PORT=3000 bundle exec puma -C config/puma.rb
+web: bundle exec puma -C config/puma.rb -p 3000
 worker: bundle exec bin/delayed_job run
-env: ruby print_env.rb

@@ -1,10 +1,17 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-3">
     <%= simple_form_for @pledge do |f| %>
-    <%= f.input :dollars, label: "Amount per period in whole dollars", class: "mb-2" %>    
-    <p>Frequency</p>
-    <%= f.input_field :plan, as: :radio_buttons, collection: [[" Weekly", "week"], [" Monthly", "month"], [" Quarterly", "quarter"]], label: false %> </p>
-    <%= f.submit "Confirm" , class: "btn btn-lg btn-success mb-2" %>
-  <% end %>
+      <%= f.input :dollars, label: "Amount per period in whole dollars", class: "mb-2" %>    
+      
+      <p>Frequency</p>
+      <div class="form-check form-check-inline">
+        <%= f.input_field :price, as: :radio_buttons, 
+                      collection: [["Weekly", "weekly"], ["Monthly", "monthly"], ["Quarterly", "quarterly"]], 
+                      label: false,
+                      item_wrapper_class: 'form-check-inline mb-2 me-3' %>
+      </div> <!-- Closing div in the correct place -->
+      
+      <%= f.submit "Confirm", class: "btn btn-lg btn-success mb-2" %>
+    <% end %>
   </div>
 </div>

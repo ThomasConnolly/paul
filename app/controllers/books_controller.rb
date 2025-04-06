@@ -7,11 +7,11 @@ class BooksController < ApplicationController
   before_action :admin_only, only: %i[new edit update create destroy book_admin]
 
   def index
-    @books = Book.all.order(:title)
+    @books = Book.order(:title)
   end
 
   def books_admin
-    @books_admin = Book.all.order(:id)
+    @books_admin = Book.order(:id)
     @import = Book::Import.new
     @last_book = Book.last.id
 
@@ -24,12 +24,14 @@ class BooksController < ApplicationController
   end
 
   def books_author
-    @books = Book.all.order(:author)
+    @books = Book.order(:author)
   end
 
   def books_title
-    @books = Book.all.order(:title)
+    @books = Book.order(:title)
   end
+
+  def show; end
 
   def new
     @book = Book.new
@@ -45,8 +47,6 @@ class BooksController < ApplicationController
       render(:new)
     end
   end
-
-  def show; end
 
   def update
     if @book.update(book_params)
@@ -88,7 +88,7 @@ class BooksController < ApplicationController
   end
 
   def book_import_params
-    params.require(:book_import).permit(:file)
+    params.expect(book_import: [:file])
   end
 
   def book_params

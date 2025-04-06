@@ -12,18 +12,18 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new
   end
 
+  def edit; end
+
   def create
     @pledge = Pledge.new(pledge_params)
     @pledge.user_id = current_user.id
 
     if @pledge.save
-      redirect_to(pledge_path(@pledge))
+      redirect_to(checkout_pledge_path(@pledge))
     else
       render(:new)
     end
   end
-
-  def edit; end
 
   def update
     @pledge.update(pledge_params)
@@ -59,6 +59,6 @@ class PledgesController < ApplicationController
   end
 
   def pledge_params
-    params.expect(pledge: %i[amount dollars stripe_id plan_id plan status])
+    params.expect(pledge: %i[amount dollars stripe_id price price_id status])
   end
 end

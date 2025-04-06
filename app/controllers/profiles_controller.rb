@@ -22,26 +22,16 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_profile, only: %i[show edit update]
 
-  def edit; end
-
-  def show; end
-
-  def update
-    @profile.update(profile_params)
-    if @profile.save
-      redirect_to(profile_path(@profile))
-    else
-      render('edit')
-    end
-  end
-
   def index
     @profiles = Profile.all
     @profile = Profile.find(current_user.profile.id)
     @users = User.order(:last_name)
   end
 
+  def show; end
+
   def new; end
+  def edit; end
 
   def create
     @profile = current_user.build_profile(profile_params)
@@ -49,6 +39,15 @@ class ProfilesController < ApplicationController
       redirect_to(current_user_path)
     else
       render('new')
+    end
+  end
+
+  def update
+    @profile.update(profile_params)
+    if @profile.save
+      redirect_to(profile_path(@profile))
+    else
+      render('edit')
     end
   end
 

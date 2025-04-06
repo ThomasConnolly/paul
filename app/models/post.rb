@@ -15,7 +15,6 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   validates :content, presence: true
-  validates :user_id, presence: true
   has_rich_text :content
   has_one_attached :picture
   has_many_attached :photos

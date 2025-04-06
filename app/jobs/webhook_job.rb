@@ -7,7 +7,6 @@ class WebhookJob < ApplicationJob
 
   def perform(webhook_id)
     Rails.logger.info "Starting WebhookJob for webhook: #{webhook_id}"
-
     webhook = Webhook.find(webhook_id)
 
     begin
@@ -15,6 +14,7 @@ class WebhookJob < ApplicationJob
       json_data = JSON.parse(webhook.data)
       Rails.logger.info "Parsed JSON data: #{json_data}"
       handle_webhook(json_data, webhook)
+      webhook.update(status: 'processed')
     rescue JSON::ParserError => e
       Rails.logger.error "Invalid JSON in webhook data: #{e.message}"
       webhook.update(status: 'failed')
@@ -33,35 +33,64 @@ class WebhookJob < ApplicationJob
     data_object = json_data['data']['object']
     Rails.logger.info "Data object: #{data_object}"
 
-  case event.type
-  when 'checkout.session.completed'
-    session = event.data.object
-    plink_id = session.payment_link
-
-  case plink_id
-  when 'plink_dR64jZ5ut9Bv4004gi'
-    process_ticket_sale(session)
-  when 'plink_4gw5o32ih7tn4004gh'
-    process_donation(session)
-  end
-
+    case json_data['type']
+    when 'checkout.session.completed'
+      handle_checkout_session(data_object, webhook)
     when 'payment_intent.succeeded'
       handle_payment_intent(data_object, webhook)
     when 'invoice.payment_succeeded'
       handle_invoice_payment(data_object, webhook)
     when 'charge.succeeded'
       handle_charge(data_object, webhook)
-      else
-        Rails.logger.warn "Unhandled event type: #{json_data['type']}"
-      end
-      endelse
+    else
       Rails.logger.warn "Unhandled event type: #{json_data['type']}"
     end
   end
 
+  def handle_checkout_session(data_object, webhook)
+    payment_link_id = data_object['payment_link']
+
+    if payment_link_id
+      case payment_link_id
+      when 'plink_dR64jZ5ut9Bv4004gi'
+        process_ticket_sale(data_object, webhook)
+      when 'plink_4gw5o32ih7tn4004gh'
+        process_donation(data_object, webhook)
+      else
+        Rails.logger.warn "Unhandled payment link ID: #{payment_link_id}"
+        process_payment(data_object['amount_total'], 'unknown', data_object, webhook)
+      end
+    else
+      Rails.logger.warn 'No payment link ID in checkout session'
+      process_payment(data_object['amount_total'], 'unknown', data_object, webhook)
+    end
+  end
+
+  def process_ticket_sale(data_object, webhook)
+    # Implement ticket sale processing
+    Rails.logger.info "Processing ticket sale: #{data_object['id']}"
+    # Create ticket records, send confirmation emails, etc.
+    amount = data_object['amount_total']
+    payment_method_type = data_object['payment_method_types']&.first || 'unknown'
+    process_payment(amount, payment_method_type, data_object, webhook)
+  end
+
+  def process_donation(data_object, webhook)
+    # Implement donation processing
+    Rails.logger.info "Processing donation: #{data_object['id']}"
+    # Create donation records, send thank you emails, etc.
+    amount = data_object['amount_total']
+    payment_method_type = data_object['payment_method_types']&.first || 'unknown'
+    process_payment(amount, payment_method_type, data_object, webhook)
+  end
+
   def handle_payment_intent(data_object, webhook)
     amount = data_object['amount']
-    payment_method_type = data_object.dig('payment_method_details', 'type')
+    payment_method_type = data_object['payment_method_types']&.first ||
+                          data_object.dig('payment_method_details', 'type') ||
+                          'card' # Default to 'card' if not found
+
+    Rails.logger.info "Found payment method type: #{payment_method_type}"
     process_payment(amount, payment_method_type, data_object, webhook)
   end
 
@@ -102,6 +131,7 @@ class WebhookJob < ApplicationJob
   rescue StandardError => e
     Rails.logger.error "Error processing payment: #{e.message}"
     webhook.update(status: 'failed')
+    raise # Re-raise to be caught by the outer error handler
   end
 
   def extract_name(data_object)
@@ -128,7 +158,7 @@ class WebhookJob < ApplicationJob
   def calculate_stripe_fee(amount, payment_method_type)
     case payment_method_type
     when 'card'
-      (amount * 0.029 + 30).round # 2.9% + $0.30 for credit cards
+      ((amount * 0.029) + 30).round # 2.9% + $0.30 for credit cards
     when 'us_bank_account'
       if amount <= 500_00 # $5.00 or less
         0 # ACH transfers are free for transactions $5 or less

@@ -8,6 +8,12 @@ class StripeReportsController < ApplicationController
 
   respond_to :html, :js
 
+  def index
+    @stripe_reports = StripeReport.all
+  end
+
+  def show; end
+
   def new
     @stripe_report = StripeReport.new
   end
@@ -20,12 +26,6 @@ class StripeReportsController < ApplicationController
       render :new
     end
   end
-
-  def index
-    @stripe_reports = StripeReport.all
-  end
-
-  def show; end
 
   private
 

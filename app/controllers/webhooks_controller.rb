@@ -2,30 +2,36 @@
 
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
-  before_action :verify_stripe_webhook
-  def create
-    Rails.logger.debug "Received webhook: #{request.body.read}"
 
+  def create
     payload = request.body.read
-    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+    Rails.logger.debug { "Received webhook: #{payload}" }
+
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
+    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
 
     begin
-      Stripe::Webhook.construct_event(
+      event = Stripe::Webhook.construct_event(
         payload, sig_header, endpoint_secret
       )
+
+      webhook = Webhook.create!(
+        data: payload,
+        event_type: event.type
+      )
+      Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}, event_type: #{event.type}"
+
+      WebhookJob.perform_later(webhook.id)
+      render json: { status: :ok }
     rescue JSON::ParserError => e
-      render json: { error: e.message }, status: :bad_request and return
+      Rails.logger.error "JSON parse error: #{e.message}"
+      render json: { error: e.message }, status: :bad_request
     rescue Stripe::SignatureVerificationError => e
-      render json: { error: e.message }, status: :bad_request and return
+      Rails.logger.error "Signature verification failed: #{e.message}"
+      render json: { error: e.message }, status: :bad_request
+    rescue StandardError => e
+      Rails.logger.error "Unexpected error processing webhook: #{e.message}"
+      render json: { error: e.message }, status: :internal_server_error
     end
-
-    webhook = Webhook.create!(
-      data: payload
-    )
-    Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}"
-
-    WebhookJob.perform_later(webhook.id)
-    render json: { status: :ok }
   end
 end

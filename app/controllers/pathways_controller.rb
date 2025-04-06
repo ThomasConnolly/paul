@@ -5,16 +5,16 @@ class PathwaysController < ApplicationController
   before_action :set_pathway, only: %i[show edit update destroy]
 
   def index
-    @pathways = Pathway.all.order('pubdate DESC')
+    @pathways = Pathway.order('pubdate DESC')
   end
-
-  def edit; end
 
   def show; end
 
   def new
     @pathway = Pathway.new
   end
+
+  def edit; end
 
   def create
     @pathway = Pathway.new(pathway_params)

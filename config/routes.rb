@@ -23,9 +23,8 @@ Rails.application.routes.draw do
 
   resources :pledges
   scope 'checkout_pledges' do
-    post 'create', to: 'checkout_pledges#create', as: 'checkout_pledges/create'
-    get 'success', to: 'checkout_pledges#success',
-                   as: 'checkout_pledges_success'
+    post 'create', to: 'checkout_pledges#create', as: 'checkout_pledge'
+    get 'success', to: 'checkout_pledges#success', as: 'checkout_pledges_success'
   end
 
   resources :links

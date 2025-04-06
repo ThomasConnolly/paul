@@ -12,7 +12,8 @@ RSpec.describe RegistrationsController, type: :controller do
     end
 
     it 'redirects to root path with a flash message for a fake email' do
-      post :create, params: { user: { email: 'fake@example.com', password: 'password', password_confirmation: 'password' } }
+      post :create,
+           params: { user: { email: 'fake@example.com', password: 'password', password_confirmation: 'password' } }
 
       expect(response).to redirect_to(root_path)
       expect(flash[:alert]).to eq('Cannot confirm that email address!')

@@ -6,19 +6,18 @@ class MembersController < ApplicationController
   before_action :set_member, only: %i[show update edit destroy]
 
   def index
-    @members = Member.all.order(:last_name)
+    @members = Member.order(:last_name)
     @diaspora = Member.where.not(away_zip: nil).where.not(email: nil)
   end
+
+  def show; end
+  def edit; end
 
   def update
     @member.update(member_params)
     @member.save
     redirect_to(members_path)
   end
-
-  def edit; end
-
-  def show; end
 
   def destroy
     @member.destroy

@@ -14,5 +14,5 @@
 #
 class StoryAssignment < ApplicationRecord
   belongs_to :story_idea, dependent: :destroy
-  enum :status, %i[pending submitted]
+  enum :status, { pending: 0, submitted: 1 }
 end

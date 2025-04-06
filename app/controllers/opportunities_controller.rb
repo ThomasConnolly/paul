@@ -3,19 +3,19 @@
 
 class OpportunitiesController < ApplicationController
   def index
-    @opportunities = Opportunity.all.order(:ministry)
+    @opportunities = Opportunity.order(:ministry)
   end
 
   def show; end
 
-  def edit
-    @users = User.all.order(:last_name)
-    @opportunity = Opportunity.find(params[:id])
+  def new
+    @users = User.order(:last_name)
+    @opportunity = Opportunity.new
   end
 
-  def new
-    @users = User.all.order(:last_name)
-    @opportunity = Opportunity.new
+  def edit
+    @users = User.order(:last_name)
+    @opportunity = Opportunity.find(params[:id])
   end
 
   def create

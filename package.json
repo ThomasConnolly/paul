@@ -49,7 +49,6 @@
     "url": "https://github.com/ThomasConnolly/paul/issues"
   },
   "homepage": "https://github.com/ThomasConnolly/paul#readme",
-  "packageManager": "yarn@4.7.0.cjs",
   "devDependencies": {
     "postcss-import": "^16.1.0"
   }

@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 class PostMailer < ApplicationMailer
-  default to: User.all.pluck(:email)
+  default to: User.pluck(:email)
 
   def post_created(post)
     @post = post

@@ -20,7 +20,7 @@ class SermonsController < ApplicationController
   before_action :set_sermon, only: %i[show edit update destroy]
 
   def index
-    @sermons = Sermon.all.order('delivered_on DESC')
+    @sermons = Sermon.order('delivered_on DESC')
   end
 
   def show; end

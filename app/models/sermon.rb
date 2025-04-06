@@ -19,5 +19,5 @@
 class Sermon < ApplicationRecord
   has_rich_text :content
   belongs_to :homilist
-  validates :title, :delivered_on, :homilist_id, presence: true
+  validates :title, :delivered_on, presence: true
 end

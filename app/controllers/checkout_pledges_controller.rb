@@ -1,6 +1,3 @@
-# typed: false
-# frozen_string_literal: true
-
 class CheckoutPledgesController < ApplicationController
   protect_from_forgery
   before_action :authenticate_user!
@@ -14,7 +11,23 @@ class CheckoutPledgesController < ApplicationController
 
     @customer = find_or_create_stripe_customer
     current_user.update(stripe_id: @customer.id)
-    create_stripe_checkout_session(@pledge, @customer)
+    create_stripe_checkout_session
+  end
+
+  def success  # ✅ Method at the class level
+    session_id = params[:session_id]
+    
+    # Retrieve the checkout session from Stripe
+    checkout_session = Stripe::Checkout::Session.retrieve(session_id)
+    
+    # Update your pledge with the subscription ID
+    @pledge = Pledge.find(checkout_session.metadata.pledge_id)
+    @pledge.update(
+      subscription_id: checkout_session.subscription,
+      status: 'active'
+    )
+    
+    render 'success'
   end
 
   private
@@ -27,28 +40,21 @@ class CheckoutPledgesController < ApplicationController
     end
   end
 
-  def create_stripe_checkout_session(_pledge, _customer)
-    Stripe::Checkout::Session.create(
+  def create_stripe_checkout_session
+    session = Stripe::Checkout::Session.create(
       mode: 'subscription',
       success_url: "#{checkout_pledges_success_url}?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: pledges_url,
       line_items: [{
-        price_data: {
-          unit_amount: (@pledge.dollars.to_i * 100),
-          currency: 'usd',
-          product_data: {
-            name: 'Pledge donation'
-          },
-          recurring: {
-            interval: @pledge.plan.to_s
-          }
-        },
-        quantity: 1
+        price: @pledge.price_id,
+        quantity: @pledge.dollars.to_i
       }],
       customer: @customer.id,
       metadata: {
         pledge_id: @pledge.id
       }
     )
+    
+    redirect_to session.url, allow_other_host: true
   end
 end

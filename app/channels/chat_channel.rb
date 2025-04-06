@@ -7,7 +7,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    p data
+    Rails.logger.debug data
     ActionCable.server.broadcast("chat_#{params[:room]}", message: data['message'])
   end
 end

@@ -1,2 +1,4 @@
 #!/usr/bin/env sh
-foreman start -f Procfile.dev
+unset PORT
+export PORT=3000
+exec foreman start -f Procfile.dev

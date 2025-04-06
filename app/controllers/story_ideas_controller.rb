@@ -19,16 +19,16 @@ class StoryIdeasController < ApplicationController
   before_action :find_commentable
   before_action :authorize
 
-  def new
-    @story_idea = StoryIdea.new
-  end
-
   def index
     @story_ideas = StoryIdea.all
     @story_idea = StoryIdea.new
   end
 
   def show; end
+
+  def new
+    @story_idea = StoryIdea.new
+  end
 
   def edit; end
 

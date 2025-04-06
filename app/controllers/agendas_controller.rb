@@ -6,13 +6,13 @@ class AgendasController < ApplicationController
   before_action :set_agenda, only: %i[show edit update destroy]
   before_action :admin_only, only: %i[new create update destroy]
 
+  def index
+    @agendas = Agenda.all
+  end
+
   def show
     @agenda = Agenda.find(params[:id])
     @agenda_items = @agenda.agenda_items.order(:position)
-  end
-
-  def index
-    @agendas = Agenda.all
   end
 
   def new

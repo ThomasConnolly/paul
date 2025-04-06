@@ -36,9 +36,9 @@ class User < ApplicationRecord
   before_save :set_username
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :roles, presence: true
-  after_save :add_profile
   before_create :set_default_role
   after_destroy :cancel_stripe_customer
+  after_save :add_profile
   has_many :posts, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_one  :profile, dependent: :destroy

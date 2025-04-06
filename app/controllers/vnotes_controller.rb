@@ -18,10 +18,6 @@ class VnotesController < ApplicationController
   before_action :vestry_only
   before_action :set_vnote, only: %i[show edit update destroy]
 
-  def new
-    @vnote = Vnote.new
-  end
-
   def index
     @vnotes = Vnote.includes(:comments).all
     @vnote = Vnote.new
@@ -30,6 +26,12 @@ class VnotesController < ApplicationController
   def show
     @comments = @vnote.comments.order(created_at: :desc)
   end
+
+  def new
+    @vnote = Vnote.new
+  end
+
+  def edit; end
 
   def create
     @vnote = current_user.vnotes.build(vnote_params)
@@ -42,8 +44,6 @@ class VnotesController < ApplicationController
     @vnote.update(vnote_params)
     redirect_to(@vnote, notice: 'message successfully updated.')
   end
-
-  def edit; end
 
   def destroy
     @vnote.destroy

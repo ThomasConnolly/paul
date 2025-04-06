@@ -72,7 +72,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'email_spec'
   gem 'factory_bot_rails'
-  gem 'foreman'
   gem 'guard'
   gem 'listen'
   gem 'rspec-rails'

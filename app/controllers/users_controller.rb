@@ -31,16 +31,18 @@ class UsersController < ApplicationController
   before_action :admin_only, only: %i[index new create]
   before_action :set_user, only: %i[show edit update destroy]
 
-  def new
-    @user = User.new
-  end
-
   def index
-    @users = User.all.order(:last_name)
+    @users = User.order(:last_name)
     redirect_to('/') unless current_user.roles.include?('admin')
   end
 
   def show; end
+
+  def new
+    @user = User.new
+  end
+
+  def edit; end
 
   def create
     @user = User.new(user_params)
@@ -49,8 +51,6 @@ class UsersController < ApplicationController
   def update
     redirect_to(profile_path(current_user.profile)) if @user.update(user_params)
   end
-
-  def edit; end
 
   # DELETE
   def destroy

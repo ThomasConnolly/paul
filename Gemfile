@@ -55,16 +55,17 @@ gem 'railties'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'responders'
 gem 'ruby-vips'
+gem 'sassc-rails'
 gem 'simple_form'
 gem 'solargraph'
 gem 'stimulus-rails'
 gem 'stringio', '~> 3.1', '>= 3.1.2'
 gem 'stripe'
+gem 'terser'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'verifalia'
 gem 'whenever', require: false
-gem 'yui-compressor'
 
 group :development, :test do
   gem 'dead_end'

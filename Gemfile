@@ -60,7 +60,7 @@ gem 'simple_form'
 gem 'solargraph'
 gem 'stimulus-rails'
 gem 'stringio', '~> 3.1', '>= 3.1.2'
-gem 'stripe'
+gem 'stripe', '~> 13.5.0'
 gem 'terser'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]

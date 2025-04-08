@@ -1,32 +1,35 @@
-# Ensure Rails.root is always available
-# Ensure Rails.root and Rails.application.config.root are always available
-if !defined?(Rails.root) || Rails.root.nil? || !defined?(Rails.application) || Rails.application.nil?
-    module Rails
-      class << self
-        # Define a custom application method
-        def application
-          @_application ||= begin
+# Ensure Rails.root is always available even during asset precompilation
+module Rails
+    class << self
+      # Completely override the Rails.root method
+      def root
+        @_root ||= begin
+          # Use the current directory as a fallback
+          Pathname.new(File.expand_path('../../', __FILE__))
+        end
+      end
+      
+      # Store the original method
+      alias_method :original_application, :application if method_defined?(:application)
+      
+      # Override the application method to ensure it's never nil
+      def application
+        @_application ||= begin
+          app = if respond_to?(:original_application)
+            original_application 
+          else 
+            nil
+          end
+          
+          if app.nil?
             # Create a minimal application stub with config.root
             require 'ostruct'
             app = OpenStruct.new
             app.config = OpenStruct.new
             app.config.root = root
-            app
           end
-        end
-        
-        # Define root method
-        def root
-          @_root ||= begin
-            # Use the current directory as a fallback if we're in an initializer
-            if defined?(ENGINE_ROOT)
-              Pathname.new(ENGINE_ROOT)
-            elsif defined?(APP_PATH)
-              Pathname.new(APP_PATH).parent
-            else
-              Pathname.new(File.dirname(__FILE__)).parent.parent
-            end
-          end
+          
+          app
         end
       end
     end

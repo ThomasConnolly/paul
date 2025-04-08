@@ -3,7 +3,29 @@
 
 require_relative 'boot'
 
-require 'rails/all'
+# Instead of require 'rails/all'
+require "rails"
+# Include all railties manually, excluding sprockets
+%w(
+  active_record/railtie
+  active_storage/engine
+  action_controller/railtie
+  action_view/railtie
+  action_mailer/railtie
+  active_job/railtie
+  action_cable/engine
+  action_mailbox/engine
+  action_text/engine
+  rails/test_unit/railtie
+).each do |railtie|
+  begin
+    require railtie
+  rescue LoadError
+  end
+end
+
+# Explicitly require propshaft
+require "propshaft"
 require 'action_cable/engine'
 require 'csv'
 
@@ -19,18 +41,9 @@ module Paul
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
     config.assets.enabled = true
+    config.asset_pipeline = :propshaft
     config.middleware.insert_before 0, Rack::Attack
 
-    # Please, add to the `ignore` list any other `lib` subdirectories that do
-    # not contain `.rb` files, or that should not be reloaded or eager loaded.
-    # Common ones are `templates`, `generators`, or `middleware`, for example.
-    # config.autoload_lib(ignore: %w[assets tasks])
-    # config.active_job.queue_adapter = :async
-
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
     # Use Propshaft for asset pipeline
     config.assets.paths << Rails.root.join('app/assets/stylesheets')
     config.assets.paths << Rails.root.join('app/javascript')

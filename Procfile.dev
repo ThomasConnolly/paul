@@ -1,2 +1,4 @@
 web: bundle exec puma -C config/puma.rb -p 3000
 worker: bundle exec bin/delayed_job run
+vite: bin/vite dev
+web: bin/rails s

@@ -11,4 +11,15 @@
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, AllowedPatterns, SplitStrings.
 # URISchemes: http, https
 Layout/LineLength:
-  Max: 198
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'lib/tasks/**/*'
+    - 'db/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - '.rubocop_todo.yml'
+    - '.rubocop.yml'

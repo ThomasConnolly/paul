@@ -3,6 +3,7 @@ import { Application } from "@hotwired/stimulus"
 import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
 import "@rails/actioncable"
+import "./controllers"
 
 // Initialize Stimulus
 const application = Application.start()

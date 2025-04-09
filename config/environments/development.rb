@@ -73,7 +73,7 @@ Rails.application.configure do
   config.active_job.queue_adapter = :delayed_job
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -82,13 +82,11 @@ Rails.application.configure do
   config.public_file_server.enabled = true
 
   # Enable debug mode for assets
-  config.assets.debug = true
 
   # Enable asset digests
-  config.assets.digest = true
 
   # Add additional error checking when serving assets at runtime
-  config.assets.raise_runtime_errors = true
+  # config.assets.raise_runtime_errors = true
 
   # Annotate rendered view with file names.
   config.action_view.annotate_rendered_view_with_filenames = true

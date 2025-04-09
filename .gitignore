@@ -28,16 +28,14 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
-
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-/app/assets/builds/*
-!/app/assets/builds/.keep
-
+/app/assets/build/*
+!/app/assets/build/.keep
 /node_modules
-
 /config/credentials/credentials.key
 ./latest.dump2
+*.local
+

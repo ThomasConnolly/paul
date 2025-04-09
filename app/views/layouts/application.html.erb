@@ -12,8 +12,8 @@
   <script src="https://js.stripe.com/v3/"></script>
   <link rel="icon" type="image/x-icon" href="<%= asset_path('favicon.ico') %>">
   <link rel="preload" href="<%= asset_path('application.css') %>" as="style">
-  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= stylesheet_link_tag "build/application", media: "all", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "build/application", "data-turbo-track": "reload", defer: true %>
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">

@@ -50,6 +50,8 @@
   },
   "homepage": "https://github.com/ThomasConnolly/paul#readme",
   "devDependencies": {
-    "postcss-import": "^16.1.0"
+    "postcss-import": "^16.1.0",
+    "vite": "^5.0.0",
+    "vite-plugin-ruby": "^5.1.0"
   }
 }

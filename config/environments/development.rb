@@ -85,9 +85,6 @@ Rails.application.configure do
 
   # Enable asset digests
 
-  # Add additional error checking when serving assets at runtime
-  # config.assets.raise_runtime_errors = true
-
   # Annotate rendered view with file names.
   config.action_view.annotate_rendered_view_with_filenames = true
 

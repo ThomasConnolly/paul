@@ -40,13 +40,10 @@ module Paul
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
-    config.assets.enabled = true
     config.asset_pipeline = :propshaft
     config.middleware.insert_before 0, Rack::Attack
 
     # Use Propshaft for asset pipeline
-    config.assets.paths << Rails.root.join('app/assets/stylesheets')
-    config.assets.paths << Rails.root.join('app/javascript')
     config.assets.paths << Rails.root.join('node_modules')
 
     config.time_zone = 'Eastern Time (US & Canada)'

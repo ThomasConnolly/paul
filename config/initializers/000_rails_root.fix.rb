@@ -3,6 +3,12 @@ if defined?(Rake) &&
   Rake.respond_to?(:application) && 
   Rake.application.top_level_tasks.include?('assets:precompile')
  
+  # Add fallback for secret_key_base if missing
+  if Rails.env.production? && ENV['SECRET_KEY_BASE'].nil?
+    require 'securerandom'
+    ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
+  end
+  
   module Rails
     class << self
       # Override the public_path method directly

@@ -9,6 +9,9 @@ if defined?(Rake) &&
     ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
   end
   
+  # You should save the key locally for your main heroku app
+  # heroku config:set SECRET_KEY_BASE=your_key --app your-main-app-name
+  
   module Rails
     class << self
       # Override the public_path method directly
@@ -82,6 +85,20 @@ if defined?(Rake) &&
             
             # Assign to app
             app.paths = paths
+            
+            # Add key_generator to app
+            require 'active_support/key_generator'
+            secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
+            app.key_generator = ActiveSupport::KeyGenerator.new(secret)
+            
+            # Add method for generate_key
+            def app.key_generator
+              @key_generator ||= begin
+                require 'active_support/key_generator'
+                secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
+                ActiveSupport::KeyGenerator.new(secret)
+              end
+            end
           end
           
           app

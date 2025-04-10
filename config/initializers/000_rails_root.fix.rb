@@ -9,11 +9,6 @@ if defined?(Rake) &&
     ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
   end
   
-  # Save the original methods first
-  if Rails.respond_to?(:application) && Rails.application
-    ORIGINAL_KEY_GENERATOR = Rails.application.key_generator if Rails.application.respond_to?(:key_generator)
-  end
-  
   # Define the key generator class outside any methods
   class CustomKeyGenerator
     def initialize(secret)
@@ -29,13 +24,11 @@ if defined?(Rake) &&
   # Directly patch the key generator into Rails.application
   if Rails.respond_to?(:application) && Rails.application
     secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
-    Rails.application.instance_variable_set(:@key_generator, CustomKeyGenerator.new(secret))
+    key_gen = CustomKeyGenerator.new(secret)
     
-    # Add accessor method if it doesn't exist
-    unless Rails.application.respond_to?(:key_generator)
-      def Rails.application.key_generator
-        @key_generator
-      end
+    # Use singleton class to add the key_generator method
+    Rails.application.singleton_class.class_eval do
+      define_method(:key_generator) { key_gen }
     end
   end
   
@@ -115,13 +108,11 @@ if defined?(Rake) &&
             
             # Create and set the key generator with access to the secret
             secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
-            app.key_generator = CustomKeyGenerator.new(secret)
+            key_gen = CustomKeyGenerator.new(secret)
             
-            # Explicitly create method for key_generator if needed
-            unless app.respond_to?(:key_generator)
-              class << app
-                attr_accessor :key_generator
-              end
+            # Add key_generator method to the app
+            app.singleton_class.class_eval do
+              define_method(:key_generator) { key_gen }
             end
           end
           

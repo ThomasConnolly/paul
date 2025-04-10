@@ -38,12 +38,42 @@ if defined?(Rake) &&
   
   # Intercept ALL calls to Rails.application.key_generator.generate_key
   module Rails
+    # Save original application method
+    class << self
+      alias_method :original_application, :application if method_defined?(:application)
+    end
+    
     def self.application
-      app = super rescue nil
+      app = original_application rescue nil
       
       # Return a proxy object if the real application is nil
       if app.nil?
         proxy = Object.new
+        
+        # Create a config object with required properties
+        config = Object.new
+        
+        # Add active_storage property to config
+        def config.active_storage
+          @active_storage ||= begin
+            storage = Object.new
+            
+            def storage.method_missing(*)
+              nil
+            end
+            
+            storage
+          end
+        end
+        
+        # Add other commonly accessed config properties
+        %w[cache_classes eager_load debug consider_all_requests_local secret_key_base
+           log_level filter_parameters active_record assets action_controller].each do |prop|
+          config.define_singleton_method(prop) { nil }
+        end
+        
+        # Add config property to proxy
+        proxy.define_singleton_method(:config) { config }
         
         # Define method_missing to handle any method call
         def proxy.method_missing(method, *args)
@@ -77,6 +107,17 @@ if defined?(Rake) &&
             @custom_key_generator ||= $key_generator
           end
         end
+      end
+      
+      # Ensure app.config.active_storage exists
+      if app.respond_to?(:config) && app.config && !app.config.respond_to?(:active_storage)
+        storage = Object.new
+        
+        def storage.method_missing(*)
+          nil
+        end
+        
+        app.config.define_singleton_method(:active_storage) { storage }
       end
       
       app
@@ -144,6 +185,12 @@ if defined?(Rake) &&
       # Check for the specific pattern that's failing
       if method == :key_generator && caller_locations(1, 1)[0].label.include?('generate_key')
         return $key_generator
+      elsif method == :active_storage
+        storage = Object.new
+        def storage.method_missing(*)
+          nil
+        end
+        return storage
       end
       
       # Call the original method_missing if it exists
@@ -155,3 +202,4 @@ if defined?(Rake) &&
     end
   end
 end
+ 

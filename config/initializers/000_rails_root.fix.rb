@@ -132,15 +132,26 @@ if defined?(Rake) &&
     end
   end
   
-  # Last resort: Monkey patch the specific method call that's failing
-  old_method = Kernel.instance_method(:method_missing)
-  
-  Kernel.define_method(:method_missing) do |method, *args, &block|
-    # Check for the specific pattern that's failing
-    if self.is_a?(Object) && method == :key_generator && caller_locations(1, 1)[0].label.include?('generate_key')
-      $key_generator
-    else
-      old_method.bind(self).call(method, *args, &block)
+  # Alternative approach: Patch Object directly
+  class Object
+    # Store the original method_missing if it exists
+    if method_defined?(:method_missing)
+      alias_method :original_method_missing, :method_missing
+    end
+    
+    # Define our own method_missing that catches key_generator calls
+    def method_missing(method, *args, &block)
+      # Check for the specific pattern that's failing
+      if method == :key_generator && caller_locations(1, 1)[0].label.include?('generate_key')
+        return $key_generator
+      end
+      
+      # Call the original method_missing if it exists
+      if respond_to?(:original_method_missing)
+        original_method_missing(method, *args, &block)
+      else
+        super
+      end
     end
   end
 end

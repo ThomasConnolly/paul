@@ -32,15 +32,23 @@ if defined?(Rake) &&
              app.config.root = root
              
              # Add paths configuration
-             app.paths = {
+             paths_hash = {
                "public" => [File.join(root, "public")],
                "log" => [File.join(root, "log")],
                "tmp" => [File.join(root, "tmp")]
              }
              
-             # Make paths act like a HashWithIndifferentAccess
+             # Create a paths object that responds to []
+             app.paths = OpenStruct.new
+             
+             # Define the [] method correctly
              def app.paths.[](key)
-               self.fetch(key) || self.fetch(key.to_s)
+               @path_hash ||= {
+                 "public" => [File.join(Rails.root, "public")],
+                 "log" => [File.join(Rails.root, "log")],
+                 "tmp" => [File.join(Rails.root, "tmp")]
+               }
+               @path_hash[key.to_s]
              end
            end
            

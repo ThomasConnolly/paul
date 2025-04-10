@@ -9,53 +9,50 @@ if defined?(Rake) &&
     ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
   end
   
-  # Define the key generator class outside any methods
+  # Define the key generator class
   class CustomKeyGenerator
     def initialize(secret)
       @secret = secret
     end
     
-    # Support both argument patterns
     def generate_key(salt, key_size=64)
       require 'openssl'
       OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
     end
   end
   
-  # Directly patch the key generator into Rails.application
-  if Rails.respond_to?(:application) && Rails.application
-    # Create the key generator
-    secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
-    key_gen = CustomKeyGenerator.new(secret)
-    
-    # Don't override if it already exists and works
-    if !Rails.application.respond_to?(:key_generator) || 
-       Rails.application.key_generator.nil? ||
-       !Rails.application.key_generator.respond_to?(:generate_key)
-      
-      # Use singleton class to add the key_generator method
-      Rails.application.singleton_class.class_eval do
-        define_method(:key_generator) { key_gen }
+  # Create a global key generator for use throughout the initializer
+  $key_generator = CustomKeyGenerator.new(ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64))
+  
+  # Monkey patch Turbo::Engine to bypass the key_generator call
+  if defined?(Turbo) && defined?(Turbo::Engine)
+    module Turbo
+      class Engine < ::Rails::Engine
+        # Override the initializer that uses key_generator
+        initializers.find { |i| i.name == "turbo.signed_stream_verifier_key" }&.instance_variable_set(:@block, proc {
+          config.signed_stream_verifier_key = SecureRandom.hex(32)
+        })
       end
-    end
-    
-    # Set Turbo's key directly to avoid it calling key_generator
-    if defined?(Turbo) && defined?(Turbo::Engine)
-      Turbo::Engine.config.signed_stream_verifier_key = SecureRandom.hex(32)
     end
   end
   
+  # Direct patch for Rails.application.key_generator
+  module Rails
+    class Application
+      # Add key_generator method if it's missing
+      unless method_defined?(:key_generator)
+        define_method(:key_generator) { $key_generator }
+      end
+    end
+  end
+  
+  # Override methods in Rails module
   module Rails
     class << self
       # Override the public_path method directly
       def public_path
         @_public_path ||= root.join('public')
       end
-      
-      # Store original methods
-      alias_method :original_root, :root if method_defined?(:root)
-      alias_method :original_application, :application if method_defined?(:application)
-      alias_method :original_autoloaders, :autoloaders if method_defined?(:autoloaders)
       
       # Override Rails.root
       def root
@@ -78,65 +75,6 @@ if defined?(Rake) &&
           obj
         end
       end
-      
-      # Override Rails.application
-      def application
-        @_custom_application ||= begin
-          app = if respond_to?(:original_application)
-            original_application 
-          else 
-            nil
-          end
-          
-          if app.nil? || app.config.nil?
-            require 'ostruct'
-            app = OpenStruct.new
-            app.config = OpenStruct.new
-            app.config.root = root
-            
-            # Create paths directly as a hash with string access
-            paths = {}
-            
-            # Add standard paths
-            paths["public"] = [root.join("public").to_s]
-            paths["log"] = [root.join("log").to_s]
-            paths["tmp"] = [root.join("tmp").to_s]
-            
-            # Define method_missing to handle dynamic path lookups
-            def paths.method_missing(name, *args)
-              key = name.to_s
-              return self[key] if self.has_key?(key)
-              super
-            end
-            
-            # Define [] method for hash-like access
-            def paths.[](key)
-              # Convert to string for consistent access
-              str_key = key.to_s
-              return self.fetch(str_key, nil)
-            end
-            
-            # Assign to app
-            app.paths = paths
-            
-            # Create and set the key generator with access to the secret
-            secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
-            key_gen = CustomKeyGenerator.new(secret)
-            
-            # Add key_generator method to the app
-            app.singleton_class.class_eval do
-              define_method(:key_generator) { key_gen }
-            end
-          end
-          
-          app
-        end
-      end
     end
-  end
-  
-  # Also override the Rails.public_path method at the module level
-  def Rails.public_path
-    root.join('public')
   end
 end

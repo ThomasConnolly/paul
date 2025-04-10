@@ -12,8 +12,8 @@
   <script src="https://js.stripe.com/v3/"></script>
   <link rel="icon" type="image/x-icon" href="<%= asset_path('favicon.ico') %>">
   <link rel="preload" href="<%= asset_path('application.css') %>" as="style">
-  <%= stylesheet_link_tag "build/application", media: "all", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "build/application", "data-turbo-track": "reload", defer: true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 
 <body class="<%= controller_name %>  <%= action_name %>">
@@ -22,7 +22,7 @@
       <%= render '/layouts/header' %>
       <%= render '/layouts/navbar' %>
         <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
+          <p class="aalertlert alert-success"><%= notice %></p>
         <% end %>
         <% if alert %>
           <p class="alert alert-danger"><%= alert %></p>
@@ -31,6 +31,29 @@
       <%= render 'layouts/footer' %>
     </div><!-- page -->
   </div> <!-- container -->
+  <!-- Add Bootstrap directly from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous"></script>
+
+<script>
+  // Listen for both events to ensure it works
+  ["DOMContentLoaded", "turbo:load"].forEach(event => {
+    document.addEventListener(event, function() {
+      console.log("Initializing dropdowns");
+      
+      // Initialize dropdown elements
+      var dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+      dropdownElementList.forEach(function(element) {
+        if (typeof bootstrap !== 'undefined') {
+          new bootstrap.Dropdown(element)
+        } else {
+          console.error("Bootstrap is not defined! Dropdowns won't work.")
+        }
+      })
+    })
+  });
+</script>
 </body>
 
 </html>

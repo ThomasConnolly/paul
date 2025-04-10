@@ -10,7 +10,7 @@
     "@rails/actioncable": "^7.1.2",
     "@rails/request.js": "^0.0.9",
     "autoprefixer": "^10.4.16",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "5.3.3",
     "css": "^3.0.0",
     "cssnano": "^6.0.2",
     "esbuild": "^0.25.0",
@@ -26,8 +26,10 @@
     "build:css:compile": "postcss ./app/assets/stylesheets/application.css --use=autoprefixer --output=./app/assets/stylesheets/application.css",
     "build:css:bundle": "postcss ./app/assets/stylesheets/application.css -o ./app/assets/build/application.css",
     "build:css": "yarn build:css:compile && yarn build:css:bundle",
+    "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/build",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext css --exec \"yarn build:css\"",
-    "build": "yarn build:css"
+    "watch:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/build --watch",
+    "build": "yarn build:css && yarn build:js"
   },
   "browserslist": [
     "defaults"

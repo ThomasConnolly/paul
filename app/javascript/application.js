@@ -2,8 +2,10 @@
 import { Application } from "@hotwired/stimulus"
 import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
-import "@rails/actioncable"
-import "./controllers"
+window.bootstrap = bootstrap // This makes it globally available
+
+// Import all Bootstrap modules explicitly for use
+import { Dropdown, Collapse, Modal } from "bootstrap"
 
 // Initialize Stimulus
 const application = Application.start()

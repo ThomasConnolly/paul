@@ -9,6 +9,11 @@ if defined?(Rake) &&
     ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
   end
   
+  # Save the original methods first
+  if Rails.respond_to?(:application) && Rails.application
+    ORIGINAL_KEY_GENERATOR = Rails.application.key_generator if Rails.application.respond_to?(:key_generator)
+  end
+  
   # Define the key generator class outside any methods
   class CustomKeyGenerator
     def initialize(secret)
@@ -18,6 +23,19 @@ if defined?(Rake) &&
     def generate_key(salt, key_size=64)
       require 'openssl'
       OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
+    end
+  end
+  
+  # Directly patch the key generator into Rails.application
+  if Rails.respond_to?(:application) && Rails.application
+    secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
+    Rails.application.instance_variable_set(:@key_generator, CustomKeyGenerator.new(secret))
+    
+    # Add accessor method if it doesn't exist
+    unless Rails.application.respond_to?(:key_generator)
+      def Rails.application.key_generator
+        @key_generator
+      end
     end
   end
   
@@ -96,7 +114,15 @@ if defined?(Rake) &&
             app.paths = paths
             
             # Create and set the key generator with access to the secret
-            app.key_generator = CustomKeyGenerator.new(ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64))
+            secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
+            app.key_generator = CustomKeyGenerator.new(secret)
+            
+            # Explicitly create method for key_generator if needed
+            unless app.respond_to?(:key_generator)
+              class << app
+                attr_accessor :key_generator
+              end
+            end
           end
           
           app
@@ -108,5 +134,10 @@ if defined?(Rake) &&
   # Also override the Rails.public_path method at the module level
   def Rails.public_path
     root.join('public')
+  end
+  
+  # Direct patch for Turbo's key issue
+  if defined?(Turbo) && defined?(Turbo::Engine)
+    Turbo::Engine.config.signed_stream_verifier_key = SecureRandom.hex(32)
   end
 end

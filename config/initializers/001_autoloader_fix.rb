@@ -1,49 +1,52 @@
-# Only run during asset precompilation
+# Only apply the root fix during asset precompilation on Heroku
 if defined?(Rake) && 
     Rake.respond_to?(:application) && 
     Rake.application.top_level_tasks.include?('assets:precompile')
-  
-  # Create a stub for Rails.autoloaders.main that returns a minimal loader
-  module Rails
-    class << self
-      # Store the original autoloaders method if it exists
-      alias_method :original_autoloaders, :autoloaders if method_defined?(:autoloaders)
-      
-      # Override the autoloaders method
-      def autoloaders
-        # Try to use the original method first
-        loaders = if respond_to?(:original_autoloaders)
-          original_autoloaders
-        else
-          instance_variable_get(:@autoloaders)
-        end
-        
-        # If we don't have autoloaders, create a minimal structure
-        if loaders.nil?
-          require 'zeitwerk'
-          require 'ostruct'
-          
-          loaders = OpenStruct.new
-          
-          # Add a main method
-          def loaders.main
-            @main_loader ||= Zeitwerk::Loader.new
-          end
-          
-          # Store it for future use
-          @autoloaders = loaders
-        end
-        
-        # Add main method if it doesn't exist
-        if !loaders.respond_to?(:main)
-          loader = Zeitwerk::Loader.new
-          loaders.define_singleton_method(:main) do
-            loader
-          end
-        end
-        
-        loaders
-      end
-    end
-  end
-end
+   
+   module Rails
+     class << self
+       # Store original methods
+       alias_method :original_root, :root if method_defined?(:root)
+       alias_method :original_application, :application if method_defined?(:application)
+       
+       # Override Rails.root
+       def root
+         @_custom_root ||= begin
+           Pathname.new(File.expand_path('../..', __FILE__))
+         end
+       end
+       
+       # Override Rails.application
+       def application
+         @_custom_application ||= begin
+           app = if respond_to?(:original_application)
+             original_application 
+           else 
+             nil
+           end
+           
+           if app.nil? || app.config.nil?
+             require 'ostruct'
+             app = OpenStruct.new
+             app.config = OpenStruct.new
+             app.config.root = root
+             
+             # Add paths configuration
+             app.paths = {
+               "public" => [File.join(root, "public")],
+               "log" => [File.join(root, "log")],
+               "tmp" => [File.join(root, "tmp")]
+             }
+             
+             # Make paths act like a HashWithIndifferentAccess
+             def app.paths.[](key)
+               self.fetch(key) || self.fetch(key.to_s)
+             end
+           end
+           
+           app
+         end
+       end
+     end
+   end
+ end

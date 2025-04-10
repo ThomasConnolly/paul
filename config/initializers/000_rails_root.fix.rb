@@ -15,6 +15,7 @@ if defined?(Rake) &&
       @secret = secret
     end
     
+    # Support both argument patterns
     def generate_key(salt, key_size=64)
       require 'openssl'
       OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
@@ -23,12 +24,24 @@ if defined?(Rake) &&
   
   # Directly patch the key generator into Rails.application
   if Rails.respond_to?(:application) && Rails.application
+    # Create the key generator
     secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
     key_gen = CustomKeyGenerator.new(secret)
     
-    # Use singleton class to add the key_generator method
-    Rails.application.singleton_class.class_eval do
-      define_method(:key_generator) { key_gen }
+    # Don't override if it already exists and works
+    if !Rails.application.respond_to?(:key_generator) || 
+       Rails.application.key_generator.nil? ||
+       !Rails.application.key_generator.respond_to?(:generate_key)
+      
+      # Use singleton class to add the key_generator method
+      Rails.application.singleton_class.class_eval do
+        define_method(:key_generator) { key_gen }
+      end
+    end
+    
+    # Set Turbo's key directly to avoid it calling key_generator
+    if defined?(Turbo) && defined?(Turbo::Engine)
+      Turbo::Engine.config.signed_stream_verifier_key = SecureRandom.hex(32)
     end
   end
   
@@ -125,10 +138,5 @@ if defined?(Rake) &&
   # Also override the Rails.public_path method at the module level
   def Rails.public_path
     root.join('public')
-  end
-  
-  # Direct patch for Turbo's key issue
-  if defined?(Turbo) && defined?(Turbo::Engine)
-    Turbo::Engine.config.signed_stream_verifier_key = SecureRandom.hex(32)
   end
 end

@@ -3,34 +3,46 @@ if defined?(Rake) &&
     Rake.respond_to?(:application) && 
     Rake.application.top_level_tasks.include?('assets:precompile')
   
-  # Create a minimal autoloaders structure if it doesn't exist
-  Rails.application.config.before_initialize do
-    # If autoloaders isn't defined or is nil, create a basic structure
-    if !defined?(Rails.autoloaders) || Rails.autoloaders.nil?
-      require 'zeitwerk'
-      require 'ostruct'
+  # Create a stub for Rails.autoloaders.main that returns a minimal loader
+  module Rails
+    class << self
+      # Store the original autoloaders method if it exists
+      alias_method :original_autoloaders, :autoloaders if method_defined?(:autoloaders)
       
-      # Create a minimal autoloaders object with a main method
-      autoloaders = OpenStruct.new
-      loader = Zeitwerk::Loader.new
-      
-      # Add a main method that returns the loader
-      def autoloaders.main
-        @main_loader
-      end
-      
-      # Store the loader
-      autoloaders.instance_variable_set(:@main_loader, loader)
-      
-      # Assign to Rails
-      Rails.instance_variable_set(:@autoloaders, autoloaders)
-    elsif !Rails.autoloaders.respond_to?(:main)
-      # If autoloaders exists but has no main method, add one
-      main_loader = Zeitwerk::Loader.new
-      
-      # Add the main method
-      Rails.autoloaders.define_singleton_method(:main) do
-        main_loader
+      # Override the autoloaders method
+      def autoloaders
+        # Try to use the original method first
+        loaders = if respond_to?(:original_autoloaders)
+          original_autoloaders
+        else
+          instance_variable_get(:@autoloaders)
+        end
+        
+        # If we don't have autoloaders, create a minimal structure
+        if loaders.nil?
+          require 'zeitwerk'
+          require 'ostruct'
+          
+          loaders = OpenStruct.new
+          
+          # Add a main method
+          def loaders.main
+            @main_loader ||= Zeitwerk::Loader.new
+          end
+          
+          # Store it for future use
+          @autoloaders = loaders
+        end
+        
+        # Add main method if it doesn't exist
+        if !loaders.respond_to?(:main)
+          loader = Zeitwerk::Loader.new
+          loaders.define_singleton_method(:main) do
+            loader
+          end
+        end
+        
+        loaders
       end
     end
   end

@@ -9,8 +9,17 @@ if defined?(Rake) &&
     ENV['SECRET_KEY_BASE'] = SecureRandom.hex(64)
   end
   
-  # You should save the key locally for your main heroku app
-  # heroku config:set SECRET_KEY_BASE=your_key --app your-main-app-name
+  # Define the key generator class outside any methods
+  class CustomKeyGenerator
+    def initialize(secret)
+      @secret = secret
+    end
+    
+    def generate_key(salt, key_size=64)
+      require 'openssl'
+      OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
+    end
+  end
   
   module Rails
     class << self
@@ -86,18 +95,6 @@ if defined?(Rake) &&
             # Assign to app
             app.paths = paths
             
-            # Create a custom key generator class that captures the secret
-            class CustomKeyGenerator
-              def initialize(secret)
-                @secret = secret
-              end
-              
-              def generate_key(salt, key_size=64)
-                require 'openssl'
-                OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
-              end
-            end
-            
             # Create and set the key generator with access to the secret
             app.key_generator = CustomKeyGenerator.new(ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64))
           end
@@ -109,7 +106,6 @@ if defined?(Rake) &&
   end
   
   # Also override the Rails.public_path method at the module level
-  # This ensures it's available even if the class method doesn't get called
   def Rails.public_path
     root.join('public')
   end

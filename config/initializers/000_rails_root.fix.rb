@@ -86,22 +86,20 @@ if defined?(Rake) &&
             # Assign to app
             app.paths = paths
             
-            # Create a custom key generator with generate_key method
-            require 'active_support/key_generator'
-            require 'active_support/message_verifier'
-            
-            secret = ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
-            key_generator = ActiveSupport::KeyGenerator.new(secret)
-            
-            # Add generate_key method if it doesn't exist
-            unless key_generator.respond_to?(:generate_key)
-              def key_generator.generate_key(salt, key_size=64)
-                OpenSSL::PKCS5.pbkdf2_hmac_sha1(secret, salt, 1000, key_size)
+            # Create a custom key generator class that captures the secret
+            class CustomKeyGenerator
+              def initialize(secret)
+                @secret = secret
+              end
+              
+              def generate_key(salt, key_size=64)
+                require 'openssl'
+                OpenSSL::PKCS5.pbkdf2_hmac_sha1(@secret, salt, 1000, key_size)
               end
             end
             
-            # Set the key_generator on app
-            app.key_generator = key_generator
+            # Create and set the key generator with access to the secret
+            app.key_generator = CustomKeyGenerator.new(ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64))
           end
           
           app

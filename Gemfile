@@ -16,10 +16,10 @@ gem 'aws-sdk-s3', '~> 1.104', require: false
 gem 'bcrypt'
 gem 'birthday'
 gem 'bootsnap', require: false
-# gem 'bootstrap'
+gem 'bootstrap'
 # gem 'bootstrap-icons'
 gem 'cloudinary'
-gem 'cssbundling-rails'
+gem 'csso-rails'
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'devise'
@@ -29,14 +29,13 @@ gem 'feedjira'
 gem 'flatpickr'
 gem 'fog-aws'
 gem 'geocoder'
-gem 'hotwire-rails'
 gem 'htmlbeautifier'
 gem 'httparty'
 gem 'image_processing', '~> 1.2'
+gem 'importmap-rails'
 gem 'ipinfo-rails'
 gem 'irb'
 gem 'jbuilder'
-gem 'jsbundling-rails'
 gem 'loofah'
 gem 'mini_magick'
 # gem 'mission_control-jobs'
@@ -62,6 +61,7 @@ gem 'stimulus-rails'
 gem 'stringio', '~> 3.1', '>= 3.1.2'
 gem 'stripe', '~> 13.5.0'
 gem 'terser'
+gem 'trix-rails', require: 'trix'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'verifalia'
@@ -80,7 +80,6 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'trix'
 end
 
 group :development do

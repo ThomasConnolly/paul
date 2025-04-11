@@ -20,15 +20,14 @@ Rails.application.configure do
   config.require_master_key = false
 
   # Disable serving static files from `public/`, relying on NGINX/Apache to do so instead.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  # Compress JavaScripts and CSS.
-  # config.assets.js_compressor = :terser
-  # config.assets.css_compressor = :scss
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  # config.assets.compile = false
-  # config.assets.digest = true
+  # Propshaft production settings
+  config.assets.compile = false  # Don't compile on-demand in production
+  config.assets.js_compressor = :terser  # Use terser for JS compression if available
+  config.assets.css_compressor = :csso   # Use csso for CSS compression if available 
+  config.assets.digest = true    # Enable asset digests
+  config.assets.terser = { compress: { drop_console: true } }
   config.public_file_server.enabled = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -41,6 +40,11 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :cloudinary
 
+  # Override ActiveStorage service during asset precompilation to avoid API calls
+  if defined?(Rake) && Rake.application.top_level_tasks.include?('assets:precompile')
+    config.active_storage.service = :local
+  end
+  
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 

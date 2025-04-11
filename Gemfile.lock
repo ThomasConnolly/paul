@@ -102,6 +102,8 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     ast (2.4.3)
+    autoprefixer-rails (10.4.19.0)
+      execjs (~> 2)
     aws-eventstream (1.3.2)
     aws-partitions (1.1084.0)
     aws-sdk-core (3.121.5)
@@ -136,6 +138,9 @@ GEM
       activesupport
     bootsnap (1.18.4)
       msgpack (~> 1.2)
+    bootstrap (5.3.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.8, < 3)
     builder (3.3.0)
     capistrano (3.16.0)
       airbrussh (>= 1.0.0)
@@ -168,8 +173,8 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
-    cssbundling-rails (1.4.3)
-      railties (>= 6.0.0)
+    csso-rails (1.0.0)
+      execjs (>= 1)
     csv (3.3.3)
     daemons (1.4.1)
     date (3.4.1)
@@ -194,9 +199,9 @@ GEM
       rails-i18n
     diff-lcs (1.6.1)
     domain_name (0.6.20240107)
-    dotenv (3.1.7)
-    dotenv-rails (3.1.7)
-      dotenv (= 3.1.7)
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
       railties (>= 6.1)
     drb (2.2.1)
     email_spec (2.3.0)
@@ -280,10 +285,6 @@ GEM
       pry (>= 0.13.0)
       shellany (~> 0.0)
       thor (>= 0.18.1)
-    hotwire-rails (0.1.3)
-      rails (>= 6.0.0)
-      stimulus-rails
-      turbo-rails
     htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     http-accept (1.7.0)
@@ -298,6 +299,10 @@ GEM
     image_processing (1.14.0)
       mini_magick (>= 4.9.5, < 6)
       ruby-vips (>= 2.0.17, < 3)
+    importmap-rails (2.1.0)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.8.0)
     ipinfo-rails (1.0.1)
       IPinfo (~> 1.0.1)
@@ -311,8 +316,6 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.2)
-    jsbundling-rails (1.3.1)
-      railties (>= 6.0.0)
     json (2.10.2)
     jsonapi-renderer (0.2.2)
     kramdown (2.5.1)
@@ -406,6 +409,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
+    popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -587,7 +591,7 @@ GEM
       yard (~> 0.9, >= 0.9.24)
       yard-solargraph (~> 0.1)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.11998)
+    sorbet-runtime (0.5.12003)
     sshkit (1.24.0)
       base64
       logger
@@ -604,8 +608,8 @@ GEM
     thor (1.3.2)
     tilt (2.6.0)
     timeout (0.4.3)
-    trix (0.10.1)
-      rails
+    trix-rails (2.4.0)
+      rails (> 4.1)
     turbo-rails (2.0.13)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
@@ -668,12 +672,13 @@ DEPENDENCIES
   binding_of_caller
   birthday
   bootsnap
+  bootstrap
   capistrano (~> 3.16.0)
   capistrano-bundler (~> 2.0)
   capistrano-rails (~> 1.6)
   capybara
   cloudinary
-  cssbundling-rails
+  csso-rails
   daemons
   dead_end
   debug (>= 1.0.0)
@@ -689,14 +694,13 @@ DEPENDENCIES
   fog-aws
   geocoder
   guard
-  hotwire-rails
   htmlbeautifier
   httparty
   image_processing (~> 1.2)
+  importmap-rails
   ipinfo-rails
   irb
   jbuilder
-  jsbundling-rails
   letter_opener
   letter_opener_web
   listen
@@ -732,7 +736,7 @@ DEPENDENCIES
   stringio (~> 3.1, >= 3.1.2)
   stripe (~> 13.5.0)
   terser
-  trix
+  trix-rails
   turbo-rails
   tzinfo-data
   verifalia

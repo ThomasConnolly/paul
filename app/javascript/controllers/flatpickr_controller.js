@@ -8,6 +8,7 @@ export default class extends Controller {
   }
   
   connect() {
+    console.log("Flatpickr controller connected")
     flatpickr(this.element, {
       dateFormat: this.dateFormatValue
     })  

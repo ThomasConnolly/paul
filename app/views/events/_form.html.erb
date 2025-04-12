@@ -3,8 +3,11 @@
 
     <%= simple_form_for(@event) do |f| %>
       <%= f.input :title %>
+      <%= f.input :date, 
+            as: :date, 
+            html5: true,
+            input_html: { class: 'form-control' } %>
       <%= f.input :price, placeholder: 'Pennies per ticket' %>
-      <%= f.input :date, data: { controller: "datepicker" } %>
       <%= f.input :time, placeholder: "Time of event, eg., 7:30 p.m." %>
       <%= f.input :photo, label: "Add a picture for this event" %>
       <%= f.button :submit  %>

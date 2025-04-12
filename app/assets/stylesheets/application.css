@@ -3,6 +3,5 @@
  *= require trix
  *= require actiontext
  *= require custom
- *= require custom2
- *= self
+ *= require_self
  */

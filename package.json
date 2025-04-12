@@ -1,9 +1,0 @@
-{
-    "name": "paul",
-    "private": true,
-    "dependencies": {},
-    "scripts": {
-      "build": "echo 'No build needed with import maps'",
-      "build:css": "echo 'No CSS build needed'"
-    }
-  }

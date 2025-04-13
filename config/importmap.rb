@@ -1,7 +1,4 @@
-# Pin npm packages by running ./bin/importmap
-
-home/tom/paul/config/importmap.rb
-# Pin npm packages by running ./bin/importmap
+# Pin npm packages by running ./bin/importmap pin npm:package_name
 
 pin "application", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true

@@ -2,6 +2,6 @@
  *= require bootstrap
  *= require trix
  *= require actiontext
- *= require custom
  *= require_self
+ *= require custom
  */

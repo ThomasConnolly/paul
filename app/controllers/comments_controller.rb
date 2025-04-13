@@ -32,6 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.expect(:comment[:body, :submit])
+    params.expect(comment: %i[body])
   end
 end

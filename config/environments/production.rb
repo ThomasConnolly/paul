@@ -23,11 +23,9 @@ Rails.application.configure do
 
 
   # Propshaft production settings
-  config.assets.compile = false  # Don't compile on-demand in production
-  config.assets.js_compressor = :terser  # Use terser for JS compression if available
-  config.assets.css_compressor = :csso   # Use csso for CSS compression if available 
+  config.assets.compile = true
+  config.assets.debug = false   
   config.assets.digest = true    # Enable asset digests
-  config.assets.terser = { compress: { drop_console: true } }
   config.public_file_server.enabled = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

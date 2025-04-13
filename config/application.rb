@@ -35,6 +35,9 @@ Bundler.require(*Rails.groups)
 
 module Paul
   class Application < Rails::Application
+    def self.root
+      @root ||= Pathname.new(File.expand_path('..', __dir__))
+    end
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 

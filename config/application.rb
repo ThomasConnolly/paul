@@ -43,9 +43,6 @@ module Paul
     config.asset_pipeline = :propshaft
     config.middleware.insert_before 0, Rack::Attack
 
-    # Use Propshaft for asset pipeline
-    config.assets.paths << Rails.root.join('node_modules')
-
     config.time_zone = 'Eastern Time (US & Canada)'
     # config.eager_load_paths << Rails.root.join("extras")
   end

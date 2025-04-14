@@ -111,15 +111,22 @@ end
 
 # NilClass fix for any other gems that might cause similar issues
 class NilClass
+  @@fake_config = nil
+  
   def root
-    Rails.root 
+    Rails.root rescue Pathname.new(File.expand_path('../../', __dir__))
   end
   
   def config
-    return @fake_config if @fake_config
-    
-    @fake_config = Object.new
-    @fake_config.define_singleton_method(:root) { Rails.root }
-    @fake_config
+    # Use a class variable instead of an instance variable to avoid modifying self
+    @@fake_config ||= Object.new.tap do |obj|
+      obj.define_singleton_method(:root) do
+        begin
+          Rails.root 
+        rescue
+          Pathname.new(File.expand_path('../../', __dir__))
+        end
+      end
+    end
   end
 end

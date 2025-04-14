@@ -1,76 +1,77 @@
-# Fix for Heroku Propshaft root issue - more aggressive approach
+# Comprehensive fix for Propshaft 'undefined method root for nil' error
+require 'pathname'
 
-# Ensure Rails and Rails.application are always available
-if !defined?(Rails)
+# First, ensure Rails.root is available
+unless defined?(Rails.root)
   module Rails
-    def self.application
-      nil
-    end
-    
     def self.root
-      Pathname.new(File.expand_path('../..', __dir__))
+      @root ||= Pathname.new(File.expand_path('../..', __dir__))
     end
   end
 end
 
-# First, ensure that Rails.application exists
-if !defined?(Rails.application) || Rails.application.nil?
+# Ensure Rails.application exists and has a config
+Rails.application unless defined?(Rails.application)
+
+# Ensure Rails.application is properly defined
+unless defined?(Rails.application) || Rails.application.nil?
   module Rails
-    def self.application
-      @application ||= ::Paul::Application.new rescue nil
+    class << self
+      def application
+        @application ||= ::Paul::Application.instance
+      end
     end
   end
 end
 
-# Monkey patch the Rails::Application class
+# Ensure Rails.application.config has a root method
+if Rails.application && Rails.application.respond_to?(:config) && 
+   Rails.application.config && !Rails.application.config.respond_to?(:root)
+  Rails.application.config.define_singleton_method(:root) do
+   Rails.root
+  end
+end
+
+# Ensure Rails::Application::Configuration has a root method
 module Rails
   class Application
-    class << self
-      def instance
-        @instance ||= new
-      end
-    end
-    
     class Configuration
-      # Ensure root method exists
-      def root
-        @root ||= Rails.root
+      unless method_defined?(:root)
+        def root
+          @root ||= Rails.root
+        end
       end
     end
   end
 end
 
-# Fix for undefined config variable
-if defined?(Rails.application) && Rails.application
-  # Make sure config exists
-  Rails.application.instance_variable_set(:@config, Rails.application.config) unless Rails.application.instance_variable_get(:@config)
-end
-
-# Directly monkey patch Propshaft if it's loaded
+# Monkey patch Propshaft if needed
 if defined?(Propshaft)
   module Propshaft
-    def self.root
-      Rails.root
+    unless respond_to?(:root)
+      def self.root
+        Rails.root
+      end
     end
     
     class Compiler
-      # Use a method alias approach instead of redefining initialize
       alias_method :original_initialize, :initialize if method_defined?(:initialize)
       
       def initialize(*args)
         if args.length == 2
-          # Standard initialize call with resolver and output_path
           resolver, output_path = args
           @resolver = resolver
           @output_path = output_path
+          # Use a hardcoded path instead of relying on application.config.root
           @manifest = Propshaft::Manifest.new(File.join(Rails.root.to_s, "public/assets/.manifest.json"))
         else
-          # Fall back to original initialize if argument count doesn't match
+          # Fall back to original initialize
           original_initialize(*args) if respond_to?(:original_initialize)
         end
       end
     end
     
+    # Also patch the Manifest class if needed
     class Manifest
       # Override the path method only if it exists
       if method_defined?(:path)
@@ -81,5 +82,44 @@ if defined?(Propshaft)
         end
       end
     end
+  end
+end
+
+# Fix for importmap-rails specifically
+if defined?(Importmap) || defined?(::Importmap)
+  module Importmap
+    class Engine < ::Rails::Engine
+      # Monkey patch any initializers that might cause issues
+      initializers.each do |initializer|
+        if initializer.name == :importmap
+          def initializer.run(*args)
+            # Skip if application is nil
+            app = args.first
+            return unless app
+            
+            # Explicitly set up importmap paths using Rails.root directly
+            Importmap::Engine.config.cache_sweepers ||= []
+            Importmap::Engine.config.cache_sweepers << Rails.root.join("app/assets/config/importmap.json")
+            Importmap::Engine.config.cache_sweepers << Rails.root.join("config/importmap.json")
+            Importmap::Engine.config.cache_sweepers << Rails.root.join("config/importmap.rb")
+          end
+        end
+      end
+    end
+  end
+end
+
+# NilClass fix for any other gems that might cause similar issues
+class NilClass
+  def root
+    Rails.root 
+  end
+  
+  def config
+    return @fake_config if @fake_config
+    
+    @fake_config = Object.new
+    @fake_config.define_singleton_method(:root) { Rails.root }
+    @fake_config
   end
 end

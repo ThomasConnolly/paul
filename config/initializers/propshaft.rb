@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.config.assets.compile = true
 
 # Alternative fix for Propshaft on Heroku

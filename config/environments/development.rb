@@ -67,7 +67,7 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
-  
+
   # Propshaft development settings
   config.assets.debug = true
   config.assets.digest = true

@@ -4,9 +4,9 @@
 require_relative 'boot'
 
 # Instead of require 'rails/all'
-require "rails"
+require 'rails'
 # Include all railties manually, excluding sprockets
-%w(
+%w[
   active_record/railtie
   active_storage/engine
   action_controller/railtie
@@ -17,15 +17,13 @@ require "rails"
   action_mailbox/engine
   action_text/engine
   rails/test_unit/railtie
-).each do |railtie|
-  begin
-    require railtie
-  rescue LoadError
-  end
+].each do |railtie|
+  require railtie
+rescue LoadError
 end
 
 # Explicitly require propshaft
-require "propshaft"
+require 'propshaft'
 require 'action_cable/engine'
 require 'csv'
 
@@ -37,6 +35,14 @@ module Paul
   class Application < Rails::Application
     def self.root
       @root ||= Pathname.new(File.expand_path('..', __dir__))
+    end
+
+    delegate :root, to: :class
+
+    def config
+      @config ||= super
+      @config.define_singleton_method(:root) { self.class.root } unless @config.respond_to?(:root)
+      @config
     end
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller

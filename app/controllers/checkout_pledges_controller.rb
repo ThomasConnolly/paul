@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CheckoutPledgesController < ApplicationController
   protect_from_forgery
   before_action :authenticate_user!
@@ -14,19 +16,20 @@ class CheckoutPledgesController < ApplicationController
     create_stripe_checkout_session
   end
 
-  def success  # ✅ Method at the class level
+  # ✅ Method at the class level
+  def success
     session_id = params[:session_id]
-    
+
     # Retrieve the checkout session from Stripe
     checkout_session = Stripe::Checkout::Session.retrieve(session_id)
-    
+
     # Update your pledge with the subscription ID
     @pledge = Pledge.find(checkout_session.metadata.pledge_id)
     @pledge.update(
       subscription_id: checkout_session.subscription,
       status: 'active'
     )
-    
+
     render 'success'
   end
 
@@ -54,7 +57,7 @@ class CheckoutPledgesController < ApplicationController
         pledge_id: @pledge.id
       }
     )
-    
+
     redirect_to session.url, allow_other_host: true
   end
 end

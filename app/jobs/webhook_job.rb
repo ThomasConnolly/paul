@@ -7,7 +7,7 @@ class WebhookJob < ApplicationJob
 
   def perform(webhook_or_id)
     webhook = webhook_or_id.is_a?(Webhook) ? webhook_or_id : Webhook.find(webhook_or_id)
-  
+
     begin
       Rails.logger.info "Webhook data: #{webhook.data}"
       json_data = JSON.parse(webhook.data)

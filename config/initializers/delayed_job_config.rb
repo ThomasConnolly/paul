@@ -11,7 +11,7 @@ Delayed::Worker.raise_signal_exceptions = :term
 # Configure logging based on environment
 if Rails.env.production? && ENV['DYNO'].present?
   # Use STDOUT for Heroku
-  Delayed::Worker.logger = Logger.new(STDOUT)
+  Delayed::Worker.logger = Logger.new($stdout)
 else
   # Ensure log directory exists in other environments
   log_dir = Rails.root.join('log')

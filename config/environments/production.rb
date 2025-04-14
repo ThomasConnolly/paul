@@ -25,7 +25,7 @@ Rails.application.configure do
   config.assets.compile = true
   config.public_file_server.enabled = true
   config.assets.digest = true
- 
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
@@ -40,7 +40,7 @@ Rails.application.configure do
   if defined?(Rake) && Rake.application.top_level_tasks.include?('assets:precompile')
     config.active_storage.service = :local
   end
-  
+
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
@@ -82,7 +82,7 @@ Rails.application.configure do
     address: 'smtp.office365.com',
     port: 587,
     domain: 'saintpaulsnaples.org',
-    user_name: ENV['SMTP_USERNAME'] || Rails.application.credentials.dig(:smtp, :username), 
+    user_name: ENV['SMTP_USERNAME'] || Rails.application.credentials.dig(:smtp, :username),
     password: ENV['SMTP_PASSWORD'] || Rails.application.credentials.dig(:smtp, :password),
     authentication: :login,
     enable_starttls_auto: true,

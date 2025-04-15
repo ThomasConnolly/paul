@@ -66,34 +66,3 @@ namespace :propshaft do
         
         # Replace the problematic url_prefix method
         patched_content = content.gsub(
-          /def url_prefix.*?end/m,
-          <<~RUBY
-            def url_prefix
-              # Safely handle missing config methods
-              prefix_str = ""
-              if config.respond_to?(:prefix)
-                prefix_str = config.prefix.to_s
-              end
-              
-              relative_root = ""
-              if config.respond_to?(:relative_url_root)
-                relative_root = config.relative_url_root.to_s
-              end
-              
-              @url_prefix ||= File.join(relative_root, prefix_str).chomp("/")
-            end
-          RUBY
-        )
-        
-        # Write the patched file
-        File.write(file_path, patched_content)
-        puts "Successfully patched url_prefix method"
-      end
-    end
-  end
-end
-
-# IMPORTANT: This must be inside a condition that only runs when the Rake tasks are loaded
-if defined?(Rake) && Rake::Task.task_defined?('assets:precompile')
-  Rake::Task['assets:precompile'].enhance ['propshaft:fix_root']
-end

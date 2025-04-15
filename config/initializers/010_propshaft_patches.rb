@@ -15,49 +15,50 @@ if defined?(Propshaft)
             Rails.root.join("app/assets", logical_path).to_s
           end
         end
-      end
-      
-      module Compiler
-        module SourceMappingUrls
-          # Override source_mapping_url to be safe
-          alias_method :original_source_mapping_url, :source_mapping_url if method_defined?(:source_mapping_url)
-          
-          def source_mapping_url(logical_path)
-            return "" unless compiler
+        
+        # Nested module for source mapping URLs - properly access it
+        if defined?(SourceMappingUrls)
+          module SourceMappingUrls
+            # Override source_mapping_url to be safe
+            alias_method :original_source_mapping_url, :source_mapping_url if method_defined?(:source_mapping_url)
             
-            begin
-              path = compiler.load_path(logical_path)
-              return "" unless path && !path.empty?
+            def source_mapping_url(logical_path)
+              return "" unless compiler
               
-              if File.exist?(path)
-                map_path = path + ".map"
-                if File.exist?(map_path)
-                  File.join(compiler.url_prefix, logical_path + ".map")
+              begin
+                path = compiler.load_path(logical_path)
+                return "" unless path && !path.empty?
+                
+                if File.exist?(path)
+                  map_path = path + ".map"
+                  if File.exist?(map_path)
+                    File.join(compiler.url_prefix, logical_path + ".map")
+                  end
                 end
+              rescue => e
+                # Return empty string on error
+                ""
               end
-            rescue => e
-              # Return empty string on error
-              ""
             end
-          end
-          
-          # Override compile to be safe
-          alias_method :original_compile, :compile if method_defined?(:compile)
-          
-          def compile(logical_path, input)
-            return input unless input.is_a?(String)
             
-            begin
-              input.gsub(/\/\/# sourceMappingURL=.+\n/m) do
-                if url = source_mapping_url(logical_path)
-                  "//# sourceMappingURL=#{url}\n"
-                else
-                  ""
+            # Override compile to be safe
+            alias_method :original_compile, :compile if method_defined?(:compile)
+            
+            def compile(logical_path, input)
+              return input unless input.is_a?(String)
+              
+              begin
+                input.gsub(/\/\/# sourceMappingURL=.+\n/m) do
+                  if url = source_mapping_url(logical_path)
+                    "//# sourceMappingURL=#{url}\n"
+                  else
+                    ""
+                  end
                 end
+              rescue => e
+                # Return original input on error
+                input
               end
-            rescue => e
-              # Return original input on error
-              input
             end
           end
         end

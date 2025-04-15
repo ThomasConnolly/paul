@@ -1,29 +1,33 @@
-# Direct monkey patching for Propshaft
+# Safe monkey patching for Propshaft - without modifying source files
 if defined?(Propshaft)
-    module Propshaft
-      class Compiler
-        # Ensure load_path always returns something and never errors
-        alias_method :original_load_path, :load_path if method_defined?(:load_path)
+    # Add a safer load_path method to Compiler
+    Propshaft::Compiler.class_eval do
+      # Create a safe wrapper around the original method
+      alias_method :original_load_path, :load_path if method_defined?(:load_path)
+      
+      def load_path(logical_path)
+        return "" unless @resolver
         
-        def load_path(logical_path)
-          return "" if @resolver.nil?
-          
-          begin
-            @resolver.find(logical_path)
-          rescue => e
-            # Fall back to a safe default path
-            Rails.root.join("app/assets", logical_path).to_s
-          end
+        begin
+          original_load_path(logical_path)
+        rescue => e
+          Rails.logger.warn("Propshaft load_path error: #{e.message}")
+          Rails.root.join("app/assets", logical_path.to_s).to_s
         end
       end
     end
-    
-    # Wait until Propshaft is fully loaded before patching the nested classes
-    Rails.application.config.after_initialize do
-      if defined?(Propshaft::Compiler::SourceMappingUrls)
-        # Patch the class using class_eval
+  end
+  
+  # Use a safe approach with Rails initializers
+  Rails.configuration.to_prepare do
+    if defined?(Propshaft::Compiler::SourceMappingUrls)
+      # Replace the problematic method only if necessary
+      unless Propshaft::Compiler::SourceMappingUrls.instance_methods.include?(:safe_source_mapping_url_added)
         Propshaft::Compiler::SourceMappingUrls.class_eval do
-          # Override source_mapping_url to be safe
+          # Mark that we've patched this class
+          def safe_source_mapping_url_added; true; end
+          
+          # Safely override the original method
           alias_method :original_source_mapping_url, :source_mapping_url if method_defined?(:source_mapping_url)
           
           def source_mapping_url(logical_path)
@@ -31,21 +35,21 @@ if defined?(Propshaft)
             
             begin
               path = compiler.load_path(logical_path)
-              return "" unless path && !path.empty?
+              return "" unless path && !path.empty? && File.exist?(path)
               
-              if File.exist?(path)
-                map_path = path + ".map"
-                if File.exist?(map_path)
-                  File.join(compiler.url_prefix, logical_path + ".map")
-                end
+              map_path = path + ".map"
+              if File.exist?(map_path)
+                File.join(compiler.url_prefix, logical_path + ".map")
+              else
+                ""
               end
             rescue => e
-              # Return empty string on error
+              Rails.logger.warn("Propshaft source_mapping_url error: #{e.message}")
               ""
             end
           end
           
-          # Override compile to be safe
+          # Safely override compile
           alias_method :original_compile, :compile if method_defined?(:compile)
           
           def compile(logical_path, input)
@@ -53,14 +57,11 @@ if defined?(Propshaft)
             
             begin
               input.gsub(/\/\/# sourceMappingURL=.+\n/m) do
-                if url = source_mapping_url(logical_path)
-                  "//# sourceMappingURL=#{url}\n"
-                else
-                  ""
-                end
+                url = source_mapping_url(logical_path)
+                url.empty? ? "" : "//# sourceMappingURL=#{url}\n"
               end
             rescue => e
-              # Return original input on error
+              Rails.logger.warn("Propshaft compile error: #{e.message}")
               input
             end
           end

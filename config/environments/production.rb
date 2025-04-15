@@ -37,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Override ActiveStorage service during asset precompilation to avoid API calls
-  if defined?(Rake) && Rake.application.top_level_tasks.include?('assets:precompile')
+  if defined?(Rake) && Rake.const_defined?(:Application) && Rake::Application.instance && Rake::Application.instance.top_level_tasks.include?('assets:precompile')
     config.active_storage.service = :local
   end
 

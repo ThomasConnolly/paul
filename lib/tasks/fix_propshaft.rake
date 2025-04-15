@@ -60,3 +60,40 @@ end
 
 # Make this task run before assets:precompile
 Rake::Task['assets:precompile'].enhance ['propshaft:fix_root']
+
+# Add this to your existing fix_root task
+
+# Add a fix for the url_prefix method
+if File.exist?(File.join(propshaft_path, 'lib/propshaft/compiler.rb'))
+  file_path = File.join(propshaft_path, 'lib/propshaft/compiler.rb')
+  content = File.read(file_path)
+  
+  if content.include?('config.relative_url_root')
+    puts "Patching url_prefix method in Propshaft compiler..."
+    
+    # Replace the problematic url_prefix method
+    patched_content = content.gsub(
+      /def url_prefix.*?end/m,
+      <<~RUBY
+        def url_prefix
+          # Safely handle missing config methods
+          prefix_str = ""
+          if config.respond_to?(:prefix)
+            prefix_str = config.prefix.to_s
+          end
+          
+          relative_root = ""
+          if config.respond_to?(:relative_url_root)
+            relative_root = config.relative_url_root.to_s
+          end
+          
+          @url_prefix ||= File.join(relative_root, prefix_str).chomp("/")
+        end
+      RUBY
+    )
+    
+    # Write the patched file
+    File.write(file_path, patched_content)
+    puts "Successfully patched url_prefix method"
+  end
+end

@@ -127,6 +127,15 @@ class NilClass
           Pathname.new(File.expand_path('../../', __dir__))
         end
       end
+      # Add relative_url_root method that Propshaft needs
+      obj.define_singleton_method(:relative_url_root) do
+        ""
+      end
+
+      # Add prefix method that might be needed based on the error
+      obj.define_singleton_method(:prefix) do
+        ""
+      end
     end
   end
 end

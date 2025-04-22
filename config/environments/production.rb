@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# rubocop:disable Metrics/BlockLength
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -37,11 +37,11 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Override ActiveStorage service during asset precompilation to avoid API calls
-  if defined?(Rake) && Rake.const_defined?(:Application) && 
-    Rake.application && Rake.application.top_level_tasks &&
-    Rake.application.top_level_tasks.include?('assets:precompile')
-   config.active_storage.service = :local
- end
+  if defined?(Rake) && Rake.const_defined?(:Application) &&
+     Rake.application && Rake.application.top_level_tasks &&
+     Rake.application.top_level_tasks.include?('assets:precompile')
+    config.active_storage.service = :local
+  end
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true

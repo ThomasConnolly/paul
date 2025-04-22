@@ -34,7 +34,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, format: { with: /[a-zA-Z]+/ }
   validates :last_name, presence: true, format: { with: /[a-zA-Z]+/ }
   before_save :set_username
-  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, dependent: :destroy
   validates :roles, presence: true
   before_create :set_default_role
   after_destroy :cancel_stripe_customer
@@ -45,10 +45,10 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :opportunities, dependent: :destroy
   has_many :story_ideas, dependent: :destroy
-  has_many :todo_lists
+  has_many :todo_lists, dependent: :destroy
   accepts_nested_attributes_for :todo_lists
   has_many :vnotes, dependent: :destroy
-  has_many :agendas
+  has_many :agendas, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
   validates :avatar, content_type: %i[png jpg jpeg gif]
   has_one :pledge, dependent: :destroy

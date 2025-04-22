@@ -14,7 +14,7 @@
 
 class TodoList < ApplicationRecord
   belongs_to :user
-  has_many :todo_items
+  has_many :todo_items, dependent: :destroy
 
   accepts_nested_attributes_for :todo_items
 end

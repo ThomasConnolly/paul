@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Comprehensive fix for Propshaft 'undefined method root for nil' error
 require 'pathname'
 
@@ -25,10 +27,10 @@ unless defined?(Rails.application) || Rails.application.nil?
 end
 
 # Ensure Rails.application.config has a root method
-if Rails.application && Rails.application.respond_to?(:config) && 
+if Rails.application.respond_to?(:config) &&
    Rails.application.config && !Rails.application.config.respond_to?(:root)
   Rails.application.config.define_singleton_method(:root) do
-   Rails.root
+    Rails.root
   end
 end
 
@@ -53,32 +55,32 @@ if defined?(Propshaft)
         Rails.root
       end
     end
-    
+
     class Compiler
-      alias_method :original_initialize, :initialize if method_defined?(:initialize)
-      
+      alias original_initialize initialize if method_defined?(:initialize)
+
       def initialize(*args)
         if args.length == 2
           resolver, output_path = args
           @resolver = resolver
           @output_path = output_path
           # Use a hardcoded path instead of relying on application.config.root
-          @manifest = Propshaft::Manifest.new(File.join(Rails.root.to_s, "public/assets/.manifest.json"))
-        else
+          @manifest = Propshaft::Manifest.new(Rails.public_path.join('assets/.manifest.json').to_s)
+        elsif respond_to?(:original_initialize)
           # Fall back to original initialize
-          original_initialize(*args) if respond_to?(:original_initialize)
+          original_initialize(*args)
         end
       end
     end
-    
+
     # Also patch the Manifest class if needed
     class Manifest
       # Override the path method only if it exists
       if method_defined?(:path)
-        alias_method :original_path, :path
-        
+        alias original_path path
+
         def path
-          @path || File.join(Rails.root.to_s, "public/assets/.manifest.json")
+          @path || Rails.public_path.join('assets/.manifest.json').to_s
         end
       end
     end
@@ -86,56 +88,26 @@ if defined?(Propshaft)
 end
 
 # Fix for importmap-rails specifically
-if defined?(Importmap) || defined?(::Importmap)
+# Fix 1: Remove duplicate condition check
+if defined?(Importmap)
   module Importmap
     class Engine < ::Rails::Engine
       # Monkey patch any initializers that might cause issues
       initializers.each do |initializer|
-        if initializer.name == :importmap
-          def initializer.run(*args)
-            # Skip if application is nil
-            app = args.first
-            return unless app
-            
-            # Explicitly set up importmap paths using Rails.root directly
-            Importmap::Engine.config.cache_sweepers ||= []
-            Importmap::Engine.config.cache_sweepers << Rails.root.join("app/assets/config/importmap.json")
-            Importmap::Engine.config.cache_sweepers << Rails.root.join("config/importmap.json")
-            Importmap::Engine.config.cache_sweepers << Rails.root.join("config/importmap.rb")
-          end
-        end
-      end
-    end
-  end
-end
+        next unless initializer.name == :importmap
 
-# NilClass fix for any other gems that might cause similar issues
-class NilClass
-  @@fake_config = nil
-  
-  def root
-    Rails.root rescue Pathname.new(File.expand_path('../../', __dir__))
-  end
-  
-  def config
-    # Use a class variable instead of an instance variable to avoid modifying self
-    @@fake_config ||= Object.new.tap do |obj|
-      obj.define_singleton_method(:root) do
-        begin
-          Rails.root 
-        rescue
-          Pathname.new(File.expand_path('../../', __dir__))
+        # Fix 2: Split method to reduce complexity
+        def initializer.setup_importmap_paths
+          Importmap::Engine.config.cache_sweepers ||= []
+          Importmap::Engine.config.cache_sweepers << Rails.root.join('app/assets/config/importmap.json')
+          Importmap::Engine.config.cache_sweepers << Rails.root.join('config/importmap.json')
+          Importmap::Engine.config.cache_sweepers << Rails.root.join('config/importmap.rb')
         end
-      end
-      # Add relative_url_root method that Propshaft needs
-      obj.define_singleton_method(:relative_url_root) do
-        ""
-      end
 
-      # Add prefix method that might be needed based on the error
-      obj.define_singleton_method(:prefix) do
-        ""
-      end
-    end
-  end
-end
+        def initializer.run(*args)
+          # Skip if application is nil
+          app = args.first
+          return unless app
+
+          # Call the extracted method
+          setup_importmap_paths

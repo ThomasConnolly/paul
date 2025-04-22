@@ -3,8 +3,8 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new edit update create destroy book_admin]
-  before_action :admin_only, only: %i[new edit update create destroy book_admin]
+  before_action :authenticate_user!, only: %i[new edit update create destroy]
+  before_action :admin_only, only: %i[new edit update create destroy]
 
   def index
     @books = Book.order(:title)

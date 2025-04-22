@@ -25,9 +25,9 @@ class ApplicationController < ActionController::Base
   end
 
   def verified_request?
-    super || valid_authenticity_token?(session,
-          request.headers['X-CSRF-Token']) 
-          || request.headers['X-Requested-With'] == 'Turbo-Frame'
+    super || 
+      valid_authenticity_token?(session, request.headers['X-CSRF-Token']) || 
+      request.headers['X-Requested-With'] == 'Turbo-Frame'
   end
 
   private

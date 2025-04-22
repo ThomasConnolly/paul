@@ -19,10 +19,14 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
   belongs_to :parent, optional: true, class_name: 'Comment'
-  has_many :comments, as: :commentable, dependent: :destroy
+  
+  # Renamed association to avoid conflict with method
+  has_many :child_comments, class_name: 'Comment', as: :commentable, dependent: :destroy
+  
   validates :body, presence: true
 
+  # Keep your custom method 
   def comments
-    Comment.where(commentable:, parent_id: id)
+    Comment.where(commentable: self, parent_id: id)
   end
 end

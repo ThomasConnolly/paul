@@ -34,7 +34,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, format: { with: /[a-zA-Z]+/ }
   validates :last_name, presence: true, format: { with: /[a-zA-Z]+/ }
   before_save :set_username
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, dependent: :destroy
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :roles, presence: true
   before_create :set_default_role
   after_destroy :cancel_stripe_customer

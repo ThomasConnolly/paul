@@ -1,0 +1,4 @@
+
+<%= turbo_stream.replace dom_id(@page_content) do %>
+  <%= render "page_contents/content", content: @page_content %>
+<% end %>

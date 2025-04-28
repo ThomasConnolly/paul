@@ -21,23 +21,33 @@
 <div class="clearfix"></div>
 <div class="row">
   <div class="col-md-8 main-body pe-5">
-
-    <%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
-    <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
+  <%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
+  <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
     
-    <h1 class="mt-4">Celebrate with us</h1>
-    <h2>Easter Masses at 8 and 10 a.m.</h2>
-    <p>(9 a.m. during off-season, May 4 through October)</p>
-    
- 
-
-    <p><strong>All are welcome here at St. Paul's! </strong></p>
-
+<% celebrate_content = PageContent.find_by(section: "celebrate") %>
+<% if celebrate_content %>
+  <%= turbo_frame_tag dom_id(celebrate_content) do %>
+    <div class="content-section">
+      <% if current_user&.role?("admin") %>
+        <div class="admin-controls">
+          <%= link_to "Edit", edit_page_content_path(celebrate_content), class: "btn btn-sm btn-primary" %>
+        </div>
+      <% end %>
+      
+      <h1 class="mt-4"><%= celebrate_content.title %></h1>
+      <%= celebrate_content.body %>
+    </div>
+  <% end %>
+<% else %>
+  <h1 class="mt-4">Celebrate with us</h1>
+  <h2>Easter Masses at 8 and 10 a.m.</h2>
+  <p>(9 a.m. during off-season, May 4 through October)</p>
+  <p><strong>All are welcome here at St. Paul's!</strong></p>
+<% end %>
   
-  <p>We usually livestream the 10 a.m. service, but our equipment is down. <%#= link_to "YouTube",
+  <p>The 10 a.m. service is streamed on <%= link_to "YouTube",
    ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
-   We 
-   hope to have it up again soon.</p> 
+   for those unable to be with us in person.</p> 
   <% if @bulletin.url.present? %>
     <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>
     </strong></p>

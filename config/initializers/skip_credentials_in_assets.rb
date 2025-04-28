@@ -14,7 +14,7 @@ if ENV['RAILS_PRECOMPILE_ASSETS'] == 'true' || (defined?(Rake) && Rake.const_def
             content: {},
             secret_key_base: ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64)
           }
-          
+
           # Define method to access credentials
           app.define_singleton_method(:credentials) do
             @credentials ||= Object.new.tap do |creds|

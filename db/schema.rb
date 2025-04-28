@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_28_205221) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_22_162341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
@@ -258,6 +258,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_28_205221) do
     t.integer "user_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+  end
+
+  create_table "page_contents", force: :cascade do |t|
+    t.string "section"
+    t.string "title"
+    t.text "body"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pathways", force: :cascade do |t|

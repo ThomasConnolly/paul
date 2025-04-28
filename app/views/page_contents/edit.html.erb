@@ -1,0 +1,20 @@
+<%= turbo_frame_tag dom_id(@page_content) do %>
+  <div class="content-edit-form">
+    <h2>Edit: <%= @page_content.section.titleize %></h2>
+    
+    <%= simple_form_for @page_content do |form| %>
+      <%= form.input :title, 
+                    label: 'Section Title',
+                    input_html: { class: 'form-control' } %>
+      
+      <%= form.rich_text_area :body,
+                            label: 'Content',
+                            input_html: { class: 'form-control' } %>
+      
+      <div class="form-actions mt-3">
+        <%= form.button :submit, 'Save Changes', class: 'btn-primary' %>
+        <%= link_to "Cancel", root_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

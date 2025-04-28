@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :page_contents, only: %i[edit update]
+
   post '/webhooks', to: 'webhooks#create'
 
   resources :stripe_reports, only: %i[index show]

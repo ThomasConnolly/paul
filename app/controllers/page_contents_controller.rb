@@ -12,7 +12,7 @@ class PageContentsController < ApplicationController
     if @page_content.update(page_content_params)
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to root_path, notice: "Content was successfully updated." }
+        format.html { redirect_to root_path, notice: 'Content was successfully updated.' }
       end
     else
       render :edit, status: :unprocessable_entity

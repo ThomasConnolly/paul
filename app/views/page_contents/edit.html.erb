@@ -7,9 +7,14 @@
                     label: 'Section Title',
                     input_html: { class: 'form-control' } %>
       
-      <%= form.rich_text_area :body,
-                            label: 'Content',
-                            input_html: { class: 'form-control' } %>
+      <%= form.input   :body,
+                        label: 'HTML Content',
+                        as: :text,
+                        input_html: { 
+                          class: 'form-control',
+                          rows: 15,
+                          placeholder: '<h2>Your heading here</h2><p>Your content here</p>'
+                        } %>
       
       <div class="form-actions mt-3">
         <%= form.button :submit, 'Save Changes', class: 'btn-primary' %>

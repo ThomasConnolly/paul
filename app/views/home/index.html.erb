@@ -35,7 +35,7 @@
       <% end %>
       
       <h1 class="mt-4"><%= celebrate_content.title %></h1>
-      <%= celebrate_content.body %>
+      <%= celebrate_content.body.html_safe %>
     </div>
   <% end %>
 <% else %>

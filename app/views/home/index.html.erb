@@ -39,14 +39,15 @@
     </div>
   <% end %>
 <% else %>
-  <h1 class="mt-4">Celebrate with us</h1>
-  <h2>Easter Masses at 8 and 10 a.m.</h2>
-  <p>(9 a.m. during off-season, May 4 through October)</p>
+  <h1 class="mt-4">Celebrate Easter</h1>
+  <h2>Sunday Worship 9 a.m.</h2>
+  <p>Easter is not a day, but a season, from Easter Sunday to Pentecost, where the Holy Spirit empowers us to live Christ-like lives.<br>
+  During "Naples season (October to April) there are two Masses, 8 and 10 a.m.</p
   <p><strong>All are welcome here at St. Paul's!</strong></p>
 <% end %>
   
   <p>The Sunday service is streamed on <%= link_to "YouTube",
-   ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
+   ("https://www.youtube.com/@stpaulsnaples6762/streams") %>.
    for those unable to be with us in person.</p> 
   <% if @bulletin.url.present? %>
     <p><strong><%= link_to "Here is the Sunday bulletin", "#{@bulletin.url}" %>

@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="d-flex justify-content-evenly mb-3 text-white" style="background-color: #0d4884;">
           <div class="pt-3">
-            <p><strong>SUPPORT ST. PAUL'S</strong></p>
+            <p><strong>SUPPORT ST. PAUL'S</strong>
          
             <%= link_to "DONATE NOW", "https://buy.stripe.com/4gw5o32ih7tn4004gh", class: "btn btn-primary" %>
             OR <%= link_to "RECURRING DONATION", new_pledge_path, class: "btn btn-primary" %>
@@ -61,26 +61,62 @@
     <%= link_to "Click here for the on-line Book of Common Prayer" ,
     ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf") %></p>
     <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx: auto", alt: "Chosen promotion picture") %>
-      <h2 class="mt-3">Reflect and Connect </h2>
-      <p>This group is awaiting the release of the new season of the popular series <em>The Chosen,</em> (it's in theaters now). 
-        In the meantime we are discussing the previous Sunday's sermon and scripture readings. All are welcome, 
-        10:30 a.m. Wednesdays in the library.</p>
-      <h2 class="mt-3">Sacred Ground Series</h2>
-      <p>This is a series of videos, readings and small-group discussions about race. This is highly
-        recommended if you have questions about "critical race theory," a topic needlessly politicized. To
-        watch an introduction, <%= link_to "click here. " , 
-        "https://www.episcopalchurch.org/sacred-ground/" %></p>
-     
-      <section id="market">
-        <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , 
-        width: "40%", alt: "Farmers' market logo" ) %>
-        <h2 class="mt-3">Home of the Farmers' Market</h2>
-        <p><strong>The market will reopen in November and will run through April 2026.</strong></p>
-        <p>Lots of fresh produce and select items of interest for sale. We also have a great books sale in the church 
-        hall and top-line clothing in the <em>Unique Boutique.</em></p>
-        <p>If you are a prospective vendor, please call the office, as we have room for more vendors.</p>
-        <p>For more information about the market, <%= link_to "click here." , markets_index_path %></p>
-      </section>
+
+
+<% reflect_content = PageContent.find_by(section: "reflect") %>
+<% if reflect_content %>
+  <%= turbo_frame_tag dom_id(reflect_content) do %>
+    <div class="content-section">
+      <% if current_user&.role?("admin") %>
+        <div class="admin-controls">
+          <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
+        </div>
+      <% end %>
+      
+      <h1 class="mt-4"><%= reflect_content.title %></h1>
+      <%= reflect_content.body.html_safe %>
+    </div>
+  <% end %>
+<% else %>
+  <h2 class="mt-3">Reflect and Connect </h2>
+  <p>This group is awaiting the release of the new season of the popular series 
+  <em>The Chosen,</em> (it's in theaters now). 
+    In the meantime we are discussing the previous Sunday's sermon 
+    and scripture readings. All are welcome, 10:30 a.m. Wednesdays in the library.</p>
+<% end %>    
+  <h2 class="mt-3">Sacred Ground Series</h2>
+  <p>This is a series of videos, readings and small-group discussions about race. This is highly
+    recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+    watch an introduction, <%= link_to "click here. " , 
+    "https://www.episcopalchurch.org/sacred-ground/" %></p>
+  
+  <section id="market">
+    <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , 
+    width: "40%", alt: "Farmers' market logo" ) %>
+
+    <% market_content = PageContent.find_by(section: "market") %>
+    <% if market_content %>
+      <%= turbo_frame_tag dom_id(market_content) do %>
+        <div class="content-section">
+          <% if current_user&.role?("admin") %>
+            <div class="admin-controls">
+              <%= link_to "Edit", edit_page_content_path(market_content), class: "btn btn-sm btn-primary" %>
+            </div>
+          <% end %>
+          
+          <h1 class="mt-4"><%= market_content.title %></h1>
+          <%= market_content.body.html_safe %>
+        </div>
+      <% end %>
+    <% else %>
+      <h2 class="mt-3">Home of the Farmers' Market</h2>
+      <p><strong>The market will reopen in November and will run through April 2026.</strong></p>
+      <p>Lots of fresh produce and select items of interest for sale. We also have a great books sale in the church 
+      hall and top-line clothing in the <em>Unique Boutique.</em></p>
+      <p>If you are a prospective vendor, please call the office, as we have room for more vendors.</p>
+      <p>For more information about the market, <%= link_to "click here." , markets_index_path %></p>
+    <% end %>       
+  </section>
       <br>
       <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
       <p><strong>Almighty God, who created us in your own image: Grant us

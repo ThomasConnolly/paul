@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_28_173111) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_03_163613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
@@ -524,6 +524,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_173111) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "event_id"
     t.index ["event_type"], name: "index_webhooks_on_event_type"
   end
 

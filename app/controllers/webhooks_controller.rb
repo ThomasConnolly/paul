@@ -9,15 +9,21 @@ class WebhooksController < ApplicationController
 
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
     endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
-
+    
     begin
       event = Stripe::Webhook.construct_event(
         payload, sig_header, endpoint_secret
       )
 
+      if Webhook.exists?(event_id: event.id)
+        render json: { status: :ok, message: "Event already processed" }
+        return
+      end
+
       webhook = Webhook.create!(
         data: payload,
-        event_type: event.type
+        event_type: event.type,
+        event_id: event.id
       )
       Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}, event_type: #{event.type}"
 

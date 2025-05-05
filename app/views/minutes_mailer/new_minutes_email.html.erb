@@ -1,7 +1,10 @@
-<h3> Hello <%= @recipient.name %>, <br>
-<h3>A draft of the minutes of our last vestry meeting has been posted. 
-<br> Please read it before our next meeting, as you will be asked to approve/amend it.<br>
-<%= link_to "Click here to access this draft", @url %>\n\\n\nBest regards,\nCharlene"</h3>
+<h3> Hello <%= @recipient['name'] %>,</h3>
+<h3>A draft of the minutes of our last vestry meeting has been posted.</h3>
+
+
+<%= link_to "Click here to access this draft", @url %>
+<p>Best regards,<br>
+Charlene</p>
 <div class="mt-4 text-center">
  <p> <small>This message is automatically sent to vestry members when a draft of the minutes is posted by the clerk.</small></p> 
 </div>

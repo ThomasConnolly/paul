@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_03_163613) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_05_133910) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
@@ -289,7 +289,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_03_163613) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.integer "amount"
-    t.string "price"
+    t.string "interval"
     t.string "subscription_id"
     t.string "price_id", default: "prod_ETteQ8s9Ho9sNW"
     t.string "status"

@@ -11,7 +11,7 @@ class WebhookJob < ApplicationJob
     begin
       Rails.logger.info "Processing webhook: #{webhook.event_type}"
       json_data = JSON.parse(webhook.data)
-      
+
       case webhook.event_type
       when 'checkout.session.completed'
         handle_checkout_session(json_data['data']['object'], webhook)
@@ -20,7 +20,7 @@ class WebhookJob < ApplicationJob
       else
         Rails.logger.info "Ignoring event type: #{webhook.event_type}"
       end
-      
+
       webhook.update(status: 'processed')
     rescue JSON::ParserError => e
       Rails.logger.error "Invalid JSON in webhook data: #{e.message}"
@@ -37,27 +37,27 @@ class WebhookJob < ApplicationJob
   def handle_checkout_session(data_object, webhook)
     amount = data_object['amount_total']
     payment_method_type = data_object['payment_method_types']&.first || 'unknown'
-    
+
     # Handle different payment links if needed
     if data_object['payment_link'] == 'plink_dR64jZ5ut9Bv4004gi'
       Rails.logger.info "Processing ticket sale: #{data_object['id']}"
     elsif data_object['payment_link'] == 'plink_4gw5o32ih7tn4004gh'
-      Rails.logger.info "Processing donation: #{data_object['id']}" 
+      Rails.logger.info "Processing donation: #{data_object['id']}"
     end
-    
+
     process_payment(amount, payment_method_type, data_object, webhook)
   end
 
   def handle_charge(data_object, webhook)
     amount = data_object['amount']
-    
+
     # Safely access payment_method_details
     payment_method_type = if data_object['payment_method_details'].is_a?(Hash)
-                           data_object['payment_method_details']['type']
-                         else
-                           'card' # Default assumption
-                         end
-    
+                            data_object['payment_method_details']['type']
+                          else
+                            'card' # Default assumption
+                          end
+
     process_payment(amount, payment_method_type, data_object, webhook)
   end
 
@@ -77,7 +77,7 @@ class WebhookJob < ApplicationJob
     StripeMailer.stripe_report(stripe_report).deliver_later
 
     Rails.logger.info "Created StripeReport: amount=#{amount}, payment_type=#{payment_method_type}"
-    
+
     # Send the email
     StripeMailer.stripe_report(stripe_report).deliver_now
   end
@@ -89,14 +89,12 @@ class WebhookJob < ApplicationJob
     user = User.find_by(stripe_id: customer_id) if customer_id
 
     # Try various locations for the name
-    name = user&.username ||
-           data_object.dig('billing_details', 'name') ||
-           data_object.dig('charges', 'data', 0, 'billing_details', 'name') ||
-           data_object.dig('payment_method_details', 'card', 'name') ||
-           data_object['customer'] ||
-           'Unknown'
-    
-    name
+    user&.username ||
+      data_object.dig('billing_details', 'name') ||
+      data_object.dig('charges', 'data', 0, 'billing_details', 'name') ||
+      data_object.dig('payment_method_details', 'card', 'name') ||
+      data_object['customer'] ||
+      'Unknown'
   end
 
   def calculate_stripe_fee(amount, payment_method_type)
@@ -105,7 +103,7 @@ class WebhookJob < ApplicationJob
     case payment_method_type
     when 'card'
       ((amount * 0.029) + 30).round # 2.9% + $0.30 for credit cards
-    when 'us_bank_account' 
+    when 'us_bank_account'
       if amount <= 500_00 # $5.00 or less
         0 # ACH transfers are free for transactions $5 or less
       else

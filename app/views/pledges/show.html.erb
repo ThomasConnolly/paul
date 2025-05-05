@@ -1,7 +1,7 @@
 <div class="mt-5"></div>
    <div class="row">
       <div class="col-md-6 offset-md-3">
-         <h3> <%= @pledge.user.username %> is pledging <%= number_to_currency@pledge.dollars %> <%= @pledge.price %>
+         <h3> <%= @pledge.user.username %> is pledging <%= number_to_currency@pledge.dollars %> <%= @pledge.interval %>
          </h3>   
          <p>If this is correct, select the "Confirm" button to enter your payment method and credentials. If not, "Edit or delete."</p>
          <%= button_to "Confirm" , checkout_pledge_path, method: :post,  params: { id: @pledge.id }, 

@@ -20,17 +20,27 @@ class CheckoutPledgesController < ApplicationController
   def success
     session_id = params[:session_id]
 
-    # Retrieve the checkout session from Stripe
-    checkout_session = Stripe::Checkout::Session.retrieve(session_id)
+    begin
+      # Retrieve the checkout session from Stripe
+      checkout_session = Stripe::Checkout::Session.retrieve(session_id)
 
-    # Update your pledge with the subscription ID
-    @pledge = Pledge.find(checkout_session.metadata.pledge_id)
-    @pledge.update(
-      subscription_id: checkout_session.subscription,
-      status: 'active'
-    )
+      # Update your pledge with the subscription ID
+      @pledge = Pledge.find(checkout_session.metadata.pledge_id)
+      @pledge.update(
+        subscription_id: checkout_session.subscription,
+        status: 'active'
+      )
 
-    render 'success'
+      render 'success'
+    rescue Stripe::StripeError => e
+      # Log the error
+      Rails.logger.error "Stripe error in success callback: #{e.message}"
+      redirect_to pledges_path, alert: 'There was an issue with your payment. Please contact support.'
+    rescue ActiveRecord::RecordNotFound => e
+      # Log the error
+      Rails.logger.error "Record not found in success callback: #{e.message}"
+      redirect_to pledges_path, alert: 'There was an issue with your payment. Please contact support.'
+    end
   end
 
   private

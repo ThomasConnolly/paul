@@ -5,11 +5,11 @@
       
       <p>Frequency</p>
       <div class="form-check form-check-inline">
-        <%= f.input_field :price, as: :radio_buttons, 
+        <%= f.input_field :interval, as: :radio_buttons, 
                       collection: [["Weekly", "weekly"], ["Monthly", "monthly"], ["Quarterly", "quarterly"]], 
                       label: false,
                       item_wrapper_class: 'form-check-inline mb-2 me-3' %>
-      </div> <!-- Closing div in the correct place -->
+      </div>
       
       <%= f.submit "Confirm", class: "btn btn-lg btn-success mb-2" %>
     <% end %>

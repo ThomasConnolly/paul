@@ -1,0 +1,41 @@
+<h1>Pledges</h1>
+
+<div class="container mt-4">
+  <% if @pledges.any? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Amount</th>
+          <th>Frequency</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @pledges.each do |pledge| %>
+          <tr>
+            <td><%= pledge.user&.email %></td>
+            <td><%= number_to_currency(pledge.dollars) %></td>
+            <td><%= pledge.interval.titleize %></td>
+            <td><%= pledge.status %></td>
+            <td>
+              <%= link_to "View", pledge_path(pledge), class: "btn btn-sm btn-info" %>
+
+                <%= link_to "Edit", edit_pledge_path(pledge), class: "btn btn-sm btn-primary" %>
+                <%= button_to "Cancel", pledge_path(pledge), method: :delete, 
+                    data: { confirm: "Are you sure you want to cancel this pledge?" },
+                    class: "btn btn-sm btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No pledges found.</p>
+  <% end %>
+  
+  <% if current_user && current_user.pledge.nil? %>
+    <%= link_to "Create Pledge", new_pledge_path, class: "btn btn-success mt-3" %>
+  <% end %>
+</div>

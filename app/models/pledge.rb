@@ -8,7 +8,7 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  amount          :integer
-#  price            :string
+#  interval            :string
 #  subscription_id :string
 #  price_id         :string           default("prod_ETteQ8s9Ho9sNW")
 #  status          :string
@@ -19,11 +19,12 @@ class Pledge < ApplicationRecord
   belongs_to :user
   validates :dollars, presence: true, numericality: { only_integer: true }
   validates :price_id, presence: true
+  validates :interval, presence: true, inclusion: { in: %w[weekly monthly quarterly] }
   before_save :set_price_id
   before_destroy :cancel_stripe_subscription, if: :subscription_id
 
   def set_price_id
-    self.price_id = case price
+    self.price_id = case interval
                     when 'quarterly'
                       if Rails.env.production?
                         'price_1R6AzGHiibShxDkjyx6ULIKu'
@@ -46,7 +47,13 @@ class Pledge < ApplicationRecord
   end
 
   def cancel_stripe_subscription
-    Stripe::Subscription.retrieve(subscription_id).delete
-    update(status: 'canceled')
+    return if subscription_id.blank?
+
+    begin
+      Stripe::Subscription.cancel(subscription_id)
+    rescue Stripe::StripeError => e
+      Rails.logger.error "Failed to cancel subscription #{subscription_id}: #{e.message}"
+      # Don't raise error to allow record deletion to continue
+    end
   end
 end

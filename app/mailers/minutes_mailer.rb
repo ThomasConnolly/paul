@@ -16,7 +16,7 @@ class MinutesMailer < ApplicationMailer
   def self.send_minutes_emails(vestry_minute)
     email_list = load_email_list
     email_list.each do |recipient|
-      MinutesMailer.new_minutes_email(vestry_minute, recipient).deliver_now
+      MinutesMailer.new_minutes_email(vestry_minute, recipient).deliver_later
     end
   end
 

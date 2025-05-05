@@ -3,6 +3,7 @@
 
 class MinutesMailer < ApplicationMailer
   def new_minutes_email(vestry_minute_id, recipient)
+    # Find the vestry minute by ID instead of receiving the object directly
     @vestry_minute = VestryMinute.find(vestry_minute_id)
     @url = url_for(@vestry_minute)
     @recipient = recipient
@@ -14,9 +15,12 @@ class MinutesMailer < ApplicationMailer
   end
 
   def self.send_minutes_emails(vestry_minute)
+    # Pass the ID instead of the object
+    vestry_minute_id = vestry_minute.is_a?(VestryMinute) ? vestry_minute.id : vestry_minute
+    
     email_list = load_email_list
     email_list.each do |recipient|
-      MinutesMailer.new_minutes_email(vestry_minute, recipient).deliver_later
+      MinutesMailer.new_minutes_email(vestry_minute_id, recipient).deliver_later
     end
   end
 

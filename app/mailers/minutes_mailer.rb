@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 class MinutesMailer < ApplicationMailer
-  def new_minutes_email(vestry_minute, recipient)
-    @vestry_minute = vestry_minute
+  def new_minutes_email(vestry_minute_id, recipient)
+    @vestry_minute = VestryMinute.find(vestry_minute_id)
     @url = url_for(@vestry_minute)
     @recipient = recipient
 

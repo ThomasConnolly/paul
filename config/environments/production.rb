@@ -85,18 +85,19 @@ Rails.application.configure do
     address: 'smtp.office365.com',
     port: 587,
     domain: 'saintpaulsnaples.org',
-    user_name: ENV['SMTP_USERNAME'] || Rails.application.credentials.dig(:smtp, :username),
-    password: ENV['SMTP_PASSWORD'] || Rails.application.credentials.dig(:smtp, :password),
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'] #|| Rails.application.credentials.dig(:smtp, :password),
     authentication: :login,
     enable_starttls_auto: true,
     openssl_verify_mode: 'none',
     open_timeout: 10,
-    read_timeout: 10
+    read_timeout: 10,
+    debug_output: $stdout
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

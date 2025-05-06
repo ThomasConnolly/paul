@@ -48,9 +48,12 @@ Rails.application.configure do
   config.force_ssl = true
 
   # Log to STDOUT by default
+
   config.logger = ActiveSupport::Logger.new($stdout)
-                                       .tap  { |logger| logger.formatter = Logger::Formatter.new }
-                                       .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+                                   .tap  { |logger| logger.formatter = Logger::Formatter.new }
+                                   .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+
+
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
@@ -72,7 +75,7 @@ Rails.application.configure do
   # caching is enabled.
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.logger = ActiveSupport::Logger.new('log/mail.log')
+  config.action_mailer.logger = ActiveSupport::Logger.new($stdout)
   config.action_mailer.logger.level = Logger::DEBUG
 
   config.action_mailer.delivery_method = :smtp

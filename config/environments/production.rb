@@ -88,8 +88,7 @@ Rails.application.configure do
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'], 
     authentication: :plain,
-    enable_starttls_auto: true,
-    debug_output: $stdout
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

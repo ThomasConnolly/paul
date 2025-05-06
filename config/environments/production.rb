@@ -86,7 +86,7 @@ Rails.application.configure do
     port: 587,
     domain: 'saintpaulsnaples.org',
     user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'] #|| Rails.application.credentials.dig(:smtp, :password),
+    password: ENV['SMTP_PASSWORD'], #|| Rails.application.credentials.dig(:smtp, :password),
     authentication: :login,
     enable_starttls_auto: true,
     openssl_verify_mode: 'none',

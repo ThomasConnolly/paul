@@ -47,17 +47,9 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
-  # Log to STDOUT by default
-
-  # Replace this:
-config.logger = ActiveSupport::Logger.new($stdout)
-.tap  { |logger| logger.formatter = Logger::Formatter.new }
-.then { |logger| ActiveSupport::TaggedLogging.new(logger) }
-
-# With this:
-logger = ActiveSupport::Logger.new($stdout)
-logger.formatter = Logger::Formatter.new
-config.logger = ActiveSupport::TaggedLogging.new(logger)
+  logger = ActiveSupport::Logger.new($stdout)
+  logger.formatter = Logger::Formatter.new
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]

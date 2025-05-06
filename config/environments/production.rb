@@ -70,25 +70,25 @@ Rails.application.configure do
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
 
-  config.action_mailer.perform_caching = false
-  config.action_mailer.logger = ActiveSupport::Logger.new($stdout)
-  config.action_mailer.logger.level = Logger::DEBUG
+  #config.action_mailer.perform_caching = false
+  #config.action_mailer.logger = ActiveSupport::Logger.new($stdout)
+  #config.action_mailer.logger.level = Logger::DEBUG
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'www.saintpaulsnaples.org' }
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.default_url_options = { host: 'www.saintpaulsnaples.org' }
   Rails.application.routes.default_url_options[:host] =
     'www.saintpaulsnaples.org'
 
   # Configure the mailer to use gmail SMTP.
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: 'saintpaulsnaples.org',
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'], 
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  #config.action_mailer.smtp_settings = {
+   # address: 'smtp.gmail.com',
+  #  port: 587,
+  #  domain: 'saintpaulsnaples.org',
+  #  user_name: ENV['SMTP_USERNAME'],
+  #  password: ENV['SMTP_PASSWORD'], 
+  #  authentication: :plain,
+  #  enable_starttls_auto: true
+  ##S}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

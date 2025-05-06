@@ -80,18 +80,15 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] =
     'www.saintpaulsnaples.org'
 
-  # Configure the mailer to use the SMTP server provided by Office 365.
+  # Configure the mailer to use gmail SMTP.
   config.action_mailer.smtp_settings = {
-    address: 'smtp.office365.com',
+    address: 'smtp.gmail.com',
     port: 587,
     domain: 'saintpaulsnaples.org',
     user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'], #|| Rails.application.credentials.dig(:smtp, :password),
-    authentication: :login,
+    password: ENV['SMTP_PASSWORD'], 
+    authentication: :plain,
     enable_starttls_auto: true,
-    openssl_verify_mode: 'none',
-    open_timeout: 10,
-    read_timeout: 10,
     debug_output: $stdout
   }
 

@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  config.active_job.queue_adapter = :delayed_job
+  config.active_job.queue_adapter = :async
 
   # config.active_job.queue_name_prefix = "paul_production"
 
@@ -73,11 +73,10 @@ Rails.application.configure do
   #config.action_mailer.perform_caching = false
   #config.action_mailer.logger = ActiveSupport::Logger.new($stdout)
   #config.action_mailer.logger.level = Logger::DEBUG
-
   #config.action_mailer.delivery_method = :smtp
   #config.action_mailer.default_url_options = { host: 'www.saintpaulsnaples.org' }
-  Rails.application.routes.default_url_options[:host] =
-    'www.saintpaulsnaples.org'
+  #Rails.application.routes.default_url_options[:host] =
+   # 'www.saintpaulsnaples.org'
 
   # Configure the mailer to use gmail SMTP.
   #config.action_mailer.smtp_settings = {

@@ -93,7 +93,7 @@ Rails.application.routes.draw do
   resources :story_ideas do
     resources  :comments, only: %i[create edit]
   end
-get 'health_check', to: 'health#check'
+
   resources :tasks
   resources :todos
 

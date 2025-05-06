@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  config.active_job.queue_adapter = :async
+  config.active_job.queue_adapter = :delayed_job
 
   # config.active_job.queue_name_prefix = "paul_production"
 
@@ -91,7 +91,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.raise_delivery_errors = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -114,7 +114,5 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  config.hosts << 'saintpauls.herokuapp.com'
-  config.hosts << 'saintpaulsnaples.org'
-  config.hosts << 'www.saintpaulsnaples.org'
+ 
 end

@@ -3,64 +3,55 @@
 
 class LinksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_common_links, only: [:index, :show]
 
-  # GET /links/1
-  # GET /links/1.json
   def index
     @links = Link.all
-    @worship = Link.find_by(event: 'worship')
-    @bulletin = Link.find_by(event: 'bulletin')
-    @wine = Link.find_by(event: 'wine_time')
-    @vestry_meeting = Link.find_by(event: 'vestry_meeting')
   end
 
   def show
-    @link = Link.find(params[:id])
-    @worship = Link.find_by(event: 'worship')
-    @bulletin = Link.find_by(event: 'bulletin')
-    @wine = Link.find_by(event: 'wine_time')
-    @vestry_meeting = Link.find_by(event: 'vestry_meeting')
   end
 
-  # GET /links/1/edit
   def edit
-    @link = Link.find(params[:id])
   end
 
-  # POST /links
-  # POST /links.json
   def create
     @link = Link.new(link_params)
-    redirect_to(@link, notice: 'Link was successfully created.') if @link.save
+    if @link.save
+      redirect_to @link, notice: 'Link was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
-    @link = Link.find(params[:id])
-    return unless @link.update(link_params)
-
-    redirect_to(@link,
-                notice: 'Link was successfully updated.')
+    if @link.update(link_params)
+      redirect_to @link.notice: 'Link was successfully updated.'
+    else
+      render :edit
+    end
   end
 
-  # DELETE /links/1
-  # DELETE /links/1.json
   def destroy
-    @link = Link.find(params[:id])
     @link.destroy
-    respond_to do |format|
-      format.html do
-        redirect_to(links_url, status: :see_other,
+    redirect_to links_url, status: :see_other,
                                notice: 'Link was successfully destroyed.')
-      end
-      format.json { head(:no_content) }
-    end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  def set_link
+    @link = Link.find(params[:id])
+  end
 
-  # Only allow a list of trusted parameters through.
+  def set_common_links
+    @worship = Link.find_by(event: 'worship')
+    @bulletin = Link.find_by(event: 'bulletin')
+    @wine = Link.find_by(event: 'wine_time')
+    @vestry_meeting = Link.find_by(event: 'vestry_meeting')
+  end
+    
   def link_params
     params.expect(link: %i[event time date url])
   end

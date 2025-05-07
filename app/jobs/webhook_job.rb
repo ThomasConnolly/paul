@@ -74,12 +74,11 @@ class WebhookJob < ApplicationJob
       net: net_amount,
       payment_method_type: payment_method_type
     )
-    StripeMailer.stripe_report(stripe_report).deliver_later
 
     Rails.logger.info "Created StripeReport: amount=#{amount}, payment_type=#{payment_method_type}"
 
     # Send the email
-    StripeMailer.stripe_report(stripe_report).deliver_now
+    StripeMailer.stripe_report(stripe_report).deliver_later
   end
 
   def extract_name(data_object)

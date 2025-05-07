@@ -255,7 +255,7 @@ Devise.setup do |config|
   config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = [:get,:delete]
+  config.sign_out_via = %i[get delete]
 
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other

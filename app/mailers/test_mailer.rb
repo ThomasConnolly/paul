@@ -8,6 +8,6 @@ class TestMailer < ApplicationMailer
       subject: 'just a test'
     )
   end
-end 
+end
 # run this in Heroku console
 # TestMailer.testing.deliver_later

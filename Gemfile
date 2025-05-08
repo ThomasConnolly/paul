@@ -50,6 +50,8 @@ gem 'railties'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'responders'
 gem 'ruby-vips'
+gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'simple_form'
 gem 'solargraph'
 gem 'stimulus-rails'
@@ -85,7 +87,9 @@ group :development do
   gem 'capistrano-rails', '~> 1.6'
   gem 'letter_opener'
   gem 'letter_opener_web'
+
   gem 'ruby-lsp-rails'
+
   gem 'web-console'
 end
 

@@ -103,7 +103,7 @@ GEM
       rake (>= 0.8.7)
     ast (2.4.3)
     aws-eventstream (1.3.2)
-    aws-partitions (1.1099.0)
+    aws-partitions (1.1100.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -554,6 +554,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.23.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.23.0)
+    sentry-ruby (5.23.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     shellany (0.0.1)
     simple_form (5.3.1)
       actionpack (>= 5.2)
@@ -578,7 +584,7 @@ GEM
       yard (~> 0.9, >= 0.9.24)
       yard-solargraph (~> 0.1)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.12070)
+    sorbet-runtime (0.5.12079)
     sshkit (1.24.0)
       base64
       logger
@@ -711,6 +717,8 @@ DEPENDENCIES
   ruby-lsp-rails
   ruby-vips
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   simple_form
   solargraph
   stimulus-rails

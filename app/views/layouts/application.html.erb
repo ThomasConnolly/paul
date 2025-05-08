@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
-</head>
+  <%= Sentry.get_trace_propagation_meta.html_safe %>
+  </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
   <div class="container">

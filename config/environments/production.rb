@@ -12,7 +12,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in ENV["RAILS_MASTER_KEY"], config/master.key, or an environment
@@ -78,16 +78,16 @@ Rails.application.configure do
   # 'www.saintpaulsnaples.org'
 
   # Configure the mailer to use gmail SMTP.
-  
+
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
     domain: 'saintpaulsnaples.org',
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'],
+    user_name: ENV.fetch('SMTP_USERNAME', nil),
+    password: ENV.fetch('SMTP_PASSWORD', nil),
     authentication: :plain,
     enable_starttls_auto: true
-   }
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -115,7 +115,7 @@ Rails.application.configure do
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
-# Allow your domains for Rails 8 host authorization
+  # Allow your domains for Rails 8 host authorization
   config.hosts << 'saintpauls.herokuapp.com'
   config.hosts << 'saintpaulsnaples.org'
   config.hosts << 'www.saintpaulsnaples.org'

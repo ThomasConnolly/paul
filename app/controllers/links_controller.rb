@@ -27,7 +27,7 @@ class LinksController < ApplicationController
 
   def update
     if @link.update(link_params)
-      redirect_to @link.notice: 'Link was successfully updated.'
+      redirect_to @link, notice: 'Link was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     redirect_to links_url, status: :see_other,
-                               notice: 'Link was successfully destroyed.')
+                               notice: 'Link was successfully destroyed.'
   end
 
   private

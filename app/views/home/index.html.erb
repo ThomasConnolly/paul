@@ -19,42 +19,42 @@
   </div>
 </section>
 <div class="clearfix"></div>
+
 <div class="row">
   <div class="col-md-8 main-body pe-5">
   <%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
   <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
     
-<% celebrate_content = PageContent.find_by(section: "celebrate") %>
-<% if celebrate_content %>
-  <%= turbo_frame_tag dom_id(celebrate_content) do %>
-    <div class="content-section">
-      <% if current_user&.role?("admin") %>
-        <div class="admin-controls">
-          <%= link_to "Edit", edit_page_content_path(celebrate_content), class: "btn btn-sm btn-primary" %>
-        </div>
-      <% end %>
-      
-      <h1 class="mt-4"><%= celebrate_content.title %></h1>
-      <%= celebrate_content.body.html_safe %>
-    </div>
+  <% celebrate_content = PageContent.find_by(section: "celebrate") %>
+  <% if celebrate_content %>
+    <%= turbo_frame_tag dom_id(celebrate_content) do %>
+      <div class="content-section">
+        <% if current_user&.role?("admin") %>
+          <div class="admin-controls">
+            <%= link_to "Edit", edit_page_content_path(celebrate_content), class: "btn btn-sm btn-primary" %>
+          </div>
+        <% end %>
+        <h1 class="mt-4"><%= celebrate_content.title %></h1>
+        <%= celebrate_content.body.html_safe %>
+      </div>  <!-- Close content-section -->
+    <% end %>  <!-- Close turbo_frame_tag -->
+  <% else %>
+    <div class="content-section">  <!-- Add this div to match structure -->
+      <h1 class="mt-4">Celebrate Easter</h1>
+      <h2>Sunday Worship 9 a.m.</h2>
+      <p>Easter is not a day, but a season, from Easter Sunday to Pentecost, where the Holy Spirit empowers us to live Christ-like lives.<br>
+      During "Naples season (October to April) there are two Masses, 8 and 10 a.m.</p>
+      <p><strong>All are welcome here at St. Paul's!</strong></p>
+    </div>  <!-- Close content-section -->
   <% end %>
-<% else %>
-  <h1 class="mt-4">Celebrate Easter</h1>
-  <h2>Sunday Worship 9 a.m.</h2>
-  <p>Easter is not a day, but a season, from Easter Sunday to Pentecost, where the Holy Spirit empowers us to live Christ-like lives.<br>
-  During "Naples season (October to April) there are two Masses, 8 and 10 a.m.</p>
-  <p><strong>All are welcome here at St. Paul's!</strong></p>
-<% end %>
   
   <p>The Sunday service is streamed on <%= link_to "YouTube",
-   ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
-   for those unable to be with us in person.</p> 
-   
+    ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
+    for those unable to be with us in person.</p> 
+  
   <% if @bulletin&.url.present? %>
     <%= link_to "Here is the Sunday bulletin", @bulletin.url %>
   <% end %>
-   
-  
   <p><strong><%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
     </strong> </p>
   <p>To learn about our liturgical worship service and about the<strong> <em>Episcopal 
@@ -62,27 +62,25 @@
     shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em> 
     <%= link_to "Click here for the on-line Book of Common Prayer" ,
     ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf") %></p>
-    <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto", alt: "Chosen promotion picture") %>
-
-
-<% reflect_content = PageContent.find_by(section: "reflect") %>
-<% if reflect_content %>
-  <%= turbo_frame_tag dom_id(reflect_content) do %>
-    <div class="content-section">
-      <% if current_user&.role?("admin") %>
-        <div class="admin-controls">
-          <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
-        </div>
-      <% end %>
-      
-      <h1 class="mt-4"><%= reflect_content.title %></h1>
-      <%= reflect_content.body.html_safe %>
-    </div>
-  <% end %>
-<% else %>
-  <h2 class="mt-3">Reflect and Connect </h2>
-  <p>This group is awaiting the release of the new season of the popular series 
-  <em>The Chosen.</em> (it's in theaters now). 
+    
+  <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto", alt: "Chosen promotion picture") %>
+  <% reflect_content = PageContent.find_by(section: "reflect") %>
+    <% if reflect_content %>
+      <%= turbo_frame_tag dom_id(reflect_content) do %>
+      <div class="content-section">
+        <% if current_user&.role?("admin") %>
+          <div class="admin-controls">
+            <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
+          </div>
+        <% end %>
+  <h1 class="mt-4"><%= reflect_content.title %></h1>
+    <%= reflect_content.body.html_safe %>
+      </div>
+    <% end %>
+  <% else %>
+    <h2 class="mt-3">Reflect and Connect </h2>
+    <p>This group is awaiting the release of the new season of the popular series 
+    <em>The Chosen.</em> (it's in theaters now). 
     In the meantime we are discussing the previous Sunday's sermon 
     and scripture readings. All are welcome, 10:30 a.m. Wednesdays in the library.</p>
 <% end %>    
@@ -208,18 +206,19 @@
         :fetch_format=> :auto), pages_calendar_path %>
       <h3>Click calendar to see our activities</h3>
     </div>
-    # <div class="mt-3" id="ENS">
-    #   <h2>Episcopal News</h2>
-    #   <p><small>Click the headline to read the full story.</small></p>
-    #   <% if @ens_feed.present? %>
-    #     <% @ens_feed.each do |feed| %>
-    #       <h5><%= link_to feed.title , feed.url %></h5>
-    #       <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), 
-    #       length: 200) %></p>  
-    #     <% else %>
-    #       <h5><%= link_to "No news available", "#" %></h5>
-    #   <% end %>
-    # </div>
+    <div class="mt-3" id="ENS">
+      <h2>Episcopal News</h2>
+      <p><small>Click the headline to read the full story.</small></p>
+      <% if @ens_feed.present? %>
+        <%= @ens_feed.each do |feed| %>
+          <h5><%= link_to feed.title , feed.url %></h5>
+          <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), 
+            length: 200) %></p> 
+        <% end %>     
+      <% else %>
+        <h5><%= link_to "No news available", "#" %></h5>
+      <% end %>
+    </div>
   </div>
 </div>
-</div>
+ 

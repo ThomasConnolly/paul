@@ -18,6 +18,7 @@ gem 'birthday'
 gem 'bootsnap', require: false
 gem 'cloudinary'
 gem 'daemons'
+gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'devise'
 gem 'devise-i18n'

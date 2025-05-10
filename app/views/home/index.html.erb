@@ -47,8 +47,10 @@
       <p><strong>All are welcome here at St. Paul's!</strong></p>
     </div>  <!-- Close content-section -->
   <% end %>
-    
-      <%= link_to "Here is the Sunday bulletin", @bulletin.url %>
+  
+  <% if @bulletin&.url.present? %>
+    <%= link_to "Here is the Sunday bulletin", @bulletin.url %>  
+  <% end %>
     
   <p>The Sunday service is streamed on <%= link_to "YouTube",
     ("https://www.youtube.com/@stpaulsnaples6762/streams") %>

@@ -4,10 +4,10 @@
       <div class="col-md-12">
         <div class="d-flex justify-content-evenly mb-3 text-white" style="background-color: #0d4884;">
           <div class="pt-3">
-            <p><strong>SUPPORT ST. PAUL'S</strong></p>
-         
+            <p><strong>SUPPORT ST. PAUL'S</strong>
+        
             <%= link_to "DONATE NOW", "https://buy.stripe.com/4gw5o32ih7tn4004gh", class: "btn btn-primary" %>
-            OR <%= link_to "RECURRING DONATION", new_pledge_path, class: "btn btn-primary" %>
+            OR <%= link_to "RECURRING DONATION", new_pledge_path, class: "btn btn-primary" %></p>
           </div>
         </div>
       </div>
@@ -47,14 +47,13 @@
       <p><strong>All are welcome here at St. Paul's!</strong></p>
     </div>  <!-- Close content-section -->
   <% end %>
-  
+    <% if @bulletin&.url.present? %>
+      <%= link_to "Here is the Sunday bulletin", @bulletin.url %>
+    <% end %>
   <p>The Sunday service is streamed on <%= link_to "YouTube",
     ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
     for those unable to be with us in person.</p> 
   
-  <% if @bulletin&.url.present? %>
-    <%= link_to "Here is the Sunday bulletin", @bulletin.url %>
-  <% end %>
   <p><strong><%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
     </strong> </p>
   <p>To learn about our liturgical worship service and about the<strong> <em>Episcopal 
@@ -65,14 +64,14 @@
     
   <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto", alt: "Chosen promotion picture") %>
   <% reflect_content = PageContent.find_by(section: "reflect") %>
-    <% if reflect_content %>
-      <%= turbo_frame_tag dom_id(reflect_content) do %>
-      <div class="content-section">
-        <% if current_user&.role?("admin") %>
-          <div class="admin-controls">
-            <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
-          </div>
-        <% end %>
+  <% if reflect_content %>
+    <%= turbo_frame_tag dom_id(reflect_content) do %>
+    <div class="content-section">
+      <% if current_user&.role?("admin") %>
+        <div class="admin-controls">
+          <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
+        </div>
+      <% end %>
   <h1 class="mt-4"><%= reflect_content.title %></h1>
     <%= reflect_content.body.html_safe %>
       </div>
@@ -152,7 +151,7 @@
                          No Exception signboard" ) %>
     </div>
   </div>
-  <div class="col-md-4 px-4 mt-4", style="background-color: #e2e2e2;">
+  <div class="col-md-4 px-4 mt-4" style="background-color: #e2e2e2;">
     <p class="text-center">
       <%= Date.current.strftime("%A, %B %e, %Y") %>
     </p>
@@ -161,14 +160,15 @@
     <p>We pray for those who request prayers for themselves or for others in any kind of distress. 
       We are also happy to pray prayers of thanksgiving and to ask God's blessings upon your endeavors.
       If you have a prayer request, please call the office at 239-643-0197 9 a.m. to 1 p.m Monday through Friday 
-      (or leave a message any time).
+      (or leave a message any time).</p>
     <h2>Next vestry meeting</h2>
     <p class="text-center">  
-      <% if @vestry_meeting&.date.present? %>
+      <% if @vestry_meeting&.date.present? %> 
         <%= @vestry_meeting.date.strftime('%B %-d, %Y') %>
       <% else %>
         Date to be announced
-      <% end %></p>
+      <% end %>
+    </p>
     <p> Visitors are welcome to observe our church leadership team in action. 6:30 p.m. 
       in the library, Serson Hall. </p>
     <div id="links">
@@ -180,11 +180,11 @@
     <p><strong>Wednesday evening adult education, 6:30 p.m.
       </strong> Approximately one hour, class is held in the library, Serson Hall. Come,
       learn, and share your thoughts.</p>
-    <p><strong>Thursday wine time, 6 p.m."</strong> on line.
+    <p><strong>Thursday wine time, 6 p.m.</strong> on line.
       <% if @wine&.url.present? %>
         <%= link_to "Click here to join the Zoom chat.", @wine.url %> 
-      <% end %>
-    Join us with your favorite libation for an hour or so of conversation on Zoom. 
+      <% end %></p>
+    <p></p></p>Join us with your favorite libation for an hour or so of conversation on Zoom. 
     This is a popular and relaxing chat room open to everyone who wishes to join in. </p>
     <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 float-end", alt: "coffee cup" ) %>
     <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and 
@@ -193,27 +193,27 @@
     <p class="mt-2"><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
         hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
         are <%= link_to "listed here." , opportunities_path %>
-      </p>
-      <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
+    </p>
+    <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
         and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call or come by 
-        the office during the week (9 a.m. to 1 p.m.) to get one.</p>
-      
-      <p class="mt-3"><strong>Stay up to date </strong> by getting the Weekly Update in your email box
+        the office during the week (9 a.m. to 1 p.m.) to get one.
+    </p>
+    <p class="mt-3"><strong>Stay up to date </strong> by getting the Weekly Update in your email box
         <%= link_to "by signing up here.",
       "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2" %>
-      </p>
+    </p>
       <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 mx-auto d-block" ,
         :fetch_format=> :auto), pages_calendar_path %>
-      <h3>Click calendar to see our activities</h3>
+    <h3>Click calendar to see our activities</h3>
     </div>
     <div class="mt-3" id="ENS">
       <h2>Episcopal News</h2>
       <p><small>Click the headline to read the full story.</small></p>
-      <% if @ens_feed.present? %>
-        <%= @ens_feed.each do |feed| %>
+    
+    <% if @ens_feed.present? %>
+      <% @ens_feed.each do |feed| %>
           <h5><%= link_to feed.title , feed.url %></h5>
-          <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), 
-            length: 200) %></p> 
+          <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), length: 200) %></p> 
         <% end %>     
       <% else %>
         <h5><%= link_to "No news available", "#" %></h5>
@@ -221,4 +221,5 @@
     </div>
   </div>
 </div>
+ </div>
  

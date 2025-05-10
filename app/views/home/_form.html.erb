@@ -1,8 +1,19 @@
 <%= simple_form_with(model: @link) do |f| %>
-  <%=f.select :event, [["bulletin", 1], ["coffee-hour", 2] ["vestry_meeting", 3], ["evening_bible", 4], ["wine-time", 5]]
-    %>
-    <%=f.text_field :title %>
-      <%=f.text_field :time %>
-        <%= f.date_field :date, data: { controller: "datepicker" } %>
-          <%=f.url_field :url %>
+  <%= f.select :event, [
+    ["bulletin", "bulletin"],
+    ["coffee-hour", "coffee_hour"],
+    ["vestry_meeting", "vestry_meeting"],
+    ["wine-time", "wine_time"]
+  ] %>
+  
+  <%= f.input :title, input_html: { class: 'form-control' } %>
+  <%= f.input :time, input_html: { class: 'form-control' } %>
+  <%= f.input :date, as: :date, html5: true, input_html: { class: 'form-control' } %>
+  <%= f.input :url, as: :url, input_html: { class: 'form-control' } %>
+  
+  <div class="form-actions mt-3">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', links_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
           

@@ -3,25 +3,24 @@
 
 class LinksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_action :set_common_links, only: [:index, :show]
+  before_action :set_link, only: %i[show edit update destroy]
+  before_action :set_common_links, only: %i[index show]
 
   def index
     @links = Link.all
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def new; end
+  def edit; end
 
   def create
     @link = Link.new(link_params)
     if @link.save
       redirect_to @link, notice: 'Link was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,7 +35,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     redirect_to links_url, status: :see_other,
-                               notice: 'Link was successfully destroyed.'
+                           notice: 'Link was successfully destroyed.'
   end
 
   private
@@ -51,7 +50,7 @@ class LinksController < ApplicationController
     @wine = Link.find_by(event: 'wine_time')
     @vestry_meeting = Link.find_by(event: 'vestry_meeting')
   end
-    
+
   def link_params
     params.expect(link: %i[event time date url])
   end

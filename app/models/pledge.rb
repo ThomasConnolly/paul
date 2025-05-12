@@ -19,7 +19,8 @@ class Pledge < ApplicationRecord
   belongs_to :user
   validates :dollars, presence: true, numericality: { only_integer: true }
   validates :price_id, presence: true
-  validates :interval, presence: true, inclusion: { in: %w[weekly monthly quarterly] }
+  validates :interval, presence: true,
+                       inclusion: { in: %w[weekly monthly quarterly] }
   before_save :set_price_id
   before_destroy :cancel_stripe_subscription, if: :subscription_id
 

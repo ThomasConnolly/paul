@@ -65,6 +65,7 @@ class AgendasController < ApplicationController
   end
 
   def agenda_params
-    params.expect(agenda: [:meeting_date, :user_id, { agenda_items: [%i[id title details position]] }])
+    params.expect(agenda: [:meeting_date, :user_id,
+                           { agenda_items: [%i[id title details position]] }])
   end
 end

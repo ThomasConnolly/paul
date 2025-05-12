@@ -40,7 +40,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to(posts_url, status: :see_other, notice: 'Post was successfully destroyed.')
+    redirect_to(posts_url, status: :see_other,
+                           notice: 'Post was successfully destroyed.')
   end
 
   private

@@ -12,7 +12,9 @@ class PageContentsController < ApplicationController
     if @page_content.update(page_content_params)
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to root_path, notice: 'Content was successfully updated.' }
+        format.html do
+          redirect_to root_path, notice: 'Content was successfully updated.'
+        end
       end
     else
       render :edit, status: :unprocessable_entity
@@ -30,6 +32,9 @@ class PageContentsController < ApplicationController
   end
 
   def authorize_admin
-    redirect_to root_path, alert: 'Not authorized' unless current_user&.role?('admin')
+    return if current_user&.role?('admin')
+
+    redirect_to root_path,
+                alert: 'Not authorized'
   end
 end

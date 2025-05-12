@@ -80,7 +80,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
-get '/debug', to: proc { |env| [200, {'Content-Type' => 'text/plain'}, ['App is running!']] }
+  get '/debug', to: proc { |_env| [200, { 'Content-Type' => 'text/plain' }, ['App is running!']] }
 
   resources :sermons
   resources :profiles

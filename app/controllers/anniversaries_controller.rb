@@ -13,10 +13,12 @@ class AnniversariesController < ApplicationController
   # def import
   #   @import = Anniversary::Import.new anniversary_import_params
   #   if @import.save
-  #     redirect_to anniversaries_path, notice: "Imported #{@import.imported_count} anniversaries"
+  #     redirect_to anniversaries_path, notice:
+  #  "Imported #{@import.imported_count} anniversaries"
   #   else
   #     @anniversaries = Anniversary.all
-  #     flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+  #     flash[:alert] = "There were #{@import.errors.count} errors
+  #  in your CSV file"
   #     render action: :index
   #   end
   # end

@@ -1,51 +1,25 @@
-<div class="row">
-	<div class="col-md-6 offset-md-3">
-	  <h2 class="pb-4"><%= t('.sign_up') %></h2>
-	  <% if flash[:alert] %>
-		<div class="alert alert-danger"><%= flash[:alert] %></div>
-	  <% end %>
-	  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		<%= render "devise/shared/error_messages", resource: resource %>
-		<div class="mb-3">
-		  <%= f.label :email, class: "form-label" %>
-		  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-		</div>
-		<div class="row uninitialized constant RegistrationsController mb-4">
-		  <div class="col">
-			<%= f.label :first_name, class: "form-label" %>
-			<%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
-		  </div>
-		  <div class="col">
-			<%= f.label :last_name, class: "form-label" %>
-			<%= f.text_field :last_name, autofocus: true, class: 'form-control' %>
-		  </div>
-		</div>
-		<div class="row mb-4">
-		  <div class="col">
-			<%= f.label :password, class: "form-label" %>
-			<%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-			<% if @minimum_password_length %>
-			  <div class="form-text"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></div>
-			<% end %>
+<h2>Sign up</h2>
 
-		  <%= f.label :personal, class: 'd-none' %>
-		  <%= f.text_field :personal, class: 'd-none' %>
-		
-			<%= f.label :password_confirmation, class: "form-label" %>
-			<%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
-		  </div>
-		</div>
-		<%# START add reCAPTCHA %>
-      <%= flash[:recaptcha_error] %>
-      <%= recaptcha_tags %>
-    <%# END add reCAPTCHA %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
-	<div class="mb-3">
-		<%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
-	</div>
-	<% end %>
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
 
-	  <br>
-	  <%= render "devise/shared/links" %>
-	</div>
-</div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

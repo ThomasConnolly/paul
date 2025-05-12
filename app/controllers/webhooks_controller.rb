@@ -8,7 +8,8 @@ class WebhooksController < ApplicationController
     Rails.logger.debug { "Received webhook: #{payload}" }
 
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-    endpoint_secret = Rails.application.credentials.dig(:stripe, Rails.env.to_sym, :signing_secret)
+    endpoint_secret = Rails.application.credentials.dig(:stripe,
+                                                        Rails.env.to_sym, :signing_secret)
 
     begin
       event = Stripe::Webhook.construct_event(

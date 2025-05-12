@@ -6,6 +6,7 @@ class InviteMailer < Devise::Mailer
 
   def invitation_instructions
     @token = token
-    devise_mail(record, record.invitation_instructions || :invitation_instructions, opts)
+    devise_mail(record,
+                record.invitation_instructions || :invitation_instructions, opts)
   end
 end

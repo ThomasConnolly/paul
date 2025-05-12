@@ -21,7 +21,8 @@ class Comment < ApplicationRecord
   belongs_to :parent, optional: true, class_name: 'Comment'
 
   # Renamed association to avoid conflict with method
-  has_many :child_comments, class_name: 'Comment', as: :commentable, dependent: :destroy
+  has_many :child_comments, class_name: 'Comment', as: :commentable,
+                            dependent: :destroy
 
   validates :body, presence: true
 

@@ -2,8 +2,6 @@
 # typed: false
 
 require 'application_responder'
-
-# frozen_string_literal: true
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
@@ -17,7 +15,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    added_attrs = %i[first_name last_name username email password password_confirmation
+    added_attrs = %i[first_name last_name username email
+                     password password_confirmation
                      remember_me]
     devise_parameter_sanitizer.permit(:sign_up, keys: added_attrs)
     devise_parameter_sanitizer.permit(:sign_in, keys: %i[login password])

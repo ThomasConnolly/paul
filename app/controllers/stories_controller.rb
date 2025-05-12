@@ -37,12 +37,15 @@ class StoriesController < ApplicationController
     respond_to do |format|
       if @story.update(story_params)
         format.html do
-          redirect_to(story_url(@story), notice: 'Story was successfully updated.')
+          redirect_to(story_url(@story),
+                      notice: 'Story was successfully updated.')
         end
         format.json { render(:show, status: :ok, location: @story) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
-        format.json { render(json: @story.errors, status: :unprocessable_entity) }
+        format.json do
+          render(json: @story.errors, status: :unprocessable_entity)
+        end
       end
     end
   end

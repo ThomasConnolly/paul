@@ -29,7 +29,9 @@ Rails.configuration.to_prepare do
       def safe_source_mapping_url_added = true
 
       # Safely override the original method
-      alias_method :original_source_mapping_url, :source_mapping_url if method_defined?(:source_mapping_url)
+      if method_defined?(:source_mapping_url)
+        alias_method :original_source_mapping_url, :source_mapping_url
+      end
 
       def source_mapping_url(logical_path)
         return '' unless compiler

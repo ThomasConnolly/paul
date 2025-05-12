@@ -34,7 +34,8 @@ class StripeReportsController < ApplicationController
   end
 
   def stripe_report_params
-    params.expect(stripe_report: %i[date amount stripe_fee net donor_name webhook_id])
+    params.expect(stripe_report: %i[date amount stripe_fee net donor_name
+                                    webhook_id])
   end
 
   def admin_only

@@ -56,7 +56,8 @@ class PledgesController < ApplicationController
         rescue StandardError => e
           # Log the error but don't fail
           Rails.logger.error "Stripe update failed: #{e.message}"
-          flash[:alert] = "Your pledge was saved but the payment processor couldn't be updated."
+          flash[:alert] =
+            "Your pledge was saved but the payment processor couldn't be updated."
         end
       else
         flash[:notice] = 'Your pledge has been updated.'

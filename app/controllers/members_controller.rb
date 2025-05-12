@@ -21,7 +21,8 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to(members_path, status: :see_other, notice: 'Member successfully deleted')
+    redirect_to(members_path, status: :see_other,
+                              notice: 'Member successfully deleted')
   end
 
   private

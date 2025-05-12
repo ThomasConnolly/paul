@@ -52,6 +52,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.expect(event: %i[title price quantity amount time date event_picture])
+    params.expect(event: %i[title price quantity amount time date
+                            event_picture])
   end
 end

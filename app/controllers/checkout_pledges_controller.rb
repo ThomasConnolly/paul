@@ -35,11 +35,13 @@ class CheckoutPledgesController < ApplicationController
     rescue Stripe::StripeError => e
       # Log the error
       Rails.logger.error "Stripe error in success callback: #{e.message}"
-      redirect_to pledges_path, alert: 'There was an issue with your payment. Please contact support.'
+      redirect_to pledges_path,
+                  alert: 'There was an issue with your payment. Please contact support.'
     rescue ActiveRecord::RecordNotFound => e
       # Log the error
       Rails.logger.error "Record not found in success callback: #{e.message}"
-      redirect_to pledges_path, alert: 'There was an issue with your payment. Please contact support.'
+      redirect_to pledges_path,
+                  alert: 'There was an issue with your payment. Please contact support.'
     end
   end
 

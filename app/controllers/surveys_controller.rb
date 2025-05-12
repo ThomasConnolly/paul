@@ -29,11 +29,15 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to(@survey, notice: 'Survey was successfully created.') }
+        format.html do
+          redirect_to(@survey, notice: 'Survey was successfully created.')
+        end
         format.json { render(:show, status: :created, location: @survey) }
       else
         format.html { render(:new) }
-        format.json { render(json: @survey.errors, status: :unprocessable_entity) }
+        format.json do
+          render(json: @survey.errors, status: :unprocessable_entity)
+        end
       end
     end
   end
@@ -43,11 +47,15 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to(@survey, notice: 'Survey was successfully updated.') }
+        format.html do
+          redirect_to(@survey, notice: 'Survey was successfully updated.')
+        end
         format.json { render(:show, status: :ok, location: @survey) }
       else
         format.html { render(:edit) }
-        format.json { render(json: @survey.errors, status: :unprocessable_entity) }
+        format.json do
+          render(json: @survey.errors, status: :unprocessable_entity)
+        end
       end
     end
   end

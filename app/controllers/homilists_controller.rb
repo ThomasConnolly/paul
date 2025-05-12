@@ -55,7 +55,9 @@ class HomilistsController < ApplicationController
   private
 
   def admin_only
-    redirect_to('/') unless user_signed_in && current_user.roles.include?('admin')
+    return if user_signed_in && current_user.roles.include?('admin')
+
+    redirect_to('/')
   end
 
   def set_homilist

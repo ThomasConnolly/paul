@@ -37,7 +37,9 @@ class DonationsController < ApplicationController
         format.json { render(:show, status: :ok, location: @donation) }
       else
         format.html { render(:edit) }
-        format.json { render(json: @donation.errors, status: :unprocessable_entity) }
+        format.json do
+          render(json: @donation.errors, status: :unprocessable_entity)
+        end
       end
     end
   end

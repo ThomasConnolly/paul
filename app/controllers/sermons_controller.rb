@@ -36,7 +36,9 @@ class SermonsController < ApplicationController
 
     respond_to do |format|
       if @sermon.save
-        format.html { redirect_to(@sermon, notice: 'Sermon was successfully created') }
+        format.html do
+          redirect_to(@sermon, notice: 'Sermon was successfully created')
+        end
       else
         format.html { render(:new) }
       end

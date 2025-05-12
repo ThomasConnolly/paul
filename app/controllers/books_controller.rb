@@ -18,7 +18,8 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        send_data(@books_admin.to_csv, filename: "bookLabels-#{Time.zone.today}.csv", disposition: :inline)
+        send_data(@books_admin.to_csv,
+                  filename: "bookLabels-#{Time.zone.today}.csv", disposition: :inline)
       end
     end
   end
@@ -60,7 +61,8 @@ class BooksController < ApplicationController
     @book.destroy
     respond_to do |format|
       format.html do
-        redirect_to(books_admin_path, notice: 'Book was successfully destroyed.')
+        redirect_to(books_admin_path,
+                    notice: 'Book was successfully destroyed.')
       end
       format.json { head(:no_content) }
     end
@@ -69,10 +71,12 @@ class BooksController < ApplicationController
   def import
     @import = Book::Import.new(book_import_params)
     if @import.save
-      redirect_to(books_path, notice: "Imported #{@import.imported_count} books")
+      redirect_to(books_path,
+                  notice: "Imported #{@import.imported_count} books")
     else
       @books = Book.all
-      flash[:alert] = "There were #{@import.errors.count} errors in your CSV file"
+      flash[:alert] =
+        "There were #{@import.errors.count} errors in your CSV file"
       render(action: :index)
     end
   end
@@ -84,7 +88,9 @@ class BooksController < ApplicationController
   private
 
   def admin_only
-    redirect_to('/') unless user_signed_in && current_user.roles.include?('admin')
+    return if user_signed_in && current_user.roles.include?('admin')
+
+    redirect_to('/')
   end
 
   def book_import_params

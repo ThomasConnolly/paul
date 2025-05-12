@@ -32,7 +32,8 @@ class VestryMinutesController < ApplicationController
 
   def update
     if @vestry_minute.update(vestry_minute_params)
-      redirect_to(@vestry_minute, notice: 'Vestry minutes successfully updated.')
+      redirect_to(@vestry_minute,
+                  notice: 'Vestry minutes successfully updated.')
     else
       render :new
     end
@@ -40,7 +41,8 @@ class VestryMinutesController < ApplicationController
 
   def destroy
     @vestry_minute.destroy
-    redirect_to vestry_minutes_url, status: :see_other, notice: 'Vestry minutes successfully destroyed.'
+    redirect_to vestry_minutes_url, status: :see_other,
+                                    notice: 'Vestry minutes successfully destroyed.'
   end
 
   private

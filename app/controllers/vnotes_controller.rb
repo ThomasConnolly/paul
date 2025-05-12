@@ -47,7 +47,8 @@ class VnotesController < ApplicationController
 
   def destroy
     @vnote.destroy
-    redirect_to(vnotes_path, status: :see_other, notice: 'Your post was deleted.')
+    redirect_to(vnotes_path, status: :see_other,
+                             notice: 'Your post was deleted.')
   end
 
   private

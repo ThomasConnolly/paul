@@ -9,7 +9,7 @@ class StripeReportsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @stripe_reports = StripeReport.all
+    @stripe_reports = StripeReport.order(created_at: :desc).all
   end
 
   def show; end

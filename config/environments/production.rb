@@ -85,7 +85,7 @@ Rails.application.configure do
     domain: 'saintpaulsnaples.org',
     user_name: ENV.fetch('SMTP_USERNAME', nil),
     password: ENV.fetch('SMTP_PASSWORD', nil),
-    authentication: :plain,
+    authentication: :login,
     enable_starttls_auto: true
   }
 

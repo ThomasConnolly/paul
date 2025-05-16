@@ -74,7 +74,7 @@ Rails.application.configure do
   config.action_mailer.logger = ActiveSupport::Logger.new($stdout)
   config.action_mailer.logger.level = Logger::DEBUG
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'saintpauls,heroku.com',
+  config.action_mailer.default_url_options = { host: 'saintpauls.herokuapp.com',
                                                protocol: 'https' }
   # Rails.application.routes.default_url_options[:host] =
   # 'www.saintpaulsnaples.org'
@@ -84,13 +84,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: 'saintpaulsnaples.org',
+    domain: 'saintpauls.herokuapp.com',',
     user_name: ENV.fetch('SMTP_USERNAME', nil),
     password: ENV.fetch('SMTP_PASSWORD', nil),
     authentication: :plain,
-    enable_starttls_auto: true,
-    open_timeout: 5,
-    read_timeout: 5
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

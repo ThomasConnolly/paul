@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
-  # include Pundit::Authorization
-
   protect_from_forgery with: :exception
   before_action :store_current_location, unless: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -15,6 +13,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
+    # MODIFIED THIS LINE
+    Rails.logger.debug do
+      "DEBUG: In configure_permitted_parameters for #{self.class.name}, action: #{action_name}"
+    end
     added_attrs = %i[first_name last_name username email
                      password password_confirmation
                      remember_me]
@@ -23,11 +25,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: added_attrs)
   end
 
-  def verified_request?
-    super ||
-      valid_authenticity_token?(session, request.headers['X-CSRF-Token']) ||
-      request.headers['X-Requested-With'] == 'Turbo-Frame'
-  end
+  # def verified_request?
+  #   super ||
+  #     valid_authenticity_token?(session, request.headers['X-CSRF-Token']) # ||
+  #   # request.headers['X-Requested-With'] == 'Turbo-Frame'
+  # end
 
   private
 

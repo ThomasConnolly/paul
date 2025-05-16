@@ -1,0 +1,29 @@
+# frozen_string_literal: true
+
+ActiveSupport::Deprecation::Reporting.module_eval do
+  def extract_callstack(callstack)
+    # Try to use filter_backtrace (could be private class method)
+    filtered = Array(begin
+      method(:filter_backtrace).call(callstack)
+    rescue StandardError
+      begin
+        self.class.send(:filter_backtrace, callstack)
+      rescue StandardError
+        callstack # If all else fails, use raw callstack
+      end
+    end)
+
+    # Safely handle both string and location objects
+    filtered.map do |frame|
+      if frame.is_a?(String)
+        frame
+      else
+        begin
+          frame.absolute_path || frame.path
+        rescue StandardError
+          frame.to_s
+        end
+      end
+    end.join("\n  ")
+  end
+end

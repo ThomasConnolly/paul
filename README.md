@@ -21,4 +21,11 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# St. Paul's Church Application
+
+## Common Admin Tasks
+- **Change User Roles**: # In Rails console
+user = User.find(user_id)
+user.update(roles: user.roles - ["admin"])  # Replace "admin" with the role you want to remove
+- **Send Test Email**: `UserMailer.welcome_email(User.first).deliver_now`
+- **Process Background Jobs**: `Delayed::Job.all.each(&:invoke_job)`

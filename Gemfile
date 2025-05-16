@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.4.2'
+ruby '3.3.0'
 
 gem 'actioncable'
 gem 'actionmailer'
@@ -70,6 +70,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'email_spec'
   gem 'factory_bot_rails'
+  gem 'foreman'
   gem 'guard'
   gem 'listen'
   gem 'rspec-rails'

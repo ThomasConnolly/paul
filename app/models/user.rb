@@ -84,7 +84,7 @@ class User < ApplicationRecord
          :validatable,
          :confirmable,
          :trackable,
-         authentication_keys: [:login]
+         authentication_keys: [:email]
 
   def cancel_stripe_customer
     Stripe::Customer.delete(stripe_id) if stripe_id
@@ -94,21 +94,21 @@ class User < ApplicationRecord
     create_profile if profile.nil?
   end
 
-  attr_writer :login
+  # attr_writer :login
 
-  def login
-    @login || username || email
-  end
+  # def login
+  #   @login || username || email
+  # end
 
-  def self.find_for_database_authentication(warden_conditions)
-    conditions = warden_conditions.dup
-    if (login = conditions.delete(:login))
-      where(conditions.to_h).where(['lower(username) = :value OR lower(email) = :value',
-                                    { value: login.downcase }]).first
-    elsif conditions.key?(:username) || conditions.key?(:email)
-      where(conditions.to_h).first
-    end
-  end
+  # def self.find_for_database_authentication(warden_conditions)
+  #   conditions = warden_conditions.dup
+  #   if (login = conditions.delete(:login))
+  #     where(conditions.to_h).where(['lower(username) = :value OR lower(email) = :value',
+  #                                   { value: login.downcase }]).first
+  #   elsif conditions.key?(:username) || conditions.key?(:email)
+  #     where(conditions.to_h).first
+  #   end
+  # end
 
   def set_username
     self.username = "#{first_name.titleize} #{last_name.titleize.gsub(/'\w/,

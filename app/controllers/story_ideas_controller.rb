@@ -66,18 +66,14 @@ class StoryIdeasController < ApplicationController
   end
 
   def find_commentable
-    if params[:comment_id]
-      @commentable = Comment.find_by(id: params[:comment_id])
-    end
+    @commentable = Comment.find_by(id: params[:comment_id]) if params[:comment_id]
     return unless params[:story_idea_id]
 
     @commentable = StoryIdea.find_by(id: params[:story_idea_id])
   end
 
   def authorize
-    if current_user.roles.include?('communicator') || current_user.roles.include?('vestry')
-      return
-    end
+    return if current_user.roles.include?('communicator') || current_user.roles.include?('vestry')
 
     redirect_to('/')
   end

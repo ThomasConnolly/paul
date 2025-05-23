@@ -27,9 +27,7 @@ class CommentsController < ApplicationController
   def find_commentable
     params.each do |name, value|
       # Differentiate between parent models Eg.: post_id, story_idea_id
-      if name =~ /(.+)_id$/
-        return ::Regexp.last_match(1).classify.constantize.find(value)
-      end
+      return ::Regexp.last_match(1).classify.constantize.find(value) if name =~ /(.+)_id$/
     end
   end
 

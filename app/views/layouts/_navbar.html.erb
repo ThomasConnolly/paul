@@ -3,12 +3,12 @@
     <div class="navbar-brand ms-4">
       <% if current_user %>
         <%= current_user.username %><br>
-        <span>
-        <h6>
+    <span>
+      <h6>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-link text-white p-0 m-0 align-baseline" %>
-    <%= link_to " | Edit account" , edit_user_registration_path, class: "text-white" %>
-    <%= link_to " | Update profile" , edit_profile_path(current_user.profile), class: "text-white" %>
-    </h6>
+        <%= link_to " | Edit account" , edit_user_registration_path, class: "text-white" %>
+        <%= link_to " | Update profile" , edit_profile_path(current_user.profile), class: "text-white" %>
+      </h6>
     </span>
   <% else %>
     <span>
@@ -17,12 +17,14 @@
     </h6>
     </span>
   <% end %>
-</div><!-- navbar brand & login -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  </div><!-- navbar brand & login -->
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse"
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+  
     <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">

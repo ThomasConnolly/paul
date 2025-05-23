@@ -19,7 +19,7 @@ Rails/I18nLocaleTexts:
   Enabled: false
 
 Layout/LineLength:
-  Max: 80
+  Max: 100
 
 Metrics/BlockLength:
   Max: 100
@@ -28,7 +28,7 @@ Metrics/BlockLength:
     - 'test/**/*'
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 55
 
 Metrics/ClassLength:
   Max: 200

@@ -1,23 +1,34 @@
 email_list:
-- name: Fr. Tom
+- first_name: Fr. Tom
+- last_name: Fr.Tom
   email: Fr.Tom@saintpaulsnaples.org
-- name: Diane Augustus
+- first_name: Diane 
+  last_name: Augustus
   email: daug6978@sbcglobal.net
-- name: Rose Porembo  
+- first_name: Jack 
+  last_name: LaRose  
   email: fd166larose@gmail.com
-- name: Jeannie Smith
+- first_name: Jeannie 
+  last_name: Smith
   email: jewiggles@yahoo.com
-- name: Julio Albino
+- first_name: Julio 
+  last_name: Albino
   email: jualbin@optonline.net
-- name: Mary Lou Dogoloff
+- first_name: Mary Lou 
+  last_name: Dogoloff
   email: midogo@me.com 
-- name: Paul Nelson
+- first_name: Paul 
+  last_name: Nelson
   email: paulnelsonsr@gmail.com
-- name: Rosemary Porembo
-  email: rkp831@hotmail.com
-- name: Murray Smith
+- first_name: Rosemary 
+  last_name: Porembo
+  email: rkp44@hotmail.com
+- first name: Murray 
+  last_name: Smith
   email: murray_smith10@comcast.net
-- name: Tom Connolly
+- first_name: Tom 
+  last_name: Connolly
   email: tom.connolly@comcast.net
-- name: Betty Hernandez
+- first_name: Betty 
+  last_name: Hernandez
   email: welcome@saintpaulsnaples.org

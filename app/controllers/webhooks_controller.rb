@@ -8,8 +8,9 @@ class WebhooksController < ApplicationController
     Rails.logger.debug { "Received webhook: #{payload}" }
 
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-    endpoint_secret = Rails.application.credentials.dig(:stripe,
-                                                        Rails.env.to_sym, :signing_secret)
+    endpoint_secret = Rails.application.credentials.dig(
+      :stripe, Rails.env.to_sym, :signing_secret
+    )
 
     begin
       event = Stripe::Webhook.construct_event(
@@ -26,9 +27,10 @@ class WebhooksController < ApplicationController
         event_type: event.type,
         event_id: event.id
       )
-      Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}, event_type: #{event.type}"
+      Rails.logger.info "Webhook created with id: #{webhook.id},
+        status: #{webhook.status}, event_type: #{event.type}"
 
-      WebhookJob.perform_later(webhook.id)
+      WebhookJob.set(wait: 5.minutes).perform_later(webhook)
       render json: { status: :ok }
     rescue JSON::ParserError => e
       Rails.logger.error "JSON parse error: #{e.message}"

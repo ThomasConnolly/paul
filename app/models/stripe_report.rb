@@ -19,13 +19,6 @@ class StripeReport < ApplicationRecord
   validates :donor_name, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :webhook_id, presence: true
-  validates :stripe_fee, presence: true,
-                         numericality: { greater_than_or_equal_to: 0 }
-  validates :net, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :payment_method_type, presence: true
-  # private
-
-  # def send_stripe_mail
-  #   StripeMailer.stripe_report(self).deliver_now
-  # end
+  validates :stripe_fee, presence: true
+  validates :net, presence: true
 end

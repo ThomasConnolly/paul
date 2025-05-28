@@ -16,8 +16,4 @@
 
 class Webhook < ApplicationRecord
   enum :status, { pending: 0, processed: 1, failed: 2 }
-
-  after_create do
-    WebhookJob.perform_later(id)
-  end
 end

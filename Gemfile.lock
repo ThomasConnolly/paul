@@ -53,7 +53,7 @@ GEM
       activemodel (>= 4.1)
       case_transform (>= 0.2)
       jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
-    active_storage_validations (2.0.3)
+    active_storage_validations (2.0.4)
       activejob (>= 6.1.4)
       activemodel (>= 6.1.4)
       activestorage (>= 6.1.4)
@@ -68,7 +68,7 @@ GEM
       activemodel (= 8.0.1)
       activesupport (= 8.0.1)
       timeout (>= 0.4.0)
-    activerecord-import (2.1.0)
+    activerecord-import (2.2.0)
       activerecord (>= 4.2)
     activestorage (8.0.1)
       actionpack (= 8.0.1)
@@ -102,7 +102,7 @@ GEM
       rake (>= 0.8.7)
     ast (2.4.3)
     aws-eventstream (1.3.2)
-    aws-partitions (1.1106.0)
+    aws-partitions (1.1107.0)
     aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.520.1)
@@ -204,7 +204,7 @@ GEM
       activemodel
     erb (5.0.1)
     erubi (1.13.1)
-    excon (1.2.5)
+    excon (1.2.7)
       logger
     factory_bot (6.5.1)
       activesupport (>= 6.1.0)
@@ -245,7 +245,7 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
-    fog-aws (3.31.0)
+    fog-aws (3.32.0)
       base64 (~> 0.2.0)
       fog-core (~> 2.6)
       fog-json (~> 1.1)
@@ -349,7 +349,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0520)
+    mime-types-data (3.2025.0527)
     mini_magick (5.2.0)
       benchmark
       logger
@@ -497,12 +497,12 @@ GEM
       nokogiri
     rexml (3.4.1)
     rouge (4.5.2)
-    rspec-core (3.13.3)
+    rspec-core (3.13.4)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.4)
+    rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.4)
+    rspec-mocks (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-rails (8.0.0)
@@ -513,7 +513,7 @@ GEM
       rspec-expectations (~> 3.13)
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
-    rspec-support (3.13.3)
+    rspec-support (3.13.4)
     rubocop (1.75.7)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -592,7 +592,7 @@ GEM
       yard (~> 0.9, >= 0.9.24)
       yard-solargraph (~> 0.1)
     sorbet-eraser (0.3.1)
-    sorbet-runtime (0.5.12124)
+    sorbet-runtime (0.5.12135)
     sshkit (1.24.0)
       base64
       logger
@@ -631,7 +631,7 @@ GEM
       railties (>= 6.0.0)
     webrick (1.9.1)
     websocket (1.2.11)
-    websocket-driver (0.7.7)
+    websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)

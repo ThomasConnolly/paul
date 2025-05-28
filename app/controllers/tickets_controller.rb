@@ -6,12 +6,12 @@ class TicketsController < ApplicationController
   before_action :set_event
   before_action :set_ticket, only: %i[show update destroy]
 
-  def show; end
-
   def index
-    @tickets = Ticket.all.order(:last_name)
+    @tickets = Ticket.order(:last_name)
     @pd_tickets = Ticket.where(event: @event, checkout: 'paid').order(:last_name)
   end
+
+  def show; end
 
   def new
     @ticket = @event.tickets.build
@@ -26,12 +26,12 @@ class TicketsController < ApplicationController
     end
   end
 
+  def update; end
+
   def destroy
     @ticket.destroy
     redirect_to '/', notice: 'ticket deleted'
   end
-
-  def update; end
 
   def thanks
     @event = @ticket.event_id

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
@@ -36,7 +35,7 @@ class WebhooksController < ApplicationController
       )
       Rails.logger.info "Webhook created with id: #{webhook.id}, status: #{webhook.status}, event_type: #{event.type}"
 
-      stripe_report = create_stripe_report(event.data.object, webhook)
+      create_stripe_report(event.data.object, webhook)
 
       webhook.update(status: 'processed')
       render json: { status: :ok }
@@ -50,7 +49,7 @@ class WebhooksController < ApplicationController
       Rails.logger.error "Unexpected error processing webhook: #{e.message}"
       render json: { error: e.message }, status: :internal_server_error
     end
-  end # End of create method
+  end
 
   private # Fix indentation
 
@@ -65,7 +64,20 @@ class WebhooksController < ApplicationController
 
     amount = data_object['amount']
     balance_transaction_id = data_object['balance_transaction']
-    donor_name = data_object['billing_details']['name'] || 'Anonymous Donor'
+    # More compact version
+    donor_name = data_object['billing_details']['name']
+
+    if donor_name.blank?
+      email = data_object['billing_details']['email']
+      if email.present?
+        Rails.logger.info "No name in billing_details, searching for user with email: #{email}"
+        user = User.find_by(email: email)
+        donor_name = user&.username || 'Anonymous Donor'
+        Rails.logger.info "Donor name resolved to: #{donor_name}"
+      else
+        donor_name = 'Anonymous Donor'
+      end
+    end
 
     Rails.logger.info "Extracted data: amount=#{amount}, balance_transaction_id=#{balance_transaction_id}, donor_name=#{donor_name}"
 

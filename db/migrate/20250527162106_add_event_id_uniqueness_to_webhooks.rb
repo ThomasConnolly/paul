@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddEventIdUniquenessToWebhooks < ActiveRecord::Migration[8.0]
   def change
     add_index :webhooks, :event_id, unique: true, name: 'index_webhooks_on_event_id'

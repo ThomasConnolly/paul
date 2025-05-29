@@ -51,9 +51,12 @@ class WebhooksController < ApplicationController
     end
   end
 
-  private # Fix indentation
+  private
 
   def create_stripe_report(data_object, webhook)
+    Rails.logger.info '=== DEBUG: create_stripe_report called ==='
+    Rails.logger.info "data_object keys: #{data_object.keys.inspect}"
+    Rails.logger.info "webhook.id: #{webhook.id}"
     # Check if StripeReport already exists for this webhook
     if StripeReport.exists?(webhook_id: webhook.id)
       Rails.logger.warn "StripeReport already exists for webhook #{webhook.id}, skipping creation"

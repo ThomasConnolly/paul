@@ -7,7 +7,17 @@ class WebhooksController < ApplicationController
     puts 'WEBHOOK RECEIVED - MINIMAL TEST'
     Rails.logger.error 'WEBHOOK RECEIVED - MINIMAL TEST'
 
-    render json: { status: :ok, message: 'minimal test successful' }
+    payload = request.body.read
+    sig_header = request.env['HTTP_STRIPE_SIGNATURE']
+    endpoint_secret = Rails.application.credentials.dig(
+      :stripe, Rails.env.to_sym, :signing_secret
+    )
+
+    Rails.logger.error "Payload length: #{payload.length}"
+    Rails.logger.error "Signature header present: #{sig_header.present?}"
+    Rails.logger.error "Endpoint secret present: #{endpoint_secret.present?}"
+
+    render json: { status: :ok, message: 'basic structure test successful' }
   rescue StandardError => e
     Rails.logger.error "ERROR: #{e.class} - #{e.message}"
     render json: { error: e.message }, status: :internal_server_error

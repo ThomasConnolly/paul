@@ -4,6 +4,7 @@ class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
+    Rails.logger.error '=== WEBHOOK HIT - START OF CREATE METHOD ==='
     payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
     endpoint_secret = Rails.application.credentials.dig(
@@ -23,10 +24,10 @@ class WebhooksController < ApplicationController
         return
       end
 
-      if Webhook.exists?(event_id: event.id)
-        render json: { status: :ok, message: 'Event already processed' }
-        return
-      end
+      # if Webhook.exists?(event_id: event.id)
+      #   render json: { status: :ok, message: 'Event already processed' }
+      #   return
+      # end
 
       webhook = Webhook.create!(
         data: payload,

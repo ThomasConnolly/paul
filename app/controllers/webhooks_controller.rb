@@ -23,11 +23,10 @@ class WebhooksController < ApplicationController
         return
       end
 
-      # Comment out this duplicate check for now
-      # if Webhook.exists?(event_id: event.id)
-      #   render json: { status: :ok, message: 'Event already processed' }
-      #   return
-      # end
+      if Webhook.exists?(event_id: event.id)
+        render json: { status: :ok, message: 'Event already processed' }
+        return
+      end
 
       webhook = Webhook.create!(
         data: payload,
@@ -54,7 +53,33 @@ class WebhooksController < ApplicationController
   private
 
   def create_stripe_report(data_object, webhook)
-    # Add your create_stripe_report method here
-    Rails.logger.info 'create_stripe_report called but not implemented yet'
+    Rails.logger.info "=== Starting create_stripe_report for webhook #{webhook.id} ==="
+
+    amount = data_object['amount']
+    balance_transaction_id = data_object['balance_transaction']
+    donor_name = data_object['billing_details']['name'] || 'Anonymous Donor'
+
+    # Get Stripe fee
+    if balance_transaction_id.present?
+      balance_transaction = Stripe::BalanceTransaction.retrieve(balance_transaction_id)
+      stripe_fee = balance_transaction.fee
+    else
+      stripe_fee = 0
+    end
+
+    net_amount = amount - stripe_fee
+
+    stripe_report = StripeReport.create!(
+      webhook_id: webhook.id,
+      amount: amount,
+      net: net_amount,
+      stripe_fee: stripe_fee,
+      donor_name: donor_name
+    )
+
+    # Send email
+    StripeMailer.stripe_report(stripe_report.id).deliver_later
+
+    Rails.logger.info "Successfully created StripeReport with ID: #{stripe_report.id}"
   end
 end

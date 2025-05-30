@@ -55,31 +55,11 @@ class WebhooksController < ApplicationController
 
   def create_stripe_report(data_object, webhook)
     # Add your create_stripe_report method here
-    Rails.logger.info "create_stripe_report called but not implemented yet"
-    render json: { status: :ok, message: "stripe report creation skipped" }
+    Rails.logger.info 'create_stripe_report called but not implemented yet'
+    render json: { status: :ok, message: 'stripe report creation skipped' }
   end
 end
-    webhook = Webhook.create!(
-      data: payload,
-      event_type: event.type,
-      event_id: event.id
-    )
 
-    create_stripe_report(event.data.object, webhook)
-
-    webhook.update(status: 'processed')
-    render json: { status: :ok }
-  rescue JSON::ParserError => e
-    Rails.logger.error "JSON parse error: #{e.message}"
-    render json: { error: e.message }, status: :bad_request
-  rescue Stripe::SignatureVerificationError => e
-    Rails.logger.error "Signature verification failed: #{e.message}"
-    render json: { error: e.message }, status: :unauthorized
-  rescue StandardError => e
-    Rails.logger.error "Unexpected error processing webhook: #{e.message}"
-    render json: { error: e.message }, status: :internal_server_error
-  end
-end
 #   def create
 #     Rails.logger.error '=== WEBHOOK HIT - START OF CREATE METHOD ==='
 #     payload = request.body.read

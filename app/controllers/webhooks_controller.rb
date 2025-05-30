@@ -3,23 +3,50 @@
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
-  def create
-    puts 'WEBHOOK RECEIVED - MINIMAL TEST'
-    Rails.logger.error 'WEBHOOK RECEIVED - MINIMAL TEST'
+def create
+  payload = request.body.read
+  sig_header = request.env['HTTP_STRIPE_SIGNATURE']
+  endpoint_secret = Rails.application.credentials.dig(
+    :stripe, Rails.env.to_sym, :signing_secret
+  )
 
-    payload = request.body.read
-    sig_header = request.env['HTTP_STRIPE_SIGNATURE']
-    endpoint_secret = Rails.application.credentials.dig(
-      :stripe, Rails.env.to_sym, :signing_secret
+  begin
+    event = Stripe::Webhook.construct_event(
+      payload, sig_header, endpoint_secret
     )
 
-    Rails.logger.error "Payload length: #{payload.length}"
-    Rails.logger.error "Signature header present: #{sig_header.present?}"
-    Rails.logger.error "Endpoint secret present: #{endpoint_secret.present?}"
+    Rails.logger.info "Received webhook event: #{event.type}, id: #{event.id}"
 
-    render json: { status: :ok, message: 'basic structure test successful' }
+    if event.type != 'charge.succeeded'
+      Rails.logger.warn "Received unexpected event type: #{event.type}"
+      render json: { status: :ok }
+      return
+    end
+
+    # Comment out this duplicate check for now
+    # if Webhook.exists?(event_id: event.id)
+    #   render json: { status: :ok, message: 'Event already processed' }
+    #   return
+    # end
+
+    webhook = Webhook.create!(
+      data: payload,
+      event_type: event.type,
+      event_id: event.id
+    )
+
+    create_stripe_report(event.data.object, webhook)
+
+    webhook.update(status: 'processed')
+    render json: { status: :ok }
+  rescue JSON::ParserError => e
+    Rails.logger.error "JSON parse error: #{e.message}"
+    render json: { error: e.message }, status: :bad_request
+  rescue Stripe::SignatureVerificationError => e
+    Rails.logger.error "Signature verification failed: #{e.message}"
+    render json: { error: e.message }, status: :unauthorized
   rescue StandardError => e
-    Rails.logger.error "ERROR: #{e.class} - #{e.message}"
+    Rails.logger.error "Unexpected error processing webhook: #{e.message}"
     render json: { error: e.message }, status: :internal_server_error
   end
 end

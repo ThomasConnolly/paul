@@ -11,11 +11,17 @@ class WebhooksController < ApplicationController
       :stripe, Rails.env.to_sym, :signing_secret
     )
 
+    Rails.logger.error "Payload length: #{payload.length}"
+    Rails.logger.error "Signature header present: #{sig_header.present?}"
+    Rails.logger.error "Endpoint secret present: #{endpoint_secret.present?}"
+
     begin
+      Rails.logger.error 'About to construct event...'
       event = Stripe::Webhook.construct_event(
         payload, sig_header, endpoint_secret
       )
-
+      Rails.logger.error 'Event constructed successfully'
+      # ... rest of your code
       Rails.logger.info "Received webhook event: #{event.type}, id: #{event.id}"
 
       if event.type != 'charge.succeeded'

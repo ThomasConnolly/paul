@@ -10,12 +10,10 @@ class WebhooksController < ApplicationController
     endpoint_secret = Rails.application.credentials.dig(
       :stripe, Rails.env.to_sym, :signing_secret
     )
-
-    Rails.logger.error "Payload length: #{payload.length}"
-    Rails.logger.error "Signature header present: #{sig_header.present?}"
-    Rails.logger.error "Endpoint secret present: #{endpoint_secret.present?}"
-
     begin
+      Rails.logger.error "Payload length: #{payload.length}"
+      Rails.logger.error "Signature header present: #{sig_header.present?}"
+      Rails.logger.error "Endpoint secret present: #{endpoint_secret.present?}"
       Rails.logger.error 'About to construct event...'
       event = Stripe::Webhook.construct_event(
         payload, sig_header, endpoint_secret

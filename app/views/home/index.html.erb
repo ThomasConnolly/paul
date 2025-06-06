@@ -46,8 +46,10 @@
             <p><strong>All are welcome here at St. Paul's!</strong></p>
           </div>  <!-- Close content-section -->
         <% end %>
-
-        <p><strong><%=link_to "Livestream","https://www.youtube.com/@stpaulsnaples6762/streams" %></strong> Stream
+        <% if @bulletin.present? %>
+          <%= link_to "Click here to view the bulletin for this Sunday.", @bulletin.url %>
+        <% end %>
+          <p><strong><%=link_to "Livestream","https://www.youtube.com/@stpaulsnaples6762/streams" %></strong> Stream
           on your smart phone, computer or television.</p>
         
           <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto d-block", alt: "Chosen picture") %>

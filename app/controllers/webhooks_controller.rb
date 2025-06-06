@@ -52,12 +52,24 @@ class WebhooksController < ApplicationController
 
   private
 
+  def find_donor_by_email(data_object)
+    email = data_object['billing_details']['email']
+    return nil unless email.present?
+
+    user = User.find_by(email: email)
+    return nil unless user
+
+    user.username # Return the username if user found
+  end
+
   def create_stripe_report(data_object, webhook)
     Rails.logger.info "=== Starting create_stripe_report for webhook #{webhook.id} ==="
 
     amount = data_object['amount']
     balance_transaction_id = data_object['balance_transaction']
-    donor_name = data_object['billing_details']['name'] || 'Anonymous Donor'
+    donor_name = data_object['billing_details']['name'] ||
+                 find_donor_by_email(data_object) ||
+                 'Anonymous Donor'
 
     # Get Stripe fee
     if balance_transaction_id.present?

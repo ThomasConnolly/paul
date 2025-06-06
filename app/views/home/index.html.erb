@@ -1,211 +1,231 @@
-
-<div class="clearfix"></div>
-<div class="col-md-10 offset-md-1">
-  <%= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
-  <%#= cl_image_tag("communion_kbmjxt", width: "99%", alt: "Communion") %>
-</div>
-
-<div class="row">
-  <div class="col-md-8 main-body pe-5">
-  <%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
-  <%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
-    
-  <% celebrate_content = PageContent.find_by(section: "celebrate") %>
-  <% if celebrate_content %>
-    <%= turbo_frame_tag dom_id(celebrate_content) do %>
-      <div class="content-section">
-        <% if current_user&.role?("admin") %>
-          <div class="admin-controls">
-            <%= link_to "Edit", edit_page_content_path(celebrate_content), class: "btn btn-sm btn-primary" %>
-          </div>
-        <% end %>
-        <h1 class="mt-4"><%= celebrate_content.title %></h1>
-        <%= celebrate_content.body.html_safe %>
-      </div>  <!-- Close content-section -->
-    <% end %>  <!-- Close turbo_frame_tag -->
-  <% else %>
-    <div class="content-section">  <!-- Add this div to match structure -->
-      <h1 class="mt-4">Celebrate Easter</h1>
-      <h2>Sunday Worship 9 a.m.</h2>
-      <p>Easter is not a day, but a season, from Easter Sunday to Pentecost, where the Holy Spirit empowers us to live Christ-like lives.<br>
-      During "Naples season (October to April) there are two Masses, 8 and 10 a.m.</p>
-      <p><strong>All are welcome here at St. Paul's!</strong></p>
-      </div>  <!-- Close content-section -->
-  <% end %>  
-
-  <% if @bulletin&.url.present? %>
-    <%= link_to "Here is the Sunday bulletin", @bulletin.url %>  
-  <% end %>
-  <p>The Sunday service is streamed on <%= link_to "YouTube",
-    ("https://www.youtube.com/@stpaulsnaples6762/streams") %>
-    for those unable to be with us in person.</p> 
-  
-  <p><strong><%= link_to "Click here for Scripture Readings" ,"http://www.lectionarypage.net" %>
-    </strong> </p>
-  <p>To learn about our liturgical worship service and about the<strong> <em>Episcopal 
-    Church,</em></strong> <%=link_to "click here", worship_index_path %>. And click on that 
-    shelf of red books to get a short, cute introduction to our time-honored <em>Book of Common Prayer.</em> 
-    <%= link_to "Click here for the on-line Book of Common Prayer" ,
-    ("https://www.churchpublishing.org/siteassets/pdf/book-of-common-prayer/book-of-common-prayer-2006.pdf") %></p>
-  
-  <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto d-block", alt: "Chosen promotion picture") %>
-  <% reflect_content = PageContent.find_by(section: "reflect") %>
-    <% if reflect_content %>
-      <%= turbo_frame_tag dom_id(reflect_content) do %>
-      <div class="content-section">
-        <% if current_user&.role?("admin") %>
-          <div class="admin-controls">
-          <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
-        </div>
-      <% end %>
-  <h1 class="mt-4"><%= reflect_content.title %></h1>
-    <%= reflect_content.body.html_safe %>
+<section id="hero">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5 text-center text-md-start image-fluid">
+        <%= cl_image_tag("Pentecost2021Scaled_qzwtu5.png", width: "100%", alt: "Pentecost vestments") %>
       </div>
-    <% end %>
-  <% else %>
-    <h2 class="mt-3">Reflect and Connect </h2>
-    <p>This group is awaiting the release of the new season of the popular series 
-    <em>The Chosen.</em> (it's in theaters now). 
-    In the meantime we are discussing the previous Sunday's sermon 
-    and scripture readings. All are welcome, 10:30 a.m. Wednesdays in the library.</p>
-<% end %>    
-  <h2 class="mt-3">Sacred Ground Series</h2>
-  <p>This is a series of videos, readings and small-group discussions about race. This is highly
-    recommended if you have questions about "critical race theory," a topic needlessly politicized. To
-    watch an introduction, <%= link_to "click here. " , 
-    "https://www.episcopalchurch.org/sacred-ground/" %></p>
-  
-  <section id="market">
-    <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", class: "mx-auto d-block my-5" , 
-    width: "40%", alt: "Farmers' market logo" ) %>
+      <div class="col-md-5 d-none d-md-block text-center image-fluid">
+        <%= cl_image_tag("wordcloud_tbayeb", width: "75%", alt: "Gifts of Spirit") %>    
+      </div>
+    </div>
+  </div>
+</section>  
 
-    <% market_content = PageContent.find_by(section: "market") %>
-    <% if market_content %>
-      <%= turbo_frame_tag dom_id(market_content) do %>
-        <div class="content-section">
-          <% if current_user&.role?("admin") %>
-            <div class="admin-controls">
-              <%= link_to "Edit", edit_page_content_path(market_content), class: "btn btn-sm btn-primary" %>
+<%#= cl_image_tag("v1492312022/EmptyCross_av1mlt.jpg", width: "99%", alt: "Empty cross") %>
+<%#= cl_image_tag("communion_kbmjxt", width: "99%", alt: "Communion") %>
+<%#= cl_image_tag("v1677373661/TominPurple_wjul01.jpg", width: "99%", alt: "Lenten vestments") %>
+<%#= cl_image_tag("v1674960629/TomGreenAltar_zdf3jy.jpg", width: "99%", alt: "Ordinary time vestments") %>
+
+<section id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 px-4 mt-4">
+        <% celebrate_content = PageContent.find_by(section: "celebrate") %>
+        <% if celebrate_content %>
+          <%= turbo_frame_tag dom_id(celebrate_content) do %>
+            <div class="content-section">
+              <% if current_user&.role?("admin") %>
+                <div class="admin-controls">
+                  <%= link_to "Edit", edit_page_content_path(celebrate_content), class: "btn btn-sm btn-primary" %>
+                </div>
+              <% end %>
+              <h1 class="mt-4"><%= celebrate_content.title %></h1>
+              <%= celebrate_content.body.html_safe %>
+            </div>  <!-- Close content-section -->
+          <% end %>  <!-- Close turbo_frame_tag -->
+        <% else %>
+          <div class="content-section">
+            <h1 class="mt-4">Pentecost Sunday, June 8</h1>
+            <h2>Worship with us, 9 a.m. Sundays</h2>
+            <p class="text-center">
+              <small>(Summer hours)</small>
+            </p>
+            <p><strong>Join us for worship in person or on-line.</strong></p>   
+            <p>Pentecost marks the event where the Holy Spirit empowers us to live Christ-like lives.<br>
+            <small>During "Naples season (October to April) there are two Masses, 8 and 10 a.m.</small></p>
+            <p><strong>All are welcome here at St. Paul's!</strong></p>
+          </div>  <!-- Close content-section -->
+        <% end %>
+
+        <p><strong><%=link_to "Livestream","https://www.youtube.com/@stpaulsnaples6762/streams" %></strong> Stream
+          on your smart phone, computer or television.</p>
+        
+          <%=cl_image_tag("ChosenPromo_uutmzq.jpg", width: "75%", class: "mx-auto d-block", alt: "Chosen picture") %>
+      
+        <% reflect_content = PageContent.find_by(section: "reflect") %>
+        <% if reflect_content %>
+          <%= turbo_frame_tag dom_id(reflect_content) do %>
+            <div class="content-section">
+              <% if current_user&.role?("admin") %>
+                <div class="admin-controls">
+                  <%= link_to "Edit", edit_page_content_path(reflect_content), class: "btn btn-sm btn-primary" %>
+                </div>
+              <% end %>
+              <h1 class="mt-4"><%= reflect_content.title %></h1>
+              <%= reflect_content.body.html_safe %>
             </div>
           <% end %>
-          
-          <h1 class="mt-4"><%= market_content.title %></h1>
-          <%= market_content.body.html_safe %>
-        </div>
-      <% end %>
-    <% else %>
-      <h2 class="mt-3">Home of the Farmers' Market</h2>
-      <p><strong>The market will reopen in November and will run through April 2026.</strong></p>
-      <p>Lots of fresh produce and select items of interest for sale. We also have a great books sale in the church 
-      hall and top-line clothing in the <em>Unique Boutique.</em></p>
-      <p>If you are a prospective vendor, please call the office, as we have room for more vendors.</p>
-    <% end %>
-    <p>For more information about the market, <%= link_to "click here." , markets_index_path %></p>    
-  </section>
-      <br>
-      <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
-      <p><strong>Almighty God, who created us in your own image: Grant us
-          grace fearlessly to contend against evil and to make no peace
-          with oppression; and, that we may reverently use our freedom,
-          help us to employ it in the maintenance of justice in our
-          communities and among the nations, to the glory of your holy
-          Name; through Jesus Christ our Lord, who lives and reigns with
-          you and the Holy Spirit, one God, now and for ever. Amen.</strong>
-      </p>
-      <p class="text-end"> &mdash;Book of Common Prayer</p>
-       <div class="clearfix"></div>
+        <% else %>
+          <h2 class="mt-3">Reflect and Connect </h2>
+          <p>This group is awaiting the release of the new season of the popular series 
+          <em>The Chosen.</em> (it's in theaters now). 
+          In the meantime we are discussing the previous Sunday's sermon 
+          and scripture readings. All are welcome, 10:30 a.m. Wednesdays in the library.</p>
+        <% end %>
+        
+        <h2 class="mt-3">Sacred Ground Series</h2>
+        <p>This is a series of videos, readings and small-group discussions about race. This is highly
+          recommended if you have questions about "critical race theory," a topic needlessly politicized. To
+          watch an introduction, <%= link_to "click here. " , 
+          "https://www.episcopalchurch.org/sacred-ground/" %></p>
+
+        <section id="market">
+          <%= cl_image_tag("FarmMarketLogoOutreach2_up8pqz.png", 
+            class: "mx-auto d-block my-5 image-fluid",
+            style: "width: 80%; max-width: 300px", 
+            alt: "Farmers' market logo" ) %>
+
+          <% market_content = PageContent.find_by(section: "market") %>
+          <% if market_content %>
+            <%= turbo_frame_tag dom_id(market_content) do %>
+              <div class="content-section">
+                <% if current_user&.role?("admin") %>
+                  <div class="admin-controls">
+                    <%= link_to "Edit", edit_page_content_path(market_content), class: "btn btn-sm btn-primary" %>
+                  </div>
+                <% end %>
+                
+                <h1 class="mt-4"><%= market_content.title %></h1>
+                <%= market_content.body.html_safe %>
+              </div>
+            <% end %>
+          <% else %>
+            <h2 class="mt-3">Home of the Farmers' Market</h2>
+            <p><strong>The market will reopen in November and will run through April 2026.</strong></p>
+            <p>Lots of fresh produce and select items of interest for sale. We also have a great books sale in the church 
+            hall and top-line clothing in the <em>Unique Boutique.</em></p>
+            <p>If you are a prospective vendor, please call the office, as we have room for more vendors.</p>
+          <% end %>
+          <p>For more information about the market, <%= link_to "click here." , markets_index_path %></p>    
+        </section>
+        
+        <br>
+        <%= cl_image_tag("pray_osljoq.jpg", width: "350" , class: "float-start me-3", alt: "PrayLogo") %>
+        <p><strong>Almighty God, who created us in your own image: Grant us
+            grace fearlessly to contend against evil and to make no peace
+            with oppression; and, that we may reverently use our freedom,
+            help us to employ it in the maintenance of justice in our
+            communities and among the nations, to the glory of your holy
+            Name; through Jesus Christ our Lord, who lives and reigns with
+            you and the Holy Spirit, one God, now and for ever. Amen.</strong>
+        </p>
+        <p class="text-end"> &mdash;Book of Common Prayer</p>
+        <div class="clearfix"></div>
+        
         <h2 class="mt-3">Supporters of Tumaini Fund</h2>
-    <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3", alt: "Susan Wilson picture" ) %>
-    <p>Dr. Susan Wilson, an English family physician, is full of energy and zealfor the Lord. She
-      founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
-      the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
-      thousands of children who lost their moms and dads to AIDS. In addition to monitary
-      contributions, the women of our church have sewn numerous
-      dresses, as seen here with Dr. Wilson.</p>
-    <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.
-    </p>
-    <div class="clearfix"></div>
-    <h2 class="mt-3">Supporters of 'ERD'</h2>
-    <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
-          alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
-          ), "https://episcopalrelief.org/" %>
-    <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
-      resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
-    <div class="mt-3" id="billboard">
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
-                        width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto", alt: "God Loves,
-                         No Exception signboard" ) %>
-    </div>
-  </div>
-  <div class="col-md-4 px-4 mt-4" style="background-color: #e2e2e2;">
-    <p class="text-center">
-      <%= Date.current.strftime("%A, %B %e, %Y") %>
-    </p>
-    <%= cl_image_tag("logos/update.png", width: "99%", alt: "Update logo" ) %>
-    <h2>We pray for you</h2>
-    <p>We pray for those who request prayers for themselves or for others in any kind of distress. 
-      We are also happy to pray prayers of thanksgiving and to ask God's blessings upon your endeavors.
-      If you have a prayer request, please call the office at 239-643-0197 9 a.m. to 1 p.m Monday through Friday 
-      (or leave a message any time).</p>
-    <h2>Next vestry meeting</h2>
-    <p class="text-center">  
-      <% if @vestry_meeting&.date.present? %> 
-        <%= @vestry_meeting.date.strftime('%B %-d, %Y') %>
-      <% else %>
-        Date to be announced
-      <% end %>
-    </p>
-    <p> Visitors are welcome to observe our church leadership team in action. 6:30 p.m. 
-      in the library, Serson Hall. </p>
-    <div id="links">
-    <h2 class="mt-3">All the links</h2>
-    <p><strong><%= link_to "Sunday worship service, 9 a.m. (10 a.m. from October to May) " , 
-    "https://www.youtube.com/@stpaulsnaples6762/streams" %> </strong>
-    Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this link.</p>
-    
-    <p><strong>Wednesday evening adult education, 6:30 p.m.
-      </strong> Approximately one hour, class is held in the library, Serson Hall. Come,
-      learn, and share your thoughts.</p>
-    <p><strong>Thursday wine time, 6 p.m.</strong> on line.
-      <% if @wine&.url.present? %>
-        <%= link_to "Click here to join the Zoom chat.", @wine.url %> 
-      <% end %></p>
-    <p></p></p>Join us with your favorite libation for an hour or so of conversation on Zoom. 
-    This is a popular and relaxing chat room open to everyone who wishes to join in. </p>
-    <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 float-end", alt: "coffee cup" ) %>
-    <p><strong>Join us for coffee </strong> after the Sunday morning worship service. It's a time for fellowship and 
-      to meet new friends. Parishioners bring snacks to share, and there's always plenty for everyone.</p>
-    <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%" , class: "image-center" ) %>
-    <p class="mt-2"><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
-        hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
-        are <%= link_to "listed here." , opportunities_path %>
-    </p>
-    <p class="mt-3">Wearing your <strong> name tag </strong> is an act of hospitality! We want visitors
-        and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call or come by 
-        the office during the week (9 a.m. to 1 p.m.) to get one.
-    </p>
-    <p class="mt-3"><strong>Stay up to date </strong> by getting the Weekly Update in your email box
-        <%= link_to "by signing up here.",
-      "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2" %>
-    </p>
-      <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 text-centerS d-block" ,
-        :fetch_format=> :auto), pages_calendar_path %>
-    <h3>Click calendar to see our activities</h3>
-    </div>
-    <div class="mt-3" id="ENS">
-      <h2>Episcopal News</h2>
-      <p><small>Click the headline to read the full story.</small></p>
-    
-    <% if @ens_feed.present? %>
-      <% @ens_feed.each do |feed| %>
-          <h5><%= link_to feed.title , feed.url %></h5>
-          <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), length: 200) %></p> 
-        <% end %>     
-      <% else %>
-        <h5><%= link_to "No news available", "#" %></h5>
-      <% end %>
-    </div>
-  </div>
-</div>
- </div>
- 
+        <%= cl_image_tag("SusanWilson_dvvx0e.jpg", width: "60%" , class: "float-end ms-3", alt: "Susan Wilson picture" ) %>
+        <p>Dr. Susan Wilson, an English family physician, is full of energy and zeal for the Lord. She
+          founded <em>Tumaini </em>(the word means "hope") <em> Fund </em> to put her faith to work in
+          the AIDS-ravaged Kagera region of Northwest Tanzania. There she established an orphanage for
+          thousands of children who lost their moms and dads to AIDS. In addition to monetary
+          contributions, the women of our church have sewn numerous
+          dresses, as seen here with Dr. Wilson.</p>
+        <p>Parishioners Mike Moore and Roger Conant are directors for the fund in the United States.</p>
+        <div class="clearfix"></div>
+        
+        <h2 class="mt-3">Supporters of 'ERD'</h2>
+        <%= link_to image_tag("https://www.episcopalrelief.org/wp-content/uploads/2019/01/logo.png",
+              alt:"Episcopal Relief &amp; Development", width: '404' , crop: "scale" , class: "d-block mx-auto"
+              ), "https://episcopalrelief.org/" %>
+        <p class="mt-3">Episcopal Relief and Development is a charity you can trust to use your
+          resources wisely and lovingly. Click the logo above to learn more and make a donation.</p>
+        
+        <div class="mt-3" id="billboard">
+          <%= image_tag("https://s3-us-west-2.amazonaws.com/saintpaulsnaplesorg/GodLovesNoException.png", 
+                            width:"99%", class: "d-block mx-auto mt-5" , fetch_format: "auto", alt: "God Loves,
+                              No Exception signboard" ) %>
+        </div>
+      </div> <!-- Close col-md-8 -->
+
+      <div class="col-lg-4 col-md-4 col-sm-12 px-4 mt-4" style="background-color: #e2e2e2;">
+        <p class="text-center">
+          <%= Date.current.strftime("%A, %B %e, %Y") %>
+        </p>
+        <%= cl_image_tag("logos/update.png", width: "99%", alt: "Update logo" ) %>
+        
+        <h2>We pray for you</h2>
+        <p>We pray for those who request prayers for themselves or for others in any kind of distress. 
+          We are also happy to pray prayers of thanksgiving and to ask God's blessings upon your endeavors.
+          If you have a prayer request, please call the office at 239-643-0197 9 a.m. to 1 p.m Monday through Friday 
+          (or leave a message any time).</p>
+        
+        <h2>Next vestry meeting</h2>
+        <p class="text-center">  
+          <% if @vestry_meeting&.date.present? %> 
+            <%= @vestry_meeting.date.strftime('%B %-d, %Y') %>
+          <% else %>
+            Date to be announced
+          <% end %>
+        </p>
+        <p>Visitors are welcome to observe our church leadership team in action. 6:30 p.m. 
+          in the library, Serson Hall.</p>
+        
+        <div id="links">
+          <h2 class="mt-3">All the links</h2>
+          <p><strong><%= link_to "Sunday worship service, 9 a.m. (10 a.m. from October to May)" , 
+          "https://www.youtube.com/@stpaulsnaples6762/streams" %></strong>
+          Stream on your smart phone, computer or television. Subscribe to our YouTube channel using this link.</p>
+          
+          <p><strong>Wednesday evening adult education, 6:30 p.m.</strong> Approximately one hour, class is held in the library, Serson Hall. Come,
+            learn, and share your thoughts.</p>
+          
+          <p><strong>Thursday wine time, 6 p.m.</strong> on line.
+            <% if @wine&.url.present? %>
+              <%= link_to "Click here to join the Zoom chat.", @wine.url %> 
+            <% end %>
+          </p>
+          <p>Join us with your favorite libation for an hour or so of conversation on Zoom. 
+          This is a popular and relaxing chat room open to everyone who wishes to join in.</p>
+          
+          <%= cl_image_tag("1912588_wbdabz.png", width: "40%" , class: "mt-3 float-end", alt: "coffee cup" ) %>
+          <p><strong>Join us for coffee</strong> after the Sunday morning worship service. It's a time for fellowship and 
+            to meet new friends. Parishioners bring snacks to share, and there's always plenty for everyone.</p>
+          
+          <%= cl_image_tag("togetherLogo_grjbrm.png", width: "95%" , class: "image-center" ) %>
+          <p class="mt-2"><strong>There's a place for you</strong> to exercise your ministry at Saint Paul's! We are the
+              hands and feet of the Risen Lord in the modern world that is in great need. Some of our ministries
+              are <%= link_to "listed here." , opportunities_path %>
+          </p>
+          
+          <p class="mt-3">Wearing your <strong>name tag</strong> is an act of hospitality! We want visitors
+              and our members to feel comfortable at services and coffee hour. If you don't have a name tag, call or come by 
+              the office during the week (9 a.m. to 1 p.m.) to get one.
+          </p>
+          
+          <p class="mt-3"><strong>Stay up to date</strong> by getting the Weekly Update in your email box
+              <%= link_to "by signing up here.",
+            "https://visitor.r20.constantcontact.com/d.jsp?llr=ip9lo9eab&p=oi&m=1104694077928&sit=ywgju8zfb&f=515707c1-0d44-46a0-803a-2fcb34db78a2" %>
+          </p>
+          
+          <%=link_to cl_image_tag("Calendar-clip_zbdtul.jpg", width: "55%" , class: "mt-3 text-center d-block" ,
+            :fetch_format=> :auto), pages_calendar_path %>
+          <h3>Click calendar to see our activities</h3>
+        </div> <!-- Close links -->
+        
+        <div class="mt-3" id="ENS">
+          <h2>Episcopal News</h2>
+          <p><small>Click the headline to read the full story.</small></p>
+        
+          <% if @ens_feed.present? %>
+            <% @ens_feed.each do |feed| %>
+              <h5><%= link_to feed.title , feed.url %></h5>
+              <p><%= truncate(feed.summary.gsub(/[&#8230;]/, '...'), length: 200) %></p> 
+            <% end %>     
+          <% else %>
+            <h5><%= link_to "No news available", "#" %></h5>
+          <% end %>
+        </div> <!-- Close ENS -->
+      </div> <!-- Close col-md-4 -->
+    </div> <!-- Close row -->
+  </div> <!-- Close container -->
+</section> <!-- Close main -->

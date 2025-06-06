@@ -1,14 +1,26 @@
-h1 {
-  font-size: 3em !important;
-  color: #630e08 !important;
+/* Mobile first approach */
+h1 { 
+  font-size: 1.1rem !important; 
+  color: #630e08 !important; 
 }
-h2 {
-  font-size: 2.25em;
-  color: #630e08;}
-h3 {
-    font-size: 1.755em;
-    color: #630e08;
+
+h2 { 
+  font-size: .9rem; 
+  color: #630e08; 
 }
-h4 {
-  font-size: 1.5em;
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  h1 { font-size: 3rem !important; }
+  h2 { font-size: 2rem; }
+}
+
+/* Desktop and up */
+@media (min-width: 1200px) {
+  h1 { font-size: 4rem !important; }
+  h2 { font-size: 2.5rem; }
+}
+
+body { 
+  font-size: 1rem; 
 }

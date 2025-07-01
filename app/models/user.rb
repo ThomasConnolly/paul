@@ -44,11 +44,7 @@ class User < ApplicationRecord
   has_one  :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :opportunities, dependent: :destroy
-  has_many :story_ideas, dependent: :destroy
-  has_many :todo_lists, dependent: :destroy
-  accepts_nested_attributes_for :todo_lists
-  has_many :vnotes, dependent: :destroy
-  has_many :agendas, dependent: :destroy
+
   has_one_attached :avatar, dependent: :destroy
   validates :avatar, content_type: %i[png jpg jpeg gif]
   has_one :pledge, dependent: :destroy

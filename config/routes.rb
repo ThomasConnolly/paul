@@ -4,14 +4,6 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  resources :agendas do
-    resources :agenda_items do
-      collection do
-        post :sort
-      end
-    end
-  end
-
   resources :page_contents, only: %i[edit update]
 
   post '/webhooks', to: 'webhooks#create'
@@ -96,7 +88,6 @@ Rails.application.routes.draw do
   end
 
   resources :tasks
-  resources :todos
 
   resources :anniversaries do
     collection do
@@ -107,6 +98,4 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   mount ActionCable.server => '/cable'
-
-  # mount MissionControl::Jobs::Engine => '/jobs'
 end

@@ -1,9 +1,8 @@
-class DropAgendas < ActiveRecord::Migration[8.0]
+class DropStoryIdeas < ActiveRecord::Migration[8.0]
   def change
-    drop_table :agendas do |t|
+    drop_table :story_ideas do |t|
       t.string :title
       t.text :description
-      t.datetime :due_date
       t.references :user, foreign_key: true
 
       t.timestamps

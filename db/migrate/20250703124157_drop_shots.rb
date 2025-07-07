@@ -1,6 +1,6 @@
-class DropAlbergueChildren < ActiveRecord::Migration[8.0]
+class DropShots < ActiveRecord::Migration[8.0]
   def change
-    drop_table :albergue_children do |t|
+    drop_table :shots do |t|
       t.string :name
       t.string :description
       t.string :image

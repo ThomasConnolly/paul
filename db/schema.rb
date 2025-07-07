@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_01_222508) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_03_124914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
@@ -326,19 +326,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_01_222508) do
     t.string "audio"
   end
 
-  create_table "shots", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.date "dob"
-    t.string "email"
-    t.string "phone"
-    t.string "shot_time"
-    t.string "status"
-    t.string "honey"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "stories", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "user_id", null: false
@@ -390,24 +377,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_01_222508) do
     t.text "added_comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "syllabuses", id: :serial, force: :cascade do |t|
-    t.string "year"
-    t.string "grade"
-    t.string "title1"
-    t.string "title2"
-    t.string "title3"
-    t.string "title4"
-    t.string "title5"
-    t.string "title6"
-    t.string "title7"
-    t.string "title8"
-    t.string "title9"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "theme"
-    t.integer "quarter"
   end
 
   create_table "tasks", force: :cascade do |t|
